@@ -17,6 +17,11 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	return;
 }
 
+// Include redux framework
+if ( !class_exists( 'ReduxFramework' ) ) {
+	require_once get_template_directory() . '/inc/redux-core/framework.php';
+}
+
 // Inculde WooCommerce functions if WooCommerce is activated
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
