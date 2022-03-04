@@ -1,8 +1,5 @@
 // Variables
-@import "theme/theme_variables";
-
-// Mixins
-@import "theme/mixins";
+@import "theme/variables";
 
 // Grab a few bootstrap assets so we can use mixins, variables, etc
 @import "theme/vendor/bootstrap/functions";
@@ -15,3 +12,7 @@
 
 // Set up basic typography
 @import "theme/vendor/bootstrap/type";
+
+// Colors
+@import "theme/colors";
+
