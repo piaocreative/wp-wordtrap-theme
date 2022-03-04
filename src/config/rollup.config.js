@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
 
 export default {
   input: [
-    path.resolve(__dirname, '../js/bootstrap5.js'), 
+    path.resolve(__dirname, '../js/bootstrap.js'), 
     path.resolve(__dirname, '../js/skip-link-focus-fix.js'),
     path.resolve(__dirname, '../js/theme.js')
   ],
