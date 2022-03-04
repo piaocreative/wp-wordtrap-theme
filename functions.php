@@ -17,10 +17,16 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	return;
 }
 
+// Include constants used in theme
+require get_template_directory() . '/inc/constants.php';
+
 // Include redux framework
 if ( !class_exists( 'ReduxFramework' ) ) {
-	require_once get_template_directory() . '/inc/redux-core/framework.php';
+	require get_template_directory() . '/inc/redux-core/framework.php';
 }
+
+// Inculde theme options
+require get_template_directory() . '/inc/theme-options/options.php';
 
 // Inculde WooCommerce functions if WooCommerce is activated
 if ( class_exists( 'WooCommerce' ) ) {

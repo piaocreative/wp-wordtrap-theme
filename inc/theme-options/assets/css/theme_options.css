@@ -1,0 +1,83 @@
+
+.redux-container .redux-action_bar input {
+  margin-left: 5px;
+}
+
+html[dir="rtl"] .redux-container .redux-action_bar input {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+.redux-container .form-table th, 
+.redux-container .form-table td {
+  vertical-align: middle;
+}
+
+.redux-container .redux_field_th {
+  padding-bottom: 20px !important;
+}
+
+.redux-container .redux-container-ace_editor .redux_field_th {
+  padding-bottom: 0 !important;
+}
+
+.wp-customizer .redux-container .redux_field_th {
+  padding-bottom: 0 !important;
+}
+
+.redux-container .redux-main img {
+  padding: 4px;
+  width: 100px !important;
+}
+
+.wp-customizer .redux-container .redux-main img {
+  width: 65px !important;
+}
+
+.redux-container .redux-container-image_select ul.redux-image-select li {
+  padding-right: 10px;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+.wp-customizer .redux-container .redux-container-image_select ul.redux-image-select li {
+  padding-right: 8px;
+}
+
+html[dir="rtl"] .redux-container .redux-container-image_select ul.redux-image-select li {
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul.redux-image-select li {
+  padding-left: 8px;
+  padding-right: 0;
+}
+
+.redux-container .redux-main .redux-image-select span {
+  max-width: 110px;
+  margin: 0 auto;
+  display: block;
+}
+
+.wp-customizer .redux-container .redux-main .redux-image-select span {
+  max-width: 80px;
+}
+
+.redux-container .redux-container-image_select label {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
+.redux-container-image_select .redux-image-select-selected {
+  background: transparent;
+}
+
+.redux-container-image_select .redux-image-select-selected span {
+  color: #0073aa;
+}
+
+.redux-container .redux-main pre {
+  margin-top: 0;
+}
