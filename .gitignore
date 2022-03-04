@@ -49,3 +49,6 @@ node_modules
 
 # Redux Sample Options
 /inc/sample/
+
+# Package Losk
+package-lock.json
