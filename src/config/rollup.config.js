@@ -24,7 +24,7 @@ export default {
       * Copyright 2022-${year} ${pkg.author}
       * Licensed under GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
     */`,
-    file: path.resolve(__dirname, `../../dist/js/theme.js`),
+    file: path.resolve(__dirname, `../../js/theme.js`),
     format: 'umd',
     name: 'wordtrap',
     globals: {
