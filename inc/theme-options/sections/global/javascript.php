@@ -12,14 +12,14 @@ Redux::set_section(
 	$opt_name,
 	array(
 		'title'          => esc_html__( 'Javascript Code', 'wordtrap' ),
-		'id'             => 'wordtrap-javascript',
+		'id'             => 'wordtrap-global-javascript',
 		'subsection'     => true,
 		'fields'         => array(
 			array(
 				'id'         => 'js-code-head',
 				'type'       => 'ace_editor',
-				'title'      => __( 'JS Code before &lt;/head&gt;', 'wordtrap' ),
-				'subtitle'   => __( 'Paste your custom JavaScript code here.', 'wordtrap' ),
+				'title'      => esc_html__( 'JS Code before &lt;/head&gt;', 'wordtrap' ),
+				'subtitle'   => esc_html__( 'Paste your custom JavaScript code here.', 'wordtrap' ),
 				'mode'       => 'javascript',
 				'default'    => '',
 				'full_width' => true,
@@ -32,8 +32,8 @@ Redux::set_section(
 			array(
 				'id'         => 'js-code',
 				'type'       => 'ace_editor',
-				'title'      => __( 'JS Code before &lt;/body&gt;', 'wordtrap' ),
-				'subtitle'   => __( 'Paste your custom JavaScript code here.', 'wordtrap' ),
+				'title'      => esc_html__( 'JS Code before &lt;/body&gt;', 'wordtrap' ),
+				'subtitle'   => esc_html__( 'Paste your custom JavaScript code here.', 'wordtrap' ),
 				'mode'       => 'javascript',
 				'default'    => '',
 				'full_width' => true,

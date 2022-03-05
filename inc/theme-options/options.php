@@ -188,6 +188,7 @@ $content_layout_options          = wordtrap_content_layout_options();
 $main_layout_options          	 = wordtrap_main_layout_options();
 $main_layouts_with_sidebar       = wordtrap_main_layouts_with_sidebar();
 $main_layouts_with_both_sidebars = wordtrap_main_layouts_with_both_sidebars();
+$font_style_options          	   = wordtrap_font_style_options();
 
 /*
  * ---> END VARIABLES
@@ -198,9 +199,9 @@ Redux::set_section(
 	$opt_name,
 	array(
 		'title'            => esc_html__( 'Global', 'wordtrap' ),
-		'id'               => 'wordtrap-basic',
+		'id'               => 'wordtrap-global',
 		'customizer_width' => '400px',
-		'icon'             => 'el el-home',
+		'icon'             => 'el el-adjust-alt',
 	)
 );
 
@@ -209,4 +210,19 @@ require_once $dir . 'sections/global/logo.php';
 require_once $dir . 'sections/global/icons.php';
 require_once $dir . 'sections/global/css.php';
 require_once $dir . 'sections/global/javascript.php';
+// -> END Global Fields
 
+// -> START Skin Fields
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Skin', 'wordtrap' ),
+		'id'               => 'wordtrap-skin',
+		'customizer_width' => '400px',
+		'icon'             => 'el el-broom',
+	)
+);
+require_once $dir . 'sections/skin/colors.php';
+require_once $dir . 'sections/skin/layout.php';
+require_once $dir . 'sections/skin/typography.php';
+// -> END Skin Fields

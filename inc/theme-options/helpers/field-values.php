@@ -14,15 +14,15 @@ if ( ! function_exists( 'wordtrap_site_layout_options' ) ) {
   function wordtrap_site_layout_options() {
     return array(
 			'wide'  => array(
-				'title' => 'Wide',
+				'title' => esc_html__( 'Wide', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/site-layouts/wide.svg',
 			),
 			'full'  => array(
-				'title' => 'Full',
+				'title' => esc_html__( 'Full', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/site-layouts/full.svg',
 			),
 			'boxed' => array(
-				'title' => 'Boxed',
+				'title' => esc_html__( 'Boxed', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/site-layouts/boxed.svg',
 			)
 		);
@@ -44,15 +44,15 @@ if ( ! function_exists( 'wordtrap_layout_options' ) ) {
   function wordtrap_layout_options() {
     return array(
 			'wide'  => array(
-				'title' => 'Wide',
+				'title' => esc_html__( 'Wide', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/wide.svg',
 			),
 			'full'  => array(
-				'title' => 'Full',
+				'title' => esc_html__( 'Full', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/full.svg',
 			),
 			'boxed' => array(
-				'title' => 'Boxed',
+				'title' => esc_html__( 'Boxed', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/boxed.svg',
 			)
 		);
@@ -64,11 +64,11 @@ if ( ! function_exists( 'wordtrap_banner_layout_options' ) ) {
   function wordtrap_banner_layout_options() {
     return array(
 			'wide'  => array(
-				'title' => 'Wide',
+				'title' => esc_html__( 'Wide', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/wide.svg',
 			),
 			'boxed' => array(
-				'title' => 'Boxed',
+				'title' => esc_html__( 'Boxed', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/boxed.svg',
 			)
 		);
@@ -80,35 +80,35 @@ if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
   function wordtrap_main_layout_options() {
     return array(
 			'wide'  => array(
-				'title' => 'Wide Width',
+				'title' => esc_html__( 'Wide Width', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide.svg',
 			),
 			'wide-left-sidebar'  => array(
-				'title' => 'Wide Left Sidebar',
+				'title' => esc_html__( 'Wide Left Sidebar', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide-left-sidebar.svg',
 			),
 			'wide-right-sidebar' => array(
-				'title' => 'Wide Right Sidebar',
+				'title' => esc_html__( 'Wide Right Sidebar', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide-right-sidebar.svg',
 			),
 			'wide-both-sidebars' => array(
-				'title' => 'Wide Both Sidebars',
+				'title' => esc_html__( 'Wide Both Sidebars', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide-both-sidebars.svg',
 			),
 			'full'  => array(
-				'title' => 'Full Width',
+				'title' => esc_html__( 'Full Width', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/full.svg',
 			),
 			'left-sidebar'  => array(
-				'title' => 'Left Sidebar',
+				'title' => esc_html__( 'Left Sidebar', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/left-sidebar.svg',
 			),
 			'right-sidebar' => array(
-				'title' => 'Right Sidebar',
+				'title' => esc_html__( 'Right Sidebar', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/right-sidebar.svg',
 			),
 			'both-sidebars' => array(
-				'title' => 'Both Sidebars',
+				'title' => esc_html__( 'Both Sidebars', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/both-sidebars.svg',
 			),
 		);
@@ -144,13 +144,24 @@ if ( ! function_exists( 'wordtrap_content_layout_options' ) ) {
   function wordtrap_content_layout_options() {
     return array(
 			'wide'  => array(
-				'title' => 'Wide',
+				'title' => esc_html__( 'Wide', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/wide.svg',
 			),
 			'boxed' => array(
-				'title' => 'Boxed',
+				'title' => esc_html__( 'Boxed', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/boxed.svg',
 			)
+		);
+  }
+}
+
+// Font style options
+if ( ! function_exists( 'wordtrap_font_style_options' ) ) {
+  function wordtrap_font_style_options() {
+    return array(
+			'normal'  => esc_html__( 'Normal', 'wordtrap' ),
+			'italic'  => esc_html__( 'Italic', 'wordtrap' ),
+			'oblique'  => esc_html__( 'Oblique', 'wordtrap' ),
 		);
   }
 }

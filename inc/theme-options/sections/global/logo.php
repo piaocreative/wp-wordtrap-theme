@@ -12,14 +12,14 @@ Redux::set_section(
 	$opt_name,
 	array(
 		'title'        => esc_html__( 'Logo', 'wordtrap' ),
-		'id'           => 'wordtrap-logo',
+		'id'           => 'wordtrap-global-logo',
 		'subsection'   => true,
 		'fields'       => array(
       array(
         'id'       => 'logo',
         'type'     => 'media',
         'readonly' => false,
-        'title'    => __( 'Logo', 'wordtrap' ),
+        'title'    => esc_html__( 'Logo', 'wordtrap' ),
         'default'  => array(
           'url'    => WORDTRAP_URI . '/images/logo/logo.png',
         ),
@@ -28,53 +28,73 @@ Redux::set_section(
         'id'       => 'logo-retina',
         'type'     => 'media',
         'readonly' => false,
-        'title'    => __( 'Retina Logo', 'wordtrap' ),
+        'title'    => esc_html__( 'Retina Logo', 'wordtrap' ),
       ),
       array(
-        'id'       => 'logo-width',
+				'id'       => 'logo-widths-start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Logo Max Width based on Breakpoints', 'wordtrap' ),
+				'indent'   => true,
+			),
+      array(
+        'id'       => 'logo-width-xxl',
         'type'     => 'dimensions',
-        'title'    => __( 'Logo Max Width', 'wordtrap' ),
+        'title'    => esc_html__( 'Extra Extra Large', 'wordtrap' ),
+        'height'   => false,
+        'default'  => array(
+					'width'  => 260
+				),
+      ),
+      array(
+        'id'       => 'logo-width-xl',
+        'type'     => 'dimensions',
+        'title'    => esc_html__( 'Extra Large', 'wordtrap' ),
+        'height'   => false,
+        'default'  => array(
+					'width'  => 230
+				),
+      ),
+      array(
+        'id'       => 'logo-width-lg',
+        'type'     => 'dimensions',
+        'title'    => esc_html__( 'Large', 'wordtrap' ),
+        'height'   => false,
+        'default'  => array(
+					'width'  => 200
+				),
+      ),
+      array(
+        'id'       => 'logo-width-md',
+        'type'     => 'dimensions',
+        'title'    => esc_html__( 'Medium', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
 					'width'  => 170
 				),
       ),
       array(
-        'id'       => 'logo-width-wide',
+        'id'       => 'logo-width-sm',
         'type'     => 'dimensions',
-        'title'    => __( 'Logo Max Width on Wide Screen', 'wordtrap' ),
+        'title'    => esc_html__( 'Small', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 250
+					'width'  => 140
 				),
       ),
       array(
-        'id'       => 'logo-width-tablet',
+        'id'       => 'logo-width-xs',
         'type'     => 'dimensions',
-        'title'    => __( 'Logo Max Width on Tablet', 'wordtrap' ),
+        'title'    => esc_html__( 'X-Small', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
 					'width'  => 110
 				),
       ),
       array(
-        'id'       => 'logo-width-mobile',
-        'type'     => 'dimensions',
-        'title'    => __( 'Logo Max Width on Mobile', 'wordtrap' ),
-        'height'   => false,
-        'default'  => array(
-					'width'  => 110
-				),
-      ),
-      array(
-        'id'       => 'logo-width-sticky',
-        'type'     => 'dimensions',
-        'title'    => __( 'Logo Max Width in Sticky Header', 'wordtrap' ),
-        'height'   => false,
-        'default'  => array(
-					'width'  => 110
-				),
-      ),
+				'id'       => 'logo-widths-end',
+				'type'     => 'section',
+				'indent'   => false,
+			),
     )
   )
 );
