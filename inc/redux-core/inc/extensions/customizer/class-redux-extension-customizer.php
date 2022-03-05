@@ -180,6 +180,10 @@ if ( ! class_exists( 'Redux_Extension_Customizer', false ) ) {
 					// New method to avoid input_var nonsense.  Thanks @harunbasic.
 					$values = Redux_Functions_Ex::parse_str( $post_data );
 
+					$all_options = get_option( sanitize_text_field( wp_unslash( $_POST['opt_name'] ) ) );
+
+					$values = wp_parse_args( $values, $all_options );
+
 					$redux->options_class->set( $redux->options_class->validate_options( $values ) );
 
 					$redux->enqueue_class->get_warnings_and_errors_array();
@@ -400,7 +404,7 @@ if ( ! class_exists( 'Redux_Extension_Customizer', false ) ) {
 			$panel = '';
 
 			$this->parent->args['options_api'] = false;
-			$this->parent->_register_settings();
+			$this->parent->options_class->register();
 
 			$parent_section_id = null;
 			$new_parent        = true;
@@ -674,6 +678,7 @@ if ( ! class_exists( 'Redux_Extension_Customizer', false ) ) {
 
 				$compiler = false;
 				$changed  = false;
+				$changed_values = array();
 
 				foreach ( $options as $key => $value ) {
 					if ( strpos( $key, $this->parent->args['opt_name'] ) !== false ) {
@@ -682,27 +687,28 @@ if ( ! class_exists( 'Redux_Extension_Customizer', false ) ) {
 						if ( ! isset( $this->orig_options[ $key ] ) || $value !== $this->orig_options[ $key ] || ( isset( $this->orig_options[ $key ] ) && ! empty( $this->orig_options[ $key ] ) && empty( $value ) ) ) {
 							$this->parent->options[ $key ] = $value;
 							$changed                       = true;
+							$changed_values[$key]          = $value;
 
 							if ( isset( $this->parent->compiler_fields[ $key ] ) ) {
-								$compiler = true;
+								$compiler = true;								
 							}
 						}
 					}
 				}
 
 				if ( $changed ) {
-					$this->parent->set_options( $this->parent->options );
-					if ( $compiler ) {
+					$this->parent->options_class->set( $this->parent->options );
+					//if ( $compiler ) {
 						// Have to set this to stop the output of the CSS and typography stuff.
 						$this->parent->no_output = true;
 						$this->parent->output_class->enqueue();
 
 						// phpcs:ignore WordPress.NamingConventions.ValidHookName
-						do_action( "redux/options/{$this->parent->args['opt_name']}/compiler", $this->parent->options, $this->parent->compilerCSS );
+						do_action( "redux/options/{$this->parent->args['opt_name']}/compiler", $this->parent->options, $this->parent->compilerCSS, $changed_values );
 
 						// phpcs:ignore WordPress.NamingConventions.ValidHookName
 						do_action( "redux/options/{$this->parent->args['opt_name']}/compiler/advanced", $this->parent );
-					}
+					//}
 				}
 			}
 		}
@@ -803,13 +809,13 @@ if ( ! class_exists( 'Redux_Extension_Customizer', false ) ) {
 		/**
 		 * Validate the options before insertion
 		 *
-		 * @param array $value The options array.
+		 * @param array|string $value The options array.
 		 *
-		 * @return array $value
+		 * @return array|string $value
 		 * @since       3.0.0
 		 * @access      public
 		 */
-		public function field_validation( array $value ): array {
+		public function field_validation( $value ) {
 
 			return $value;
 		}

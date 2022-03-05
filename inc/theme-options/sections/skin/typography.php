@@ -408,7 +408,7 @@ Redux::set_section(
 				'id'            => 'headings-font-style',
 				'type'          => 'button_set',
 				'title'         => esc_html__( 'Font Style', 'wordtrap' ),
-				'options'       => $font_style_options
+				'options'       => $font_style_options,
 			),
 			array(
 				'id'            => 'headings-font-weight',
@@ -445,7 +445,6 @@ Redux::set_section(
 				'title'         => esc_html__( 'Color', 'wordtrap' ),
 				'validate'      => 'color',
 				'transparent'   => false,
-				'compiler'      => true,
 			),
       array(
 				'id'       => 'headings-end',
@@ -461,7 +460,7 @@ Redux::set_section(
 			array(
 				'id'            => 'link',
 				'type'          => 'typography',
-				'title'         => esc_html__( 'Link', 'wordtrap' ),
+				'title'         => esc_html__( 'Regular', 'wordtrap' ),
 				'google'        => false,
 				'font-weight'   => false,
         'font-style'    => false,
@@ -481,7 +480,7 @@ Redux::set_section(
 			array(
 				'id'            => 'link-hover',
 				'type'          => 'typography',
-				'title'         => esc_html__( 'Link Hover', 'wordtrap' ),
+				'title'         => esc_html__( 'Hover', 'wordtrap' ),
 				'google'        => false,
 				'font-weight'   => false,
         'font-style'    => false,

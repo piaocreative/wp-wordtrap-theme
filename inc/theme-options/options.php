@@ -20,6 +20,8 @@ $opt_name = WORDTRAP_OPTIONS;
 // Include helpers
 require_once $dir . 'helpers/enqueue.php';
 require_once $dir . 'helpers/field-values.php';
+require_once $dir . 'helpers/notices.php';
+require_once $dir . 'helpers/compiler.php';
 
 /*
  * ---> BEGIN ARGUMENTS
