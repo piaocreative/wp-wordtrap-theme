@@ -6,6 +6,9 @@
  * @since wordtrap 1.0.0
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 // Get theme details
 $theme = wp_get_theme();
 if ( is_child_theme() ) {

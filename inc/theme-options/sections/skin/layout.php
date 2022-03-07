@@ -18,7 +18,7 @@ Redux::set_section(
       array(
 				'id'       => 'grid-breakpoints-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Breakpoints', 'wordtrap' ),
+				'title'    => esc_html__( 'Grid Breakpoints', 'wordtrap' ),
 				'indent'   => true,
 			),
       array(
@@ -74,7 +74,7 @@ Redux::set_section(
       array(
 				'id'       => 'container-max-widths-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Container Max Width', 'wordtrap' ),
+				'title'    => esc_html__( 'Container Max Widths', 'wordtrap' ),
 				'indent'   => true,
 			),
       array(
@@ -136,7 +136,7 @@ Redux::set_section(
       array(
 				'id'       => 'grid-columns',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Grid Columns', 'wordtrap' ),
+				'title'    => esc_html__( 'Columns', 'wordtrap' ),
 				'validate' => array( 'numeric', 'not_empty' ),
 				'default'  => '12',
 			),
@@ -144,7 +144,7 @@ Redux::set_section(
         'id'       => 'grid-gutter-width',
         'type'     => 'dimensions',
         'units'    => 'rem',
-        'title'    => esc_html__( 'Grid Gutter Width', 'wordtrap' ),
+        'title'    => esc_html__( 'Gutter Width', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
 					'width'  => '1.5'

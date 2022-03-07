@@ -81,3 +81,8 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 .redux-container .redux-main pre {
   margin-top: 0;
 }
+
+#customize-controls .customize-info.is-sticky, 
+#customize-controls .customize-section-title.is-sticky {
+  z-index: 1000000;
+}

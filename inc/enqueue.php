@@ -20,11 +20,12 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
 		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		// Grab asset urls.
-		$theme_styles  = "/css/theme{$suffix}.css";
+		$upload_dir    = wp_upload_dir();
+		$theme_styles  = "/wordtrap_styles/theme{$suffix}.css";
 		$theme_scripts = "/js/theme{$suffix}.js";
 		
-		$css_version = $theme_version . '.' . filemtime( get_template_directory() . $theme_styles );
-		wp_enqueue_style( 'wordtrap-styles', get_template_directory_uri() . $theme_styles, array(), $css_version );
+		$css_version = $theme_version . '.' . filemtime( $upload_dir['basedir'] . $theme_styles );
+		wp_enqueue_style( 'wordtrap-styles', $upload_dir['baseurl'] . $theme_styles, array(), $css_version );
 
 		wp_enqueue_script( 'jquery' );
 

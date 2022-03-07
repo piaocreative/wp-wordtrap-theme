@@ -33,7 +33,7 @@ Redux::set_section(
       array(
 				'id'       => 'logo-widths-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Logo Max Width based on Breakpoints', 'wordtrap' ),
+				'title'    => esc_html__( 'Logo Max Widths based on Breakpoints', 'wordtrap' ),
 				'indent'   => true,
 			),
       array(

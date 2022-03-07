@@ -18,7 +18,7 @@ Redux::set_section(
       array(
 				'id'       => 'font-family-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Font Family', 'wordtrap' ),
+				'title'    => esc_html__( 'Font Families', 'wordtrap' ),
 				'indent'   => true,
 			),
       array(
@@ -63,7 +63,7 @@ Redux::set_section(
       array(
 				'id'       => 'font-size-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Font Size', 'wordtrap' ),
+				'title'    => esc_html__( 'Font Sizes', 'wordtrap' ),
 				'indent'   => true,
 			),
       array(
@@ -245,7 +245,7 @@ Redux::set_section(
       array(
 				'id'       => 'font-weight-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Font Weight', 'wordtrap' ),
+				'title'    => esc_html__( 'Font Weights', 'wordtrap' ),
 				'indent'   => true,
 			),
       array(
@@ -306,7 +306,7 @@ Redux::set_section(
       array(
 				'id'       => 'line-height-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Line Height', 'wordtrap' ),
+				'title'    => esc_html__( 'Line Heights', 'wordtrap' ),
 				'indent'   => true,
 			),
       array(
@@ -454,7 +454,7 @@ Redux::set_section(
 			array(
 				'id'       => 'link-start',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Link', 'wordtrap' ),
+				'title'    => esc_html__( 'Links', 'wordtrap' ),
 				'indent'   => true,
 			),
 			array(
