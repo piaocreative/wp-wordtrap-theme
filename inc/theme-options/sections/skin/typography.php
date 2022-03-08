@@ -36,7 +36,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-family' => 'system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'font-family-code',
@@ -53,7 +52,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-family' => 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'       => 'font-family-end',
@@ -83,7 +81,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '1',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'font-size-sm',
@@ -102,7 +99,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '0.875',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'font-size-lg',
@@ -121,7 +117,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '1.25',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'h1-font-size',
@@ -140,7 +135,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '2.5',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'h2-font-size',
@@ -159,7 +153,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '2',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'h3-font-size',
@@ -178,7 +171,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '1.75',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'h4-font-size',
@@ -197,7 +189,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '1.5',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'h5-font-size',
@@ -216,7 +207,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '1.25',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'h6-font-size',
@@ -235,7 +225,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-size'   => '1',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'       => 'font-size-end',
@@ -326,7 +315,6 @@ Redux::set_section(
 				'default'       => array(
 					'line-height' => '1.5',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'line-height-sm',
@@ -345,7 +333,6 @@ Redux::set_section(
 				'default'       => array(
 					'line-height' => '1.25',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'            => 'line-height-lg',
@@ -364,7 +351,6 @@ Redux::set_section(
 				'default'       => array(
 					'line-height' => '2',
 				),
-				'output'        => array( 'p' ),
 			),
       array(
 				'id'       => 'line-height-end',
@@ -402,7 +388,6 @@ Redux::set_section(
 				'default'       => array(
 					'font-family' => '',
 				),
-				'output'        => array( 'p' ),
 			),
 			array(
 				'id'            => 'headings-font-style',
@@ -437,7 +422,6 @@ Redux::set_section(
 				'default'       => array(
 					'line-height' => '1.2',
 				),
-				'output'        => array( 'p' ),
 			),
 			array(
 				'id'            => 'headings-color',
@@ -475,7 +459,6 @@ Redux::set_section(
 				'default'       => array(
 					'text-decoration' => 'underline',
 				),
-				'output'        => array( 'p' ),
 			),
 			array(
 				'id'            => 'link-hover',
@@ -492,7 +475,6 @@ Redux::set_section(
 				'color'         => true,
 				'preview'       => true,
 				'font-size'     => false,
-				'output'        => array( 'p' ),
 			),
 			array(
 				'id'       => 'link-end',

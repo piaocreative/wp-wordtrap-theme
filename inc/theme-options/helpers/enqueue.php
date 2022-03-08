@@ -20,5 +20,4 @@ if ( ! function_exists( 'wordtrap_theme_options_scripts' ) ) {
     }
   }
 }
-
 add_action( 'admin_enqueue_scripts', 'wordtrap_theme_options_scripts', 1000 );

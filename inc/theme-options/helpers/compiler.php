@@ -1,6 +1,6 @@
 <?php
 /**
- * Add actions related to theme options
+ * Compile theme styles
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -57,3 +57,11 @@ if ( ! function_exists( 'wordtrap_compile_after_compile_options' ) ) {
   }
 }
 add_action( 'redux/options/' . WORDTRAP_OPTIONS . '/compiler', 'wordtrap_compile_after_compile_options', 10, 3 );
+
+// Enqueue customizer theme styles
+if ( ! function_exists( 'wordtrap_customizer_theme_styles' ) ) {
+  function wordtrap_customizer_theme_styles() {
+    do_action( 'wordtrap_compile_styles', true );
+  }
+}
+add_action( 'redux/customizer/live_preview', 'wordtrap_customizer_theme_styles' );
