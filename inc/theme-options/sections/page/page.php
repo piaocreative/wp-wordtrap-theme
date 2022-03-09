@@ -14,7 +14,7 @@ Redux::set_section(
 		'title'            => esc_html__( 'Page', 'wordtrap' ),
 		'id'               => 'wordtrap-page',
 		'customizer_width' => '400px',
-		'icon'             => 'el el-file',
+		'icon'             => 'dashicons-before dashicons-admin-page',
 		'fields'           => array(
       array(
 				'id'            => 'page-comment',
@@ -25,24 +25,12 @@ Redux::set_section(
         'off'           => esc_html__( 'Hide', 'wordtrap' ),
 			),
       array(
-				'id'            => 'page-share',
+				'id'            => 'page-shares',
 				'type'          => 'switch',
         'title'         => esc_html__( 'Social Shares', 'wordtrap' ),
-        'default'       => false,
+        'default'       => true,
         'on'            => esc_html__( 'Show', 'wordtrap' ),
         'off'           => esc_html__( 'Hide', 'wordtrap' ),
-			),
-      array(
-				'id'            => 'page-share-position',
-				'type'          => 'button_set',
-				'title'         => esc_html__( 'Social Shares Position', 'wordtrap' ),
-        'required'      => array( 'page-share', 'equals', true ),
-				'options'       => array(
-          'left'        => esc_html__( 'Left', 'wordtrap' ),
-          'center'      => esc_html__( 'Center', 'wordtrap' ),
-          'right'       => esc_html__( 'Right', 'wordtrap' )
-        ),
-        'default'       => 'center',
 			),
     )
   )

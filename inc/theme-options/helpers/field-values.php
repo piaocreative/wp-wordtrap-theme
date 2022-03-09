@@ -165,3 +165,119 @@ if ( ! function_exists( 'wordtrap_font_style_options' ) ) {
 		);
   }
 }
+
+// Post archives layout options
+if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
+  function wordtrap_posts_layout_options() {
+    return array(
+			'full'  => array(
+				'title' => esc_html__( 'Full', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-full.svg',
+			),
+			'large'  => array(
+				'title' => esc_html__( 'Large', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-large.svg',
+			),
+			'large-alt'  => array(
+				'title' => esc_html__( 'Large Alt', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-large-alt.svg',
+			),
+			'medium'  => array(
+				'title' => esc_html__( 'Medium', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-medium.svg',
+			),
+			'medium-alt'  => array(
+				'title' => esc_html__( 'Medium Alt', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-medium-alt.svg',
+			),
+			'grid'  => array(
+				'title' => esc_html__( 'Grid', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-grid.svg',
+			),
+			'masonry'  => array(
+				'title' => esc_html__( 'Masonry', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-masonry.svg',
+			),
+			'timeline'  => array(
+				'title' => esc_html__( 'Timeline', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-timeline.svg',
+			),
+			'woocommerce'  => array(
+				'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-woocommerce.svg',
+			),
+			'modern'  => array(
+				'title' => esc_html__( 'Modern', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-modern.svg',
+			),
+		);
+  }
+}
+
+// Post singular layout options
+if ( ! function_exists( 'wordtrap_post_layout_options' ) ) {
+  function wordtrap_post_layout_options() {
+    return array(
+			'full'  => array(
+				'title' => esc_html__( 'Full', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-full.svg',
+			),
+			'full-alt'  => array(
+				'title' => esc_html__( 'Full Alt', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-full-alt.svg',
+			),
+			'large'  => array(
+				'title' => esc_html__( 'Large', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-large.svg',
+			),
+			'large-alt'  => array(
+				'title' => esc_html__( 'Large Alt', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-large-alt.svg',
+			),
+			'medium'  => array(
+				'title' => esc_html__( 'Medium', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-medium.svg',
+			),
+			'woocommerce'  => array(
+				'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-woocommerce.svg',
+			),
+			'modern'  => array(
+				'title' => esc_html__( 'Modern', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-modern.svg',
+			),
+		);
+  }
+}
+
+// Related post view options
+if ( ! function_exists( 'wordtrap_post_related_view_options' ) ) {
+  function wordtrap_post_related_view_options() {
+    return array(
+			'1'  => array(
+				'title' => esc_html__( 'Read More Link', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-1.svg',
+			),
+			'2'  => array(
+				'title' => esc_html__( 'Post Meta', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-2.svg',
+			),
+			'3'  => array(
+				'title' => esc_html__( 'Read More Button', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-3.svg',
+			),
+			'4'  => array(
+				'title' => esc_html__( 'Side Image', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-4.svg',
+			),
+			'5'  => array(
+				'title' => esc_html__( 'Categories', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-5.svg',
+			),
+			'6'  => array(
+				'title' => esc_html__( 'Simple', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-6.svg',
+			),			
+		);
+  }
+}

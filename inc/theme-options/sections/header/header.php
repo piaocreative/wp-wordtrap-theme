@@ -14,7 +14,7 @@ Redux::set_section(
 		'title'            => esc_html__( 'Header', 'wordtrap' ),
 		'id'               => 'wordtrap-header',
 		'customizer_width' => '400px',
-		'icon'             => 'el el-website',
+		'icon'             => 'dashicons-before dashicons-align-full-width',
 		'fields'           => array(
       array(
 				'id'            => 'header-position',

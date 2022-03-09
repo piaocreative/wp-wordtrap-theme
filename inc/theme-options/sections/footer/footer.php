@@ -14,7 +14,7 @@ Redux::set_section(
 		'title'            => esc_html__( 'Footer', 'wordtrap' ),
 		'id'               => 'wordtrap-footer',
 		'customizer_width' => '400px',
-		'icon'             => 'el el-website el-rotate-180',
+		'icon'             => 'dashicons-before dashicons-align-full-width el-rotate-180',
 		'fields'           => array(
       array(
         'id'           => 'footer-reveal',

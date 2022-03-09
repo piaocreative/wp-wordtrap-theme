@@ -191,6 +191,9 @@ $main_layout_options          	 = wordtrap_main_layout_options();
 $main_layouts_with_sidebar       = wordtrap_main_layouts_with_sidebar();
 $main_layouts_with_both_sidebars = wordtrap_main_layouts_with_both_sidebars();
 $font_style_options          	   = wordtrap_font_style_options();
+$posts_layout_options            = wordtrap_posts_layout_options();
+$post_layout_options             = wordtrap_post_layout_options();
+$post_related_view_options       = wordtrap_post_related_view_options();
 
 /*
  * ---> END VARIABLES
@@ -203,7 +206,7 @@ Redux::set_section(
 		'title'            => esc_html__( 'Global', 'wordtrap' ),
 		'id'               => 'wordtrap-global',
 		'customizer_width' => '400px',
-		'icon'             => 'el el-adjust-alt',
+		'icon'             => 'dashicons-before dashicons-dashboard',
 	)
 );
 
@@ -220,7 +223,7 @@ Redux::set_section(
 		'title'            => esc_html__( 'Skin', 'wordtrap' ),
 		'id'               => 'wordtrap-skin',
 		'customizer_width' => '400px',
-		'icon'             => 'el el-broom',
+		'icon'             => 'dashicons-before dashicons-admin-appearance',
 	)
 );
 require_once $dir . 'sections/skin/colors.php';
@@ -235,3 +238,18 @@ require_once $dir . 'sections/footer/footer.php';
 
 // -> START Page Fields
 require_once $dir . 'sections/page/page.php';
+
+// -> START Post Fields
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Post', 'wordtrap' ),
+		'id'               => 'wordtrap-post',
+		'customizer_width' => '400px',
+		'icon'             => 'dashicons-before dashicons-admin-post',
+	)
+);
+require_once $dir . 'sections/post/general.php';
+require_once $dir . 'sections/post/archives.php';
+require_once $dir . 'sections/post/singular.php';
+require_once $dir . 'sections/post/related.php';
