@@ -19,10 +19,10 @@ Redux::set_section(
       array(
         'id'           => 'footer-reveal',
         'type'         => 'switch',
-        'title'        => esc_html__( 'Show Reveal Effect', 'wordtrap' ),
+        'title'        => esc_html__( 'Reveal Effect', 'wordtrap' ),
         'default'      => false,
-        'on'           => esc_html__( 'Yes', 'wordtrap' ),
-        'off'          => esc_html__( 'No', 'wordtrap' ),
+        'on'           => esc_html__( 'Show', 'wordtrap' ),
+        'off'          => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
         'id'           => 'footer-ribbon-text',
