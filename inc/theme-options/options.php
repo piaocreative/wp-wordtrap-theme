@@ -212,7 +212,6 @@ require_once $dir . 'sections/global/logo.php';
 require_once $dir . 'sections/global/icons.php';
 require_once $dir . 'sections/global/css.php';
 require_once $dir . 'sections/global/javascript.php';
-// -> END Global Fields
 
 // -> START Skin Fields
 Redux::set_section(
@@ -227,4 +226,12 @@ Redux::set_section(
 require_once $dir . 'sections/skin/colors.php';
 require_once $dir . 'sections/skin/layout.php';
 require_once $dir . 'sections/skin/typography.php';
-// -> END Skin Fields
+
+// -> START Header Fields
+require_once $dir . 'sections/header/header.php';
+
+// -> START Footer Fields
+require_once $dir . 'sections/footer/footer.php';
+
+// -> START Page Fields
+require_once $dir . 'sections/page/page.php';

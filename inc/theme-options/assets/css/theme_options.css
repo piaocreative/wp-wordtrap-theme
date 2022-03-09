@@ -86,3 +86,14 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 #customize-controls .customize-section-title.is-sticky {
   z-index: 1000000;
 }
+
+#customize-theme-controls .control-panel-themes > .accordion-section-title, 
+#customize-theme-controls .control-panel-themes > .accordion-section-title:hover {
+  margin-bottom: 0;
+}
+
+.wp-customizer .redux-container .redux-group-tab h3 {
+  border: none;
+  margin-top: 10px !important;
+  margin-bottom: 0;
+}
