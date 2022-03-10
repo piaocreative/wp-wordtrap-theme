@@ -97,3 +97,10 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
   margin-top: 10px !important;
   margin-bottom: 0;
 }
+
+.redux-container .ui-button, 
+.control-section-redux .ui-button, 
+.control-panel-redux .ui-button, 
+.redux-metabox .ui-button {
+  text-align: center;
+}

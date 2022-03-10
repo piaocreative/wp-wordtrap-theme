@@ -250,6 +250,17 @@ if ( ! function_exists( 'wordtrap_post_layout_options' ) ) {
   }
 }
 
+// Pagination options
+if ( ! function_exists( 'wordtrap_pagination_options' ) ) {
+  function wordtrap_pagination_options() {
+    return array(
+			''         => esc_html__( 'Normal', 'wordtrap' ),
+			'ajax'     => esc_html__( 'Ajax Loading', 'wordtrap' ),
+			'infinite' => esc_html__( 'Infinite Scroll', 'wordtrap' ),
+		);
+  }
+}
+
 // Related post view options
 if ( ! function_exists( 'wordtrap_post_related_view_options' ) ) {
   function wordtrap_post_related_view_options() {
@@ -275,9 +286,63 @@ if ( ! function_exists( 'wordtrap_post_related_view_options' ) ) {
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-5.svg',
 			),
 			'6'  => array(
-				'title' => esc_html__( 'Simple', 'wordtrap' ),
+				'title' => esc_html__( 'Read More Link', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/related-6.svg',
 			),			
+		);
+  }
+}
+
+// Categories orderby options
+if ( ! function_exists( 'wordtrap_cats_orderby_options' ) ) {
+  function wordtrap_cats_orderby_options() {
+    return array(
+			'ID'      => esc_html__( 'ID', 'wordtrap' ),
+			'name'    => esc_html__( 'Name', 'wordtrap' ),
+			'slug'    => esc_html__( 'Slug Name', 'wordtrap' ),
+			'count'   => esc_html__( 'Count', 'wordtrap' ),
+		);
+  }
+}
+
+// Categories order options
+if ( ! function_exists( 'wordtrap_cats_order_options' ) ) {
+  function wordtrap_cats_order_options() {
+    return array(
+			'asc'     => esc_html__( 'Asc', 'wordtrap' ),
+			'desc'    => esc_html__( 'Desc', 'wordtrap' ),
+		);
+  }
+}
+
+// Categories filter position options
+if ( ! function_exists( 'wordtrap_cats_filter_position_options' ) ) {
+  function wordtrap_cats_filter_position_options() {
+    return array(
+			'content'     => esc_html__( 'Content', 'wordtrap' ),
+			'breadcrumbs' => esc_html__( 'Breadcrumbs', 'wordtrap' ),
+			'sidebar'     => esc_html__( 'Sidebar', 'wordtrap' ),
+			'hide'        => esc_html__( 'Hide', 'wordtrap' ),
+		);
+  }
+}
+
+// Members view options
+if ( ! function_exists( 'wordtrap_members_view_options' ) ) {
+  function wordtrap_members_view_options() {
+    return array(
+			'1'  => array(
+				'title' => esc_html__( 'Type 1', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archives-view-1.jpg',
+			),
+			'2'  => array(
+				'title' => esc_html__( 'Type 2', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archives-view-2.jpg',
+			),
+			'3'  => array(
+				'title' => esc_html__( 'Type 3', 'wordtrap' ),
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archives-view-3.jpg',
+			),
 		);
   }
 }

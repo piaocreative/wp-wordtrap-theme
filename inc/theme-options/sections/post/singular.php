@@ -31,6 +31,22 @@ Redux::set_section(
         'default'  => 'right-sidebar',
       ),
       array(
+        'id'       => 'post-sidebar',
+        'type'     => 'select',
+        'title'    => esc_html__( 'Primary Sidebar', 'wordtrap' ),
+        'required' => array( 'post-layout', 'equals', $main_layouts_with_sidebar ),
+        'data'     => 'sidebars',
+        'default'  => 'primary-sidebar',
+      ),
+      array(
+        'id'       => 'post-sidebar2',
+        'type'     => 'select',
+        'title'    => esc_html__( 'Secondary Sidebar', 'wordtrap' ),
+        'required' => array( 'post-layout', 'equals', $main_layouts_with_both_sidebars ),
+        'data'     => 'sidebars',
+        'default'  => 'secondary-sidebar',
+      ),
+      array(
         'id'       => 'post-view',
         'type'     => 'image_select',
         'title'    => esc_html__( 'View Type', 'wordtrap' ),
@@ -115,7 +131,7 @@ Redux::set_section(
         'default'  => 'rand',
       ),
       array(
-        'id'       => 'post-related-cols',
+        'id'       => 'post-related-columns',
         'type'     => 'button_set',
         'required' => array( 'post-related', 'equals', true ),
         'title'    => esc_html__( 'Columns', 'wordtrap' ),
@@ -128,7 +144,7 @@ Redux::set_section(
         'default'  => '3',
       ),
       array(
-        'id'       => 'post-related-carouse',
+        'id'       => 'post-related-carousel',
         'type'     => 'switch',
         'title'    => esc_html__( 'Carousel', 'wordtrap' ),
         'required' => array( 'post-related', 'equals', true ),
