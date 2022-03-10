@@ -115,25 +115,25 @@ if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
   }
 }
 
-// Main Layout values with sidebar
-if ( ! function_exists( 'wordtrap_main_layouts_with_sidebar' ) ) :
-	function wordtrap_main_layouts_with_sidebar() {
+// Main Layout values with left sidebar
+if ( ! function_exists( 'wordtrap_main_layouts_with_left_sidebar' ) ) :
+	function wordtrap_main_layouts_with_left_sidebar() {
 		return array(
 			'wide-left-sidebar',
-			'wide-right-sidebar',
 			'wide-both-sidebars',
 			'left-sidebar',
-			'right-sidebar',
 			'both-sidebars',
 		);
 	}
 endif;
 
-// Main Layout values with both sidebars
-if ( ! function_exists( 'wordtrap_main_layouts_with_both_sidebars' ) ) :
-	function wordtrap_main_layouts_with_both_sidebars() {
+// Main Layout values with right sidebar
+if ( ! function_exists( 'wordtrap_main_layouts_with_right_sidebar' ) ) :
+	function wordtrap_main_layouts_with_right_sidebar() {
 		return array(
+			'wide-right-sidebar',
 			'wide-both-sidebars',
+			'right-sidebar',
 			'both-sidebars',
 		);
 	}
@@ -343,6 +343,28 @@ if ( ! function_exists( 'wordtrap_members_view_options' ) ) {
 				'title' => esc_html__( 'Type 3', 'wordtrap' ),
 				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archives-view-3.jpg',
 			),
+		);
+  }
+}
+
+// Singular orderby options
+if ( ! function_exists( 'wordtrap_singular_orderby_options' ) ) {
+  function wordtrap_singular_orderby_options() {
+    return array(
+			'ID'      => esc_html__( 'ID', 'wordtrap' ),
+			'name'    => esc_html__( 'Name', 'wordtrap' ),
+			'slug'    => esc_html__( 'Slug Name', 'wordtrap' ),
+			'count'   => esc_html__( 'Count', 'wordtrap' ),
+		);
+  }
+}
+
+// Singular order options
+if ( ! function_exists( 'wordtrap_singular_order_options' ) ) {
+  function wordtrap_singular_order_options() {
+    return array(
+			'asc'     => esc_html__( 'Asc', 'wordtrap' ),
+			'desc'    => esc_html__( 'Desc', 'wordtrap' ),
 		);
   }
 }

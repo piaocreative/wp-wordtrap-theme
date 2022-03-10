@@ -16,6 +16,14 @@ Redux::set_section(
 		'subsection'   => true,
 		'fields'       => array(
       array(
+        'id'       => 'member-backto',
+        'type'     => 'switch',
+        'title'    => esc_html__( 'Back to Members', 'wordtrap' ),
+        'default'  => false,
+        'on'       => esc_html__( 'Show', 'wordtrap' ),
+        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+      ),
+      array(
         'id'       => 'member-layout',
         'type'     => 'image_select',
         'title'    => esc_html__( 'Main Layout', 'wordtrap' ),
@@ -23,20 +31,20 @@ Redux::set_section(
         'default'  => 'full',
       ),
       array(
-        'id'       => 'member-sidebar',
+        'id'       => 'member-left-sidebar',
         'type'     => 'select',
-        'title'    => esc_html__( 'Primary Sidebar', 'wordtrap' ),
-        'required' => array( 'member-layout', 'equals', $main_layouts_with_sidebar ),
+        'title'    => esc_html__( 'Left Sidebar', 'wordtrap' ),
+        'required' => array( 'member-layout', 'equals', $main_layouts_with_left_sidebar ),
         'data'     => 'sidebars',
-        'default'  => 'primary-sidebar',
+        'default'  => 'left-sidebar',
       ),
       array(
-        'id'       => 'member-sidebar2',
+        'id'       => 'member-right-sidebar',
         'type'     => 'select',
-        'title'    => esc_html__( 'Secondary Sidebar', 'wordtrap' ),
-        'required' => array( 'member-layout', 'equals', $main_layouts_with_both_sidebars ),
+        'title'    => esc_html__( 'Right Sidebar', 'wordtrap' ),
+        'required' => array( 'member-layout', 'equals', $main_layouts_with_right_sidebar ),
         'data'     => 'sidebars',
-        'default'  => 'secondary-sidebar',
+        'default'  => 'right-sidebar',
       ),
       array(
         'id'       => 'member-socials',

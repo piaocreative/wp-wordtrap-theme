@@ -16,7 +16,7 @@ Redux::set_section(
 		'subsection'   => true,
 		'fields'       => array(
       array(
-        'id'       => 'post-backto-blog',
+        'id'       => 'post-backto',
         'type'     => 'switch',
         'title'    => esc_html__( 'Back to Blog', 'wordtrap' ),
         'default'  => false,
@@ -31,20 +31,20 @@ Redux::set_section(
         'default'  => 'right-sidebar',
       ),
       array(
-        'id'       => 'post-sidebar',
+        'id'       => 'post-left-sidebar',
         'type'     => 'select',
-        'title'    => esc_html__( 'Primary Sidebar', 'wordtrap' ),
-        'required' => array( 'post-layout', 'equals', $main_layouts_with_sidebar ),
+        'title'    => esc_html__( 'Left Sidebar', 'wordtrap' ),
+        'required' => array( 'post-layout', 'equals', $main_layouts_with_left_sidebar ),
         'data'     => 'sidebars',
-        'default'  => 'primary-sidebar',
+        'default'  => 'left-sidebar',
       ),
       array(
-        'id'       => 'post-sidebar2',
+        'id'       => 'post-right-sidebar',
         'type'     => 'select',
-        'title'    => esc_html__( 'Secondary Sidebar', 'wordtrap' ),
-        'required' => array( 'post-layout', 'equals', $main_layouts_with_both_sidebars ),
+        'title'    => esc_html__( 'Right Sidebar', 'wordtrap' ),
+        'required' => array( 'post-layout', 'equals', $main_layouts_with_right_sidebar ),
         'data'     => 'sidebars',
-        'default'  => 'secondary-sidebar',
+        'default'  => 'right-sidebar',
       ),
       array(
         'id'       => 'post-view',

@@ -104,3 +104,9 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 .redux-metabox .ui-button {
   text-align: center;
 }
+
+.wp-customizer .redux-section .accordion-section-title i, 
+.wp-customizer .redux-field .accordion-field-title i, 
+.wp-customizer .redux-panel .accordion-section-title i {
+  display: inline-block;
+}
