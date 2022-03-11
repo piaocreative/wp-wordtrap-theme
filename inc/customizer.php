@@ -70,7 +70,7 @@ if ( ! function_exists( 'wordtrap_theme_customize_register' ) ) {
 		$wp_customize->add_setting(
 			'wordtrap_bootstrap_version',
 			array(
-				'default'           => 'bootstrap4',
+				'default'           => 'bootstrap5',
 				'type'              => 'theme_mod',
 				'sanitize_callback' => 'sanitize_text_field',
 				'capability'        => 'edit_theme_options',

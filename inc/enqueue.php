@@ -21,11 +21,12 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
 		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		// Grab asset urls.
-		$theme_styles  = "/css/theme{$suffix}.css";
-		$theme_scripts = "/js/theme{$suffix}.js";
+		$theme_styles  = "/dist/css/themev5{$suffix}.css";
+		$theme_scripts = "/dist/js/themev5{$suffix}.js";
+
 		if ( 'bootstrap4' === $bootstrap_version ) {
-			$theme_styles  = "/css/theme.bootstrap4{$suffix}.css";
-			$theme_scripts = "/js/theme.bootstrap4{$suffix}.js";
+			$theme_styles  = "/dist/css/theme.v4{$suffix}.css";
+			$theme_scripts = "/dist/js/theme.v4{$suffix}.js";
 		}
 
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . $theme_styles );
