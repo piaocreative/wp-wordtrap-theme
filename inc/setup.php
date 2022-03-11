@@ -99,7 +99,7 @@ if ( ! function_exists( 'wordtrap_setup_theme' ) ) {
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'dist/css/editor.min.css' );
+		add_editor_style( 'css/editor.min.css' );
 
 		// Register our custom colors as options in the editor.
 		$color_palette = wordtrap_generate_color_palette();
@@ -113,13 +113,7 @@ if ( ! function_exists( 'wordtrap_setup_theme' ) ) {
 		 */
 		add_theme_support(
 			'post-formats',
-			array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-			)
+			$post_formats
 		);
 
 		// Set up the WordPress core custom background feature.

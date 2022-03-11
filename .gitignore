@@ -46,3 +46,9 @@
 bower_components
 node_modules
 /vendor/
+
+# Redux Sample Options
+/inc/sample/
+
+# Package Losk
+package-lock.json

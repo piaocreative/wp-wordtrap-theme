@@ -10,10 +10,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import multi from '@rollup/plugin-multi-entry';
 
 const year = new Date().getFullYear();
+const pluginFilename = '';
 
 export default {
   input: [
-    path.resolve(__dirname, '../js/bootstrap5.js'), 
+    path.resolve(__dirname, '../js/bootstrap.js'), 
     path.resolve(__dirname, '../js/skip-link-focus-fix.js'),
     path.resolve(__dirname, '../js/theme.js')
   ],
@@ -23,7 +24,7 @@ export default {
       * Copyright 2022-${year} ${pkg.author}
       * Licensed under GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
     */`,
-    fifile: path.resolve(__dirname, `../../js/theme.js`),
+    file: path.resolve(__dirname, `../../js/theme.js`),
     format: 'umd',
     name: 'wordtrap',
     globals: {

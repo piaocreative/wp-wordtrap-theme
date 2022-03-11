@@ -2,26 +2,20 @@
 // Variables
 @import "theme/variables";
 
-
-// Mixins
-@import "theme/colors";
-
-
 // Bootstrap
-@import "theme/vendor/bootstrap5/bootstrap";
+@import "theme/vendor/bootstrap/bootstrap";
 
+// Colors
+@import "theme/colors";
 
 // Contact Form 7
 @import "theme/contact-form7";    
 
-
 // WooCommerce styleheet
 @import "theme/woocommerce";
 
-
 // Font Awesome
 @import "theme/vendor/fontawesome/font-awesome";
-
 
 // Theme main stylesheet
 

@@ -368,3 +368,4 @@ if ( ! function_exists( 'wordtrap_hsl_hex' ) ) {
 		return "rgb($r, $g, $b)";
 	}
 }
+

@@ -17,20 +17,15 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
 		// Get the theme data.
 		$the_theme         = wp_get_theme();
 		$theme_version     = $the_theme->get( 'Version' );
-		$bootstrap_version = get_theme_mod( 'wordtrap_bootstrap_version', 'bootstrap4' );
 		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		// Grab asset urls.
-		$theme_styles  = "/dist/css/themev5{$suffix}.css";
-		$theme_scripts = "/dist/js/themev5{$suffix}.js";
-
-		if ( 'bootstrap4' === $bootstrap_version ) {
-			$theme_styles  = "/dist/css/theme.v4{$suffix}.css";
-			$theme_scripts = "/dist/js/theme.v4{$suffix}.js";
-		}
-
-		$css_version = $theme_version . '.' . filemtime( get_template_directory() . $theme_styles );
-		wp_enqueue_style( 'wordtrap-styles', get_template_directory_uri() . $theme_styles, array(), $css_version );
+		$upload_dir    = wp_upload_dir();
+		$theme_styles  = "/wordtrap_styles/theme{$suffix}.css";
+		$theme_scripts = "/js/theme{$suffix}.js";
+		
+		$css_version = $theme_version . '.' . filemtime( $upload_dir['basedir'] . $theme_styles );
+		wp_enqueue_style( 'wordtrap-styles', $upload_dir['baseurl'] . $theme_styles, array(), $css_version );
 
 		wp_enqueue_script( 'jquery' );
 
