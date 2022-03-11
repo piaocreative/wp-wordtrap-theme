@@ -1,6 +1,6 @@
 <?php
 /**
- * The theme member archives options
+ * The theme member archive options
  * 
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -11,8 +11,8 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-		'title'        => esc_html__( 'Archives', 'wordtrap' ),
-		'id'           => 'wordtrap-member-archives',
+		'title'        => esc_html__( 'Archive', 'wordtrap' ),
+		'id'           => 'wordtrap-member-archive',
 		'subsection'   => true,
 		'fields'       => array(
       array(
@@ -86,16 +86,11 @@ Redux::set_section(
       ),
       array(
         'id'       => 'members-columns',
-        'type'     => 'button_set',
+        'type'     => 'slider',
         'title'    => esc_html__( 'Columns', 'wordtrap' ),
-        'options'  => array(
-          '2'      => esc_html__( '2', 'wordtrap' ),
-          '3'      => esc_html__( '3', 'wordtrap' ),
-          '4'      => esc_html__( '4', 'wordtrap' ),
-          '5'      => esc_html__( '5', 'wordtrap' ),
-          '6'      => esc_html__( '6', 'wordtrap' ),
-        ),
-        'default'  => '4',
+        'default'  => 4,
+        'min'      => 2,
+        'max'      => 6,
       ),
       array(
         'id'       => 'members-pagination',

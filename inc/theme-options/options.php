@@ -201,6 +201,7 @@ $cats_filter_position_options    = wordtrap_cats_filter_position_options();
 $members_view_options            = wordtrap_members_view_options();
 $singular_orderby_options        = wordtrap_singular_orderby_options();
 $singular_order_options          = wordtrap_singular_order_options();
+$products_view_mode_options      = wordtrap_products_view_mode_options();
 
 /*
  * ---> END VARIABLES
@@ -257,7 +258,7 @@ Redux::set_section(
 	)
 );
 require_once $dir . 'sections/post/general.php';
-require_once $dir . 'sections/post/archives.php';
+require_once $dir . 'sections/post/archive.php';
 require_once $dir . 'sections/post/singular.php';
 require_once $dir . 'sections/post/related.php';
 
@@ -272,8 +273,21 @@ Redux::set_section(
 	)
 );
 require_once $dir . 'sections/member/general.php';
-require_once $dir . 'sections/member/archives.php';
+require_once $dir . 'sections/member/archive.php';
 require_once $dir . 'sections/member/singular.php';
 
 // -> START FAQ Fields
 require_once $dir . 'sections/faq/faq.php';
+
+// -> START Woocommerce Fields
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Woocommerce', 'wordtrap' ),
+		'id'               => 'wordtrap-woocommerce',
+		'customizer_width' => '400px',
+		'icon'             => 'dashicons-before dashicons-cart',
+	)
+);
+require_once $dir . 'sections/woocommerce/general.php';
+require_once $dir . 'sections/woocommerce/archive.php';

@@ -102,15 +102,12 @@ Redux::set_section(
       ),
       array(
         'id'       => 'member-related-columns',
-        'type'     => 'button_set',
+        'type'     => 'slider',
         'required' => array( 'member-related', 'equals', true ),
         'title'    => esc_html__( 'Columns', 'wordtrap' ),
-        'options'  => array(
-          '4'      => '4',
-          '3'      => '3',
-          '2'      => '2',
-        ),
-        'default'  => '4',
+        'default'  => 4,
+        'min'      => 2,
+        'max'      => 6,
       ),
       array(
         'id'       => 'member-related-carousel',

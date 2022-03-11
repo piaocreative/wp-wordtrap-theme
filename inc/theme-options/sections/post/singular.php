@@ -132,16 +132,12 @@ Redux::set_section(
       ),
       array(
         'id'       => 'post-related-columns',
-        'type'     => 'button_set',
+        'type'     => 'slider',
         'required' => array( 'post-related', 'equals', true ),
         'title'    => esc_html__( 'Columns', 'wordtrap' ),
-        'options'  => array(
-          '4'      => '4',
-          '3'      => '3',
-          '2'      => '2',
-          '1'      => '1',
-        ),
-        'default'  => '3',
+        'default'  => 3,
+        'min'      => 1,
+        'max'      => 4,
       ),
       array(
         'id'       => 'post-related-carousel',

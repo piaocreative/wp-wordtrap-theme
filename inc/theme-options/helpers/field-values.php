@@ -166,49 +166,49 @@ if ( ! function_exists( 'wordtrap_font_style_options' ) ) {
   }
 }
 
-// Post archives layout options
+// Post archive layout options
 if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
   function wordtrap_posts_layout_options() {
     return array(
 			'full'  => array(
 				'title' => esc_html__( 'Full', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-full.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-full.svg',
 			),
 			'large'  => array(
 				'title' => esc_html__( 'Large', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-large.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large.svg',
 			),
 			'large-alt'  => array(
 				'title' => esc_html__( 'Large Alt', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-large-alt.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large-alt.svg',
 			),
 			'medium'  => array(
 				'title' => esc_html__( 'Medium', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-medium.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium.svg',
 			),
 			'medium-alt'  => array(
 				'title' => esc_html__( 'Medium Alt', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-medium-alt.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium-alt.svg',
 			),
 			'grid'  => array(
 				'title' => esc_html__( 'Grid', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-grid.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-grid.svg',
 			),
 			'masonry'  => array(
 				'title' => esc_html__( 'Masonry', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-masonry.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-masonry.svg',
 			),
 			'timeline'  => array(
 				'title' => esc_html__( 'Timeline', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-timeline.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-timeline.svg',
 			),
 			'woocommerce'  => array(
 				'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-woocommerce.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-woocommerce.svg',
 			),
 			'modern'  => array(
 				'title' => esc_html__( 'Modern', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archives-modern.svg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-modern.svg',
 			),
 		);
   }
@@ -254,9 +254,10 @@ if ( ! function_exists( 'wordtrap_post_layout_options' ) ) {
 if ( ! function_exists( 'wordtrap_pagination_options' ) ) {
   function wordtrap_pagination_options() {
     return array(
-			''         => esc_html__( 'Normal', 'wordtrap' ),
-			'ajax'     => esc_html__( 'Ajax Loading', 'wordtrap' ),
-			'infinite' => esc_html__( 'Infinite Scroll', 'wordtrap' ),
+			''          => esc_html__( 'Normal', 'wordtrap' ),
+			'ajax'      => esc_html__( 'Ajax Loading', 'wordtrap' ),
+			'load-more' => esc_html__( 'Load More', 'wordtrap' ),
+			'infinite'  => esc_html__( 'Infinite Scroll', 'wordtrap' ),
 		);
   }
 }
@@ -333,15 +334,15 @@ if ( ! function_exists( 'wordtrap_members_view_options' ) ) {
     return array(
 			'1'  => array(
 				'title' => esc_html__( 'Type 1', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archives-view-1.jpg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-1.jpg',
 			),
 			'2'  => array(
 				'title' => esc_html__( 'Type 2', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archives-view-2.jpg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-2.jpg',
 			),
 			'3'  => array(
 				'title' => esc_html__( 'Type 3', 'wordtrap' ),
-				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archives-view-3.jpg',
+				'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-3.jpg',
 			),
 		);
   }
@@ -365,6 +366,17 @@ if ( ! function_exists( 'wordtrap_singular_order_options' ) ) {
     return array(
 			'asc'     => esc_html__( 'Asc', 'wordtrap' ),
 			'desc'    => esc_html__( 'Desc', 'wordtrap' ),
+		);
+  }
+}
+
+// Product archive view mode options
+if ( ! function_exists( 'wordtrap_products_view_mode_options' ) ) {
+  function wordtrap_products_view_mode_options() {
+    return array(
+			''        => esc_html__( 'Normal', 'wordtrap' ),
+			'grid'    => esc_html__( 'Grid', 'wordtrap' ),
+			'list'    => esc_html__( 'List', 'wordtrap' ),
 		);
   }
 }

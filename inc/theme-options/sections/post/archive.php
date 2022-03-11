@@ -1,6 +1,6 @@
 <?php
 /**
- * The theme post archives options
+ * The theme post archive options
  * 
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -11,8 +11,8 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-		'title'        => esc_html__( 'Archives', 'wordtrap' ),
-		'id'           => 'wordtrap-post-archives',
+		'title'        => esc_html__( 'Archive', 'wordtrap' ),
+		'id'           => 'wordtrap-post-archive',
 		'subsection'   => true,
 		'fields'       => array(
       array(
@@ -63,18 +63,12 @@ Redux::set_section(
       ),
       array(
         'id'       => 'posts-columns',
-        'type'     => 'button_set',
+        'type'     => 'slider',
         'title'    => esc_html__( 'Columns', 'wordtrap' ),
         'required' => array( 'posts-view', 'equals', array( 'grid', 'masonry' ) ),
-        'options'  => array(
-          '1'      => '1',
-          '2'      => '2',
-          '3'      => '3',
-          '4'      => '4',
-          '5'      => '5',
-          '6'      => '6',
-        ),
-        'default'  => '3',
+        'default'   => 3,
+        'min'       => 1,
+        'max'       => 6,
       ),
       array(
         'id'       => 'posts-sort',
