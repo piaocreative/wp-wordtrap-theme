@@ -70,9 +70,9 @@ Redux::set_section(
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
-        'id'       => 'post-shares',
+        'id'       => 'post-share',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Social Shares', 'wordtrap' ),
+        'title'    => esc_html__( 'Social Share', 'wordtrap' ),
         'default'  => true,
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),

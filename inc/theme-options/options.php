@@ -299,5 +299,5 @@ require_once $dir . 'sections/woocommerce/image.php';
 require_once $dir . 'sections/woocommerce/cart.php';
 require_once $dir . 'sections/woocommerce/catalog.php';
 
-// -> START Shares Fields
+// -> START Social Share Fields
 require_once $dir . 'sections/share/share.php';

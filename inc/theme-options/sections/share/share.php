@@ -12,7 +12,7 @@ Redux::set_section(
 	$opt_name,
 	array(
 		'title'            => esc_html__( 'Social Share', 'wordtrap' ),
-		'id'               => 'wordtrap-shares',
+		'id'               => 'wordtrap-share',
 		'customizer_width' => '400px',
 		'icon'             => 'dashicons-before dashicons-share',
 		'fields'           => array(
@@ -27,7 +27,7 @@ Redux::set_section(
       array(
         'id'       => 'share-nofollow',
         'type'     => 'switch',
-        'title'    => esc_html__( 'No Follow Shares', 'wordtrap' ),
+        'title'    => esc_html__( 'No Follow Share', 'wordtrap' ),
         'required' => array( 'social-share', 'equals', true ),
         'default'  => true,
         'on'       => esc_html__( 'Yes', 'wordtrap' ),
