@@ -11,5 +11,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-require get_template_directory() . '/inc/helpers/post.php';
-require get_template_directory() . '/inc/helpers/file_system.php';
+require dirname( __FILE__ ) . '/helpers/post.php';
+require dirname( __FILE__ ) . '/helpers/file_system.php';
+require dirname( __FILE__ ) . '/helpers/template.php';
