@@ -202,6 +202,9 @@ $members_view_options            = wordtrap_members_view_options();
 $singular_orderby_options        = wordtrap_singular_orderby_options();
 $singular_order_options          = wordtrap_singular_order_options();
 $products_view_mode_options      = wordtrap_products_view_mode_options();
+$products_view_options           = wordtrap_products_view_options();
+$products_cart_notify_options    = wordtrap_cart_notify_options();
+$product_view_options            = wordtrap_product_view_options();
 
 /*
  * ---> END VARIABLES
@@ -291,3 +294,10 @@ Redux::set_section(
 );
 require_once $dir . 'sections/woocommerce/general.php';
 require_once $dir . 'sections/woocommerce/archive.php';
+require_once $dir . 'sections/woocommerce/singular.php';
+require_once $dir . 'sections/woocommerce/image.php';
+require_once $dir . 'sections/woocommerce/cart.php';
+require_once $dir . 'sections/woocommerce/catalog.php';
+
+// -> START Shares Fields
+require_once $dir . 'sections/share/share.php';

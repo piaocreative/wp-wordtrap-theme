@@ -380,3 +380,115 @@ if ( ! function_exists( 'wordtrap_products_view_mode_options' ) ) {
 		);
   }
 }
+
+// Products view options
+if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
+  function wordtrap_products_view_options() {
+    return array(
+			'default'  => array(
+				'title'  => esc_html__( 'Default', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.jpg',
+			),
+			'onhover'  => array(
+				'title'  => esc_html__( 'Default - Show Links on Hover', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.jpg',
+			),
+			'outimage-aq-onimage'  => array(
+				'title'  => esc_html__( 'Add to Cart, Quick View On Image', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage.jpg',
+			),
+			'outimage-aq-onimage2' => array(
+				'title'  => esc_html__( 'Add to Cart, Quick View On Image with Padding', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage2.jpg',
+			),
+			'awq-onimage' => array(
+				'title'  => esc_html__( 'Link On Image', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-awq-onimage.jpg',
+			),
+			'outimage' => array(
+				'title'  => esc_html__( 'Out of Image', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage.jpg',
+			),
+			'onimage'  => array(
+				'title'  => esc_html__( 'On Image', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage.jpg',
+			),
+			'onimage2' => array(
+				'title'  => esc_html__( 'On Image with Overlay 1', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage2.jpg',
+			),
+			'onimage3' => array(
+				'title'  => esc_html__( 'On Image with Overlay 2', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage3.jpg',
+			),
+			'quantity' => array(
+				'title'  => esc_html__( 'Show Quantity Input', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-quantity-input.jpg',
+			),
+		);
+  }
+}
+
+// Products cart notify options
+if ( ! function_exists( 'wordtrap_cart_notify_options' ) ) {
+  function wordtrap_cart_notify_options() {
+    return array(
+			'1'  => array(
+				'title'  => esc_html__( 'Type 1', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-1.jpg',
+			),
+			'2'  => array(
+				'title'  => esc_html__( 'Type 2', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-2.jpg',
+			),
+			'3'  => array(
+				'title'  => esc_html__( 'Type 3', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-3.jpg',
+			),
+		);
+  }
+}
+
+// Product view options
+if ( ! function_exists( 'wordtrap_product_view_options' ) ) {
+  function wordtrap_product_view_options() {
+    return array(
+			'default'  => array(
+				'title'  => esc_html__( 'Default', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-default.jpg',
+			),
+			'extended' => array(
+				'title'  => esc_html__( 'Extended', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-extended.jpg',
+			),
+			'full-width' => array(
+				'title'  => esc_html__( 'Full Width', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-full-width.jpg',
+			),
+			'grid'     => array(
+				'title'  => esc_html__( 'Grid Images', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-grid.jpg',
+			),
+			'sticky-info' => array(
+				'title'  => esc_html__( 'Sticky Info', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-sticky-info.jpg',
+			),
+			'sticky-both-info' => array(
+				'title'  => esc_html__( 'Sticky Left & Right Info', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-sticky-info-both.jpg',
+			),
+			'transparent' => array(
+				'title'  => esc_html__( 'Transparent Images', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-transparent.jpg',
+			),
+			'centered-vertical-zoom' => array(
+				'title'  => esc_html__( 'Centered Vertical Zoom', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-centered-vertical-zoom.jpg',
+			),
+			'left-sidebar' => array(
+				'title'  => esc_html__( 'Left Sidebar', 'wordtrap' ),
+				'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-left-sidebar.jpg',
+			),
+		);
+  }
+}
