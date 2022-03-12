@@ -1,0 +1,167 @@
+
+@media (min-width: 1200px) {
+  .wordtrap-wrap {
+    margin: 30px 30px 0 12px;
+  }
+
+  html[dir="rtl"] .wordtrap-wrap {
+    margin: 30px 12px 0 30px;
+  }
+
+  .redux-wrap-div {
+    margin: 16px 30px 0 11px;
+  }
+  
+  html[dir="rtl"] .redux-wrap-div {
+    margin: 16px 11px 0 30px;
+  }
+}
+
+.wordtrap-admin-nav {
+  background: #333;
+  padding: 0 1rem;
+}
+
+.wordtrap-admin-nav a,
+.wordtrap-admin-nav span {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .8125rem;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1rem;
+  padding: 1.375rem 1.125rem;
+  position: relative;
+  outline: 0;
+  box-shadow: none;
+}
+
+.wordtrap-admin-nav .active:after,
+.wordtrap-admin-nav a:hover:after {
+  content: '';
+  border-bottom: 0.5rem solid #08c;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -0.6rem;
+}
+
+@media (max-width: 1199px) {
+  .wordtrap-admin-nav a,
+  .wordtrap-admin-nav span {
+    font-size: .75rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .wordtrap-admin-nav .active,
+  .wordtrap-admin-nav a:hover {
+    color: #08c;
+  }
+
+  .wordtrap-admin-nav .active:after,
+  .wordtrap-admin-nav a:hover:after {
+    display: none;
+  }
+}
+
+.wordtrap-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #08c;
+  padding: 20px 30px;
+}
+
+.wordtrap-admin-header h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.wordtrap-admin-header h6 {
+  margin: 0;
+  opacity: .9;
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.wordtrap-admin-header .name {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.wordtrap-admin-header .version {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: right;
+  margin-top: 0.2rem;
+}
+
+.wordtrap-wrap main {
+  padding: 1.75rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.wordtrap-wrap h2 {
+  font-size: 1.5em;
+  margin-top: 0.9em;
+}
+
+@media (min-width: 992px) {
+	.wordtrap-wrap .row {
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+    padding-left: 0;
+    padding-right: 0;
+	}
+
+	.wordtrap-wrap .row > div {
+		display: table-cell;
+		vertical-align: top;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.wordtrap-wrap .row .col-left {
+		width: 66%;
+		border-right: 1px solid #e7e7e7;
+	}
+	.wordtrap-wrap .row .col-right {
+		width: 33%;
+	}
+}
+
+.wordtrap-wrap .status-yes {
+  color: #198754;
+}
+
+.wordtrap-wrap .status-no,
+.wordtrap-wrap .status-error {
+	color: #dc3545;
+}
+
+.wordtrap-wrap .status-info {
+	color: #0dcaf0;
+}
+
+.wordtrap-wrap .status-notice {
+  color: #0dcaf0;
+}
+
+.wordtrap-wrap .system-status em {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+

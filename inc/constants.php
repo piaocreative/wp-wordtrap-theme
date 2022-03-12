@@ -27,3 +27,6 @@ define( 'WORDTRAP_URI', get_template_directory_uri() );
 // Theme options definitions
 define( 'WORDTRAP_OPTIONS', 'wordtrap_options' );
 define( 'WORDTRAP_OPTIONS_URI', get_template_directory_uri() . '/inc/theme-options' );
+
+// Theme admin definitions
+define( 'WORDTRAP_ADMIN_URI', get_template_directory_uri() . '/inc/admin' );

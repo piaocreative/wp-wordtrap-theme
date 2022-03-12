@@ -25,10 +25,8 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
 
     // Write scss variables
 		ob_start();
-		require get_template_directory() . '/inc/compiler/scss-variables.php';
+		require dirname( __FILE__ ) . '/scss-variables.php';
 		$scss_variables = ob_get_clean();
-
-		file_put_contents('D:/tt.txt', $scss_variables);
 
 		// Load scss compiler
 		if ( ! class_exists( 'scssc' ) ) {

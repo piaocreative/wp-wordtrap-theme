@@ -25,8 +25,13 @@ if ( !class_exists( 'ReduxFramework' ) ) {
 	require get_template_directory() . '/inc/redux-core/framework.php';
 }
 
-// Inculde theme options
+// Include theme options
 require get_template_directory() . '/inc/theme-options/options.php';
+
+// Include admin pages
+if ( current_user_can( 'manage_options' ) ) {
+	require get_template_directory() . '/inc/admin/admin.php';
+}
 
 // Include theme styles compiler
 require get_template_directory() . '/inc/compiler/compiler.php';

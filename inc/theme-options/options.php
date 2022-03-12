@@ -22,6 +22,7 @@ require_once $dir . 'helpers/enqueue.php';
 require_once $dir . 'helpers/field-values.php';
 require_once $dir . 'helpers/notices.php';
 require_once $dir . 'helpers/compiler.php';
+require_once $dir . 'helpers/template.php';
 
 /*
  * ---> BEGIN ARGUMENTS
@@ -52,7 +53,7 @@ $args = array(
 	'disable_google_fonts_link' => false,
 
 	// Show the panel pages on the admin bar.
-	'admin_bar'                 => true,
+	'admin_bar'                 => false,
 
 	// Icon for the admin bar menu.
 	'admin_bar_icon'            => 'dashicons-portfolio',
