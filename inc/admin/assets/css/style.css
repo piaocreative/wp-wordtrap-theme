@@ -96,6 +96,7 @@
   display: block;
   font-size: 1.25rem;
   font-weight: 700;
+  margin-top: 0.5rem;
   text-align: right;
 }
 
@@ -118,28 +119,34 @@
   margin-top: 0.9em;
 }
 
+.wordtrap-wrap p {
+  font-size: .875rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
 @media (min-width: 992px) {
-	.wordtrap-wrap .row {
-		display: table;
-		width: 100%;
-		table-layout: fixed;
+  .wordtrap-wrap .row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
     padding-left: 0;
     padding-right: 0;
-	}
+  }
 
-	.wordtrap-wrap .row > div {
-		display: table-cell;
-		vertical-align: top;
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-	.wordtrap-wrap .row .col-left {
-		width: 66%;
-		border-right: 1px solid #e7e7e7;
-	}
-	.wordtrap-wrap .row .col-right {
-		width: 33%;
-	}
+  .wordtrap-wrap .row > div {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .wordtrap-wrap .row .col-left {
+    width: 66%;
+    border-right: 1px solid #e7e7e7;
+  }
+  .wordtrap-wrap .row .col-right {
+    width: 33%;
+  }
 }
 
 .wordtrap-wrap .status-yes {
@@ -148,11 +155,11 @@
 
 .wordtrap-wrap .status-no,
 .wordtrap-wrap .status-error {
-	color: #dc3545;
+  color: #dc3545;
 }
 
 .wordtrap-wrap .status-info {
-	color: #0dcaf0;
+  color: #0dcaf0;
 }
 
 .wordtrap-wrap .status-notice {
@@ -171,7 +178,7 @@
   border-radius: 4px;
   position: relative;
   overflow: hidden;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto
 }
 
@@ -194,7 +201,7 @@
   flex-wrap: wrap;
   cursor: auto;
   margin-top: 10px;
-  padding: 45px 15px 15px;
+  padding: 15px;
   border-radius: 4px;
   overflow: hidden;
   font-size: 13px;
@@ -207,7 +214,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 40px;
+  height: 45px;
   padding: 2px;
   background: #f8f8f8;
   color: #666;
@@ -219,9 +226,8 @@
   box-sizing: border-box;
 }
 
-.wordtrap-wrap .popup-builder {
-  margin-top: -32px;
-  background: transparent;
+.wordtrap-wrap .popup {
+  margin-bottom: 10px;
 }
 
 .wordtrap-wrap .layout-part:hover {
@@ -240,9 +246,11 @@
 }
 
 .wordtrap-layout .content .block {
+  border-left: 1px solid #e1e1e1;
   border-right: 1px solid #e1e1e1;
 }
 
+.wordtrap-layout .left-sidebar,
 .wordtrap-layout .right-sidebar {
   flex: 1;
   height: 100%

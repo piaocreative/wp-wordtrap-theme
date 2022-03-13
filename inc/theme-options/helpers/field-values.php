@@ -9,8 +9,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Site layout options
 if ( ! function_exists( 'wordtrap_site_layout_options' ) ) {
+  /**
+   * Site layout options
+   */
   function wordtrap_site_layout_options() {
     return array(
       'wide'  => array(
@@ -29,8 +31,10 @@ if ( ! function_exists( 'wordtrap_site_layout_options' ) ) {
   }
 }
 
-// Site layout values without boxed
 if ( ! function_exists( 'wrodtrap_site_layouts_without_boxed' ) ) {
+  /**
+   * Site layout values without boxed
+   */
   function wrodtrap_site_layouts_without_boxed() {
     return array(
       'wide',
@@ -39,8 +43,10 @@ if ( ! function_exists( 'wrodtrap_site_layouts_without_boxed' ) ) {
   }
 }
 
-// General layout options
 if ( ! function_exists( 'wordtrap_layout_options' ) ) {
+  /**
+   * General layout options
+   */
   function wordtrap_layout_options() {
     return array(
       'wide'  => array(
@@ -59,8 +65,10 @@ if ( ! function_exists( 'wordtrap_layout_options' ) ) {
   }
 }
 
-// Banner layout options
 if ( ! function_exists( 'wordtrap_banner_layout_options' ) ) {
+  /**
+   * Banner layout options
+   */
   function wordtrap_banner_layout_options() {
     return array(
       'wide'  => array(
@@ -75,8 +83,10 @@ if ( ! function_exists( 'wordtrap_banner_layout_options' ) ) {
   }
 }
 
-// Main layout options
 if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
+  /**
+   * Main layout options
+   */
   function wordtrap_main_layout_options() {
     return array(
       'wide'  => array(
@@ -115,8 +125,10 @@ if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
   }
 }
 
-// Main Layout values with left sidebar
 if ( ! function_exists( 'wordtrap_main_layouts_with_left_sidebar' ) ) :
+  /**
+   * Main Layout values with left sidebar
+   */
   function wordtrap_main_layouts_with_left_sidebar() {
     return array(
       'wide-left-sidebar',
@@ -127,8 +139,10 @@ if ( ! function_exists( 'wordtrap_main_layouts_with_left_sidebar' ) ) :
   }
 endif;
 
-// Main Layout values with right sidebar
 if ( ! function_exists( 'wordtrap_main_layouts_with_right_sidebar' ) ) :
+  /**
+   * Main Layout values with right sidebar
+   */
   function wordtrap_main_layouts_with_right_sidebar() {
     return array(
       'wide-right-sidebar',
@@ -139,8 +153,10 @@ if ( ! function_exists( 'wordtrap_main_layouts_with_right_sidebar' ) ) :
   }
 endif;
 
-// Content layout options
 if ( ! function_exists( 'wordtrap_content_layout_options' ) ) {
+  /**
+   * Content layout options
+   */
   function wordtrap_content_layout_options() {
     return array(
       'wide'  => array(
@@ -155,8 +171,10 @@ if ( ! function_exists( 'wordtrap_content_layout_options' ) ) {
   }
 }
 
-// Font style options
 if ( ! function_exists( 'wordtrap_font_style_options' ) ) {
+  /**
+   * Font style options
+   */
   function wordtrap_font_style_options() {
     return array(
       'normal'  => esc_html__( 'Normal', 'wordtrap' ),
@@ -166,8 +184,10 @@ if ( ! function_exists( 'wordtrap_font_style_options' ) ) {
   }
 }
 
-// Post archive layout options
 if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
+  /**
+   * Post archive layout options
+   */
   function wordtrap_posts_layout_options() {
     return array(
       'full'  => array(
@@ -214,8 +234,10 @@ if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
   }
 }
 
-// Post singular layout options
 if ( ! function_exists( 'wordtrap_post_layout_options' ) ) {
+  /**
+   * Post singular layout options
+   */
   function wordtrap_post_layout_options() {
     return array(
       'full'  => array(
@@ -250,8 +272,10 @@ if ( ! function_exists( 'wordtrap_post_layout_options' ) ) {
   }
 }
 
-// Pagination options
 if ( ! function_exists( 'wordtrap_pagination_options' ) ) {
+  /**
+   * Pagination options
+   */
   function wordtrap_pagination_options() {
     return array(
       ''          => esc_html__( 'Normal', 'wordtrap' ),
@@ -262,8 +286,10 @@ if ( ! function_exists( 'wordtrap_pagination_options' ) ) {
   }
 }
 
-// Related post view options
 if ( ! function_exists( 'wordtrap_post_related_view_options' ) ) {
+  /**
+   * Related post view options
+   */
   function wordtrap_post_related_view_options() {
     return array(
       '1'  => array(
@@ -294,8 +320,10 @@ if ( ! function_exists( 'wordtrap_post_related_view_options' ) ) {
   }
 }
 
-// Categories orderby options
 if ( ! function_exists( 'wordtrap_cats_orderby_options' ) ) {
+  /**
+   * Categories orderby options
+   */
   function wordtrap_cats_orderby_options() {
     return array(
       'ID'      => esc_html__( 'ID', 'wordtrap' ),
@@ -306,8 +334,10 @@ if ( ! function_exists( 'wordtrap_cats_orderby_options' ) ) {
   }
 }
 
-// Categories order options
 if ( ! function_exists( 'wordtrap_cats_order_options' ) ) {
+  /**
+   * Categories order options
+   */
   function wordtrap_cats_order_options() {
     return array(
       'asc'     => esc_html__( 'Asc', 'wordtrap' ),
@@ -316,8 +346,10 @@ if ( ! function_exists( 'wordtrap_cats_order_options' ) ) {
   }
 }
 
-// Categories filter position options
 if ( ! function_exists( 'wordtrap_cats_filter_position_options' ) ) {
+  /**
+   * Categories filter position options
+   */
   function wordtrap_cats_filter_position_options() {
     return array(
       'content'     => esc_html__( 'Content', 'wordtrap' ),
@@ -328,8 +360,10 @@ if ( ! function_exists( 'wordtrap_cats_filter_position_options' ) ) {
   }
 }
 
-// Members view options
 if ( ! function_exists( 'wordtrap_members_view_options' ) ) {
+  /**
+   * Members view options
+   */
   function wordtrap_members_view_options() {
     return array(
       '1'  => array(
@@ -348,8 +382,10 @@ if ( ! function_exists( 'wordtrap_members_view_options' ) ) {
   }
 }
 
-// Singular orderby options
 if ( ! function_exists( 'wordtrap_singular_orderby_options' ) ) {
+  /**
+   * Singular orderby options
+   */
   function wordtrap_singular_orderby_options() {
     return array(
       'ID'      => esc_html__( 'ID', 'wordtrap' ),
@@ -360,8 +396,10 @@ if ( ! function_exists( 'wordtrap_singular_orderby_options' ) ) {
   }
 }
 
-// Singular order options
 if ( ! function_exists( 'wordtrap_singular_order_options' ) ) {
+  /**
+   * Singular order options
+   */
   function wordtrap_singular_order_options() {
     return array(
       'asc'     => esc_html__( 'Asc', 'wordtrap' ),
@@ -370,8 +408,10 @@ if ( ! function_exists( 'wordtrap_singular_order_options' ) ) {
   }
 }
 
-// Product archive view mode options
 if ( ! function_exists( 'wordtrap_products_view_mode_options' ) ) {
+  /**
+   * Product archive view mode options
+   */
   function wordtrap_products_view_mode_options() {
     return array(
       ''        => esc_html__( 'Normal', 'wordtrap' ),
@@ -381,8 +421,10 @@ if ( ! function_exists( 'wordtrap_products_view_mode_options' ) ) {
   }
 }
 
-// Products view options
 if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
+  /**
+   * Products view options
+   */
   function wordtrap_products_view_options() {
     return array(
       'default'  => array(
@@ -429,8 +471,10 @@ if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
   }
 }
 
-// Products cart notify options
 if ( ! function_exists( 'wordtrap_cart_notify_options' ) ) {
+  /**
+   * Products cart notify options
+   */
   function wordtrap_cart_notify_options() {
     return array(
       '1'  => array(
@@ -449,8 +493,10 @@ if ( ! function_exists( 'wordtrap_cart_notify_options' ) ) {
   }
 }
 
-// Product view options
 if ( ! function_exists( 'wordtrap_product_view_options' ) ) {
+  /**
+   * Product view options
+   */
   function wordtrap_product_view_options() {
     return array(
       'default'  => array(

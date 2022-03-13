@@ -9,8 +9,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Show write permission notification of upload folder
 if ( ! function_exists( 'wordtrap_theme_options_notices' ) ) {
+  /**
+   * Show write permission notification for upload folder
+   */
   function wordtrap_theme_options_notices() {
     global $pagenow;
     if ( $pagenow == 'themes.php' && isset( $_GET['page'] ) && $_GET['page'] === WORDTRAP_OPTIONS ) {

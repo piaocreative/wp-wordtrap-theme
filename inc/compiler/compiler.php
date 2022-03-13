@@ -9,9 +9,13 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Compile theme styles
 if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
-  function wordtrap_compile_styles( $enueue = false ) {
+  /**
+   * Compile theme styles
+   * 
+   * @param boolean $enqueue    Flag for enqueueing styles or generating CSS files.
+   */
+  function wordtrap_compile_styles( $enqueue = false ) {
     if ( ! current_user_can( 'manage_options' ) ) {
       return;
     }
@@ -48,7 +52,7 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
     $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::EXPANDED );
     $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
 
-    if ( $enueue ) {
+    if ( $enqueue ) {
       wp_register_style( 'wordtrap-customizer', false );
       wp_enqueue_style( 'wordtrap-customizer' );
       wp_add_inline_style( 'wordtrap-customizer', $result->getCss() );
@@ -69,8 +73,10 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
 }
 add_action( 'wordtrap_compile_styles', 'wordtrap_compile_styles', 10 );
 
-// Generate styles after activate or update theme
 if ( ! function_exists( 'wordtrap_compile_styles_after_active' ) ) {
+  /**
+   * Generate styles after activate or update theme
+   */
   function wordtrap_compile_styles_after_active() {
     $wordtrap_cur_version = get_option( 'wordtrap_version' );
     if ( version_compare( WORDTRAP_VERSION, $wordtrap_cur_version, '!=' ) ) {
