@@ -9,22 +9,22 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Layout', 'wordtrap' ),
-		'id'           => 'wordtrap-global-layout',
-		'subsection'   => true,
-		'fields'       => array(
-			array(
-				'id'       => 'loading-overlay',
-				'type'     => 'switch',
-				'title'    => esc_html__( 'Loading Overlay', 'wordtrap' ),
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Layout', 'wordtrap' ),
+    'id'           => 'wordtrap-global-layout',
+    'subsection'   => true,
+    'fields'       => array(
+      array(
+        'id'       => 'loading-overlay',
+        'type'     => 'switch',
+        'title'    => esc_html__( 'Loading Overlay', 'wordtrap' ),
         'desc'     => esc_html__( 'Loading overlay is shown until whole page is loaded.', 'wordtrap' ),
-				'default'  => false,
+        'default'  => false,
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
-			),
-			array(
+      ),
+      array(
         'id'       => 'site-layout',
         'type'     => 'image_select',
         'title'    => esc_html__( 'Site Layout', 'wordtrap' ),
@@ -111,6 +111,6 @@ Redux::set_section(
         'options'  => $layout_options,
         'default'  => 'full',
       ),      
-		),
-	)
+    ),
+  )
 );

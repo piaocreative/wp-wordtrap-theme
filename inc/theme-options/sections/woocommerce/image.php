@@ -9,18 +9,18 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Image', 'wordtrap' ),
-		'id'           => 'wordtrap-woocommerce-image',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Image', 'wordtrap' ),
+    'id'           => 'wordtrap-woocommerce-image',
+    'subsection'   => true,
+    'fields'       => array(
       array(
-				'id'       => 'product-thumbs-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Thumbnails', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'product-thumbs-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Thumbnails', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'product-thumbs',
         'type'     => 'switch',
@@ -38,16 +38,16 @@ Redux::set_section(
         'default'  => '4',
       ),
       array(
-				'id'       => 'product-thumbs-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'product-thumbs-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
       array(
-				'id'       => 'product-zoom-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Image Zoom', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'product-zoom-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Image Zoom', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'product-image-popup',
         'type'     => 'switch',
@@ -139,10 +139,10 @@ Redux::set_section(
         'default'  => '#888888',
       ),
       array(
-				'id'       => 'product-zoom-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'product-zoom-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );

@@ -9,13 +9,13 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'Social Share', 'wordtrap' ),
-		'id'               => 'wordtrap-share',
-		'customizer_width' => '400px',
-		'icon'             => 'dashicons-before dashicons-share',
-		'fields'           => array(
+  $opt_name,
+  array(
+    'title'            => esc_html__( 'Social Share', 'wordtrap' ),
+    'id'               => 'wordtrap-share',
+    'customizer_width' => '400px',
+    'icon'             => 'dashicons-before dashicons-share',
+    'fields'           => array(
       array(
         'id'       => 'social-share',
         'type'     => 'switch',

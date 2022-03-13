@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Archive', 'wordtrap' ),
-		'id'           => 'wordtrap-woocommerce-archive',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Archive', 'wordtrap' ),
+    'id'           => 'wordtrap-woocommerce-archive',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'products-layout',
         'type'     => 'image_select',
@@ -68,11 +68,11 @@ Redux::set_section(
         'options'  => $pagination_options,
       ),
       array(
-				'id'       => 'products-item-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Product', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'products-item-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Product', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'products-view',
         'type'     => 'image_select',
@@ -159,10 +159,10 @@ Redux::set_section(
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
-				'id'       => 'products-item-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'products-item-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );

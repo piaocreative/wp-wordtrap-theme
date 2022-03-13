@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Icons', 'wordtrap' ),
-		'id'           => 'wordtrap-global-icons',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Icons', 'wordtrap' ),
+    'id'           => 'wordtrap-global-icons',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'favicon',
         'type'     => 'media',
@@ -25,11 +25,11 @@ Redux::set_section(
         ),
       ),
       array(
-				'id'       => 'icons-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Apple Icons', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'icons-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Apple Icons', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'icon-iphone',
         'type'     => 'media',
@@ -71,10 +71,10 @@ Redux::set_section(
         ),
       ),
       array(
-				'id'       => 'icons-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'icons-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );

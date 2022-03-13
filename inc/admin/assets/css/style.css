@@ -165,3 +165,86 @@
   font-size: 0.9em;
 }
 
+.wordtrap-wrap .page-layout .layout-box {
+  padding: 0 10px 10px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto
+}
+
+.wordtrap-wrap .page-layout .layout-header {
+  display: flex;
+  margin: 0 -10px;
+  padding: 19px 20px;
+  background: #29e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  border-radius: 4px 4px 0 0;
+  transition: background .2s,color .2s;
+}
+
+.wordtrap-wrap .layout.wordtrap-layout {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: auto;
+  margin-top: 10px;
+  padding: 45px 15px 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 13px;
+  background: #e1e1e1;
+}
+
+.wordtrap-wrap .layout-part {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  padding: 2px;
+  background: #f8f8f8;
+  color: #666;
+  text-align: center;
+  cursor: pointer;
+  transition: background .15s;
+  border-bottom: 1px solid #e1e1e1;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.wordtrap-wrap .popup-builder {
+  margin-top: -32px;
+  background: transparent;
+}
+
+.wordtrap-wrap .layout-part:hover {
+  background: #eee;
+}
+
+.wordtrap-layout .content-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.wordtrap-layout .content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 3;
+}
+
+.wordtrap-layout .content .block {
+  border-right: 1px solid #e1e1e1;
+}
+
+.wordtrap-layout .right-sidebar {
+  flex: 1;
+  height: 100%
+}
+

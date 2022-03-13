@@ -9,18 +9,18 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Cart', 'wordtrap' ),
-		'id'           => 'wordtrap-woocommerce-cart',
-		'subsection'   => true,
-		'fields'       => array(
-			array(
-				'id'       => 'product-crosssells-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Cross Sells', 'wordtrap' ),
-				'indent'   => true,
-			),
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Cart', 'wordtrap' ),
+    'id'           => 'wordtrap-woocommerce-cart',
+    'subsection'   => true,
+    'fields'       => array(
+      array(
+        'id'       => 'product-crosssells-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Cross Sells', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'product-crosssells',
         'type'     => 'switch',
@@ -56,10 +56,10 @@ Redux::set_section(
         'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
       array(
-				'id'       => 'product-crosssells-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'product-crosssells-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );

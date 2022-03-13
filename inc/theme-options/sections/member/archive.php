@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Archive', 'wordtrap' ),
-		'id'           => 'wordtrap-member-archive',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Archive', 'wordtrap' ),
+    'id'           => 'wordtrap-member-archive',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'members-layout',
         'type'     => 'image_select',
