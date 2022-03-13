@@ -49,7 +49,7 @@ if ( ! class_exists('Wordtrap_Admin_Dashboard' ) ) {
         false, 
         admin_url( 'admin.php?page=wordtrap' ), 
         'wordtrap',
-        array( 'class' => 'wordtrap-menu' ),
+        array( 'class' => 'wordtrap-menu' )
       );
 
       // Add sub menus

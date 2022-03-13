@@ -1,3 +1,22 @@
+.dashicons-wordtrap-logo {
+  background: url(../images/logo.png);
+}
+
+#adminmenu li a:focus .dashicons-wordtrap-logo,
+#adminmenu li.opensub .dashicons-wordtrap-logo, 
+#adminmenu li:hover .dashicons-wordtrap-logo {
+  background-position: -34px 0;
+}
+
+#adminmenu .current .dashicons-wordtrap-logo, 
+#adminmenu .wp-has-current-submenu .dashicons-wordtrap-logo, 
+#adminmenu a.current:hover .dashicons-wordtrap-logo, 
+#adminmenu a.wp-has-current-submenu:hover .dashicons-wordtrap-logo, 
+#adminmenu li.wp-has-current-submenu .dashicons-wordtrap-logo, 
+#adminmenu li.wp-has-current-submenu.opensub .dashicons-wordtrap-logo, 
+#adminmenu li.wp-has-current-submenu:hover .dashicons-wordtrap-logo {
+  background-position: -68px 0;
+}
 
 @media (min-width: 1200px) {
   .wordtrap-wrap {
