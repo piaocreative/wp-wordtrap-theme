@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Singular', 'wordtrap' ),
-		'id'           => 'wordtrap-member-singular',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Singular', 'wordtrap' ),
+    'id'           => 'wordtrap-member-singular',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'member-backto',
         'type'     => 'switch',
@@ -66,11 +66,11 @@ Redux::set_section(
         'default'  => '',
       ),
       array(
-				'id'       => 'member-related-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Related Members', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'member-related-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Related Members', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'member-related',
         'type'     => 'switch',
@@ -119,10 +119,10 @@ Redux::set_section(
         'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
       array(
-				'id'       => 'member-related-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'member-related-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );

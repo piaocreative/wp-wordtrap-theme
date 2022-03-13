@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Singular', 'wordtrap' ),
-		'id'           => 'wordtrap-woocommerce-singular',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Singular', 'wordtrap' ),
+    'id'           => 'wordtrap-woocommerce-singular',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'product-layout',
         'type'     => 'image_select',
@@ -117,11 +117,11 @@ Redux::set_section(
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
-				'id'       => 'product-related-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Related Products', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'product-related-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Related Products', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'product-related',
         'type'     => 'switch',
@@ -157,16 +157,16 @@ Redux::set_section(
         'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
       array(
-				'id'       => 'product-related-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'product-related-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
       array(
-				'id'       => 'product-upsells-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Up Sells', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'product-upsells-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Up Sells', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'product-upsells',
         'type'     => 'switch',
@@ -202,10 +202,10 @@ Redux::set_section(
         'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
       array(
-				'id'       => 'product-upsells-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'product-upsells-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );

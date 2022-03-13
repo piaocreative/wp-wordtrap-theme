@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Related', 'wordtrap' ),
-		'id'           => 'wordtrap-post-related',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Related', 'wordtrap' ),
+    'id'           => 'wordtrap-post-related',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'post-related-image-size',
         'type'     => 'dimensions',

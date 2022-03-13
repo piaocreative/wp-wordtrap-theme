@@ -9,13 +9,13 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'FAQ', 'wordtrap' ),
-		'id'               => 'wordtrap-faq',
-		'customizer_width' => '400px',
-		'icon'             => 'dashicons-before dashicons-editor-help',
-		'fields'           => array(
+  $opt_name,
+  array(
+    'title'            => esc_html__( 'FAQ', 'wordtrap' ),
+    'id'               => 'wordtrap-faq',
+    'customizer_width' => '400px',
+    'icon'             => 'dashicons-before dashicons-editor-help',
+    'fields'           => array(
       array(
         'id'          => 'enable-faq',
         'type'        => 'switch',

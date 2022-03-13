@@ -14,8 +14,8 @@ defined( 'ABSPATH' ) || exit;
 global $wp_filesystem;
 // Initialize the WordPress filesystem, no more using file_put_contents function
 if ( empty( $wp_filesystem ) ) {
-	require_once ABSPATH . '/wp-admin/includes/file.php';
-	WP_Filesystem();
+  require_once ABSPATH . '/wp-admin/includes/file.php';
+  WP_Filesystem();
 }
 
 $data = array(
@@ -37,8 +37,8 @@ $status = array(
 ?>
 
 <div class="wrap wordtrap-wrap">
-	<h2 class="screen-reader-text"><?php _e( 'Dashboard', 'wordtrap' ); ?></h2>
-	<?php
+  <h2 class="screen-reader-text"><?php _e( 'Dashboard', 'wordtrap' ); ?></h2>
+  <?php
     wordtrap_get_template_part(
       'inc/admin/pages/header',
       null,

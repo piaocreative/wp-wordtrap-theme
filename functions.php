@@ -13,8 +13,8 @@ defined( 'ABSPATH' ) || exit;
 
 // Theem only works in WordPress 4.7 or later.
 if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-	return;
+  require get_template_directory() . '/inc/back-compat.php';
+  return;
 }
 
 // Include constants used in theme
@@ -22,7 +22,7 @@ require get_template_directory() . '/inc/constants.php';
 
 // Include redux framework
 if ( !class_exists( 'ReduxFramework' ) ) {
-	require get_template_directory() . '/inc/redux-core/framework.php';
+  require get_template_directory() . '/inc/redux-core/framework.php';
 }
 
 // Include theme options
@@ -30,7 +30,7 @@ require get_template_directory() . '/inc/theme-options/options.php';
 
 // Include admin pages
 if ( current_user_can( 'manage_options' ) ) {
-	require get_template_directory() . '/inc/admin/admin.php';
+  require get_template_directory() . '/inc/admin/admin.php';
 }
 
 // Include theme styles compiler
@@ -38,7 +38,7 @@ require get_template_directory() . '/inc/compiler/compiler.php';
 
 // Inculde WooCommerce functions if WooCommerce is activated
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
+  require get_template_directory() . '/inc/woocommerce.php';
 }
 
 // Theme setup and custom theme supports.

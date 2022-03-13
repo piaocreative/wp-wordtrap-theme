@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Catalog', 'wordtrap' ),
-		'id'           => 'wordtrap-woocommerce-catalog',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Catalog', 'wordtrap' ),
+    'id'           => 'wordtrap-woocommerce-catalog',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'catalog-enable',
         'type'     => 'switch',

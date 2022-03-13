@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'General', 'wordtrap' ),
-		'id'           => 'wordtrap-woocommerce-general',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'General', 'wordtrap' ),
+    'id'           => 'wordtrap-woocommerce-general',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'         => 'woo-login-popup',
         'type'       => 'switch',

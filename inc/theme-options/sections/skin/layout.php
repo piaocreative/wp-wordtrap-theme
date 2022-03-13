@@ -9,26 +9,26 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Layout', 'wordtrap' ),
-		'id'           => 'wordtrap-skin-layout',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Layout', 'wordtrap' ),
+    'id'           => 'wordtrap-skin-layout',
+    'subsection'   => true,
+    'fields'       => array(
       array(
-				'id'       => 'grid-breakpoints-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Grid Breakpoints', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'grid-breakpoints-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Grid Breakpoints', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'grid-breakpoints-sm',
         'type'     => 'dimensions',
         'title'    => esc_html__( 'Small', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 576
-				),
+          'width'  => 576
+        ),
       ),
       array(
         'id'       => 'grid-breakpoints-md',
@@ -36,8 +36,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Medium', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 768
-				),
+          'width'  => 768
+        ),
       ),
       array(
         'id'       => 'grid-breakpoints-lg',
@@ -45,8 +45,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Large', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 992
-				),
+          'width'  => 992
+        ),
       ),
       array(
         'id'       => 'grid-breakpoints-xl',
@@ -54,8 +54,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Extra Large', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 1200
-				),
+          'width'  => 1200
+        ),
       ),
       array(
         'id'       => 'grid-breakpoints-xxl',
@@ -63,28 +63,28 @@ Redux::set_section(
         'title'    => esc_html__( 'Extra Extra Large', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 1400
-				),
+          'width'  => 1400
+        ),
       ),
       array(
-				'id'       => 'grid-breakpoints-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'grid-breakpoints-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
       array(
-				'id'       => 'container-max-widths-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Container Max Widths', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'container-max-widths-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Container Max Widths', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'container-max-widths-sm',
         'type'     => 'dimensions',
         'title'    => esc_html__( 'Small', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 540
-				),
+          'width'  => 540
+        ),
       ),
       array(
         'id'       => 'container-max-widths-md',
@@ -92,8 +92,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Medium', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 720
-				),
+          'width'  => 720
+        ),
       ),
       array(
         'id'       => 'container-max-widths-lg',
@@ -101,8 +101,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Large', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 960
-				),
+          'width'  => 960
+        ),
       ),
       array(
         'id'       => 'container-max-widths-xl',
@@ -110,8 +110,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Extra Large', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 1140
-				),
+          'width'  => 1140
+        ),
       ),
       array(
         'id'       => 'container-max-widths-xxl',
@@ -119,27 +119,27 @@ Redux::set_section(
         'title'    => esc_html__( 'Extra Extra Large', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => 1320
-				),
+          'width'  => 1320
+        ),
       ),
       array(
-				'id'       => 'container-max-widths-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'container-max-widths-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
       array(
-				'id'       => 'grid-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Grid', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'grid-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Grid', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
-				'id'       => 'grid-columns',
-				'type'     => 'text',
-				'title'    => esc_html__( 'Columns', 'wordtrap' ),
-				'validate' => array( 'numeric', 'not_empty' ),
-				'default'  => '12',
-			),
+        'id'       => 'grid-columns',
+        'type'     => 'text',
+        'title'    => esc_html__( 'Columns', 'wordtrap' ),
+        'validate' => array( 'numeric', 'not_empty' ),
+        'default'  => '12',
+      ),
       array(
         'id'       => 'grid-gutter-width',
         'type'     => 'dimensions',
@@ -147,30 +147,30 @@ Redux::set_section(
         'title'    => esc_html__( 'Gutter Width', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => '1.5'
-				),
+          'width'  => '1.5'
+        ),
       ),
       array(
-				'id'       => 'grid-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'grid-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
       array(
-				'id'       => 'spacers-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Spacers', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'spacers-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Spacers', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
-				'id'       => 'spacer',
-				'type'     => 'dimensions',
+        'id'       => 'spacer',
+        'type'     => 'dimensions',
         'units'    => 'rem',
         'title'    => esc_html__( 'Basic Spacer', 'wordtrap' ),
         'height'   => false,
         'default'  => array(
-					'width'  => '1'
-				),
-			),
+          'width'  => '1'
+        ),
+      ),
       array(
         'id'       => 'spacers',
         'type'     => 'multi_text',
@@ -179,10 +179,10 @@ Redux::set_section(
         'default'  => ['0', '0.2', '0.5', '1', '1.5', '3'],
       ),
       array(
-				'id'       => 'spacers-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'spacers-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );
