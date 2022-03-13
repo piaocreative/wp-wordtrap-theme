@@ -43,3 +43,15 @@ if ( ! function_exists( 'wordtrap_add_toolbar_node' ) ) {
     );
   }
 }
+
+if ( ! function_exists( 'wordtrap_admin_enqueue_scripts' ) ) {
+  /**
+   * Load admin page styles.
+   */
+  function wordtrap_admin_enqueue_scripts() {
+    if ( current_user_can( 'edit_theme_options' ) ) {
+      wp_enqueue_style( 'wordtrap-admin-page', WORDTRAP_ADMIN_URI . '/assets/css/style.css', false, WORDTRAP_VERSION, 'all' );
+    }
+  }
+}
+add_action( 'admin_enqueue_scripts', 'wordtrap_admin_enqueue_scripts', 1000 );

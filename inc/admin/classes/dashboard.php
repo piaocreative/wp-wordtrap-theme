@@ -11,23 +11,37 @@
 defined('ABSPATH') || exit;
 
 if ( ! class_exists('Wordtrap_Admin_Dashboard' ) ) {
+
+  /**
+   * Class Wordtrap_Admin_Dashboard
+   *
+   * Admin dashboard class.
+   *
+   * @access public
+   */
   class Wordtrap_Admin_Dashboard {
 
+    /**
+     * Constructor
+     *
+     * add toolbar menus, admin menus
+     */
     public function __construct() {
       if ( current_user_can( 'edit_theme_options' ) ) {
         if ( is_super_admin() && is_admin_bar_showing() ) {
-          add_action( 'wp_before_admin_bar_render', array( $this, 'add_wp_toolbar_menu' ) );
+          add_action( 'wp_before_admin_bar_render', array( $this, 'toolbar_menu' ) );
         }
 
         if ( is_admin() ) {
           add_action( 'admin_menu', array( $this, 'admin_menu' ) );
         }
-
-        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ), 1000 );
       }
     }
 
-    public function add_wp_toolbar_menu() {
+    /**
+     * Add toolbar menus
+     */
+    public function toolbar_menu() {
       
       // Add parent menu
       wordtrap_add_toolbar_node( 
@@ -59,15 +73,11 @@ if ( ! class_exists('Wordtrap_Admin_Dashboard' ) ) {
         admin_url( 'themes.php?page=wordtrap_options' ) ,
         'wordtrap-options'
       );
-      
-      wordtrap_add_toolbar_node( 
-        __( 'Template Builder', 'wordtrap' ), 
-        'wordtrap', 
-        admin_url( 'edit.php?post_type=wordtrap_builder' ) ,
-        'wordtrap-builder'
-      );
-    }  
+    }
 
+    /**
+     * Add admin menu
+     */
     public function admin_menu() {
       add_menu_page( 
         __( 'Wordtrap', 'wordtrap' ), 
@@ -105,14 +115,14 @@ if ( ! class_exists('Wordtrap_Admin_Dashboard' ) ) {
       );
     }
 
-    public function enqueue_styles() {
-      wp_enqueue_style( 'wordtrap-admin-page', WORDTRAP_ADMIN_URI . '/assets/css/style.css', false, WORDTRAP_VERSION, 'all' );
-    }
-
+    /**
+     * Load dashboard page
+     */
     public function dashboard() {
       require get_template_directory() . '/inc/admin/templates/dashboard.php';
     }
   }
 }
 
+// Create admin dashboard instance
 new Wordtrap_Admin_Dashboard();
