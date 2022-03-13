@@ -11,9 +11,9 @@ defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'wordtrap_generate_post_formats' ) ) {
   /**
-   * Generate the Post Formats
+   * Load the post formats
    *
-   * @return array
+   * @return array   The post formats supported by theme.
    */
   function wordtrap_generate_post_formats() {
     return array(

@@ -40,7 +40,7 @@ $status = array(
   <h2 class="screen-reader-text"><?php _e( 'Dashboard', 'wordtrap' ); ?></h2>
   <?php
     wordtrap_get_template_part(
-      'inc/admin/pages/header',
+      'inc/admin/templates/header',
       null,
       array(
         'active_item' => 'wordtrap',

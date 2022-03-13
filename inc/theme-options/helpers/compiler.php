@@ -9,8 +9,12 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Compile theme styles with changed values
 if ( ! function_exists( 'wordtrap_compile_with_changed_values' ) ) {
+  /**
+   * Compile theme styles with changed values
+   *
+   * @params array $changed_values   Changed values when saving theme options
+   */
   function wordtrap_compile_with_changed_values( $changed_values ) {
     $changed_fields = array_keys( $changed_values );
     $skin_fields = wordtrap_skin_fields();
@@ -28,8 +32,12 @@ if ( ! function_exists( 'wordtrap_compile_with_changed_values' ) ) {
   }  
 }
 
-// Get all fields related to styles
 if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
+  /**
+   * Get all fields related to style
+   *
+   * @params array    All skin fields
+   */
   function wordtrap_skin_fields() {
     return array(
       'css-code',
@@ -50,16 +58,24 @@ if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
   }
 }
 
-// Compile after process compiler fields
 if ( ! function_exists( 'wordtrap_compile_after_compile_options' ) ) {
+  /**
+   * Compile after compiler field processing
+   *
+   * @params array   $options         Theme options.
+   *         string  $css             CSS that get sent to the compiler hook.
+   *         array   $changed_values  Changed values when compiling theme options.
+   */
   function wordtrap_compile_after_compile_options( $options, $css, $changed_values ) {
     wordtrap_compile_with_changed_values( $changed_values );
   }
 }
 add_action( 'redux/options/' . WORDTRAP_OPTIONS . '/compiler', 'wordtrap_compile_after_compile_options', 10, 3 );
 
-// Enqueue customizer theme styles
 if ( ! function_exists( 'wordtrap_customizer_theme_styles' ) ) {
+  /**
+   * Enqueue customizer theme styles
+   */
   function wordtrap_customizer_theme_styles() {
     do_action( 'wordtrap_compile_styles', true );
   }

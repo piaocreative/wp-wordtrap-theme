@@ -10,15 +10,20 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'wordtrap_check_file_write_permission' ) ) :
-  function wordtrap_check_file_write_permission( $filename ) {
-    if ( is_writable( dirname( $filename ) ) == false ) {
-      @chmod( dirname( $filename ), 0755 );
+  /**
+   * Check file write permission
+   * 
+   * @param string $file    The file path to check the write permission.
+   */
+  function wordtrap_check_file_write_permission( $file ) {
+    if ( is_writable( dirname( $file ) ) == false ) {
+      @chmod( dirname( $file ), 0755 );
     }
-    if ( file_exists( $filename ) ) {
-      if ( is_writable( $filename ) == false ) {
-        @chmod( $filename, 0755 );
+    if ( file_exists( $file ) ) {
+      if ( is_writable( $file ) == false ) {
+        @chmod( $file, 0755 );
       }
-      @unlink( $filename );
+      @unlink( $file );
     }
   }
 endif;

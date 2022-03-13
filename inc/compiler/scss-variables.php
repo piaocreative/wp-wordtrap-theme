@@ -1,6 +1,6 @@
 <?php
 /**
- * Generate scss variables
+ * Load scss variables
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
