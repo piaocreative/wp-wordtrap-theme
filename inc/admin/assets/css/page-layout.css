@@ -1,0 +1,217 @@
+/**
+ * Wordtrap Page Layouts
+ * @since 1.0.0
+ */
+.wordtrap-wrap .status-yes {
+  color: #198754;
+}
+
+.wordtrap-wrap .status-no,
+.wordtrap-wrap .status-error {
+  color: #dc3545;
+}
+
+.wordtrap-wrap .status-info {
+  color: #0dcaf0;
+}
+
+.wordtrap-wrap .status-notice {
+  color: #0dcaf0;
+}
+
+.wordtrap-wrap .system-status em {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.wordtrap-wrap .page-layout .layout-box {
+  padding: 0 10px 10px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto
+}
+
+.wordtrap-wrap .page-layout .layout-header {
+  display: flex;
+  margin: 0 -10px;
+  padding: 19px 20px;
+  background: #29e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  border-radius: 4px 4px 0 0;
+  transition: background .2s, color .2s;
+}
+
+.wordtrap-wrap .layout-header .back {
+  color: #fff;
+  font-size: 15px;
+  width: 0;
+  overflow: hidden;
+  transition: width .2s,margin .2s;
+  text-decoration: none;
+}
+
+.wordtrap-wrap .open-options .back {
+  width: auto;
+  margin-right: 10px;
+}
+
+html[dir="rtl"] .wordtrap-wrap .open-options .back {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.wordtrap-wrap .layout.wordtrap-layout {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: auto;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 13px;
+  background: #e1e1e1;
+}
+
+.wordtrap-wrap .block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  padding: 8px;
+  background: #f8f8f8;
+  color: #666;
+  text-align: center;
+  cursor: pointer;
+  transition: background .15s;
+  border-bottom: 1px solid #e1e1e1;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.wordtrap-wrap .popup {
+  margin-bottom: 10px;
+}
+
+.wordtrap-wrap .block:hover {
+  background: #eee;
+}
+
+.wordtrap-layout .main-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.wordtrap-layout .content-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2;
+}
+
+.wordtrap-layout .content-wrap .block {
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  height: 140px;
+}
+
+.wordtrap-layout .sidebar {
+  flex: 1;
+  height: 100%
+}
+
+.wordtrap-wrap .block-options {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 57px;
+  bottom: 0;
+  z-index: 1;
+  transition: transform .2s;
+  transform: translateX(100%);
+  padding: 10px;
+  margin: 10px;
+  overflow-y: auto;
+}
+
+.wordtrap-wrap .open-options .block-options {
+  transform: none;
+}
+
+.wordtrap-wrap .block-options h4 {
+  margin-top: 0;
+}
+
+.wordtrap-wrap .block-options select {
+  width: 80%;
+  padding: 0.2em 1em;
+  height: auto;
+  margin-right: 20px;
+}
+
+.wordtrap-wrap .block-options label {
+  display: inline-block;
+  margin-bottom: 5px;
+  cursor: auto;
+}
+
+.wordtrap-wrap .block-options .option {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.wordtrap-wrap .block-options .option.preset {
+  display: none;
+}
+
+.wordtrap-wrap .add-new-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  border: 2px solid #ddd;
+}
+
+.wordtrap-wrap .add-new-layout a {
+  font-size: 0.825rem;
+  text-decoration: none;
+}
+
+.layout-action { 
+  float: right; 
+  line-height: 34px;
+}
+
+html[dir="rtl"] .layout-action {
+  float: left;
+}
+
+.layout-action + .layout-action {
+  margin-right: 5px;
+}
+
+html[dir="rtl"] .layout-action + .layout-action {
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+.layout-action, 
+.add-new-layout a {
+  color: #444;
+  box-shadow: none;
+  outline: none;
+}
+
+.layout-action:hover, 
+.add-new-layout a:hover {
+  color: #29e;
+}

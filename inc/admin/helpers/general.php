@@ -46,12 +46,32 @@ if ( ! function_exists( 'wordtrap_add_toolbar_node' ) ) {
 
 if ( ! function_exists( 'wordtrap_admin_enqueue_scripts' ) ) {
   /**
-   * Load admin page styles.
+   * Load admin styles.
    */
   function wordtrap_admin_enqueue_scripts() {
     if ( current_user_can( 'edit_theme_options' ) ) {
-      wp_enqueue_style( 'wordtrap-admin-page', WORDTRAP_ADMIN_URI . '/assets/css/style.css', false, WORDTRAP_VERSION, 'all' );
+      wp_enqueue_style( 'wordtrap-icon', WORDTRAP_ADMIN_URI . '/assets/css/icon.css', false, WORDTRAP_VERSION );
+      
+      global $pagenow;
+      if ( ( $pagenow == 'themes.php' || $pagenow == 'admin.php' ) 
+        && isset( $_GET['page'] ) && 
+        ( $_GET['page'] === WORDTRAP_OPTIONS || $_GET['page'] == 'wordtrap' ) ) {
+        wp_enqueue_style( 'wordtrap-admin', WORDTRAP_ADMIN_URI . '/assets/css/admin.css', false, WORDTRAP_VERSION );
+        wp_enqueue_script( 'wordtrap-admin', WORDTRAP_ADMIN_URI . '/assets/js/admin.js', array( 'jquery' ), WORDTRAP_VERSION, true );
+      }      
     }
   }
 }
-add_action( 'admin_enqueue_scripts', 'wordtrap_admin_enqueue_scripts', 1000 );
+add_action( 'admin_enqueue_scripts', 'wordtrap_admin_enqueue_scripts' );
+
+if ( ! function_exists( 'wordtrap_admin_icon_enqueue_scripts' ) ) {
+  /**
+   * Load styles.
+   */
+  function wordtrap_admin_icon_enqueue_scripts() {
+    if ( is_admin_bar_showing() ) {
+      wp_enqueue_style( 'wordtrap-icon', WORDTRAP_ADMIN_URI . '/assets/css/icon.css', false, WORDTRAP_VERSION );
+    }
+  }
+}
+add_action( 'enqueue_scripts', 'wordtrap_admin_icon_enqueue_scripts' );

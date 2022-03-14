@@ -20,10 +20,9 @@ if ( $pagenow == 'themes.php' && isset( $_GET['page'] ) && $_GET['page'] === WOR
 <div class="wordtrap-admin-nav">
 <?php
   $items = array(
-    'wordtrap'              => array( 'admin.php?page=wordtrap', __( 'Dashboard', 'wordtrap' ) ),
+    'wordtrap'              => array( 'admin.php?page=wordtrap', __( 'Page Layout', 'wordtrap' ) ),
     'wordtrap-customize'    => array( 'customize.php', __( 'Customize', 'wordtrap' ) ),
     'wordtrap-options'      => array( 'themes.php?page=wordtrap_options', __( 'Theme Options', 'wordtrap' ) ),
-    'wordtrap-page-layout'  => array('admin.php?page=wordtrap-page-layout', __('Page Layout', 'wordtrap')),
     'wordtrap-builder'      => array( 'edit.php?post_type=wordtrap_builder', __( 'Template Builder', 'wordtrap' ) ),
   );
   

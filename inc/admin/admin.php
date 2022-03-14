@@ -15,5 +15,5 @@ $dir = dirname( __FILE__ );
 require $dir . '/helpers/general.php';
 
 // Load classes
-require $dir . '/classes/dashboard.php';
+require $dir . '/classes/page-layout.php';
 
