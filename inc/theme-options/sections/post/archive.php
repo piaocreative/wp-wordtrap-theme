@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Archive', 'wordtrap' ),
-		'id'           => 'wordtrap-post-archive',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Archive', 'wordtrap' ),
+    'id'           => 'wordtrap-post-archive',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'posts-layout',
         'type'     => 'image_select',
@@ -93,9 +93,9 @@ Redux::set_section(
         'default'  => '',
       ),
       array(
-        'id'       => 'posts-shares',
+        'id'       => 'posts-share',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Social Shares', 'wordtrap' ),
+        'title'    => esc_html__( 'Social Share', 'wordtrap' ),
         'required' => array( 'posts-view', 'equals', array( 'grid', 'timeline', 'masonry', 'large-alt' ) ),
         'default'  => false,
         'on'       => esc_html__( 'Show', 'wordtrap' ),

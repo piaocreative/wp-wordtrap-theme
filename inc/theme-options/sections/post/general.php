@@ -9,20 +9,20 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'General', 'wordtrap' ),
-		'id'           => 'wordtrap-post-general',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'General', 'wordtrap' ),
+    'id'           => 'wordtrap-post-general',
+    'subsection'   => true,
+    'fields'       => array(
       array(
-				'id'           => 'show-post-format',
-				'type'         => 'switch',
+        'id'           => 'show-post-format',
+        'type'         => 'switch',
         'title'        => esc_html__( 'Post Format', 'wordtrap' ),
         'default'      => false,
         'on'           => esc_html__( 'Show', 'wordtrap' ),
         'off'          => esc_html__( 'Hide', 'wordtrap' ),
-			),
+      ),
       array(
         'id'           => 'sticky-post-label',
         'type'         => 'text',

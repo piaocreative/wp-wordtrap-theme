@@ -9,12 +9,12 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'        => esc_html__( 'Singular', 'wordtrap' ),
-		'id'           => 'wordtrap-post-singular',
-		'subsection'   => true,
-		'fields'       => array(
+  $opt_name,
+  array(
+    'title'        => esc_html__( 'Singular', 'wordtrap' ),
+    'id'           => 'wordtrap-post-singular',
+    'subsection'   => true,
+    'fields'       => array(
       array(
         'id'       => 'post-backto',
         'type'     => 'switch',
@@ -70,9 +70,9 @@ Redux::set_section(
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
-        'id'       => 'post-shares',
+        'id'       => 'post-share',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Social Shares', 'wordtrap' ),
+        'title'    => esc_html__( 'Social Share', 'wordtrap' ),
         'default'  => true,
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
@@ -94,11 +94,11 @@ Redux::set_section(
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
-				'id'       => 'post-related-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Related Posts', 'wordtrap' ),
-				'indent'   => true,
-			),
+        'id'       => 'post-related-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Related Posts', 'wordtrap' ),
+        'indent'   => true,
+      ),
       array(
         'id'       => 'post-related',
         'type'     => 'switch',
@@ -149,10 +149,10 @@ Redux::set_section(
         'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
       array(
-				'id'       => 'post-related-end',
-				'type'     => 'section',
-				'indent'   => false,
-			),
+        'id'       => 'post-related-end',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
     )
   )
 );

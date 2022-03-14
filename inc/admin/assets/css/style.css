@@ -1,0 +1,277 @@
+.dashicons-wordtrap-logo {
+  background: url(../images/logo.png);
+}
+
+#adminmenu li a:focus .dashicons-wordtrap-logo,
+#adminmenu li.opensub .dashicons-wordtrap-logo, 
+#adminmenu li:hover .dashicons-wordtrap-logo {
+  background-position: -34px 0;
+}
+
+#adminmenu .current .dashicons-wordtrap-logo, 
+#adminmenu .wp-has-current-submenu .dashicons-wordtrap-logo, 
+#adminmenu a.current:hover .dashicons-wordtrap-logo, 
+#adminmenu a.wp-has-current-submenu:hover .dashicons-wordtrap-logo, 
+#adminmenu li.wp-has-current-submenu .dashicons-wordtrap-logo, 
+#adminmenu li.wp-has-current-submenu.opensub .dashicons-wordtrap-logo, 
+#adminmenu li.wp-has-current-submenu:hover .dashicons-wordtrap-logo {
+  background-position: -68px 0;
+}
+
+@media (min-width: 1200px) {
+  .wordtrap-wrap {
+    margin: 30px 30px 0 12px;
+  }
+
+  html[dir="rtl"] .wordtrap-wrap {
+    margin: 30px 12px 0 30px;
+  }
+
+  .redux-wrap-div {
+    margin: 16px 30px 0 11px;
+  }
+  
+  html[dir="rtl"] .redux-wrap-div {
+    margin: 16px 11px 0 30px;
+  }
+}
+
+.wordtrap-admin-nav {
+  background: #333;
+  padding: 0 1rem;
+}
+
+.wordtrap-admin-nav a,
+.wordtrap-admin-nav span {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .8125rem;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1rem;
+  padding: 1.375rem 1.125rem;
+  position: relative;
+  outline: 0;
+  box-shadow: none;
+}
+
+.wordtrap-admin-nav .active:after,
+.wordtrap-admin-nav a:hover:after {
+  content: '';
+  border-bottom: 0.5rem solid #08c;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -0.6rem;
+}
+
+@media (max-width: 1199px) {
+  .wordtrap-admin-nav a,
+  .wordtrap-admin-nav span {
+    font-size: .75rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .wordtrap-admin-nav .active,
+  .wordtrap-admin-nav a:hover {
+    color: #08c;
+  }
+
+  .wordtrap-admin-nav .active:after,
+  .wordtrap-admin-nav a:hover:after {
+    display: none;
+  }
+}
+
+.wordtrap-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #08c;
+  padding: 20px 30px;
+}
+
+.wordtrap-admin-header h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.wordtrap-admin-header h6 {
+  margin: 0;
+  opacity: .9;
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.wordtrap-admin-header .name {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.wordtrap-admin-header .version {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: right;
+  margin-top: 0.2rem;
+}
+
+.wordtrap-wrap main {
+  padding: 1.75rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.wordtrap-wrap h2 {
+  font-size: 1.5em;
+  margin-top: 0.9em;
+}
+
+.wordtrap-wrap p {
+  font-size: .875rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .wordtrap-wrap .row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .wordtrap-wrap .row > div {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .wordtrap-wrap .row .col-left {
+    width: 66%;
+    border-right: 1px solid #e7e7e7;
+  }
+  .wordtrap-wrap .row .col-right {
+    width: 33%;
+  }
+}
+
+.wordtrap-wrap .status-yes {
+  color: #198754;
+}
+
+.wordtrap-wrap .status-no,
+.wordtrap-wrap .status-error {
+  color: #dc3545;
+}
+
+.wordtrap-wrap .status-info {
+  color: #0dcaf0;
+}
+
+.wordtrap-wrap .status-notice {
+  color: #0dcaf0;
+}
+
+.wordtrap-wrap .system-status em {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.wordtrap-wrap .page-layout .layout-box {
+  padding: 0 10px 10px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto
+}
+
+.wordtrap-wrap .page-layout .layout-header {
+  display: flex;
+  margin: 0 -10px;
+  padding: 19px 20px;
+  background: #29e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  border-radius: 4px 4px 0 0;
+  transition: background .2s,color .2s;
+}
+
+.wordtrap-wrap .layout.wordtrap-layout {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: auto;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 13px;
+  background: #e1e1e1;
+}
+
+.wordtrap-wrap .layout-part {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  padding: 2px;
+  background: #f8f8f8;
+  color: #666;
+  text-align: center;
+  cursor: pointer;
+  transition: background .15s;
+  border-bottom: 1px solid #e1e1e1;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.wordtrap-wrap .popup {
+  margin-bottom: 10px;
+}
+
+.wordtrap-wrap .layout-part:hover {
+  background: #eee;
+}
+
+.wordtrap-layout .content-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.wordtrap-layout .content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 3;
+}
+
+.wordtrap-layout .content .block {
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+}
+
+.wordtrap-layout .left-sidebar,
+.wordtrap-layout .right-sidebar {
+  flex: 1;
+  height: 100%
+}
+
