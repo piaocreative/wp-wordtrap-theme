@@ -23,6 +23,7 @@ require_once $dir . 'helpers/field-values.php';
 require_once $dir . 'helpers/notices.php';
 require_once $dir . 'helpers/compiler.php';
 require_once $dir . 'helpers/template.php';
+require_once $dir . 'helpers/toolbar.php';
 
 /*
  * ---> BEGIN ARGUMENTS
@@ -80,7 +81,7 @@ $args = array(
   'page_priority'             => null,
 
   // For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters.
-  'page_parent'               => 'themes.php',
+  'page_parent'               => 'wordtrap',
 
   // Permissions needed to access the options panel.
   'page_permissions'          => 'manage_options',

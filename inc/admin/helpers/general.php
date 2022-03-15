@@ -64,14 +64,14 @@ if ( ! function_exists( 'wordtrap_admin_enqueue_scripts' ) ) {
 }
 add_action( 'admin_enqueue_scripts', 'wordtrap_admin_enqueue_scripts' );
 
-if ( ! function_exists( 'wordtrap_admin_icon_enqueue_scripts' ) ) {
+if ( ! function_exists( 'wordtrap_toolbar_icon_enqueue_scripts' ) ) {
   /**
-   * Load styles.
+   * Load admin styles.
    */
-  function wordtrap_admin_icon_enqueue_scripts() {
+  function wordtrap_toolbar_icon_enqueue_scripts() {
     if ( is_admin_bar_showing() ) {
       wp_enqueue_style( 'wordtrap-icon', WORDTRAP_ADMIN_URI . '/assets/css/icon.css', false, WORDTRAP_VERSION );
     }
   }
 }
-add_action( 'enqueue_scripts', 'wordtrap_admin_icon_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'wordtrap_toolbar_icon_enqueue_scripts' );

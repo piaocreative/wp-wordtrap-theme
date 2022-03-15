@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 // declare variables in theme options page
 global $pagenow;
-if ( $pagenow == 'themes.php' && isset( $_GET['page'] ) && $_GET['page'] === WORDTRAP_OPTIONS ) {
+if ( ( $pagenow == 'themes.php' || $pagenow == 'admin.php' ) && isset( $_GET['page'] ) && $_GET['page'] === WORDTRAP_OPTIONS ) {
   $active_item = 'wordtrap-options';
   $title = esc_html__( 'Theme Options', 'wordtrap' );
   $subtitle = esc_html__( 'Theme Options panel enables you full control over your website design and settings.', 'wordtrap' );
@@ -23,7 +23,7 @@ if ( $pagenow == 'themes.php' && isset( $_GET['page'] ) && $_GET['page'] === WOR
     'wordtrap'              => array( 'admin.php?page=wordtrap', __( 'Page Layout', 'wordtrap' ) ),
     'wordtrap-customize'    => array( 'customize.php', __( 'Customize', 'wordtrap' ) ),
     'wordtrap-options'      => array( 'themes.php?page=wordtrap_options', __( 'Theme Options', 'wordtrap' ) ),
-    'wordtrap-builder'      => array( 'edit.php?post_type=wordtrap_builder', __( 'Template Builder', 'wordtrap' ) ),
+    'wordtrap-builder'      => array( 'edit.php?post_type=wordtrap_builder', __( 'Templates Builder', 'wordtrap' ) ),
   );
   
   foreach ( $items as $key => $item ) {
