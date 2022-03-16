@@ -113,7 +113,7 @@ if ( ! function_exists( 'wordtrap_setup_theme' ) ) {
 		 */
 		add_theme_support(
 			'post-formats',
-			$post_formats
+			wordtrap_generate_post_formats()
 		);
 
 		// Set up the WordPress core custom background feature.
