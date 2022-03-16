@@ -23,10 +23,13 @@ if ( ! class_exists( 'Wordtrap_Templates_Builder' ) ) {
 class Wordtrap_Templates_Builder {
 
   // Template slug
-  const TEMPLATE_SLUG = 'wordtrap_builder';
+  const POST_TYPE     = 'wordtrap_builder';
 
-  // Taxonomy slug
-  const TAXONOMY_SLUG = 'wordtrap_builder_type';
+  // Taxonomy slug, Meta kwy
+  const TEMPLATE_TYPE = 'wordtrap_builder_type';
+
+  // Template meta option
+  const META_OPTION   = 'wordtrap_builder';
 
   // Capability
   private $capability = 'edit_pages';
@@ -69,8 +72,8 @@ class Wordtrap_Templates_Builder {
     $name          = __( 'Templates Builder', 'wordtrap' );
     $current_type  = $singular_name;
     
-    if ( ! empty( $_REQUEST[ self::TAXONOMY_SLUG ] ) && isset( $this->builder_types[ $_REQUEST[ self::TAXONOMY_SLUG ] ] ) ) {
-      $current_type = $this->builder_types[ $_REQUEST[ self::TAXONOMY_SLUG ] ];
+    if ( ! empty( $_REQUEST[ self::TEMPLATE_TYPE ] ) && isset( $this->builder_types[ $_REQUEST[ self::TEMPLATE_TYPE ] ] ) ) {
+      $current_type = $this->builder_types[ $_REQUEST[ self::TEMPLATE_TYPE ] ];
     }
     
     // register builder post type
@@ -105,10 +108,9 @@ class Wordtrap_Templates_Builder {
         'thumbnail',
         'author',
         'editor',
-      ),
-      'register_meta_box_cb' => array( $this, 'add_meta_boxes' ),
+      ),      
     );
-    register_post_type( self::TEMPLATE_SLUG, $args );
+    register_post_type( self::POST_TYPE, $args );
 
     // register builder type as taxonomy
     $args = array(
@@ -122,7 +124,56 @@ class Wordtrap_Templates_Builder {
       'label'                => __( 'Type', 'wordtrap' ),
       'show_in_rest'         => true,
     );
-    register_taxonomy( self::TAXONOMY_SLUG, self::TEMPLATE_SLUG, $args );
+    register_taxonomy( self::TEMPLATE_TYPE, self::POST_TYPE, $args );
+
+    // add meta boxes
+    $this->add_meta_boxes();
+  }
+
+  /**
+   * Add meta boxes
+   */
+  public function add_meta_boxes() {
+    Redux_Metaboxes::set_box(
+      self::META_OPTION,
+      array(
+        'id'         => 'wordtrap-builder-metaboxes',
+        'title'      => esc_html__( 'Template Options', 'wordtrap' ),
+        'post_types' => array( self::POST_TYPE ),
+        'position'   => 'normal',
+        'priority'   => 'high',
+        'sections'   => array(
+          array(
+            'title'  => esc_html__( 'Custom CSS', 'wordtrap' ),
+            'id'     => 'template-css',
+            'icon'   => 'dashicons dashicons-editor-code',
+            'fields' => array(
+              array(
+                'id'         => 'css-code',
+                'type'       => 'ace_editor',
+                'mode'       => 'css',
+                'default'    => '',
+                'full_width' => true,
+              ),
+            )
+          ),
+          array(
+            'title'  => esc_html__( 'JS Code', 'wordtrap' ),
+            'id'     => 'template-js',
+            'icon'   => 'dashicons dashicons-editor-code',
+            'fields' => array(
+              array(
+                'id'         => 'js-code',
+                'type'       => 'ace_editor',
+                'mode'       => 'javascript',
+                'default'    => '',
+                'full_width' => true
+              ),
+            )
+          ),          
+        ),
+      )
+    );    
   }
 
   /**
@@ -134,7 +185,7 @@ class Wordtrap_Templates_Builder {
       __( 'Templates Builder', 'wordtrap' ), 
       __( 'Templates Builder', 'wordtrap' ), 
       'administrator', 
-      'edit.php?post_type=' . self::TEMPLATE_SLUG
+      'edit.php?post_type=' . self::POST_TYPE
     );
   }
 
@@ -145,7 +196,7 @@ class Wordtrap_Templates_Builder {
     wordtrap_add_toolbar_node( 
       __( 'Templates Builder', 'wordtrap' ), 
       'wordtrap', 
-      admin_url( 'edit.php?post_type=' . self::TEMPLATE_SLUG ), 
+      admin_url( 'edit.php?post_type=' . self::POST_TYPE ), 
       'wordtrap-templates-builder' 
     );
   }
