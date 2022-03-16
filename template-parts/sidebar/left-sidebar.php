@@ -14,8 +14,8 @@ if ( ! is_active_sidebar( 'left-sidebar' ) ) {
 }
 ?>
 
-	<div class="col-md-3 widget-area" id="left-sidebar">
+<div class="col-md-3 widget-area" id="left-sidebar">
 
-		<?php dynamic_sidebar( 'left-sidebar' ); ?>
+	<?php dynamic_sidebar( 'left-sidebar' ); ?>
 
-	</div><!-- #left-sidebar -->
+</div><!-- #left-sidebar -->

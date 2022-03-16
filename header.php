@@ -59,49 +59,17 @@ global $wordtrap_options;
 
 	<header id="header" class="site-header">
 
-		<div class="navbar navbar-expand-lg navbar-light">
-		
-			<?php 
-			// Header Layout
-			$header_layout = $wordtrap_options['header-layout']; 
-			?>
-			
-			<?php if ( $header_layout !== 'full' ) : ?>
-				<div class="container-<?php echo $header_layout; ?>">
-			<?php endif; ?>
+		<!-- Navbar Top
+		============================================= -->
+		<?php get_template_part( 'template-parts/header/navbar',  'top' ); ?>
 
-				<!-- Logo
-				============================================= -->				
-				<?php echo wordtrap_logo(); ?>
+		<!-- Navbar Main
+		============================================= -->
+		<?php get_template_part( 'template-parts/header/navbar',  'main' ); ?>
 
-				<!-- Navbar Toggler
-				============================================= -->
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<!-- Navbar Collapse
-				============================================= -->
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarCollapse',
-						'menu_class'      => 'navbar-nav me-auto',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'depth'           => 2,
-						'walker'          => new Wordtrap_WP_Bootstrap_Navwalker(),
-					)
-				);
-				?>
-
-			<?php if ( $header_layout !== 'full' ) : ?>
-				</div><!-- .container-(fluid) -->
-			<?php endif; ?>
-
-		</div>
+		<!-- Navbar Bottom
+		============================================= -->
+		<?php get_template_part( 'template-parts/header/navbar',  'bottom' ); ?>
 
 	</header><!-- #header -->
 
