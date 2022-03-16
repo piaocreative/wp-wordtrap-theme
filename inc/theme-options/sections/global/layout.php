@@ -37,7 +37,7 @@ Redux::set_section(
         'title'    => esc_html__( 'Header Layout', 'wordtrap' ),
         'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
         'options'  => $layout_options,
-        'default'  => 'full',
+        'default'  => 'boxed',
       ),
       array(
         'id'       => 'banner-layout',
@@ -53,7 +53,7 @@ Redux::set_section(
         'title'    => esc_html__( 'Breadcrumbs Layout', 'wordtrap' ),
         'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
         'options'  => $layout_options,
-        'default'  => 'full',
+        'default'  => 'boxed',
       ),
       array(
         'id'       => 'layout',
@@ -68,7 +68,7 @@ Redux::set_section(
         'title'    => esc_html__( 'Content Layout', 'wordtrap' ),
         'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
         'options'  => $content_layout_options,
-        'default'  => 'wide',
+        'default'  => 'boxed',
       ),
       array(
         'id'       => 'left-sidebar',
@@ -109,7 +109,7 @@ Redux::set_section(
         'title'    => esc_html__( 'Footer Layout', 'wordtrap' ),
         'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
         'options'  => $layout_options,
-        'default'  => 'full',
+        'default'  => 'boxed',
       ),      
     ),
   )

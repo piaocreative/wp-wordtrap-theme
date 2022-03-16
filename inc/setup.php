@@ -111,7 +111,6 @@ if ( ! function_exists( 'wordtrap_setup_theme' ) ) {
 		 * Enable support for Post Formats.
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
-		$post_formats = wordtrap_generate_post_formats();
 		add_theme_support(
 			'post-formats',
 			$post_formats
