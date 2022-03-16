@@ -29,7 +29,7 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
 
 		// For dev
 		$templates_styles  = "/css/templates{$suffix}.css";
-		wp_enqueue_style( 'understrap-templates-styles', get_template_directory_uri() . $templates_styles, array(), $css_version );
+		wp_enqueue_style( 'wordtrap-templates-styles', get_template_directory_uri() . $templates_styles, array(), $css_version );
 
 		wp_enqueue_script( 'jquery' );
 
