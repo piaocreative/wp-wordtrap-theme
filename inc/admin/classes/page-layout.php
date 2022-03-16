@@ -31,11 +31,11 @@ class Wordtrap_Admin_Page_Layout {
   // Template slug
   private $post_type = Wordtrap_Templates_Builder::POST_TYPE;
 
-  // Templates builder type meta key
+  // Template type meta key
   private $meta_type = Wordtrap_Templates_Builder::TEMPLATE_TYPE;
 
-  // Templates builder conditions meta key
-  private $meta_conditions = '_wordtrap_builder_conditions';
+  // Template conditions meta key
+  private $meta_conditions = '_wordtrap_template_conditions';
   
   /**
    * Constructor
@@ -133,7 +133,7 @@ class Wordtrap_Admin_Page_Layout {
     $types = array( 'header', 'left-sidebar', 'content', 'right-sidebar', 'footer' );
     $this->template_list = array();
 
-    // builder templates
+    // load templates
     foreach ( $types as $type ) {
       $posts = get_posts(
         array(
@@ -165,7 +165,7 @@ class Wordtrap_Admin_Page_Layout {
             '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $this->post_type . '&' . $this->meta_type . '=header' ) ) . '" target="_blank">', '</a>' 
           ),
         ),
-        'builder-blocks' => array(
+        'template-blocks' => array(
           'control'      => 'select',
           'label'        => esc_html__( 'Select Header', 'wordtrap' ),
           'choices'      => $this->template_list['header'],
@@ -179,7 +179,7 @@ class Wordtrap_Admin_Page_Layout {
             '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $this->post_type . '&' . $this->meta_type . '=left-sidebar' ) ) . '" target="_blank">', '</a>' 
           ),
         ),
-        'builder-blocks' => array(
+        'template-blocks' => array(
           'control'      => 'select',
           'label'        => esc_html__( 'Select Left Sidebar', 'wordtrap' ),
           'choices'      => $this->template_list['left-sidebar'],
@@ -193,7 +193,7 @@ class Wordtrap_Admin_Page_Layout {
             '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $this->post_type . '&' . $this->meta_type . '=content' ) ) . '" target="_blank">', '</a>' 
           ),
         ),
-        'builder-blocks' => array(
+        'template-blocks' => array(
           'control'      => 'select',
           'label'        => esc_html__( 'Select Content', 'wordtrap' ),
           'choices'      => $this->template_list['content'],
@@ -207,7 +207,7 @@ class Wordtrap_Admin_Page_Layout {
             '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $this->post_type . '&' . $this->meta_type . '=right-sidebar' ) ) . '" target="_blank">', '</a>' 
           ),
         ),
-        'builder-blocks' => array(
+        'template-blocks' => array(
           'control'      => 'select',
           'label'        => esc_html__( 'Select Right Sidebar', 'wordtrap' ),
           'choices'      => $this->template_list['right-sidebar'],
@@ -221,7 +221,7 @@ class Wordtrap_Admin_Page_Layout {
             '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $this->post_type . '&' . $this->meta_type . '=footer' ) ) . '" target="_blank">', '</a>' 
           ),
         ),
-        'builder-blocks' => array(
+        'template-blocks' => array(
           'control'      => 'select',
           'label'        => esc_html__( 'Select Footer', 'wordtrap' ),
           'choices'      => $this->template_list['footer'],

@@ -15,7 +15,7 @@
     $layout_box.find( '.block-options' ).data( 'block', block );
     $layout_box.addClass( 'open-options' );
 
-    $options.find( '.builder-blocks' ).each( function() {
+    $options.find( '.template-blocks' ).each( function() {
       var $block = $( this );
 
       if ( $block.data( 'value' ) ) {

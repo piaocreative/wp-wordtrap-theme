@@ -23,26 +23,32 @@ if ( ! class_exists( 'Wordtrap_Templates_Builder' ) ) {
 class Wordtrap_Templates_Builder {
 
   // Template slug
-  const POST_TYPE     = 'wordtrap_builder';
+  const POST_TYPE     = 'wordtrap_template';
 
   // Taxonomy slug, Meta kwy
-  const TEMPLATE_TYPE = 'wordtrap_builder_type';
+  const TEMPLATE_TYPE = 'wordtrap_template_type';
 
   // Template meta option
-  const META_OPTION   = 'wordtrap_builder';
+  const META_OPTION   = 'wordtrap_template';
 
   // Capability
   private $capability = 'edit_pages';
 
-  // Builder types
-  private $builder_types;
+  // Template types
+  private $template_types;
+
+  // Current directory
+  private $dir;
 
   /**
    * Constructor
    */
   public function __construct() {
+
+    $this->dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
     
-    $this->builder_types = array(
+    $this->template_types = array(
+      'block'         => __( 'Block', 'wordtrap' ),
       'header'        => __( 'Header', 'wordtrap' ),
       'left-sidebar'  => __( 'Left Sidebar', 'wordtrap' ),
       'content'       => __( 'Content', 'wordtrap' ),
@@ -50,33 +56,53 @@ class Wordtrap_Templates_Builder {
       'footer'        => __( 'Footer', 'wordtrap' ),
     );
 
-    $this->builder_types = apply_filters( 'wordtrap_template_builder_types', $this->builder_types );
+    $this->template_types = apply_filters( 'wordtrap_template_types', $this->template_types );
 
-    // register builder post type and builder types as taxonomies
-    add_action( 'init', array( $this, 'add_builder_type' ) );
+    // register template post type and template types as taxonomies
+    add_action( 'init', array( $this, 'add_template_type' ) );
 
-    // add builder menu
+    // add menu
     add_action( 'admin_menu', array( $this, 'add_admin_menu' ), 20 );  
     
-    // add builder menu in toolbar
+    // add toolbar menu
     if ( is_super_admin() && is_admin_bar_showing() ) {
       add_action( 'wp_before_admin_bar_render', array( $this, 'toolbar_menu' ), 20 );
+    }
+
+    if ( is_admin() ) {
+      // enqueue styles and scripts
+      add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
+
+      // add template types in templates list page
+      add_filter( 'views_edit-' . self::POST_TYPE, array( $this, 'admin_header_tabs' ) );
+
+      // manage admin column header
+      add_filter( 'manage_' . self::POST_TYPE . '_posts_columns', array( $this, 'admin_column_header' ) );
+
+      // manage admin column content
+      add_action( 'manage_' . self::POST_TYPE . '_posts_custom_column', array( $this, 'admin_column_content' ), 10, 2 );
+
+      // add dialog to select the template type when click add new
+      add_action(  'admin_footer', array( $this, 'admin_template_type_dialog' ) );
+
+      // insert new template
+      add_action( 'admin_action_wordtrap-new-template', array( $this, 'insert_template' ) );
     }
   }
 
   /**
-   * Register builder post type and builder types as taxonomies
+   * Register template post type and template types as taxonomies
    */
-  public function add_builder_type() {
+  public function add_template_type() {
     $singular_name = __( 'Template Builder', 'wordtrap' );
     $name          = __( 'Templates Builder', 'wordtrap' );
     $current_type  = $singular_name;
     
-    if ( ! empty( $_REQUEST[ self::TEMPLATE_TYPE ] ) && isset( $this->builder_types[ $_REQUEST[ self::TEMPLATE_TYPE ] ] ) ) {
-      $current_type = $this->builder_types[ $_REQUEST[ self::TEMPLATE_TYPE ] ];
+    if ( ! empty( $_REQUEST[ self::TEMPLATE_TYPE ] ) && isset( $this->template_types[ $_REQUEST[ self::TEMPLATE_TYPE ] ] ) ) {
+      $current_type = $this->template_types[ $_REQUEST[ self::TEMPLATE_TYPE ] ];
     }
     
-    // register builder post type
+    // register template post type
     $labels = array(
       'name'               => $name,
       'singular_name'      => $current_type,
@@ -112,7 +138,7 @@ class Wordtrap_Templates_Builder {
     );
     register_post_type( self::POST_TYPE, $args );
 
-    // register builder type as taxonomy
+    // register template type as taxonomy
     $args = array(
       'hierarchical'         => false,
       'show_ui'              => false,
@@ -123,6 +149,10 @@ class Wordtrap_Templates_Builder {
       'public'               => false,
       'label'                => __( 'Type', 'wordtrap' ),
       'show_in_rest'         => true,
+      'default_term'         => array(
+        'name'               => 'block',
+        'slug'               => 'block'
+      )
     );
     register_taxonomy( self::TEMPLATE_TYPE, self::POST_TYPE, $args );
 
@@ -134,10 +164,14 @@ class Wordtrap_Templates_Builder {
    * Add meta boxes
    */
   public function add_meta_boxes() {
+    if ( ! class_exists( 'Redux_Metaboxes' ) ) {
+      return;
+    }
+
     Redux_Metaboxes::set_box(
       self::META_OPTION,
       array(
-        'id'         => 'wordtrap-builder-metaboxes',
+        'id'         => 'wordtrap-template-metaboxes',
         'title'      => esc_html__( 'Template Options', 'wordtrap' ),
         'post_types' => array( self::POST_TYPE ),
         'position'   => 'normal',
@@ -177,7 +211,7 @@ class Wordtrap_Templates_Builder {
   }
 
   /**
-   * Add builder admin menu
+   * Add admin menu
    */
   public function add_admin_menu() {
     add_submenu_page( 
@@ -190,7 +224,7 @@ class Wordtrap_Templates_Builder {
   }
 
   /**
-   * Add toolbar menus
+   * Add toolbar menu
    */
   public function toolbar_menu() {
     wordtrap_add_toolbar_node( 
@@ -201,6 +235,104 @@ class Wordtrap_Templates_Builder {
     );
   }
 
+  /**
+   * Enqueue styles and scripts
+   */
+  public function enqueue() {
+    $screen = get_current_screen();
+    if ( $screen && ( ( $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) || ( $screen->base == 'post' && $screen->id == self::POST_TYPE ) ) ) {
+      wp_enqueue_style( 'wordtrap-admin-templates', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/css/admin.css', null, WORDTRAP_VERSION );      
+    }
+    if ( $screen && $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) {
+      wp_enqueue_script( 'wordtrap-admin-templates-type', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/template-type-dialog.js', array('jquery-ui-dialog'), WORDTRAP_VERSION );
+      wp_enqueue_style( 'wp-jquery-ui-dialog' );
+    }
+  }
+
+  /**
+   * Add template types in templates list page
+   */
+  public function admin_header_tabs( $views ) {
+    if ( ! current_user_can( $this->capability ) ) {
+      return;
+    }
+
+    $active_class = ' nav-tab-active';
+    $current_type = '';
+
+    if ( ! empty( $_REQUEST[ self::TEMPLATE_TYPE ] ) ) {
+      $current_type = $_REQUEST[ self::TEMPLATE_TYPE ];
+      $active_class = '';
+    }
+
+    $baseurl = add_query_arg( 'post_type', self::POST_TYPE, admin_url( 'edit.php' ) );
+    
+    require $this->dir . '/templates/header-tabs.php';
+    
+    return $views;
+  }
+
+  /**
+   * Manage admin column header
+   */
+  public function admin_column_header( $defaults ) {
+    $defaults['condition'] = __( 'Conditions', 'wordtrap' );
+    $defaults['shortcode'] = __( 'Shortcode', 'wordtrap' );
+    return $defaults;
+  }
+
+  /**
+   * Manage admin column content
+   */
+  public function admin_column_content( $column_name, $post_id ) {
+    if ( 'condition' === $column_name ) {
+      
+    } elseif ( 'shortcode' === $column_name ) {
+      $shortcode = sprintf( '[wordtrap_template id="%d"]', $post_id );
+      printf( '<input class="wordtrap-template-shortcode" type="text" readonly="readonly" onfocus="this.select()" value="%s" />', esc_attr( $shortcode ) );
+    }
+  }
+
+  /**
+   * Add dialog to select the template type when click add new
+   */
+  public function admin_template_type_dialog() {
+    $screen = get_current_screen();
+    if ( $screen && $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) {
+      require $this->dir . '/templates/template-type-dialog.php';
+    }
+  }
+
+  /**
+   * Insert new template
+   */
+  public function insert_template() {
+    if ( current_user_can( $this->capability ) && ! empty( $_POST['template-type'] ) && ! empty( $_POST['template-name'] ) ) {
+      check_admin_referer( 'wordtrap-add-template' );
+      $template_type = sanitize_text_field( $_POST['template-type'] );
+      $template_name = sanitize_text_field( $_POST['template-name'] );
+
+      $post_data = array(
+        'post_title' => $template_name,
+        'post_type'  => self::POST_TYPE,
+      );
+      $post_id = wp_insert_post( $post_data );
+      if ( $post_id && ! is_wp_error( $post_id ) ) {
+        add_post_meta( $post_id, self::TEMPLATE_TYPE, $template_type );
+        wp_set_post_terms( $post_id, $template_type, self::TEMPLATE_TYPE );
+        wp_redirect(
+          add_query_arg(
+            array(
+              'post'   => $post_id,
+              'action' => 'edit',
+            ),
+            esc_url( admin_url( 'post.php' ) )
+          )
+        );
+        exit;
+      }
+    }
+  }
 }
 
 new Wordtrap_Templates_Builder();

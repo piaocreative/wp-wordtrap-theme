@@ -98,15 +98,15 @@ $status = array(
         
         $this->add_control( 'note', $this->options[$block]['note'] );
         
-        if ( isset( $this->options[$block]['builder-blocks'] ) ) :
+        if ( isset( $this->options[$block]['template-blocks'] ) ) :
           foreach ( $this->template_list[$block] as $page_id => $page_title ) {
             $conditions = get_post_meta( $page_id, $this->meta_conditions, true );
             
             if ( ! empty( $conditions ) ) {
-              $this->add_control( 'builder-blocks', $this->options[$block]['builder-blocks'], $page_id );
+              $this->add_control( 'template-blocks', $this->options[$block]['template-blocks'], $page_id );
             }
           }
-          $this->add_control( 'builder-blocks', $this->options[$block]['builder-blocks'], 'preset' );
+          $this->add_control( 'template-blocks', $this->options[$block]['template-blocks'], 'preset' );
           ?>
           <div class="add-new-layout">
             <a href="#"><?php _e( 'Add New Layout Condition', 'wordtrap' ) ?></a>

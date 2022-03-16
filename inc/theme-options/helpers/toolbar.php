@@ -17,7 +17,7 @@ if ( ! function_exists( 'wordtrap_theme_options_toolbar_menu' ) ) {
     wordtrap_add_toolbar_node( 
       __( 'Theme Options', 'wordtrap' ), 
       'wordtrap', 
-      admin_url( 'themes.php?page=wordtrap_options' ) ,
+      admin_url( 'admin.php?page=wordtrap_options' ) ,
       'wordtrap-options'
     );
   }
