@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="footer" class="site-footer">
 
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 
@@ -57,7 +57,7 @@ defined( 'ABSPATH' ) || exit;
 			
 		</div><!-- .site-info -->
 
-	</footer><!-- #colophon -->
+	</footer><!-- #footer -->
 
 </div><!-- #page -->
 
