@@ -27,6 +27,10 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
 		$css_version = $theme_version . '.' . filemtime( $upload_dir['basedir'] . $theme_styles );
 		wp_enqueue_style( 'wordtrap-styles', $upload_dir['baseurl'] . $theme_styles, array(), $css_version );
 
+		// For dev
+		$templates_styles  = "/css/templates{$suffix}.css";
+		wp_enqueue_style( 'understrap-templates-styles', get_template_directory_uri() . $templates_styles, array(), $css_version );
+
 		wp_enqueue_script( 'jquery' );
 
 		$js_version = $theme_version . '.' . filemtime( get_template_directory() . $theme_scripts );
