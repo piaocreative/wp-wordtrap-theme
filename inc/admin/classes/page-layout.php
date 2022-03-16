@@ -29,10 +29,10 @@ class Wordtrap_Admin_Page_Layout {
   private $template_list;
 
   // Template slug
-  private $post_type = Wordtrap_Templates_Builder::TEMPLATE_SLUG;
+  private $post_type = Wordtrap_Templates_Builder::POST_TYPE;
 
   // Templates builder type meta key
-  private $meta_type = Wordtrap_Templates_Builder::TAXONOMY_SLUG;
+  private $meta_type = Wordtrap_Templates_Builder::TEMPLATE_TYPE;
 
   // Templates builder conditions meta key
   private $meta_conditions = '_wordtrap_builder_conditions';
