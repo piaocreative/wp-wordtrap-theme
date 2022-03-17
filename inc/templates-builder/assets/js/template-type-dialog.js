@@ -1,5 +1,5 @@
 /**
- * Wordtrap Admin Templates Builder
+ * Wordtrap admin template type dialog
  * @since 1.0.0
  */
 jQuery( function( $ ) {

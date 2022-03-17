@@ -130,7 +130,7 @@ class Wordtrap_Admin_Page_Layout {
    * Load template list
    */
   public function load_template_list() {
-    $types = array( 'header', 'left-sidebar', 'content', 'right-sidebar', 'footer' );
+    $types = array( 'header', 'left-sidebar', 'main', 'right-sidebar', 'footer' );
     $this->template_list = array();
 
     // load templates
@@ -185,18 +185,18 @@ class Wordtrap_Admin_Page_Layout {
           'choices'      => $this->template_list['left-sidebar'],
         ),
       ),
-      'content'          => array(
+      'main'          => array(
         'note'           => array(
           'control'      => 'heading',
           'label'        => sprintf( 
-            esc_html__( 'Select one of existing content or %1$screate a new content%2$s.', 'wordtrap' ), 
-            '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $this->post_type . '&' . $this->meta_type . '=content' ) ) . '" target="_blank">', '</a>' 
+            esc_html__( 'Select one of existing main blocks or %1$screate a new main block%2$s.', 'wordtrap' ), 
+            '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $this->post_type . '&' . $this->meta_type . '=main' ) ) . '" target="_blank">', '</a>' 
           ),
         ),
         'template-blocks' => array(
           'control'      => 'select',
-          'label'        => esc_html__( 'Select Content', 'wordtrap' ),
-          'choices'      => $this->template_list['content'],
+          'label'        => esc_html__( 'Select Main Block', 'wordtrap' ),
+          'choices'      => $this->template_list['main'],
         ),
       ),
       'right-sidebar'     => array(

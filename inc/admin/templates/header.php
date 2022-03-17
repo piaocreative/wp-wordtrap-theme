@@ -22,7 +22,7 @@ if ( ( $pagenow == 'themes.php' || $pagenow == 'admin.php' ) && isset( $_GET['pa
   $items = array(
     'wordtrap'              => array( 'admin.php?page=wordtrap', __( 'Page Layout', 'wordtrap' ) ),
     'wordtrap-customize'    => array( 'customize.php', __( 'Customize', 'wordtrap' ) ),
-    'wordtrap-options'      => array( 'themes.php?page=wordtrap_options', __( 'Theme Options', 'wordtrap' ) ),
+    'wordtrap-options'      => array( 'admin.php?page=wordtrap_options', __( 'Theme Options', 'wordtrap' ) ),
     'wordtrap-builder'      => array( 'edit.php?post_type=' . Wordtrap_Templates_Builder::POST_TYPE, __( 'Templates Builder', 'wordtrap' ) ),
   );
   
