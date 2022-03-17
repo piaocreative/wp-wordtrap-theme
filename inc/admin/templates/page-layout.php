@@ -63,15 +63,15 @@ $status = array(
               <p><?php _e( 'Header', 'wordtrap' ) ?></p>
             </div>
             <div class="main-wrap">
-              <div class="block sidebar" data-block="left-sidebar">
+              <div class="block sidebar left-sidebar" data-block="left-sidebar">
                 <p><?php _e( 'Left Sidebar', 'wordtrap' ) ?></p>
               </div>
               <div class="content-wrap">
-                <div class="block" data-block="content">
-                  <p><?php _e( 'Content', 'wordtrap' ) ?></p>
+                <div class="block" data-block="main">
+                  <p><?php _e( 'Main', 'wordtrap' ) ?></p>
                 </div>
               </div>
-              <div class="block sidebar" data-block="right-sidebar">
+              <div class="block sidebar right-sidebar" data-block="right-sidebar">
                 <p><?php _e( 'Right Sidebar', 'wordtrap' ) ?></p>
               </div>
             </div>
@@ -89,7 +89,7 @@ $status = array(
       $blocks = array ( 
         'header', 
         'left-sidebar',
-        'content',
+        'main',
         'right-sidebar', 
         'footer',
       );

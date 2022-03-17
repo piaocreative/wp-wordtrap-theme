@@ -86,7 +86,7 @@ html[dir="rtl"] .wordtrap-wrap .open-options .back {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70px;
+  height: 60px;
   padding: 8px;
   background: #f8f8f8;
   color: #666;
@@ -109,6 +109,8 @@ html[dir="rtl"] .wordtrap-wrap .open-options .back {
 .wordtrap-layout .main-wrap {
   display: flex;
   width: 100%;
+  align-items: center;
+  position: relative;
 }
 
 .wordtrap-layout .content-wrap {
@@ -118,14 +120,52 @@ html[dir="rtl"] .wordtrap-wrap .open-options .back {
 }
 
 .wordtrap-layout .content-wrap .block {
-  border-left: 1px solid #e1e1e1;
-  border-right: 1px solid #e1e1e1;
-  height: 140px;
+  height: 160px;
 }
 
 .wordtrap-layout .sidebar {
   flex: 1;
-  height: 100%
+  position: absolute;
+  border: 1px solid #e1e1e1;
+  height: 100px;
+  width: 25%;
+  z-index: 2;
+}
+
+.wordtrap-layout .left-sidebar {
+  left: 0;
+  border-left: none;
+  border-right: 2px dashed #e1e1e1;
+}
+  
+.wordtrap-layout .right-sidebar {
+  right: 0;
+  border-right: none;
+  border-left: 2px dashed #e1e1e1;
+}
+
+.wordtrap-layout .main-wrap:before {
+  content: '';
+  display: block;
+  height: 0;
+  border-top: 2px dashed #e1e1e1;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 30px;
+  z-index: 2;
+}
+
+.wordtrap-layout .main-wrap:after {
+  content: '';
+  display: block;
+  height: 0;
+  border-bottom: 2px dashed #e1e1e1;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: 30px;
+  z-index: 2;
 }
 
 .wordtrap-wrap .block-options {
@@ -135,7 +175,7 @@ html[dir="rtl"] .wordtrap-wrap .open-options .back {
   right: 0;
   top: 57px;
   bottom: 0;
-  z-index: 1;
+  z-index: 3;
   transition: transform .2s;
   transform: translateX(100%);
   padding: 10px;

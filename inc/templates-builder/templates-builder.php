@@ -51,7 +51,7 @@ class Wordtrap_Templates_Builder {
       'block'         => __( 'Block', 'wordtrap' ),
       'header'        => __( 'Header', 'wordtrap' ),
       'left-sidebar'  => __( 'Left Sidebar', 'wordtrap' ),
-      'content'       => __( 'Content', 'wordtrap' ),
+      'main'          => __( 'Main Block', 'wordtrap' ),
       'right-sidebar' => __( 'Right Sidebar', 'wordtrap' ),
       'footer'        => __( 'Footer', 'wordtrap' ),
     );
@@ -85,8 +85,11 @@ class Wordtrap_Templates_Builder {
       // add dialog to select the template type when click add new
       add_action(  'admin_footer', array( $this, 'admin_template_type_dialog' ) );
 
-      // insert new template
+      // insert new template and redirect
       add_action( 'admin_action_wordtrap-new-template', array( $this, 'insert_template' ) );
+
+      // add meta boxes
+      add_action( 'init', array( $this, 'add_meta_boxes' ) );
     }
   }
 
@@ -155,59 +158,6 @@ class Wordtrap_Templates_Builder {
       )
     );
     register_taxonomy( self::TEMPLATE_TYPE, self::POST_TYPE, $args );
-
-    // add meta boxes
-    $this->add_meta_boxes();
-  }
-
-  /**
-   * Add meta boxes
-   */
-  public function add_meta_boxes() {
-    if ( ! class_exists( 'Redux_Metaboxes' ) ) {
-      return;
-    }
-
-    Redux_Metaboxes::set_box(
-      self::META_OPTION,
-      array(
-        'id'         => 'wordtrap-template-metaboxes',
-        'title'      => esc_html__( 'Template Options', 'wordtrap' ),
-        'post_types' => array( self::POST_TYPE ),
-        'position'   => 'normal',
-        'priority'   => 'high',
-        'sections'   => array(
-          array(
-            'title'  => esc_html__( 'Custom CSS', 'wordtrap' ),
-            'id'     => 'template-css',
-            'icon'   => 'dashicons dashicons-editor-code',
-            'fields' => array(
-              array(
-                'id'         => 'css-code',
-                'type'       => 'ace_editor',
-                'mode'       => 'css',
-                'default'    => '',
-                'full_width' => true,
-              ),
-            )
-          ),
-          array(
-            'title'  => esc_html__( 'JS Code', 'wordtrap' ),
-            'id'     => 'template-js',
-            'icon'   => 'dashicons dashicons-editor-code',
-            'fields' => array(
-              array(
-                'id'         => 'js-code',
-                'type'       => 'ace_editor',
-                'mode'       => 'javascript',
-                'default'    => '',
-                'full_width' => true
-              ),
-            )
-          ),          
-        ),
-      )
-    );    
   }
 
   /**
@@ -241,11 +191,15 @@ class Wordtrap_Templates_Builder {
   public function enqueue() {
     $screen = get_current_screen();
     if ( $screen && ( ( $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) || ( $screen->base == 'post' && $screen->id == self::POST_TYPE ) ) ) {
+      wp_enqueue_style( 'wordtrap_theme_options', WORDTRAP_OPTIONS_URI . '/assets/css/theme_options.css', false, WORDTRAP_VERSION, 'all' );
       wp_enqueue_style( 'wordtrap-admin-templates', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/css/admin.css', null, WORDTRAP_VERSION );      
     }
     if ( $screen && $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) {
       wp_enqueue_script( 'wordtrap-admin-templates-type', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/template-type-dialog.js', array('jquery-ui-dialog'), WORDTRAP_VERSION );
       wp_enqueue_style( 'wp-jquery-ui-dialog' );
+    }
+    if ( $screen && $screen->base == 'post' && $screen->id == self::POST_TYPE ) {
+      wp_enqueue_script( 'wordtrap-admin-edit-template', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/edit-template.js', array('jquery'), WORDTRAP_VERSION, true );
     }
   }
 
@@ -276,7 +230,7 @@ class Wordtrap_Templates_Builder {
    * Manage admin column header
    */
   public function admin_column_header( $defaults ) {
-    $defaults['condition'] = __( 'Conditions', 'wordtrap' );
+    $defaults['condition'] = __( 'Display Conditions', 'wordtrap' );
     $defaults['shortcode'] = __( 'Shortcode', 'wordtrap' );
     return $defaults;
   }
@@ -304,7 +258,7 @@ class Wordtrap_Templates_Builder {
   }
 
   /**
-   * Insert new template
+   * Insert new template and redirect
    */
   public function insert_template() {
     if ( current_user_can( $this->capability ) && ! empty( $_POST['template-type'] ) && ! empty( $_POST['template-name'] ) ) {
@@ -332,6 +286,149 @@ class Wordtrap_Templates_Builder {
         exit;
       }
     }
+  }
+
+  /**
+   * Add meta boxes
+   */
+  public function add_meta_boxes() {
+    global $pagenow;
+
+    if ( ! class_exists( 'Redux_Metaboxes' ) || ! ( $pagenow && ( $pagenow == 'post.php' || $pagenow == 'post-new.php' ) ) ) {
+      return;
+    }
+    
+    $show_conditions = false;
+    $show_position = false;
+    if ( $pagenow == 'post.php' && isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_id'] ) ) {
+      $post_id = isset( $_REQUEST['post'] ) ? $_REQUEST['post'] : $_REQUEST['post_id'];
+      if ( get_post_type( $post_id ) != self::POST_TYPE ) {
+        return;
+      }
+  
+      $template_type = get_post_meta( (int) $post_id, self::TEMPLATE_TYPE, true );  
+      if ( $template_type && $template_type != 'block' ) {
+        $show_conditions = true;
+      }
+
+      if ( $template_type == 'main' ) {
+        $show_position = true;
+      }
+    }
+
+    if ( $pagenow == 'post-new.php' && ! ( isset( $_REQUEST['post_type'] ) && $_REQUEST['post_type'] == self::POST_TYPE ) ) {
+      return;
+    }
+
+    $sections = array();
+
+    // display conditions
+    if ( $show_conditions ) {
+      $sections[] = array(
+        'title'  => esc_html__( 'Display Conditions', 'wordtrap' ),
+        'id'     => 'template-conditions',
+        'icon'   => 'dashicons dashicons-visibility',
+        'fields' => array(
+          array(
+            'id'         => 'conditions-all',
+            'type'       => 'switch',
+            'title'      => esc_html__( 'Always Show', 'wordtrap' ),
+            'default'    => false,
+            'on'         => esc_html__( 'Yes', 'wordtrap' ),
+            'off'        => esc_html__( 'No', 'wordtrap' ),
+          ),
+          array(
+            'id'         => 'conditions-singular',
+            'type'       => 'switch',
+            'title'      => esc_html__( 'Show in Singular', 'wordtrap' ),
+            'required'   => array( 'conditions-all', 'equals', false ),
+            'default'    => false,
+            'on'         => esc_html__( 'Yes', 'wordtrap' ),
+            'off'        => esc_html__( 'No', 'wordtrap' ),
+          ),
+          array(
+            'id'         => 'conditions-archive',
+            'type'       => 'switch',
+            'title'      => esc_html__( 'Show in Archive', 'wordtrap' ),
+            'required'   => array( 'conditions-all', 'equals', false ),
+            'default'    => false,
+            'on'         => esc_html__( 'Yes', 'wordtrap' ),
+            'off'        => esc_html__( 'No', 'wordtrap' ),
+          ),
+        )
+      );
+    }
+
+    // display position
+    if ( $show_position ) {
+      $sections[] = array(
+        'title'  => esc_html__( 'Display Positions', 'wordtrap' ),
+        'id'     => 'template-position',
+        'icon'   => 'dashicons dashicons dashicons-move',
+        'fields' => array(
+          array(
+            'id'         => 'positions',
+            'type'       => 'button_set',
+            'title'      => esc_html__( 'Display Positions', 'wordtrap' ),
+            'multi'      => true,
+            'options'    => array(
+              'main-top'       => esc_html__( 'Below Header', 'wordtrap' ),
+              'content-top'    => esc_html__( 'Above Content', 'wordtrap' ),
+              'content-bottom' => esc_html__( 'Below Content', 'wordtrap' ),
+              'main-bottom'    => esc_html__( 'Above Footer', 'wordtrap' ),
+            )
+          ),          
+        )
+      );
+    }
+
+    // custom css
+    $sections[] = array(
+      'title'  => esc_html__( 'Custom CSS', 'wordtrap' ),
+      'id'     => 'template-css',
+      'icon'   => 'dashicons dashicons-editor-code',
+      'fields' => array(
+        array(
+          'id'         => 'css-code',
+          'title'      => esc_html__( 'Custom CSS', 'wordtrap' ),
+          'type'       => 'ace_editor',
+          'mode'       => 'css',
+          'theme'      => 'chrome',
+          'default'    => '',
+          'full_width' => true,
+        ),
+      )
+    );
+
+    // javascript code
+    $sections[] = array(
+      'title'  => esc_html__( 'Javascript Code', 'wordtrap' ),
+      'id'     => 'template-js',
+      'icon'   => 'dashicons dashicons-editor-code',
+      'fields' => array(
+        array(
+          'id'         => 'js-code',
+          'title'      => esc_html__( 'Javascript Code', 'wordtrap' ),
+          'type'       => 'ace_editor',
+          'mode'       => 'javascript',
+          'theme'      => 'chrome',
+          'default'    => '',
+          'full_width' => true
+        ),
+      )
+    );
+
+    Redux_Metaboxes::set_box(
+      self::META_OPTION,
+      array(
+        'id'         => 'wordtrap-template-metaboxes',
+        'title'      => esc_html__( 'Template Options', 'wordtrap' ),
+        'post_types' => array( self::POST_TYPE ),
+        'position'   => 'normal',
+        'priority'   => 'high',
+        'sections'   => $sections,
+      )
+    );
   }
 }
 
