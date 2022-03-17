@@ -50,14 +50,14 @@ if ( ! class_exists( 'Wordtrap_Walker_Comment' ) ) {
 							* Using the `check` icon instead of `check_circle`, since we can't add a
 							* fill color to the inner check shape when in circle form.
 							*/
-							if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
-								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
+							if ( wordtrap_is_comment_by_post_author( $comment ) ) {
+								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', wordtrap_get_icon_svg( 'check', 24 ) );
 							}
 
 							printf(
 								wp_kses(
 									/* translators: %s: Comment author link. */
-									__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
+									__( '%s <span class="screen-reader-text says">says:</span>', 'wordtrap' ),
 									array(
 										'span' => array(
 											'class' => array(),
@@ -76,7 +76,7 @@ if ( ! class_exists( 'Wordtrap_Walker_Comment' ) ) {
 						<div class="comment-metadata">
 							<?php
 							/* translators: 1: Comment date, 2: Comment time. */
-							$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() );
+							$comment_timestamp = sprintf( __( '%1$s at %2$s', 'wordtrap' ), get_comment_date( '', $comment ), get_comment_time() );
 
 							printf(
 								'<a href="%s"><time datetime="%s" title="%s">%s</time></a>',
@@ -86,17 +86,17 @@ if ( ! class_exists( 'Wordtrap_Walker_Comment' ) ) {
 								$comment_timestamp
 							);
 
-							$edit_comment_icon = twentynineteen_get_icon_svg( 'edit', 16 );
-							edit_comment_link( __( 'Edit', 'twentynineteen' ), ' <span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
+							$edit_comment_icon = wordtrap_get_icon_svg( 'edit', 16 );
+							edit_comment_link( __( 'Edit', 'wordtrap' ), ' <span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
 							?>
 						</div><!-- .comment-metadata -->
 
 						<?php
 						$commenter = wp_get_current_commenter();
 						if ( $commenter['comment_author_email'] ) {
-							$moderation_note = __( 'Your comment is awaiting moderation.', 'twentynineteen' );
+							$moderation_note = __( 'Your comment is awaiting moderation.', 'wordtrap' );
 						} else {
-							$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'twentynineteen' );
+							$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'wordtrap' );
 						}
 						?>
 
