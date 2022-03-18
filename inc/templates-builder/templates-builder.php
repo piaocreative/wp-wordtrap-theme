@@ -29,7 +29,7 @@ class Wordtrap_Templates_Builder {
   const TEMPLATE_TYPE = 'wordtrap_template_type';
 
   // Template meta option
-  const META_OPTION   = 'wordtrap_template';
+  const META_OPTION   = WORDTRAP_TEMPLATE_OPTIONS;
 
   // Capability
   private $capability = 'edit_pages';
@@ -190,16 +190,20 @@ class Wordtrap_Templates_Builder {
    */
   public function enqueue() {
     $screen = get_current_screen();
-    if ( $screen && ( ( $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) || ( $screen->base == 'post' && $screen->id == self::POST_TYPE ) ) ) {
-      wp_enqueue_style( 'wordtrap_theme_options', WORDTRAP_OPTIONS_URI . '/assets/css/theme_options.css', false, WORDTRAP_VERSION, 'all' );
-      wp_enqueue_style( 'wordtrap-admin-templates', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/css/admin.css', null, WORDTRAP_VERSION );      
-    }
+    
     if ( $screen && $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) {
-      wp_enqueue_script( 'wordtrap-admin-templates-type', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/template-type-dialog.js', array('jquery-ui-dialog'), WORDTRAP_VERSION );
+      wp_enqueue_style( 'wordtrap-admin-template-type', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/css/template-type.css', null, WORDTRAP_VERSION );
+
+      wp_enqueue_script( 'wordtrap-admin-templates-type', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/template-type.js', array('jquery-ui-dialog'), WORDTRAP_VERSION );
       wp_enqueue_style( 'wp-jquery-ui-dialog' );
     }
+    
     if ( $screen && $screen->base == 'post' && $screen->id == self::POST_TYPE ) {
-      wp_enqueue_script( 'wordtrap-admin-edit-template', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/edit-template.js', array('jquery'), WORDTRAP_VERSION, true );
+      wp_enqueue_style( 'wordtrap-theme-options', WORDTRAP_OPTIONS_URI . '/assets/css/theme_options.css', false, WORDTRAP_VERSION, 'all' );
+      wp_enqueue_style( 'wordtrap-admin-edit-templates', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/css/edit-template.css', null, WORDTRAP_VERSION );
+      
+      wp_enqueue_script( 'wordtrap-admin-edit-template', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/edit-template.js', array('jquery-ui-dialog'), WORDTRAP_VERSION, true );
+      wp_enqueue_style( 'wp-jquery-ui-dialog' );
     }
   }
 
@@ -254,6 +258,9 @@ class Wordtrap_Templates_Builder {
     $screen = get_current_screen();
     if ( $screen && $screen->base == 'edit' && $screen->id == 'edit-' . self::POST_TYPE ) {
       require $this->dir . '/templates/template-type-dialog.php';
+    }
+    if ( $screen && $screen->base == 'post' && $screen->id == self::POST_TYPE ) {
+      require $this->dir . '/templates/display-conditions-dialog.php';
     }
   }
 
@@ -340,21 +347,47 @@ class Wordtrap_Templates_Builder {
           array(
             'id'         => 'conditions-singular',
             'type'       => 'switch',
-            'title'      => esc_html__( 'Show in Singular', 'wordtrap' ),
+            'title'      => esc_html__( 'Show in All Singular', 'wordtrap' ),
             'required'   => array( 'conditions-all', 'equals', false ),
             'default'    => false,
             'on'         => esc_html__( 'Yes', 'wordtrap' ),
             'off'        => esc_html__( 'No', 'wordtrap' ),
+          ),
+          array (
+            'id'         => 'conditions-singular-set',
+            'type'       => 'js_button',
+            'title'      => esc_html__( 'Singular Conditions', 'wordtrap' ),
+            'required'   => array( 'conditions-singular', 'equals', false ),
+            'buttons'    => array(
+              array(
+                'text'      => esc_html__( 'Configure', 'wordtrap' ),
+                'class'     => 'button-primary',
+                'function'  => 'singular_conditions_setting'
+              )
+            ),
           ),
           array(
             'id'         => 'conditions-archive',
             'type'       => 'switch',
-            'title'      => esc_html__( 'Show in Archive', 'wordtrap' ),
+            'title'      => esc_html__( 'Show in All Archive', 'wordtrap' ),
             'required'   => array( 'conditions-all', 'equals', false ),
             'default'    => false,
             'on'         => esc_html__( 'Yes', 'wordtrap' ),
             'off'        => esc_html__( 'No', 'wordtrap' ),
           ),
+          array (
+            'id'         => 'conditions-archive-set',
+            'type'       => 'js_button',
+            'title'      => esc_html__( 'Archive Conditions', 'wordtrap' ),
+            'required'   => array( 'conditions-archive', 'equals', false ),
+            'buttons'    => array(
+              array(
+                'text'      => esc_html__( 'Configure', 'wordtrap' ),
+                'class'     => 'button-primary',
+                'function'  => 'archive_conditions_setting'
+              )
+            ),
+          ),          
         )
       );
     }
