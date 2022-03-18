@@ -48,4 +48,15 @@
     $layout_box.closest( '.layout-box ').removeClass( 'open-options' );
   } );
 
+  // Add new layout
+  $( 'body' ).on( 'click', '.add-new-layout', function( e ) {
+    e.preventDefault();
+
+    var $this = $( this ),
+      $prev = $this.prev();
+
+    $prev.clone().insertBefore( $prev ).removeClass( 'preset' );
+  } );
+
+
 } )( jQuery );

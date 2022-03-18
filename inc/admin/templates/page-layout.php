@@ -108,9 +108,9 @@ $status = array(
           }
           $this->add_control( 'template-blocks', $this->options[$block]['template-blocks'], 'preset' );
           ?>
-          <div class="add-new-layout">
-            <a href="#"><?php _e( 'Add New Layout Condition', 'wordtrap' ) ?></a>
-          </div>
+          <a href="#" class="add-new-layout">
+            <?php _e( 'Add New Layout Condition', 'wordtrap' ) ?>
+          </a>
           <?php
         endif;
         $output = ob_get_clean();

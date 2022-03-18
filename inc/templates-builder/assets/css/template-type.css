@@ -17,6 +17,16 @@ input.wordtrap-template-shortcode:focus {
   width: 100%;
 }
 
+.ui-dialog .ui-dialog-titlebar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.ui-dialog .ui-button.ui-dialog-titlebar-close {
+  top: 5px;
+  right: 5px;
+}
+
 #template-type-dialog label {
   margin-bottom: 5px;
 }
