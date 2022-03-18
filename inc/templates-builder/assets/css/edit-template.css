@@ -7,6 +7,16 @@
   vertical-align: top;
 }
 
+.ui-dialog .ui-dialog-titlebar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.ui-dialog .ui-button.ui-dialog-titlebar-close {
+  top: 5px;
+  right: 5px;
+}
+
 .conditions-dialog table {
   border-right: none;
   border-bottom: none;
@@ -35,7 +45,7 @@
 .conditions-dialog input[type="checkbox"] {
   width: 1.5625rem;
   height: 1.5625rem;
-  margin: 12px 0;
+  margin: 13px 0;
 }
 
 .conditions-dialog input[type="checkbox"]:checked:before {
@@ -51,6 +61,12 @@
 .conditions-dialog .submit {
   text-align: right;
   padding-bottom: 0;
+}
+
+.conditions-dialog .spinner {
+  float: none;
+  display: inline-block;
+  margin: -2px 10px 0;
 }
 
 .select2-container {

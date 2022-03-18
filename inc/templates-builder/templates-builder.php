@@ -28,8 +28,8 @@ class Wordtrap_Templates_Builder {
   // Taxonomy slug, Meta kwy
   const TEMPLATE_TYPE = 'wordtrap_template_type';
 
-  // Template meta option
-  const META_OPTION   = WORDTRAP_TEMPLATE_OPTIONS;
+  // Template meta box option
+  const METABOX_OPTION = WORDTRAP_METABOX_OPTION;
 
   // Capability
   private $capability = 'edit_pages';
@@ -90,6 +90,13 @@ class Wordtrap_Templates_Builder {
 
       // add meta boxes
       add_action( 'init', array( $this, 'add_meta_boxes' ) );
+
+      // get posts or taxonomies by search query
+      add_action( 'wp_ajax_wordtrap_template_search_query', array( $this, 'ajax_search_query' ) );
+
+      // save conditions
+      add_action( 'wp_ajax_wordtrap-singular-conditions', array( $this, 'ajax_save_singular_conditions' ) );
+      add_action( 'wp_ajax_wordtrap-archive-conditions', array( $this, 'ajax_save_archive_conditions' ) );
     }
   }
 
@@ -234,8 +241,8 @@ class Wordtrap_Templates_Builder {
    * Manage admin column header
    */
   public function admin_column_header( $defaults ) {
-    $defaults['condition'] = __( 'Display Conditions', 'wordtrap' );
-    $defaults['shortcode'] = __( 'Shortcode', 'wordtrap' );
+    $defaults[ 'condition' ] = __( 'Display Conditions', 'wordtrap' );
+    $defaults[ 'shortcode' ] = __( 'Shortcode', 'wordtrap' );
     return $defaults;
   }
 
@@ -244,7 +251,152 @@ class Wordtrap_Templates_Builder {
    */
   public function admin_column_content( $column_name, $post_id ) {
     if ( 'condition' === $column_name ) {
-      
+      $show_all = get_post_meta( $post_id, 'conditions-all', true );
+      $show_singular = get_post_meta( $post_id, 'conditions-singular', true );
+      $show_archive = get_post_meta( $post_id, 'conditions-archive', true );
+      if ( $show_all || ( $show_singular && $show_archive ) ) {
+        echo '<strong>' . esc_html__( 'All', 'wordtrap') . '</strong>';
+      } else {
+        $output = false;
+        if ( $show_singular ) {
+          $output = true;
+          echo '<strong>' . esc_html__( 'All Singulars', 'wordtrap' ) . '</strong><br>';
+        } else {
+          $singular_conditions = get_post_meta( $post_id, WORDTRAP_TEMPLATE_SINGULAR_CONDITIONS, true );
+          if ( ! $singular_conditions ) {
+            $singular_conditions = array( 
+              'checked' => array(),
+              'selected' => array()
+            );
+          }
+          $conditions = array();
+          $singular_types = $this->_get_singular_types();
+          foreach ( $singular_types as $type => $value ) {
+            if ( isset( $value[ 'opt_group' ] ) && $value[ 'opt_group' ] ) {
+              $sub_types = $value['values'];
+              foreach ( $sub_types as $sub_type => $sub_value ) {
+                if ( in_array( $sub_type, $singular_conditions[ 'checked' ] ) ) {
+                  $conditions[] = ( ! $sub_value[ 'single' ] ? esc_html__( 'All', 'wordtrap' ) . ' ' : '' ) . $sub_value[ 'label' ];
+                } else if ( ! $sub_value[ 'single' ] ) {
+                  if ( isset( $singular_conditions[ 'selected' ][ $sub_type ] ) ) { 
+                    $ids = $singular_conditions[ 'selected' ][ $sub_type ];
+                    $titles = array();
+                    foreach ( $ids as $id ) { 
+                      if ( post_type_exists( $sub_type ) ) {
+                        $post = get_post( $id );
+                        if ( $post ) {
+                          $titles[] = $post->post_title;
+                        }
+                      } else {
+                        $taxonomy = get_term( $id );
+                        if ( $taxonomy ) {
+                          $titles[] = $taxonomy->name;
+                        }
+                      }
+                    }
+                    if ( ! empty( $titles)) {
+                      $conditions[] = $sub_value[ 'label' ] . '(' . implode( ', ', $titles) . ')';
+                    }                    
+                  }
+                }
+              }
+            } else {
+              if ( in_array( $type, $singular_conditions[ 'checked' ] ) ) {
+                $conditions[] = ( ! $value[ 'single' ] ? esc_html__( 'All', 'wordtrap' ) . ' ' : '' ) . $value[ 'label' ];
+              } else if ( ! $value[ 'single' ] ) {
+                if ( isset( $singular_conditions[ 'selected' ][ $type ] ) ) { 
+                  $ids = $singular_conditions[ 'selected' ][ $type ];
+                  $titles = array();
+                  foreach ( $ids as $id ) { 
+                    if ( post_type_exists( $type ) ) {
+                      $post = get_post( $id );
+                      if ( $post ) {
+                        $titles[] = $post->post_title;
+                      }
+                    } else {
+                      $taxonomy = get_term( $id );
+                      if ( $taxonomy ) {
+                        $titles[] = $taxonomy->name;
+                      }
+                    }
+                  }
+                  if ( ! empty( $titles)) {
+                    $conditions[] = $value[ 'label' ] . '(' . implode( ', ', $titles) . ')';
+                  }
+                }
+              }
+            }
+          }
+          if ( ! empty( $conditions ) ) {
+            $output = true;
+            echo '<strong>' . esc_html__( 'Singulars', 'wordtrap' ) . '</strong>: ' . implode( ', ', $conditions );
+          }
+        }
+        if ( $show_archive ) {
+          if ( $output ) {
+            echo '<br>';
+          }
+          echo '<strong>' . esc_html__( 'All Archives', 'wordtrap' ) . '</strong><br>';
+        } else {
+          $archive_conditions = get_post_meta( $post_id, WORDTRAP_TEMPLATE_ARCHIVE_CONDITIONS, true );
+          if ( ! $archive_conditions ) {
+            $archive_conditions = array( 
+              'checked' => array(),
+              'selected' => array()
+            );
+          }
+          $conditions = array();
+          $archive_types = $this->_get_archive_types();
+          foreach ( $archive_types as $type => $value ) {
+            if ( isset( $value[ 'opt_group' ] ) && $value[ 'opt_group' ] ) {
+              $sub_types = $value['values'];
+              foreach ( $sub_types as $sub_type => $sub_value ) {
+                if ( in_array( $sub_type, $archive_conditions[ 'checked' ] ) ) {
+                  $conditions[] = ( ! $sub_value[ 'single' ] ? esc_html__( 'All', 'wordtrap' ) . ' ' : '' ) . $sub_value[ 'label' ];
+                } else if ( ! $sub_value[ 'single' ] ) {
+                  if ( isset( $archive_conditions[ 'selected' ][ $sub_type ] ) ) { 
+                    $ids = $archive_conditions[ 'selected' ][ $sub_type ];
+                    $titles = array();
+                    foreach ( $ids as $id ) { 
+                      $taxonomy = get_term( $id );
+                      if ( $taxonomy ) {
+                        $titles[] = $taxonomy->name;
+                      }
+                    }
+                    if ( ! empty( $titles)) {
+                      $conditions[] = $sub_value[ 'label' ] . '(' . implode( ', ', $titles) . ')';
+                    }                    
+                  }
+                }
+              }
+            } else {
+              if ( in_array( $type, $archive_conditions[ 'checked' ] ) ) {
+                $conditions[] = ( ! $value[ 'single' ] ? esc_html__( 'All', 'wordtrap' ) . ' ' : '' ) . $value[ 'label' ];
+              } else if ( ! $value[ 'single' ] ) {
+                if ( isset( $archive_conditions[ 'selected' ][ $type ] ) ) { 
+                  $ids = $archive_conditions[ 'selected' ][ $type ];
+                  $titles = array();
+                  foreach ( $ids as $id ) { 
+                    $taxonomy = get_term( $id );
+                    if ( $taxonomy ) {
+                      $titles[] = $taxonomy->name;
+                    }
+                  }
+                  if ( ! empty( $titles)) {
+                    $conditions[] = $value[ 'label' ] . '(' . implode( ', ', $titles) . ')';
+                  }
+                }
+              }
+            }
+          }
+          if ( ! empty( $conditions ) ) {
+            if ( $output ) {
+              echo '<br>';
+            }
+            echo '<strong>' . esc_html__( 'Archives', 'wordtrap' ) . '</strong>: ' . implode( ', ', $conditions );
+          }
+        }
+      }
     } elseif ( 'shortcode' === $column_name ) {
       $shortcode = sprintf( '[wordtrap_template id="%d"]', $post_id );
       printf( '<input class="wordtrap-template-shortcode" type="text" readonly="readonly" onfocus="this.select()" value="%s" />', esc_attr( $shortcode ) );
@@ -260,6 +412,7 @@ class Wordtrap_Templates_Builder {
       require $this->dir . '/templates/template-type-dialog.php';
     }
     if ( $screen && $screen->base == 'post' && $screen->id == self::POST_TYPE ) {
+      $post_id = isset( $_REQUEST[ 'post' ] ) ? $_REQUEST[ 'post' ] : $_REQUEST[ 'post_id' ];
       require $this->dir . '/templates/display-conditions-dialog.php';
     }
   }
@@ -268,10 +421,10 @@ class Wordtrap_Templates_Builder {
    * Insert new template and redirect
    */
   public function insert_template() {
-    if ( current_user_can( $this->capability ) && ! empty( $_POST['template-type'] ) && ! empty( $_POST['template-name'] ) ) {
+    if ( current_user_can( $this->capability ) && ! empty( $_POST[ 'template-type' ] ) && ! empty( $_POST[ 'template-name' ] ) ) {
       check_admin_referer( 'wordtrap-add-template' );
-      $template_type = sanitize_text_field( $_POST['template-type'] );
-      $template_name = sanitize_text_field( $_POST['template-name'] );
+      $template_type = sanitize_text_field( $_POST[ 'template-type' ] );
+      $template_name = sanitize_text_field( $_POST[ 'template-name' ] );
 
       $post_data = array(
         'post_title' => $template_name,
@@ -307,8 +460,9 @@ class Wordtrap_Templates_Builder {
     
     $show_conditions = false;
     $show_position = false;
-    if ( $pagenow == 'post.php' && isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_id'] ) ) {
-      $post_id = isset( $_REQUEST['post'] ) ? $_REQUEST['post'] : $_REQUEST['post_id'];
+    $header_type = false;
+    if ( $pagenow == 'post.php' && isset( $_REQUEST[ 'post' ] ) || isset( $_REQUEST[ 'post_id' ] ) ) {
+      $post_id = isset( $_REQUEST[ 'post' ] ) ? $_REQUEST[ 'post' ] : $_REQUEST[ 'post_id' ];
       if ( get_post_type( $post_id ) != self::POST_TYPE ) {
         return;
       }
@@ -321,9 +475,13 @@ class Wordtrap_Templates_Builder {
       if ( $template_type == 'main' ) {
         $show_position = true;
       }
+
+      if ( $template_type == 'header' ) {
+        $header_type = true;
+      }
     }
 
-    if ( $pagenow == 'post-new.php' && ! ( isset( $_REQUEST['post_type'] ) && $_REQUEST['post_type'] == self::POST_TYPE ) ) {
+    if ( $pagenow == 'post-new.php' && ! ( isset( $_REQUEST[ 'post_type' ] ) && $_REQUEST[ 'post_type' ] == self::POST_TYPE ) ) {
       return;
     }
 
@@ -392,6 +550,28 @@ class Wordtrap_Templates_Builder {
       );
     }
 
+    // header type
+    if ( $header_type ) {
+      $sections[] = array(
+        'title'  => esc_html__( 'Header Type', 'wordtrap' ),
+        'id'     => 'template-position',
+        'icon'   => 'dashicons-before dashicons-align-full-width',
+        'fields' => array(
+          array(
+            'id'            => 'header-type',
+            'type'          => 'button_set',
+            'title'         => esc_html__( 'Type', 'wordtrap' ),
+            'options'       => array(
+              ''            => esc_html__( 'Normal', 'wordtrap' ),
+              'left-side'   => esc_html__( 'Left Side', 'wordtrap' ),
+              'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
+            ),
+            'default'       => '',
+          ),         
+        )
+      );
+    }
+
     // display position
     if ( $show_position ) {
       $sections[] = array(
@@ -452,7 +632,7 @@ class Wordtrap_Templates_Builder {
     );
 
     Redux_Metaboxes::set_box(
-      self::META_OPTION,
+      self::METABOX_OPTION,
       array(
         'id'         => 'wordtrap-template-metaboxes',
         'title'      => esc_html__( 'Template Options', 'wordtrap' ),
@@ -462,6 +642,251 @@ class Wordtrap_Templates_Builder {
         'sections'   => $sections,
       )
     );
+  }
+
+  /**
+   * Get post types
+   */
+  private function _get_post_types() {
+    $_post_types = get_post_types( array( 'show_in_nav_menus' => true ), 'objects' );
+    $post_types  = array();
+    foreach ( $_post_types as $post_type => $object ) {
+      $post_types[ $post_type ] = $object->label;
+    }
+
+    return $post_types;
+  }
+
+  /**
+   * Get singular types
+   */
+  private function _get_singular_types() {
+    $post_types = $this->_get_post_types();
+
+    $singular_types = array(
+      'page'        => array(
+        'label'     => __( 'Pages', 'wordtrap' ),
+        'single'    => false,
+        'opt_group' => false,
+      ),
+      '404'         => array(
+        'label'     => __( '404 Page', 'wordtrap' ),
+        'single'    => true,
+        'opt_group' => false,
+      )
+    );
+
+    foreach ( $post_types as $post_type => $label ) {
+      $post_type_taxonomies = get_object_taxonomies( $post_type, 'objects' );
+      $post_type_taxonomies = wp_filter_object_list(
+        $post_type_taxonomies,
+        array(
+          'public'            => true,
+          'show_in_nav_menus' => true,
+        )
+      );
+      if ( empty( $post_type_taxonomies ) ) {
+        continue;
+      }
+
+      $singular_types[ $post_type ] = array(
+        'opt_group'  => true,
+        'values'     => array(
+          $post_type => array(
+            'label'  => sprintf( __( '%s', 'wordtrap' ), $label ),
+            'single' => false
+          )
+        ),
+      );
+
+      foreach ( $post_type_taxonomies as $slug => $object ) {
+        $singular_types[ $post_type ][ 'values' ][ $slug ] = array(
+          'label'  => $object->label,
+          'single' => false
+        );
+      }
+    }
+
+    return $singular_types;
+  }
+
+  /**
+   * Get archive types
+   */
+  private function _get_archive_types() {
+    $post_types = $this->_get_post_types();
+
+    $archive_types  = array(
+      'date'        => array(
+        'label'     => __( 'Date', 'wordtrap' ),
+        'single'    => true,
+        'opt_group' => false,
+      ),
+      'author'      => array(
+        'label'     => __( 'Author', 'wordtrap' ),
+        'single'    => true,
+        'opt_group' => false,
+      ),
+      'search'      => array(
+        'label'     => __( 'Search Results', 'wordtrap' ),
+        'single'    => true,
+        'opt_group' => false,
+      ),
+    );
+
+    foreach ( $post_types as $post_type => $label ) {
+      $post_type_taxonomies = get_object_taxonomies( $post_type, 'objects' );
+      $post_type_taxonomies = wp_filter_object_list(
+        $post_type_taxonomies,
+        array(
+          'public'            => true,
+          'show_in_nav_menus' => true,
+        )
+      );
+      if ( empty( $post_type_taxonomies ) ) {
+        continue;
+      }
+
+      $archive_types[ $post_type ] = array(
+        'opt_group'  => true,
+        'values'     => array(
+          $post_type => array(
+            'label'  => sprintf( __( '%s', 'wordtrap' ), $label ),
+            'single' => true
+          )
+        ),
+      );
+
+      foreach ( $post_type_taxonomies as $slug => $object ) {
+        $archive_types[ $post_type ][ 'values' ][ $slug ] = array(
+          'label'  => $object->label,
+          'single' => false
+        );
+      }
+    }
+
+    return $archive_types;
+  }
+
+  /**
+   * Get posts or taxonomies by search query
+   */
+  public function ajax_search_query() {
+    check_ajax_referer( 'wordtrap-template-conditions', 'nonce' );
+    
+    $query = sanitize_text_field( $_REQUEST[ 'q' ] );
+    $type = sanitize_text_field( $_REQUEST[ 'type' ] );
+    $sub_type = sanitize_text_field( $_REQUEST[ 'sub_type' ] );
+
+    $response = array();
+    if ( ! $sub_type || $type == $sub_type ) {
+      if ( post_type_exists( $type ) ) {
+        global $wpdb;
+        $results = $wpdb->get_results(
+          $wpdb->prepare(
+            "SELECT ID AS id, post_title AS title
+              FROM {$wpdb->posts} 
+              WHERE post_status = 'publish' AND ( ID = %d OR post_title LIKE '%%%s%%' ) AND post_type='" . $type . "'",
+            intval( $query ) ? intval( $query ) : -1,
+            $wpdb->esc_like( stripslashes( $query ) )
+          ),
+          ARRAY_A
+        );
+
+        if ( is_array( $results ) && ! empty( $results ) ) {
+          foreach ( $results as $value ) {
+            $response[] = array(
+              'id'    => intval( $value[ 'id' ] ),
+              'value' => esc_html( $value[ 'title' ] ),
+            );
+          }
+        }
+      }
+    } elseif ( taxonomy_exists( $sub_type ) ) {
+      $results = get_terms(
+        array(
+          'taxonomy'   => $sub_type,
+          'hide_empty' => false,
+          'search'     => $query,
+        )
+      );
+
+      if ( is_array( $results ) && ! empty( $results ) ) {
+        foreach ( $results as $value ) {
+          $response[] = array(
+            'id'    => intval( $value->term_id ),
+            'value' => esc_html( $value->name ),
+          );
+        }
+      }
+    }
+    
+    echo json_encode( $response );
+    die;
+  }
+
+  /**
+   * Save singular conditions
+   */
+  public function ajax_save_singular_conditions() {
+    check_ajax_referer( 'wordtrap-singular-conditions', 'nonce' );
+    
+    $post_id = sanitize_text_field( $_REQUEST[ 'post_id' ] );
+    if ( ! $post_id && ! intval( $post_id ) ) {
+      die;
+    }
+
+    $conditions = $this->_get_condition_values();
+    update_post_meta( $post_id, WORDTRAP_TEMPLATE_SINGULAR_CONDITIONS, $conditions );
+    die;
+  }
+
+  /**
+   * Save archive conditions
+   */
+  public function ajax_save_archive_conditions() {
+    check_ajax_referer( 'wordtrap-archive-conditions', 'nonce' );
+    
+    $post_id = sanitize_text_field( $_REQUEST[ 'post_id' ] );
+    if ( ! $post_id && ! intval( $post_id ) ) {
+      die;
+    }
+
+    $conditions = $this->_get_condition_values();
+    update_post_meta( $post_id, WORDTRAP_TEMPLATE_ARCHIVE_CONDITIONS, $conditions );
+    die;
+  }
+
+  /**
+   * Get condition values
+   */
+  private function _get_condition_values() {
+    $check = $_REQUEST[ 'check' ];
+    $select = $_REQUEST[ 'select' ];
+    $check = is_array( $check ) ? $check : array();
+    $select = is_array( $select ) ? $select : array();
+
+    $option_values = array();
+    $option_values[ 'checked' ] = array();
+    $option_values[ 'selected' ] = array();
+    
+    foreach ( $check as $key => $value ) {
+      $option_values[ 'checked' ][] = sanitize_text_field( $key );
+    }
+
+    foreach ( $select as $key => $values ) {
+      if ( ! is_array( $values ) ) {
+        continue;
+      }
+
+      $key = sanitize_text_field( $key );
+      $option_values[ 'selected' ][ $key ] = array();
+      foreach ( $values as $value ) {
+        $option_values[ 'selected' ][ $key ][] = sanitize_text_field( $value );
+      }
+    }
+
+    return $option_values;
   }
 }
 

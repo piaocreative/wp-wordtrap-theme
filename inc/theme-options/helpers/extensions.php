@@ -33,5 +33,5 @@ if ( ! function_exists('wordwrap_redux__extension_loader' ) ) :
   }
   
   add_action( 'redux/extensions/' . WORDTRAP_OPTIONS . '/before', 'wordwrap_redux__extension_loader', 0 );
-  add_action( 'redux/extensions/' . WORDTRAP_TEMPLATE_OPTIONS . '/before', 'wordwrap_redux__extension_loader', 0 );
+  add_action( 'redux/extensions/' . WORDTRAP_METABOX_OPTION . '/before', 'wordwrap_redux__extension_loader', 0 );
 endif;

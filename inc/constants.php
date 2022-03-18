@@ -33,4 +33,6 @@ define( 'WORDTRAP_ADMIN_URI', get_template_directory_uri() . '/inc/admin' );
 
 // Theme templates builder definitions
 define( 'WORDTRAP_TEMPLATES_BUILDER_URI', get_template_directory_uri() . '/inc/templates-builder' );
-define( 'WORDTRAP_TEMPLATE_OPTIONS', 'wordtrap_template_options' );
+define( 'WORDTRAP_METABOX_OPTION', 'wordtrap_template' );
+define( 'WORDTRAP_TEMPLATE_SINGULAR_CONDITIONS', 'wordtrap_template_singular_conditions' );
+define( 'WORDTRAP_TEMPLATE_ARCHIVE_CONDITIONS', 'wordtrap_template_archive_conditions' );

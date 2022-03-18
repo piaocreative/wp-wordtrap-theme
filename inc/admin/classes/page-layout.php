@@ -144,7 +144,7 @@ class Wordtrap_Admin_Page_Layout {
         )
       );
 
-      $this->template_list[$type][0] = esc_html__( 'Select', 'wordtrap' );
+      $this->template_list[$type][] = '';
 
       foreach ( $posts as $post ) {
         $this->template_list[$type][$post->ID] = $post->post_title;
@@ -247,8 +247,6 @@ class Wordtrap_Admin_Page_Layout {
     <div class="option<?php echo 'preset' == $selected_block ? ' preset' : ''; ?>"<?php echo isset( $args['condition'] ) ? 'data-condition=' . json_encode( $args['condition'] ) : ''; ?>>
       <?php if ( 'select' == $args['control'] ) : ?>
       
-        <label><?php echo esc_html( $args['label'] ); ?></label>
-        
         <select class="<?php echo esc_attr( $setting ); ?>">
         <?php foreach ( $args['choices'] as $key => $value ) : ?>
           <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $selected_block, $key ); ?>><?php echo esc_html( $value ); ?></option>
