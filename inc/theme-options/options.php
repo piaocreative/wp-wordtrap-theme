@@ -24,6 +24,7 @@ require_once $dir . 'helpers/notices.php';
 require_once $dir . 'helpers/compiler.php';
 require_once $dir . 'helpers/template.php';
 require_once $dir . 'helpers/toolbar.php';
+require_once $dir . 'helpers/extensions.php';
 
 /*
  * ---> BEGIN ARGUMENTS

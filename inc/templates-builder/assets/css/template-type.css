@@ -1,0 +1,34 @@
+/**
+ * Wordtrap Admin Templates Types
+ * @since 1.0.0
+ */
+#wordtrap-template-tabs {
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input.wordtrap-template-shortcode,
+input.wordtrap-template-shortcode:focus {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#template-type-dialog label {
+  margin-bottom: 5px;
+}
+
+#template-type-dialog select,
+#template-type-dialog input[type="text"] {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#template-type-dialog .submit {
+  text-align: right;
+  padding-bottom: 0;
+}

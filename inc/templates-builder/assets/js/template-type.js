@@ -9,7 +9,7 @@ jQuery( function( $ ) {
     dialogClass: 'wp-dialog',
     autoOpen: false,
     draggable: false,
-    width: 'auto',
+    width: 300,
     modal: true,
     resizable: false,
     closeOnEscape: true,
@@ -20,7 +20,7 @@ jQuery( function( $ ) {
     },
     open: function () {
       // close dialog by clicking the overlay behind it
-      $( '.ui-widget-overlay' ).bind( 'click', function() {
+      $( '.ui-widget-overlay' ).on( 'click', function() {
         $( '#template-type-dialog' ).dialog( 'close' );
       } )
     },
@@ -37,12 +37,12 @@ jQuery( function( $ ) {
   } );
 
   // submit form
-  $( '#template-type-submit' ).on( 'click', function(){
-		var form = $(this).parents('form');
+  $( '#template-type-submit' ).on( 'click', function( e ){
+    var form = $(this).parents('form');
 
-		if ( ! validateForm( form ) )
-			return false;
-
-		
-  });
+    if ( ! validateForm( form ) ) {
+      e.preventDefault();
+      return false;
+    }
+  } );
 });  
