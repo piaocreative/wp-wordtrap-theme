@@ -85,7 +85,7 @@ html[dir="rtl"] .wordtrap-wrap .open-options .back {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 60px;
+  height: 70px;
   padding: 8px;
   background: #f8f8f8;
   color: #666;
@@ -119,14 +119,14 @@ html[dir="rtl"] .wordtrap-wrap .open-options .back {
 }
 
 .wordtrap-layout .content-wrap .block {
-  height: 160px;
+  height: 200px;
 }
 
 .wordtrap-layout .sidebar {
   flex: 1;
   position: absolute;
   border: 1px solid #e1e1e1;
-  height: 100px;
+  height: 140px;
   width: 25%;
   z-index: 2;
 }
@@ -186,73 +186,83 @@ html[dir="rtl"] .wordtrap-wrap .open-options .back {
   transform: none;
 }
 
-.wordtrap-wrap .block-options h4 {
+.wordtrap-wrap .block-options h3 {
   margin-top: 0;
 }
 
-.wordtrap-wrap .block-options select {
-  width: 80%;
-  padding: 0.2em 1em;
-  height: auto;
-  margin-right: 20px;
+.wordtrap-wrap .block-options h3 a {
+  float: right;
+  min-height: 26px;
+  line-height: 2.18181818;
+  padding: 0 8px;
+  font-size: 11px;
+  margin-top: -3px;
 }
 
-.wordtrap-wrap .block-options label {
-  display: inline-block;
-  margin-bottom: 5px;
-  cursor: auto;
+.wordtrap-wrap .block-options .message {
+  text-align: center;
 }
 
 .wordtrap-wrap .block-options .option {
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   margin-bottom: 15px;
+  align-items: center;
+}
+
+.wordtrap-wrap .block-options .option > * {
+  display: flex;
+}
+
+.wordtrap-wrap .block-options .option select {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 0.2em 1em;
+  height: auto;
+  width: 1%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.wordtrap-wrap .block-options .option .sort {
+  padding: 0 10px;
+  cursor: grab;
+}
+
+html[dir="rtl"] .wordtrap-wrap .block-options .option .links {
+  margin-right: 10px;
+}
+
+.wordtrap-wrap .block-options .option .links a {
+  display: inline-block;
+  margin-left: 10px;
+  text-decoration: none;
 }
 
 .wordtrap-wrap .block-options .option.preset {
   display: none;
 }
 
-.wordtrap-wrap .add-new-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  border: 2px solid #ddd;
-  color: #444;
-  text-decoration: none;
-  font-size: 0.825rem;
+.wordtrap-wrap .block-options .actions {
+  text-align: center;
 }
 
-.wordtrap-wrap .add-new-layout:hover {
-  color: #29e;
+.wordtrap-wrap .block-options .spinner {
+  float: none;
 }
 
-.layout-action { 
-  float: right; 
-  line-height: 34px;
+.ui-dialog .ui-dialog-titlebar {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-html[dir="rtl"] .layout-action {
-  float: left;
+.ui-dialog .ui-button.ui-dialog-titlebar-close {
+  top: 5px;
+  right: 5px;
 }
 
-.layout-action + .layout-action {
-  margin-right: 5px;
-}
-
-html[dir="rtl"] .layout-action + .layout-action {
-  margin-left: 5px;
-  margin-right: 0;
-}
-
-.layout-action, 
-.add-new-layout a {
-  color: #444;
-  box-shadow: none;
-  outline: none;
-}
-
-.layout-action:hover, 
-.add-new-layout a:hover {
-  color: #29e;
+#conditions-dialog .display-conditions {
+  font-size: 14px;
+  line-height: 1.6;
 }

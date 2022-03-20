@@ -86,39 +86,32 @@ $status = array(
 
       <?php
       // Load templates
-      $blocks = array ( 
+      $template_types = array ( 
         'header', 
         'left-sidebar',
         'main',
         'right-sidebar', 
         'footer',
       );
-      foreach ( $blocks as $key => $block ) :
+      foreach ( $template_types as $template_type ) :
+        if ( ! isset( $this->blocks[ $template_type ] ) ) {
+          continue;
+        }
+
         ob_start ();
         
-        $this->add_control( 'note', $this->options[$block]['note'] );
-        
-        if ( isset( $this->options[$block]['template-blocks'] ) ) :
-          foreach ( $this->template_list[$block] as $page_id => $page_title ) {
-            $conditions = get_post_meta( $page_id, $this->meta_conditions, true );
-            
-            if ( ! empty( $conditions ) ) {
-              $this->add_control( 'template-blocks', $this->options[$block]['template-blocks'], $page_id );
-            }
-          }
-          $this->add_control( 'template-blocks', $this->options[$block]['template-blocks'], 'preset' );
-          ?>
-          <a href="#" class="add-new-layout">
-            <?php _e( 'Add New Layout Condition', 'wordtrap' ) ?>
-          </a>
-          <?php
-        endif;
+        $this->add_block_heading( $template_type );
+        $this->add_control_block( $template_type );
+
         $output = ob_get_clean();
         ?>
-        <script type="text/template" id="wordtrap-layout-<?php echo esc_attr( $block ); ?>-options-html">
+        <script type="text/template" id="wordtrap-layout-<?php echo esc_attr( $template_type ); ?>-options-html">
           <?php echo $output; ?>
         </script>
       <?php endforeach; ?>
+      <div id="conditions-dialog" class="hidden" title="<?php esc_attr_e( 'Display Conditions', 'wordtrap' ) ?>">
+        <div class="display-conditions"></div>
+      </div>
     </div>
     <div class="col-right">
       <h3><?php _e( 'System Status', 'wordtrap' ); ?></h3>

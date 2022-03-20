@@ -74,7 +74,8 @@ jQuery( function( $ ) {
     var $this = $( this ),
       $form = $this.closest( 'form' ),
       $spinner = $this.prev(),
-      data = $form.serializeArray();
+      data = $form.serializeArray(),
+      $dialog = $this.closest( '.conditions-dialog' );
 
     $spinner.addClass( 'is-active' );
     $this.attr( 'disabled', 'disabled' );
@@ -84,11 +85,13 @@ jQuery( function( $ ) {
       data: data,
       success: function( response ) {
         $spinner.removeClass( 'is-active' );
-        $this.removeAttr( 'disabled' );  
+        $this.removeAttr( 'disabled' );
+        $dialog.dialog( 'close' );
       },
       error: function( XMLHttpRequest, textStatus, errorThrown ) {
         $spinner.removeClass( 'is-active' );
         $this.removeAttr( 'disabled' );
+        $dialog.dialog( 'close' );
       }
     } );
   } );

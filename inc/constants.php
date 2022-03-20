@@ -31,8 +31,16 @@ define( 'WORDTRAP_OPTIONS_URI', get_template_directory_uri() . '/inc/theme-optio
 // Theme admin definitions
 define( 'WORDTRAP_ADMIN_URI', get_template_directory_uri() . '/inc/admin' );
 
+// Theme page layout definitions
+define( 'WORDTRAP_PAGE_LAYOUT', 'wordtrap_page_layout' );
+define( 'WORDTRAP_DISPLAY_CONDITIONS', 'wordtrap_display_conditions' );
+
 // Theme templates builder definitions
 define( 'WORDTRAP_TEMPLATES_BUILDER_URI', get_template_directory_uri() . '/inc/templates-builder' );
 define( 'WORDTRAP_METABOX_OPTION', 'wordtrap_template' );
-define( 'WORDTRAP_TEMPLATE_SINGULAR_CONDITIONS', 'wordtrap_template_singular_conditions' );
-define( 'WORDTRAP_TEMPLATE_ARCHIVE_CONDITIONS', 'wordtrap_template_archive_conditions' );
+define( 'WORDTRAP_CONDITIONS_ALL', 'conditions-all' );
+define( 'WORDTRAP_CONDITIONS_SINGULAR', 'conditions-singular' );
+define( 'WORDTRAP_CONDITIONS_ARCHIVE', 'conditions-archive' );
+define( 'WORDTRAP_SINGULAR_CONDITIONS', 'singular-conditions' );
+define( 'WORDTRAP_ARCHIVE_CONDITIONS', 'archive-conditions' );
+define( 'WORDTRAP_DISPLAY_POSITIONS', 'display-positions' );
