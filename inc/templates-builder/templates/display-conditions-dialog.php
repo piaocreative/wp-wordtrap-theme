@@ -15,19 +15,19 @@ $_post_types = get_post_types( array( 'show_in_nav_menus' => true ), 'objects' )
       $post_types[ $post_type ] = $object->label;
     }
 
-$post_types = $this->_get_post_types();
-$singular_types = $this->_get_singular_types();
-$archive_types  = $this->_get_archive_types();
+$post_types = wordtrap_post_types();
+$singular_types = wordtrap_template_singular_types();
+$archive_types  = wordtrap_template_archive_types();
 
 // Get current conditions
-$singular_conditions = get_post_meta( $post_id, WORDTRAP_TEMPLATE_SINGULAR_CONDITIONS, true );
+$singular_conditions = get_post_meta( $post_id, WORDTRAP_SINGULAR_CONDITIONS, true );
 if ( ! $singular_conditions ) {
   $singular_conditions = array( 
     'checked' => array(),
     'selected' => array()
   );
 }
-$archive_conditions = get_post_meta( $post_id, WORDTRAP_TEMPLATE_ARCHIVE_CONDITIONS, true );
+$archive_conditions = get_post_meta( $post_id, WORDTRAP_ARCHIVE_CONDITIONS, true );
 if ( ! $archive_conditions ) {
   $archive_conditions = array( 
     'checked' => array(),
