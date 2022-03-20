@@ -83,7 +83,7 @@ if ( ! function_exists( 'wordtrap_page_layout_save_conditions' ) ) {
   function wordtrap_page_layout_save_conditions() {
     $layout_option = get_option( WORDTRAP_PAGE_LAYOUT, array() );
     $blocks = array_keys( $layout_option );
-    $display_conditions = get_option( WORDTRAP_DISPLAY_CONDITIONS, array() );
+    $display_conditions = array();
     foreach ( $blocks as $block ) {
       $templates = $layout_option[ $block ];
       $display_conditions[ $block ] = array();
