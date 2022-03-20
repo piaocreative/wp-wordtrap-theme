@@ -156,7 +156,7 @@ if ( ! function_exists( 'wordtrap_template_conditions_html' ) ) {
       $output = false;
       if ( $show_singular ) {
         $output = true;
-        echo '<strong>' . esc_html__( 'All Singulars', 'wordtrap' ) . '</strong><br>';
+        echo '<strong>' . esc_html__( 'All Singulars', 'wordtrap' ) . '</strong>';
       } else {
         $singular_conditions = get_post_meta( $id, WORDTRAP_SINGULAR_CONDITIONS, true );
         if ( ! $singular_conditions ) {
