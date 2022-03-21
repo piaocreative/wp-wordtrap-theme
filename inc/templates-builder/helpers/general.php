@@ -32,6 +32,11 @@ if ( ! function_exists( 'wordtrap_template_singular_types' ) ) {
     $post_types = wordtrap_post_types();
 
     $singular_types = array(
+      'home'        => array(
+        'label'     => __( 'Home Page', 'wordtrap' ),
+        'single'    => true,
+        'opt_group' => false,
+      ),
       'page'        => array(
         'label'     => __( 'Pages', 'wordtrap' ),
         'single'    => false,
