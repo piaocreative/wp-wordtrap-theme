@@ -368,15 +368,15 @@ if ( ! function_exists( 'wordtrap_members_view_options' ) ) {
     return array(
       '1'  => array(
         'title' => esc_html__( 'Type 1', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-1.jpg',
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-1.svg',
       ),
       '2'  => array(
         'title' => esc_html__( 'Type 2', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-2.jpg',
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-2.svg',
       ),
       '3'  => array(
         'title' => esc_html__( 'Type 3', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-3.jpg',
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/member-layouts/archive-view-3.svg',
       ),
     );
   }
