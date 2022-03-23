@@ -9538,9 +9538,7 @@
 	    sticky_header_md: theme.sticky_header_md,
 	    sticky_header_lg: theme.sticky_header_lg,
 	    sticky_header_xl: theme.sticky_header_xl,
-	    sticky_header_xxl: theme.sticky_header_xxl,
-	    is_sticky: false,
-	    sticky_pos: 0
+	    sticky_header_xxl: theme.sticky_header_xxl
 	  };
 	  StickyHeader.prototype = {
 	    initialize: function ($el, opts) {
@@ -9556,6 +9554,9 @@
 	        return this;
 	      }
 
+	      this.is_sticky = false;
+	      this.sticky_pos = 0;
+	      this.prev_scroll_pos = -1;
 	      this.setData().setOptions(opts).reset().build().events();
 	      return this;
 	    },
@@ -9570,9 +9571,10 @@
 	      return this;
 	    },
 	    checkVisivility: function () {
-	      var win_width = window.innerWidth;
+	      var win_width = window.innerWidth,
+	          options = this.options;
 
-	      if (win_width >= self.breakpoints_xxl && !self.sticky_header_xxl || win_width >= self.breakpoints_xl && win_width < self.breakpoints_xxl && !self.sticky_header_xl || win_width >= self.breakpoints_lg && win_width < self.breakpoints_xl && !self.sticky_header_lg || win_width >= self.breakpoints_md && win_width < self.breakpoints_lg && !self.sticky_header_md || win_width >= self.breakpoints_sm && win_width < self.breakpoints_md && !self.sticky_header_sm || win_width < self.breakpoints_sm && !self.sticky_header_xs) {
+	      if (win_width >= options.breakpoints_xxl && !options.sticky_header_xxl || win_width >= options.breakpoints_xl && win_width < options.breakpoints_xxl && !options.sticky_header_xl || win_width >= options.breakpoints_lg && win_width < options.breakpoints_xl && !options.sticky_header_lg || win_width >= options.breakpoints_md && win_width < options.breakpoints_lg && !options.sticky_header_md || win_width >= options.breakpoints_sm && win_width < options.breakpoints_md && !options.sticky_header_sm || win_width < options.breakpoints_sm && !options.sticky_header_xs) {
 	        return false;
 	      }
 
@@ -9593,7 +9595,8 @@
 	    },
 	    build: function () {
 	      var self = this,
-	          $el = this.options.wrapper;
+	          $el = this.options.wrapper,
+	          $html = $('html');
 
 	      if (!self.is_sticky && window.innerHeight + self.header_height + theme.adminBarHeight() + parseInt(self.header.css('border-top-width')) >= $(document).height()) {
 	        return self;
@@ -9601,6 +9604,15 @@
 
 	      if (window.innerHeight > $(document.body).height()) window.scrollTo(0, 0);
 	      var scroll_top = $(window).scrollTop();
+	      $html.addClass('sticky-header-active');
+
+	      if (scroll_top > this.prev_scroll_pos) {
+	        $html.addClass('scroll-down');
+	      } else {
+	        $html.removeClass('scroll-down');
+	      }
+
+	      this.prev_scroll_pos = scroll_top;
 
 	      if ($('#wpadminbar').length && $('#wpadminbar').css('position') == 'absolute') {
 	        self.header.parent().stop().css('top', $('#wpadminbar').height() - scroll_top < 0 ? -$('#wpadminbar').height() : -scroll_top);

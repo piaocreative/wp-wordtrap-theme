@@ -24,6 +24,10 @@ if ( $wordtrap_options[ 'header-position' ] == 'fixed' ) {
   $wrap_classes[] = 'header-fixed';
 }
 
+if ( $wordtrap_options[ 'header-reveal' ] ) {
+  $wrap_classes[] = 'header-reveal';
+}
+
 if ( $template ) : 
   /**
    * Render header template
