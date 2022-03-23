@@ -24,8 +24,8 @@ if ( ! function_exists( 'wordtrap_logo' ) ) {
 	
 		ob_start();
 	
-		if ( is_front_page() && is_home() ) : ?>
-			<h1 class="navbar-brand mb-0"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home" itemprop="url">
+		if ( is_front_page() || is_home() ) : ?>
+			<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home" itemprop="url">
 		<?php else : ?>
 			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home" itemprop="url">
 		<?php endif; ?>
@@ -46,7 +46,7 @@ if ( ! function_exists( 'wordtrap_logo' ) ) {
 			}
 			?>
 
-		<?php if ( is_front_page() && is_home() ) : ?>
+		<?php if ( is_front_page() || is_home() ) : ?>
 			</a></h1>
 		<?php else : ?>
 			</a>

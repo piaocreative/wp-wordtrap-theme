@@ -57,20 +57,8 @@ global $wordtrap_options;
 
 	<a class="skip-link sr-only sr-only-focusable" href="#content"><?php _e( 'Skip to content', 'wordtrap' ); ?></a>
 
-	<header id="header" class="site-header">
-
-		<!-- Navbar Top
-		============================================= -->
-		<?php get_template_part( 'template-parts/header/navbar',  'top' ); ?>
-
-		<!-- Navbar Main
-		============================================= -->
-		<?php get_template_part( 'template-parts/header/navbar',  'main' ); ?>
-
-		<!-- Navbar Bottom
-		============================================= -->
-		<?php get_template_part( 'template-parts/header/navbar',  'bottom' ); ?>
-
-	</header><!-- #header -->
-
+	<!-- Header
+	============================================= -->
+	<?php get_template_part( 'template-parts/header' ) ?>
+	
 	<div id="content" class="site-content">

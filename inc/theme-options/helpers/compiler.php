@@ -40,6 +40,7 @@ if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
    */
   function wordtrap_skin_fields() {
     return array(
+      // bootstrap variables
       'css-code',
       'body-color', 'body-bg', 
       'primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 
@@ -53,7 +54,10 @@ if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
       'font-weight-lighter', 'font-weight-light', 'font-weight-normal', 'font-weight-bold', 'font-weight-bolder', 
       'line-height-base', 'line-height-sm', 'line-height-lg', 
       'headings-margin-bottom', 'headings-font-family', 'headings-font-weight', 'headings-line-height', 'headings-color', 
-      'link', 'link-hover'
+      'link', 'link-hover',
+
+      // templates variables
+      'header-bg', 'header-logo-margin',
     );
   }
 }

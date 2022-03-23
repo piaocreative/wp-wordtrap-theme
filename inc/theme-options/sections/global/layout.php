@@ -32,14 +32,6 @@ Redux::set_section(
       //   'default'  => 'full',
       // ),
       array(
-        'id'       => 'header-layout',
-        'type'     => 'image_select',
-        'title'    => esc_html__( 'Header Layout', 'wordtrap' ),
-        // 'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
-        'options'  => $layout_options,
-        'default'  => 'boxed',
-      ),
-      array(
         'id'       => 'banner-layout',
         'type'     => 'image_select',
         'title'    => esc_html__( 'Banner Layout', 'wordtrap' ),

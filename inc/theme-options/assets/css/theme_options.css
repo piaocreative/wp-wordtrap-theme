@@ -25,7 +25,7 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
-  padding-bottom: 20px;
+  padding-bottom: 20px !important;
 }
 
 .redux-container .redux-container-ace_editor .redux_field_th {

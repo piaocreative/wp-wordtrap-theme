@@ -49,26 +49,49 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
     $compiler->setImportPaths( get_template_directory() . '/src/sass/' );
     
     // Generate and Write styles
-    $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::EXPANDED );
-    $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
-
     if ( $enqueue ) {
-      wp_register_style( 'wordtrap-customizer', false );
-      wp_enqueue_style( 'wordtrap-customizer' );
-      wp_add_inline_style( 'wordtrap-customizer', $result->getCss() );
-      return;
+      $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::EXPANDED );
+
+      // theme styles
+      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
+      wp_register_style( 'wordtrap-theme-customizer', false );
+      wp_enqueue_style( 'wordtrap-theme-customizer' );
+      wp_add_inline_style( 'wordtrap-theme-customizer', $result->getCss() );
+
+      // templates styles
+      $result = $compiler->compileString( $scss_variables . ' @import "templates.scss";' );
+      wp_register_style( 'wordtrap-templates-customizer', false );
+      wp_enqueue_style( 'wordtrap-templates-customizer' );
+      wp_add_inline_style( 'wordtrap-templates-customizer', $result->getCss() );
+    } else {
+      $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::EXPANDED );
+
+      // theme styles
+      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
+      $file = $style_path . '/theme.css';
+      wordtrap_check_file_write_permission( $file );
+      $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );
+
+      // template styles
+      $result = $compiler->compileString( $scss_variables . ' @import "templates.scss";' );
+      $file = $style_path . '/templates.css';
+      wordtrap_check_file_write_permission( $file );
+      $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );
+  
+      $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::COMPRESSED );
+    
+      // theme minimized styles
+      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
+      $file = $style_path . '/theme.min.css';
+      wordtrap_check_file_write_permission( $file );
+      $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );
+
+      // templates minimized styles
+      $result = $compiler->compileString( $scss_variables . ' @import "templates.scss";' );
+      $file = $style_path . '/templates.min.css';
+      wordtrap_check_file_write_permission( $file );
+      $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );
     }
-
-    $file = $style_path . '/theme.css';
-    wordtrap_check_file_write_permission( $file );
-    $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );
-
-    $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::COMPRESSED );
-    $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
-
-    $file = $style_path . '/theme.min.css';
-    wordtrap_check_file_write_permission( $file );
-    $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );
   }
 }
 add_action( 'wordtrap_compile_styles', 'wordtrap_compile_styles', 10 );

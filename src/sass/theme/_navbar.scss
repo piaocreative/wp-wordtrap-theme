@@ -1,12 +1,24 @@
 /*
 * The styles for Navbar
 *
-* @link https://getbootstrap.com/docs/5.1/components/navbar/
-* 
 * @package Wordtrap
 * @since wordtrap 1.0.0
 */
 
 .navbar-brand {
-    max-width: 260px;
+  display: block;
+  max-width: $logo-max-width;
+  margin: $header-logo-margin;
+
+  @include media-breakpoint-down(lg) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
+
+#main-menu,
+#header-main .btn {
+  text-transform: $menu-text-transform;
+  font-weight: $menu-font-weight;
+}
+

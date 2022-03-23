@@ -29,9 +29,7 @@ if ( !class_exists( 'ReduxFramework' ) ) {
 require get_template_directory() . '/inc/templates-builder/templates-builder.php';
 
 // Include admin pages
-if ( current_user_can( 'manage_options' ) ) {
-  require get_template_directory() . '/inc/admin/admin.php';
-}
+require get_template_directory() . '/inc/admin/admin.php';
 
 // Include theme options
 require get_template_directory() . '/inc/theme-options/options.php';

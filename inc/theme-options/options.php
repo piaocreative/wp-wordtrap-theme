@@ -240,9 +240,11 @@ Redux::set_section(
     'icon'             => 'dashicons-before dashicons-admin-appearance',
   )
 );
+require_once $dir . 'sections/skin/body.php';
 require_once $dir . 'sections/skin/colors.php';
 require_once $dir . 'sections/skin/layout.php';
 require_once $dir . 'sections/skin/typography.php';
+require_once $dir . 'sections/skin/header.php';
 
 // -> START Header Fields
 require_once $dir . 'sections/header/header.php';
