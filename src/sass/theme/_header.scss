@@ -31,4 +31,13 @@
   left: 0;
   right: 0;
   z-index: 1030;
+
+  &.header-reveal {
+    transform: translate3d(0,0,0);
+    @include transition(transform .3s ease);
+
+    html.sticky-header-active.scroll-down & {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
 }

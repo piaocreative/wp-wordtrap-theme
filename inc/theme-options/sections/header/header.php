@@ -46,6 +46,15 @@ Redux::set_section(
         ),
         'default'       => '',
       ),
+      array(
+        'id'            => 'header-reveal',
+        'type'          => 'switch',
+        'title'         => esc_html__( 'Reveal Effect', 'wordtrap' ),
+        'default'       => false,
+        'required'      => array( 'header-type', 'equals', '' ),
+        'on'            => esc_html__( 'Show', 'wordtrap' ),
+        'off'           => esc_html__( 'Hide', 'wordtrap' ),
+      ),      
       // array(
       //   'id'            => 'show-header-top',
       //   'type'          => 'switch',
