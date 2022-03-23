@@ -151,16 +151,13 @@ if ( ! function_exists( 'wordtrap_layout_condition' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_render_layout' ) ) {
+if ( ! function_exists( 'wordtrap_render_template' ) ) {
   /**
-   * Render template by template type
+   * Render template
    */
-  function wordtrap_render_layout( $template_type, $position = '' ) {
-    $template = wordtrap_layout_template( $template_type, $position );
-    if ( $template ) {
-      $post = get_post( $template );
-      echo do_shortcode( $post->post_content );
-    }
+  function wordtrap_render_template( $template ) {
+    $post = get_post( $template );
+    echo do_shortcode( $post->post_content );
   }
 }
 

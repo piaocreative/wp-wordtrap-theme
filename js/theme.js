@@ -9313,6 +9313,192 @@
 	  }
 	})();
 
+	/*
+	* Theme configuration
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Theme
+	window.theme = {};
+
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  $.extend(theme, {
+	    requestTimeout: function (fn, delay) {
+	      var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+	      if (!handler) {
+	        return setTimeout(fn, delay);
+	      }
+
+	      var start,
+	          rt = new Object();
+
+	      function loop(timestamp) {
+	        if (!start) {
+	          start = timestamp;
+	        }
+
+	        var progress = timestamp - start;
+	        progress >= delay ? fn.call() : rt.val = handler(loop);
+	      }
+	      rt.val = handler(loop);
+	      return rt;
+	    },
+	    deleteTimeout: function (timeoutID) {
+	      if (!timeoutID) {
+	        return;
+	      }
+
+	      var handler = window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame;
+
+	      if (!handler) {
+	        return clearTimeout(timeoutID);
+	      }
+
+	      if (timeoutID.val) {
+	        return handler(timeoutID.val);
+	      }
+	    }
+	  });
+	})(window.theme, jQuery);
+	/* Smart Resize  */
+
+
+	(function ($, theme, sr) {
+	  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+
+	  var debounce = function (func, threshold, execAsap) {
+	    var timeout;
+	    return function debounced() {
+	      var obj = this,
+	          args = arguments;
+
+	      function delayed() {
+	        if (!execAsap) func.apply(obj, args);
+	        timeout = null;
+	      }
+
+	      if (timeout && timeout.val) theme.deleteTimeout(timeout);else if (execAsap) func.apply(obj, args);
+	      timeout = theme.requestTimeout(delayed, threshold || 100);
+	    };
+	  }; // smartresize 
+
+
+	  jQuery.fn[sr] = function (fn) {
+	    return fn ? this.on('resize', debounce(fn)) : this.trigger(sr);
+	  };
+	})(jQuery, window.theme, 'smartresize');
+
+	/*
+	* Javascript for the header 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Fixed Header
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__fixed_header';
+
+	  var FixedHeader = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  FixedHeader.defaults = {};
+	  FixedHeader.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, FixedHeader.defaults, opts, {
+	        wrapper: this.$el
+	      });
+	      return this;
+	    },
+	    build: function () {
+	      var self = this;
+	          this.options.wrapper;
+	      self.resize();
+	      $(window).smartresize(function () {
+	        self.resize();
+	      });
+	      return this;
+	    },
+	    resize: function () {
+	      var $el = this.options.wrapper,
+	          height = $el.outerHeight(),
+	          html_margin = parseFloat($('html').css('margin-top'));
+	      $el.css('top', html_margin);
+	      $('body').css('padding-top', height);
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    FixedHeader: FixedHeader
+	  }); // jquery plugin
+
+	  $.fn.themeFixedHeader = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.FixedHeader($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery);
+
+	/*
+	* Theme initialize
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	function wordtrap_init($wrap) {
+	  (function ($) {
+	    if (!$wrap) {
+	      $wrap = jQuery(document.body);
+	    }
+
+	    $wrap.trigger('wordtrap_init_start'); // Accordion
+
+	    if ($.fn.themeFixedHeader) {
+	      $(function () {
+	        $wrap.find('.header-fixed').each(function () {
+	          var $this = $(this),
+	              opts;
+	          var pluginOptions = $this.data('plugin-options');
+	          if (pluginOptions) opts = pluginOptions;
+	          $this.themeFixedHeader(opts);
+	        });
+	      });
+	    }
+	  })(jQuery);
+	}
+
+	(function (theme, $) {
+
+	  $(document).ready(function () {
+	    wordtrap_init();
+	  });
+	})(window.theme, jQuery);
+
 	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;

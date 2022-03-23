@@ -17,6 +17,14 @@ Redux::set_section(
     'icon'             => 'dashicons-before dashicons-align-full-width',
     'fields'           => array(
       array(
+        'id'            => 'header-layout',
+        'type'          => 'image_select',
+        'title'         => esc_html__( 'Header Layout', 'wordtrap' ),
+        // 'required'      => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
+        'options'       => $layout_options,
+        'default'       => 'full',
+      ),
+      array(
         'id'            => 'header-position',
         'type'          => 'button_set',
         'title'         => esc_html__( 'Position', 'wordtrap' ),
@@ -27,14 +35,14 @@ Redux::set_section(
         ),
         'default'       => '',
       ),
-      array(
-        'id'            => 'show-header-top',
-        'type'          => 'switch',
-        'title'         => esc_html__( 'Header Top', 'wordtrap' ),
-        'default'       => false,
-        'on'            => esc_html__( 'Show', 'wordtrap' ),
-        'off'           => esc_html__( 'Hide', 'wordtrap' ),
-      ),
+      // array(
+      //   'id'            => 'show-header-top',
+      //   'type'          => 'switch',
+      //   'title'         => esc_html__( 'Header Top', 'wordtrap' ),
+      //   'default'       => false,
+      //   'on'            => esc_html__( 'Show', 'wordtrap' ),
+      //   'off'           => esc_html__( 'Hide', 'wordtrap' ),
+      // ),
       array(
         'id'            => 'header-type',
         'type'          => 'button_set',
@@ -45,6 +53,20 @@ Redux::set_section(
           'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
         ),
         'default'       => '',
+      ),
+      array(
+        'id'            => 'header-login-link',
+        'type'          => 'text',
+        'title'         => esc_html__( 'Login URL', 'wordtrap' ),
+        'validate'      => array( 'url' ),
+        'default'       => site_url( 'wp-login.php' ),
+      ),
+      array(
+        'id'            => 'header-logout-link',
+        'type'          => 'text',
+        'title'         => esc_html__( 'Logout URL', 'wordtrap' ),
+        'validate'      => array( 'url' ),
+        'default'       => site_url( 'wp-login.php?action=logout' ),
       ),
       array(
         'id'            => 'sticky-header-start',

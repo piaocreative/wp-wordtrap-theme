@@ -6,9 +6,9 @@
   "scripts": {
     "bs": "browser-sync start --config src/config/browser-sync.config.js",
     "css": "npm-run-all css-compile css-postcss css-minify",
-    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/sass/templates.scss:css/templates.css",
-    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output css/ --batch --batch-suffix \".min\" \"css/*.css\" \"!css/*.min.css\" \"!css/*rtl*.css\"",
-    "css-postcss": "postcss --config src/config/postcss.config.js --replace \"css/*.css\" \"!css/*.rtl*.css\" \"!css/*.min.css\"",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/sass/templates.scss:../../uploads/wordtrap_styles/templates.css",
+    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output ../../uploads/wordtrap_styles/ --batch --batch-suffix \".min\" \"../../uploads/wordtrap_styles/*.css\" \"!../../uploads/wordtrap_styles/*.min.css\" \"!../../uploads/wordtrap_styles/*rtl*.css\"",
+    "css-postcss": "postcss --config src/config/postcss.config.js --replace \"../../uploads/wordtrap_styles/*.css\" \"!../../uploads/wordtrap_styles/*.rtl*.css\" \"!../../uploads/wordtrap_styles/*.min.css\"",
     "js": "npm-run-all js-compile js-minify",
     "js-compile": "rollup --config src/config/rollup.config.js --sourcemap",
     "js-minify": "terser --config-file src/config/terser.config.json --output js/theme.min.js js/theme.js",

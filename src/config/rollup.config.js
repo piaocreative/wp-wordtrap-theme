@@ -16,6 +16,12 @@ export default {
   input: [
     path.resolve(__dirname, '../js/bootstrap.js'), 
     path.resolve(__dirname, '../js/skip-link-focus-fix.js'),
+    
+    path.resolve(__dirname, '../js/theme/config.js'),
+    
+    path.resolve(__dirname, '../js/theme/header.js'),
+    
+    path.resolve(__dirname, '../js/theme/init.js'),
     path.resolve(__dirname, '../js/theme.js')
   ],
   output: {
