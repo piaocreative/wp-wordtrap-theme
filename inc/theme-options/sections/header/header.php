@@ -17,10 +17,21 @@ Redux::set_section(
     'icon'             => 'dashicons-before dashicons-align-full-width',
     'fields'           => array(
       array(
+        'id'            => 'header-type',
+        'type'          => 'button_set',
+        'title'         => esc_html__( 'Type', 'wordtrap' ),
+        'options'       => array(
+          ''            => esc_html__( 'Normal', 'wordtrap' ),
+          'left-side'   => esc_html__( 'Left Side', 'wordtrap' ),
+          'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
+        ),
+        'default'       => '',
+      ),
+      array(
         'id'            => 'header-layout',
         'type'          => 'image_select',
         'title'         => esc_html__( 'Header Layout', 'wordtrap' ),
-        // 'required'      => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
+        'required'      => array( 'header-type', 'equals', '' ),
         'options'       => $layout_options,
         'default'       => 'full',
       ),
@@ -43,17 +54,6 @@ Redux::set_section(
       //   'on'            => esc_html__( 'Show', 'wordtrap' ),
       //   'off'           => esc_html__( 'Hide', 'wordtrap' ),
       // ),
-      array(
-        'id'            => 'header-type',
-        'type'          => 'button_set',
-        'title'         => esc_html__( 'Type', 'wordtrap' ),
-        'options'       => array(
-          ''            => esc_html__( 'Normal', 'wordtrap' ),
-          'left-side'   => esc_html__( 'Left Side', 'wordtrap' ),
-          'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
-        ),
-        'default'       => '',
-      ),
       array(
         'id'            => 'header-login-link',
         'type'          => 'text',
@@ -110,6 +110,14 @@ Redux::set_section(
         'id'            => 'show-sticky-header-sm',
         'type'          => 'switch',
         'title'         => esc_html__( 'Small', 'wordtrap' ),
+        'default'       => true,
+        'on'            => esc_html__( 'Show', 'wordtrap' ),
+        'off'           => esc_html__( 'Hide', 'wordtrap' ),
+      ),
+      array(
+        'id'            => 'show-sticky-header-xs',
+        'type'          => 'switch',
+        'title'         => esc_html__( 'Extra Small', 'wordtrap' ),
         'default'       => true,
         'on'            => esc_html__( 'Show', 'wordtrap' ),
         'off'           => esc_html__( 'Hide', 'wordtrap' ),
