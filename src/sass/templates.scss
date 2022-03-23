@@ -1,5 +1,13 @@
+// Grab a few bootstrap assets so we can use mixins, variables, etc
+@import "theme/vendor/bootstrap/functions";
+@import "theme/vendor/bootstrap/variables";
+@import "theme/vendor/bootstrap/mixins";
+
+// Variables
+@import "theme/variables";
+
+// Header
+@import "theme/header";
+
 // Navbar
 @import "theme/navbar";
-
-// Topbar
-@import "theme/header";

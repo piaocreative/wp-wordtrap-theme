@@ -201,3 +201,9 @@ $link-hover-color:            <?php echo $g['link-hover']['color'] ?>;
 <?php if ( isset( $g['link-hover']['text-decoration'] ) && $g['link-hover']['text-decoration'] ) : ?>
 $link-hover-decoration:       <?php echo $g['link-hover']['text-decoration'] ?>;
 <?php endif ?>
+
+// Header
+<?php if ( $g['header-bg'] ) : ?>
+$header-bg:                  <?php echo $g['header-bg'] ?>;
+<?php endif ?>
+$header-logo-margin:          <?php echo floatval( $g['header-logo-margin']['margin-top'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-right'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-bottom'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-left'] ) ?>rem;

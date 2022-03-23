@@ -16,6 +16,8 @@ require $dir . '/helpers/enqueue.php';
 require $dir . '/helpers/toolbar.php';
 require $dir . '/helpers/page-layout.php';
 
-// Load classes
-require $dir . '/classes/page-layout.php';
+if ( current_user_can( 'manage_options' ) ) {
+  // Load classes
+  require $dir . '/classes/page-layout.php';
+}
 
