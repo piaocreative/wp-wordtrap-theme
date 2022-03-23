@@ -14,6 +14,23 @@ window.theme = {};
   theme = theme || {};
 
   $.extend( theme, {
+
+    // Breackpoints
+    breakpoints_sm: parseInt( wordtrap_vars.breakpoints_sm ),
+    breakpoints_md: parseInt( wordtrap_vars.breakpoints_md ),
+    breakpoints_lg: parseInt( wordtrap_vars.breakpoints_lg ),
+    breakpoints_xl: parseInt( wordtrap_vars.breakpoints_xl ),
+    breakpoints_xxl: parseInt( wordtrap_vars.breakpoints_xxl ),
+
+    // Sticky header
+    sticky_header_xs: parseInt( wordtrap_vars.sticky_header_xs ),
+    sticky_header_sm: parseInt( wordtrap_vars.sticky_header_sm ),
+    sticky_header_md: parseInt( wordtrap_vars.sticky_header_md ),
+    sticky_header_lg: parseInt( wordtrap_vars.sticky_header_lg ),
+    sticky_header_xl: parseInt( wordtrap_vars.sticky_header_xl ),
+    sticky_header_xxl: parseInt( wordtrap_vars.sticky_header_xxl ),
+    
+    // Request timeout
     requestTimeout: function ( fn, delay ) {
       var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
       if ( !handler ) {
@@ -33,6 +50,7 @@ window.theme = {};
       return rt;
     },
 
+    // Delete timeout
     deleteTimeout: function ( timeoutID ) {
       if ( !timeoutID ) {
         return;
@@ -45,6 +63,27 @@ window.theme = {};
         return handler( timeoutID.val );
       }
     },
+
+    // Admin bar height
+    adminBarHeight: function () {
+      var obj = document.getElementById( 'wpadminbar' );
+      if ( obj && obj.offsetHeight && window.innerWidth > 600 ) {
+        return obj.offsetHeight;
+      }
+
+      return 0;
+    },
+
+    // Request frame
+    requestFrame: function ( fn ) {
+			var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+			if ( ! handler ) {
+				return setTimeout( fn, 1000 / 60 );
+			}
+			var rt = new Object()
+			rt.val = handler( fn );
+			return rt;
+		},
   } );
 
 } )( window.theme, jQuery );

@@ -14,7 +14,7 @@ function wordtrap_init( $wrap ) {
   
     $wrap.trigger( 'wordtrap_init_start' );
 
-    // Accordion
+    // Fixed header
     if ( $.fn.themeFixedHeader ) {
       $( function () {
         $wrap.find( '.header-fixed' ).each( function () {
@@ -26,6 +26,22 @@ function wordtrap_init( $wrap ) {
             opts = pluginOptions;
 
           $this.themeFixedHeader( opts );
+        } );
+      } );
+    }
+
+    // Sticky header
+    if ( $.fn.themeStickyHeader ) {
+      $( function () {
+        $wrap.find( '.header-wrap:not(.header-fixed)' ).each( function () {
+          var $this = $( this ),
+            opts;
+
+          var pluginOptions = $this.data( 'plugin-options' );
+          if ( pluginOptions )
+            opts = pluginOptions;
+
+          $this.themeStickyHeader( opts );
         } );
       } );
     }
