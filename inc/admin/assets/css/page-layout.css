@@ -38,7 +38,7 @@
   display: flex;
   margin: 0 -10px;
   padding: 19px 20px;
-  background: #29e;
+  background: #43C237;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -238,6 +238,7 @@ html[dir="rtl"] .wordtrap-wrap .block-options .option .links {
   display: inline-block;
   margin-left: 10px;
   text-decoration: none;
+  color: #3D98F4;
 }
 
 .wordtrap-wrap .block-options .option.preset {

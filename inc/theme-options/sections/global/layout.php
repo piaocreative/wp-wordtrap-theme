@@ -95,14 +95,6 @@ Redux::set_section(
         'on'       => esc_html__( 'Yes', 'wordtrap' ),
         'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
-      array(
-        'id'       => 'footer-layout',
-        'type'     => 'image_select',
-        'title'    => esc_html__( 'Footer Layout', 'wordtrap' ),
-        // 'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
-        'options'  => $layout_options,
-        'default'  => 'boxed',
-      ),      
     ),
   )
 );

@@ -1,0 +1,64 @@
+/*
+* The styles for Footer
+*
+* @package Wordtrap
+* @since wordtrap 1.0.0
+*/
+
+.footer-wrap {
+  background-color: $footer-bg;
+  color: $footer-color;
+  
+  @include media-breakpoint-up(sm) {
+    .container-fluid {
+      padding-left: var(--bs-gutter-x, 1.5rem);
+      padding-right: var(--bs-gutter-x, 1.5rem);
+    }
+  }
+}
+
+#footer-menu {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  > li {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+.footer-copyright {
+  padding-top: var(--bs-gutter-x, 0.5rem);
+  padding-bottom: var(--bs-gutter-x, 0.5rem);
+}
+
+@include media-breakpoint-down(lg) {
+  #footer-bottom {
+    justify-content: center;
+  }
+
+  .footer-copyright {
+    width: 100%;
+    text-align: center;
+  }  
+}
+
+.page-footer-reveal {
+  #footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $footer-reveal-index;
+  }
+
+  #main {
+    background: $body-bg;
+  }
+}

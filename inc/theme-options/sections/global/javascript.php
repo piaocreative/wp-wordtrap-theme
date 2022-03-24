@@ -23,6 +23,7 @@ Redux::set_section(
         'mode'       => 'javascript',
         'default'    => '',
         'full_width' => true,
+        'theme'      => 'chrome',
         'options'    => array(
           'height'   => 250,
           'minLines' => 15,
@@ -37,6 +38,7 @@ Redux::set_section(
         'mode'       => 'javascript',
         'default'    => '',
         'full_width' => true,
+        'theme'      => 'chrome',
         'options'    => array(
           'height'   => 250,
           'minLines' => 15,

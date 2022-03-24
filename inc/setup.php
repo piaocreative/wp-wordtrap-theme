@@ -50,7 +50,6 @@ if ( ! function_exists( 'wordtrap_setup_theme' ) ) {
 			array(
 				'primary' => __( 'Primary Menu', 'wordtrap' ),
 				'footer' => __( 'Footer Menu', 'wordtrap' ),
-				'social' => __( 'Social Links Menu', 'wordtrap' ),
 			)
 		);
 

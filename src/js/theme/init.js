@@ -45,6 +45,22 @@ function wordtrap_init( $wrap ) {
         } );
       } );
     }
+
+    // Reveal Footer
+    if ( $.fn.themeRevealFooter && $wrap.hasClass( 'page-footer-reveal' ) ) {
+      $( function () {
+        $wrap.each( function () {
+          var $this = $( this ),
+            opts;
+
+          var pluginOptions = $this.data( 'plugin-options' );
+          if ( pluginOptions )
+            opts = pluginOptions;
+
+          $this.themeRevealFooter( opts );
+        } );
+      } );
+    }
   } )( jQuery );  
 }
 

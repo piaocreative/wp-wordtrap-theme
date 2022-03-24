@@ -22,7 +22,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1030;
+  z-index: $header-index;
 }
 
 .sticky-header .header-wrap {
@@ -30,7 +30,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1030;
+  z-index: $header-index;
 
   &.header-reveal {
     transform: translate3d(0,0,0);
