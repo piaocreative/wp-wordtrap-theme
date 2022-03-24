@@ -16,14 +16,6 @@ Redux::set_section(
     'subsection'   => true,
     'fields'       => array(
       array(
-        'id'       => 'body-color',
-        'type'     => 'color',
-        'title'    => esc_html__( 'Text', 'wordtrap' ),
-        'validate' => 'color',
-        'transparent' => false,
-        'default'  => '#393939'
-      ),
-      array(
         'id'       => 'body-bg',
         'type'     => 'color',
         'title'    => esc_html__( 'Background', 'wordtrap' ),
@@ -31,6 +23,14 @@ Redux::set_section(
         'transparent' => false,
         'default'  => '#f5f5f5'
       ),
+      array(
+        'id'       => 'body-color',
+        'type'     => 'color',
+        'title'    => esc_html__( 'Text', 'wordtrap' ),
+        'validate' => 'color',
+        'transparent' => false,
+        'default'  => '#393939'
+      ),      
     )
   )
 );

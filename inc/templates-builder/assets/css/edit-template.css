@@ -80,3 +80,7 @@
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   margin-bottom: 0;
 }
+
+.redux-container .redux-sidebar .redux-group-tab-link-a i {
+  font-size: 1.35em;
+}

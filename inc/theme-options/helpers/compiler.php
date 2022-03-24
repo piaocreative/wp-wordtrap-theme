@@ -58,6 +58,7 @@ if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
 
       // templates variables
       'header-bg', 'header-logo-margin',
+      'footer-bg',
     );
   }
 }

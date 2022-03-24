@@ -52,8 +52,7 @@
     },
 
     build: function () {
-      var self = this,
-        $el = this.options.wrapper;
+      var self = this;
 
       self.resize();
       $( window ).smartresize( function () {
@@ -151,7 +150,7 @@
 
       this.is_sticky = false;
       this.sticky_pos = 0;
-      this.prev_scroll_pos = -1;
+      this.prev_scroll_pos = $( window ).scrollTop();
 
       this
         .setData()

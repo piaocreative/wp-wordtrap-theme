@@ -19,11 +19,12 @@ $template = false; wordtrap_layout_template( 'header' );
 $wrap_classes = array( 'header-wrap' );
 $inner_classes = array( 'header-inner' );
 
-// Add classes according to position
+// Position fixed
 if ( $wordtrap_options[ 'header-position' ] == 'fixed' ) {
   $wrap_classes[] = 'header-fixed';
 }
 
+// Reveal effect
 if ( $wordtrap_options[ 'header-reveal' ] ) {
   $wrap_classes[] = 'header-reveal';
 }
@@ -37,13 +38,15 @@ if ( $template ) :
     <div class="<?php echo esc_attr( implode( ' ', $wrap_classes ) ) ?>">
       <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
         
-        <?php
-        wordtrap_render_template( $template ); 
-        ?>
+        <header>
+          <?php
+          wordtrap_render_template( $template ); 
+          ?>
+        </header>
 
       </div>
     </div>
-  </div>
+  </div><!-- #header -->
 <?php
 elseif ( $wordtrap_options[ 'header-position' ] != 'hide' ) : 
   /**
@@ -67,7 +70,6 @@ elseif ( $wordtrap_options[ 'header-position' ] != 'hide' ) :
     <div class="<?php echo esc_attr( implode( ' ', $wrap_classes ) ) ?>">
       <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
 
-        <!-- Start Header -->
         <header>
           <div id="header-main" class="navbar navbar-expand-lg navbar-<?php echo esc_attr( $wordtrap_options[ 'header-navbar-color' ] ) ?>">
             
@@ -87,7 +89,7 @@ elseif ( $wordtrap_options[ 'header-position' ] != 'hide' ) :
                */
               wp_nav_menu( array(
                 'theme_location'  => 'primary',
-                'container_class' => 'main-menu-container me-auto',
+                'container_class' => 'main-menu-container ' . ( ( ( ! is_user_logged_in() && $wordtrap_options[ 'header-login-link'] ) || ( is_user_logged_in() && $wordtrap_options[ 'header-logout-link'] ) ) ? 'me-auto' : 'ms-auto' ),
                 'container_id'    => '',
                 'menu_class'      => 'navbar-nav',
                 'fallback_cb'     => '',
@@ -116,10 +118,9 @@ elseif ( $wordtrap_options[ 'header-position' ] != 'hide' ) :
 
           </div>
         </header>
-        <!-- End Header -->
 
       </div>
     </div>
-  </div>
+  </div><!-- #header -->
   <?php 
 endif;

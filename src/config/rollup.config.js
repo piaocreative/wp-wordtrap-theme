@@ -20,6 +20,7 @@ export default {
     path.resolve(__dirname, '../js/theme/config.js'),
     
     path.resolve(__dirname, '../js/theme/header.js'),
+    path.resolve(__dirname, '../js/theme/footer.js'),
     
     path.resolve(__dirname, '../js/theme/init.js'),
     path.resolve(__dirname, '../js/theme.js')
