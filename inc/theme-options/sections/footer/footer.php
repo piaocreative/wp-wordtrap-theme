@@ -29,14 +29,8 @@ Redux::set_section(
         'type'         => 'switch',
         'title'        => esc_html__( 'Reveal Effect', 'wordtrap' ),
         'default'      => false,
-        'on'           => esc_html__( 'Show', 'wordtrap' ),
-        'off'          => esc_html__( 'Hide', 'wordtrap' ),
-      ),
-      array(
-        'id'           => 'footer-copyright',
-        'type'         => 'text',
-        'title'        => esc_html__( 'Copyright', 'wordtrap' ),
-        'default'      => '',
+        'on'           => esc_html__( 'Enable', 'wordtrap' ),
+        'off'          => esc_html__( 'Disable', 'wordtrap' ),
       ),
       // array(
       //   'id'           => 'footer-ribbon-text',

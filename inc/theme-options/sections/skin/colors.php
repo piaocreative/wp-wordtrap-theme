@@ -27,7 +27,7 @@ Redux::set_section(
         'title'    => esc_html__( 'Primary', 'wordtrap' ),
         'validate' => 'color',
         'transparent' => false,
-        'default'  => '#007bff'
+        'default'  => '#3d98f4'
       ),
       array(
         'id'       => 'secondary',
@@ -83,7 +83,7 @@ Redux::set_section(
         'title'    => esc_html__( 'Dark', 'wordtrap' ),
         'validate' => 'color',
         'transparent' => false,
-        'default'  => '#343a40'
+        'default'  => '#212529'
       ),
       array(
         'id'       => 'theme-colors-end',

@@ -52,8 +52,8 @@ Redux::set_section(
         'title'         => esc_html__( 'Reveal Effect', 'wordtrap' ),
         'default'       => false,
         'required'      => array( 'header-type', 'equals', '' ),
-        'on'            => esc_html__( 'Show', 'wordtrap' ),
-        'off'           => esc_html__( 'Hide', 'wordtrap' ),
+        'on'            => esc_html__( 'Enable', 'wordtrap' ),
+        'off'           => esc_html__( 'Disable', 'wordtrap' ),
       ),      
       // array(
       //   'id'            => 'show-header-top',

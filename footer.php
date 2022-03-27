@@ -16,7 +16,6 @@ defined( 'ABSPATH' ) || exit;
 
   </div><!-- #main -->
 
-  <!-- Footer -->
   <?php get_template_part( 'template-parts/footer' ) ?>
 
 </div><!-- #page -->
