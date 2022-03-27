@@ -71,9 +71,10 @@ elseif ( $wordtrap_options[ 'header-position' ] != 'hide' ) :
       <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
 
         <header>
+          
           <div id="header-main" class="navbar navbar-expand-lg navbar-<?php echo esc_attr( $wordtrap_options[ 'header-navbar-color' ] ) ?>">
             
-            <!-- Logo -->	
+            <!-- Logo -->
             <?php echo wordtrap_logo(); ?>
 
             <!-- Toggle Naviation -->
@@ -116,7 +117,7 @@ elseif ( $wordtrap_options[ 'header-position' ] != 'hide' ) :
               ?>
             </div>
 
-          </div>
+          </div><!-- #header-main -->
         </header>
 
       </div>

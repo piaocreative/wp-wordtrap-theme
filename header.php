@@ -62,13 +62,10 @@ if ( $wordtrap_options[ 'footer-reveal' ] ) {
 <body <?php body_class( implode( ' ', $body_classes ) ); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 
-<!-- Page -->
 <div id="page" class="site">
 
   <a class="skip-link sr-only sr-only-focusable" href="#content"><?php _e( 'Skip to content', 'wordtrap' ); ?></a>
 
-  <!-- Header -->
   <?php get_template_part( 'template-parts/header' ) ?>
   
-  <!-- Main -->
   <div id="main">

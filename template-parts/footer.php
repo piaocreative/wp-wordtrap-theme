@@ -66,33 +66,9 @@ else :
       <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
 
         <footer>
-          <div id="footer-bottom" class="navbar navbar-<?php echo esc_attr( $wordtrap_options[ 'footer-navbar-color' ] ) ?><?php echo ( $wordtrap_options[ 'footer-copyright' ] && has_nav_menu( 'footer' ) ) ? '' : ' justify-content-center' ?>">
-            
-            <?php
-            /**
-             * Footer Menu
-             */
-            wp_nav_menu( array(
-              'theme_location'  => 'footer',
-              'container_class' => 'footer-menu-container',
-              'container_id'    => '',
-              'menu_class'      => 'navbar-nav',
-              'fallback_cb'     => '',
-              'menu_id'         => 'footer-menu',
-              'depth'           => 1,
-              'walker'          => new Wordtrap_WP_Bootstrap_Navwalker(),
-            ) );
-            ?>
 
-            <?php
-            /**
-             * Copyright
-             */
-            if ( $wordtrap_options[ 'footer-copyright' ] ) : ?>
-              <div class="footer-copyright"><?php esc_html_e( $wordtrap_options[ 'footer-copyright' ] ) ?></div>
-            <?php endif; ?>
-
-          </div>
+          <?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
+          
         </footer>
 
       </div>

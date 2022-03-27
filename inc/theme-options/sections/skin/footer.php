@@ -32,14 +32,28 @@ Redux::set_section(
         'default'       => '#686868'
       ),
       array(
-        'id'            => 'footer-navbar-color',
-        'type'          => 'button_set',
-        'title'         => esc_html__( 'Menu Color', 'wordtrap' ),
-        'options'       => array(
-          'light'       => esc_html__( 'Light', 'wordtrap' ),
-          'dark'        => esc_html__( 'Dark', 'wordtrap' ),
-        ),
-        'default'       => 'dark',
+        'id'            => 'footer-headings-color',
+        'type'          => 'color',
+        'title'         => esc_html__( 'Headings', 'wordtrap' ),
+        'validate'      => 'color',
+        'transparent'   => false,
+        'default'       => '#ffffff'
+      ),
+      array(
+        'id'            => 'footer-link-color',
+        'type'          => 'color',
+        'title'         => esc_html__( 'Link Regular', 'wordtrap' ),
+        'validate'      => 'color',
+        'transparent'   => false,
+        'default'       => '#686868'
+      ),
+      array(
+        'id'            => 'footer-link-hover-color',
+        'type'          => 'color',
+        'title'         => esc_html__( 'Link Hover', 'wordtrap' ),
+        'validate'      => 'color',
+        'transparent'   => false,
+        'default'       => '#888888'
       ),
     )
   )
