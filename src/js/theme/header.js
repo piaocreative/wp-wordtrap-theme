@@ -52,8 +52,7 @@
     },
 
     build: function () {
-      var self = this,
-        $el = this.options.wrapper;
+      var self = this;
 
       self.resize();
       $( window ).smartresize( function () {
@@ -149,10 +148,6 @@
         return this;
       }
 
-      this.is_sticky = false;
-      this.sticky_pos = 0;
-      this.prev_scroll_pos = -1;
-
       this
         .setData()
         .setOptions( opts )
@@ -196,8 +191,16 @@
     },
 
     reset: function() {
-      var self = this;
+      var self = this,
+        $el = this.options.wrapper;
 
+      self.header.removeClass( 'sticky-header' );
+      self.header.css( 'height', '' );
+      $el.stop().css( 'top', 0 );
+      
+      self.is_sticky = false;
+      self.prev_scroll_pos = $( window ).scrollTop();
+      
       self.header_height = self.header.height() + parseInt( self.header.css( 'margin-top' ) );
       self.header_main_height = self.header_main.height();
       self.sticky_height = self.header_main.outerHeight();

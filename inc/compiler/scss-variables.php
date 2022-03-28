@@ -47,6 +47,7 @@ $light:                       <?php echo $g['light'] ?>;
 <?php if ( $g['dark'] ) : ?>
 $dark:                        <?php echo $g['dark'] ?>;
 <?php endif ?>
+$min-contrast-ratio:          3.5;
 
 // Grays
 <?php if ( $g['white'] ) : ?>
@@ -204,6 +205,23 @@ $link-hover-decoration:       <?php echo $g['link-hover']['text-decoration'] ?>;
 
 // Header
 <?php if ( $g['header-bg'] ) : ?>
-$header-bg:                  <?php echo $g['header-bg'] ?>;
+$header-bg:                   <?php echo $g['header-bg'] ?>;
 <?php endif ?>
 $header-logo-margin:          <?php echo floatval( $g['header-logo-margin']['margin-top'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-right'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-bottom'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-left'] ) ?>rem;
+
+// Footer
+<?php if ( $g['footer-bg'] ) : ?>
+$footer-bg:                   <?php echo $g['footer-bg'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-color'] ) : ?>
+$footer-color:                <?php echo $g['footer-color'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-headings-color'] ) : ?>
+$footer-headings-color:       <?php echo $g['footer-headings-color'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-link-color'] ) : ?>
+$footer-link-color:           <?php echo $g['footer-link-color'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-link-hover-color'] ) : ?>
+$footer-link-hover-color:     <?php echo $g['footer-link-hover-color'] ?>;
+<?php endif ?>

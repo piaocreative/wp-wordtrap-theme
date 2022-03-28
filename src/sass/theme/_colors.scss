@@ -1,0 +1,44 @@
+/*
+* The default color styles
+*
+* @package Wordtrap
+* @since wordtrap 1.0.0
+*/
+
+@each $name, $color in $colors {
+  .has-#{$name}-color,
+  .has-#{$name}-color:visited {
+    color: $color;
+
+    a {
+      color: $color;
+
+      &:hover {
+        color: lighten($color, 5%);
+      }
+    }
+  }
+  .has-#{$name}-background-color {
+    background-color: $color;
+    border-color: $color;
+  }
+}
+
+@each $name, $color in $theme-colors {
+  .has-#{$name}-color,
+  .has-#{$name}-color:visited {
+    color: $color;
+
+    a {
+      color: $color;
+
+      &:hover {
+        color: lighten($color, 5%);
+      }
+    }
+  }
+  .has-#{$name}-background-color {
+    background-color: $color;
+    border-color: $color;
+  }
+}

@@ -5,6 +5,7 @@
 
 .redux-container {
   border: 0;
+  box-shadow: none;
 }
 
 .redux-container .redux-action_bar input {
@@ -14,6 +15,10 @@
 html[dir="rtl"] .redux-container .redux-action_bar input {
   margin-left: 0;
   margin-right: 5px;
+}
+
+.redux-container .redux-action_bar .spinner {
+  margin-top: 10px;
 }
 
 .redux-container .form-table th, 
@@ -43,6 +48,29 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
   margin-left: 270px;
 }
 
+@media (max-width: 600px) {
+  .redux-container .redux-main {
+    margin-left: 60px;
+  }
+}
+
+.redux-container #redux-footer {
+  padding: 15px 10px;
+  right: 30px !important;
+}
+
+@media (max-width: 1199px) {
+  .redux-container #redux-footer {
+    right: 20px !important;
+  } 
+}
+
+@media (max-width: 781px) {
+  .redux-container #redux-footer {
+    right: 12px !important;
+  } 
+}
+
 .redux-main #redux-sticky #info_bar {
   border-bottom: 1px solid #43C237;
   height: 40px;
@@ -58,7 +86,19 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
 .redux-container .redux-main .redux_field_search {
   border-color: #43C237;
   top: 20px;
-  right: 310px;
+  right: 330px;
+}
+
+@media (max-width: 1150px) {
+  .redux-container .redux-main .redux_field_search {
+    width: 130px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .redux-container .redux-main .redux_field_search {
+    display: none;
+  }
 }
 
 .redux-main h2 {
@@ -140,6 +180,10 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
   top: 0px;
 }
 
+.redux-main .redux-typography-container .select_wrapper {
+  height: 80px;
+}
+
 /* Button */
 .redux-main .button {   
   background: #fff;
@@ -168,8 +212,8 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
 
 .redux-main .button-primary:hover,
 .redux-main .button-primary:focus {
-  background: transparent;
-  border-color: transparent;  
+  background: #fff;
+  border-color: #43C237;  
   color: #43C237;
 }
 
@@ -239,14 +283,11 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
 /* Append / Prepend */
 .redux-container .redux-main .input-append .add-on, 
 .redux-container .redux-main .input-prepend .add-on {
-  border-left: 2px solid #878787;
-  border-right: 2px solid #878787;
-  border-top: 0;
-  border-bottom: 0;
-  border-radius: 0;
-  line-height: 16px;
-  margin-top: 8px;
-  padding: 3px 2px;
+  border-color: #C3CCD6;
+  line-height: 30px;
+  padding: 0px 8px;
+  margin: 0;
+  border-radius: 0 6px 6px 0;
 }
 
 .redux-container .redux-main .input-prepend {
@@ -254,19 +295,22 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
 }
 
 .redux-container .redux-main .input-prepend .add-on {
-  border-right-color: #878787;
+  border-color: #C3CCD6;
+  line-height: 36px;
+  padding: 0px 8px;
+  margin: 0;
+  border-radius: 6px 0 0 6px;
 }
 
 .redux-container .redux-main .input-append input,
 .redux-container .redux-main .input-prepend input {
-  border: 0;
+  border-color: #C3CCD6;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .redux-container .redux-main .input-append input:focus,
 .redux-container .redux-main .input-prepend input:focus {
-  border: 0;
   box-shadow: none;
 }
 
@@ -498,8 +542,10 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 }
 
 /* Sidebar */
-.redux-container .redux-sidebar {
-  width: 250px;
+@media (min-width: 601px) {
+  .redux-container .redux-sidebar {
+    width: 250px;
+  }
 }
 
 .redux-container .redux-sidebar .redux-group-menu {
@@ -586,6 +632,7 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 .redux-container .redux-sidebar .redux-group-menu li.hasSubSections.redux-section-hover .subsection {
   background-color: #fff;
   padding-left: 5px;
+  left: 250px;
 }
 
 .redux-container .redux-sidebar .redux-group-menu li.hasSubSections.redux-section-hover .subsection .redux-group-tab-link-a {
@@ -600,6 +647,7 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 
 .redux-container .redux-sidebar .redux-group-menu li.active a {
   background-color: #43C237 !important;
+  width: auto;
 }
 
 .redux-container .redux-sidebar .redux-group-menu li.active a i {
@@ -627,4 +675,8 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 .redux-container-image_select .redux-image-select-selected .tiles { 
   filter: none;
   opacity: 1; 
+}
+
+.indent-section-container {
+  margin-top: 1em;
 }

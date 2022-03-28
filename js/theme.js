@@ -9468,7 +9468,6 @@
 	    },
 	    build: function () {
 	      var self = this;
-	          this.options.wrapper;
 	      self.resize();
 	      $(window).smartresize(function () {
 	        self.resize();
@@ -9554,9 +9553,6 @@
 	        return this;
 	      }
 
-	      this.is_sticky = false;
-	      this.sticky_pos = 0;
-	      this.prev_scroll_pos = -1;
 	      this.setData().setOptions(opts).reset().build().events();
 	      return this;
 	    },
@@ -9581,7 +9577,13 @@
 	      return true;
 	    },
 	    reset: function () {
-	      var self = this;
+	      var self = this,
+	          $el = this.options.wrapper;
+	      self.header.removeClass('sticky-header');
+	      self.header.css('height', '');
+	      $el.stop().css('top', 0);
+	      self.is_sticky = false;
+	      self.prev_scroll_pos = $(window).scrollTop();
 	      self.header_height = self.header.height() + parseInt(self.header.css('margin-top'));
 	      self.header_main_height = self.header_main.height();
 	      self.sticky_height = self.header_main.outerHeight();
@@ -9673,6 +9675,76 @@
 	})(window.theme, jQuery);
 
 	/*
+	* Javascript for the footer 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Reveal Footer
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__reveal_footer';
+
+	  var RevealFooter = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  RevealFooter.defaults = {};
+	  RevealFooter.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, RevealFooter.defaults, opts, {
+	        wrapper: this.$el
+	      });
+	      return this;
+	    },
+	    build: function () {
+	      var self = this;
+	      self.resize();
+	      $(window).smartresize(function () {
+	        self.resize();
+	      });
+	      return self;
+	    },
+	    resize: function () {
+	      var $el = this.options.wrapper,
+	          page = $el.find('#page'),
+	          height = $el.find('#footer').height();
+	      page.css('padding-bottom', height);
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    RevealFooter: RevealFooter
+	  }); // jquery plugin
+
+	  $.fn.themeRevealFooter = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.RevealFooter($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery);
+
+	/*
 	* Theme initialize
 	*
 	* @package Wordtrap
@@ -9707,6 +9779,19 @@
 	          var pluginOptions = $this.data('plugin-options');
 	          if (pluginOptions) opts = pluginOptions;
 	          $this.themeStickyHeader(opts);
+	        });
+	      });
+	    } // Reveal Footer
+
+
+	    if ($.fn.themeRevealFooter && $wrap.hasClass('page-footer-reveal')) {
+	      $(function () {
+	        $wrap.each(function () {
+	          var $this = $(this),
+	              opts;
+	          var pluginOptions = $this.data('plugin-options');
+	          if (pluginOptions) opts = pluginOptions;
+	          $this.themeRevealFooter(opts);
 	        });
 	      });
 	    }

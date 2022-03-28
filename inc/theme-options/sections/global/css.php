@@ -23,6 +23,7 @@ Redux::set_section(
         'mode'       => 'css',
         'default'    => '',
         'full_width' => true,
+        'theme'      => 'chrome',
         'options'    => array(
           'height'   => 450,
           'minLines' => 40,

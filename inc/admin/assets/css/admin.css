@@ -66,7 +66,7 @@
 
   .wordtrap-admin-nav .active,
   .wordtrap-admin-nav a:hover {
-    color: #08c;
+    color: #000;
   }
 
   .wordtrap-admin-nav .active:after,
@@ -76,6 +76,7 @@
 }
 
 .wordtrap-admin-header {
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -168,4 +169,36 @@
   .wordtrap-wrap .row .col-right {
     width: 33%;
   }
+}
+
+.wordtrap-wrap .button {   
+  background: #fff;
+  border-color: #43C237;  
+  border-radius: 6px; 
+  color: #43C237;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  margin-top: 0;  
+  padding: 10px;
+}
+
+.wordtrap-wrap .button:hover,
+.wordtrap-wrap .button:focus {
+  background: #fff;
+  border-color: transparent;  
+  color: #43C237;
+}
+
+.wordtrap-wrap .button-primary {
+  background: #43C237;
+  border-color: #43C237;
+  color: #fff;
+}
+
+.wordtrap-wrap .button-primary:hover,
+.wordtrap-wrap .button-primary:focus {
+  background: #fff;
+  border-color: #43C237;  
+  color: #43C237;
 }

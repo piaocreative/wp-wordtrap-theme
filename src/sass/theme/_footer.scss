@@ -1,0 +1,92 @@
+/*
+* The styles for Footer
+*
+* @package Wordtrap
+* @since wordtrap 1.0.0
+*/
+
+.footer-wrap {
+  background-color: $footer-bg;
+  color: $footer-color;
+  
+  @include media-breakpoint-up(sm) {
+    .container-fluid {
+      padding-left: var(--bs-gutter-x, 1.5rem);
+      padding-right: var(--bs-gutter-x, 1.5rem);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $footer-headings-color;
+  }
+
+  a {
+    color: $footer-link-color;
+
+    &:hover {
+      color: $footer-link-hover-color;
+    }
+  }
+
+  // Tag Cloud
+  .tag-cloud-link {
+    background: lighten($footer-bg, 5%);
+    color: $footer-link-color;
+    font-size: inherit !important;
+    
+    &:hover {
+      color: $footer-link-hover-color;
+    }
+  }
+
+  // Socials
+  .wp-block-social-link {
+    background: lighten($footer-bg, 5%) !important;
+    color: $footer-link-color !important;
+
+    &:hover {
+      color: $footer-link-hover-color !important;
+      transform: none;
+    }
+  }
+}
+
+.footer-inner {
+  padding: 5rem 0 0;
+
+  .wp-block-columns {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+}
+
+[class*="border"] {
+  border-color: lighten($footer-bg, 10%) !important;
+}
+
+.page-footer-reveal {
+  @include media-breakpoint-up(xl) {
+    #footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: $footer-reveal-index;
+    }
+
+    #main {
+      background: $body-bg;
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    #page {
+      padding-bottom: 0 !important;
+    }
+  }
+}

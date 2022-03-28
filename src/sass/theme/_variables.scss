@@ -1,8 +1,31 @@
+/*
+* The variables for Templates
+*
+* @package Wordtrap
+* @since wordtrap 1.0.0
+*/
 
+// Bootstrap variables
+$enable-negative-margins: true;
+
+// Body
+$body-bg: #fff !default;
+// Header
 $logo-max-width: 260px !default;
 
 $header-bg: #fff !default;
-$header-border-top-color: $primary !default;
+$header-border-top-color: #0d6efd !default;
 $header-logo-margin: 1rem 3rem 1rem 0 !default;
 $menu-text-transform: uppercase !default;
 $menu-font-weight: 500 !default;
+$header-index: 1000 !default;
+
+// Footer
+$footer-bg: #252525 !default;
+$footer-color: #686868 !default;
+$footer-reveal-index: -10 !default;
+
+$footer-headings-color: #fff !default;
+$footer-link-color: #686868 !default;
+$footer-link-hover-color: #888888 !default;
+
