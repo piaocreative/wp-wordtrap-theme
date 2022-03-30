@@ -1,0 +1,30 @@
+/*
+* The styles for post
+*
+* @package Wordtrap
+* @since wordtrap 1.0.0
+*/
+
+.post {
+    .post-thumbnail {
+        &.single {
+            margin-bottom: 2.25rem;
+        }
+    }
+
+    .entry-meta {        
+        margin-bottom: 1.5rem;
+
+        span:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        a {
+            color: $secondary;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}

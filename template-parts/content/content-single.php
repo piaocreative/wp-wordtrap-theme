@@ -8,30 +8,41 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+// Global Theme Options
+global $wordtrap_options;
+
+// Show Title
+$show_title = $wordtrap_options['post-title'];
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
+	<div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
+
+		<?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
+
+	</div><!-- .post-thumbnail -->
+
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php if ( $show_title ) : ?>
+
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+		<?php endif; ?>
 
 		<div class="entry-meta">
 
-			<?php wordtrap_posted_on(); ?>
+			<?php wordtrap_post_metas(); ?>
 
 		</div><!-- .entry-meta -->
 
-	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	</header><!-- .entry-header -->	
 
 	<div class="entry-content">
 
-		<?php
-		the_content();
-		wordtrap_link_pages();
-		?>
+		<?php the_content(); ?>
 
 	</div><!-- .entry-content -->
 

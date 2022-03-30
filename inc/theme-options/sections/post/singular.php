@@ -19,7 +19,7 @@ Redux::set_section(
         'id'       => 'post-backto',
         'type'     => 'switch',
         'title'    => esc_html__( 'Back to Blog', 'wordtrap' ),
-        'default'  => false,
+        'default'  => true,
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
