@@ -43,7 +43,7 @@ if ( $template ) :
     </div>
   </div><!-- #footer -->
 <?php
-else : 
+elseif ( is_active_sidebar( 'footer-area' ) ) : 
   /**
    * Render default footer
    */
