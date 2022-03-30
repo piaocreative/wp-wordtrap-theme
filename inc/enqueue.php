@@ -39,20 +39,19 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
     wp_enqueue_script( 'wordtrap-scripts', get_template_directory_uri() . $theme_scripts, array( 'jquery' ), $js_version, true );
 
     // Theme options variables
-    global $wordtrap_options;
     wp_localize_script( 'wordtrap-scripts', 'wordtrap_vars',
       array( 
-        'breakpoints_sm' => intval( $wordtrap_options[ 'grid-breakpoints-sm' ][ 'width' ] ) ? intval( $wordtrap_options[ 'grid-breakpoints-sm' ][ 'width' ] ) : 576,
-        'breakpoints_md' => intval( $wordtrap_options[ 'grid-breakpoints-md' ][ 'width' ] ) ? intval( $wordtrap_options[ 'grid-breakpoints-md' ][ 'width' ] ) : 768,
-        'breakpoints_lg' => intval( $wordtrap_options[ 'grid-breakpoints-lg' ][ 'width' ] ) ? intval( $wordtrap_options[ 'grid-breakpoints-lg' ][ 'width' ] ) : 992,
-        'breakpoints_xl' => intval( $wordtrap_options[ 'grid-breakpoints-xl' ][ 'width' ] ) ? intval( $wordtrap_options[ 'grid-breakpoints-xl' ][ 'width' ] ) : 1200,
-        'breakpoints_xxl' => intval( $wordtrap_options[ 'grid-breakpoints-xxl' ][ 'width' ] ) ? intval( $wordtrap_options[ 'grid-breakpoints-xxl' ][ 'width' ] ) : 1400,
-        'sticky_header_xs' => intval( $wordtrap_options[ 'show-sticky-header-xs' ] ),
-        'sticky_header_sm' => intval( $wordtrap_options[ 'show-sticky-header-sm' ] ),
-        'sticky_header_md' => intval( $wordtrap_options[ 'show-sticky-header-md' ] ),
-        'sticky_header_lg' => intval( $wordtrap_options[ 'show-sticky-header-lg' ] ),
-        'sticky_header_xl' => intval( $wordtrap_options[ 'show-sticky-header-xl' ] ),
-        'sticky_header_xxl' => intval( $wordtrap_options[ 'show-sticky-header' ] ),
+        'breakpoints_sm' => intval( wordtrap_options( 'grid-breakpoints-sm', 'width' ) ) ? intval( wordtrap_options( 'grid-breakpoints-sm', 'width' ) ) : 576,
+        'breakpoints_md' => intval( wordtrap_options( 'grid-breakpoints-md', 'width' ) ) ? intval( wordtrap_options( 'grid-breakpoints-md', 'width' ) ) : 768,
+        'breakpoints_lg' => intval( wordtrap_options( 'grid-breakpoints-lg', 'width' ) ) ? intval( wordtrap_options( 'grid-breakpoints-lg', 'width' ) ) : 992,
+        'breakpoints_xl' => intval( wordtrap_options( 'grid-breakpoints-xl', 'width' ) ) ? intval( wordtrap_options( 'grid-breakpoints-xl', 'width' ) ) : 1200,
+        'breakpoints_xxl' => intval( wordtrap_options( 'grid-breakpoints-xxl', 'width' ) ) ? intval( wordtrap_options( 'grid-breakpoints-xxl', 'width' ) ) : 1400,
+        'sticky_header_xs' => intval( wordtrap_options( 'show-sticky-header-xs' ) ),
+        'sticky_header_sm' => intval( wordtrap_options( 'show-sticky-header-sm' ) ),
+        'sticky_header_md' => intval( wordtrap_options( 'show-sticky-header-md' ) ),
+        'sticky_header_lg' => intval( wordtrap_options( 'show-sticky-header-lg' ) ),
+        'sticky_header_xl' => intval( wordtrap_options( 'show-sticky-header-xl' ) ),
+        'sticky_header_xxl' => intval( wordtrap_options( 'show-sticky-header' ) ),
       )
     );
     

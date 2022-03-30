@@ -70,20 +70,20 @@ endif;
 
 		// Show comment form at top if showing newest comments at the top.
 		if ( comments_open() ) {
-			wordtrap_comment_form( 'desc' );
+			//wordtrap_comment_form( 'desc' );
 		}
 
 		?>
 		<ol class="comment-list">
 			<?php
-			wp_list_comments(
-				array(
-					'walker'      => new wordtrap_Walker_Comment(),
-					'avatar_size' => wordtrap_get_avatar_size(),
-					'short_ping'  => true,
-					'style'       => 'ol',
-				)
-			);
+			// wp_list_comments(
+			// 	array(
+			// 		'walker'      => new wordtrap_Walker_Comment(),
+			// 		'avatar_size' => wordtrap_get_avatar_size(),
+			// 		'short_ping'  => true,
+			// 		'style'       => 'ol',
+			// 	)
+			// );
 			?>
 		</ol><!-- .comment-list -->
 		<?php
@@ -106,7 +106,7 @@ endif;
 			?>
 			<div class="comment-form-flex">
 				<span class="screen-reader-text"><?php _e( 'Leave a comment', 'wordtrap' ); ?></span>
-				<?php wordtrap_comment_form( 'asc' ); ?>
+				<?php //wordtrap_comment_form( 'asc' ); ?>
 				<h2 class="comments-title" aria-hidden="true"><?php _e( 'Leave a comment', 'wordtrap' ); ?></h2>
 			</div>
 			<?php

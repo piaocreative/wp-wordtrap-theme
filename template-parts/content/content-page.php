@@ -24,14 +24,14 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		the_content();
-		wordtrap_link_pages();
+		//wordtrap_link_pages();
 		?>
 
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 
-		<?php wordtrap_edit_post_link(); ?>
+		<?php //wordtrap_edit_post_link(); ?>
 
 	</footer><!-- .entry-footer -->
 

@@ -11,20 +11,17 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Global Theme Options
-global $wordtrap_options;
-
 // Back to blog
-$backto = $wordtrap_options['post-backto'];
+$backto = wordtrap_options( 'post-backto' );
 
 // Post Layout
-$post_layout = $wordtrap_options['post-layout'];
+$post_layout = wordtrap_options( 'post-layout' );
 
 // Left Sidebar
-$left_sidebar = isset( $wordtrap_options['post-left-sidebar'] ) ? $wordtrap_options['post-left-sidebar'] : '';
+$left_sidebar = wordtrap_options( 'post-left-sidebar' );
 
 // Right Sidebar
-$right_sidebar = isset( $wordtrap_options['post-right-sidebar'] ) ? $wordtrap_options['post-right-sidebar'] : '';
+$right_sidebar = wordtrap_options( 'post-right-sidebar' );
 
 // Main Layout Classes
 $main_layout_classes = 'col-md-12';

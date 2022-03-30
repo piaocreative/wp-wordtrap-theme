@@ -13,13 +13,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Global Theme Options
-global $wordtrap_options;
-
 // Body classes
 $body_classes = array();
 
-if ( $wordtrap_options[ 'footer-reveal' ] ) {
+if ( wordtrap_options( 'footer-reveal' ) ) {
   $body_classes[] = 'page-footer-reveal';
 }
 
@@ -32,28 +29,28 @@ if ( $wordtrap_options[ 'footer-reveal' ] ) {
   <link rel="profile" href="http://gmpg.org/xfn/11">
 
   <!-- Favicon -->
-  <?php if ( $wordtrap_options['favicon'] ) : ?>
-    <link rel="shortcut icon" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $wordtrap_options['favicon']['url'] ) ); ?>" type="image/x-icon" />
+  <?php if ( wordtrap_options( 'favicon' ) ) : ?>
+    <link rel="shortcut icon" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', wordtrap_options( 'favicon', 'url' ) ) ); ?>" type="image/x-icon" />
   <?php endif; ?>
 
   <!-- iPhone Icon -->
-  <?php if ( $wordtrap_options['icon-iphone'] ) : ?>
-    <link rel="apple-touch-icon" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $wordtrap_options['icon-iphone']['url'] ) ); ?>">
+  <?php if ( wordtrap_options( 'icon-iphone' ) ) : ?>
+    <link rel="apple-touch-icon" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', wordtrap_options( 'icon-iphone', 'url' ) ) ); ?>">
   <?php endif; ?>
 
   <!-- iPhone Retina Icon -->
-  <?php if ( $wordtrap_options['icon-iphone-retina'] ) : ?>
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $wordtrap_options['icon-iphone-retina']['url'] ) ); ?>">
+  <?php if ( wordtrap_options( 'icon-iphone-retina' ) ) : ?>
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', wordtrap_options( 'icon-iphone-retina', 'url' ) ) ); ?>">
   <?php endif; ?>
 
   <!-- iPad Icon -->
-  <?php if ( $wordtrap_options['icon-ipad'] ) : ?>
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $wordtrap_options['icon-ipad']['url'] ) ); ?>">
+  <?php if ( wordtrap_options( 'icon-ipad' ) ) : ?>
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', wordtrap_options( 'icon-ipad', 'url' ) ) ); ?>">
   <?php endif; ?>
 
   <!-- iPad Retina -->
-  <?php if ( $wordtrap_options['icon-ipad-retina'] ) : ?>
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $wordtrap_options['icon-ipad-retina']['url'] ) ); ?>">
+  <?php if ( wordtrap_options( 'icon-ipad-retina' ) ) : ?>
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', wordtrap_options( 'icon-ipad-retina', 'url' ) ) ); ?>">
   <?php endif; ?>
 
   <?php wp_head(); ?>

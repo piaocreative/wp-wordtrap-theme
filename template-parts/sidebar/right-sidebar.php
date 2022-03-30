@@ -9,13 +9,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Global Theme Options
-global $wordtrap_options;
-
 // Sidebar
-$sidebar = isset( $wordtrap_options['post-right-sidebar'] ) ? $wordtrap_options['post-right-sidebar'] : '';
+$sidebar = wordtrap_options( 'post-right-sidebar' );
 
-if ( $sidebar === '' || ! is_active_sidebar( $sidebar ) ) {
+if ( ! $sidebar || ! is_active_sidebar( $sidebar ) ) {
 	return;
 }
 ?>

@@ -9,11 +9,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Global Theme Options
-global $wordtrap_options;
-
 // Show Title
-$show_title = $wordtrap_options['post-title'];
+$show_title = wordtrap_options( 'post-title' );
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">

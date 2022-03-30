@@ -6,7 +6,8 @@
 */
 
 // Bootstrap variables
-$enable-negative-margins: true;
+$enable-negative-margins: true !default;
+$link-decoration: none !default;
 
 // Body
 $body-bg: #fff !default;

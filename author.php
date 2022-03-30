@@ -11,11 +11,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Global Theme Options
-global $wordtrap_options;
-
 // Main Layout
-$layout = $wordtrap_options['layout'];
+$layout = wordtrap_options( 'layout' );
 
 // Main Layout Classes
 $main_layout_classes = 'col-md-12';

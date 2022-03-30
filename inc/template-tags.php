@@ -16,11 +16,8 @@ if ( ! function_exists( 'wordtrap_post_metas' ) ) {
 	 * 
 	 */
 	function wordtrap_post_metas() {
-		// Global Theme Options
-		global $wordtrap_options;
-
 		// Post metas available
-		$post_metas = $wordtrap_options['post-metas'];
+		$post_metas = wordtrap_options( 'post-metas' );
 
 		if ( in_array( 'date', $post_metas ) ) {
 			$time_string = '<time class="entry-date post-published post-updated" datetime="%1$s">%2$s</time>';
@@ -78,11 +75,8 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
 	 * 
 	 */
 	function wordtrap_entry_footer() {
-		// Global Theme Options
-		global $wordtrap_options;
-
 		// Post metas available
-		$post_metas = $wordtrap_options['post-metas'];
+		$post_metas = wordtrap_options( 'post-metas' );
 
 		if ( 'post' === get_post_type() ) {
 			$social_share = wordtrap_social_share();
@@ -105,11 +99,8 @@ if ( ! function_exists( 'wordtrap_social_share' ) ) {
 	 * 
 	 */
 	function wordtrap_social_share() {
-		// Global Theme Options
-		global $wordtrap_options;
-		
 		$nofollow = ' ';
-		if ( $wordtrap_options['share-nofollow'] ) {
+		if ( wordtrap_options( 'share-nofollow' ) ) {
 			$nofollow = 'rel="noopener noreferrer nofollow"';
 		} else {
 			$nofollow = 'rel="noopener noreferrer"';
@@ -117,52 +108,53 @@ if ( ! function_exists( 'wordtrap_social_share' ) ) {
 
 		$image = wp_get_attachment_url( get_post_thumbnail_id() );
 		$permalink = esc_url( apply_filters( 'the_permalink', get_permalink() ) );
+		$title = get_the_title();
 
 		ob_start();
 		?>
 		
-		<?php if ( $wordtrap_options['share-facebook'] ) : ?>
+		<?php if ( wordtrap_options( 'share-facebook' ) ) : ?>
 			<a href="https://www.facebook.com/sharer.php?u=<?php echo esc_url( $permalink ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Facebook', 'wordtrap' ); ?>" class="share-facebook"><?php esc_html_e( 'Facebook', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-twitter'] ) : ?>
+		<?php if ( wordtrap_options( 'share-twitter' ) ) : ?>
 			<a href="https://twitter.com/intent/tweet?text=<?php echo urlencode( $title ); ?>&amp;url=<?php echo esc_url( $permalink ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Twitter', 'wordtrap' ); ?>" class="share-twitter"><?php esc_html_e( 'Twitter', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-linkedin'] ) : ?>
+		<?php if ( wordtrap_options( 'share-linkedin' ) ) : ?>
 			<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo esc_url( $permalink ); ?>&amp;title=<?php echo urlencode( $title ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'LinkedIn', 'wordtrap' ); ?>" class="share-linkedin"><?php esc_html_e( 'LinkedIn', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-googleplus'] ) : ?>
+		<?php if ( wordtrap_options( 'share-googleplus' ) ) : ?>
 			<a href="https://plus.google.com/share?url=<?php echo esc_url( $permalink ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Google +', 'wordtrap' ); ?>" class="share-googleplus"><?php esc_html_e( 'Google +', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-pinterest'] ) : ?>
+		<?php if ( wordtrap_options( 'share-pinterest' ) ) : ?>
 			<a href="https://pinterest.com/pin/create/button/?url=<?php echo esc_url( $permalink ); ?>&amp;media=<?php echo esc_url( $image ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Pinterest', 'wordtrap' ); ?>" class="share-pinterest"><?php esc_html_e( 'Pinterest', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-email'] ) : ?>
+		<?php if ( wordtrap_options( 'share-email' ) ) : ?>
 			<a href="mailto:?subject=<?php echo urlencode( $title ); ?>&amp;body=<?php echo esc_url( $permalink ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Email', 'wordtrap' ); ?>" class="share-email"><?php esc_html_e( 'Email', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-vk'] ) : ?>
+		<?php if ( wordtrap_options( 'share-vk' ) ) : ?>
 			<a href="https://vk.com/share.php?url=<?php echo esc_url( $permalink ); ?>&amp;title=<?php echo urlencode( $title ); ?>&amp;image=<?php echo esc_url( $image ); ?>&amp;noparse=true" target="_blank" $nofollow title="<?php esc_attr_e( 'VK', 'wordtrap' ); ?>" class="share-vk"><?php esc_html_e( 'VK', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-xing'] ) : ?>
+		<?php if ( wordtrap_options( 'share-xing' ) ) : ?>
 			<a href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=<?php echo esc_url( $permalink ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Xing', 'wordtrap' ); ?>" class="share-xing"><?php esc_html_e( 'Xing', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-tumblr'] ) : ?>
+		<?php if ( wordtrap_options( 'share-tumblr' ) ) : ?>
 			<a href="http://www.tumblr.com/share/link?url=<?php echo esc_url( $permalink ); ?>&amp;name=<?php echo urlencode( $title ); ?>&amp;description=<?php echo urlencode( get_the_excerpt() ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Tumblr', 'wordtrap' ); ?>" class="share-tumblr"><?php esc_html_e( 'Tumblr', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-reddit'] ) : ?>
+		<?php if ( wordtrap_options( 'share-reddit' ) ) : ?>
 			<a href="http://www.reddit.com/submit?url=<?php echo esc_url( $permalink ); ?>&amp;title=<?php echo urlencode( $title ); ?>" target="_blank" $nofollow title="<?php esc_attr_e( 'Reddit', 'wordtrap' ); ?>" class="share-reddit"><?php esc_html_e( 'Reddit', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $wordtrap_options['share-whatsapp'] ) : ?>
-			<a href="whatsapp://send?text=<?php echo rawurlencode( $title ) . ' - ' . esc_url( $permalink ); ?>" data-action="share/whatsapp/share" <?php echo porto_filter_output( $nofollow . $tooltip ); ?> title="<?php esc_attr_e( 'WhatsApp', 'wordtrap' ); ?>" class="share-whatsapp" style="display:none"><?php esc_html_e( 'WhatsApp', 'wordtrap' ); ?></a>
+		<?php if ( wordtrap_options( 'share-whatsapp' ) ) : ?>
+			<a href="whatsapp://send?text=<?php echo rawurlencode( $title ) . ' - ' . esc_url( $permalink ); ?>" data-action="share/whatsapp/share" <?php echo porto_filter_output( $nofollow ); ?> title="<?php esc_attr_e( 'WhatsApp', 'wordtrap' ); ?>" class="share-whatsapp" style="display:none"><?php esc_html_e( 'WhatsApp', 'wordtrap' ); ?></a>
 		<?php endif; ?>
 
 		<?php

@@ -9,18 +9,15 @@
  // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Global Theme Options
-global $wordtrap_options;
-
 // Footer template
-$template = false; wordtrap_layout_template( 'footer' );
+$template = wordtrap_layout_template( 'footer' );
 
 // Footer classes
 $wrap_classes = array( 'footer-wrap' );
 $inner_classes = array( 'footer-inner' );
 
 // Reveal effect
-if ( $wordtrap_options[ 'footer-reveal' ] ) {
+if ( wordtrap_options( 'footer-reveal' ) ) {
   $wrap_classes[] = 'footer-reveal';
 }
 
@@ -49,7 +46,7 @@ elseif ( is_active_sidebar( 'footer-area' ) ) :
    */
   
   // Add classes according to layout
-  switch ( $wordtrap_options[ 'footer-layout' ] ) {
+  switch ( wordtrap_options( 'footer-layout' ) ) {
     case 'wide':
       $inner_classes[] = 'container-fluid';
       break;

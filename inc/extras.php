@@ -20,8 +20,6 @@ if ( ! function_exists( 'wordtrap_logo' ) ) {
 	 * @return string
 	 */
 	function wordtrap_logo() {
-		global $wordtrap_options;
-	
 		ob_start();
 	
 		if ( is_front_page() || is_home() ) : ?>
@@ -31,12 +29,12 @@ if ( ! function_exists( 'wordtrap_logo' ) ) {
 		<?php endif; ?>
 		
 			<?php
-			if ( isset( $wordtrap_options['logo'] ) && $wordtrap_options['logo'] && $wordtrap_options['logo']['url'] ) {
-				$logo = $wordtrap_options['logo']['url'];
+			if ( wordtrap_options( 'logo', 'url' ) ) {
+				$logo = wordtrap_options( 'logo', 'url' );
 				
 				$retina_logo = '';
-				if ( isset( $wordtrap_options['logo-retina'] ) && $wordtrap_options['logo-retina'] && $wordtrap_options['logo-retina']['url'] ) {
-					$retina_logo = $wordtrap_options['logo-retina']['url'];
+				if ( wordtrap_options( 'logo-retina', 'url' ) ) {
+					$retina_logo = wordtrap_options( 'logo-retina', 'url' );
 				}
 				?>	
 				<img class="img-fluid" src="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $logo ) ); ?>"<?php echo $retina_logo ? ' srcset="' . $retina_logo .  ' 2x"' : ''; ?>alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />	

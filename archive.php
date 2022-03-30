@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Main Layout
-$layout = $wordtrap_options['layout'];
+$layout = wordtrap_options( 'layout' );
 
 // Main Layout Classes
 $main_layout_classes = 'col-md-12';
