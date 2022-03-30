@@ -19,9 +19,12 @@ defined( 'ABSPATH' ) || exit;
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
 */
-if ( post_password_required() ) {
+if ( post_password_required() ) :
+	?>
+	<p class="no-comments"><?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 'porto' ); ?></p>
+	<?php
 	return;
-}
+endif;
 ?>
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">

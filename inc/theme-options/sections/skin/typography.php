@@ -370,7 +370,7 @@ Redux::set_section(
         'width'           => false,
         'units'           => 'rem',
         'default'         => array(
-          'height'        => 0.5
+          'height'        => 1
         ),
       ),
       array(
@@ -476,7 +476,7 @@ Redux::set_section(
         'preview'         => true,
         'font-size'       => false,
         'default'         => array(
-          'text-decoration' => 'underline',
+          'text-decoration' => 'none',
         ),
       ),
       array(

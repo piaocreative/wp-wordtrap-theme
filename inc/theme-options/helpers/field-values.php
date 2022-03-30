@@ -198,18 +198,18 @@ if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
         'title' => esc_html__( 'Large', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large.svg',
       ),
-      'large-alt'  => array(
-        'title' => esc_html__( 'Large Alt', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large-alt.svg',
-      ),
+      // 'large-alt'  => array(
+      //   'title' => esc_html__( 'Large Alt', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large-alt.svg',
+      // ),
       'medium'  => array(
         'title' => esc_html__( 'Medium', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium.svg',
       ),
-      'medium-alt'  => array(
-        'title' => esc_html__( 'Medium Alt', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium-alt.svg',
-      ),
+      // 'medium-alt'  => array(
+      //   'title' => esc_html__( 'Medium Alt', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium-alt.svg',
+      // ),
       'grid'  => array(
         'title' => esc_html__( 'Grid', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-grid.svg',
@@ -222,14 +222,14 @@ if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
         'title' => esc_html__( 'Timeline', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-timeline.svg',
       ),
-      'woocommerce'  => array(
-        'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-woocommerce.svg',
-      ),
-      'modern'  => array(
-        'title' => esc_html__( 'Modern', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-modern.svg',
-      ),
+      // 'woocommerce'  => array(
+      //   'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-woocommerce.svg',
+      // ),
+      // 'modern'  => array(
+      //   'title' => esc_html__( 'Modern', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-modern.svg',
+      // ),
     );
   }
 }
@@ -244,30 +244,30 @@ if ( ! function_exists( 'wordtrap_post_layout_options' ) ) {
         'title' => esc_html__( 'Full', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-full.svg',
       ),
-      'full-alt'  => array(
-        'title' => esc_html__( 'Full Alt', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-full-alt.svg',
-      ),
+      // 'full-alt'  => array(
+      //   'title' => esc_html__( 'Full Alt', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-full-alt.svg',
+      // ),
       'large'  => array(
         'title' => esc_html__( 'Large', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-large.svg',
       ),
-      'large-alt'  => array(
-        'title' => esc_html__( 'Large Alt', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-large-alt.svg',
-      ),
+      // 'large-alt'  => array(
+      //   'title' => esc_html__( 'Large Alt', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-large-alt.svg',
+      // ),
       'medium'  => array(
         'title' => esc_html__( 'Medium', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-medium.svg',
       ),
-      'woocommerce'  => array(
-        'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-woocommerce.svg',
-      ),
-      'modern'  => array(
-        'title' => esc_html__( 'Modern', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-modern.svg',
-      ),
+      // 'woocommerce'  => array(
+      //   'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-woocommerce.svg',
+      // ),
+      // 'modern'  => array(
+      //   'title' => esc_html__( 'Modern', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-modern.svg',
+      // ),
     );
   }
 }

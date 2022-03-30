@@ -9,13 +9,19 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( 'left-sidebar' ) ) {
+// Global Theme Options
+global $wordtrap_options;
+
+// Sidebar
+$sidebar = isset( $wordtrap_options['post-left-sidebar'] ) ? $wordtrap_options['post-left-sidebar'] : '';
+
+if ( $sidebar === '' || ! is_active_sidebar( $sidebar ) ) {
 	return;
 }
 ?>
 
 <div class="col-md-3 widget-area" id="left-sidebar">
 
-	<?php dynamic_sidebar( 'left-sidebar' ); ?>
+	<?php dynamic_sidebar( $sidebar ); ?>
 
 </div><!-- #left-sidebar -->
