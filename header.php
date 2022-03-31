@@ -20,6 +20,23 @@ if ( wordtrap_options( 'footer-reveal' ) ) {
   $body_classes[] = 'page-footer-reveal';
 }
 
+// Main layout
+$main_layout = wordtrap_main_layout();
+$layout = $main_layout[ 'layout' ];
+
+// Primary classes
+$wrap_classes = array( 'primary-wrap' );
+$inner_classes = array( 'primary-inner' );
+
+if ( in_array( $layout, array( 'wide', 'wide-left-sidebar', 'wide-right-sidebar', 'wide-both-sidebars' ) ) ) {
+  $inner_classes[] = 'container-fluid';
+} else {
+  $inner_classes[] = 'container';
+}
+
+// Main classes
+$main_classes = array( 'site-main', 'col', 'order-2' );
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -65,4 +82,10 @@ if ( wordtrap_options( 'footer-reveal' ) ) {
 
   <?php get_template_part( 'template-parts/header' ) ?>
   
-  <div id="main">
+  <div id="primary" class="content-area">
+    <div class="<?php echo esc_attr( implode( ' ', $wrap_classes ) ) ?>">
+        <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
+
+          <div class="row">
+
+            <main id="main" class="<?php echo esc_attr( implode( ' ', $main_classes ) ) ?>">

@@ -1,0 +1,15 @@
+/*
+* The styles for Main
+*
+* @package Wordtrap
+* @since wordtrap 1.0.0
+*/
+
+.primary-wrap {
+  @include media-breakpoint-up(sm) {
+    .container-fluid {
+      padding-left: var(--bs-gutter-x, 1.5rem);
+      padding-right: var(--bs-gutter-x, 1.5rem);
+    }
+  } 
+}

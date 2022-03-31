@@ -12,9 +12,20 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+// Main layout
+$main_layout = wordtrap_main_layout();
+$layout = $main_layout[ 'layout' ];
 ?>
 
-  </div><!-- #main -->
+          </main><!-- #main -->
+          
+          <?php get_sidebar() ?>
+
+        </div>
+      </div>
+    </div>
+  </div><!-- #primary -->
 
   <?php get_template_part( 'template-parts/footer' ) ?>
 

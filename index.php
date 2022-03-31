@@ -16,70 +16,28 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Main Layout
-$layout = wordtrap_options( 'layout' );
-
-// Main Layout Classes
-$main_layout_classes = 'col-md-12';
-
-if ( $layout === 'wide-left-sidebar' || $layout === 'wide-right-sidebar' || $layout === 'left-sidebar' || $layout === 'right-sidebar' ) {
-	$main_layout_classes = 'col-md-9';
-} else if ( $layout === 'wide-both-sidebars' || $layout === 'both-sidebars' ) {
-	$main_layout_classes = 'col-md-6';
-}
-
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+<?php
+if ( have_posts() ) :
 
-		<?php if ( $layout === 'wide' || $layout === 'wide-left-sidebar' || $layout === 'wide-right-sidebar' || $layout === 'wide-both-sidebars' ) : ?>
-			<div class="container-fluid">
-		<?php else : ?>
-			<div class="container">
-		<?php endif; ?>
+  // Load posts loop.
+  while ( have_posts() ) {
+    the_post();
+    get_template_part( 'template-parts/content/content', get_post_format() );
+  }
 
-			<div class="row">
-				
-				<?php if ( $layout === 'wide-left-sidebar' || $layout === 'wide-both-sidebars' || $layout === 'left-sidebar' || $layout === 'both-sidebars' ) : ?>
-					<!-- The left sidebar -->
-					<?php get_template_part( 'template-parts/sidebar/left-sidebar' ); ?>				
-				<?php endif; ?>
+  // Previous/next page navigation.
+  // wordtrap_the_posts_navigation();
 
-				<main id="main" class="site-main <?php echo $main_layout_classes; ?>">
+else :
 
-				<?php
-				if ( have_posts() ) :
+  // If no content, include the "No posts found" template.
+  get_template_part( 'template-parts/content/content', 'none' );
 
-					// Load posts loop.
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content', get_post_format() );
-					}
-
-					// Previous/next page navigation.
-					// wordtrap_the_posts_navigation();
-
-				else :
-
-					// If no content, include the "No posts found" template.
-					get_template_part( 'template-parts/content/content', 'none' );
-
-				endif;
-				?>
-
-				</main><!-- #main -->
-
-				<?php if ( $layout === 'wide-right-sidebar' || $layout === 'wide-both-sidebars' || $layout === 'right-sidebar' || $layout === 'both-sidebars' ) : ?>
-					<!-- The right sidebar -->
-					<?php get_template_part( 'template-parts/sidebar/right-sidebar' ); ?>					
-				<?php endif; ?>
-
-			</div><!-- .row -->
-
-		</div><!-- .container-(fluid) -->
-
-	</div><!-- .content-area -->
+endif;
+?>
 
 <?php
 get_footer();

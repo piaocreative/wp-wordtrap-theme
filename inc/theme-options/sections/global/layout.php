@@ -31,14 +31,14 @@ Redux::set_section(
       //   'options'  => $site_layout_options,
       //   'default'  => 'full',
       // ),
-      array(
-        'id'       => 'banner-layout',
-        'type'     => 'image_select',
-        'title'    => esc_html__( 'Banner Layout', 'wordtrap' ),
-        // 'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
-        'options'  => $banner_layout_options,
-        'default'  => 'wide',
-      ),
+      // array(
+      //   'id'       => 'banner-layout',
+      //   'type'     => 'image_select',
+      //   'title'    => esc_html__( 'Banner Layout', 'wordtrap' ),
+      //   'required' => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
+      //   'options'  => $banner_layout_options,
+      //   'default'  => 'wide',
+      // ),
       array(
         'id'       => 'breadcrumbs-layout',
         'type'     => 'image_select',

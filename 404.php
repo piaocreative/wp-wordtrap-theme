@@ -14,35 +14,23 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+<div class="error-404 not-found">
 
-		<div class="container">
+  <header class="page-header">
 
-			<main id="main" class="site-main">
-				
-				<div class="error-404 not-found">
+    <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'wordtrap' ); ?></h1>
 
-					<header class="page-header">
+  </header><!-- .page-header -->
 
-						<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'wordtrap' ); ?></h1>
+  <div class="page-content">
 
-					</header><!-- .page-header -->
+    <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'wordtrap' ); ?></p>
 
-					<div class="page-content">
+    <?php get_search_form(); ?>
 
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'wordtrap' ); ?></p>
+  </div><!-- .page-content -->
 
-						<?php get_search_form(); ?>
-
-					</div><!-- .page-content -->
-
-				</div><!-- .error-404 -->
-
-			</main><!-- #main -->
-
-		</div><!-- .container -->
-
-	</div><!-- #primary -->
+</div><!-- .error-404 -->
 
 <?php
 get_footer();

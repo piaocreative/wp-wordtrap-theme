@@ -42,3 +42,260 @@ if ( ! function_exists( 'wordtrap_get_template_part' ) ) {
     }
   }
 }
+
+if ( ! function_exists( 'wordtrap_options' ) ) {
+  /**
+   * Get the field value in the theme options
+   */
+  function wordtrap_options( $field, $sub_field = false ) {
+    global $wordtrap_options;
+
+    if ( ! isset( $wordtrap_options[ $field ] ) ) {
+      return false;
+    }
+
+    if ( ! $sub_field ) {
+      return $wordtrap_options[ $field ];
+    }
+
+    if ( ! isset( $wordtrap_options[ $field ][ $sub_field ] ) ) {
+      return false;
+    }
+
+    return $wordtrap_options[ $field ][ $sub_field ];
+  }
+}
+
+if ( ! function_exists( 'wordtrap_layout_condition' ) ) {
+  /**
+   * Get display condition about current page
+   * 
+   * @return array { string class, string type, int id }
+   */
+  function wordtrap_layout_condition() {
+    global $wordtrap_layout_condition;
+
+    if ( $wordtrap_layout_condition ) {
+      return $wordtrap_layout_condition;
+    }
+
+    $type = '';
+    $class = '';
+    $id = '';
+
+    if ( is_front_page() ) {       // Home page
+      $class = 'singular';
+      $type = 'home';
+    } else if ( is_home() ) {      // Posts page
+      $class = 'archive';
+      $type = 'post';
+    } else if ( is_404() ) {       // 404 page
+      $class = 'singular';
+      $type = '404';
+    } else if ( is_page() ) {      // Normal page
+      $class = 'singular';
+      $type = 'page';
+      $id = get_the_ID();
+    } else if ( is_date() ) {      // Date archive
+      $class = 'archive';
+      $type = 'date';
+    } else if ( is_search() ) {    // Search results
+      $class = 'archive';
+      $type = 'search';
+    } else if ( is_author() ) {    // Author page
+      $class = 'archive';
+      $type = 'author';
+    } else if ( is_singular() ) {  // Singular page
+      $class = 'singular';
+      $type = get_post_type();
+      $id = get_the_ID();
+    } else if ( is_archive() ) {   // Archive page
+      $class = 'archive';
+      $term = get_queried_object();
+      if ( $term && isset( $term->taxonomy ) ) {  // Taxonomy page
+        $type = $term->taxonomy;
+        $id = $term->term_id;
+      } else if ( is_post_type_archive() ) {      // Post type archive page
+        global $wp_query;
+        $type = $wp_query->query[ 'post_type' ];
+      }
+    }
+
+    $wordtrap_layout_condition = array(
+      'class' => $class,
+      'type' => $type,
+      'id' => $id
+    );
+
+    return $wordtrap_layout_condition;
+  }
+}
+
+if ( ! function_exists( 'wordtrap_render_template' ) ) {
+  /**
+   * Render builder template
+   */
+  function wordtrap_render_template( $template ) {
+    $post = get_post( $template );
+    echo do_shortcode( $post->post_content );
+  }
+}
+
+if ( ! function_exists( 'wordtrap_layout_template' ) ) {
+  /**
+   * Get builder template by template type
+   * 
+   * @params string @template_type    Template type.
+   *         string @position         Display position.
+   * 
+   * @return int | false              Template id.
+   */
+  function wordtrap_layout_template( $template_type, $position = '') {
+    global $wordtrap_display_conditions;
+
+    if ( ! $wordtrap_display_conditions ) {
+      $wordtrap_display_conditions = get_option( WORDTRAP_DISPLAY_CONDITIONS, array() );
+    }
+
+    if ( ! isset( $wordtrap_display_conditions[ $template_type ] ) ) {
+      return;
+    }
+
+    $display_conditions = $wordtrap_display_conditions[ $template_type ];
+    
+    if ( $position ) {
+      if ( ! isset( $display_conditions[ $position ] ) ) {
+        return;
+      }
+      $display_conditions = $display_conditions[ $position ];
+    }
+
+    // get current condition
+    $condition = wordtrap_layout_condition();
+
+    foreach ( $display_conditions as $template_id => $template_conditions ) {
+      if ( $template_conditions[ 'conditions-all' ] ) {
+        return $template_id;
+      }
+      
+      if ( $template_conditions[ 'conditions-' . $condition[ 'class' ] ] ) {
+        return $template_id;
+      }
+      
+      $sub_conditions = $template_conditions[ $condition[ 'class' ] . '-conditions' ];
+      
+      if ( in_array( $condition[ 'type' ], $sub_conditions[ 'checked' ] ) ) {
+        return $template_id;
+      }
+
+      if ( isset( $sub_conditions[ 'selected' ][ $condition[ 'type' ] ] ) && in_array( $condition[ 'id' ], $sub_conditions[ 'selected' ][ $condition[ 'type' ] ] ) ) {
+        return $template_id;
+      }
+    }
+    
+    return false;
+  }
+}
+
+if ( ! function_exists( 'wordtrap_main_layout' ) ) {
+  /**
+   * Get the main layout of current page
+   *
+   * @return string   The layout type.
+   */
+  function wordtrap_main_layout() {
+    global $wordtrap_main_layout;
+
+    if ( $wordtrap_main_layout ) {
+      return $wordtrap_main_layout;
+    }
+
+    $layout = wordtrap_options( 'layout' );
+    $left_sidebar = wordtrap_options( 'left-sidebar' );
+    $right_sidebar = wordtrap_options( 'right-sidebar' );
+
+    // Home, 404, Normal page
+    if ( is_front_page() || is_404() || is_page() ) {
+      
+    } 
+    // Posts page, Date archive, Search results, Author archive
+    else if ( is_home() || is_date() || is_search() || is_author() ) {
+      $layout = wordtrap_options( 'posts-layout' );
+      $left_sidebar = wordtrap_options( 'posts-left-sidebar' );
+      $right_sidebar = wordtrap_options( 'posts-right-sidebar' );
+    }
+    // Singular page
+    else if ( is_singular() ) {
+      $post_type = get_post_type();
+      if ( in_array( $post_type, array( 'post', 'product', 'member' ) ) ) {
+        $layout = wordtrap_options( $post_type . '-layout' );
+        $left_sidebar = wordtrap_options( $post_type . '-left-sidebar' );
+        $right_sidebar = wordtrap_options( $post_type . '-right-sidebar' );
+      }
+    } 
+    // Archive page
+    else if ( is_archive() ) {
+      $post_type = '';
+      $term = get_queried_object();
+      // Taxonomy page
+      if ( $term && isset( $term->taxonomy ) ) {
+        global $wp_taxonomies;
+        $taxonomy = $term->taxonomy;
+        if ( isset( $wp_taxonomies[ $taxonomy ] ) ) {
+          $post_type = $wp_taxonomies[ $taxonomy ]->object_type[0];
+        }
+      }
+      // Post type archive page
+      else if ( is_post_type_archive() ) {
+        global $wp_query;
+        $post_type = $wp_query->query[ 'post_type' ];
+      }
+
+      if ( $post_type && in_array( $post_type, array( 'post', 'product', 'member' ) ) ) {
+        $layout = wordtrap_options( $post_type . 's-layout' );
+        $left_sidebar = wordtrap_options( $post_type . 's-left-sidebar' );
+        $right_sidebar = wordtrap_options( $post_type . 's-right-sidebar' );
+      }
+    }
+
+    // Check sidebars
+    if ( $layout === 'wide-left-sidebar' && ! is_active_sidebar( $left_sidebar ) ) {
+      $layout = 'wide';
+    }
+    if ( $layout === 'left-sidebar' && ! is_active_sidebar( $left_sidebar ) ) {
+      $layout = 'full';
+    }
+    if ( $layout === 'wide-right-sidebar' && ! is_active_sidebar( $right_sidebar ) ) {
+      $layout = 'wide';
+    }
+    if ( $layout === 'right-sidebar' && ! is_active_sidebar( $right_sidebar ) ) {
+      $layout = 'full';
+    }
+    if ( $layout === 'wide-both-sidebars' ) {
+      if ( ! is_active_sidebar( $left_sidebar ) && ! is_active_sidebar( $right_sidebar ) ) {
+        $layout = 'wide';
+      } else if ( ! is_active_sidebar( $left_sidebar ) ) {
+        $layout = 'wide-right-sidebar';
+      } else if ( ! is_active_sidebar( $right_sidebar ) ) {
+        $layout = 'wide-left-sidebar';
+      }
+    }
+    if ( $layout === 'both-sidebars' ) {
+      if ( ! is_active_sidebar( $left_sidebar ) && ! is_active_sidebar( $right_sidebar ) ) {
+        $layout = 'full';
+      } else if ( ! is_active_sidebar( $left_sidebar ) ) {
+        $layout = 'right-sidebar';
+      } else if ( ! is_active_sidebar( $right_sidebar ) ) {
+        $layout = 'left-sidebar';
+      }
+    }
+
+    $wordtrap_main_layout = array(
+      'layout' => $layout,
+      'left-sidebar' => $left_sidebar,
+      'right-sidebar' => $right_sidebar
+    );
+
+    return apply_filters( 'wordtrap_main_layout', $wordtrap_main_layout );
+  }
+}
