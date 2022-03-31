@@ -14,7 +14,12 @@ $main_layout = wordtrap_main_layout();
 $layout = $main_layout[ 'layout' ];
 $sidebar = $main_layout[ 'right-sidebar' ];
 
-if ( ! $sidebar || ! is_active_sidebar( $sidebar ) ) {
+$sidebar_top = wordtrap_layout_template( 'right-sidebar', 'top' );
+$sidebar_bottom = wordtrap_layout_template( 'right-sidebar', 'bottom' );
+
+$active_sidebar = $sidebar_top || $sidebar_bottom || is_active_sidebar( $sidebar );
+
+if ( ! $active_sidebar ) {
   return;
 }
 
@@ -28,7 +33,26 @@ if ( in_array( $layout, array( 'wide-both-sidebars', 'both-sidebars' ) ) ) {
 ?>
 <div id="right-sidebar" class="<?php echo esc_attr( implode( ' ', $sidebar_classes ) ) ?>">
 
-  <?php dynamic_sidebar( $sidebar ); ?>
+  <?php 
+
+  /**
+   * Render sidebar top template
+   */
+  wordtrap_render_template( $sidebar_top ); 
+
+  /**
+   * Render sidebar
+   */
+  if ( $sidebar && is_active_sidebar( $sidebar ) ) {
+    dynamic_sidebar( $sidebar );
+  }
+
+  /**
+   * Render sidebar bottom template
+   */
+  wordtrap_render_template( $sidebar_bottom ); 
+
+  ?>
 
 </div><!-- #right-sidebar -->
 

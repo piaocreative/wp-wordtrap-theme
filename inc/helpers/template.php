@@ -136,6 +136,10 @@ if ( ! function_exists( 'wordtrap_render_template' ) ) {
    * Render builder template
    */
   function wordtrap_render_template( $template ) {
+    if ( ! $template ) {
+      return;
+    }
+
     $post = get_post( $template );
     echo do_shortcode( $post->post_content );
   }
@@ -158,14 +162,14 @@ if ( ! function_exists( 'wordtrap_layout_template' ) ) {
     }
 
     if ( ! isset( $wordtrap_display_conditions[ $template_type ] ) ) {
-      return;
+      return false;
     }
 
     $display_conditions = $wordtrap_display_conditions[ $template_type ];
     
     if ( $position ) {
       if ( ! isset( $display_conditions[ $position ] ) ) {
-        return;
+        return false;
       }
       $display_conditions = $display_conditions[ $position ];
     }
@@ -259,33 +263,41 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
     }
 
     // Check sidebars
-    if ( $layout === 'wide-left-sidebar' && ! is_active_sidebar( $left_sidebar ) ) {
+    $left_sidebar_top = wordtrap_layout_template( 'left-sidebar', 'top' );
+    $left_sidebar_bottom = wordtrap_layout_template( 'left-sidebar', 'bottom' );
+    $right_sidebar_top = wordtrap_layout_template( 'right-sidebar', 'top' );
+    $right_sidebar_bottom = wordtrap_layout_template( 'right-sidebar', 'bottom' );
+
+    $active_left_sidebar = $left_sidebar_top || $left_sidebar_bottom || is_active_sidebar( $left_sidebar );
+    $active_right_sidebar = $right_sidebar_top || $right_sidebar_bottom || is_active_sidebar( $right_sidebar );
+
+    if ( $layout === 'wide-left-sidebar' && ! $active_left_sidebar ) {
       $layout = 'wide';
     }
-    if ( $layout === 'left-sidebar' && ! is_active_sidebar( $left_sidebar ) ) {
+    if ( $layout === 'left-sidebar' && ! $active_left_sidebar ) {
       $layout = 'full';
     }
-    if ( $layout === 'wide-right-sidebar' && ! is_active_sidebar( $right_sidebar ) ) {
+    if ( $layout === 'wide-right-sidebar' && ! $active_right_sidebar ) {
       $layout = 'wide';
     }
-    if ( $layout === 'right-sidebar' && ! is_active_sidebar( $right_sidebar ) ) {
+    if ( $layout === 'right-sidebar' && ! $active_right_sidebar ) {
       $layout = 'full';
     }
     if ( $layout === 'wide-both-sidebars' ) {
-      if ( ! is_active_sidebar( $left_sidebar ) && ! is_active_sidebar( $right_sidebar ) ) {
+      if ( ! $active_left_sidebar && ! $active_right_sidebar ) {
         $layout = 'wide';
-      } else if ( ! is_active_sidebar( $left_sidebar ) ) {
+      } else if ( ! $active_left_sidebar ) {
         $layout = 'wide-right-sidebar';
-      } else if ( ! is_active_sidebar( $right_sidebar ) ) {
+      } else if ( ! $active_right_sidebar ) {
         $layout = 'wide-left-sidebar';
       }
     }
     if ( $layout === 'both-sidebars' ) {
-      if ( ! is_active_sidebar( $left_sidebar ) && ! is_active_sidebar( $right_sidebar ) ) {
+      if ( ! $active_left_sidebar && ! $active_right_sidebar ) {
         $layout = 'full';
-      } else if ( ! is_active_sidebar( $left_sidebar ) ) {
+      } else if ( ! $active_left_sidebar ) {
         $layout = 'right-sidebar';
-      } else if ( ! is_active_sidebar( $right_sidebar ) ) {
+      } else if ( ! $active_right_sidebar ) {
         $layout = 'left-sidebar';
       }
     }

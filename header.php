@@ -37,6 +37,9 @@ if ( in_array( $layout, array( 'wide', 'wide-left-sidebar', 'wide-right-sidebar'
 // Main classes
 $main_classes = array( 'site-main', 'col', 'order-2' );
 
+// Main templates
+$main_top_template = wordtrap_layout_template( 'main', 'main-top' );
+$content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -83,9 +86,24 @@ $main_classes = array( 'site-main', 'col', 'order-2' );
   <?php get_template_part( 'template-parts/header' ) ?>
   
   <div id="primary" class="content-area">
+
+    <?php
+    /**
+     * Render main top template
+     */
+    wordtrap_render_template( $main_top_template ); 
+    ?>
+
     <div class="<?php echo esc_attr( implode( ' ', $wrap_classes ) ) ?>">
         <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
 
           <div class="row">
 
             <main id="main" class="<?php echo esc_attr( implode( ' ', $main_classes ) ) ?>">
+
+              <?php
+              /**
+               * Render content top template
+               */
+              wordtrap_render_template( $content_top_template ); 
+              ?>
