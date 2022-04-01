@@ -56,9 +56,11 @@
   color: $gray-500;
   font-weight: $font-weight-normal;
   margin-bottom: 5px;
+  text-decoration: none;
 
   &:hover {
     color: $primary;
+    text-decoration: none;
   }
 }
 
@@ -140,6 +142,10 @@ figure.wp-block-image {
       border-radius: 0;
     }
   }
+
+   a {
+     text-decoration: none;
+   }
 }
 
 .wp-block-button,
@@ -147,6 +153,8 @@ figure.wp-block-image {
   margin-bottom: 1em;
 }
 
+img,
+figure,
 [class*="wp-block-"] {
   &.alignleft {
     float: left;
@@ -162,6 +170,18 @@ figure.wp-block-image {
     margin-bottom: 1em;
   }
 
+  &.aligncenter {
+    text-align: center;
+    margin: 0 auto 1em;
+  }
+}
+
+img.aligncenter {
+  justify-content: center;
+  display: flex;
+}
+
+[class*="wp-block-"] {
   label {
     @extend .form-label;
   }

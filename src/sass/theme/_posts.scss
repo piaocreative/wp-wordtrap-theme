@@ -73,6 +73,7 @@
       color: $gray-500;
       font-weight: $font-weight-normal;
       margin-bottom: 5px;
+      text-decoration: none;
 
       &:not(:first-child) {
         margin-left: 3px;
@@ -192,6 +193,11 @@ article.post,
   .badge {
     font-weight: $font-weight-normal;
   }
+}
+
+.no-comments {
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 #comments {

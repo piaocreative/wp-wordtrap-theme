@@ -101,7 +101,7 @@ if ( ! function_exists( 'wordtrap_comment_form_comments_closed' ) ) {
 	function wordtrap_comment_form_comments_closed() {
 		if ( get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) {
 			?>
-			<div class="alert alert-info no-comments mt-3"><?php esc_html_e( 'Comments are closed.', 'wordtrap' ); ?></div>
+			<div class="alert alert-info no-comments"><?php esc_html_e( 'Comments are closed.', 'wordtrap' ); ?></div>
 			<?php
 		}
 	}
