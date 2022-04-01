@@ -51,8 +51,8 @@ if ( ! function_exists( 'wordtrap_the_posts_navigation' ) ) {
 			array(
 				'mid_size'           => 2,
 				'prev_next'          => true,
-				'prev_text'          => __( '&laquo;', 'wordtrap' ),
-				'next_text'          => __( '&raquo;', 'wordtrap' ),
+				'prev_text'          => __( '<i class="fa fa-angle-left"></i>&nbsp;Back', 'wordtrap' ),
+				'next_text'          => __( 'Next&nbsp;<i class="fa fa-angle-right"></i>', 'wordtrap' ),
 				'type'               => 'array',
 				'current'            => max( 1, get_query_var( 'paged' ) ),
 				'screen_reader_text' => __( 'Posts navigation', 'wordtrap' ),

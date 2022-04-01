@@ -6,13 +6,13 @@
 @import "theme/vendor/bootstrap/bootstrap";
 
 // Theme
-@import "theme/header";
-@import "theme/navbar";
 @import "theme/blocks";
 @import "theme/posts";
 @import "theme/widgets";
-@import "theme/main";
 @import "theme/social_share";
+@import "theme/header";
+@import "theme/navbar";
+@import "theme/main";
 @import "theme/sidebar";
 @import "theme/footer";
 @import "theme/colors";

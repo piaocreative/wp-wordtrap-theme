@@ -28,14 +28,14 @@ defined( 'ABSPATH' ) || exit;
 			$kses = array( 'a' => array( 'href' => array() ) );
 			printf(
 				/* translators: 1: Link to WP admin new post page. */
-				'<p>' . wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wordtrap' ), $kses ) . '</p>',
+				'<div class="alert alert-info">' . wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wordtrap' ), $kses ) . '</div>',
 				esc_url( admin_url( 'post-new.php' ) )
 			);
 
 		elseif ( is_search() ) :
 
 			printf(
-				'<p>%s<p>',
+				'<div class="alert alert-info">%s</div>',
 				esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wordtrap' )
 			);
 			get_search_form();
@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 		else :
 
 			printf(
-				'<p>%s<p>',
+				'<div class="alert alert-info">%s</div>',
 				esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wordtrap' )
 			);
 			get_search_form();

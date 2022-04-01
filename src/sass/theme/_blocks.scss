@@ -153,6 +153,7 @@ figure.wp-block-image {
   margin-bottom: 1em;
 }
 
+// Align
 img,
 figure,
 [class*="wp-block-"] {
@@ -181,6 +182,7 @@ img.aligncenter {
   display: flex;
 }
 
+// Form
 [class*="wp-block-"] {
   label {
     @extend .form-label;
@@ -189,18 +191,27 @@ img.aligncenter {
   input:not([type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]),
   textarea {
     @extend .form-control;
-    @extend .mb-3;
+
+    .site-main & {
+      margin-bottom: 1rem;
+    }
   }
 
   select {
     @extend .form-select;
-    @extend .mb-3;
+
+    .site-main & {
+      margin-bottom: 1rem;
+    }
   }
 
   [type="checkbox"], 
   [type="radio"] {
     @extend .form-check-input;
-    @extend .mb-3;
+
+    .site-main & {
+      margin-bottom: 1rem;
+    }
   }
   
   button,
@@ -209,10 +220,14 @@ img.aligncenter {
   [type="submit"] {
     @extend .btn;
     @extend .btn-primary;
-    @extend .mb-3;
+
+    .site-main & {
+      margin-bottom: 1rem;
+    }
   }
 }
 
+// Gallery
 .gallery {
   @extend .row;
 
@@ -252,6 +267,7 @@ img.aligncenter {
   width: 10%;
 }
 
+// Figcaption
 figure {
   figcaption {
     margin-top: 0.5em;

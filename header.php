@@ -93,7 +93,11 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
   <?php get_template_part( 'template-parts/header' ) ?>
 
   <div id="page-header" class="p-3 bg-light text-center">
-    <h2>Page Header</h2>
+    <header class="page-header">
+      <?php
+        the_archive_title( '<h1 class="page-title">', '</h1>' );
+      ?>
+    </header><!-- .page-header -->
   </div>
   
   <div id="primary" class="content-area">

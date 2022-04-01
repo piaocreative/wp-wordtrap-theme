@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( 'post' === get_post_type() ) : ?>
 
 			<div class="entry-meta">
-				<?php wordtrap_posted_on(); ?>
+				<?php //wordtrap_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>
@@ -37,7 +37,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		the_excerpt();
-		wordtrap_link_pages();
+		//wordtrap_link_pages();
 		?>
 
 	</div><!-- .entry-content -->

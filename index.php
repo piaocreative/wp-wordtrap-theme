@@ -22,14 +22,24 @@ get_header();
 <?php
 if ( have_posts() ) :
 
+  ?>
+
+  <div>sort by, show, view</div>
+  <?php
+  
   // Load posts loop.
   while ( have_posts() ) {
     the_post();
     get_template_part( 'template-parts/content/content', get_post_format() );
   }
 
+  ?>
+
+  <div>show, pagination</div>
+  <?php
+
   // Previous/next page navigation.
-  // wordtrap_the_posts_navigation();
+  wordtrap_the_posts_navigation();
 
 else :
 

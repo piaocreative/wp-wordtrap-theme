@@ -11,7 +11,9 @@ defined( 'ABSPATH' ) || exit;
 
 // Post classes
 $post_classes = array();
-$post_classes[] = wordtrap_options( 'post-view' );
+if ( wordtrap_options( 'post-slideshow' ) && has_post_thumbnail( $post->ID ) ) {
+  $post_classes[] = wordtrap_options( 'post-view' );
+}
 ?>
 
 <article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
@@ -50,7 +52,7 @@ $post_classes[] = wordtrap_options( 'post-view' );
 
     </div><!-- .entry-content -->
 
-    <footer class="entry-footer justify-content-between">
+    <footer class="entry-footer">
 
       <?php wordtrap_entry_footer(); ?>
 

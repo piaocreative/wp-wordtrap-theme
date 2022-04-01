@@ -150,6 +150,8 @@ if ( ! function_exists( 'wordtrap_link_pages_args' ) ) {
    * Filters the arguments used in retrieving page links for paginated posts.
    */
   function wordtrap_link_pages_args( $args ) {
+    $args[ 'before' ] = '<p class="post-nav-links"><span class="me-1">' . __( 'Pages:', 'wordtrap' ) . '</span>';
+		$args[ 'after' ] = '</p>';
     $args[ 'nextpagelink' ] = __( 'Next&nbsp;<i class="fa fa-angle-right"></i>', 'wordtrap' );
     $args[ 'previouspagelink' ] = __( '<i class="fa fa-angle-left"></i>&nbsp;Back', 'wordtrap' );
     return $args;

@@ -5,83 +5,100 @@
 * @since wordtrap 1.0.0
 */
 
-.post {
-  .post-thumbnail {
-    border-radius: $border-radius-lg;
-    overflow: hidden;
+.post-thumbnail {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
 
-    &.single {
-      margin-bottom: 2.5rem;
-    }
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .entry-title {
-    margin-bottom: 1rem;
-  }
-
-  .entry-meta {        
-    margin-bottom: 1.5rem;
-
-    span:not(:last-child) {
-      margin-right: 1rem;
-    }
-
-    a {
-      color: $gray-500;
-
-      &:hover {
-        color: $primary;
-      }
-    }
-  }
-
-  .entry-content {
+  &.single {
     margin-bottom: 2.5rem;
-    @include clearfix;
-
-    figure,
-    img,
-    iframe {
-      max-width: 100%;
-    }
   }
 
-  .entry-footer {
+  img {
+    width: 100%;
+  }
+}
+
+.entry-title,
+.navigation,
+.comment-navigation,
+.comment-by {
+  a {
+    color: $secondary;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.entry-title {
+  margin-bottom: 1rem;
+}
+
+.entry-meta {        
+  margin-bottom: 1.5rem;
+
+  span:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  a {
+    color: $gray-500;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.entry-content {
+  margin-bottom: 2.5rem;
+  @include clearfix;
+
+  figure,
+  img,
+  iframe {
+    max-width: 100%;
+  }
+
+  iframe {
     display: flex;
-    @extend .align-items-center;
+    margin: 0 auto;
+  }
+}
 
-    @include media-breakpoint-down(lg) {
-      display: block;
-    }
+.entry-footer {
+  display: flex;
+  @extend .align-items-center;
+  @extend .justify-content-between;
+
+  @include media-breakpoint-down(lg) {
+    display: block;
+  }
+}
+
+.post-tags {
+  text-align: right;
+
+  @include media-breakpoint-down(lg) {
+    margin-top: 0.5rem;
+    text-align: left;
   }
 
-  .post-tags {
-    text-align: right;
+  a {
+    @extend .badge;
+    background: $light;
+    color: $gray-500;
+    font-weight: $font-weight-normal;
+    margin-bottom: 5px;
+    text-decoration: none;
 
-    @include media-breakpoint-down(lg) {
-      margin-top: 0.5rem;
-      text-align: left;
+    &:not(:first-child) {
+      margin-left: 3px;
     }
 
-    a {
-      @extend .badge;
-      background: $light;
-      color: $gray-500;
-      font-weight: $font-weight-normal;
-      margin-bottom: 5px;
-      text-decoration: none;
-
-      &:not(:first-child) {
-        margin-left: 3px;
-      }
-
-      &:hover {
-        color: $primary;
-      }
+    &:hover {
+      color: $primary;
     }
   }
 }
@@ -93,6 +110,18 @@
     margin-left: -2rem;
     margin-right: -2rem;
     overflow: hidden;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: -1.5rem;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
+  
+    @include media-breakpoint-down(sm) {
+      margin-top: -1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
   }
 }
 
@@ -137,6 +166,14 @@ article.post,
   }
 }
 
+article.post {
+  margin-top: 2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 .post-password-form {
   input[type="password"] {
     @extend .form-control;
@@ -157,30 +194,6 @@ article.post,
   @extend .align-items-center;
   @extend .justify-content-center;
   margin-top: 1rem;
-}
-
-.post-page-numbers {
-  @extend .btn;
-  @extend .btn-light;
-  margin-left: 0.5em;
-  margin-bottom: 0.5em;
-
-  &.current {
-    @extend .btn-primary;
-  }
-}
-
-.navigation,
-.comment-navigation,
-.post-page-numbers,
-.comment-by {
-  a {
-    color: $secondary;
-    
-    &:hover {
-      color: $primary;
-    }
-  }
 }
 
 .navigation {
@@ -295,9 +308,51 @@ article.post,
       }
     }
   }
+
+  .form-submit {
+    margin-bottom: 0;
+  }
 }
 
 #cancel-comment-reply-link {
   font-size: 1rem;
   margin-left: 1rem;
 }
+
+// Pagination
+.post-page-numbers,
+.pagination .page-item .page-link {
+  @extend .btn;
+  border: none;
+  border-radius: $border-radius-lg;
+  color: $secondary;
+  margin: 0.25em;
+  padding-left: 0.58625rem;
+  padding-right: 0.58625rem;
+  min-width: 2.25rem;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &.current {
+    @extend .btn-primary;
+  }
+}
+
+.pagination .page-item:first-child .page-link {
+  margin-left: 0;
+}
+
+.pagination .page-item:last-child .page-link {
+  margin-right: 0;
+}
+
+.post-page-numbers:not(.current) {
+  background-color: $light;
+}
+
+.pagination .page-item .page-link:not(.current) {
+  background-color: $section-bg;
+}
+

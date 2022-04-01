@@ -136,13 +136,6 @@ if ( ! class_exists( 'Redux_Core', false ) ) {
 		public static $third_party_fixes = null;
 
 		/**
-		 * Redux Welcome screen object.
-		 *
-		 * @var null
-		 */
-		public static $welcome = null;
-
-		/**
 		 * Redux Appsero object.
 		 *
 		 * @var null
@@ -338,8 +331,6 @@ if ( ! class_exists( 'Redux_Core', false ) ) {
 		public static function core_construct( $parent ) {
 			self::$third_party_fixes = new Redux_ThirdParty_Fixes( $parent );
 
-			Redux_ThemeCheck::get_instance();
-
 		}
 
 		/**
@@ -358,11 +349,7 @@ if ( ! class_exists( 'Redux_Core', false ) ) {
 			// require_once dirname( __FILE__ ) . '/inc/classes/class-redux-enable-gutenberg.php';
 			require_once dirname( __FILE__ ) . '/inc/classes/class-redux-instances.php';
 			Redux_Functions_Ex::register_class_path( 'Redux', dirname( __FILE__ ) . '/inc/classes' );
-			Redux_Functions_Ex::register_class_path( 'Redux', dirname( __FILE__ ) . '/inc/welcome' );
 			spl_autoload_register( array( $this, 'register_classes' ) );
-
-			self::$welcome = new Redux_Welcome();
-			new Redux_Rest_Api_Builder();
 
 			add_action( 'admin_init', array( $this, 'admin_init' ) );
 
@@ -544,19 +531,6 @@ if ( ! class_exists( 'Redux_Core', false ) ) {
 				// Load Redux APIs.
 				if ( 'Redux' === $class_name ) {
 					require_once Redux_Path::get_path( '/inc/classes/class-redux-api.php' );
-
-					return;
-				}
-
-				// Redux extra theme checks.
-				if ( 'Redux_ThemeCheck' === $class_name ) {
-					require_once Redux_Path::get_path( '/inc/themecheck/class-redux-themecheck.php' );
-
-					return;
-				}
-
-				if ( 'Redux_Welcome' === $class_name ) {
-					require_once Redux_Path::get_path( '/inc/welcome/class-redux-welcome.php' );
 
 					return;
 				}

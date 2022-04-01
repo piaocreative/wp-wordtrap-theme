@@ -15,9 +15,12 @@
   }
 }
 
-.widget-area {
+#left-sidebar,
+#right-sidebar {  
   margin-bottom: 2rem;
+}
 
+.widget-area {
   aside {
     background: $section-bg;
     border-radius: $border-radius-lg;
