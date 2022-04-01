@@ -33,6 +33,14 @@
       border-radius: $border-radius-lg;
       margin-bottom: 2rem;
       padding: 2rem;
+
+      @include media-breakpoint-down(lg) {
+        padding: 1.5rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding: 1rem;
+      }
             
       &:last-child,
       > *:last-child {
@@ -62,6 +70,14 @@
       border-radius: $border-radius-lg;
       padding: 2rem;
       margin-bottom: 1rem;
+
+      @include media-breakpoint-down(lg) {
+        padding: 1.5rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding: 1rem;
+      }
 
       &:last-child,
       > *:last-child {

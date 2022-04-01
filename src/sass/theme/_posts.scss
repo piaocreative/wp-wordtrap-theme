@@ -203,6 +203,14 @@
   margin-top: 2rem;
   padding: 2rem;
 
+  @include media-breakpoint-down(lg) {
+    padding: 1.5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 1rem;
+  }
+
   .comment-list & {
     margin-top: 0;
     margin-bottom: 2rem;
