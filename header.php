@@ -84,6 +84,10 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
   <a class="skip-link sr-only sr-only-focusable" href="#content"><?php _e( 'Skip to content', 'wordtrap' ); ?></a>
 
   <?php get_template_part( 'template-parts/header' ) ?>
+
+  <div id="page-header" class="p-3 bg-light text-center">
+    <h2>Page Header</h2>
+  </div>
   
   <div id="primary" class="content-area">
 

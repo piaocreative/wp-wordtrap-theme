@@ -33,6 +33,9 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
     $templates_styles  = "/wordtrap_styles/templates{$suffix}.css";
     wp_enqueue_style( 'wordtrap-templates-styles', $upload_dir['baseurl'] . $templates_styles, array(), $css_version );
 
+    // Font Awesome styles
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . "/css/font-awesome{$suffix}.css", array(), $css_version );
+
     // Theme script
     $theme_scripts = "/js/theme{$suffix}.js";
     $js_version = $theme_version . '.' . filemtime( get_template_directory() . $theme_scripts );

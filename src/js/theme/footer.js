@@ -67,7 +67,7 @@
         page = $el.find( '#page' ),
         height = $el.find( '#footer' ).height();
 
-      page.css( 'padding-bottom', height );
+      page.css( 'margin-bottom', height );
     }
   };
 

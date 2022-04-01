@@ -12,6 +12,7 @@
 @import "theme/posts";
 @import "theme/widgets";
 @import "theme/main";
+@import "theme/social_share";
 @import "theme/footer";
 @import "theme/colors";
 
@@ -20,6 +21,3 @@
 
 // WooCommerce styleheet
 @import "theme/woocommerce";
-
-// Font Awesome
-@import "theme/vendor/fontawesome/font-awesome";

@@ -209,6 +209,14 @@ $header-bg:                   <?php echo $g['header-bg'] ?>;
 <?php endif ?>
 $header-logo-margin:          <?php echo floatval( $g['header-logo-margin']['margin-top'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-right'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-bottom'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-left'] ) ?>rem;
 
+// Main
+<?php if ( $g['main-bg'] ) : ?>
+$main-bg:                     <?php echo $g['main-bg'] ?>;
+<?php endif ?>
+<?php if ( $g['section-bg'] ) : ?>
+$section-bg:                  <?php echo $g['section-bg'] ?>;
+<?php endif ?>
+
 // Footer
 <?php if ( $g['footer-bg'] ) : ?>
 $footer-bg:                   <?php echo $g['footer-bg'] ?>;

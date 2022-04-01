@@ -78,16 +78,12 @@
       left: 0;
       right: 0;
       z-index: $footer-reveal-index;
-    }
-
-    #primary {
-      background: $body-bg;
-    }
+    }    
   }
 
   @include media-breakpoint-down(xl) {
     #page {
-      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
     }
   }
 }

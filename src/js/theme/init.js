@@ -73,6 +73,16 @@ function wordtrap_init( $wrap ) {
 
     wordtrap_init();
 
+    // WhatsApp Sharing
+		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
+			$( '.share-whatsapp' ).show();
+		}
+		$( document ).ajaxComplete( function ( event, xhr, options ) {
+			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
+				$( '.share-whatsapp' ).show();
+			}
+		} );
+
   } );
 
 } )( window.theme, jQuery );

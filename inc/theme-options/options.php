@@ -245,6 +245,7 @@ require_once $dir . 'sections/skin/colors.php';
 require_once $dir . 'sections/skin/layout.php';
 require_once $dir . 'sections/skin/typography.php';
 require_once $dir . 'sections/skin/header.php';
+require_once $dir . 'sections/skin/main.php';
 require_once $dir . 'sections/skin/footer.php';
 
 // -> START Header Fields

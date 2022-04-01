@@ -10,7 +10,7 @@ $enable-negative-margins: true !default;
 $link-decoration: none !default;
 
 // Body
-$body-bg: #fff !default;
+$body-bg: #f5f5f5 !default;
 // Header
 $logo-max-width: 260px !default;
 
@@ -21,6 +21,10 @@ $menu-text-transform: uppercase !default;
 $menu-font-weight: 500 !default;
 $header-index: 1000 !default;
 
+// Main
+$main-bg: #f5f5f5 !default;
+$section-bg: #ffffff !default;
+
 // Footer
 $footer-bg: #252525 !default;
 $footer-color: #686868 !default;
@@ -29,4 +33,5 @@ $footer-reveal-index: -10 !default;
 $footer-headings-color: #fff !default;
 $footer-link-color: #686868 !default;
 $footer-link-hover-color: #888888 !default;
+
 

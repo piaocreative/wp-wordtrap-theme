@@ -9,44 +9,51 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Show Title
-$show_title = wordtrap_options( 'post-title' );
+// Post classes
+$post_classes = array();
+$post_classes[] = wordtrap_options( 'post-view' );
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
+  <?php if ( wordtrap_options( 'post-slideshow' ) ) : ?>
+    <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
 
-		<?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
+      <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
 
-	</div><!-- .post-thumbnail -->
+    </div><!-- .post-thumbnail -->
+  <?php endif; ?>
 
-	<header class="entry-header">
+  <div class="post-wrap">
 
-		<?php if ( $show_title ) : ?>
+    <header class="entry-header">
 
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+      <?php if ( wordtrap_options( 'post-title' ) ) : ?>
 
-		<?php endif; ?>
+        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
+      <?php endif; ?>
 
-			<?php wordtrap_post_metas(); ?>
+      <div class="entry-meta">
 
-		</div><!-- .entry-meta -->
+        <?php wordtrap_post_metas(); ?>
 
-	</header><!-- .entry-header -->	
+      </div><!-- .entry-meta -->
 
-	<div class="entry-content">
+    </header><!-- .entry-header -->
 
-		<?php the_content(); ?>
+    <div class="entry-content">
 
-	</div><!-- .entry-content -->
+      <?php the_content(); ?>
 
-	<footer class="entry-footer">
+    </div><!-- .entry-content -->
 
-		<?php wordtrap_entry_footer(); ?>
+    <footer class="entry-footer justify-content-between">
 
-	</footer><!-- .entry-footer -->
+      <?php wordtrap_entry_footer(); ?>
+
+    </footer><!-- .entry-footer -->
+
+  </div>
 
 </article><!-- #post-## -->

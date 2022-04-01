@@ -6,25 +6,232 @@
 */
 
 .post {
+  .post-thumbnail {
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    &.single {
+      margin-bottom: 2.5rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .entry-title {
+    margin-bottom: 1rem;
+  }
+
+  .entry-meta {        
+    margin-bottom: 1.5rem;
+
+    span:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    a {
+      color: $gray-500;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .entry-content {
+    margin-bottom: 2.5rem;
+  }
+
+  .entry-footer {
+    display: flex;
+    @extend .align-items-center;
+
+    @include media-breakpoint-down(lg) {
+      display: block;
+    }
+  }
+
+  .post-tags {
+    text-align: right;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 0.5rem;
+      text-align: left;
+    }
+
+    a {
+      @extend .badge;
+      background: $light;
+      color: $gray-500;
+      font-weight: $font-weight-normal;
+      margin-bottom: 5px;
+
+      &:not(:first-child) {
+        margin-left: 3px;
+      }
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.post.full {
+  .post-thumbnail {
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    margin-top: -2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    overflow: hidden;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .post.medium {
+    display: flex;
+
     .post-thumbnail {
-        &.single {
-            margin-bottom: 2.25rem;
-        }
+      margin-bottom: 0;      
+      padding-right: 2rem;
+      width: 50%;
     }
 
-    .entry-meta {        
-        margin-bottom: 1.5rem;
-
-        span:not(:last-child) {
-            margin-right: 1rem;
-        }
-
-        a {
-            color: $secondary;
-
-            &:hover {
-                color: $primary;
-            }
-        }
+    .post-wrap {
+      width: 50%;
     }
+
+    .entry-footer {
+      display: block;
+    }
+
+    .post-tags {
+      margin-top: 0.5rem;
+      text-align: left;
+    }
+  }
+}
+
+.post-password-form {
+  input[type="password"] {
+    @extend .form-control;
+    width: auto;
+    display: inline-block;
+  }
+  
+  input[type="submit"] {
+    @extend .btn;
+    @extend .btn-primary;
+    vertical-align: top;
+  }
+}
+
+.comments-title {
+  margin-bottom: 1rem;
+  
+  .badge {
+    font-weight: $font-weight-normal;
+  }
+}
+
+#comments {
+  .comment-navigation {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0;    
+  }
+
+  #comment-nav-below {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .comment-body {
+    background: transparent;
+    border-radius: 0;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+}
+
+.comment-list {
+  &,
+  ul {
+    @extend .list-unstyled;
+  }
+
+  ul.children {
+    margin-left: 4rem;
+  }
+}
+
+.comment-meta {
+  color: $gray-500;
+  margin-bottom: 0.2rem;
+
+  span:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+
+  span:not(.comment-by) {
+    font-size: 0.85em;
+  }
+}
+
+.comment-list {
+  margin-bottom: 0;
+}
+
+.comment-by {
+  a {
+    color: $secondary;
+
+    &:hover {
+      color: $primary;
+    }
+  }  
+}
+
+.comment-respond {
+  background: $light;
+  border-radius: $border-radius-lg;
+  margin-top: 2rem;
+  padding: 2rem;
+
+  .comment-list & {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .required {
+    color: $danger;
+  }
+
+  .form-control {
+    background: $white;
+    border: none;
+  }
+
+  .form-check-input {
+    background: $white;
+    border: none;
+    
+    &:checked {
+      background-color: $form-check-input-checked-bg-color;
+  
+      &[type="checkbox"] {
+        @if $enable-gradients {
+          background-image: escape-svg($form-check-input-checked-bg-image), var(--#{$variable-prefix}gradient);
+        } @else {
+          background-image: escape-svg($form-check-input-checked-bg-image);
+        }
+      }
+    }
+  }
+}
+
+#cancel-comment-reply-link {
+  font-size: 1rem;
+  margin-left: 1rem;
 }

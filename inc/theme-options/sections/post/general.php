@@ -43,17 +43,17 @@ Redux::set_section(
         ),
         'default'      => array( 'date', 'author', 'cats', 'tags', 'comments' ),
       ),
-      array(
-        'id'           => 'post-meta-position',
-        'type'         => 'button_set',
-        'title'        => esc_html__( 'Post Metas Position', 'wordtrap' ),
-        'options'      => array(
-          ''           => esc_html__( 'Normal', 'wordtrap' ),
-          'after'      => esc_html__( 'After Content', 'wordtrap' ),
-          'before'     => esc_html__( 'Before Content', 'wordtrap' ),
-        ),
-        'default'      => '',
-      ),
+      // array(
+      //   'id'           => 'post-meta-position',
+      //   'type'         => 'button_set',
+      //   'title'        => esc_html__( 'Post Metas Position', 'wordtrap' ),
+      //   'options'      => array(
+      //     ''           => esc_html__( 'Normal', 'wordtrap' ),
+      //     'after'      => esc_html__( 'After Content', 'wordtrap' ),
+      //     'before'     => esc_html__( 'Before Content', 'wordtrap' ),
+      //   ),
+      //   'default'      => '',
+      // ),
     )
   )
 );

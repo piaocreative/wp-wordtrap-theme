@@ -9723,7 +9723,7 @@
 	      var $el = this.options.wrapper,
 	          page = $el.find('#page'),
 	          height = $el.find('#footer').height();
-	      page.css('padding-bottom', height);
+	      page.css('margin-bottom', height);
 	    }
 	  }; // expose to scope
 
@@ -9801,7 +9801,17 @@
 	(function (theme, $) {
 
 	  $(document).ready(function () {
-	    wordtrap_init();
+	    wordtrap_init(); // WhatsApp Sharing
+
+	    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	      $('.share-whatsapp').show();
+	    }
+
+	    $(document).ajaxComplete(function (event, xhr, options) {
+	      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	        $('.share-whatsapp').show();
+	      }
+	    });
 	  });
 	})(window.theme, jQuery);
 
