@@ -163,6 +163,10 @@
 
   ul.children {
     margin-left: 4rem;
+
+    @include media-breakpoint-down(md) {
+      margin-left: 2rem;
+    }
   }
 }
 
