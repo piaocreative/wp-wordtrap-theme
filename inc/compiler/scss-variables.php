@@ -47,7 +47,7 @@ $light:                       <?php echo $g['light'] ?>;
 <?php if ( $g['dark'] ) : ?>
 $dark:                        <?php echo $g['dark'] ?>;
 <?php endif ?>
-$min-contrast-ratio:          3.5;
+$min-contrast-ratio:          3;
 
 // Grays
 <?php if ( $g['white'] ) : ?>
