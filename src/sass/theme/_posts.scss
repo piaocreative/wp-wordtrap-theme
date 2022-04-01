@@ -41,6 +41,13 @@
 
   .entry-content {
     margin-bottom: 2.5rem;
+    @include clearfix;
+
+    figure,
+    img,
+    iframe {
+      max-width: 100%;
+    }
   }
 
   .entry-footer {
@@ -113,6 +120,22 @@
   }
 }
 
+article.post,
+#comments,
+.navigation {
+  background: $section-bg;
+  border-radius: $border-radius-lg;
+  padding: 2rem;
+
+  @include media-breakpoint-down(lg) {
+    padding: 1.5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 1rem;
+  }
+}
+
 .post-password-form {
   input[type="password"] {
     @extend .form-control;
@@ -127,6 +150,42 @@
   }
 }
 
+.post-nav-links {
+  @extend .d-flex;
+  @extend .flex-wrap;
+  @extend .align-items-center;
+  @extend .justify-content-center;
+  margin-top: 1rem;
+}
+
+.post-page-numbers {
+  @extend .btn;
+  @extend .btn-light;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+
+  &.current {
+    @extend .btn-primary;
+  }
+}
+
+.navigation,
+.comment-navigation,
+.post-page-numbers,
+.comment-by {
+  a {
+    color: $secondary;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.navigation {
+  margin-top: 2rem;
+}
+
 .comments-title {
   margin-bottom: 1rem;
   
@@ -136,6 +195,8 @@
 }
 
 #comments {
+  margin-top: 2rem;
+
   .comment-navigation {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -144,7 +205,6 @@
 
   #comment-nav-below {
     margin-top: 0;
-    margin-bottom: 0;
   }
 
   .comment-body {
@@ -187,20 +247,9 @@
   margin-bottom: 0;
 }
 
-.comment-by {
-  a {
-    color: $secondary;
-
-    &:hover {
-      color: $primary;
-    }
-  }  
-}
-
 .comment-respond {
   background: $light;
   border-radius: $border-radius-lg;
-  margin-top: 2rem;
   padding: 2rem;
 
   @include media-breakpoint-down(lg) {
@@ -212,7 +261,6 @@
   }
 
   .comment-list & {
-    margin-top: 0;
     margin-bottom: 2rem;
   }
   

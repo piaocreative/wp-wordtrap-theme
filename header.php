@@ -35,7 +35,14 @@ if ( in_array( $layout, array( 'wide', 'wide-left-sidebar', 'wide-right-sidebar'
 }
 
 // Main classes
-$main_classes = array( 'site-main', 'col', 'order-2' );
+$main_classes = array( 'site-main', 'order-2' );
+if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+  $main_classes[] = '';
+} else if ( in_array( $layout, array( 'wide-left-sidebar', 'wide-right-sidebar', 'left-sidebar', 'right-sidebar' ) ) ) {
+  $main_classes[] = 'col-md-8 col-lg-9';
+} else if ( in_array( $layout, array( 'wide-both-sidebars', 'both-sidebars' ) ) ) {
+  $main_classes[] = 'col-lg-6';
+}
 
 // Main templates
 $main_top_template = wordtrap_layout_template( 'main', 'main-top' );

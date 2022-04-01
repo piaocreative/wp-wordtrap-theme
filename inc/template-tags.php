@@ -91,6 +91,10 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
       wordtrap_social_share();
     }
 
+    if ( ! $post_metas ) {
+      return;
+    }
+
     if ( in_array( 'tags', $post_metas ) ) {
       $tags = get_the_tag_list( esc_html__( ' ', 'wordtrap' ), ' ' );
       if ( $tags ) {
@@ -124,9 +128,9 @@ if ( ! function_exists( 'wordtrap_post_nav' ) ) {
       return;
     }
     ?>
-    <nav class="navigation post-navigation justify-content-between">
+    <nav class="navigation post-navigation">
       <h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'wordtrap' ); ?></h2>
-      <div class="d-flex nav-links">
+      <div class="d-flex nav-links justify-content-between">
         <?php
         if ( get_previous_post_link() ) {
           previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous', 'wordtrap' ) );
@@ -140,3 +144,16 @@ if ( ! function_exists( 'wordtrap_post_nav' ) ) {
     <?php
   }
 }
+
+if ( ! function_exists( 'wordtrap_link_pages_args' ) ) {
+  /**
+   * Filters the arguments used in retrieving page links for paginated posts.
+   */
+  function wordtrap_link_pages_args( $args ) {
+    $args[ 'nextpagelink' ] = __( 'Next&nbsp;<i class="fa fa-angle-right"></i>', 'wordtrap' );
+    $args[ 'previouspagelink' ] = __( '<i class="fa fa-angle-left"></i>&nbsp;Back', 'wordtrap' );
+    return $args;
+  }
+}
+
+add_filter( 'wp_link_pages_args', 'wordtrap_link_pages_args' );

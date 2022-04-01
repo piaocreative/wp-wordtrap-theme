@@ -17,7 +17,8 @@
 
 // Archives, Page List, Categories
 [class*="wp-block"][class$="list"],
-[class*="wp-block"][class*="list "] {
+[class*="wp-block"][class*="list "],
+.wp-block-rss {
   list-style: none;
   padding-left: 0;
 
@@ -28,6 +29,14 @@
   
   li {
     margin: 1em 0;
+
+    a {
+      color: $secondary;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
   }
 }
 
@@ -42,10 +51,26 @@
 
 // Tag Cloud
 .tag-cloud-link {
-  background: darken($body-bg, 10%);
-  color: $body-color;
-  text-decoration: none;
-  font-weight: normal;
+  @extend .badge;
+  background: $light;
+  color: $gray-500;
+  font-weight: $font-weight-normal;
+  margin-bottom: 5px;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+// Comments Widget
+.wp-block-latest-comments {
+  a {
+    color: $secondary;
+
+    &:hover {
+      color: $primary;
+    }
+  }
 }
 
 // Socials
@@ -53,31 +78,12 @@
   border-radius: $border-radius;
 }
 
-// Search
-.wp-block-search {
-  label {
-    @extend .form-label;
-  }
-
-  input {
-    @extend .form-control;
-  }
-  
-  button {
-    @extend .btn;
-    @extend .btn-primary;
-  }
-}
-
-// Tag Cloud
-.tag-cloud-link {
-  @extend .badge;
-}
-
 // Tables
 .wp-block-table table {
-  @extend .table;
-  @extend .table-bordered;
+  td,
+  th {
+    border-color: $border-color;
+  }
 }
 
 // Block Quotes
@@ -92,21 +98,25 @@
 figure.wp-block-image {
   @extend .figure;
   display: block;
+  
   img {
     @extend .figure-img;
   }
+
   figcaption {
     @extend .figure-caption;
   }
 }
 
 // Alternate/classic editor image captions.
-.wp-block-image > figure{
+.wp-block-image > figure {
   @extend .figure;
   display: block;
+
   img {
     @extend .figure-img;
   }
+
   figcaption {
     @extend .figure-caption;
   }
@@ -121,5 +131,109 @@ figure.wp-block-image {
     &:not(.is-style-outline) .wp-block-button__link {
       border: $btn-border-width solid transparent;
     }
+  }
+}
+
+.wp-block-button {
+  &.is-style-squared {
+    .wp-block-button__link {
+      border-radius: 0;
+    }
+  }
+}
+
+.wp-block-button,
+.blocks-gallery-caption {
+  margin-bottom: 1em;
+}
+
+[class*="wp-block-"] {
+  &.alignleft {
+    float: left;
+    margin-left: 0;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+
+  &.alignright {
+    float: right;
+    margin-right: 0;
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+
+  label {
+    @extend .form-label;
+  }
+
+  input:not([type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]),
+  textarea {
+    @extend .form-control;
+    @extend .mb-3;
+  }
+
+  select {
+    @extend .form-select;
+    @extend .mb-3;
+  }
+
+  [type="checkbox"], 
+  [type="radio"] {
+    @extend .form-check-input;
+    @extend .mb-3;
+  }
+  
+  button,
+  [type="button"], 
+  [type="reset"], 
+  [type="submit"] {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .mb-3;
+  }
+}
+
+.gallery {
+  @extend .row;
+
+  .gallery-item {
+    text-align: center;
+  }
+}
+
+.gallery-columns-1 > .gallery-item {
+  width: 100%;
+}
+.gallery-columns-2 > .gallery-item {
+  width: 50%;
+}
+.gallery-columns-3 > .gallery-item {
+  width: 33.333333%;
+}
+.gallery-columns-4 > .gallery-item {
+  width: 25%;
+}
+.gallery-columns-5 > .gallery-item {
+  width: 20%;
+}
+.gallery-columns-6 > .gallery-item {
+  width: 16.666666%;
+}
+.gallery-columns-7 > .gallery-item {
+  width: 14.285714%;
+}
+.gallery-columns-8 > .gallery-item {
+  width: 12.5%;
+}
+.gallery-columns-9 > .gallery-item {
+  width: 11.111111%;
+}
+.gallery-columns-10 > .gallery-item {
+  width: 10%;
+}
+
+figure {
+  figcaption {
+    margin-top: 0.5em;
   }
 }

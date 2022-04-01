@@ -16,7 +16,7 @@ $post_classes[] = wordtrap_options( 'post-view' );
 
 <article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
 
-  <?php if ( wordtrap_options( 'post-slideshow' ) ) : ?>
+  <?php if ( wordtrap_options( 'post-slideshow' ) && has_post_thumbnail( $post->ID ) ) : ?>
     <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
 
       <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
@@ -45,6 +45,8 @@ $post_classes[] = wordtrap_options( 'post-view' );
     <div class="entry-content">
 
       <?php the_content(); ?>
+
+      <?php wp_link_pages(); ?>
 
     </div><!-- .entry-content -->
 

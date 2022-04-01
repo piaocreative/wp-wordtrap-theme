@@ -1,0 +1,40 @@
+/*
+* The styles for post
+*
+* @package Wordtrap
+* @since wordtrap 1.0.0
+*/
+
+@include media-breakpoint-up(xl) {
+  #left-sidebar {
+    padding-right: var(--bs-gutter-x, 1rem);
+  }
+
+  #right-sidebar {
+    padding-left: var(--bs-gutter-x, 1rem);
+  }
+}
+
+.widget-area {
+  margin-bottom: 2rem;
+
+  aside {
+    background: $section-bg;
+    border-radius: $border-radius-lg;
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-down(lg) {
+      padding: 1.5rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 1rem;
+    }
+
+    &:last-child,
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
