@@ -14,42 +14,36 @@ defined( 'ABSPATH' ) || exit;
 
 <section class="no-results not-found">
 
-	<header class="page-header">
+  <div class="page-content">
 
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wordtrap' ); ?></h1>
+    <?php
+    if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
-	</header><!-- .page-header -->
+      $kses = array( 'a' => array( 'href' => array() ) );
+      printf(
+        /* translators: 1: Link to WP admin new post page. */
+        '<div class="alert alert-info">' . wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wordtrap' ), $kses ) . '</div>',
+        esc_url( admin_url( 'post-new.php' ) )
+      );
 
-	<div class="page-content">
+    elseif ( is_search() ) :
 
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+      printf(
+        '<div class="alert alert-info">%s</div>',
+        esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wordtrap' )
+      );
+      get_search_form();
 
-			$kses = array( 'a' => array( 'href' => array() ) );
-			printf(
-				/* translators: 1: Link to WP admin new post page. */
-				'<div class="alert alert-info">' . wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wordtrap' ), $kses ) . '</div>',
-				esc_url( admin_url( 'post-new.php' ) )
-			);
+    else :
 
-		elseif ( is_search() ) :
+      printf(
+        '<div class="alert alert-info">%s</div>',
+        esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wordtrap' )
+      );
+      get_search_form();
 
-			printf(
-				'<div class="alert alert-info">%s</div>',
-				esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wordtrap' )
-			);
-			get_search_form();
-
-		else :
-
-			printf(
-				'<div class="alert alert-info">%s</div>',
-				esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wordtrap' )
-			);
-			get_search_form();
-
-		endif;
-		?>
-	</div><!-- .page-content -->
+    endif;
+    ?>
+  </div><!-- .page-content -->
 
 </section><!-- .no-results -->

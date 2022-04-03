@@ -1,27 +1,27 @@
 /*
-* Javascript for the footer 
+* Javascript for the posts filter navigation 
 *
 * @package Wordtrap
 * @since wordtrap 1.0.0
 */
 
-// Reveal Footer
+// Posts Filter
 ( function ( theme, $ ) {
   'use strict';
 
   theme = theme || {};
 
-  var instanceName = '__reveal_footer';
+  var instanceName = '__posts_filter';
 
-  var RevealFooter = function ( $el, opts ) {
+  var PostsFilter = function ( $el, opts ) {
     return this.initialize( $el, opts );
   };
 
-  RevealFooter.defaults = {
+  PostsFilter.defaults = {
     
   };
 
-  RevealFooter.prototype = {
+  PostsFilter.prototype = {
     initialize: function ( $el, opts ) {
       if ( $el.data( instanceName ) ) {
         return this;
@@ -44,7 +44,7 @@
     },
 
     setOptions: function ( opts ) {
-      this.options = $.extend( true, {}, RevealFooter.defaults, opts );
+      this.options = $.extend( true, {}, PostsFilter.defaults, opts );
 
       return this;
     },
@@ -52,37 +52,28 @@
     build: function () {
       var self = this;
 
-      self.resize();
-      $( window ).smartresize( function () {
-        self.resize()
+      self.$el.find( 'select, input').on( 'change', function() {
+        self.$el.find( 'form' ).submit();
       } );
 
       return self;
     },
-
-    resize: function () {
-      var $el = this.$el,
-        page = $el.find( '#page' ),
-        height = $el.find( '#footer' ).height();
-
-      page.css( 'margin-bottom', height );
-    }
   };
 
   // expose to scope
   $.extend( theme, {
-    RevealFooter: RevealFooter
+    PostsFilter: PostsFilter
   } );
 
   // jquery plugin
-  $.fn.themeRevealFooter = function ( opts ) {
+  $.fn.themePostsFilter = function ( opts ) {
     return this.map( function () {
       var $this = $( this );
       if ( $this.data( instanceName ) ) {
         return $this.data( instanceName );
       }
       
-      return new theme.RevealFooter( $this, opts );
+      return new theme.PostsFilter( $this, opts );
     } );
   }
 

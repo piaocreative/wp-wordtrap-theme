@@ -61,9 +61,56 @@ function wordtrap_init( $wrap ) {
         } );
       } );
     }
-  } )( jQuery );  
-}
 
+    // Scroll to Top
+    if ( $.fn.themeScrollToTop ) {
+      $( function () {
+        $wrap.each( function () {
+          var $this = $( this ),
+            opts;
+
+          var pluginOptions = $this.data( 'plugin-options' );
+          if ( pluginOptions )
+            opts = pluginOptions;
+
+          $this.themeScrollToTop( opts );
+        } );
+      } );
+    }
+
+    // WhatsApp sharing
+    if ( $.fn.themeWhatsAppSharing ) {
+      $( function () {
+        $wrap.each( function () {
+          var $this = $( this ),
+            opts;
+
+          var pluginOptions = $this.data( 'plugin-options' );
+          if ( pluginOptions )
+            opts = pluginOptions;
+
+          $this.themeWhatsAppSharing( opts );
+        } );
+      } );
+    }
+
+    // Posts Filter
+    if ( $.fn.themePostsFilter ) {
+      $( function () {
+        $wrap.find( '.posts-filter-nav' ).each( function () {
+          var $this = $( this ),
+            opts;
+
+          var pluginOptions = $this.data( 'plugin-options' );
+          if ( pluginOptions )
+            opts = pluginOptions;
+
+          $this.themePostsFilter( opts );
+        } );
+      } );
+    }
+  } )( jQuery );
+}
 
 ( function ( theme, $ ) {
 
@@ -71,17 +118,7 @@ function wordtrap_init( $wrap ) {
 
   $( document ).ready( function () {
 
-    wordtrap_init();
-
-    // WhatsApp Sharing
-		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
-			$( '.share-whatsapp' ).show();
-		}
-		$( document ).ajaxComplete( function ( event, xhr, options ) {
-			if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
-				$( '.share-whatsapp' ).show();
-			}
-		} );
+    wordtrap_init();    
 
   } );
 

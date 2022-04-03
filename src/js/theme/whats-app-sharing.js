@@ -1,34 +1,34 @@
 /*
-* Javascript for the footer 
+* Javascript for whatsapp sharing 
 *
 * @package Wordtrap
 * @since wordtrap 1.0.0
 */
 
-// Reveal Footer
+// Whatsapp Sharing
 ( function ( theme, $ ) {
   'use strict';
 
   theme = theme || {};
 
-  var instanceName = '__reveal_footer';
+  var instanceName = '__whatsapp_sharing';
 
-  var RevealFooter = function ( $el, opts ) {
+  var WhatsAppSharing = function ( $el, opts ) {
     return this.initialize( $el, opts );
   };
 
-  RevealFooter.defaults = {
+  WhatsAppSharing.defaults = {
     
   };
 
-  RevealFooter.prototype = {
+  WhatsAppSharing.prototype = {
     initialize: function ( $el, opts ) {
       if ( $el.data( instanceName ) ) {
         return this;
       }
 
       this.$el = $el;
-      
+
       this
         .setData()
         .setOptions( opts )
@@ -44,7 +44,7 @@
     },
 
     setOptions: function ( opts ) {
-      this.options = $.extend( true, {}, RevealFooter.defaults, opts );
+      this.options = $.extend( true, {}, WhatsAppSharing.defaults, opts );
 
       return this;
     },
@@ -52,37 +52,34 @@
     build: function () {
       var self = this;
 
-      self.resize();
-      $( window ).smartresize( function () {
-        self.resize()
+      // WhatsApp Sharing
+      if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
+        self.$el.find( '.share-whatsapp' ).show();
+      }
+      $( document ).ajaxComplete( function ( event, xhr, options ) {
+        if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
+          self.$el.find( '.share-whatsapp' ).show();
+        }
       } );
 
       return self;
-    },
-
-    resize: function () {
-      var $el = this.$el,
-        page = $el.find( '#page' ),
-        height = $el.find( '#footer' ).height();
-
-      page.css( 'margin-bottom', height );
     }
   };
 
   // expose to scope
   $.extend( theme, {
-    RevealFooter: RevealFooter
+    WhatsAppSharing: WhatsAppSharing
   } );
 
   // jquery plugin
-  $.fn.themeRevealFooter = function ( opts ) {
+  $.fn.themeWhatsAppSharing = function ( opts ) {
     return this.map( function () {
       var $this = $( this );
       if ( $this.data( instanceName ) ) {
         return $this.data( instanceName );
       }
       
-      return new theme.RevealFooter( $this, opts );
+      return new theme.WhatsAppSharing( $this, opts );
     } );
   }
 

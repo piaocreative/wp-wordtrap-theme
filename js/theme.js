@@ -9461,9 +9461,7 @@
 	      return this;
 	    },
 	    setOptions: function (opts) {
-	      this.options = $.extend(true, {}, FixedHeader.defaults, opts, {
-	        wrapper: this.$el
-	      });
+	      this.options = $.extend(true, {}, FixedHeader.defaults, opts);
 	      return this;
 	    },
 	    build: function () {
@@ -9482,7 +9480,7 @@
 	      return self;
 	    },
 	    resize: function () {
-	      var $el = this.options.wrapper,
+	      var $el = this.$el,
 	          height = $el.outerHeight(),
 	          html_margin = parseFloat($('html').css('margin-top'));
 	      $el.css('top', html_margin);
@@ -9490,7 +9488,7 @@
 	      this.scroll();
 	    },
 	    scroll: function () {
-	      var $el = this.options.wrapper,
+	      var $el = this.$el,
 	          scroll_top = $(window).scrollTop();
 
 	      if ($('#wpadminbar').length && $('#wpadminbar').css('position') == 'absolute') {
@@ -9561,9 +9559,7 @@
 	      return this;
 	    },
 	    setOptions: function (opts) {
-	      this.options = $.extend(true, {}, StickyHeader.defaults, opts, {
-	        wrapper: this.$el
-	      });
+	      this.options = $.extend(true, {}, StickyHeader.defaults, opts);
 	      return this;
 	    },
 	    checkVisivility: function () {
@@ -9578,7 +9574,7 @@
 	    },
 	    reset: function () {
 	      var self = this,
-	          $el = this.options.wrapper;
+	          $el = this.$el;
 	      self.header.removeClass('sticky-header');
 	      self.header.css('height', '');
 	      $el.stop().css('top', 0);
@@ -9597,7 +9593,7 @@
 	    },
 	    build: function () {
 	      var self = this,
-	          $el = this.options.wrapper,
+	          $el = this.$el,
 	          $html = $('html');
 
 	      if (!self.is_sticky && window.innerHeight + self.header_height + theme.adminBarHeight() + parseInt(self.header.css('border-top-width')) >= $(document).height()) {
@@ -9706,9 +9702,7 @@
 	      return this;
 	    },
 	    setOptions: function (opts) {
-	      this.options = $.extend(true, {}, RevealFooter.defaults, opts, {
-	        wrapper: this.$el
-	      });
+	      this.options = $.extend(true, {}, RevealFooter.defaults, opts);
 	      return this;
 	    },
 	    build: function () {
@@ -9720,7 +9714,7 @@
 	      return self;
 	    },
 	    resize: function () {
-	      var $el = this.options.wrapper,
+	      var $el = this.$el,
 	          page = $el.find('#page'),
 	          height = $el.find('#footer').height();
 	      page.css('margin-bottom', height);
@@ -9740,6 +9734,224 @@
 	      }
 
 	      return new theme.RevealFooter($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery);
+
+	/*
+	* Javascript for the scroll to top 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Scroll to Top
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__scroll_to_top';
+
+	  var ScrollToTop = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  ScrollToTop.defaults = {
+	    icon: 'fa fa-chevron-up',
+	    trigger: 300,
+	    id: 'scroll-to-top',
+	    activeClass: 'show',
+	    offsetX: 15,
+	    offsetY: 15,
+	    transitionDuration: 300,
+	    scrollDuration: 300
+	  };
+	  ScrollToTop.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, ScrollToTop.defaults, opts);
+	      return this;
+	    },
+	    build: function () {
+	      var self = this;
+	      var btn = $('<div id="' + self.options.id + '"></div>');
+	      btn.prepend('<i class="' + self.options.icon + '"></i>');
+	      btn.addClass(self.options.class);
+	      btn.css({
+	        transitionDuration: self.options.transitionDuration + 'ms',
+	        right: self.options.offsetX,
+	        bottom: self.options.offsetY
+	      });
+	      $(window).on('scroll', function () {
+	        if ($(window).scrollTop() > self.options.trigger) {
+	          btn.addClass(self.options.activeClass);
+	        } else {
+	          btn.removeClass(self.options.activeClass);
+	        }
+	      });
+	      btn.on('click', function (e) {
+	        e.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: 0
+	        }, self.options.scrollDuration);
+	      });
+	      self.$el.append(btn);
+	      return self;
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    ScrollToTop: ScrollToTop
+	  }); // jquery plugin
+
+	  $.fn.themeScrollToTop = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.ScrollToTop($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery);
+
+	/*
+	* Javascript for whatsapp sharing 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Whatsapp Sharing
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__whatsapp_sharing';
+
+	  var WhatsAppSharing = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  WhatsAppSharing.defaults = {};
+	  WhatsAppSharing.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, WhatsAppSharing.defaults, opts);
+	      return this;
+	    },
+	    build: function () {
+	      var self = this; // WhatsApp Sharing
+
+	      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	        self.$el.find('.share-whatsapp').show();
+	      }
+
+	      $(document).ajaxComplete(function (event, xhr, options) {
+	        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	          self.$el.find('.share-whatsapp').show();
+	        }
+	      });
+	      return self;
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    WhatsAppSharing: WhatsAppSharing
+	  }); // jquery plugin
+
+	  $.fn.themeWhatsAppSharing = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.WhatsAppSharing($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery);
+
+	/*
+	* Javascript for the posts filter navigation 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Posts Filter
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__posts_filter';
+
+	  var PostsFilter = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  PostsFilter.defaults = {};
+	  PostsFilter.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, PostsFilter.defaults, opts);
+	      return this;
+	    },
+	    build: function () {
+	      var self = this;
+	      self.$el.find('select, input').on('change', function () {
+	        self.$el.find('form').submit();
+	      });
+	      return self;
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    PostsFilter: PostsFilter
+	  }); // jquery plugin
+
+	  $.fn.themePostsFilter = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.PostsFilter($this, opts);
 	    });
 	  };
 	})(window.theme, jQuery);
@@ -9794,6 +10006,45 @@
 	          $this.themeRevealFooter(opts);
 	        });
 	      });
+	    } // Scroll to Top
+
+
+	    if ($.fn.themeScrollToTop) {
+	      $(function () {
+	        $wrap.each(function () {
+	          var $this = $(this),
+	              opts;
+	          var pluginOptions = $this.data('plugin-options');
+	          if (pluginOptions) opts = pluginOptions;
+	          $this.themeScrollToTop(opts);
+	        });
+	      });
+	    } // WhatsApp sharing
+
+
+	    if ($.fn.themeWhatsAppSharing) {
+	      $(function () {
+	        $wrap.each(function () {
+	          var $this = $(this),
+	              opts;
+	          var pluginOptions = $this.data('plugin-options');
+	          if (pluginOptions) opts = pluginOptions;
+	          $this.themeWhatsAppSharing(opts);
+	        });
+	      });
+	    } // Posts Filter
+
+
+	    if ($.fn.themePostsFilter) {
+	      $(function () {
+	        $wrap.find('.posts-filter-nav').each(function () {
+	          var $this = $(this),
+	              opts;
+	          var pluginOptions = $this.data('plugin-options');
+	          if (pluginOptions) opts = pluginOptions;
+	          $this.themePostsFilter(opts);
+	        });
+	      });
 	    }
 	  })(jQuery);
 	}
@@ -9801,17 +10052,7 @@
 	(function (theme, $) {
 
 	  $(document).ready(function () {
-	    wordtrap_init(); // WhatsApp Sharing
-
-	    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-	      $('.share-whatsapp').show();
-	    }
-
-	    $(document).ajaxComplete(function (event, xhr, options) {
-	      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-	        $('.share-whatsapp').show();
-	      }
-	    });
+	    wordtrap_init();
 	  });
 	})(window.theme, jQuery);
 

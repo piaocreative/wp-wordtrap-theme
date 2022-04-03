@@ -151,7 +151,7 @@ if ( ! function_exists( 'wordtrap_link_pages_args' ) ) {
    */
   function wordtrap_link_pages_args( $args ) {
     $args[ 'before' ] = '<p class="post-nav-links"><span class="me-1">' . __( 'Pages:', 'wordtrap' ) . '</span>';
-		$args[ 'after' ] = '</p>';
+    $args[ 'after' ] = '</p>';
     $args[ 'nextpagelink' ] = __( 'Next&nbsp;<i class="fa fa-angle-right"></i>', 'wordtrap' );
     $args[ 'previouspagelink' ] = __( '<i class="fa fa-angle-left"></i>&nbsp;Back', 'wordtrap' );
     return $args;
@@ -159,3 +159,185 @@ if ( ! function_exists( 'wordtrap_link_pages_args' ) ) {
 }
 
 add_filter( 'wp_link_pages_args', 'wordtrap_link_pages_args' );
+
+if ( ! function_exists( 'wordtrap_get_archive_post_type' ) ) {
+  /**
+   * Get post type of archive page
+   *
+   * @return string - The post type of the archive page.
+   */
+  function wordtrap_get_archive_post_type() {
+    $post_type = '';
+    
+    // Posts page, Date archive, Search results, Author archive
+    if ( is_home() || is_date() || is_search() || is_author() ) {
+      $post_type = 'post';
+    } else if ( is_archive() ) {
+      $post_type = '';
+      $term = get_queried_object();
+      // Taxonomy page
+      if ( $term && isset( $term->taxonomy ) ) {
+        global $wp_taxonomies;
+        $taxonomy = $term->taxonomy;
+        if ( isset( $wp_taxonomies[ $taxonomy ] ) ) {
+          $post_type = $wp_taxonomies[ $taxonomy ]->object_type[0];
+        }
+      }
+      // Post type archive page
+      else if ( is_post_type_archive() ) {
+        global $wp_query;
+        $post_type = $wp_query->query[ 'post_type' ];
+      }
+    }
+
+    return $post_type;
+  }
+}
+
+if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
+  /**
+   * Show posts filter navigation
+   *
+   * @param string $nav_id - The ID of the filter navigation.
+   */
+  function wordtrap_posts_filter_navigation( $nav_id ) {
+
+    $post_type = wordtrap_get_archive_post_type();
+
+    if ( ! $post_type ) {
+      return;
+    }    
+
+    if ( $nav_id === 'posts-filter-above' && ! ( wordtrap_options( $post_type . 's-sort' ) || wordtrap_options( $post_type . 's-show-count' ) || wordtrap_options( $post_type . 's-view-mode' ) ) ) {
+      return;
+    }
+
+    $posts_orderby_options = apply_filters(
+      'wordtrap_posts_orderby',
+      array(
+        ''              => __( 'Default sorting', 'wordtrap' ),
+        'relevance'     => __( 'Sort by popularity', 'wordtrap' ),
+        'comment_count' => __( 'Sort by comment count', 'wordtrap' ),
+        'date'          => __( 'Sort by latest', 'wordtrap' ),        
+      )
+    );
+
+    $default_orderby = is_search() ? 'relevance' : '';
+    $orderby = isset( $_GET['orderby'] ) ? sanitize_text_field( wp_unslash( $_GET['orderby'] ) ) : $default_orderby;
+
+    $posts_counts = wordtrap_options( $post_type . 's-show-count' ) ? wordtrap_options( $post_type . 's-counts' ) : false;
+    if ( ! is_array( $posts_counts ) ) {
+      $posts_counts = array( get_option( 'posts_per_page' ) );
+    }
+    $default_count = $posts_counts[ 0 ];
+    $posts_per_page = isset( $_GET['posts_per_page'] ) ? sanitize_text_field( wp_unslash( $_GET['posts_per_page'] ) ) : $default_count;
+
+    $default_view = wordtrap_options( $post_type . 's-default-view-mode') ? 'grid' : 'list';
+    $view = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['view'] ) ) : $default_view;
+    ?>
+    <nav class="posts-filter-nav" id="<?php echo esc_attr( $nav_id ); ?>">
+
+      <h3 class="screen-reader-text"><?php esc_html_e( 'Posts filter navigation', 'wordtrap' ); ?></h3>
+
+      <form class="posts-filter" method="get">
+        
+        <input type="hidden" name="paged" value="1" />
+        
+        <div class="posts-filter-wrap">
+          
+          <?php 
+          // Sort
+          if ( $nav_id == 'posts-filter-above' && wordtrap_options( $post_type . 's-sort' ) ) : ?>
+            <label>
+              <?php _e( 'Sort by:', 'wordtrap') ?>
+              <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Posts order', 'wordtrap' ); ?>">
+              <?php foreach ( $posts_orderby_options as $id => $name ) : ?>
+                <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+              <?php endforeach; ?>
+              </select>
+            </label>
+          <?php endif; 
+          if ( $nav_id == 'posts-filter-below' && wordtrap_options( $post_type . 's-sort' ) ) : ?>
+            <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby ) ?>"/>
+          <?php endif;
+          
+          if ( wordtrap_options( $post_type . 's-show-count' ) || wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
+            <div class="posts-view d-flex justify-content-center">
+
+              <?php 
+              // Count
+              if ( wordtrap_options( $post_type . 's-show-count' ) ) : ?>
+                <label>
+                  <?php _e( 'Show:', 'wordtrap') ?>
+                  <select name="posts_per_page" class="posts_per_page" aria-label="<?php esc_attr_e( 'Posts per page', 'wordtrap' ); ?>">
+                  <?php foreach ( $posts_counts as $count ) : ?>
+                    <option value="<?php echo esc_attr( $count ); ?>" <?php selected( $posts_per_page, $count ); ?>><?php echo esc_html( $count ); ?></option>
+                  <?php endforeach; ?>
+                  </select>
+                </label>
+              <?php endif; ?>
+
+              <?php 
+              // View Mode
+              if ( $nav_id == 'posts-filter-above' && wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
+                <div class="posts-view-mode">
+                  <label>
+                    <input type="radio" name="view" value="grid" <?php checked( $view, 'grid' ) ?>/>
+                    <i class="fa fa-th"></i>
+                  </label>
+                  <label>
+                    <input type="radio" name="view" value="list" <?php checked( $view, 'list' ) ?>/>
+                    <i class="fa fa-th-list"></i>
+                  </label>
+                </div>
+              <?php endif; 
+              if ( $nav_id == 'posts-filter-below' && wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
+                <input type="hidden" name="view" value="<?php echo esc_attr( $view ) ?>"/>  
+              <?php endif; ?>
+
+            </div>
+          <?php endif;
+          
+          if ( $nav_id == 'posts-filter-below' ) {
+            // Previous/next page navigation.
+            wordtrap_the_posts_navigation();
+          }
+          ?>
+
+        </div>
+      </form>
+    </nav>
+    <?php
+  }
+}
+
+if ( ! function_exists( 'wordtrap_pre_get_posts' ) ) {
+  /**
+   * Fires after the query variable object is created, but before the actual query is run.
+   *
+   * @param WP_Query $query The WP_Query instance (passed by reference).
+   */
+  function wordtrap_pre_get_posts( $query ) {
+    if ( ! $query->is_main_query() ) {
+      return;
+    }
+  
+    $post_type = wordtrap_get_archive_post_type();
+
+    if ( ! $post_type ) {
+      return;
+    }
+    
+    $posts_counts = wordtrap_options( $post_type . 's-show-count' ) ? wordtrap_options( $post_type . 's-counts' ) : false;
+    if ( ! is_array( $posts_counts ) ) {
+      $posts_counts = array( get_option( 'posts_per_page' ) );
+    }
+    $default_count = $posts_counts[ 0 ];
+    $posts_per_page = isset( $_GET['posts_per_page'] ) ? sanitize_text_field( wp_unslash( $_GET['posts_per_page'] ) ) : $default_count;
+    $query->set( 'posts_per_page', $posts_per_page );
+  
+    return $query;
+  }
+}
+
+add_action( 'pre_get_posts',  'wordtrap_pre_get_posts' );

@@ -87,3 +87,19 @@
     }
   }
 }
+
+#scroll-to-top {
+  @extend .btn;
+  @extend .btn-outline-primary;
+  opacity: 0;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  position: fixed;
+  visibility: hidden;
+  transition-property: all;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}

@@ -44,9 +44,7 @@
     },
 
     setOptions: function ( opts ) {
-      this.options = $.extend( true, {}, FixedHeader.defaults, opts, {
-        wrapper: this.$el
-      } );
+      this.options = $.extend( true, {}, FixedHeader.defaults, opts );
 
       return this;
     },
@@ -69,7 +67,7 @@
     },
 
     resize: function () {
-      var $el = this.options.wrapper,
+      var $el = this.$el,
         height = $el.outerHeight(),
         html_margin = parseFloat( $( 'html' ).css( 'margin-top' ) );
 
@@ -80,7 +78,7 @@
     },
 
     scroll: function() {
-      var $el = this.options.wrapper,
+      var $el = this.$el,
         scroll_top = $( window ).scrollTop();
           
       if ( $( '#wpadminbar' ).length && $( '#wpadminbar' ).css( 'position' ) == 'absolute' ) {
@@ -165,9 +163,7 @@
     },
 
     setOptions: function ( opts ) {
-      this.options = $.extend( true, {}, StickyHeader.defaults, opts, {
-        wrapper: this.$el,
-      } );
+      this.options = $.extend( true, {}, StickyHeader.defaults, opts );
 
       return this;
     },
@@ -192,7 +188,7 @@
 
     reset: function() {
       var self = this,
-        $el = this.options.wrapper;
+        $el = this.$el;
 
       self.header.removeClass( 'sticky-header' );
       self.header.css( 'height', '' );
@@ -216,7 +212,7 @@
 
     build: function () {
       var self = this,
-        $el = this.options.wrapper,
+        $el = this.$el,
         $html = $( 'html' );
 
       if ( ! self.is_sticky && ( window.innerHeight + self.header_height + theme.adminBarHeight() + parseInt( self.header.css( 'border-top-width' ) ) >= $( document ).height() ) ) {
