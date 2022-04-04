@@ -46,9 +46,9 @@ Redux::set_section(
         'default'  => 'full',
       ),
       array(
-        'id'       => 'post-slideshow',
+        'id'       => 'post-featured-image',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Slideshow', 'wordtrap' ),
+        'title'    => esc_html__( 'Featured Image', 'wordtrap' ),
         'default'  => true,
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),

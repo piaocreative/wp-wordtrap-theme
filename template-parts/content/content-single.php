@@ -11,14 +11,14 @@ defined( 'ABSPATH' ) || exit;
 
 // Post classes
 $post_classes = array();
-if ( wordtrap_options( 'post-slideshow' ) && has_post_thumbnail( $post->ID ) ) {
+if ( wordtrap_options( 'post-featured-image' ) && has_post_thumbnail( $post->ID ) ) {
   $post_classes[] = wordtrap_options( 'post-view' );
 }
 ?>
 
 <article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
 
-  <?php if ( wordtrap_options( 'post-slideshow' ) && has_post_thumbnail( $post->ID ) ) : ?>
+  <?php if ( wordtrap_options( 'post-featured-image' ) && has_post_thumbnail( $post->ID ) ) : ?>
     <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
 
       <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
@@ -32,7 +32,16 @@ if ( wordtrap_options( 'post-slideshow' ) && has_post_thumbnail( $post->ID ) ) {
 
       <?php if ( wordtrap_options( 'post-title' ) ) : ?>
 
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        <?php 
+        if ( is_sticky() && wordtrap_options( 'sticky-post-label' ) ) {
+          the_title( 
+            '<h1 class="entry-title d-inline-block position-relative">', 
+            '<span class="position-absolute top-0 start-100 badge rounded-pill bg-danger fs-6 ms-2"><small>' . wordtrap_options( 'sticky-post-label' ) . '</small></span></h1>' 
+          );
+        } else {
+          the_title( '<h1 class="entry-title">', '</h1>' );
+        }
+        ?>
 
       <?php endif; ?>
 

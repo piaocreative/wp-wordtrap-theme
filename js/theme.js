@@ -9801,7 +9801,7 @@
 	      });
 	      btn.on('click', function (e) {
 	        e.preventDefault();
-	        $('html, body').animate({
+	        $('html, body').stop().animate({
 	          scrollTop: 0
 	        }, self.options.scrollDuration);
 	      });

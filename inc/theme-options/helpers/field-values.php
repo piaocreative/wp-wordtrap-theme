@@ -184,32 +184,12 @@ if ( ! function_exists( 'wordtrap_font_style_options' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
+if ( ! function_exists( 'wordtrap_posts_grid_layout_options' ) ) {
   /**
-   * Post archive layout options
+   * Post archive layout options in the grid mode
    */
-  function wordtrap_posts_layout_options() {
+  function wordtrap_posts_grid_layout_options() {
     return array(
-      'full'  => array(
-        'title' => esc_html__( 'Full', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-full.svg',
-      ),
-      'large'  => array(
-        'title' => esc_html__( 'Large', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large.svg',
-      ),
-      // 'large-alt'  => array(
-      //   'title' => esc_html__( 'Large Alt', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large-alt.svg',
-      // ),
-      'medium'  => array(
-        'title' => esc_html__( 'Medium', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium.svg',
-      ),
-      // 'medium-alt'  => array(
-      //   'title' => esc_html__( 'Medium Alt', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium-alt.svg',
-      // ),
       'grid'  => array(
         'title' => esc_html__( 'Grid', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-grid.svg',
@@ -230,6 +210,36 @@ if ( ! function_exists( 'wordtrap_posts_layout_options' ) ) {
       //   'title' => esc_html__( 'Modern', 'wordtrap' ),
       //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-modern.svg',
       // ),
+    );
+  }
+}
+
+if ( ! function_exists( 'wordtrap_posts_list_layout_options' ) ) {
+  /**
+   * Post archive layout options in the list mode
+   */
+  function wordtrap_posts_list_layout_options() {
+    return array(
+      'full'  => array(
+        'title' => esc_html__( 'Full', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-full.svg',
+      ),
+      'large'  => array(
+        'title' => esc_html__( 'Large', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large.svg',
+      ),
+      // 'large-alt'  => array(
+      //   'title' => esc_html__( 'Large Alt', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large-alt.svg',
+      // ),
+      'medium'  => array(
+        'title' => esc_html__( 'Medium', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium.svg',
+      ),
+      // 'medium-alt'  => array(
+      //   'title' => esc_html__( 'Medium Alt', 'wordtrap' ),
+      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium-alt.svg',
+      // ),      
     );
   }
 }

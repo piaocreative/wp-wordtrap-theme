@@ -76,6 +76,44 @@ if ( ! function_exists( 'wordtrap_post_metas' ) ) {
       comments_popup_link( esc_html__( 'Leave a Comment', 'wordtrap' ), esc_html__( '1 Comment', 'wordtrap' ), esc_html__( '% Comments', 'wordtrap' ) );
       echo '</span>';
     }
+
+    if ( in_array( 'format', $post_metas ) ) {
+      $post_format = get_post_format();
+    
+      if ( $post_format ) {
+        $icon = wordtrap_post_format_icon();
+        $posted_on_format = apply_filters(
+          'wordtrap_posted_on_format',
+          sprintf(
+            '<span class="post-format"><a href="%1$s">%2$s</a></span>',
+            esc_url( get_post_format_link( $post_format ) ),
+            $icon
+          )
+        );
+  
+        echo $posted_on_format;
+      }
+    }
+  }
+}
+
+if ( ! function_exists( 'wordtrap_post_format_icon' ) ) {
+  /**
+   * Get post format icon
+   */
+  function wordtrap_post_format_icon() {
+    $post_format = get_post_format();
+    
+    $icon = '';
+    if ( $post_format ) {
+      if ( $post_format === 'link' ) {
+        $icon = '<i class="dashicons dashicons dashicons-admin-links"></i>';
+      } else {
+        $icon = '<i class="dashicons dashicons-format-' . esc_attr( $post_format ) . '"></i>';
+      }
+    }
+
+    return $icon;
   }
 }
 
@@ -84,13 +122,18 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
    * Show post footer
    */
   function wordtrap_entry_footer() {
-    // Post metas available
-    $post_metas = wordtrap_options( 'post-metas' );
+    if ( is_home() || is_date() || is_search() || is_author() || is_archive() ) {
+      $share = wordtrap_options( 'posts-share' );
+    } else {
+      $share = wordtrap_options( 'post-share' );
+    }
 
-    if ( wordtrap_options( 'post-share' ) ) {
+    if ( $share ) {
       wordtrap_social_share();
     }
 
+    // Post metas available
+    $post_metas = wordtrap_options( 'post-metas' );    
     if ( ! $post_metas ) {
       return;
     }
@@ -232,8 +275,8 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
     $default_count = $posts_counts[ 0 ];
     $posts_per_page = isset( $_GET['posts_per_page'] ) ? sanitize_text_field( wp_unslash( $_GET['posts_per_page'] ) ) : $default_count;
 
-    $default_view = wordtrap_options( $post_type . 's-default-view-mode') ? 'grid' : 'list';
-    $view = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['view'] ) ) : $default_view;
+    $default_view_mode = wordtrap_options( $post_type . 's-default-view-mode') ? 'grid' : 'list';
+    $view_mode = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['view'] ) ) : $default_view_mode;
     ?>
     <nav class="posts-filter-nav" id="<?php echo esc_attr( $nav_id ); ?>">
 
@@ -282,17 +325,17 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
               if ( $nav_id == 'posts-filter-above' && wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
                 <div class="posts-view-mode">
                   <label>
-                    <input type="radio" name="view" value="grid" <?php checked( $view, 'grid' ) ?>/>
+                    <input type="radio" name="view" value="grid" <?php checked( $view_mode, 'grid' ) ?>/>
                     <i class="fa fa-th"></i>
                   </label>
                   <label>
-                    <input type="radio" name="view" value="list" <?php checked( $view, 'list' ) ?>/>
+                    <input type="radio" name="view" value="list" <?php checked( $view_mode, 'list' ) ?>/>
                     <i class="fa fa-th-list"></i>
                   </label>
                 </div>
               <?php endif; 
               if ( $nav_id == 'posts-filter-below' && wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
-                <input type="hidden" name="view" value="<?php echo esc_attr( $view ) ?>"/>  
+                <input type="hidden" name="view" value="<?php echo esc_attr( $view_mode ) ?>"/>  
               <?php endif; ?>
 
             </div>

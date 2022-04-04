@@ -18,10 +18,14 @@ if ( ! function_exists( 'wordtrap_generate_post_formats' ) ) {
   function wordtrap_generate_post_formats() {
     return array(
       'aside',
-      'image',
-      'video',
-      'quote',
+      'gallery',
       'link',
+      'image',
+      'quote',
+      'status',
+      'video',
+      'audio',
+      'chat',
     );
   }
 }

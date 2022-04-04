@@ -6,15 +6,54 @@
 */
 
 .post-thumbnail {
-  border-radius: $border-radius-lg;
-  overflow: hidden;
-
-  &.single {
-    margin-bottom: 2.5rem;
-  }
+  margin-bottom: 2.5rem;
 
   img {
+    border-radius: $border-radius-lg;
     width: 100%;
+  }
+
+  a {
+    display: block;
+    position: relative;
+  }
+
+  .post-format {
+
+    &:before {
+      background: $dark;
+      border-radius: $border-radius-lg;
+      content: '';
+      opacity: 0.5;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    i {
+      border-radius: $border-radius-pill;
+      background: $primary;
+      color: color-contrast($primary);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      width: 4rem;
+      height: 4rem;
+      line-height: 4rem;
+    }
+  }
+
+  a:hover {
+    .post-format {
+      &:before {
+        opacity: 0.65;
+      }
+    } 
   }
 }
 
@@ -42,6 +81,13 @@
     margin-right: 1rem;
   }
 
+  .dashicons {
+    width: auto;
+    height: auto;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
   a {
     color: $gray-500;
 
@@ -52,7 +98,7 @@
 }
 
 .entry-content {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   @include clearfix;
 
   figure,
@@ -105,12 +151,10 @@
 
 .post.full {
   .post-thumbnail {
-    border-radius: $border-radius-lg $border-radius-lg 0 0;
     margin-top: -2rem;
     margin-left: -2rem;
     margin-right: -2rem;
-    overflow: hidden;
-
+    
     @include media-breakpoint-down(lg) {
       margin-top: -1.5rem;
       margin-left: -1.5rem;
@@ -121,6 +165,10 @@
       margin-top: -1rem;
       margin-left: -1rem;
       margin-right: -1rem;
+    }
+
+    img {
+      border-radius: $border-radius-lg $border-radius-lg 0 0;    
     }
   }
 }
