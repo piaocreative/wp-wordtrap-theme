@@ -413,7 +413,7 @@ if ( ! function_exists( 'wordtrap_grid_view_classes' ) ) {
    */
   function wordtrap_grid_view_classes() {
     $grid_view = wordtrap_options( 'posts-grid-view' );
-    if ( ! ( $grid_view === 'grid' || $grid_view === 'list' ) ) {
+    if ( ! ( $grid_view === 'grid' || $grid_view === 'masonry' ) ) {
       return '';
     }
 

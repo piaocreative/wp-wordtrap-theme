@@ -15,7 +15,6 @@ const pluginFilename = '';
 export default {
   input: [
     path.resolve(__dirname, '../js/bootstrap.js'), 
-    path.resolve(__dirname, '../js/isotope.js'), 
     path.resolve(__dirname, '../js/skip-link-focus-fix.js'),
     
     path.resolve(__dirname, '../js/theme/config.js'),
@@ -26,8 +25,8 @@ export default {
 
     path.resolve(__dirname, '../js/theme/whats-app-sharing.js'),
     path.resolve(__dirname, '../js/theme/posts-filter.js'),
-    
-    
+    path.resolve(__dirname, '../js/theme/masonry.js'),
+        
     path.resolve(__dirname, '../js/theme/init.js'),
     path.resolve(__dirname, '../js/theme.js')
   ],

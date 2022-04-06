@@ -493,6 +493,8 @@ article.post {
 
 // Grid view
 .posts-grid {
+  position: relative;
+  
   @include media-breakpoint-up(xl) {
     margin-left: calc(var(--bs-gutter-x) * -0.625);
     margin-right: calc(var(--bs-gutter-x) * -0.625);

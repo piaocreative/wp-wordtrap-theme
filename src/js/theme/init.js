@@ -18,14 +18,8 @@ function wordtrap_init( $wrap ) {
     if ( $.fn.themeFixedHeader ) {
       $( function () {
         $wrap.find( '.header-fixed' ).each( function () {
-          var $this = $( this ),
-            opts;
-
-          var pluginOptions = $this.data( 'plugin-options' );
-          if ( pluginOptions )
-            opts = pluginOptions;
-
-          $this.themeFixedHeader( opts );
+          var $this = $( this );
+          $this.themeFixedHeader( $this.data( 'options' ) );
         } );
       } );
     }
@@ -34,14 +28,8 @@ function wordtrap_init( $wrap ) {
     if ( $.fn.themeStickyHeader ) {
       $( function () {
         $wrap.find( '.header-wrap:not(.header-fixed)' ).each( function () {
-          var $this = $( this ),
-            opts;
-
-          var pluginOptions = $this.data( 'plugin-options' );
-          if ( pluginOptions )
-            opts = pluginOptions;
-
-          $this.themeStickyHeader( opts );
+          var $this = $( this );
+          $this.themeStickyHeader( $this.data( 'options' ) );
         } );
       } );
     }
@@ -50,14 +38,8 @@ function wordtrap_init( $wrap ) {
     if ( $.fn.themeRevealFooter && $wrap.hasClass( 'page-footer-reveal' ) ) {
       $( function () {
         $wrap.each( function () {
-          var $this = $( this ),
-            opts;
-
-          var pluginOptions = $this.data( 'plugin-options' );
-          if ( pluginOptions )
-            opts = pluginOptions;
-
-          $this.themeRevealFooter( opts );
+          var $this = $( this );
+          $this.themeRevealFooter( $this.data( 'options' ) );
         } );
       } );
     }
@@ -66,14 +48,8 @@ function wordtrap_init( $wrap ) {
     if ( $.fn.themeScrollToTop ) {
       $( function () {
         $wrap.each( function () {
-          var $this = $( this ),
-            opts;
-
-          var pluginOptions = $this.data( 'plugin-options' );
-          if ( pluginOptions )
-            opts = pluginOptions;
-
-          $this.themeScrollToTop( opts );
+          var $this = $( this );
+          $this.themeScrollToTop( $this.data( 'options' ) );
         } );
       } );
     }
@@ -82,14 +58,8 @@ function wordtrap_init( $wrap ) {
     if ( $.fn.themeWhatsAppSharing ) {
       $( function () {
         $wrap.each( function () {
-          var $this = $( this ),
-            opts;
-
-          var pluginOptions = $this.data( 'plugin-options' );
-          if ( pluginOptions )
-            opts = pluginOptions;
-
-          $this.themeWhatsAppSharing( opts );
+          var $this = $( this );
+          $this.themeWhatsAppSharing( $this.data( 'options' ) );
         } );
       } );
     }
@@ -98,17 +68,28 @@ function wordtrap_init( $wrap ) {
     if ( $.fn.themePostsFilter ) {
       $( function () {
         $wrap.find( '.posts-filter-nav' ).each( function () {
-          var $this = $( this ),
-            opts;
-
-          var pluginOptions = $this.data( 'plugin-options' );
-          if ( pluginOptions )
-            opts = pluginOptions;
-
-          $this.themePostsFilter( opts );
+          var $this = $( this );
+          $this.themePostsFilter( $this.data( 'options' ) );
         } );
       } );
     }
+
+    // Posts Masonry View
+    if ( $.fn.themeMasonry ) {
+      $( function () {
+        $wrap.find( '.posts-view-masonry' ).each( function () {
+          var $this = $( this ),
+            options = $this.data( 'options' );
+          
+          if ( ! options ) {
+            options = {};
+          }
+          options.itemSelector = '.post-wrap';
+          $this.themeMasonry( options );
+        } );
+      } );
+    }
+
   } )( jQuery );
 }
 

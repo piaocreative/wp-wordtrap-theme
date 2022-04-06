@@ -21,6 +21,7 @@
 .wp-block-rss {
   list-style: none;
   padding-left: 0;
+  margin-bottom: 0;
 
   ul {
     list-style: none;
@@ -29,6 +30,10 @@
   
   li {
     margin: 1em 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     a {
       color: $secondary;
@@ -43,6 +48,15 @@
 // Latest Comments
 .wp-block-latest-comments {
   padding-left: 0;
+
+  a {
+    color: $secondary;
+    line-height: inherit;
+
+    &:hover {
+      color: $primary;
+    }
+  }
 }
 
 .wp-block-latest-comments__comment-date {
@@ -61,17 +75,6 @@
   &:hover {
     color: $primary;
     text-decoration: none;
-  }
-}
-
-// Comments Widget
-.wp-block-latest-comments {
-  a {
-    color: $secondary;
-
-    &:hover {
-      color: $primary;
-    }
   }
 }
 
