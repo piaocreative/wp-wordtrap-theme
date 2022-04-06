@@ -30,11 +30,11 @@ Redux::set_section(
           'date'       => esc_html__( 'Date', 'wordtrap' ),
           'author'     => esc_html__( 'Author', 'wordtrap' ),
           'cats'       => esc_html__( 'Categories', 'wordtrap' ),
-          'comments'   => esc_html__( 'Comments', 'wordtrap' ),
           'format'     => esc_html__( 'Format', 'wordtrap' ),
+          'comments'   => esc_html__( 'Comments', 'wordtrap' ),
           'tags'       => esc_html__( 'Tags', 'wordtrap' ),
         ),
-        'default'      => array( 'date', 'author', 'cats', 'comments', 'format', 'tags' ),
+        'default'      => array( 'date', 'author', 'cats', 'format', 'comments', 'tags' ),
       ),
       // array(
       //   'id'           => 'post-meta-position',

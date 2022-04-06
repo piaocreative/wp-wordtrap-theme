@@ -7,11 +7,11 @@
 
 @include media-breakpoint-up(xl) {
   #left-sidebar {
-    padding-right: var(--bs-gutter-x, 1rem);
+    padding-right: calc(var(--bs-gutter-x) * 1.75);
   }
 
   #right-sidebar {
-    padding-left: var(--bs-gutter-x, 1rem);
+    padding-left: calc(var(--bs-gutter-x) * 1.75);
   }
 }
 

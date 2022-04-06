@@ -63,6 +63,7 @@ if ( ! function_exists( 'wordtrap_post_metas' ) ) {
       echo $posted_by_author;
     }
 
+    // Categories
     if ( in_array( 'cats', $post_metas ) ) {
       $cats = get_the_category_list( esc_html__( ', ', 'wordtrap' ) );
       if ( $cats ) {
@@ -70,13 +71,7 @@ if ( ! function_exists( 'wordtrap_post_metas' ) ) {
       }
     }
 
-    // Post Comments    
-    if ( comments_open() && in_array( 'comments', $post_metas ) ) {
-      echo '<span class="post-comments">';
-      comments_popup_link( esc_html__( 'Leave a Comment', 'wordtrap' ), esc_html__( '1 Comment', 'wordtrap' ), esc_html__( '% Comments', 'wordtrap' ) );
-      echo '</span>';
-    }
-
+    // Post Format
     if ( in_array( 'format', $post_metas ) ) {
       $post_format = get_post_format();
     
@@ -93,6 +88,13 @@ if ( ! function_exists( 'wordtrap_post_metas' ) ) {
   
         echo $posted_on_format;
       }
+    }
+
+    // Post Comments    
+    if ( comments_open() && in_array( 'comments', $post_metas ) ) {
+      echo '<span class="post-comments">';
+      comments_popup_link( esc_html__( 'Leave a Comment', 'wordtrap' ), esc_html__( '1 Comment', 'wordtrap' ), esc_html__( '% Comments', 'wordtrap' ) );
+      echo '</span>';
     }
   }
 }
@@ -130,6 +132,12 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
 
     if ( $share ) {
       wordtrap_social_share();
+    }
+
+    // Read more
+    $view_mode = wordtrap_get_view_mode();
+    if ( $view_mode === 'grid' ) {
+      printf( '<div class="read-more"><a href="%s" rel="bookmark">' . esc_html__( 'Read More', 'wordtrap' ) . '<i class="fa fa-arrow-right"></i></a></div>', esc_url( get_permalink() ) );
     }
 
     // Post metas available
@@ -384,3 +392,40 @@ if ( ! function_exists( 'wordtrap_pre_get_posts' ) ) {
 }
 
 add_action( 'pre_get_posts',  'wordtrap_pre_get_posts' );
+
+if ( ! function_exists( 'wordtrap_get_view_mode' ) ) {
+  /**
+   * Get view mode
+   *
+   * @return string      grid | list
+   */
+  function wordtrap_get_view_mode() {
+    $default_view_mode = wordtrap_options( 'posts-default-view-mode') ? 'grid' : 'list';
+    $view_mode = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['view'] ) ) : $default_view_mode;
+
+    return $view_mode;
+  }
+}
+
+if ( ! function_exists( 'wordtrap_grid_view_classes' ) ) {
+  /**
+   * Get grid view classes
+   */
+  function wordtrap_grid_view_classes() {
+    $grid_view = wordtrap_options( 'posts-grid-view' );
+    if ( ! ( $grid_view === 'grid' || $grid_view === 'list' ) ) {
+      return '';
+    }
+
+    $classes = array();
+    $classes[] = 'row-cols-sm-' . wordtrap_options( 'posts-grid-columns-sm' );
+    $classes[] = 'row-cols-md-' . wordtrap_options( 'posts-grid-columns-md' );
+    $classes[] = 'row-cols-lg-' . wordtrap_options( 'posts-grid-columns-lg' );
+    $classes[] = 'row-cols-xl-' . wordtrap_options( 'posts-grid-columns-xl' );
+    $classes[] = 'row-cols-xxl-' . wordtrap_options( 'posts-grid-columns-xxl' );
+    
+    return implode( ' ', $classes );
+  }
+}
+
+//row-cols-sm-2 row-cols-lg-3

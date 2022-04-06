@@ -26,7 +26,7 @@ if ( wordtrap_options( 'post-featured-image' ) && has_post_thumbnail( $post->ID 
     </div><!-- .post-thumbnail -->
   <?php endif; ?>
 
-  <div class="post-wrap">
+  <div class="content-wrap">
 
     <header class="entry-header">
 
@@ -36,7 +36,7 @@ if ( wordtrap_options( 'post-featured-image' ) && has_post_thumbnail( $post->ID 
         if ( is_sticky() && wordtrap_options( 'sticky-post-label' ) ) {
           the_title( 
             '<h1 class="entry-title d-inline-block position-relative">', 
-            '<span class="position-absolute top-0 start-100 badge rounded-pill bg-danger fs-6 ms-2"><small>' . wordtrap_options( 'sticky-post-label' ) . '</small></span></h1>' 
+            '<span class="position-absolute top-0 start-100 badge rounded-pill bg-danger">' . wordtrap_options( 'sticky-post-label' ) . '</span></h1>' 
           );
         } else {
           the_title( '<h1 class="entry-title">', '</h1>' );

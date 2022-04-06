@@ -16,6 +16,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// View mode
+$view_mode = wordtrap_get_view_mode();
+
 get_header();
 ?>
 
@@ -24,11 +27,21 @@ if ( have_posts() ) :
 
   wordtrap_posts_filter_navigation( 'posts-filter-above' );
 
+  if ( $view_mode === 'grid' ) : ?>
+    <div class="posts-grid row <?php echo esc_attr( wordtrap_grid_view_classes() ) ?>">
+  <?php
+  endif;
+
   // Load posts loop.
   while ( have_posts() ) {
     the_post();
     get_template_part( 'template-parts/content/content', get_post_format() );
   }
+
+  if ( $view_mode === 'grid' ) : ?>
+    </div>
+  <?php
+  endif;
 
   wordtrap_posts_filter_navigation( 'posts-filter-below' );
 
