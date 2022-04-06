@@ -32,11 +32,42 @@ if ( have_posts() ) :
   <?php
   endif;
 
+  $prev_year           = null;
+	$prev_month          = null;
+	$count               = 1;
+  $timeline_view       = $view_mode === 'grid' && wordtrap_options( 'posts-grid-view' ) === 'timeline';
+
   // Load posts loop.
-  while ( have_posts() ) {
+  while ( have_posts() ) :
     the_post();
+
+    $timestamp   = strtotime( get_the_date() );
+    $year        = get_the_date( 'o' );
+    $month       = date( 'n', $timestamp );
+    
+    if ( $timeline_view && ( $prev_month != $month || ( $prev_month == $month && $prev_year != $year ) ) ) :
+      $post_count = 1;
+      $prev_year  = $year;
+      $prev_month = $month;
+      ?>
+      <div class="timeline-date"><span><?php echo get_the_date( 'F Y' ); ?></span></div>
+    <?php endif;
+    
+    if ( $view_mode === 'grid' ) : 
+    ?>
+      <div class="post-wrap<?php echo $timeline_view ? ( ( 1 == $post_count++ % 2 ? ' left' : ' right' ) ) : '' ?>">
+    <?php 
+    endif;
+
     get_template_part( 'template-parts/content/content', get_post_format() );
-  }
+
+    if ( $view_mode === 'grid' ) : 
+    ?>
+      </div>
+    <?php 
+    endif;
+    
+  endwhile;
 
   if ( $view_mode === 'grid' ) : ?>
     </div>

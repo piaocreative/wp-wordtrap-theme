@@ -19,10 +19,6 @@ if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID
 }
 ?>
 
-<?php if ( $view_mode === 'grid' ) : ?>
-  <div class="post-wrap">
-<?php endif; ?>
-
 <article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
 
   <?php if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID ) ) : ?>
@@ -86,7 +82,3 @@ if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID
   </div>
 
 </article><!-- #post-## -->
-
-<?php if ( $view_mode === 'grid' ) : ?>
-  </div>
-<?php endif; ?>
