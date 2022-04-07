@@ -214,6 +214,24 @@ if ( ! function_exists( 'wordtrap_posts_grid_layout_options' ) ) {
   }
 }
 
+if ( ! function_exists( 'wordtrap_posts_related_layout_options' ) ) {
+  /**
+   * Related posts layout options
+   */
+  function wordtrap_posts_related_layout_options() {
+    return array(
+      'grid'  => array(
+        'title' => esc_html__( 'Grid', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-grid.svg',
+      ),
+      'masonry'  => array(
+        'title' => esc_html__( 'Masonry', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-masonry.svg',
+      ),
+    );
+  }
+}
+
 if ( ! function_exists( 'wordtrap_posts_list_layout_options' ) ) {
   /**
    * Post archive layout options in the list mode

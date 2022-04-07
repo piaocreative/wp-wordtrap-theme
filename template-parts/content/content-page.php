@@ -12,27 +12,26 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+  <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+    <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+      <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
 
-	</header><!-- .entry-header -->
+    </div><!-- .post-thumbnail -->
+  <?php endif; ?>
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+  <div class="entry-content">
 
-	<div class="entry-content">
+    <?php 
+    the_content(); 
+    wp_link_pages();
+    ?>
 
-		<?php
-		the_content();
-		//wordtrap_link_pages();
-		?>
+  </div><!-- .entry-content -->
 
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php //wordtrap_edit_post_link(); ?>
-
-	</footer><!-- .entry-footer -->
+  <?php 
+  wordtrap_entry_footer();
+  wordtrap_edit_post_link(); 
+  ?>
 
 </article><!-- #post-## -->

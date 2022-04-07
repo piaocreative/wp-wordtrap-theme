@@ -37,4 +37,10 @@
       margin-left: -1.5rem;
     }
   }
+
+  .form-control,
+  .form-select,
+  .form-check-input {
+    background-color: $section-bg;
+  }
 }

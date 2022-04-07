@@ -41,8 +41,8 @@ if ( have_posts() ) :
   endif;
 
   $prev_year           = null;
-	$prev_month          = null;
-	$count               = 1;
+  $prev_month          = null;
+  $count               = 1;
   $timeline_view       = $view_mode === 'grid' && wordtrap_options( 'posts-grid-view' ) === 'timeline';
 
   // Load posts loop.

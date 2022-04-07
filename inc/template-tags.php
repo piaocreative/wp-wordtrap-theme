@@ -21,6 +21,8 @@ if ( ! function_exists( 'wordtrap_post_metas' ) ) {
       return;
     }
 
+    ob_start();
+
     if ( in_array( 'date', $post_metas ) ) {
       $time_string = '<time class="entry-date post-published post-updated" datetime="%1$s">%2$s</time>';
       if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -96,6 +98,18 @@ if ( ! function_exists( 'wordtrap_post_metas' ) ) {
       comments_popup_link( esc_html__( 'Leave a Comment', 'wordtrap' ), esc_html__( '1 Comment', 'wordtrap' ), esc_html__( '% Comments', 'wordtrap' ) );
       echo '</span>';
     }
+
+    $html = ob_get_clean();
+
+    if ( $html ) : 
+      ?>
+      <div class="entry-meta">
+        
+        <?php echo $html ?>
+      
+      </div><!-- .entry-meta -->
+      <?php 
+    endif; 
   }
 }
 
@@ -124,11 +138,21 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
    * Show post footer
    */
   function wordtrap_entry_footer() {
-    if ( is_home() || is_date() || is_search() || is_author() || is_archive() ) {
+    $is_archive = false;
+    if ( is_search() ) {
+      $share = false;
+    } else if ( is_home() || is_date() || is_author() || is_archive() ) {
       $share = wordtrap_options( 'posts-share' );
+      $is_archive = true;
     } else {
-      $share = wordtrap_options( 'post-share' );
+      if ( 'post' === get_post_type() ) {
+        $share = wordtrap_options( 'post-share' );
+      } else if ( 'page' === get_post_type() ) {
+        $share = wordtrap_options( 'page-share' );
+      }
     }
+
+    ob_start();
 
     if ( $share ) {
       wordtrap_social_share();
@@ -136,22 +160,29 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
 
     // Read more
     $view_mode = wordtrap_get_view_mode();
-    if ( $view_mode === 'grid' ) {
+    if ( $view_mode === 'grid' && $is_archive ) {
       printf( '<div class="read-more"><a href="%s" rel="bookmark">' . esc_html__( 'Read More', 'wordtrap' ) . '<i class="fa fa-arrow-right"></i></a></div>', esc_url( get_permalink() ) );
     }
 
     // Post metas available
     $post_metas = wordtrap_options( 'post-metas' );    
-    if ( ! $post_metas ) {
-      return;
-    }
-
-    if ( in_array( 'tags', $post_metas ) ) {
+    if ( $post_metas && in_array( 'tags', $post_metas ) ) {
       $tags = get_the_tag_list( esc_html__( ' ', 'wordtrap' ), ' ' );
       if ( $tags ) {
         printf( '<div class="post-tags">' . esc_html__( '%s', 'wordtrap' ) . '</div>', $tags );
       }
     }
+
+    $html = ob_get_clean();
+
+    if ( $html ) : ?>
+      <footer class="entry-footer">
+
+        <?php echo $html ?>
+
+      </footer><!-- .entry-footer -->
+    <?php
+    endif;
   }
 }
 
@@ -362,6 +393,23 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
   }
 }
 
+if ( ! function_exists( 'wordtrap_edit_post_link' ) ) {
+  /**
+   * Displays the edit post link for post.
+   */
+  function wordtrap_edit_post_link() {
+    edit_post_link(
+      sprintf(
+        /* translators: %s: Name of current post */
+        esc_html__( 'Edit %s', 'wordtrap' ),
+        the_title( '<span class="screen-reader-text">"', '"</span>', false )
+      ),
+      '<span class="wordtrap-edit-link">',
+      '</span>'
+    );
+  }
+}
+
 if ( ! function_exists( 'wordtrap_pre_get_posts' ) ) {
   /**
    * Fires after the query variable object is created, but before the actual query is run.
@@ -369,7 +417,7 @@ if ( ! function_exists( 'wordtrap_pre_get_posts' ) ) {
    * @param WP_Query $query The WP_Query instance (passed by reference).
    */
   function wordtrap_pre_get_posts( $query ) {
-    if ( ! $query->is_main_query() ) {
+    if ( ! $query->is_main_query() || is_search() ) {
       return;
     }
   

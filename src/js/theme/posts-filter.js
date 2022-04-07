@@ -135,7 +135,7 @@ import wordtrap_init from './init.js';
           $main = $( '#main' );
 
         theme.addLoading( $el );
-        theme.scrollToElement( $main );
+        theme.scrollToElement( $el );
 
         $.ajax( {
           url: $this.attr( 'href' ),

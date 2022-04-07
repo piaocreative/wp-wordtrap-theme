@@ -196,6 +196,7 @@ $main_layouts_with_right_sidebar = wordtrap_main_layouts_with_right_sidebar();
 $font_style_options              = wordtrap_font_style_options();
 $posts_grid_layout_options       = wordtrap_posts_grid_layout_options();
 $posts_list_layout_options       = wordtrap_posts_list_layout_options();
+$posts_related_layout_options    = wordtrap_posts_related_layout_options();
 $post_layout_options             = wordtrap_post_layout_options();
 $pagination_options              = wordtrap_pagination_options();
 $post_related_view_options       = wordtrap_post_related_view_options();
@@ -271,7 +272,6 @@ Redux::set_section(
 require_once $dir . 'sections/post/general.php';
 require_once $dir . 'sections/post/archive.php';
 require_once $dir . 'sections/post/singular.php';
-require_once $dir . 'sections/post/related.php';
 
 // -> START Member Fields
 Redux::set_section(

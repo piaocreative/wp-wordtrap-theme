@@ -17,7 +17,7 @@ Redux::set_section(
     'icon'             => 'dashicons-before dashicons-admin-page',
     'fields'           => array(
       array(
-        'id'            => 'page-comment',
+        'id'            => 'page-comments',
         'type'          => 'switch',
         'title'         => esc_html__( 'Comments', 'wordtrap' ),
         'default'       => false,

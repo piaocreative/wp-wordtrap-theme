@@ -45,27 +45,20 @@ if ( wordtrap_options( 'post-featured-image' ) && has_post_thumbnail( $post->ID 
 
       <?php endif; ?>
 
-      <div class="entry-meta">
-
-        <?php wordtrap_post_metas(); ?>
-
-      </div><!-- .entry-meta -->
+      <?php wordtrap_post_metas(); ?>
 
     </header><!-- .entry-header -->
 
     <div class="entry-content">
 
-      <?php the_content(); ?>
-
-      <?php wp_link_pages(); ?>
+      <?php 
+      the_content(); 
+      wp_link_pages();
+      ?>
 
     </div><!-- .entry-content -->
 
-    <footer class="entry-footer">
-
-      <?php wordtrap_entry_footer(); ?>
-
-    </footer><!-- .entry-footer -->
+    <?php wordtrap_entry_footer(); ?>
 
   </div>
 

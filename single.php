@@ -21,6 +21,8 @@ while ( have_posts() ) :
 
   get_template_part( 'template-parts/content/content', 'single' );
 
+  wordtrap_edit_post_link();
+
   wordtrap_post_nav();
 
   // If comments are open or we have at least one comment, load up the comment template.

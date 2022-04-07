@@ -10144,7 +10144,7 @@
 	        var $this = $(this),
 	            $main = $('#main');
 	        theme.addLoading($el);
-	        theme.scrollToElement($main);
+	        theme.scrollToElement($el);
 	        $.ajax({
 	          url: $this.attr('href'),
 	          complete: function (data) {

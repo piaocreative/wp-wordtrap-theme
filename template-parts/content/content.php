@@ -59,11 +59,7 @@ if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID
 
       <?php endif; ?>
 
-      <div class="entry-meta">
-
-        <?php wordtrap_post_metas(); ?>
-
-      </div><!-- .entry-meta -->
+      <?php wordtrap_post_metas(); ?>
 
     </header><!-- .entry-header -->
 
@@ -73,11 +69,7 @@ if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID
 
     </div><!-- .entry-content -->
 
-    <footer class="entry-footer">
-
-      <?php wordtrap_entry_footer(); ?>
-
-    </footer><!-- .entry-footer -->
+    <?php wordtrap_entry_footer(); ?>
 
   </div>
 

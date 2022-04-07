@@ -16,13 +16,6 @@ get_header();
 
 <?php if ( have_posts() ) : ?>
 
-  <header class="page-header">
-    <h1 class="page-title">
-      <?php _e( 'Search results for: ', 'wordtrap' ); ?>
-      <span class="page-description"><?php echo get_search_query(); ?></span>
-    </h1>
-  </header><!-- .page-header -->
-
   <?php
   // Start the Loop.
   while ( have_posts() ) :
@@ -30,8 +23,14 @@ get_header();
     get_template_part( 'template-parts/content/content', 'search' );
   endwhile;
 
-  // Previous/next page navigation.
-  // wordtrap_the_posts_navigation();
+  ?>
+  <footer class="page-navigation">
+    <?php
+    // Previous/next page navigation.
+    wordtrap_the_posts_navigation();
+    ?>
+  </footer>
+  <?php
 
 else :
 
