@@ -81,7 +81,7 @@
         e.preventDefault();
         $( 'html, body' ).stop().animate( {
           scrollTop: 0
-        }, self.options.scrollDuration );
+        }, self.options.scrollDuration, 'easeOutQuad' );
       } );
 
       self.$el.append( btn );

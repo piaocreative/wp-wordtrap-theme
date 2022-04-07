@@ -19,11 +19,19 @@ defined( 'ABSPATH' ) || exit;
 // View mode
 $view_mode = wordtrap_get_view_mode();
 
+// Pagination
+$pagination = wordtrap_options( 'posts-pagination' );
+
 get_header();
 ?>
 
 <?php
 if ( have_posts() ) :
+
+  if ( $pagination ) : ?>
+    <div class="posts-pagination-<?php echo esc_attr( $pagination ) ?>">
+  <?php
+  endif;
 
   wordtrap_posts_filter_navigation( 'posts-filter-above' );
 
@@ -75,6 +83,11 @@ if ( have_posts() ) :
   endif;
 
   wordtrap_posts_filter_navigation( 'posts-filter-below' );
+
+  if ( $pagination ) : ?>
+    </div>
+  <?php
+  endif;
 
 else :
 

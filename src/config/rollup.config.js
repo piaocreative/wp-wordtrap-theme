@@ -17,17 +17,6 @@ export default {
     path.resolve(__dirname, '../js/bootstrap.js'), 
     path.resolve(__dirname, '../js/skip-link-focus-fix.js'),
     
-    path.resolve(__dirname, '../js/theme/config.js'),
-    
-    path.resolve(__dirname, '../js/theme/header.js'),
-    path.resolve(__dirname, '../js/theme/footer.js'),    
-    path.resolve(__dirname, '../js/theme/scroll-to-top.js'),    
-
-    path.resolve(__dirname, '../js/theme/whats-app-sharing.js'),
-    path.resolve(__dirname, '../js/theme/posts-filter.js'),
-    path.resolve(__dirname, '../js/theme/masonry.js'),
-        
-    path.resolve(__dirname, '../js/theme/init.js'),
     path.resolve(__dirname, '../js/theme.js')
   ],
   output: {

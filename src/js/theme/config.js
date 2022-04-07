@@ -5,6 +5,24 @@
 * @since wordtrap 1.0.0
 */
 
+/* easing */
+jQuery.extend( jQuery.easing, {
+  def: 'easeOutQuad',
+  swing: function ( x, t, b, c, d ) {
+    return jQuery.easing[ jQuery.easing.def ]( x, t, b, c, d );
+  },
+  easeOutQuad: function ( x, t, b, c, d ) {
+    return -c * ( t /= d ) * ( t - 2 ) + b;
+  },
+  easeInOutQuart: function ( x, t, b, c, d ) {
+    if ( ( t /= d / 2 ) < 1 ) return c / 2 * t * t * t * t + b;
+    return -c / 2 * ( ( t -= 2 ) * t * t * t - 2 ) + b;
+  },
+  easeOutQuint: function ( x, t, b, c, d ) {
+    return c * ( ( t = t / d - 1 ) * t * t * t * t + 1 ) + b;
+  }
+} );
+
 // Theme
 window.theme = {};
 
@@ -29,6 +47,11 @@ window.theme = {};
     sticky_header_lg: parseInt( wordtrap_vars.sticky_header_lg ),
     sticky_header_xl: parseInt( wordtrap_vars.sticky_header_xl ),
     sticky_header_xxl: parseInt( wordtrap_vars.sticky_header_xxl ),
+
+    sticky_header_height: 0,
+
+    // Messages
+    loading: wordtrap_vars.loading,
     
     // Request timeout
     requestTimeout: function ( fn, delay ) {
@@ -76,14 +99,36 @@ window.theme = {};
 
     // Request frame
     requestFrame: function ( fn ) {
-			var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
-			if ( ! handler ) {
-				return setTimeout( fn, 1000 / 60 );
-			}
-			var rt = new Object()
-			rt.val = handler( fn );
-			return rt;
-		},
+      var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+      if ( ! handler ) {
+        return setTimeout( fn, 1000 / 60 );
+      }
+      var rt = new Object()
+      rt.val = handler( fn );
+      return rt;
+    },
+
+    scrollToElement: function ( $element, timeout ) {
+      if ( $element.length ) {
+        $( 'html, body' ).stop().animate( {
+          scrollTop: $element.offset().top - theme.adminBarHeight() - theme.sticky_header_height - parseInt( $( '#primary').css( 'margin-top' ) ) || 0
+        }, timeout, 'easeOutQuad' );
+      }
+    },
+
+    addLoading: function ( $element ) {
+      if ( $element.length ) {
+        $element.addClass('ajax-loaindg-container');
+        $element.append( '<div class="ajax-loading"><div role="status"><span class="visually-hidden">' + theme.loading + '</span></div></div>' );
+      }
+    },
+
+    removeLoading: function ( $element ) {
+      if ( $element.length ) {
+        $element.find( '> ajax-loading').remove();
+        $element.removeClass('ajax-loaindg-container');        
+      }
+    }
   } );
 
 } )( window.theme, jQuery );

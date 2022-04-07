@@ -90,6 +90,16 @@ function wordtrap_init( $wrap ) {
       } );
     }
 
+    // Posts Ajax Load
+    if ( $.fn.themePostsAjaxLoad ) {
+      $( function () {
+        $wrap.find( '.posts-pagination-ajax' ).each( function () {
+          var $this = $( this );
+          $this.themePostsAjaxLoad( $this.data( 'options' ) );
+        } );
+      } );
+    }
+
   } )( jQuery );
 }
 
@@ -104,3 +114,5 @@ function wordtrap_init( $wrap ) {
   } );
 
 } )( window.theme, jQuery );
+
+export default wordtrap_init;

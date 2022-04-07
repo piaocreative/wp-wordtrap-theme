@@ -5,6 +5,8 @@
 * @since wordtrap 1.0.0
 */
 
+import wordtrap_init from './init.js';
+
 // Posts Filter
 ( function ( theme, $ ) {
   'use strict';
@@ -74,6 +76,96 @@
       }
       
       return new theme.PostsFilter( $this, opts );
+    } );
+  }
+
+} )( window.theme, jQuery );
+
+// Posts Ajax Load
+( function ( theme, $ ) {
+  'use strict';
+
+  theme = theme || {};
+
+  var instanceName = '__posts_ajax_load';
+
+  var PostsAjaxLoad = function ( $el, opts ) {
+    return this.initialize( $el, opts );
+  };
+
+  PostsAjaxLoad.defaults = {
+    
+  };
+
+  PostsAjaxLoad.prototype = {
+    initialize: function ( $el, opts ) {
+      if ( $el.data( instanceName ) ) {
+        return this;
+      }
+
+      this.$el = $el;
+      
+      this
+        .setData()
+        .setOptions( opts )
+        .build();
+
+      return this;
+    },
+
+    setData: function () {
+      this.$el.data( instanceName, this );
+
+      return this;
+    },
+
+    setOptions: function ( opts ) {
+      this.options = $.extend( true, {}, PostsAjaxLoad.defaults, opts );
+
+      return this;
+    },
+
+    build: function () {
+      var self = this,
+        $el = this.$el;
+
+      $el.find( 'a.page-link').on( 'click', function( e ) {
+        e.preventDefault();
+        var $this = $( this ),
+          $main = $( '#main' );
+
+        theme.addLoading( $main );
+        theme.scrollToElement( $main );
+
+        $.ajax( {
+          url: $this.attr( 'href' ),
+          complete: function ( data ) {
+            var $response = $( data.responseText );
+                          
+            theme.removeLoading( $main );
+            $main.html( $response.find( '#main' ).html() );
+            wordtrap_init( $main );
+          }
+        } );
+      } );
+      return self;
+    },
+  };
+
+  // expose to scope
+  $.extend( theme, {
+    PostsAjaxLoad: PostsAjaxLoad
+  } );
+
+  // jquery plugin
+  $.fn.themePostsAjaxLoad = function ( opts ) {
+    return this.map( function () {
+      var $this = $( this );
+      if ( $this.data( instanceName ) ) {
+        return $this.data( instanceName );
+      }
+      
+      return new theme.PostsAjaxLoad( $this, opts );
     } );
   }
 

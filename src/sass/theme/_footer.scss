@@ -54,6 +54,10 @@
       transform: none;
     }
   }
+
+  [class*="border-"] {
+    border-color: lighten($footer-bg, 10%) !important;
+  }
 }
 
 .footer-inner {
@@ -64,10 +68,6 @@
     margin-bottom: 0;
     padding-bottom: 2rem;
   }
-}
-
-[class*="border"] {
-  border-color: lighten($footer-bg, 10%) !important;
 }
 
 .page-footer-reveal {

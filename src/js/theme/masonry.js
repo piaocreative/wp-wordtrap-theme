@@ -5,6 +5,7 @@
 * @since wordtrap 1.0.0
 */
 
+// Masonry
 ( function ( theme, $ ) {
   'use strict';
 

@@ -73,6 +73,7 @@
 
       $el.css( 'top', html_margin );
       $( 'body' ).css( 'padding-top', height );
+      theme.sticky_header_height = height;
 
       this.scroll();
     },
@@ -200,6 +201,8 @@
       self.header_height = self.header.height() + parseInt( self.header.css( 'margin-top' ) );
       self.header_main_height = self.header_main.height();
       self.sticky_height = self.header_main.outerHeight();
+
+      theme.sticky_header_height = self.sticky_height;
 
       if ( ! self.checkVisivility() ) {
         self.sticky_height = 0;

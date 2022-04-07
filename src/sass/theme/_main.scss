@@ -27,4 +27,14 @@
 
 .site-main {
   margin-bottom: 2rem;
+  position: relative;
+
+  .ajax-loading {
+    > div {
+      width: 3rem;
+      height: 3rem;
+      margin-top: -1.5rem;
+      margin-left: -1.5rem;
+    }
+  }
 }

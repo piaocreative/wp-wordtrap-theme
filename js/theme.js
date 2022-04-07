@@ -9319,7 +9319,25 @@
 	* @package Wordtrap
 	* @since wordtrap 1.0.0
 	*/
-	// Theme
+
+	/* easing */
+	jQuery.extend(jQuery.easing, {
+	  def: 'easeOutQuad',
+	  swing: function (x, t, b, c, d) {
+	    return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+	  },
+	  easeOutQuad: function (x, t, b, c, d) {
+	    return -c * (t /= d) * (t - 2) + b;
+	  },
+	  easeInOutQuart: function (x, t, b, c, d) {
+	    if ((t /= d / 2) < 1) return c / 2 * t * t * t * t + b;
+	    return -c / 2 * ((t -= 2) * t * t * t - 2) + b;
+	  },
+	  easeOutQuint: function (x, t, b, c, d) {
+	    return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
+	  }
+	}); // Theme
+
 	window.theme = {};
 
 	(function (theme, $) {
@@ -9339,6 +9357,9 @@
 	    sticky_header_lg: parseInt(wordtrap_vars.sticky_header_lg),
 	    sticky_header_xl: parseInt(wordtrap_vars.sticky_header_xl),
 	    sticky_header_xxl: parseInt(wordtrap_vars.sticky_header_xxl),
+	    sticky_header_height: 0,
+	    // Messages
+	    loading: wordtrap_vars.loading,
 	    // Request timeout
 	    requestTimeout: function (fn, delay) {
 	      var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
@@ -9398,6 +9419,25 @@
 	      var rt = new Object();
 	      rt.val = handler(fn);
 	      return rt;
+	    },
+	    scrollToElement: function ($element, timeout) {
+	      if ($element.length) {
+	        $('html, body').stop().animate({
+	          scrollTop: $element.offset().top - theme.adminBarHeight() - theme.sticky_header_height - parseInt($('#primary').css('margin-top')) || 0
+	        }, timeout, 'easeOutQuad');
+	      }
+	    },
+	    addLoading: function ($element) {
+	      if ($element.length) {
+	        $element.addClass('ajax-loaindg-container');
+	        $element.append('<div class="ajax-loading"><div role="status"><span class="visually-hidden">' + theme.loading + '</span></div></div>');
+	      }
+	    },
+	    removeLoading: function ($element) {
+	      if ($element.length) {
+	        $element.find('> ajax-loading').remove();
+	        $element.removeClass('ajax-loaindg-container');
+	      }
 	    }
 	  });
 	})(window.theme, jQuery);
@@ -9485,6 +9525,7 @@
 	          html_margin = parseFloat($('html').css('margin-top'));
 	      $el.css('top', html_margin);
 	      $('body').css('padding-top', height);
+	      theme.sticky_header_height = height;
 	      this.scroll();
 	    },
 	    scroll: function () {
@@ -9583,6 +9624,7 @@
 	      self.header_height = self.header.height() + parseInt(self.header.css('margin-top'));
 	      self.header_main_height = self.header_main.height();
 	      self.sticky_height = self.header_main.outerHeight();
+	      theme.sticky_header_height = self.sticky_height;
 
 	      if (!self.checkVisivility()) {
 	        self.sticky_height = 0;
@@ -9803,7 +9845,7 @@
 	        e.preventDefault();
 	        $('html, body').stop().animate({
 	          scrollTop: 0
-	        }, self.options.scrollDuration);
+	        }, self.options.scrollDuration, 'easeOutQuad');
 	      });
 	      self.$el.append(btn);
 	      return self;
@@ -9896,137 +9938,6 @@
 	})(window.theme, jQuery);
 
 	/*
-	* Javascript for the posts filter navigation 
-	*
-	* @package Wordtrap
-	* @since wordtrap 1.0.0
-	*/
-	// Posts Filter
-	(function (theme, $) {
-
-	  theme = theme || {};
-	  var instanceName = '__posts_filter';
-
-	  var PostsFilter = function ($el, opts) {
-	    return this.initialize($el, opts);
-	  };
-
-	  PostsFilter.defaults = {};
-	  PostsFilter.prototype = {
-	    initialize: function ($el, opts) {
-	      if ($el.data(instanceName)) {
-	        return this;
-	      }
-
-	      this.$el = $el;
-	      this.setData().setOptions(opts).build();
-	      return this;
-	    },
-	    setData: function () {
-	      this.$el.data(instanceName, this);
-	      return this;
-	    },
-	    setOptions: function (opts) {
-	      this.options = $.extend(true, {}, PostsFilter.defaults, opts);
-	      return this;
-	    },
-	    build: function () {
-	      var self = this;
-	      self.$el.find('select, input').on('change', function () {
-	        self.$el.find('form').submit();
-	      });
-	      return self;
-	    }
-	  }; // expose to scope
-
-	  $.extend(theme, {
-	    PostsFilter: PostsFilter
-	  }); // jquery plugin
-
-	  $.fn.themePostsFilter = function (opts) {
-	    return this.map(function () {
-	      var $this = $(this);
-
-	      if ($this.data(instanceName)) {
-	        return $this.data(instanceName);
-	      }
-
-	      return new theme.PostsFilter($this, opts);
-	    });
-	  };
-	})(window.theme, jQuery);
-
-	/*
-	* Javascript for the masonry layout
-	*
-	* @package Wordtrap
-	* @since wordtrap 1.0.0
-	*/
-	(function (theme, $) {
-
-	  theme = theme || {};
-	  var instanceName = '__masonry';
-
-	  var Masonry = function ($el, opts) {
-	    return this.initialize($el, opts);
-	  };
-
-	  Masonry.defaults = {
-	    itemSelector: 'li'
-	  };
-	  Masonry.prototype = {
-	    initialize: function ($el, opts) {
-	      if ($el.data(instanceName)) {
-	        return this;
-	      }
-
-	      this.$el = $el;
-	      this.setData().setOptions(opts).build();
-	      return this;
-	    },
-	    setData: function () {
-	      this.$el.data(instanceName, this);
-	      return this;
-	    },
-	    setOptions: function (opts) {
-	      this.options = $.extend(true, {}, Masonry.defaults, opts);
-	      return this;
-	    },
-	    build: function () {
-	      if (!$.fn.masonry) {
-	        return this;
-	      }
-
-	      var $el = this.$el;
-	      $el.masonry(this.options);
-	      $el.masonry('on', 'layoutComplete', function () {
-	        if (typeof this.options.callback == 'function') {
-	          this.options.callback.call();
-	        }
-	      });
-	      $el.masonry('layout');
-	      return this;
-	    }
-	  }; // expose to scope
-
-	  $.extend(theme, {
-	    Masonry: Masonry
-	  }); // jquery plugin
-
-	  $.fn.themeMasonry = function (opts) {
-	    return this.map(function () {
-	      var $this = $(this);
-
-	      if ($this.data(instanceName)) {
-	        return $this.data(instanceName);
-	      } else {
-	        return new theme.Masonry($this, opts);
-	      }
-	    });
-	  };
-	})(window.theme, jQuery);
-
-	/*
 	* Theme initialize
 	*
 	* @package Wordtrap
@@ -10114,6 +10025,16 @@
 	          $this.themeMasonry(options);
 	        });
 	      });
+	    } // Posts Ajax Load
+
+
+	    if ($.fn.themePostsAjaxLoad) {
+	      $(function () {
+	        $wrap.find('.posts-pagination-ajax').each(function () {
+	          var $this = $(this);
+	          $this.themePostsAjaxLoad($this.data('options'));
+	        });
+	      });
 	    }
 	  })(jQuery);
 	}
@@ -10123,6 +10044,207 @@
 	  $(document).ready(function () {
 	    wordtrap_init();
 	  });
+	})(window.theme, jQuery);
+
+	/*
+	* Javascript for the posts filter navigation 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__posts_filter';
+
+	  var PostsFilter = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  PostsFilter.defaults = {};
+	  PostsFilter.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, PostsFilter.defaults, opts);
+	      return this;
+	    },
+	    build: function () {
+	      var self = this;
+	      self.$el.find('select, input').on('change', function () {
+	        self.$el.find('form').submit();
+	      });
+	      return self;
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    PostsFilter: PostsFilter
+	  }); // jquery plugin
+
+	  $.fn.themePostsFilter = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.PostsFilter($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery); // Posts Ajax Load
+
+
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__posts_ajax_load';
+
+	  var PostsAjaxLoad = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  PostsAjaxLoad.defaults = {};
+	  PostsAjaxLoad.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, PostsAjaxLoad.defaults, opts);
+	      return this;
+	    },
+	    build: function () {
+	      var self = this,
+	          $el = this.$el;
+	      $el.find('a.page-link').on('click', function (e) {
+	        e.preventDefault();
+	        var $this = $(this),
+	            $main = $('#main');
+	        theme.addLoading($main);
+	        theme.scrollToElement($main);
+	        $.ajax({
+	          url: $this.attr('href'),
+	          complete: function (data) {
+	            var $response = $(data.responseText);
+	            theme.removeLoading($main);
+	            $main.html($response.find('#main').html());
+	            wordtrap_init($main);
+	          }
+	        });
+	      });
+	      return self;
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    PostsAjaxLoad: PostsAjaxLoad
+	  }); // jquery plugin
+
+	  $.fn.themePostsAjaxLoad = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.PostsAjaxLoad($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery);
+
+	/*
+	* Javascript for the masonry layout
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Masonry
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__masonry';
+
+	  var Masonry = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  Masonry.defaults = {
+	    itemSelector: 'li'
+	  };
+	  Masonry.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, Masonry.defaults, opts);
+	      return this;
+	    },
+	    build: function () {
+	      if (!$.fn.masonry) {
+	        return this;
+	      }
+
+	      var $el = this.$el;
+	      $el.masonry(this.options);
+	      $el.masonry('on', 'layoutComplete', function () {
+	        if (typeof this.options.callback == 'function') {
+	          this.options.callback.call();
+	        }
+	      });
+	      $el.masonry('layout');
+	      return this;
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    Masonry: Masonry
+	  }); // jquery plugin
+
+	  $.fn.themeMasonry = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      } else {
+	        return new theme.Masonry($this, opts);
+	      }
+	    });
+	  };
 	})(window.theme, jQuery);
 
 	exports.Alert = alert;
