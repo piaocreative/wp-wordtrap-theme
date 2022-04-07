@@ -134,7 +134,7 @@ import wordtrap_init from './init.js';
         var $this = $( this ),
           $main = $( '#main' );
 
-        theme.addLoading( $main );
+        theme.addLoading( $el );
         theme.scrollToElement( $main );
 
         $.ajax( {
@@ -142,7 +142,7 @@ import wordtrap_init from './init.js';
           complete: function ( data ) {
             var $response = $( data.responseText );
                           
-            theme.removeLoading( $main );
+            theme.removeLoading( $el );
             $main.html( $response.find( '#main' ).html() );
             wordtrap_init( $main );
           }

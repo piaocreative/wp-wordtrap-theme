@@ -125,7 +125,7 @@ window.theme = {};
 
     removeLoading: function ( $element ) {
       if ( $element.length ) {
-        $element.find( '> ajax-loading').remove();
+        $element.find( '> .ajax-loading').remove();
         $element.removeClass('ajax-loaindg-container');        
       }
     }
