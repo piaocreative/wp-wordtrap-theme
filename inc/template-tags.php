@@ -257,7 +257,7 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
 
     if ( ! $post_type ) {
       return;
-    }    
+    }
 
     if ( $nav_id === 'posts-filter-above' && ! ( wordtrap_options( $post_type . 's-sort' ) || wordtrap_options( $post_type . 's-show-count' ) || wordtrap_options( $post_type . 's-view-mode' ) ) ) {
       return;

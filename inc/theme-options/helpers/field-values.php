@@ -290,8 +290,8 @@ if ( ! function_exists( 'wordtrap_pagination_options' ) ) {
     return array(
       ''          => esc_html__( 'Normal', 'wordtrap' ),
       'ajax'      => esc_html__( 'Ajax Load', 'wordtrap' ),
-      'load-more' => esc_html__( 'Load More', 'wordtrap' ),
-      'infinite'  => esc_html__( 'Infinite Scroll', 'wordtrap' ),
+      // 'load-more' => esc_html__( 'Load More', 'wordtrap' ),
+      // 'infinite'  => esc_html__( 'Infinite Scroll', 'wordtrap' ),
     );
   }
 }

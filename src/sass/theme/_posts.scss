@@ -599,6 +599,26 @@ article.post {
   }
 }
 
+.posts-view-grid {
+  article.post {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .post-thumbnail {
+    justify-content: center;
+  }
+
+  .post-thumbnail,
+  .entry-header,
+  .content-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
 // Timeline View
 .posts-view-timeline {
   display: block;
