@@ -136,7 +136,7 @@ Redux::set_section(
         'required' => array( 'post-related', 'equals', true ),
         'title'    => esc_html__( 'Count', 'wordtrap' ),
         'validate' => array( 'numeric', 'not_empty' ),
-        'default'  => '12',
+        'default'  => '6',
       ),
       array(
         'id'       => 'post-related-carousel',

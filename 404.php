@@ -18,15 +18,19 @@ get_header();
 
   <header class="page-header">
 
-    <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'wordtrap' ); ?></h1>
+    <h1 class="page-title text-primary"><?php _e( 'we&rsquo;re sorry', 'wordtrap' ); ?></h1>
 
   </header><!-- .page-header -->
 
   <div class="page-content">
 
-    <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'wordtrap' ); ?></p>
+    <p class="lead">
+      <?php _e( 'but the page you were looking for doesn&rsquo;t exist', 'wordtrap' ); ?>
 
-    <?php get_search_form(); ?>
+      <img src="<?php echo get_template_directory_uri() . '/images/404.png' ?>" alt="<?php esc_html_e( '404', 'wordtrap' ) ?>"/>
+    </p>
+
+    <a class="btn btn-lg btn-primary" href="<?php echo esc_url( get_home_url( null, '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ) ?>"><?php _e( 'Home Page', 'wordtrap' ) ?></a>
 
   </div><!-- .page-content -->
 

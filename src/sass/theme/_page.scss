@@ -12,3 +12,17 @@ article.page {
     }
   }
 }
+
+.error-404 {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    margin: -15px 0;
+  }
+
+  .btn {
+    margin-bottom: 3rem;
+  }
+}
