@@ -218,10 +218,14 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
     $left_sidebar = wordtrap_options( 'left-sidebar' );
     $right_sidebar = wordtrap_options( 'right-sidebar' );
 
-    // Home, 404, Normal page
-    if ( is_front_page() || is_404() || is_page() ) {
+    // Home, Normal page
+    if ( is_front_page() || is_page() ) {
       
     } 
+    // 404
+    else if ( is_404() ) {
+      $layout = 'full';
+    }
     // Posts page, Date archive, Search results, Author archive
     else if ( is_home() || is_date() || is_search() || is_author() ) {
       $layout = wordtrap_options( 'posts-layout' );
