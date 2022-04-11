@@ -5,7 +5,7 @@
 * @since wordtrap 1.0.0
 */
 
-import wordtrap_init from './init.js';
+import wordtrap_init from './init';
 
 // Posts Filter
 ( function ( theme, $ ) {

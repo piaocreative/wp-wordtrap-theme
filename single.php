@@ -30,6 +30,11 @@ while ( have_posts() ) :
     comments_template();
   }
 
+  // Related posts
+  if ( wordtrap_options( 'post-related' ) ) {
+    get_template_part( 'template-parts/post/related-posts' );
+  }
+
 endwhile; // End the loop.
 ?>
 

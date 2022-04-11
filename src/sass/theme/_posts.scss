@@ -88,6 +88,7 @@
   a {
     display: inline-block;
     position: relative;
+    word-break: break-all;
   }
 }
 
@@ -533,19 +534,32 @@ body.search-results .site-main article.hentry {
 .posts-grid {
   position: relative;
   
-  @include media-breakpoint-up(xl) {
-    margin-left: calc(var(--bs-gutter-x) * -0.625);
-    margin-right: calc(var(--bs-gutter-x) * -0.625);
+  &:not(.posts-carousel) {
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+
+    @include media-breakpoint-up(xl) {
+      margin-left: calc(var(--bs-gutter-x) * -0.625);
+      margin-right: calc(var(--bs-gutter-x) * -0.625);
+    }
+
+    > * {
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+      
+      @include media-breakpoint-up(xl) {
+        padding-left: calc(var(--bs-gutter-x) * 0.625);
+        padding-right: calc(var(--bs-gutter-x) * 0.625);
+      }
+    }
   }
 
   > * {
     position: relative;
-    margin-top: calc(var(--bs-gutter-x) * 1);
-
+    padding-top: calc(var(--bs-gutter-x) * 1);
+    
     @include media-breakpoint-up(xl) {
-      margin-top: calc(var(--bs-gutter-x) * 1.25);
-      padding-left: calc(var(--bs-gutter-x) * 0.625);
-      padding-right: calc(var(--bs-gutter-x) * 0.625);
+      padding-top: calc(var(--bs-gutter-x) * 1.25);
     }
 
     article.post {
@@ -819,5 +833,18 @@ body.search-results .site-main article.hentry {
     *:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+// Related posts
+.entry-related {
+  margin-top: 2rem;
+}
+
+.posts-slider {
+  display: none;
+  
+  &.tns-slider {
+    display: block;
   }
 }

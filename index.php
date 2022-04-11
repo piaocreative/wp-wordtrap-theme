@@ -29,7 +29,7 @@ get_header();
 if ( have_posts() ) :
 
   if ( $pagination ) : ?>
-    <div class="posts-pagination-<?php echo esc_attr( $pagination ) ?>">
+    <div class="posts-pagination-container posts-pagination-<?php echo esc_attr( $pagination ) ?>">
   <?php
   endif;
 
@@ -71,21 +71,21 @@ if ( have_posts() ) :
 
     if ( $view_mode === 'grid' ) : 
     ?>
-      </div>
+      </div><!-- .post-wrap -->
     <?php 
     endif;
     
   endwhile;
 
   if ( $view_mode === 'grid' ) : ?>
-    </div>
+    </div><!-- .posts-grid -->
   <?php
   endif;
 
   wordtrap_posts_filter_navigation( 'posts-filter-below' );
 
   if ( $pagination ) : ?>
-    </div>
+    </div><!-- .posts-pagination-container -->
   <?php
   endif;
 

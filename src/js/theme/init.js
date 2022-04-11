@@ -77,7 +77,7 @@ function wordtrap_init( $wrap ) {
     // Posts Masonry View
     if ( $.fn.themeMasonry ) {
       $( function () {
-        $wrap.find( '.posts-view-masonry' ).each( function () {
+        $wrap.find( '.posts-view-masonry:not(.posts-slider)' ).each( function () {
           var $this = $( this ),
             options = $this.data( 'options' );
           
@@ -86,6 +86,16 @@ function wordtrap_init( $wrap ) {
           }
           options.itemSelector = '.post-wrap';
           $this.themeMasonry( options );
+        } );
+      } );
+    }
+
+    // Related Posts Slider
+    if ( $.fn.themeSlider ) {
+      $( function () {
+        $wrap.find( '.posts-slider' ).each( function () {
+          var $this = $( this );
+          $this.themeSlider( $this.data( 'options' ) );
         } );
       } );
     }
@@ -109,7 +119,7 @@ function wordtrap_init( $wrap ) {
 
   $( document ).ready( function () {
 
-    wordtrap_init();    
+    wordtrap_init();
 
   } );
 

@@ -29,7 +29,7 @@ get_header();
     // Previous/next page navigation.
     wordtrap_the_posts_navigation();
     ?>
-  </footer>
+  </footer><!-- .page-navigation -->
   <?php
 
 else :

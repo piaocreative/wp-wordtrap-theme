@@ -7,6 +7,7 @@ import './theme/scroll-to-top.js';
 import './theme/whats-app-sharing.js';
 import './theme/posts-filter.js';
 import './theme/masonry.js';
+import './theme/slider.js';
     
 import './theme/init.js';
 

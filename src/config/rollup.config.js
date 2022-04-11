@@ -15,6 +15,7 @@ const pluginFilename = '';
 export default {
   input: [
     path.resolve(__dirname, '../js/bootstrap.js'), 
+    path.resolve(__dirname, '../js/tiny-slider.js'), 
     path.resolve(__dirname, '../js/skip-link-focus-fix.js'),
     
     path.resolve(__dirname, '../js/theme.js')
