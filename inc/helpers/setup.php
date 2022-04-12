@@ -111,7 +111,17 @@ if ( ! function_exists( 'wordtrap_setup_theme' ) ) {
      */
     add_theme_support(
       'post-formats',
-      wordtrap_generate_post_formats()
+      array(
+        'aside',
+        'gallery',
+        'link',
+        'image',
+        'quote',
+        'status',
+        'video',
+        'audio',
+        'chat',
+      )
     );
 
     // Set up the WordPress core custom background feature.

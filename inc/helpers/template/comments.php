@@ -1,6 +1,6 @@
 <?php
 /**
- * Comment layout
+ * Comment template
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -156,7 +156,6 @@ if ( ! function_exists( 'wordtrap_comment_li' ) ) {
    */
   function wordtrap_comment_li( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
-    global $post_layout;
     ?>
 
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">

@@ -1,7 +1,7 @@
 <?php
 /**
- * Template functions
- * 
+ * The layout template
+ *
  * @package Wordtrap
  * @since wordtrap 1.0.0
  */
@@ -43,26 +43,37 @@ if ( ! function_exists( 'wordtrap_get_template_part' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_options' ) ) {
+if ( ! function_exists( 'wordtrap_get_archive_post_type' ) ) {
   /**
-   * Get the field value in the theme options
+   * Get post type of archive page
+   *
+   * @return string - The post type of the archive page.
    */
-  function wordtrap_options( $field, $sub_field = false ) {
-    global $wordtrap_options;
-
-    if ( ! isset( $wordtrap_options[ $field ] ) ) {
-      return false;
+  function wordtrap_get_archive_post_type() {
+    $post_type = '';
+    
+    // Posts page, Date archive, Search results, Author archive
+    if ( is_home() || is_date() || is_search() || is_author() ) {
+      $post_type = 'post';
+    } else if ( is_archive() ) {
+      $post_type = '';
+      $term = get_queried_object();
+      // Taxonomy page
+      if ( $term && isset( $term->taxonomy ) ) {
+        global $wp_taxonomies;
+        $taxonomy = $term->taxonomy;
+        if ( isset( $wp_taxonomies[ $taxonomy ] ) ) {
+          $post_type = $wp_taxonomies[ $taxonomy ]->object_type[0];
+        }
+      }
+      // Post type archive page
+      else if ( is_post_type_archive() ) {
+        global $wp_query;
+        $post_type = $wp_query->query[ 'post_type' ];
+      }
     }
 
-    if ( ! $sub_field ) {
-      return $wordtrap_options[ $field ];
-    }
-
-    if ( ! isset( $wordtrap_options[ $field ][ $sub_field ] ) ) {
-      return false;
-    }
-
-    return $wordtrap_options[ $field ][ $sub_field ];
+    return $post_type;
   }
 }
 

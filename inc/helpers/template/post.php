@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme template functions
+ * Post template
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -186,18 +186,6 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_social_share' ) ) {
-  /**
-   * Show social shares
-   */
-  function wordtrap_social_share() {
-    if ( ! wordtrap_options( 'social-share' ) ) {
-      return;
-    }
-    wordtrap_get_template_part( 'template-parts/share' );    
-  }
-}
-
 if ( ! function_exists( 'wordtrap_post_nav' ) ) {
   /**
    * Display navigation to next/previous post when applicable.
@@ -244,40 +232,6 @@ if ( ! function_exists( 'wordtrap_link_pages_args' ) ) {
 }
 
 add_filter( 'wp_link_pages_args', 'wordtrap_link_pages_args' );
-
-if ( ! function_exists( 'wordtrap_get_archive_post_type' ) ) {
-  /**
-   * Get post type of archive page
-   *
-   * @return string - The post type of the archive page.
-   */
-  function wordtrap_get_archive_post_type() {
-    $post_type = '';
-    
-    // Posts page, Date archive, Search results, Author archive
-    if ( is_home() || is_date() || is_search() || is_author() ) {
-      $post_type = 'post';
-    } else if ( is_archive() ) {
-      $post_type = '';
-      $term = get_queried_object();
-      // Taxonomy page
-      if ( $term && isset( $term->taxonomy ) ) {
-        global $wp_taxonomies;
-        $taxonomy = $term->taxonomy;
-        if ( isset( $wp_taxonomies[ $taxonomy ] ) ) {
-          $post_type = $wp_taxonomies[ $taxonomy ]->object_type[0];
-        }
-      }
-      // Post type archive page
-      else if ( is_post_type_archive() ) {
-        global $wp_query;
-        $post_type = $wp_query->query[ 'post_type' ];
-      }
-    }
-
-    return $post_type;
-  }
-}
 
 if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
   /**
@@ -416,37 +370,6 @@ if ( ! function_exists( 'wordtrap_edit_post_link' ) ) {
     );
   }
 }
-
-if ( ! function_exists( 'wordtrap_pre_get_posts' ) ) {
-  /**
-   * Fires after the query variable object is created, but before the actual query is run.
-   *
-   * @param WP_Query $query The WP_Query instance (passed by reference).
-   */
-  function wordtrap_pre_get_posts( $query ) {
-    if ( ! $query->is_main_query() || is_search() ) {
-      return;
-    }
-  
-    $post_type = wordtrap_get_archive_post_type();
-
-    if ( ! $post_type ) {
-      return;
-    }
-    
-    $posts_counts = wordtrap_options( $post_type . 's-show-count' ) ? wordtrap_options( $post_type . 's-counts' ) : false;
-    if ( ! is_array( $posts_counts ) ) {
-      $posts_counts = array( get_option( 'posts_per_page' ) );
-    }
-    $default_count = $posts_counts[ 0 ];
-    $posts_per_page = isset( $_GET['posts_per_page'] ) ? sanitize_text_field( wp_unslash( $_GET['posts_per_page'] ) ) : $default_count;
-    $query->set( 'posts_per_page', $posts_per_page );
-  
-    return $query;
-  }
-}
-
-add_action( 'pre_get_posts',  'wordtrap_pre_get_posts' );
 
 if ( ! function_exists( 'wordtrap_get_view_mode' ) ) {
   /**

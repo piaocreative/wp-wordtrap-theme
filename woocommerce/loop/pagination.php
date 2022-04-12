@@ -66,44 +66,8 @@ if ( $total <= 1 && ! $show_count ) {
       <?php endif; ?>
 
       <?php
-        $args = wp_parse_args(
-          $args,
-          array(
-            'mid_size'           => 3,
-            'prev_next'          => true,
-            'prev_text'          => __( '<i class="fa fa-angle-left"></i>&nbsp;Back', 'wordtrap' ),
-            'next_text'          => __( 'Next&nbsp;<i class="fa fa-angle-right"></i>', 'wordtrap' ),
-            'type'               => 'array',
-            'current'            => max( 1, get_query_var( 'paged' ) ),
-            'screen_reader_text' => __( 'Products navigation', 'wordtrap' ),
-          )
-        );
-        
-        $links = paginate_links( apply_filters( 'woocommerce_pagination_args', $args ) );
-        if ( $links ) : ?>
-          <nav aria-labelledby="posts-nav-label">
-
-            <h2 id="posts-nav-label" class="screen-reader-text">
-              <?php echo esc_html( $args['screen_reader_text'] ); ?>
-            </h2>
-
-            <ul class="pagination">
-
-              <?php
-              foreach ( $links as $key => $link ) {
-                ?>
-                <li class="page-item <?php echo strpos( $link, 'current' ) ? 'active' : ''; ?>">
-                  <?php echo str_replace( 'page-numbers', 'page-link', $link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                </li>
-                <?php
-              }
-              ?>
-
-            </ul>
-
-          </nav>
-        <?php
-        endif;
+      // Previous/next page navigation.
+      wordtrap_the_posts_navigation();
       ?>
       
       <input type="hidden" name="paged" value="1" />

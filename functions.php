@@ -37,56 +37,8 @@ require get_template_directory() . '/inc/theme-options/options.php';
 // Include theme styles compiler
 require get_template_directory() . '/inc/compiler/compiler.php';
 
-// Inculde WooCommerce functions if WooCommerce is activated
-if ( class_exists( 'WooCommerce' ) ) {
-  require get_template_directory() . '/inc/woocommerce.php';
-}
-
-// Theme setup and custom theme supports.
-require get_template_directory() . '/inc/setup.php';
-
-// Register widget area.
-require get_template_directory() . '/inc/widgets.php';
-
-// Enqueue scripts and styles.
-require get_template_directory() . '/inc/enqueue.php';
-
-// Custom template tags for this theme.
-require get_template_directory() . '/inc/template-tags.php';
-
-// Custom pagination for this theme.
-require get_template_directory() . '/inc/pagination.php';
-
-// Custom hooks.
-require get_template_directory() . '/inc/hooks.php';
-
-// Custom functions that act independently of the theme templates.
-require get_template_directory() . '/inc/extras.php';
+// Include helpers
 require get_template_directory() . '/inc/helpers.php';
-
-// Customizer additions.
-require get_template_directory() . '/inc/customizer.php';
-
-// Custom Comments file.
-require get_template_directory() . '/inc/custom-comments.php';
-
-// SVG Icons class.
-require get_template_directory() . '/classes/class-wordtrap-svg-icons.php';
-
-// Custom Comment Walker template.
-require get_template_directory() . '/classes/class-wordtrap-walker-comment.php';
 
 // Load custom WordPress nav walker.
 require get_template_directory() . '/classes/class-wordtrap-wp-bootstrap-navwalker.php';
-
-// SVG Icons related functions.
-require get_template_directory() . '/inc/icon-functions.php';
-
-// Load Editor functions.
-require get_template_directory() . '/inc/editor.php';
-
-// Load Block Editor functions.
-require get_template_directory() . '/inc/block-editor.php';
-
-// Load deprecated functions.
-require get_template_directory() . '/inc/deprecated.php';

@@ -57,3 +57,35 @@ if ( ! function_exists( 'wordtrap_add_site_info' ) ) {
 
 	}
 }
+
+if ( ! function_exists( 'wordtrap_pre_get_posts' ) ) {
+  /**
+   * Fires after the query variable object is created, but before the actual query is run.
+   *
+   * @param WP_Query $query The WP_Query instance (passed by reference).
+   */
+  function wordtrap_pre_get_posts( $query ) {
+    if ( ! $query->is_main_query() || is_search() ) {
+      return;
+    }
+  
+    $post_type = wordtrap_get_archive_post_type();
+
+    if ( ! $post_type ) {
+      return;
+    }
+    
+    $posts_counts = wordtrap_options( $post_type . 's-show-count' ) ? wordtrap_options( $post_type . 's-counts' ) : false;
+    if ( ! is_array( $posts_counts ) ) {
+      $posts_counts = array( get_option( 'posts_per_page' ) );
+    }
+    $default_count = $posts_counts[ 0 ];
+    $posts_per_page = isset( $_GET['posts_per_page'] ) ? sanitize_text_field( wp_unslash( $_GET['posts_per_page'] ) ) : $default_count;
+    $query->set( 'posts_per_page', $posts_per_page );
+  
+    return $query;
+  }
+}
+
+add_action( 'pre_get_posts',  'wordtrap_pre_get_posts' );
+

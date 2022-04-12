@@ -1,6 +1,6 @@
 <?php
 /**
- * Pagination layout
+ * Pagination template
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
