@@ -446,16 +446,8 @@ if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
         'title'  => esc_html__( 'Default', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.svg',
       ),
-      'onhover'  => array(
-        'title'  => esc_html__( 'Default - Show Links on Hover', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.svg',
-      ),
       'outimage-aq-onimage'  => array(
         'title'  => esc_html__( 'Add to Cart, Quick View On Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage.svg',
-      ),
-      'outimage-aq-onimage2' => array(
-        'title'  => esc_html__( 'Add to Cart, Quick View On Image with Padding', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage.svg',
       ),
       'awq-onimage' => array(
@@ -471,12 +463,8 @@ if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage.svg',
       ),
       'onimage2' => array(
-        'title'  => esc_html__( 'On Image with Overlay 1', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage2.svg',
-      ),
-      'onimage3' => array(
-        'title'  => esc_html__( 'On Image with Overlay 2', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage3.svg',
+        'title'  => esc_html__( 'On Image with Overlay', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage-overlay.svg',
       ),
       'quantity' => array(
         'title'  => esc_html__( 'Show Quantity Input', 'wordtrap' ),
@@ -515,7 +503,7 @@ if ( ! function_exists( 'wordtrap_product_view_options' ) ) {
   function wordtrap_product_view_options() {
     return array(
       'default'  => array(
-        'title'  => esc_html__( 'Default', 'wordtrap' ),
+        'title'  => esc_html__( 'Right Sidebar (Default)', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-default.svg',
       ),
       'extended' => array(
