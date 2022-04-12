@@ -2,8 +2,6 @@
 /**
  * Single Product Sale Flash
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/sale-flash.php.
- *
  * @package Wordtrap
  * @since wordtrap 1.0.0
  */

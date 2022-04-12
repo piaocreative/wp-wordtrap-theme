@@ -436,19 +436,6 @@ if ( ! function_exists( 'wordtrap_singular_order_options' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_products_view_mode_options' ) ) {
-  /**
-   * Product archive view mode options
-   */
-  function wordtrap_products_view_mode_options() {
-    return array(
-      ''        => esc_html__( 'Normal', 'wordtrap' ),
-      'grid'    => esc_html__( 'Grid', 'wordtrap' ),
-      'list'    => esc_html__( 'List', 'wordtrap' ),
-    );
-  }
-}
-
 if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
   /**
    * Products view options

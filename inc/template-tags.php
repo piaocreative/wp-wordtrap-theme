@@ -293,7 +293,11 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
       return;
     }
 
-    if ( $nav_id === 'posts-filter-above' && ! ( wordtrap_options( $post_type . 's-sort' ) || wordtrap_options( $post_type . 's-show-count' ) || wordtrap_options( $post_type . 's-view-mode' ) ) ) {
+    $show_sort = wordtrap_options( $post_type . 's-sort' );
+    $show_count = wordtrap_options( $post_type . 's-show-count' );
+    $show_view_mode = wordtrap_options( $post_type . 's-view-mode' );
+
+    if ( $nav_id === 'posts-filter-above' && ! ( $show_sort || $show_count || $show_view_mode ) ) {
       return;
     }
 
@@ -310,7 +314,7 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
     $default_orderby = is_search() ? 'relevance' : '';
     $orderby = isset( $_GET['orderby'] ) ? sanitize_text_field( wp_unslash( $_GET['orderby'] ) ) : $default_orderby;
 
-    $posts_counts = wordtrap_options( $post_type . 's-show-count' ) ? wordtrap_options( $post_type . 's-counts' ) : false;
+    $posts_counts = $show_count ? wordtrap_options( $post_type . 's-counts' ) : false;
     if ( ! is_array( $posts_counts ) ) {
       $posts_counts = array( get_option( 'posts_per_page' ) );
     }
@@ -332,7 +336,7 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
           
           <?php 
           // Sort
-          if ( $nav_id == 'posts-filter-above' && wordtrap_options( $post_type . 's-sort' ) ) : ?>
+          if ( $nav_id == 'posts-filter-above' && $show_sort ) : ?>
             <label>
               <?php _e( 'Sort by:', 'wordtrap') ?>
               <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Posts order', 'wordtrap' ); ?>">
@@ -342,16 +346,16 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
               </select>
             </label>
           <?php endif; 
-          if ( $nav_id == 'posts-filter-below' && wordtrap_options( $post_type . 's-sort' ) ) : ?>
+          if ( $nav_id == 'posts-filter-below' && $show_sort ) : ?>
             <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby ) ?>"/>
           <?php endif;
           
-          if ( wordtrap_options( $post_type . 's-show-count' ) || wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
+          if ( $show_count || $show_view_mode ) : ?>
             <div class="posts-view d-flex justify-content-center">
 
               <?php 
               // Count
-              if ( wordtrap_options( $post_type . 's-show-count' ) ) : ?>
+              if ( $show_count ) : ?>
                 <label>
                   <?php _e( 'Show:', 'wordtrap') ?>
                   <select name="posts_per_page" class="posts_per_page" aria-label="<?php esc_attr_e( 'Posts per page', 'wordtrap' ); ?>">
@@ -364,7 +368,7 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
 
               <?php 
               // View Mode
-              if ( $nav_id == 'posts-filter-above' && wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
+              if ( $nav_id == 'posts-filter-above' && $show_view_mode ) : ?>
                 <div class="posts-view-mode">
                   <label>
                     <input type="radio" name="view" value="grid" <?php checked( $view_mode, 'grid' ) ?>/>
@@ -376,7 +380,7 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
                   </label>
                 </div>
               <?php endif; 
-              if ( $nav_id == 'posts-filter-below' && wordtrap_options( $post_type . 's-view-mode' ) ) : ?>
+              if ( $nav_id == 'posts-filter-below' && $show_view_mode ) : ?>
                 <input type="hidden" name="view" value="<?php echo esc_attr( $view_mode ) ?>"/>  
               <?php endif; ?>
 

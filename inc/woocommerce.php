@@ -38,7 +38,7 @@ if ( ! function_exists( 'wordtrap_primary_classes_for_single_product' ) ) {
    * Remove container classes in primary classes
    */
   function wordtrap_primary_classes_for_single_product( $classes ) {
-    if ( is_product() ) {
+    if ( is_product() && ! post_password_required() ) {
       $main_layout = wordtrap_main_layout();
       $layout = $main_layout[ 'layout' ];
       if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
@@ -157,7 +157,8 @@ if ( ! function_exists( 'wordtrap_single_product_area_wrapper_end' ) ) {
   }
 }
 
-
+// Unhook the products result count and ordering
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
 if ( ! function_exists( 'wordtrap_wc_form_field_args' ) ) {
   /**

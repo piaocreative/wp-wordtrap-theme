@@ -4,6 +4,8 @@
  * @package Wordtrap
  * @since wordtrap 1.0.0
  */
+
+// Primary wrap
 body.single-product {
   .primary-wrap {
     &.site-layout-wide,
@@ -13,6 +15,7 @@ body.single-product {
   }
 }
 
+// Single product
 .product-summary-wrapper {
   background: $section-bg;
   padding: 2rem;
@@ -78,7 +81,6 @@ body.single-product {
 }
 
 .product {
-
   .product-labels {
     margin-bottom: 1rem;
 
@@ -286,7 +288,8 @@ body.single-product {
           }
         }
   
-        #review_form_wrapper {
+        #review_form_wrapper,
+        .woocommerce-verification-required {
           @include media-breakpoint-up(lg) {
             padding-left: 5%;
             width: 35%;
@@ -346,7 +349,7 @@ body.single-product {
             display: inline;
             padding-left: 8px;
           }
-        }        
+        }
       }
     }
   }
@@ -427,5 +430,17 @@ body.single-product {
 
   &:hover {
     color: $primary;
+  }
+}
+
+// Products
+.woocommerce,
+.woocommerce-page {
+  .woocommerce-ordering {
+    float: none;
+    
+    select {
+      vertical-align: middle;
+    }
   }
 }

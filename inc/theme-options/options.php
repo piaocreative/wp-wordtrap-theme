@@ -206,7 +206,6 @@ $cats_filter_position_options    = wordtrap_cats_filter_position_options();
 $members_view_options            = wordtrap_members_view_options();
 $singular_orderby_options        = wordtrap_singular_orderby_options();
 $singular_order_options          = wordtrap_singular_order_options();
-$products_view_mode_options      = wordtrap_products_view_mode_options();
 $products_view_options           = wordtrap_products_view_options();
 $products_cart_notify_options    = wordtrap_cart_notify_options();
 $product_view_options            = wordtrap_product_view_options();
