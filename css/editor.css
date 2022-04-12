@@ -588,17 +588,17 @@ progress {
 }
 
 /*
-* The variables for Templates
-*
-* @package Wordtrap
-* @since wordtrap 1.0.0
-*/
+ * The variables for Templates
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
 /*
-* The default color styles
-*
-* @package Wordtrap
-* @since wordtrap 1.0.0
-*/
+ * The default color styles
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

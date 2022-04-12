@@ -1,0 +1,26 @@
+<svg width="180" height="122" viewBox="0 0 180 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.5" y="1.5" width="177" height="119" rx="4.5" fill="white" stroke="#43C237" stroke-width="3"/>
+<rect x="8" y="9" width="41" height="39" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<rect x="8" y="54" width="41" height="39" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<rect x="55" y="9" width="41" height="39" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<rect x="55" y="54" width="41" height="39" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<rect x="102" y="13" width="40" height="4" rx="2" fill="#43C237"/>
+<rect x="102" y="29" width="18" height="4" rx="2" fill="#43C237"/>
+<rect x="102" y="38" width="67" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="102" y="43" width="67" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="102" y="48" width="44" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<path d="M105 20L105.935 21.7137L107.853 22.0729L106.512 23.4913L106.763 25.4271L105 24.59L103.237 25.4271L103.488 23.4913L102.147 22.0729L104.065 21.7137L105 20Z" fill="#C7EDC3"/>
+<path d="M113 20L113.935 21.7137L115.853 22.0729L114.512 23.4913L114.763 25.4271L113 24.59L111.237 25.4271L111.488 23.4913L110.147 22.0729L112.065 21.7137L113 20Z" fill="#C7EDC3"/>
+<path d="M121 20L121.935 21.7137L123.853 22.0729L122.512 23.4913L122.763 25.4271L121 24.59L119.237 25.4271L119.488 23.4913L118.147 22.0729L120.065 21.7137L121 20Z" fill="#C7EDC3"/>
+<path d="M129 20L129.935 21.7137L131.853 22.0729L130.512 23.4913L130.763 25.4271L129 24.59L127.237 25.4271L127.488 23.4913L126.147 22.0729L128.065 21.7137L129 20Z" fill="#C7EDC3"/>
+<path d="M137 20L137.935 21.7137L139.853 22.0729L138.512 23.4913L138.763 25.4271L137 24.59L135.237 25.4271L135.488 23.4913L134.147 22.0729L136.065 21.7137L137 20Z" fill="#C7EDC3"/>
+<rect x="102" y="56" width="44" height="12" rx="2" fill="#43C237"/>
+<rect x="109" y="61" width="30" height="2" rx="1" fill="white"/>
+<circle cx="104" cy="76" r="2" fill="#C7EDC3"/>
+<circle cx="112" cy="76" r="2" fill="#C7EDC3"/>
+<circle cx="120" cy="76" r="2" fill="#C7EDC3"/>
+<rect x="102" y="87" width="37" height="4" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<rect x="102" y="93" width="57" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="102" y="98" width="50" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="102" y="103" width="54" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+</svg>

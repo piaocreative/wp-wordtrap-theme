@@ -1,0 +1,25 @@
+<svg width="180" height="122" viewBox="0 0 180 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.5" y="1.5" width="177" height="119" rx="4.5" fill="white" stroke="#43C237" stroke-width="3"/>
+<rect x="65" y="32" width="50" height="39" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<rect x="65" y="73" width="50" height="39" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<path d="M65 116C65 114.895 65.8954 114 67 114H113C114.105 114 115 114.895 115 116V119H65V116Z" fill="#43C237" fill-opacity="0.5"/>
+<rect x="18" y="13" width="40" height="4" rx="2" fill="#43C237"/>
+<rect x="124" y="32" width="18" height="4" rx="2" fill="#43C237"/>
+<rect x="124" y="41" width="44" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="124" y="46" width="44" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="124" y="51" width="44" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<path d="M21 20L21.9346 21.7137L23.8532 22.0729L22.5122 23.4913L22.7634 25.4271L21 24.59L19.2366 25.4271L19.4878 23.4913L18.1468 22.0729L20.0654 21.7137L21 20Z" fill="#C7EDC3"/>
+<path d="M29 20L29.9346 21.7137L31.8532 22.0729L30.5122 23.4913L30.7634 25.4271L29 24.59L27.2366 25.4271L27.4878 23.4913L26.1468 22.0729L28.0654 21.7137L29 20Z" fill="#C7EDC3"/>
+<path d="M37 20L37.9346 21.7137L39.8532 22.0729L38.5122 23.4913L38.7634 25.4271L37 24.59L35.2366 25.4271L35.4878 23.4913L34.1468 22.0729L36.0654 21.7137L37 20Z" fill="#C7EDC3"/>
+<path d="M45 20L45.9346 21.7137L47.8532 22.0729L46.5122 23.4913L46.7634 25.4271L45 24.59L43.2366 25.4271L43.4878 23.4913L42.1468 22.0729L44.0654 21.7137L45 20Z" fill="#C7EDC3"/>
+<path d="M53 20L53.9346 21.7137L55.8532 22.0729L54.5122 23.4913L54.7634 25.4271L53 24.59L51.2366 25.4271L51.4878 23.4913L50.1468 22.0729L52.0654 21.7137L53 20Z" fill="#C7EDC3"/>
+<rect x="124" y="59" width="44" height="12" rx="2" fill="#43C237"/>
+<rect x="131" y="64" width="30" height="2" rx="1" fill="white"/>
+<circle cx="126" cy="79" r="2" fill="#C7EDC3"/>
+<circle cx="134" cy="79" r="2" fill="#C7EDC3"/>
+<circle cx="142" cy="79" r="2" fill="#C7EDC3"/>
+<rect x="18" y="34" width="29" height="4" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<rect x="18" y="40" width="38" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="18" y="45" width="34" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<rect x="18" y="50" width="36" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+</svg>

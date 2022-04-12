@@ -28,11 +28,15 @@ $layout = $main_layout[ 'layout' ];
 $wrap_classes = array( 'primary-wrap' );
 $inner_classes = array( 'primary-inner' );
 
+$wrap_classes[] = 'site-layout-' . esc_attr( $layout );
 if ( in_array( $layout, array( 'wide', 'wide-left-sidebar', 'wide-right-sidebar', 'wide-both-sidebars' ) ) ) {
   $inner_classes[] = 'container-fluid';
 } else {
   $inner_classes[] = 'container';
 }
+
+$wrap_classes = apply_filters( 'wordtrap_filter_primary_wrap_classes', $wrap_classes );
+$inner_classes = apply_filters( 'wordtrap_filter_primary_inner_classes', $inner_classes );
 
 // Main classes
 $main_classes = array( 'site-main', 'order-2' );
@@ -43,6 +47,8 @@ if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
 } else if ( in_array( $layout, array( 'wide-both-sidebars', 'both-sidebars' ) ) ) {
   $main_classes[] = 'col-lg-6';
 }
+
+$main_classes = apply_filters( 'wordtrap_filter_site_main_classes', $main_classes );
 
 // Main templates
 $main_top_template = wordtrap_layout_template( 'main', 'main-top' );
@@ -114,7 +120,7 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 
           <div class="row">
 
-            <main id="main" class="<?php echo esc_attr( implode( ' ', $main_classes ) ) ?>">
+            <main id="main" class="<?php echo esc_attr( implode( ' ', $main_classes ) ) ?>" role="main">
 
               <?php
               /**

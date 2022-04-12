@@ -72,7 +72,7 @@ Redux::set_section(
       array(
         'id'       => 'post-nav',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Navigation', 'wordtrap' ),
+        'title'    => esc_html__( 'Prev / Next Navigation', 'wordtrap' ),
         'default'  => false,
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),

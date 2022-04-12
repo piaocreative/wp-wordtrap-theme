@@ -457,43 +457,43 @@ if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
     return array(
       'default'  => array(
         'title'  => esc_html__( 'Default', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.svg',
       ),
       'onhover'  => array(
         'title'  => esc_html__( 'Default - Show Links on Hover', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.svg',
       ),
       'outimage-aq-onimage'  => array(
         'title'  => esc_html__( 'Add to Cart, Quick View On Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage.svg',
       ),
       'outimage-aq-onimage2' => array(
         'title'  => esc_html__( 'Add to Cart, Quick View On Image with Padding', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage2.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage.svg',
       ),
       'awq-onimage' => array(
         'title'  => esc_html__( 'Link On Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-awq-onimage.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-awq-onimage.svg',
       ),
       'outimage' => array(
         'title'  => esc_html__( 'Out of Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage.svg',
       ),
       'onimage'  => array(
         'title'  => esc_html__( 'On Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage.svg',
       ),
       'onimage2' => array(
         'title'  => esc_html__( 'On Image with Overlay 1', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage2.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage2.svg',
       ),
       'onimage3' => array(
         'title'  => esc_html__( 'On Image with Overlay 2', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage3.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage3.svg',
       ),
       'quantity' => array(
         'title'  => esc_html__( 'Show Quantity Input', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-quantity-input.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-quantity-input.svg',
       ),
     );
   }
@@ -507,15 +507,15 @@ if ( ! function_exists( 'wordtrap_cart_notify_options' ) ) {
     return array(
       '1'  => array(
         'title'  => esc_html__( 'Type 1', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-1.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-1.svg',
       ),
       '2'  => array(
         'title'  => esc_html__( 'Type 2', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-2.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-2.svg',
       ),
       '3'  => array(
         'title'  => esc_html__( 'Type 3', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-3.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-3.svg',
       ),
     );
   }
@@ -529,39 +529,39 @@ if ( ! function_exists( 'wordtrap_product_view_options' ) ) {
     return array(
       'default'  => array(
         'title'  => esc_html__( 'Default', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-default.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-default.svg',
       ),
       'extended' => array(
         'title'  => esc_html__( 'Extended', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-extended.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-extended.svg',
       ),
       'full-width' => array(
         'title'  => esc_html__( 'Full Width', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-full-width.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-full-width.svg',
       ),
       'grid'     => array(
         'title'  => esc_html__( 'Grid Images', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-grid.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-grid.svg',
       ),
       'sticky-info' => array(
         'title'  => esc_html__( 'Sticky Info', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-sticky-info.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-sticky-info.svg',
       ),
       'sticky-both-info' => array(
         'title'  => esc_html__( 'Sticky Left & Right Info', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-sticky-info-both.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-sticky-info-both.svg',
       ),
       'transparent' => array(
         'title'  => esc_html__( 'Transparent Images', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-transparent.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-transparent.svg',
       ),
       'centered-vertical-zoom' => array(
         'title'  => esc_html__( 'Centered Vertical Zoom', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-centered-vertical-zoom.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-centered-vertical-zoom.svg',
       ),
       'left-sidebar' => array(
         'title'  => esc_html__( 'Left Sidebar', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-left-sidebar.jpg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-left-sidebar.svg',
       ),
     );
   }

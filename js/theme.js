@@ -14000,7 +14000,7 @@
 	    disable: false,
 	    startIndex: 0,
 	    onInit: false,
-	    useLocalStorage: true,
+	    useLocalStorage: false,
 	    nonce: false
 	  });
 	  Slider.prototype = {
