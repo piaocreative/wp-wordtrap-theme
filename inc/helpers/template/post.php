@@ -385,27 +385,6 @@ if ( ! function_exists( 'wordtrap_get_view_mode' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_grid_view_classes' ) ) {
-  /**
-   * Get grid view classes
-   */
-  function wordtrap_grid_view_classes() {
-    $grid_view = wordtrap_options( 'posts-grid-view' );
-    if ( ! ( $grid_view === 'grid' || $grid_view === 'masonry' ) ) {
-      return '';
-    }
-
-    $classes = array();
-    $classes[] = 'row-cols-sm-' . wordtrap_options( 'posts-grid-columns-sm' );
-    $classes[] = 'row-cols-md-' . wordtrap_options( 'posts-grid-columns-md' );
-    $classes[] = 'row-cols-lg-' . wordtrap_options( 'posts-grid-columns-lg' );
-    $classes[] = 'row-cols-xl-' . wordtrap_options( 'posts-grid-columns-xl' );
-    $classes[] = 'row-cols-xxl-' . wordtrap_options( 'posts-grid-columns-xxl' );
-    
-    return implode( ' ', $classes );
-  }
-}
-
 if ( ! function_exists( 'wordtrap_get_related_posts' ) ) {
   /**
    * Get related posts

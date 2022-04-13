@@ -5,6 +5,68 @@
  * @since wordtrap 1.0.0
  */
 
+// Fix billing field wrapper
+.woocommerce-input-wrapper {
+  width: 100%;
+}
+
+// Woocommerce product gallery slider width fix
+figure.woocommerce-product-gallery__wrapper {
+  max-width: inherit !important;
+}
+
+// Fix coupon code input width for cart, apply only to the cart as it will break the checkout field width
+@media(min-width: 768px) {
+  .woocommerce-cart #coupon_code.input-text {
+    width: 110px !important;
+  }
+}
+
+// Fix input fields for Stripe Checkout fields
+#stripe-payment-data {
+  #wc-stripe-cc-form {
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      .wc-stripe-elements-field {
+        max-height: 2rem;
+      }
+    }
+  }
+  .woocommerce-SavedPaymentMethods-saveNew {
+    display: inherit;
+  }
+}
+
+// Notices
+.woocommerce-notices-wrapper .woocommerce-message {
+  @extend .alert;
+  @extend .alert-success;
+  padding: 1em 2em 1em 3.5em;
+
+  a.button {
+    @extend .btn;
+    @extend .btn-success;
+  }
+
+  &.woocommerce-error {
+    @extend .alert-danger;
+    a.button {
+      @extend .btn-danger;
+    }
+  }
+}
+
+.woocommerce-info {
+  @extend .alert;
+  @extend .alert-info;
+  padding: 1em 2em 1em 3.5em;
+  a.button {
+    @extend .btn;
+    @extend .btn-info;
+  }
+}
+
 // Primary wrap
 body.single-product {
   .primary-wrap {
@@ -198,7 +260,7 @@ body.single-product {
           a {
             color: $headings-color;
             font-weight: $headings-font-weight;
-            font-size: $h5-font-size;
+            font-size: $title-font-size;
           }
 
           &.active {
@@ -299,7 +361,7 @@ body.single-product {
         .comment-reply-title {
           display: block;
           font-weight: $headings-font-weight;
-          font-size: $h5-font-size;
+          font-size: $title-font-size;
           margin-bottom: 0.5rem;
         }
 
@@ -356,7 +418,8 @@ body.single-product {
 
   div.product p.price, 
   div.product span.price,
-  ul.products li.product .price {
+  ul.products li.product .price,
+  div.products div.product .price {
     color: $primary;
     font-weight: $font-weight-bold;
     font-size: 1.75em;
@@ -438,9 +501,168 @@ body.single-product {
 .woocommerce-page {
   .woocommerce-ordering {
     float: none;
+    margin-bottom: 0;
     
     select {
       vertical-align: middle;
+    }
+  }
+}
+
+.woocommerce,
+.woocommerce-page {
+  div.products {
+    position: relative;
+  
+    &:not(.products-carousel) {
+      margin-left: calc(var(--bs-gutter-x) * -0.5);
+      margin-right: calc(var(--bs-gutter-x) * -0.5);
+
+      @include media-breakpoint-up(xl) {
+        margin-left: calc(var(--bs-gutter-x) * -0.625);
+        margin-right: calc(var(--bs-gutter-x) * -0.625);
+      }
+
+      > * {
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        
+        @include media-breakpoint-up(xl) {
+          padding-left: calc(var(--bs-gutter-x) * 0.625);
+          padding-right: calc(var(--bs-gutter-x) * 0.625);
+        }
+      }
+    }
+
+    > * {
+      position: relative;
+      padding-top: calc(var(--bs-gutter-x) * 1);
+      
+      @include media-breakpoint-up(xl) {
+        padding-top: calc(var(--bs-gutter-x) * 1.25);
+      }
+
+      .product {
+        background: $section-bg;
+        border-radius: $border-radius-lg;
+        padding: calc(var(--bs-gutter-x) * 0.5);
+
+        @include media-breakpoint-up(xl) {
+          padding: calc(var(--bs-gutter-x) * 0.625);
+        }
+      }
+    }
+
+    .product-inner {
+      padding: calc(var(--bs-gutter-x) * 0.5);
+      position: relative;
+  
+      @include media-breakpoint-up(xl) {
+        padding: calc(var(--bs-gutter-x) * 0.625);
+      }
+    }
+
+    div.product {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      @include clearfix;
+
+      .woocommerce-loop-product__title.with-rating {
+        padding-right: 4em;
+      }
+
+      .star-rating {
+        font-size: 0.857em;
+        margin-top: 0.4em;
+        position: absolute;
+        right: calc(var(--bs-gutter-x) * 0.5);
+        top: calc(var(--bs-gutter-x) * 0.5);
+
+        @include media-breakpoint-up(xl) {
+          right: calc(var(--bs-gutter-x) * 0.625);
+          top: calc(var(--bs-gutter-x) * 0.625);
+        }
+      }
+
+      .price {
+        font-size: 1.2em;
+      }
+
+      .button[class*="product_type_"] {
+        border-radius: $border-radius-pill;
+        float: right;
+        text-indent: -1000px;
+        overflow: hidden;
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+
+        &:before {
+          display: inline-block;
+          font-family: FontAwesome;
+          text-indent: 0;
+          position: absolute;
+          left: 0;
+          right: 0;
+          text-align: center;
+        }
+      }
+
+      [class*="product_type_simple"]:before {
+        content: '\f07a';
+      }
+
+      [class*="product_type_variable"]:before {
+        content: '\f07a';
+      }
+      [class*="product_type_grouped"]:before {
+        content: '\f07a';
+      }
+      [class*="product_type_external"]:before {
+        content: '\f08e';
+      }
+
+      
+    }
+  }
+
+  .attachment-woocommerce_thumbnail {
+    border-radius: $border-radius-lg;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+}
+
+.woocommerce-loop-product__title {
+  &,
+  a & {    
+    color: $body-color;
+    color: $headings-color;
+    font-size: $title-font-size;
+  }
+  
+  a:hover & {
+    color: $primary;
+  }
+}
+
+.products {
+  .product {
+    .product-labels {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: calc(var(--bs-gutter-x) * 0.5);
+      top: calc(var(--bs-gutter-x) * 0.5);
+      margin-left: calc(var(--bs-gutter-x) * 0.5);
+      margin-top: calc(var(--bs-gutter-x) * 1);
+
+      @include media-breakpoint-up(xl) {
+        left: calc(var(--bs-gutter-x) * 0.625);
+        top: calc(var(--bs-gutter-x) * 0.625);
+      }
     }
   }
 }

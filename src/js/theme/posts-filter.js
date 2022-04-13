@@ -129,6 +129,8 @@ import wordtrap_init from './init';
       var self = this,
         $el = this.$el;
 
+        console.log($el);
+
       $el.find( 'a.page-link').on( 'click', function( e ) {
         e.preventDefault();
         var $this = $( this ),

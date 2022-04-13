@@ -64,7 +64,6 @@
   }
 }
 
-.entry-title,
 .navigation,
 .comment-navigation,
 .comment-by {
@@ -89,6 +88,12 @@
     display: inline-block;
     position: relative;
     word-break: break-all;
+    color: $body-color;
+    color: $headings-color;
+    
+    &:hover {
+      color: $primary;
+    }
   }
 }
 
@@ -584,7 +589,7 @@ body.search-results .site-main article.hentry {
   }
 
   .entry-title {
-    font-size: $h4-font-size;
+    font-size: $title-font-size;
   }
 
   .entry-meta {
@@ -710,7 +715,7 @@ body.search-results .site-main article.hentry {
       border-radius: $border-radius-lg;
       color: $secondary;
       font-weight: $headings-font-weight;
-      font-size: $h6-font-size;
+      font-size: $title-font-size;
       margin-top: 1rem;
       padding: 0.5rem 1.5rem;
 
