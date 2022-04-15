@@ -1,0 +1,92 @@
+
+// Primary wrap
+body.single-product {
+  .primary-wrap {
+    &.site-layout-wide,
+    &.site-layout-full {
+      margin-top: 0;
+    }
+  }
+}
+
+.primary-wrap:not(.site-layout-wide, .site-layout-full) {
+  div.product {
+    @include media-breakpoint-down(lg) {
+      div.images,
+      div.summary {
+        width: 100%;
+      }
+
+      div.summary {
+        margin-top: 2rem;
+      }
+    }
+  }        
+}
+
+// Fix billing field wrapper
+.woocommerce-input-wrapper {
+  width: 100%;
+}
+
+// Notices
+.woocommerce-notices-wrapper .woocommerce-message {
+  @extend .alert;
+  @extend .alert-success;
+  padding: 1em 2em 1em 3.5em;
+
+  a.button {
+    @extend .btn;
+    @extend .btn-success;
+  }
+
+  &.woocommerce-error {
+    @extend .alert-danger;
+    a.button {
+      @extend .btn-danger;
+    }
+  }
+}
+
+.woocommerce-info {
+  @extend .alert;
+  @extend .alert-info;
+  padding: 1em 2em 1em 3.5em;
+  a.button {
+    @extend .btn;
+    @extend .btn-info;
+  }
+}
+
+.woocommerce,
+.woocommerce-page {
+  div.product p.price, 
+  div.product span.price,
+  ul.products li.product .price,
+  div.products div.product .price {
+    color: $body-color;
+    font-weight: $font-weight-bold;
+    font-size: $single-price-font-size;
+    margin-top: 1rem;
+    margin-bottom: 0;
+
+    del {
+      font-size: 0.85em;
+      margin-right: 0.5rem;
+      opacity: 0.8;
+    }
+
+    ins {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}
+
+.woocommerce-review-link {
+  color: $secondary;
+
+  &:hover {
+    color: $primary;
+  }
+}

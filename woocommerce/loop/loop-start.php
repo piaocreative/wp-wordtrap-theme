@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $view_mode = wordtrap_get_view_mode();
 
 $wrap_classes = array();
+$wrap_classes[] = 'products-' . $view_mode;
 
 if ( $view_mode === 'grid' ) {
   $wrap_classes[] = 'row';

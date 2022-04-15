@@ -1,0 +1,23 @@
+
+// Fix coupon code input width for cart, apply only to the cart as it will break the checkout field width
+@media(min-width: 768px) {
+  .woocommerce-cart #coupon_code.input-text {
+    width: 110px !important;
+  }
+}
+
+// Fix input fields for Stripe Checkout fields
+#stripe-payment-data {
+  #wc-stripe-cc-form {
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      .wc-stripe-elements-field {
+        max-height: 2rem;
+      }
+    }
+  }
+  .woocommerce-SavedPaymentMethods-saveNew {
+    display: inherit;
+  }
+}

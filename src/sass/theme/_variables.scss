@@ -27,8 +27,8 @@ $main-bg: #f5f5f5 !default;
 $section-bg: #ffffff !default;
 
 // Title font size
-$title-font-size: 1.2rem;
-$widget-title-font-size: 1.2rem;
+$title-font-size: 1rem;
+$widget-title-font-size: 1rem;
 
 // Footer
 $footer-bg: #252525 !default;
@@ -39,4 +39,6 @@ $footer-headings-color: #fff !default;
 $footer-link-color: #686868 !default;
 $footer-link-hover-color: #888888 !default;
 
-
+// Woocommerce
+$single-price-font-size: 1.5rem;
+$archive-price-font-size: 1rem;
