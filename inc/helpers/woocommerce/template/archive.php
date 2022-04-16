@@ -162,3 +162,21 @@ if ( ! function_exists( 'wordtrap_after_shop_loop_item' ) ) {
     }
   }
 }
+
+/**
+ * Product type: Add to Cart, Quick View On Image
+ */
+
+// Hook before shop loop item title
+add_action( 'woocommerce_before_shop_loop_item_title', 'wordtrap_show_add_to_cart_before_shop_loop_item_title', 50 );
+if ( ! function_exists( 'wordtrap_show_add_to_cart_before_shop_loop_item_title' ) ) {
+  /**
+   * Add add to cart button on thumbnail
+   */
+  function wordtrap_show_add_to_cart_before_shop_loop_item_title() {
+    if ( in_array( wordtrap_options( 'products-view' ), array( 'cart-onimage-top', 'cart-onimage-bottom' ) ) ) {
+      woocommerce_template_loop_add_to_cart();
+      remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+    }
+  }
+}

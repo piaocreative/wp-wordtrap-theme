@@ -80,6 +80,18 @@ body.single-product {
       color: $primary;
       text-decoration: none;
     }
+  }  
+
+  .star-rating {
+    color: $primary;
+  }
+
+  #respond input#submit.alt, 
+  a.button.alt, 
+  button.button.alt, 
+  input.button.alt {
+    @extend .btn;
+    @extend .btn-primary;
   }
 }
 

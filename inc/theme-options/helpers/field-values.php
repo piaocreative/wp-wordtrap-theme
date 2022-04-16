@@ -446,25 +446,25 @@ if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
         'title'  => esc_html__( 'Default', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-default.svg',
       ),
-      'outimage-aq-onimage'  => array(
-        'title'  => esc_html__( 'Add to Cart, Quick View On Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage-aq-onimage.svg',
+      'cart-onimage-top'  => array(
+        'title'  => esc_html__( 'Cart on Image\'s Top', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-cart-onimage-top.svg',
       ),
-      'awq-onimage' => array(
-        'title'  => esc_html__( 'Link On Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-awq-onimage.svg',
+      'cart-onimage-bottom' => array(
+        'title'  => esc_html__( 'Cart on Images\'s Bottom', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-cart-onimage-bottom.svg',
       ),
-      'outimage' => array(
-        'title'  => esc_html__( 'Out of Image', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-outimage.svg',
+      'show-cart-label' => array(
+        'title'  => esc_html__( 'Show Cart Label', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-show-cart-label.svg',
       ),
       'onimage'  => array(
         'title'  => esc_html__( 'On Image', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage.svg',
       ),
-      'onimage2' => array(
+      'onimage-with-overlay' => array(
         'title'  => esc_html__( 'On Image with Overlay', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage-overlay.svg',
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage-with-overlay.svg',
       ),
       'quantity' => array(
         'title'  => esc_html__( 'Show Quantity Input', 'wordtrap' ),
