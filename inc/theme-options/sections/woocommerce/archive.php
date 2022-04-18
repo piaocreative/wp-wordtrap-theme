@@ -86,13 +86,6 @@ Redux::set_section(
         'options'  => $pagination_options,
       ),
       array(
-        'id'       => 'products-cart-notify',
-        'type'     => 'image_select',
-        'title'    => esc_html__( 'Cart Notification', 'wordtrap' ),
-        'options'  => $products_cart_notify_options,
-        'default'  => '1'
-      ),
-      array(
         'id'       => 'products-grid-columns-start',
         'type'     => 'section',
         'title'    => esc_html__( 'Grive View Columns', 'wordtrap' ),
@@ -188,6 +181,13 @@ Redux::set_section(
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),      
+      array(
+        'id'       => 'products-cart-notify',
+        'type'     => 'image_select',
+        'title'    => esc_html__( 'Cart Notification', 'wordtrap' ),
+        'options'  => $products_cart_notify_options,
+        'default'  => '1'
+      ),
       // array(
       //   'id'       => 'products-variation',
       //   'type'     => 'switch',
