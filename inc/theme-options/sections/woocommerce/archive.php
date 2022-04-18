@@ -186,7 +186,7 @@ Redux::set_section(
         'type'     => 'image_select',
         'title'    => esc_html__( 'Cart Notification', 'wordtrap' ),
         'options'  => $products_cart_notify_options,
-        'default'  => '1'
+        'default'  => 'default'
       ),
       // array(
       //   'id'       => 'products-variation',
