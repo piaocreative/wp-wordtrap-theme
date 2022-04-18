@@ -4,6 +4,27 @@ figure.woocommerce-product-gallery__wrapper {
   max-width: inherit !important;
 }
 
+.single-product .primary-wrap.site-layout-wide {
+  .woocommerce-notices-wrapper {
+    margin-bottom: 2rem;
+    @extend .container-fluid;
+
+    @include media-breakpoint-down(sm) {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  }
+}
+
+.primary-wrap.site-layout-full {
+  .woocommerce-notices-wrapper {
+    margin-bottom: 2rem;
+    @extend .container;
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;    
+  }
+}
+
 .product-summary-wrapper {
   background: $section-bg;
   padding: 2rem;
@@ -362,9 +383,13 @@ form.cart {
   }
 }
 
-.woocommerce-tabs {
+.woocommerce-tabs,
+section.upsells,
+section.related-products {
   margin-top: 4rem;
+}
 
+.woocommerce-tabs {
   ul.tabs {
     padding: 0;    
   }

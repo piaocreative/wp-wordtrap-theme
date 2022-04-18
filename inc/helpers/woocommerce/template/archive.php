@@ -10,8 +10,8 @@
 defined( 'ABSPATH' ) || exit;
 
 // Wrap the products
-add_action( 'woocommerce_before_main_content', 'wordtrap_wrap_start_products', 1 );
-add_action( 'woocommerce_before_after_content', 'wordtrap_wrap_end_products', 1 );
+add_action( 'woocommerce_before_shop_loop', 'wordtrap_wrap_start_products', 1 );
+add_action( 'woocommerce_after_shop_loop', 'wordtrap_wrap_end_products', 100 );
 
 if ( ! function_exists( 'wordtrap_wrap_start_products' ) ) {
   /**
@@ -56,7 +56,7 @@ if ( ! function_exists( 'wordtrap_shop_loop_item_categories' ) ) {
     global $product;
 
     // View mode
-    $view_mode = wordtrap_get_view_mode();
+    $view_mode = wc_get_loop_prop( 'view-mode', wordtrap_get_view_mode() );
 
     if ( $view_mode === 'list' && wordtrap_options( 'products-categories' ) ) {
       echo '<span class="category-list">' . wc_get_product_category_list( $product->get_id(), ', ', '' ) . '</span>';
@@ -73,7 +73,7 @@ if ( ! function_exists( 'wordtrap_shop_loop_item_description_after_title' ) ) {
     global $product;
 
     // View mode
-    $view_mode = wordtrap_get_view_mode();
+    $view_mode = wc_get_loop_prop( 'view-mode', wordtrap_get_view_mode() );
 
     if ( $view_mode === 'list' ) {
       woocommerce_template_single_excerpt();
@@ -90,7 +90,7 @@ if ( ! function_exists( 'wordtrap_shop_loop_item_rating_after_title' ) ) {
     global $product;
 
     // View mode
-    $view_mode = wordtrap_get_view_mode();
+    $view_mode = wc_get_loop_prop( 'view-mode', wordtrap_get_view_mode() );
 
     if ( $view_mode === 'list' && wordtrap_options( 'products-rating' ) ) {
       woocommerce_template_loop_rating();
@@ -115,7 +115,7 @@ if ( ! function_exists( 'wordtrap_add_product_rating_title_class' ) ) {
     global $product;
 
     // View mode
-    $view_mode = wordtrap_get_view_mode();
+    $view_mode = wc_get_loop_prop( 'view-mode', wordtrap_get_view_mode() );
 
     if ( $view_mode === 'grid' && wordtrap_options( 'products-rating' ) && wc_review_ratings_enabled() && wc_get_rating_html( $product->get_average_rating() ) ) {
       $classes .= ' with-rating';
@@ -155,7 +155,7 @@ if ( ! function_exists( 'wordtrap_after_shop_loop_item' ) ) {
     global $product;
 
     // View mode
-    $view_mode = wordtrap_get_view_mode();
+    $view_mode = wc_get_loop_prop( 'view-mode', wordtrap_get_view_mode() );
 
     if ( $view_mode === 'grid' && wordtrap_options( 'products-categories' ) ) {
       echo '<span class="category-list">' . wc_get_product_category_list( $product->get_id(), ', ', '' ) . '</span>';
@@ -201,7 +201,7 @@ if ( ! function_exists( 'wordtrap_show_quantity_input_in_shop_loop' ) ) {
 /**
  * Cart Notification
  */
-add_action( 'woocommerce_after_shop_loop', 'wordtrap_cart_notification_template', 100 );
+add_action( 'woocommerce_after_main_content', 'wordtrap_cart_notification_template', 100 );
 if ( ! function_exists( 'wordtrap_cart_notification_template' ) ) {
   /**
    * Add template for cart notification

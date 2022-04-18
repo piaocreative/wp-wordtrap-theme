@@ -90,7 +90,7 @@ get_header();
   wordtrap_posts_filter_navigation( 'posts-filter-above' );
 
   if ( $view_mode === 'grid' ) : ?>
-    <div class="posts-grid posts-view-<?php echo esc_attr( wordtrap_options( 'posts-grid-view' ) ) ?> row <?php echo esc_attr( wordtrap_grid_view_classes() ) ?>">
+    <div class="posts-grid posts-view-<?php echo esc_attr( wordtrap_options( 'posts-grid-view' ) ) ?> <?php echo esc_attr( wordtrap_grid_view_classes() ) ?>">
   <?php
   endif;
 

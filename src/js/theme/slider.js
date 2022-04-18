@@ -169,9 +169,9 @@ import {tns} from '../tiny-slider';
 
       setTimeout( function() {
         if ( $middle.length ) {
-          $middle.find( '.tns-item.tns-slide-active' ).stop().animate( { height: $middle.height() }, 100 );
+          $middle.find( '.tns-item.tns-slide-active' ).stop().css( { height: $middle.height() } );
         } else if ( $inner.length ) {
-          $inner.find( '.tns-item.tns-slide-active' ).stop().animate( { height: $inner.height() }, 100 );
+          $inner.find( '.tns-item.tns-slide-active' ).stop().css( { height: $inner.height() } );
         }
       }, 0);
     },

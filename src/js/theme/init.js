@@ -90,7 +90,7 @@ function wordtrap_init( $wrap ) {
       } );
     }
 
-    // Related Posts Slider
+    // Posts Slider
     if ( $.fn.themeSlider ) {
       $( function () {
         $wrap.find( '.posts-slider' ).each( function () {

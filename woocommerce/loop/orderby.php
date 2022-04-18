@@ -35,7 +35,7 @@ $view_mode = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['vi
       <?php if ( $show_sort ) : ?>
         <label>
           <?php _e( 'Sort by:', 'wordtrap' ) ?>
-          <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
+          <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'wordtrap' ); ?>">
             <?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
               <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
             <?php endforeach; ?>

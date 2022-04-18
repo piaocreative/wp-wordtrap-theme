@@ -108,4 +108,42 @@ if ( ! function_exists( 'wordtrap_single_product_area_wrapper_end' ) ) {
   }
 }
 
+// Hook after single product summary
+add_action( 'woocommerce_after_single_product_summary', 'wordtrap_after_single_product_summary', 1 );
+if ( ! function_exists( 'wordtrap_after_single_product_summary' ) ) {
+  /**
+   * Hide related products or upsells
+   */
+  function wordtrap_after_single_product_summary() {
+    if ( ! wordtrap_options( 'product-upsells' ) ) {
+      remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+    }
+    if ( ! wordtrap_options( 'product-related' ) ) {
+      remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+    }
+  }
+}
 
+// Filter upsells count
+add_filter( 'woocommerce_upsell_display_args', 'wordtrap_upsells_count', 10 );
+if ( ! function_exists( 'wordtrap_upsells_count' ) ) {
+  /**
+   * Configure upsells count
+   */
+  function wordtrap_upsells_count( $args ) {
+    $args[ 'posts_per_page' ] = wordtrap_options( 'product-upsells-count' );
+    return $args;
+  }
+}
+
+// Filter related product count
+add_filter( 'woocommerce_output_related_products_args', 'wordtrap_related_products_count', 10 );
+if ( ! function_exists( 'wordtrap_related_products_count' ) ) {
+  /**
+   * Configure related products count
+   */
+  function wordtrap_related_products_count( $args ) {
+    $args[ 'posts_per_page' ] = wordtrap_options( 'product-related-count' );
+    return $args;
+  }
+}

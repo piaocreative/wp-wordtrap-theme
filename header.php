@@ -120,6 +120,10 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 
           <div class="row">
 
+            <?php if ( in_array( $layout, array( 'wide-left-sidebar', 'wide-both-sidebars', 'left-sidebar', 'both-sidebars' ) ) ) : ?>
+              <?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
+            <?php endif; ?>
+
             <main id="main" class="<?php echo esc_attr( implode( ' ', $main_classes ) ) ?>" role="main">
 
               <?php

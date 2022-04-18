@@ -371,20 +371,6 @@ if ( ! function_exists( 'wordtrap_edit_post_link' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_get_view_mode' ) ) {
-  /**
-   * Get view mode
-   *
-   * @return string      grid | list
-   */
-  function wordtrap_get_view_mode() {
-    $default_view_mode = wordtrap_options( 'posts-default-view-mode') ? 'grid' : 'list';
-    $view_mode = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['view'] ) ) : $default_view_mode;
-
-    return $view_mode;
-  }
-}
-
 if ( ! function_exists( 'wordtrap_get_related_posts' ) ) {
   /**
    * Get related posts
@@ -414,21 +400,5 @@ if ( ! function_exists( 'wordtrap_get_related_posts' ) ) {
     $query = new WP_Query( $args );
 
     return $query;
-  }
-}
-
-if ( ! function_exists( 'wordtrap_related_view_classes' ) ) {
-  /**
-   * Get related view classes
-   */
-  function wordtrap_related_view_classes() {
-    $classes = array();
-    $classes[] = 'row-cols-sm-' . wordtrap_options( 'post-related-columns-sm' );
-    $classes[] = 'row-cols-md-' . wordtrap_options( 'post-related-columns-md' );
-    $classes[] = 'row-cols-lg-' . wordtrap_options( 'post-related-columns-lg' );
-    $classes[] = 'row-cols-xl-' . wordtrap_options( 'post-related-columns-xl' );
-    $classes[] = 'row-cols-xxl-' . wordtrap_options( 'post-related-columns-xxl' );
-    
-    return implode( ' ', $classes );
   }
 }

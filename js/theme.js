@@ -13697,7 +13697,7 @@
 	          $this.themeMasonry(options);
 	        });
 	      });
-	    } // Related Posts Slider
+	    } // Posts Slider
 
 
 	    if ($.fn.themeSlider) {
@@ -14195,13 +14195,13 @@
 	          $inner = $('#' + slider + '-iw');
 	      setTimeout(function () {
 	        if ($middle.length) {
-	          $middle.find('.tns-item.tns-slide-active').stop().animate({
+	          $middle.find('.tns-item.tns-slide-active').stop().css({
 	            height: $middle.height()
-	          }, 100);
+	          });
 	        } else if ($inner.length) {
-	          $inner.find('.tns-item.tns-slide-active').stop().animate({
+	          $inner.find('.tns-item.tns-slide-active').stop().css({
 	            height: $inner.height()
-	          }, 100);
+	          });
 	        }
 	      }, 0);
 	    }

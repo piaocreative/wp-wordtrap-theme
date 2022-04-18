@@ -21,7 +21,7 @@ body.single-product {
         margin-top: 2rem;
       }
     }
-  }        
+  }
 }
 
 // Fix billing field wrapper
@@ -37,7 +37,9 @@ body.single-product {
 
   a.button {
     @extend .btn;
+    @extend .btn-sm;
     @extend .btn-success;
+    margin: -4px 0;
   }
 
   &.woocommerce-error {
@@ -54,7 +56,9 @@ body.single-product {
   padding: 1em 2em 1em 3.5em;
   a.button {
     @extend .btn;
+    @extend .btn-sm;
     @extend .btn-info;
+    margin: -4px 0;
   }
 }
 
