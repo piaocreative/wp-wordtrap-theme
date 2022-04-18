@@ -56,6 +56,7 @@ function wordtrap_woocommerce_events() {
 
           var toast = new Toast($toast.get(0));
           toast.show();
+          return;
         }
 
         if ( $button.parents( '.product-thumbnail').length ) {
