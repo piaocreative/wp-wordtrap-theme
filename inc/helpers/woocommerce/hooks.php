@@ -35,3 +35,31 @@ if ( ! function_exists( 'wordtrap_woocommerce_share' ) ) {
     }
   }
 }
+
+// Add minus, plus buttons in quantity input
+add_action( 'woocommerce_before_quantity_input_field', 'wordtrap_woocommerce_before_quantity_input_field', 10 );
+add_action( 'woocommerce_after_quantity_input_field', 'wordtrap_woocommerce_after_quantity_input_field', 10 );
+
+if ( ! function_exists( 'wordtrap_woocommerce_before_quantity_input_field' ) ) {
+  /**
+   * Start wrap and add minus button
+   */
+  function wordtrap_woocommerce_before_quantity_input_field() {
+    ?>
+    <div class="input-group">
+      <button class="btn minus" type="button"><?php _e( '-', 'wordtrap' ) ?></button>
+    <?php
+  }
+}
+
+if ( ! function_exists( 'wordtrap_woocommerce_after_quantity_input_field' ) ) {
+  /**
+   * Add plus button and end wrap
+   */
+  function wordtrap_woocommerce_after_quantity_input_field() {
+    ?>
+      <button class="btn plus" type="button"><?php _e( '+', 'wordtrap' ) ?></button>
+    </div>      
+    <?php
+  }
+}

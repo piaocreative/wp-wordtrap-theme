@@ -102,3 +102,69 @@ body.single-product {
     color: $primary;
   }
 }
+
+.woocommerce {
+  .quantity {
+    .qty {
+      padding-left: 0;
+      padding-right: 0;
+      width: 30px;
+      -moz-appearance: textfield;
+  
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+      }
+    }
+  
+    .qty,
+    .minus,
+    .plus {
+      background: $light;
+      border-color: $light;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  
+    .minus,
+    .plus {
+      color: $secondary;
+      padding-left: 0;
+      padding-right: 0;
+      width: 25px;
+      text-indent: -9999px;
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        color: inherit;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 9px;
+        border-top: 1px solid;
+        margin-top: -0.5px;
+        margin-left: -4.5px;
+      }
+    }
+
+    .plus {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 9px;
+        border-left: 1px solid;
+        margin-top: -4.5px;
+        margin-left: -0.5px;
+      }
+    }
+  }
+}

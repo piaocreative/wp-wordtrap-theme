@@ -5000,7 +5000,7 @@
 
 	var dropdown = /*@__PURE__*/getDefaultExportFromCjs(dropdown$1.exports);
 
-	var modal$1 = {exports: {}};
+	var modal = {exports: {}};
 
 	/*!
 	  * Bootstrap modal.js v5.1.3 (https://getbootstrap.com/)
@@ -6043,9 +6043,9 @@
 
 	}));
 
-	}(modal$1));
+	}(modal));
 
-	var modal = modal$1.exports;
+	var Modal = modal.exports;
 
 	var offcanvas$1 = {exports: {}};
 
@@ -8853,7 +8853,7 @@
 
 	var tab = tab$1.exports;
 
-	var toast$1 = {exports: {}};
+	var toast = {exports: {}};
 
 	/*!
 	  * Bootstrap toast.js v5.1.3 (https://getbootstrap.com/)
@@ -9277,9 +9277,9 @@
 
 	}));
 
-	}(toast$1));
+	}(toast));
 
-	var toast = toast$1.exports;
+	var Toast = toast.exports;
 
 	var tinySlider = {};
 
@@ -13101,14 +13101,14 @@
 	    },
 	    addLoading: function ($element) {
 	      if ($element.length) {
-	        $element.addClass('ajax-loaindg-container');
+	        $element.addClass('ajax-loading-container');
 	        $element.append('<div class="ajax-loading"><div role="status"><span class="visually-hidden">' + theme.loading + '</span></div></div>');
 	      }
 	    },
 	    removeLoading: function ($element) {
 	      if ($element.length) {
 	        $element.find('> .ajax-loading').remove();
-	        $element.removeClass('ajax-loaindg-container');
+	        $element.removeClass('ajax-loading-container');
 	      }
 	    }
 	  });
@@ -13729,6 +13729,117 @@
 	})(window.theme, jQuery);
 
 	/*
+	* Javascript for events
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+
+	function wordtrap_woocommerce_events() {
+	  (function ($) {
+	    // Add view cart on thumbnail
+	    $(document.body).on('added_to_cart', function (e, fragments, cart_hash, $button) {
+	      var $view_cart_button = $button.parent().find('.added_to_cart');
+
+	      if (!wc_add_to_cart_params.is_cart && $view_cart_button.length) {
+	        var $cart_modal = $('#modal-cart-notification'),
+	            $cart_toast = $('#toast-cart-notification'),
+	            $product = $button.parents('.product'),
+	            $product_thumbnail = $product.find('.product-thumbnail');
+
+	        if ($cart_modal.length) {
+	          var modal = new Modal($cart_modal.get(0)),
+	              $cart_link = $cart_modal.find('.cart-link'),
+	              $thumbail = $cart_modal.find('.product-thumbnail');
+	          $cart_modal.find('.product-title').html($product.find('.woocommerce-loop-product__title').html());
+	          $thumbail.html('');
+	          $thumbail.append($product_thumbnail.find('img').clone().get(0));
+	          $view_cart_button.addClass('btn btn-primary').removeClass('added_to_cart');
+	          $cart_link.html('');
+	          $cart_link.append($view_cart_button);
+	          modal.show();
+	          setTimeout(function () {
+	            modal.hide();
+	          }, 4000);
+	          return;
+	        }
+
+	        if ($cart_toast.length) {
+	          var $toast = $cart_toast.clone(),
+	              $cart_link = $toast.find('.cart-link'),
+	              $thumbail = $toast.find('.product-thumbnail');
+	          $toast.removeAttr('id');
+	          $toast.find('.product-title').html($product.find('.woocommerce-loop-product__title').html());
+	          $thumbail.html('');
+	          $thumbail.append($product_thumbnail.find('img').clone().get(0));
+	          $view_cart_button.addClass('btn btn-primary btn-sm').removeClass('added_to_cart');
+	          $cart_link.html('');
+	          $cart_link.append($view_cart_button);
+	          $('.toast-cart-notification-wrap').append($toast);
+	          var toast = new Toast($toast.get(0));
+	          toast.show();
+	        }
+
+	        if ($button.parents('.product-thumbnail').length) {
+	          return;
+	        }
+
+	        if ($product_thumbnail.length) {
+	          if ($product_thumbnail.find('.added_to_cart').length === 0) {
+	            $product_thumbnail.append($view_cart_button);
+	          } else {
+	            $view_cart_button.remove();
+	          }
+	        }
+	      }
+	    }); // Add quantity input
+
+	    $(document.body).on('should_send_ajax_request.adding_to_cart', function (e, $button) {
+	      var $quantity = $button.prev();
+
+	      if ($quantity.length && $quantity.hasClass('quantity')) {
+	        var $qty = $quantity.find('.qty');
+
+	        if (!$qty.length) {
+	          return false;
+	        }
+
+	        $button.attr('data-quantity', $qty.val());
+	      }
+
+	      return true;
+	    });
+	  })(jQuery);
+	}
+
+	function wordtrap_woocommerce_init($wrap) {
+	  (function ($) {
+	    if (!$wrap) {
+	      $wrap = jQuery(document.body);
+	    }
+
+	    $wrap.trigger('wordtrap_woocommerce_init_start'); // Quantity Input
+
+	    if ($.fn.themeQuantityInput) {
+	      $(function () {
+	        $wrap.find('.quantity').each(function () {
+	          var $this = $(this);
+	          $this.themeQuantityInput($this.data('options'));
+	        });
+	      });
+	    }
+	  })(jQuery);
+	}
+
+	(function (theme, $) {
+
+	  $(document).ready(function () {
+	    wordtrap_woocommerce_init();
+	    wordtrap_woocommerce_events();
+	  });
+	})(window.theme, jQuery);
+
+	/*
 	* Javascript for the posts filter navigation 
 	*
 	* @package Wordtrap
@@ -13821,7 +13932,6 @@
 	    build: function () {
 	      var self = this,
 	          $el = this.$el;
-	      console.log($el);
 	      $el.find('a.page-link').on('click', function (e) {
 	        e.preventDefault();
 	        var $this = $(this),
@@ -13835,6 +13945,7 @@
 	            theme.removeLoading($el);
 	            $main.html($response.find('#main').html());
 	            wordtrap_init($main);
+	            wordtrap_woocommerce_init($main);
 	          }
 	        });
 	      });
@@ -14112,17 +14223,105 @@
 	  };
 	})(window.theme, jQuery);
 
+	/*
+	* Javascript for the quantity input 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Quantity input
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__quantity';
+
+	  var QuantityInput = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  QuantityInput.defaults = {
+	    min: 0,
+	    step: 1
+	  };
+	  QuantityInput.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      var $el = this.$el,
+	          $input = $el.find('[type="number"]'),
+	          input_options = {};
+	      if ($input.attr('min')) input_options.min = $input.attr('min');
+	      if ($input.attr('max')) input_options.min = $input.attr('max');
+	      if ($input.attr('step')) input_options.min = $input.attr('step');
+	      this.options = $.extend(true, {}, QuantityInput.defaults, input_options, opts);
+	      return this;
+	    },
+	    build: function () {
+	      var self = this,
+	          $el = self.$el,
+	          $input = $el.find('[type="number"]');
+	      if (!$input.length) return;
+	      $el.find('.minus').on('click', function () {
+	        var changed = parseFloat($input.val()) - parseFloat(self.options.step);
+
+	        if (typeof self.options.min != 'undefined' && changed < self.options.min) {
+	          return;
+	        }
+
+	        $input.val(changed);
+	      });
+	      $el.find('.plus').on('click', function () {
+	        var changed = parseFloat($input.val()) + parseFloat(self.options.step);
+
+	        if (typeof self.options.max != 'undefined' && changed > self.options.max) {
+	          return;
+	        }
+
+	        $input.val(changed);
+	      });
+	      return this;
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    QuantityInput: QuantityInput
+	  }); // jquery plugin
+
+	  $.fn.themeQuantityInput = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      } else {
+	        return new theme.QuantityInput($this, opts);
+	      }
+	    });
+	  };
+	})(window.theme, jQuery);
+
 	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
 	exports.Collapse = collapse;
 	exports.Dropdown = dropdown;
-	exports.Modal = modal;
+	exports.Modal = Modal;
 	exports.Offcanvas = offcanvas;
 	exports.Popover = popover;
 	exports.Scrollspy = scrollspy;
 	exports.Tab = tab;
-	exports.Toast = toast;
+	exports.Toast = Toast;
 	exports.Tooltip = tooltip;
 	exports.tns = tns_1;
 

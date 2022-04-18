@@ -108,7 +108,7 @@ function wordtrap_init( $wrap ) {
           $this.themePostsAjaxLoad( $this.data( 'options' ) );
         } );
       } );
-    }
+    }    
 
   } )( jQuery );
 }

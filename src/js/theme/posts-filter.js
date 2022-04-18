@@ -6,6 +6,7 @@
 */
 
 import wordtrap_init from './init';
+import wordtrap_woocommerce_init from './woocommerce/init';
 
 // Posts Filter
 ( function ( theme, $ ) {
@@ -129,8 +130,6 @@ import wordtrap_init from './init';
       var self = this,
         $el = this.$el;
 
-        console.log($el);
-
       $el.find( 'a.page-link').on( 'click', function( e ) {
         e.preventDefault();
         var $this = $( this ),
@@ -147,6 +146,7 @@ import wordtrap_init from './init';
             theme.removeLoading( $el );
             $main.html( $response.find( '#main' ).html() );
             wordtrap_init( $main );
+            wordtrap_woocommerce_init( $main );
           }
         } );
       } );

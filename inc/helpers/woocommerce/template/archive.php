@@ -164,7 +164,7 @@ if ( ! function_exists( 'wordtrap_after_shop_loop_item' ) ) {
 }
 
 /**
- * Product type: Add to Cart, Quick View On Image
+ * Product type: Cart on Image's Top, Cart on Image's Bottom
  */
 
 // Hook before shop loop item title
@@ -180,3 +180,76 @@ if ( ! function_exists( 'wordtrap_show_add_to_cart_before_shop_loop_item_title' 
     }
   }
 }
+
+/**
+ * Product type: Show Quantity Input
+ */
+add_filter( 'woocommerce_loop_add_to_cart_link', 'wordtrap_show_quantity_input_in_shop_loop', 10, 3 );
+if ( ! function_exists( 'wordtrap_show_quantity_input_in_shop_loop' ) ) {
+  /**
+   * Show quantity input
+   */
+  function wordtrap_show_quantity_input_in_shop_loop( $content, $product, $args ) {
+    if ( in_array( wordtrap_options( 'products-view' ), array( 'quantity-input' ) ) && $product->get_type() === 'simple' && $product->is_purchasable() && $product->is_in_stock() ) {
+      return woocommerce_quantity_input( array(), null, false ) . $content;
+    }
+
+    return $content;
+  }
+}
+
+/**
+ * Cart Notification
+ */
+add_action( 'woocommerce_after_shop_loop', 'wordtrap_cart_notification_template', 100 );
+if ( ! function_exists( 'wordtrap_cart_notification_template' ) ) {
+  /**
+   * Add template for cart notification
+   */
+  function wordtrap_cart_notification_template() {
+    if ( wordtrap_options( 'products-cart-notify' ) === 'modal' ) :
+      ?>
+      <div id="modal-cart-notification" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><?php esc_html_e( 'You\'ve just added to the cart', 'wordtrap' ) ?></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php esc_attr( 'Close', 'wordtrap' ) ?>"></button>
+            </div>
+            <div class="modal-body text-center">
+              <h6 class="product-title"></h6>
+              <div class="product-thumbnail"></div>            
+            </div>
+            <div class="modal-footer">
+              <div class="cart-link"></div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php esc_html_e( 'Continue', 'wordtrap' ) ?></button>            
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php
+    endif;
+
+    if ( wordtrap_options( 'products-cart-notify' ) === 'toast' ) :
+      ?>
+      <div class="toast-cart-notification-wrap position-fixed bottom-0 end-0 p-2"></div>
+      <div id="toast-cart-notification" class="toast mt-2" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body opacity-1">
+          <div class="d-flex">
+            <div class="flex-shrink-0 product-thumbnail"></div> 
+            <div class="flex-grow-1 ms-3">
+              <p class="mb-0"><strong class="product-title"></strong></p>
+              <?php esc_html_e( 'has been added to your cart', 'wordtrap' ) ?>
+            </div>
+          </div>          
+          <div class="mt-2 pt-2 text-end">
+            <div class="cart-link d-inline-block"></div>
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast"><?php esc_html_e( 'Continue', 'wordtrap' ) ?></button>
+          </div>
+        </div>
+      </div>
+      <?php
+    endif;    
+  }
+}
+

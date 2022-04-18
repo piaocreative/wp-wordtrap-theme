@@ -466,7 +466,7 @@ if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
         'title'  => esc_html__( 'On Image with Overlay', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage-with-overlay.svg',
       ),
-      'quantity' => array(
+      'quantity-input' => array(
         'title'  => esc_html__( 'Show Quantity Input', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-quantity-input.svg',
       ),
@@ -480,17 +480,17 @@ if ( ! function_exists( 'wordtrap_cart_notify_options' ) ) {
    */
   function wordtrap_cart_notify_options() {
     return array(
-      '1'  => array(
-        'title'  => esc_html__( 'Type 1', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-1.svg',
+      'default'  => array(
+        'title'  => esc_html__( 'Default', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-default.svg',
       ),
-      '2'  => array(
-        'title'  => esc_html__( 'Type 2', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-2.svg',
+      'modal'  => array(
+        'title'  => esc_html__( 'Modal', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-modal.svg',
       ),
-      '3'  => array(
-        'title'  => esc_html__( 'Type 3', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-3.svg',
+      'toast'  => array(
+        'title'  => esc_html__( 'Toast', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/addcart-toast.svg',
       ),
     );
   }

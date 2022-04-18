@@ -118,7 +118,7 @@ window.theme = {};
 
     addLoading: function ( $element ) {
       if ( $element.length ) {
-        $element.addClass('ajax-loaindg-container');
+        $element.addClass('ajax-loading-container');
         $element.append( '<div class="ajax-loading"><div role="status"><span class="visually-hidden">' + theme.loading + '</span></div></div>' );
       }
     },
@@ -126,7 +126,7 @@ window.theme = {};
     removeLoading: function ( $element ) {
       if ( $element.length ) {
         $element.find( '> .ajax-loading').remove();
-        $element.removeClass('ajax-loaindg-container');        
+        $element.removeClass('ajax-loading-container');        
       }
     }
   } );
