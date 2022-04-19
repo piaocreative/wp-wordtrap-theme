@@ -55,6 +55,7 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
         'sticky_header_lg' => intval( wordtrap_options( 'show-sticky-header-lg' ) ),
         'sticky_header_xl' => intval( wordtrap_options( 'show-sticky-header-xl' ) ),
         'sticky_header_xxl' => intval( wordtrap_options( 'show-sticky-header' ) ),
+        'product_thumbnails_columns' => intval( wordtrap_options( 'product-thumbnails-columns' ) ),
         'loading' => __( 'Loading...', 'wordtrap' )
       )
     );

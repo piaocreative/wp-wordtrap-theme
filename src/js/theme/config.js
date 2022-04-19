@@ -50,6 +50,9 @@ window.theme = {};
 
     sticky_header_height: 0,
 
+    // Woocommerce
+    product_thumbnails_columns: parseInt( wordtrap_vars.product_thumbnails_columns ),
+
     // Messages
     loading: wordtrap_vars.loading,
     

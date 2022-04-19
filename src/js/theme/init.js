@@ -117,7 +117,7 @@ function wordtrap_init( $wrap ) {
 
   'use strict';
 
-  $( document ).ready( function () {
+  $( function() {
 
     wordtrap_init();
 

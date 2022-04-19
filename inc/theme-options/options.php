@@ -106,7 +106,7 @@ $args = array(
   'default_show'              => false,
 
   // What to print by the field's title if the value shown is default.
-  'default_mark'              => '*',
+  'default_mark'              => '',
 
   // Shows the Import/Export panel when not used as a field.
   'show_import_export'        => true,

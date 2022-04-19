@@ -22,6 +22,7 @@ import {tns} from '../tiny-slider';
   // https://github.com/ganlanyuan/tiny-slider#options
   Slider.defaults = $.extend( {}, {
     container: '.slider',
+    containerClass: '',
     mode: 'carousel',
     axis: 'horizontal',
     items: 1,
@@ -122,6 +123,7 @@ import {tns} from '../tiny-slider';
         xxl = options.xxl;
 
       options.container = $el.get(0);
+      $( options.container ).parent().addClass( this.options.containerClass );
       
       if ( ( sm || md || lg || xl || xxl ) && !options.responsive) {
         options.responsive = {};

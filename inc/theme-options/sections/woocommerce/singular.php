@@ -46,6 +46,15 @@ Redux::set_section(
         'default'  => 'default'
       ),
       array(
+        'id'       => 'product-thumbnails-columns',
+        'type'     => 'slider',
+        'required' => array( 'product-view', 'equals', array( 'default' ) ),
+        'title'    => esc_html__( 'Thumbnails Columns', 'wordtrap' ),
+        'default'  => 4,
+        'min'      => 2,
+        'max'      => 6,
+      ),
+      array(
         'id'       => 'product-share',
         'type'     => 'switch',
         'title'    => esc_html__( 'Social Share', 'wordtrap' ),

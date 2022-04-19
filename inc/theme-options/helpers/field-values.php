@@ -90,7 +90,7 @@ if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
   function wordtrap_main_layout_options() {
     return array(
       'wide'  => array(
-        'title' => esc_html__( 'Wide Width', 'wordtrap' ),
+        'title' => esc_html__( 'Wide Full Width', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide.svg',
       ),
       'wide-left-sidebar'  => array(
@@ -106,19 +106,19 @@ if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide-both-sidebars.svg',
       ),
       'full'  => array(
-        'title' => esc_html__( 'Full Width', 'wordtrap' ),
+        'title' => esc_html__( 'Boxed Full Width', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/full.svg',
       ),
       'left-sidebar'  => array(
-        'title' => esc_html__( 'Left Sidebar', 'wordtrap' ),
+        'title' => esc_html__( 'Boxed Left Sidebar', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/left-sidebar.svg',
       ),
       'right-sidebar' => array(
-        'title' => esc_html__( 'Right Sidebar', 'wordtrap' ),
+        'title' => esc_html__( 'Boxed Right Sidebar', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/right-sidebar.svg',
       ),
       'both-sidebars' => array(
-        'title' => esc_html__( 'Both Sidebars', 'wordtrap' ),
+        'title' => esc_html__( 'Boxed Both Sidebars', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/both-sidebars.svg',
       ),
     );
@@ -503,7 +503,7 @@ if ( ! function_exists( 'wordtrap_product_view_options' ) ) {
   function wordtrap_product_view_options() {
     return array(
       'default'  => array(
-        'title'  => esc_html__( 'Right Sidebar (Default)', 'wordtrap' ),
+        'title'  => esc_html__( 'Default', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-default.svg',
       ),
       'extended' => array(
@@ -533,10 +533,6 @@ if ( ! function_exists( 'wordtrap_product_view_options' ) ) {
       'centered-vertical-zoom' => array(
         'title'  => esc_html__( 'Centered Vertical Zoom', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-centered-vertical-zoom.svg',
-      ),
-      'left-sidebar' => array(
-        'title'  => esc_html__( 'Left Sidebar', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/singular-left-sidebar.svg',
       ),
     );
   }

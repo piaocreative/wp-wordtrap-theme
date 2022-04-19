@@ -32,81 +32,9 @@ if ( ! function_exists( 'wordtrap_primary_classes_for_single_product' ) ) {
   }
 }
 
-// Wrap the product summary
-add_action( 'woocommerce_before_single_product_summary', 'wordtrap_single_product_summary_wrapper_start', 1 );
-add_action( 'woocommerce_after_single_product_summary', 'wordtrap_single_product_summary_wrapper_end', 1 );
-
-if ( ! function_exists( 'wordtrap_single_product_summary_wrapper_start' ) ) {
-  /**
-   * Display the start of the product summary
-   */
-  function wordtrap_single_product_summary_wrapper_start() {
-    $main_layout = wordtrap_main_layout();
-    $layout = $main_layout[ 'layout' ];
-    if ( $layout === 'wide' ) {
-      echo '<div class="product-summary-wrapper wide-width"><div class="container-fluid">';
-    } else if ( $layout === 'full' ) {
-      echo '<div class="product-summary-wrapper wide-width"><div class="container">';
-    } else {
-      echo '<div class="product-summary-wrapper">';
-    }    
-  }
-}
-
-if ( ! function_exists( 'wordtrap_single_product_summary_wrapper_end' ) ) {
-  /**
-   * Display the end of the product summary
-   */
-  function wordtrap_single_product_summary_wrapper_end() {
-    $main_layout = wordtrap_main_layout();
-    $layout = $main_layout[ 'layout' ];
-    if ( $layout === 'wide' || $layout === 'full' ) {
-      echo '</div></div>';
-    } else {
-      echo '</div>';
-    }
-    echo '<!-- .product-summary-wrapper -->';
-  }
-}
-
 // The product sale flash
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 1 );
-
-// Wrap the product area beside summary
-add_action( 'woocommerce_after_single_product_summary', 'wordtrap_single_product_area_wrapper_start', 1 );
-add_action( 'woocommerce_after_single_product_summary', 'wordtrap_single_product_area_wrapper_end', 101 );
-
-if ( ! function_exists( 'wordtrap_single_product_area_wrapper_start' ) ) {
-  /**
-   * Display the start of the product area beside summary
-   */
-  function wordtrap_single_product_area_wrapper_start() {
-    $main_layout = wordtrap_main_layout();
-    $layout = $main_layout[ 'layout' ];
-    echo '<div class="product-after-summary">';
-    if ( $layout === 'wide' ) {
-      echo '<div class="container-fluid">';
-    } else if ( $layout === 'full' ) {
-      echo '<div class="container">';
-    }    
-  }
-}
-
-if ( ! function_exists( 'wordtrap_single_product_area_wrapper_end' ) ) {
-  /**
-   * Display the end of the product area beside summary
-   */
-  function wordtrap_single_product_area_wrapper_end() {
-    $main_layout = wordtrap_main_layout();
-    $layout = $main_layout[ 'layout' ];
-    if ( $layout === 'wide' || $layout === 'full' ) {
-      echo '</div>';
-    }
-    echo '</div>';
-    echo '<!-- .product-after-summary -->';
-  }
-}
 
 // Hook after single product summary
 add_action( 'woocommerce_after_single_product_summary', 'wordtrap_after_single_product_summary', 1 );
@@ -145,5 +73,16 @@ if ( ! function_exists( 'wordtrap_related_products_count' ) ) {
   function wordtrap_related_products_count( $args ) {
     $args[ 'posts_per_page' ] = wordtrap_options( 'product-related-count' );
     return $args;
+  }
+}
+
+// Product thumbnails columns
+add_filter( 'woocommerce_product_thumbnails_columns', 'wordtrap_product_thumbnails_columns', 10 );
+if ( ! function_exists( 'wordtrap_product_thumbnails_columns' ) ) {
+  /**
+   * Configure product thumbnails columns
+   */
+  function wordtrap_product_thumbnails_columns( $columns ) {
+    return  wordtrap_options( 'product-thumbnails-columns' );
   }
 }

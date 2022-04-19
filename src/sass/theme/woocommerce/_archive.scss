@@ -554,6 +554,10 @@ div.products-list.products-view-quantity-input {
 .toast-cart-notification-wrap {
   z-index: 11;
 
+  .product-title {
+    font-weight: $font-weight-bold;
+  }
+
   .toast {
     background-color: $section-bg;
   }

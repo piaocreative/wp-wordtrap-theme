@@ -15,7 +15,7 @@ wc_set_loop_prop( 'view-mode', 'grid' );
 $classes = array();
 $options = array();
 if ( wordtrap_options( 'product-related-carousel' ) ) {
-	$slider_mode = 'carousel';
+	$slider_mode = 'gallery';
 
 	$classes[] = 'posts-slider';
   $classes[] = 'posts-' . $slider_mode;
