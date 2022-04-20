@@ -847,9 +847,9 @@ body.search-results .site-main article.hentry {
 }
 
 .posts-slider {
-  display: none;
+  opacity: 0;
   
   &.tns-slider {
-    display: block;
+    opacity: 1;
   }
 }

@@ -86,6 +86,7 @@ import {tns} from '../tiny-slider';
       }
 
       this.$el = $el;
+      this.slider = false;
 
       this
         .setData()
@@ -154,20 +155,22 @@ import {tns} from '../tiny-slider';
         });
       }
 
+      this.slider = slider;
+
       return this;
     },
 
     initHeight: function( info, eventName ) {
-      var slider = info.container.id,
-        $outer = $('#' + slider + '-ow');
+      var slider_id = info.container.id,
+        $outer = $('#' + slider_id + '-ow');
 
         $outer.find( '.tns-item' ).stop().css( { height: 'auto' } );
     },
 
     calcHeight: function( info, eventName ) {
-      var slider = info.container.id,
-        $middle = $('#' + slider + '-mw'),
-        $inner = $('#' + slider + '-iw');
+      var slider_id = info.container.id,
+        $middle = $('#' + slider_id + '-mw'),
+        $inner = $('#' + slider_id + '-iw');
 
       setTimeout( function() {
         if ( $middle.length ) {
@@ -177,6 +180,12 @@ import {tns} from '../tiny-slider';
         }
       }, 0);
     },
+
+    goTo: function( index ) {
+      this.slider.goTo( index);
+
+      return this;
+    }
 
   };
 

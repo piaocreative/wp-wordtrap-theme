@@ -43,18 +43,44 @@ $layout = $main_layout[ 'layout' ];
 if ( post_password_required() ) {
   return;
 }
+
+$product_view = wordtrap_options( 'product-view' );
+$classes = array();
+$classes[] = 'product-view-' . $product_view;
+
+$wrapper_classes = array();
+if ( $layout === 'wide' || $layout === 'full' ) {
+  $wrapper_classes[] = 'wide-width';
+}
+
+$options = array();
+if ( wordtrap_options( 'product-view' ) === 'extended' ) {
+  $options[ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
+  $options[ 'autoplay' ] = true;
+  $options[ 'autoHeight' ] = true;
+
+	$options[ 'sm' ] = $options[ 'md' ] = $options[ 'lg' ] = $options[ 'xl' ] = $options[ 'xxl' ] = array();  
+	$options[ 'sm' ][ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
+  $options[ 'md' ][ 'items' ] = wordtrap_options( 'product-extended-columns-md' );
+  $options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-extended-columns-lg' );
+  $options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xl' );  
+  $options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xxl' );
+}
+$options = json_encode( $options )
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( $classes, $product ); ?> data-options="<?php echo esc_attr( $options ) ?>">
 
-  <div class="product-summary-wrapper<?php echo ( $layout === 'wide' || $layout === 'full' ) ? ' wide-width' : '' ?>">
+  <div class="product-summary-wrapper <?php echo esc_attr( implode( ' ', $wrapper_classes ) ) ?>">
 
     <?php
-    if ( $layout === 'wide' ) {
-      echo '<div class="container-fluid">';
-    } else if ( $layout === 'full' ) {
-      echo '<div class="container">';
-    }
+    if ( $product_view !== 'extended' ) {
+      if ( $layout === 'wide' ) {
+        echo '<div class="container-fluid">';
+      } else if ( $layout === 'full' ) {
+        echo '<div class="container">';
+      }
+    }      
 
     /**
      * Hook: woocommerce_before_single_product_summary.
@@ -63,6 +89,14 @@ if ( post_password_required() ) {
      * @hooked woocommerce_show_product_images - 20
      */
     do_action( 'woocommerce_before_single_product_summary' );
+
+    if ( $product_view === 'extended' ) {
+      if ( $layout === 'wide' ) {
+        echo '<div class="container-fluid">';
+      } else if ( $layout === 'full' ) {
+        echo '<div class="container">';
+      }
+    } 
     ?>
 
     <div class="summary entry-summary">

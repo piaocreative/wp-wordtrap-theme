@@ -110,8 +110,12 @@ body.single-product {
   }
 }
 
-.woocommerce {
+.product {
   .quantity {
+    .input-group {
+      min-width: 80px;
+    }
+    
     .qty {
       padding-left: 0;
       padding-right: 0;

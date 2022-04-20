@@ -15,7 +15,7 @@ wc_set_loop_prop( 'view-mode', 'grid' );
 $classes = array();
 $options = array();
 if ( wordtrap_options( 'product-upsells-carousel' ) ) {
-	$slider_mode = 'gallery';
+	$slider_mode = 'carousel';
 
 	$classes[] = 'posts-slider';
   $classes[] = 'posts-' . $slider_mode;
@@ -38,7 +38,7 @@ if ( wordtrap_options( 'product-upsells-carousel' ) ) {
   $options[ 'md' ][ 'items' ] = wordtrap_options( 'product-upsells-columns-md' );
   $options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-upsells-columns-lg' );
   $options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-upsells-columns-xl' );  
-  $options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-upsells-columns-xxl' );  
+  $options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-upsells-columns-xxl' );
 } else {
 	$classes[] = 'row';
 	$classes[] = 'row-cols-sm-' . wordtrap_options( 'product-upsells-columns-sm' );

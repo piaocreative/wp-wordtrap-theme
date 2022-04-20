@@ -1,13 +1,14 @@
 
-.product-before-summary {
-
-  .container {
+.product-before-summary,
+.product-summary-wrapper,
+.product-after-summary {
+  > .container {
     padding-left: $grid-gutter-width / 2;
     padding-right: $grid-gutter-width / 2;
   }
 
   @include media-breakpoint-down(sm) {
-    .container-fluid {
+    > .container-fluid {
       padding-left: $grid-gutter-width / 2;
       padding-right: $grid-gutter-width / 2;
     }
@@ -37,37 +38,11 @@ figure.woocommerce-product-gallery__wrapper {
 
   &.wide-width {
     padding: 5rem 0;
-
-    .container {
-      padding-left: $grid-gutter-width / 2;
-      padding-right: $grid-gutter-width / 2;
-    }
-
-    @include media-breakpoint-down(sm) {
-      .container-fluid {
-        padding-left: $grid-gutter-width / 2;
-        padding-right: $grid-gutter-width / 2;
-      }
-    }
-  }  
-}
-
-.product-after-summary {
-  > .container {
-    padding-left: $grid-gutter-width / 2;
-    padding-right: $grid-gutter-width / 2;
-  }
-
-  @include media-breakpoint-down(sm) {
-    > .container-fluid {
-      padding-left: $grid-gutter-width / 2;
-      padding-right: $grid-gutter-width / 2;
-    }
   }
 }
 
-.woocommerce {
-  div.product {
+div.product {
+  .product-summary-wrapper {
     div.images,
     div.summary {
       margin-bottom: 0;
@@ -100,7 +75,9 @@ figure.woocommerce-product-gallery__wrapper {
         }        
       }      
     }
+  }
 
+  .product-after-summary {
     .woocommerce-tabs {
       ul.tabs {
         &:before {
@@ -142,11 +119,9 @@ figure.woocommerce-product-gallery__wrapper {
           }
         }
       }
-    }    
+    } 
   }
-}
 
-div.product {
   div.images {
     img,
     .woocommerce-product-gallery__image {
@@ -383,6 +358,14 @@ form.cart {
       line-height: 1;
     }
   }
+
+  .woocommerce div.product & .group_table td {
+    vertical-align: middle;
+  }
+}
+
+.woocommerce-grouped-product-list {
+  margin-bottom: 0.5rem;
 }
 
 .woocommerce-tabs,
@@ -423,3 +406,62 @@ section.related-products {
   }
 }
 
+// Product view: Extended
+div.product-view-extended {
+  .product-summary-wrapper {
+    div.images,
+    div.summary {
+      float: none;
+      width: 100%;
+    }
+
+    div.images {
+      margin-bottom: 4rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      .woocommerce-product-rating {
+        float: right;
+        margin-top: 1.25rem;
+      }
+    }
+  }
+
+  div.images {
+    .tns-outer {
+      border-radius: $border-radius-lg;
+      margin-top: 0;
+      overflow: hidden;
+    }
+
+    img,
+    .woocommerce-product-gallery__image {
+      border-radius: 0;
+    }
+  }
+
+  .woocommerce-product-gallery__wrapper {
+    opacity: 0;
+    
+    &.tns-slider {
+      opacity: 1;
+    }
+  }
+
+  .product-summary-wrapper.wide-width {
+    padding-top: 0;
+
+    div.images {
+      .tns-outer {
+        border-radius: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .product_meta > * {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+  }
+}

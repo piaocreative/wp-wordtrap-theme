@@ -50,8 +50,8 @@
         input_options = {};
 
       if ( $input.attr('min') ) input_options.min = $input.attr('min');
-      if ( $input.attr('max') ) input_options.min = $input.attr('max');
-      if ( $input.attr('step') ) input_options.min = $input.attr('step');
+      if ( $input.attr('max') ) input_options.max = $input.attr('max');
+      if ( $input.attr('step') ) input_options.step = $input.attr('step');
 
       this.options = $.extend( true, {}, QuantityInput.defaults, input_options, opts );
 
@@ -66,7 +66,7 @@
       if ( ! $input.length ) return;
 
       $el.find( '.minus' ).on( 'click', function() {
-        var changed = parseFloat( $input.val() ) - parseFloat( self.options.step );
+        var changed = ( $input.val() ? parseFloat( $input.val() ) : 0 ) - parseFloat( self.options.step );
         
         if ( typeof self.options.min != 'undefined' && changed < self.options.min ) {
           return;
@@ -76,7 +76,7 @@
       } );
 
       $el.find( '.plus' ).on( 'click', function() {
-        var changed = parseFloat( $input.val() ) + parseFloat( self.options.step );
+        var changed = ( $input.val() ? parseFloat( $input.val() ) : 0 ) + parseFloat( self.options.step );
         
         if ( typeof self.options.max != 'undefined' && changed > self.options.max ) {
           return;

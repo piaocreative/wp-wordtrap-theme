@@ -14058,6 +14058,7 @@
 	      }
 
 	      this.$el = $el;
+	      this.slider = false;
 	      this.setData().setOptions(opts).build();
 	      return this;
 	    },
@@ -14116,19 +14117,20 @@
 	        });
 	      }
 
+	      this.slider = slider;
 	      return this;
 	    },
 	    initHeight: function (info, eventName) {
-	      var slider = info.container.id,
-	          $outer = $('#' + slider + '-ow');
+	      var slider_id = info.container.id,
+	          $outer = $('#' + slider_id + '-ow');
 	      $outer.find('.tns-item').stop().css({
 	        height: 'auto'
 	      });
 	    },
 	    calcHeight: function (info, eventName) {
-	      var slider = info.container.id,
-	          $middle = $('#' + slider + '-mw'),
-	          $inner = $('#' + slider + '-iw');
+	      var slider_id = info.container.id,
+	          $middle = $('#' + slider_id + '-mw'),
+	          $inner = $('#' + slider_id + '-iw');
 	      setTimeout(function () {
 	        if ($middle.length) {
 	          $middle.find('.tns-item.tns-slide-active').stop().css({
@@ -14140,6 +14142,10 @@
 	          });
 	        }
 	      }, 0);
+	    },
+	    goTo: function (index) {
+	      this.slider.goTo(index);
+	      return this;
 	    }
 	  }; // expose to scope
 
@@ -14199,8 +14205,8 @@
 	          $input = $el.find('[type="number"]'),
 	          input_options = {};
 	      if ($input.attr('min')) input_options.min = $input.attr('min');
-	      if ($input.attr('max')) input_options.min = $input.attr('max');
-	      if ($input.attr('step')) input_options.min = $input.attr('step');
+	      if ($input.attr('max')) input_options.max = $input.attr('max');
+	      if ($input.attr('step')) input_options.step = $input.attr('step');
 	      this.options = $.extend(true, {}, QuantityInput.defaults, input_options, opts);
 	      return this;
 	    },
@@ -14210,7 +14216,7 @@
 	          $input = $el.find('[type="number"]');
 	      if (!$input.length) return;
 	      $el.find('.minus').on('click', function () {
-	        var changed = parseFloat($input.val()) - parseFloat(self.options.step);
+	        var changed = ($input.val() ? parseFloat($input.val()) : 0) - parseFloat(self.options.step);
 
 	        if (typeof self.options.min != 'undefined' && changed < self.options.min) {
 	          return;
@@ -14219,7 +14225,7 @@
 	        $input.val(changed);
 	      });
 	      $el.find('.plus').on('click', function () {
-	        var changed = parseFloat($input.val()) + parseFloat(self.options.step);
+	        var changed = ($input.val() ? parseFloat($input.val()) : 0) + parseFloat(self.options.step);
 
 	        if (typeof self.options.max != 'undefined' && changed > self.options.max) {
 	          return;
@@ -14287,15 +14293,62 @@
 	    },
 	    build: function () {
 	      var self = this,
-	          $el = self.$el;
+	          $el = self.$el,
+	          $product = $el.closest('.product'),
+	          $variation_form = $product.find('.variations_form'),
+	          carousel;
 
 	      if ($.fn.themeSlider) {
-	        $el.find('.flex-control-thumbs').themeSlider({
+	        carousel = $el.find('.flex-control-thumbs').themeSlider({
 	          containerClass: 'show-nav-center',
 	          items: self.options.items,
 	          gutter: 10,
 	          nav: false,
 	          loop: false
+	        });
+
+	        if ($product.hasClass('product-view-extended')) {
+	          carousel = $el.find('.woocommerce-product-gallery__wrapper').themeSlider($.extend({
+	            containerClass: 'show-nav-center',
+	            center: $el.find('.woocommerce-product-gallery__image').length === 1 ? true : false,
+	            nav: false,
+	            loop: false
+	          }, $product.data('options')));
+
+	          if ('function' === typeof $.fn.zoom && wc_single_product_params.zoom_enabled) {
+	            var zoom_options = $.extend({
+	              touch: false
+	            }, wc_single_product_params.zoom_options);
+
+	            if ('ontouchstart' in document.documentElement) {
+	              zoom_options.on = 'click';
+	            }
+
+	            $el.find('.woocommerce-product-gallery__image').each(function () {
+	              var $this = $(this),
+	                  galleryWidth = $this.width(),
+	                  image = $this.find('img');
+	              $this.trigger('zoom.destroy');
+
+	              if (image.data('large_image_width') > galleryWidth) {
+	                $this.zoom(zoom_options);
+	              }
+	            });
+	          }
+	        }
+	      }
+
+	      if (carousel && $variation_form.length) {
+	        $variation_form.on('update_variation_values', function () {
+	          setTimeout(function () {
+	            var slider = $el.data('flexslider');
+
+	            if (slider) {
+	              carousel.get(0).goTo(slider.currentSlide);
+	            } else {
+	              carousel.get(0).goTo(0);
+	            }
+	          }, 200);
 	        });
 	      }
 

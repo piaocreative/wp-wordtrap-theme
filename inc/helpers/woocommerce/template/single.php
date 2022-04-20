@@ -83,6 +83,39 @@ if ( ! function_exists( 'wordtrap_product_thumbnails_columns' ) ) {
    * Configure product thumbnails columns
    */
   function wordtrap_product_thumbnails_columns( $columns ) {
-    return  wordtrap_options( 'product-thumbnails-columns' );
+    return wordtrap_options( 'product-thumbnails-columns' );
+  }
+}
+
+/**
+ * Product View: Extended
+ */
+// Filter single product flexslider enabled
+add_filter( 'woocommerce_single_product_flexslider_enabled', 'wordtrap_single_product_flexslider_disable' );
+if ( ! function_exists( 'wordtrap_single_product_flexslider_disable' ) ) {
+  /**
+   * Disable flexslider
+   */
+  function wordtrap_single_product_flexslider_disable( $enabled ) {
+    if ( in_array( wordtrap_options( 'product-view'), array( 'extended' ) ) ) {
+      return false;
+    }
+
+    return $enabled;
+  }
+}
+
+// Filter gallery image size
+add_filter( 'woocommerce_gallery_image_size', 'wordtrap_gallery_image_size' );
+if ( ! function_exists( 'wordtrap_gallery_image_size' ) ) {
+  /**
+   * Return full image size
+   */
+  function wordtrap_gallery_image_size( $image_size ) {
+    if ( in_array( wordtrap_options( 'product-view'), array( 'extended' ) ) ) {
+      return 'woocommerce_single';
+    }
+
+    return $image_size;
   }
 }

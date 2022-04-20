@@ -51,15 +51,60 @@
 
     build: function () {
       var self = this,
-        $el = self.$el;
+        $el = self.$el,
+        $product = $el.closest( '.product' ),
+        $variation_form = $product.find( '.variations_form' ),
+        carousel;
       
       if ( $.fn.themeSlider ) {
-        $el.find( '.flex-control-thumbs' ).themeSlider( {
+        carousel = $el.find( '.flex-control-thumbs' ).themeSlider( {
           containerClass: 'show-nav-center',
           items: self.options.items,
           gutter: 10,
           nav: false,
           loop: false
+        } );
+        if ( $product.hasClass( 'product-view-extended' ) ) {
+          carousel = $el.find( '.woocommerce-product-gallery__wrapper' ).themeSlider( $.extend( {
+            containerClass: 'show-nav-center',            
+            center: $el.find( '.woocommerce-product-gallery__image' ).length === 1 ? true : false,
+            nav: false,
+            loop: false
+          }, $product.data( 'options' ) ) );
+          if ( 'function' === typeof $.fn.zoom && wc_single_product_params.zoom_enabled ) {
+            var zoom_options = $.extend( {
+              touch: false
+            }, wc_single_product_params.zoom_options );
+      
+            if ( 'ontouchstart' in document.documentElement ) {
+              zoom_options.on = 'click';
+            }
+
+            $el.find( '.woocommerce-product-gallery__image' ).each( function() {
+              var $this = $( this ),
+                galleryWidth = $this.width(),
+                image = $this.find( 'img' );
+
+              $this.trigger( 'zoom.destroy' );
+              if ( image.data( 'large_image_width' ) > galleryWidth ) {
+                $this.zoom( zoom_options );
+              }
+            } );            
+          }         
+        }
+      }
+
+      if ( carousel && $variation_form.length ) {
+        $variation_form.on( 'update_variation_values', function() {
+          setTimeout( function() {
+            var slider = $el.data('flexslider');
+
+            if (slider) {
+              carousel.get(0).goTo( slider.currentSlide );
+            } else {
+              carousel.get(0).goTo( 0 );
+            }
+          }, 200 );
         } );
       }
 
