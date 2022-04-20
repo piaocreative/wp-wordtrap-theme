@@ -53,23 +53,27 @@ if ( $layout === 'wide' || $layout === 'full' ) {
   $wrapper_classes[] = 'wide-width';
 }
 
-$options = array();
+$slider_options = array();
+// Extended product
 if ( wordtrap_options( 'product-view' ) === 'extended' ) {
-  $options[ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
-  $options[ 'autoplay' ] = true;
-  $options[ 'autoHeight' ] = true;
+  $slider_options[ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
+  $slider_options[ 'autoplay' ] = true;
+  $slider_options[ 'autoHeight' ] = true;
 
-	$options[ 'sm' ] = $options[ 'md' ] = $options[ 'lg' ] = $options[ 'xl' ] = $options[ 'xxl' ] = array();  
-	$options[ 'sm' ][ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
-  $options[ 'md' ][ 'items' ] = wordtrap_options( 'product-extended-columns-md' );
-  $options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-extended-columns-lg' );
-  $options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xl' );  
-  $options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xxl' );
+	$slider_options[ 'sm' ] = $slider_options[ 'md' ] = $slider_options[ 'lg' ] = $slider_options[ 'xl' ] = $slider_options[ 'xxl' ] = array();
+	$slider_options[ 'sm' ][ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
+  $slider_options[ 'md' ][ 'items' ] = wordtrap_options( 'product-extended-columns-md' );
+  $slider_options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-extended-columns-lg' );
+  $slider_options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xl' );  
+  $slider_options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xxl' );
 }
-$options = json_encode( $options )
+$slider_options = json_encode( $slider_options );
+
+$carousel_options = array();
+$carousel_options = json_encode( $carousel_options );
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( $classes, $product ); ?> data-options="<?php echo esc_attr( $options ) ?>">
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( $classes, $product ); ?> data-slider-options="<?php echo esc_attr( $slider_options ) ?>" data-carousel-options="<?php echo esc_attr( $carousel_options ) ?>">
 
   <div class="product-summary-wrapper <?php echo esc_attr( implode( ' ', $wrapper_classes ) ) ?>">
 

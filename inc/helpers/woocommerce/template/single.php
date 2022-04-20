@@ -10,8 +10,8 @@
 defined( 'ABSPATH' ) || exit;
 
 // Filter primary classes
-add_filter( 'wordtrap_filter_primary_wrap_classes', 'wordtrap_primary_classes_for_single_product', 10 );
-add_filter( 'wordtrap_filter_primary_inner_classes', 'wordtrap_primary_classes_for_single_product', 10 );
+add_filter( 'wordtrap_filter_primary_wrap_classes', 'wordtrap_primary_classes_for_single_product' );
+add_filter( 'wordtrap_filter_primary_inner_classes', 'wordtrap_primary_classes_for_single_product' );
 
 if ( ! function_exists( 'wordtrap_primary_classes_for_single_product' ) ) {
   /**
@@ -53,7 +53,7 @@ if ( ! function_exists( 'wordtrap_after_single_product_summary' ) ) {
 }
 
 // Filter upsells count
-add_filter( 'woocommerce_upsell_display_args', 'wordtrap_upsells_count', 10 );
+add_filter( 'woocommerce_upsell_display_args', 'wordtrap_upsells_count' );
 if ( ! function_exists( 'wordtrap_upsells_count' ) ) {
   /**
    * Configure upsells count
@@ -65,7 +65,7 @@ if ( ! function_exists( 'wordtrap_upsells_count' ) ) {
 }
 
 // Filter related product count
-add_filter( 'woocommerce_output_related_products_args', 'wordtrap_related_products_count', 10 );
+add_filter( 'woocommerce_output_related_products_args', 'wordtrap_related_products_count' );
 if ( ! function_exists( 'wordtrap_related_products_count' ) ) {
   /**
    * Configure related products count
@@ -77,7 +77,7 @@ if ( ! function_exists( 'wordtrap_related_products_count' ) ) {
 }
 
 // Product thumbnails columns
-add_filter( 'woocommerce_product_thumbnails_columns', 'wordtrap_product_thumbnails_columns', 10 );
+add_filter( 'woocommerce_product_thumbnails_columns', 'wordtrap_product_thumbnails_columns' );
 if ( ! function_exists( 'wordtrap_product_thumbnails_columns' ) ) {
   /**
    * Configure product thumbnails columns

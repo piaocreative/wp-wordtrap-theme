@@ -17,7 +17,7 @@ body.single-product {
         width: 100%;
       }
 
-      div.summary {
+      &:not(.product-view-full-width) div.summary {
         margin-top: 2rem;
       }
     }
