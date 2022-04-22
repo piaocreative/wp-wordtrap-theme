@@ -17,6 +17,14 @@ body.single-product {
         width: 100%;
       }
 
+      div.summary {
+        height: auto !important;
+       
+        .sticky-active {
+          position: static !important;
+        }
+      }
+
       &:not(.product-view-full-width) div.summary {
         margin-top: 2rem;
       }

@@ -47,6 +47,9 @@ if ( post_password_required() ) {
 $product_view = wordtrap_options( 'product-view' );
 $classes = array();
 $classes[] = 'product-view-' . $product_view;
+if ( in_array( wordtrap_options( 'product-view' ), array( 'grid', 'sticky-info', 'sticky-both-info' ) ) ) {
+  $classes[] = 'product-thumbnails-grid';
+}
 
 $wrapper_classes = array();
 if ( $layout === 'wide' || $layout === 'full' ) {
@@ -56,16 +59,16 @@ if ( $layout === 'wide' || $layout === 'full' ) {
 $slider_options = array();
 // Extended product
 if ( wordtrap_options( 'product-view' ) === 'extended' ) {
-  $slider_options[ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
+  $slider_options[ 'items' ] = wordtrap_options( 'product-images-columns-sm' );
   $slider_options[ 'autoplay' ] = true;
   $slider_options[ 'autoHeight' ] = true;
 
 	$slider_options[ 'sm' ] = $slider_options[ 'md' ] = $slider_options[ 'lg' ] = $slider_options[ 'xl' ] = $slider_options[ 'xxl' ] = array();
-	$slider_options[ 'sm' ][ 'items' ] = wordtrap_options( 'product-extended-columns-sm' );
-  $slider_options[ 'md' ][ 'items' ] = wordtrap_options( 'product-extended-columns-md' );
-  $slider_options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-extended-columns-lg' );
-  $slider_options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xl' );  
-  $slider_options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-extended-columns-xxl' );
+	$slider_options[ 'sm' ][ 'items' ] = wordtrap_options( 'product-images-columns-sm' );
+  $slider_options[ 'md' ][ 'items' ] = wordtrap_options( 'product-images-columns-md' );
+  $slider_options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-images-columns-lg' );
+  $slider_options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-images-columns-xl' );  
+  $slider_options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-images-columns-xxl' );
 }
 $slider_options = json_encode( $slider_options );
 
@@ -84,7 +87,18 @@ $carousel_options = json_encode( $carousel_options );
       } else if ( $layout === 'full' ) {
         echo '<div class="container">';
       }
-    }      
+    }
+
+    if ( $product_view === 'sticky-both-info' ) : ?>
+
+      <div class="summary entry-summary wordtrap-summary">
+        
+        <?php do_action( 'wordtrap_single_product_summary' ) ?>
+
+      </div>
+
+    <?php
+    endif;
 
     /**
      * Hook: woocommerce_before_single_product_summary.

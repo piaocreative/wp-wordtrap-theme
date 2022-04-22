@@ -54,19 +54,8 @@
         $el = self.$el,
         $product = $el.closest( '.product' ),
         $variation_form = $product.find( '.variations_form' ),
-        carousel,
-        zoom_options = false;
+        carousel;
 
-      if ( 'function' === typeof $.fn.zoom && wc_single_product_params.zoom_enabled ) {
-        zoom_options = $.extend( {
-          touch: false
-        }, wc_single_product_params.zoom_options );
-  
-        if ( 'ontouchstart' in document.documentElement ) {
-          zoom_options.on = 'click';
-        }
-      }
-      
       if ( $.fn.themeSlider ) {        
         // Product View: Default
         if ( $product.hasClass( 'product-view-default' ) ) {
@@ -87,19 +76,18 @@
             nav: false,
             loop: false
           }, $product.data( 'slider-options' ) ) );
+        }
+      }
+     
+      self.initProductImages();
 
-          if ( zoom_options ) {
-            $el.find( '.woocommerce-product-gallery__image' ).each( function() {
-              var $this = $( this ),
-                galleryWidth = $this.width(),
-                image = $this.find( 'img' );
-  
-              $this.trigger( 'zoom.destroy' );
-              if ( image.data( 'large_image_width' ) > galleryWidth ) {
-                $this.zoom( zoom_options );
-              }
-            } );
-          }
+      // Sticky summary
+      if ( $.fn.themeSticky ) {
+        if ( $product.hasClass( 'product-thumbnails-grid' ) ) {
+          $product.find( '.entry-summary' ).wrapInner( '<div class="summary-inner"></div>' );
+          $product.find( '.summary-inner' ).themeSticky( {
+            containerSelector: '.product-summary-wrapper'
+          } );
         }
       }
 
@@ -112,19 +100,56 @@
         }
       }
 
-      if ( carousel && $variation_form.length ) {
-        $variation_form.on( 'update_variation_values', function() {
-          setTimeout( function() {
+      $variation_form.on( 'update_variation_values', function() {
+        setTimeout( function() {
+          if ( carousel ) {
             if (slider) {
               carousel.get(0).goTo( slider.currentSlide );
             } else {
               carousel.get(0).goTo( 0 );
-            }
-          }, 200 );
-        } );
-      }
+            }            
+          }
+          self.initProductImages();
+        }, 200 );
+      } );      
 
       return this;
+    },
+
+    initProductImages: function() {
+      var $el = this.$el,
+        $product = $el.closest( '.product' ),
+        zoom_options = this.zoomOptions();
+
+      if ( ! ( $product.hasClass( 'product-view-extended' ) || $product.hasClass( 'product-thumbnails-grid' ) ) || ! zoom_options ) {
+        return;
+      }
+
+      $el.find( '.woocommerce-product-gallery__image' ).each( function() {
+        var $this = $( this ),
+          galleryWidth = $this.width(),
+          image = $this.find( 'img' );
+
+        $this.trigger( 'zoom.destroy' );
+        if ( image.data( 'large_image_width' ) > galleryWidth ) {
+          $this.zoom( zoom_options );
+        }
+      } );
+    },
+
+    zoomOptions: function() {
+      if ( 'function' === typeof $.fn.zoom && wc_single_product_params.zoom_enabled ) {
+        var zoom_options = $.extend( {
+          touch: false
+        }, wc_single_product_params.zoom_options );
+  
+        if ( 'ontouchstart' in document.documentElement ) {
+          zoom_options.on = 'click';
+        }
+        return zoom_options;
+      }
+
+      return false;
     }
   };
 

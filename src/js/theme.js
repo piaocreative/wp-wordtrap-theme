@@ -8,6 +8,7 @@ import './theme/whats-app-sharing';
 import './theme/posts-filter';
 import './theme/masonry';
 import './theme/slider';
+import './theme/sticky';
 
 import './theme/init';
 

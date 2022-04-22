@@ -117,6 +117,10 @@ function wordtrap_init( $wrap ) {
 
   'use strict';
 
+  $( window ).on( 'load', function() {
+		theme.initialized = true;
+	});
+
   $( function() {
 
     wordtrap_init();
