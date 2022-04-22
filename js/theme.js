@@ -14331,9 +14331,9 @@
 	      self.initProductImages(); // Sticky info
 
 	      if ($product.hasClass('product-sticky-info')) {
-	        $product.find('.summary').css('top', theme.adminBarHeight() + theme.sticky_header_height);
+	        $product.find('.summary').css('top', theme.adminBarHeight() + theme.sticky_header_height + 15);
 	        $(window).smartresize(function () {
-	          $product.find('.summary').css('top', theme.adminBarHeight() + theme.sticky_header_height);
+	          $product.find('.summary').css('top', theme.adminBarHeight() + theme.sticky_header_height + 15);
 	        });
 	      }
 
