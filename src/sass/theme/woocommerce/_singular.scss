@@ -726,9 +726,6 @@ div.product-centered-view {
 
   @include media-breakpoint-up(lg) {
     .wordtrap-before-summary {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 1.5rem;
     }
   }
