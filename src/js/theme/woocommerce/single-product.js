@@ -57,10 +57,9 @@
         carousel;
 
       if ( $.fn.themeSlider ) {        
-        // Product View: Default
-        if ( $product.hasClass( 'product-view-default' ) ) {
+        // Product thumbs carousel
+        if ( $product.hasClass( 'product-thumbs-carousel' ) ) {
           carousel = $el.find( '.flex-control-thumbs' ).themeSlider( $.extend( {
-            containerClass: 'show-nav-center',
             items: self.options.items,
             gutter: 10,
             nav: false,
@@ -81,14 +80,13 @@
      
       self.initProductImages();
 
-      // Sticky summary
-      if ( $.fn.themeSticky ) {
-        if ( $product.hasClass( 'product-thumbnails-grid' ) ) {
-          $product.find( '.entry-summary' ).wrapInner( '<div class="summary-inner"></div>' );
-          $product.find( '.summary-inner' ).themeSticky( {
-            containerSelector: '.product-summary-wrapper'
-          } );
-        }
+      // Sticky info
+      if ( $product.hasClass( 'product-sticky-info' ) ) {
+        $product.find( '.summary' ).css( 'top', theme.adminBarHeight() + theme.sticky_header_height );
+
+        $( window ).smartresize( function () {
+          $product.find( '.summary' ).css( 'top', theme.adminBarHeight() + theme.sticky_header_height );
+        } );
       }
 
       var slider = $el.data( 'flexslider' );

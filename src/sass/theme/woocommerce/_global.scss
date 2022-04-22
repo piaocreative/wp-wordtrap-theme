@@ -5,6 +5,18 @@ body.single-product {
     &.site-layout-wide,
     &.site-layout-full {
       margin-top: 0;
+
+      .primary-inner {
+        > .row {
+          margin-left: 0;
+          margin-right: 0;
+
+          > .site-main {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -15,14 +27,6 @@ body.single-product {
       div.images,
       div.summary {
         width: 100%;
-      }
-
-      div.summary {
-        height: auto !important;
-       
-        .sticky-active {
-          position: static !important;
-        }
       }
 
       &:not(.product-view-full-width) div.summary {

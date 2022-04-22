@@ -45,10 +45,24 @@ if ( post_password_required() ) {
 }
 
 $product_view = wordtrap_options( 'product-view' );
+$centered_view = false;
 $classes = array();
 $classes[] = 'product-view-' . $product_view;
-if ( in_array( wordtrap_options( 'product-view' ), array( 'grid', 'sticky-info', 'sticky-both-info' ) ) ) {
+if ( in_array( $product_view, array( 'default', 'transparent', 'centered-vertical-zoom' ) ) ) {
+  $classes[] = 'product-thumbs-carousel';
+}
+if ( in_array( $product_view, array( 'grid', 'sticky-info', 'sticky-both-info' ) ) ) {
   $classes[] = 'product-thumbnails-grid';
+}
+if ( in_array( $product_view, array( 'sticky-info', 'sticky-both-info' ) ) ) {
+  $classes[] = 'product-sticky-info';
+}
+if ( in_array( $product_view, array( 'transparent', 'centered-vertical-zoom' ) ) ) {
+  $classes[] = 'product-vertical-carousel';
+}
+if ( in_array( $product_view, array( 'sticky-both-info', 'centered-vertical-zoom' ) ) ) {
+  $classes[] = 'product-centered-view';
+  $centered_view = true;
 }
 
 $wrapper_classes = array();
@@ -58,7 +72,7 @@ if ( $layout === 'wide' || $layout === 'full' ) {
 
 $slider_options = array();
 // Extended product
-if ( wordtrap_options( 'product-view' ) === 'extended' ) {
+if ( $product_view === 'extended' ) {
   $slider_options[ 'items' ] = wordtrap_options( 'product-images-columns-sm' );
   $slider_options[ 'autoplay' ] = true;
   $slider_options[ 'autoHeight' ] = true;
@@ -73,6 +87,14 @@ if ( wordtrap_options( 'product-view' ) === 'extended' ) {
 $slider_options = json_encode( $slider_options );
 
 $carousel_options = array();
+if ( $product_view === 'default' ) {
+  $carousel_options[ 'containerClass' ] = 'show-nav-center';
+}
+if ( in_array( $product_view, array( 'transparent', 'centered-vertical-zoom' ) ) ) {
+  $carousel_options[ 'axis' ] = 'vertical';
+  $carousel_options[ 'gutter' ] = 0;
+  $carousel_options[ 'containerClass' ] = 'show-nav-vertical';
+}
 $carousel_options = json_encode( $carousel_options );
 ?>
 
@@ -89,7 +111,13 @@ $carousel_options = json_encode( $carousel_options );
       }
     }
 
-    if ( $product_view === 'sticky-both-info' ) : ?>
+    if ( $centered_view ) : ?>
+
+      <div class="wordtrap-before-summary">
+        
+        <?php do_action( 'wordtrap_before_single_product_summary' ) ?>
+
+      </div>
 
       <div class="summary entry-summary wordtrap-summary">
         

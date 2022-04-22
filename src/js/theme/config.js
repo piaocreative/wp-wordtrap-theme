@@ -33,9 +33,6 @@ window.theme = {};
 
   $.extend( theme, {
 
-    // Loading
-    initialized: false,
-
     // Breackpoints
     breakpoints_sm: parseInt( wordtrap_vars.breakpoints_sm ),
     breakpoints_md: parseInt( wordtrap_vars.breakpoints_md ),
@@ -134,49 +131,7 @@ window.theme = {};
         $element.find( '> .ajax-loading').remove();
         $element.removeClass('ajax-loading-container');        
       }
-    },
-
-    requestFrame: function ( fn ) {
-      var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
-      if ( !handler ) {
-        return setTimeout( fn, 1000 / 60 );
-      }
-      var rt = new Object()
-      rt.val = handler( fn );
-      return rt;
-    },
-
-    requestTimeout: function ( fn, delay ) {
-      var handler = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
-      if ( !handler ) {
-        return setTimeout( fn, delay );
-      }
-      var start, rt = new Object();
-
-      function loop( timestamp ) {
-        if ( !start ) {
-          start = timestamp;
-        }
-        var progress = timestamp - start;
-        progress >= delay ? fn.call() : rt.val = handler( loop );
-      };
-
-      rt.val = handler( loop );
-      return rt;
-    },
-
-    deleteTimeout: function ( timeoutID ) {
-      if ( !timeoutID ) {
-        return;
-      }
-      var handler = window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame;
-      if ( !handler ) {
-        return clearTimeout( timeoutID );
-      }
-      if ( timeoutID.val ) {
-        return handler( timeoutID.val );
-      }
-    },
+    },    
   } );
 
 } )( window.theme, jQuery );

@@ -302,9 +302,7 @@ Redux::set_section(
 require_once $dir . 'sections/woocommerce/general.php';
 require_once $dir . 'sections/woocommerce/archive.php';
 require_once $dir . 'sections/woocommerce/singular.php';
-require_once $dir . 'sections/woocommerce/image.php';
 require_once $dir . 'sections/woocommerce/cart.php';
-require_once $dir . 'sections/woocommerce/catalog.php';
 
 // -> START Social Share Fields
 require_once $dir . 'sections/share/share.php';

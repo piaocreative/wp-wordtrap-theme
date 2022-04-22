@@ -9,10 +9,6 @@
   margin-bottom: 2rem;
 }
 
-.site {
-  overflow: hidden;
-}
-
 #primary {
   background: $main-bg;
   margin-top: 2rem;
@@ -40,11 +36,5 @@
       margin-top: -1.5rem;
       margin-left: -1.5rem;
     }
-  }
-
-  .form-control,
-  .form-select,
-  .form-check-input {
-    background-color: $section-bg;
-  }
+  }  
 }

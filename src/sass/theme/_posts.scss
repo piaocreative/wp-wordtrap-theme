@@ -390,10 +390,12 @@ body.search-results .site-main article.hentry {
   }
 
   .form-control {
+    background-color: $section-bg;
     border: none;
   }
 
   .form-check-input {
+    background-color: $section-bg;
     border: none;
     
     &:checked {

@@ -203,6 +203,35 @@ $perpage: 3;
   }
 }
 
+.show-nav-vertical {
+  .tns-outer {
+    .tns-controls {
+      > [aria-controls] {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 10;
+      }
+    
+      > [data-controls="prev"] {
+        top: 0;
+      }
+    
+      > [data-controls="next"] {
+        bottom: 0;
+      }
+    }
+
+    > [data-action] {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+  }
+}
+
 .show-nav-title {
   .tns-outer {
     .tns-controls {

@@ -106,6 +106,10 @@ import {tns} from '../tiny-slider';
 
       this.options = $.extend( true, {}, Slider.defaults, opts );
 
+      if ( this.options.axis === 'vertical' ) {
+        this.options.controlsText = ['<i class="fa fa-chevron-up"></i>', '<i class="fa fa-chevron-down"></i>'];
+      }
+
       return this;
     },
 

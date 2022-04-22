@@ -48,7 +48,7 @@ Redux::set_section(
       array(
         'id'       => 'product-thumbnails-columns',
         'type'     => 'slider',
-        'required' => array( 'product-view', 'equals', array( 'default' ) ),
+        'required' => array( 'product-view', 'equals', array( 'default', 'transparent', 'centered-vertical-zoom' ) ),
         'title'    => esc_html__( 'Thumbnails Columns', 'wordtrap' ),
         'default'  => 4,
         'min'      => 2,
