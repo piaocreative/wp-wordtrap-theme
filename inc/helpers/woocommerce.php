@@ -20,3 +20,4 @@ require $dir . 'hooks.php';
 // Template functions and hooks
 require $dir . 'template/single.php';
 require $dir . 'template/archive.php';
+require $dir . 'template/page.php';

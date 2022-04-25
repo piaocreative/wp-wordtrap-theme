@@ -127,6 +127,10 @@ function wordtrap_init( $wrap ) {
 
   } );
 
+  if ( $.fn.select2 ) {
+    $.fn.select2.defaults.set( 'theme', 'bootstrap-5');
+  }
+
 } )( window.theme, jQuery );
 
 export default wordtrap_init;

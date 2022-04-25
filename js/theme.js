@@ -13731,6 +13731,10 @@
 	  $(function () {
 	    wordtrap_init();
 	  });
+
+	  if ($.fn.select2) {
+	    $.fn.select2.defaults.set('theme', 'bootstrap-5');
+	  }
 	})(window.theme, jQuery);
 
 	/*
@@ -13745,17 +13749,7 @@
 	      $wrap = jQuery(document.body);
 	    }
 
-	    $wrap.trigger('wordtrap_woocommerce_init_start'); // Quantity Input
-
-	    if ($.fn.themeQuantityInput) {
-	      $(function () {
-	        $wrap.find('.quantity').each(function () {
-	          var $this = $(this);
-	          $this.themeQuantityInput($this.data('options'));
-	        });
-	      });
-	    } // Product Image
-
+	    $wrap.trigger('wordtrap_woocommerce_init_start'); // Product Image
 
 	    if ($.fn.themeProductImage) {
 	      $(function () {
@@ -13774,6 +13768,11 @@
 
 	  $(function () {
 	    wordtrap_woocommerce_init();
+	  });
+	  $(function ($) {
+	    $.scroll_to_notices = function (scrollElement) {
+	      theme.scrollToElement(scrollElement);
+	    };
 	  });
 	})(window.theme, jQuery);
 
@@ -14175,94 +14174,6 @@
 	})(window.theme, jQuery);
 
 	/*
-	* Javascript for the quantity input 
-	*
-	* @package Wordtrap
-	* @since wordtrap 1.0.0
-	*/
-	// Quantity input
-	(function (theme, $) {
-
-	  theme = theme || {};
-	  var instanceName = '__quantity';
-
-	  var QuantityInput = function ($el, opts) {
-	    return this.initialize($el, opts);
-	  };
-
-	  QuantityInput.defaults = {
-	    min: 0,
-	    step: 1
-	  };
-	  QuantityInput.prototype = {
-	    initialize: function ($el, opts) {
-	      if ($el.data(instanceName)) {
-	        return this;
-	      }
-
-	      this.$el = $el;
-	      this.setData().setOptions(opts).build();
-	      return this;
-	    },
-	    setData: function () {
-	      this.$el.data(instanceName, this);
-	      return this;
-	    },
-	    setOptions: function (opts) {
-	      var $el = this.$el,
-	          $input = $el.find('[type="number"]'),
-	          input_options = {};
-	      if ($input.attr('min')) input_options.min = $input.attr('min');
-	      if ($input.attr('max')) input_options.max = $input.attr('max');
-	      if ($input.attr('step')) input_options.step = $input.attr('step');
-	      this.options = $.extend(true, {}, QuantityInput.defaults, input_options, opts);
-	      return this;
-	    },
-	    build: function () {
-	      var self = this,
-	          $el = self.$el,
-	          $input = $el.find('[type="number"]');
-	      if (!$input.length) return;
-	      $el.find('.minus').on('click', function () {
-	        var changed = ($input.val() ? parseFloat($input.val()) : 0) - parseFloat(self.options.step);
-
-	        if (typeof self.options.min != 'undefined' && changed < self.options.min) {
-	          return;
-	        }
-
-	        $input.val(changed);
-	      });
-	      $el.find('.plus').on('click', function () {
-	        var changed = ($input.val() ? parseFloat($input.val()) : 0) + parseFloat(self.options.step);
-
-	        if (typeof self.options.max != 'undefined' && changed > self.options.max) {
-	          return;
-	        }
-
-	        $input.val(changed);
-	      });
-	      return this;
-	    }
-	  }; // expose to scope
-
-	  $.extend(theme, {
-	    QuantityInput: QuantityInput
-	  }); // jquery plugin
-
-	  $.fn.themeQuantityInput = function (opts) {
-	    return this.map(function () {
-	      var $this = $(this);
-
-	      if ($this.data(instanceName)) {
-	        return $this.data(instanceName);
-	      } else {
-	        return new theme.QuantityInput($this, opts);
-	      }
-	    });
-	  };
-	})(window.theme, jQuery);
-
-	/*
 	* Javascript for the single product
 	*
 	* @package Wordtrap
@@ -14482,7 +14393,51 @@
 	          }
 	        }
 	      }
-	    }); // Add quantity input
+	    }); // Quantity minus button
+
+	    $(document.body).on('click', '.quantity .minus', function (e) {
+	      e.preventDefault();
+	      var $input = $(this).parents('.quantity').find('input[type="number"]'),
+	          min = $input.attr('min'),
+	          value = $input.val(),
+	          step = 1;
+
+	      if ($input.attr('step')) {
+	        step = $input.attr('step');
+	      }
+
+	      var changed = (value ? parseFloat(value) : 0) - parseFloat(step);
+
+	      if (typeof min != 'undefined' && min && changed < min) {
+	        return;
+	      }
+
+	      $input.val(changed);
+	      $input.trigger('change');
+	      return false;
+	    }); // Quantity plus button
+
+	    $(document.body).on('click', '.quantity .plus', function (e) {
+	      e.preventDefault();
+	      var $input = $(this).parents('.quantity').find('input[type="number"]'),
+	          max = $input.attr('max'),
+	          value = $input.val(),
+	          step = 1;
+
+	      if ($input.attr('step')) {
+	        step = $input.attr('step');
+	      }
+
+	      var changed = (value ? parseFloat(value) : 0) + parseFloat(step);
+
+	      if (max != 'undefined' && max && changed > max) {
+	        return;
+	      }
+
+	      $input.val(changed);
+	      $input.trigger('change');
+	      return false;
+	    }); // Add quantity input in ajax adding to cart
 
 	    $(document.body).on('should_send_ajax_request.adding_to_cart', function (e, $button) {
 	      var $quantity = $button.prev();

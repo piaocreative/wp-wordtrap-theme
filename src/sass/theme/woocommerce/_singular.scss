@@ -207,7 +207,7 @@ div.product {
 
       * {
         color: $secondary;
-        font-weight: $font-weight-bold;
+        font-weight: $headings-font-weight;
       }
 
       a:hover {
@@ -335,7 +335,6 @@ div.product {
       [type="button"], 
       [type="reset"], 
       [type="submit"] {
-        @extend .btn;
         @extend .btn-primary;
       }
 

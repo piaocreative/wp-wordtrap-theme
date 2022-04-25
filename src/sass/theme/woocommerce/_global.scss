@@ -42,9 +42,10 @@ body.single-product {
 }
 
 // Notices
-.woocommerce-notices-wrapper .woocommerce-message {
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
   @extend .alert;
-  @extend .alert-success;
   padding: 1em 2em 1em 3.5em;
   margin-bottom: 2rem;
 
@@ -54,26 +55,78 @@ body.single-product {
     @extend .btn-success;
     margin: -3px 0 -5px;
   }
+}
 
-  &.woocommerce-error {
-    @extend .alert-danger;
-    a.button {
-      @extend .btn-danger;
-    }
+.woocommerce-message {
+  @extend .alert-success;
+
+  a.button {
+    @extend .btn-success;
+  }
+}
+
+.woocommerce-error {
+  @extend .alert-danger;
+  
+  a.button {
+    @extend .btn-danger;
   }
 }
 
 .woocommerce-info {
-  @extend .alert;
   @extend .alert-info;
-  padding: 1em 2em 1em 3.5em;
-  margin-bottom: 2rem;
   
   a.button {
-    @extend .btn;
-    @extend .btn-sm;
     @extend .btn-info;
-    margin: -4px 0;
+  }
+}
+
+.woocommerce {
+  .blockUI.blockOverlay {
+    background: transparent !important;
+    opacity: 1 !important;
+
+    &:before {
+      @extend .spinner-border;
+      @extend .text-primary;
+      background-image: none;
+      font-size: 1rem;
+      width: 3rem;
+      height: 3rem;
+      margin-left: -1.5rem;
+      margin-top: -1.5rem;
+      z-index: 2;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #fff;
+      opacity: 0.25;
+      z-index: 1;
+    }
+  }
+
+  a.remove {
+    color: $secondary !important;
+
+    &:hover {
+      background: transparent;
+      color: $primary !important;
+    }
+  }
+
+  form .form-row {
+    margin-bottom: 0.5rem;
+    padding: 0;
+
+    .select2-container {
+      margin-bottom: 0.25rem;
+    }
   }
 }
 
@@ -105,12 +158,35 @@ body.single-product {
     color: $primary;
   }
 
-  #respond input#submit.alt, 
-  a.button.alt, 
-  button.button.alt, 
-  input.button.alt {
+  #respond input#submit,
+  a.button, 
+  button.button, 
+  input.button {
     @extend .btn;
-    @extend .btn-primary;
+    border: 1px solid $light;
+    background: $light;
+
+    &:hover {
+      background: $primary;
+      border-color: $primary;
+      color: color-contrast($primary);
+    }
+
+    &:disabled,
+    &.disabled,
+    &:disabled[disabled] {
+      background-color: $light;
+      border-color: $light;
+    }
+
+    &:disabled[disabled] {
+      @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    }
+
+    &.alt {
+      @extend .btn;
+      @extend .btn-primary;
+    }
   }
 }
 
@@ -122,72 +198,74 @@ body.single-product {
   }
 }
 
-.product {
-  .quantity {
-    .input-group {
-      min-width: 80px;
-    }
-    
-    .qty {
-      padding-left: 0;
-      padding-right: 0;
+.quantity {
+  .input-group {
+    width: 90px;
+  }
+  
+  .qty {
+    padding-left: 0;
+    padding-right: 0;
+    -moz-appearance: textfield;
+
+    &,
+    .woocommerce & {
       width: 30px;
-      -moz-appearance: textfield;
-  
-      &::-webkit-inner-spin-button,
-      &::-webkit-outer-spin-button {
-        appearance: none;
-      }
-    }
-  
-    .qty,
-    .minus,
-    .plus {
-      background: $light;
-      border-color: $light;
-
-      &:focus {
-        box-shadow: none;
-      }
-    }
-  
-    .minus,
-    .plus {
-      color: $secondary;
-      padding-left: 0;
-      padding-right: 0;
-      width: 25px;
-      text-indent: -9999px;
-      position: relative;
-      overflow: hidden;
-
-      &:hover {
-        color: inherit;
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 9px;
-        border-top: 1px solid;
-        margin-top: -0.5px;
-        margin-left: -4.5px;
-      }
     }
 
-    .plus {
-      &:after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        height: 9px;
-        border-left: 1px solid;
-        margin-top: -4.5px;
-        margin-left: -0.5px;
-      }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
+  }
+
+  .qty,
+  .minus,
+  .plus {
+    background: $light;
+    border-color: $light;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .minus,
+  .plus {
+    color: $secondary;
+    padding-left: 0;
+    padding-right: 0;
+    width: 25px;
+    text-indent: -9999px;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      color: inherit;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 9px;
+      border-top: 1px solid;
+      margin-top: -0.5px;
+      margin-left: -4.5px;
+    }
+  }
+
+  .plus {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 9px;
+      border-left: 1px solid;
+      margin-top: -4.5px;
+      margin-left: -0.5px;
     }
   }
 }

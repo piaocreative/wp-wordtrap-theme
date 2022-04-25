@@ -50,7 +50,6 @@
 
   &,
   a & {    
-    color: $body-color;
     color: $headings-color;
     font-size: $title-font-size;
   }
@@ -199,20 +198,7 @@ div.products {
 
   .added_to_cart,
   .button[class*="product_type_"] {
-    border: 1px solid $light;
-    background: $light;
     margin-top: 0.75rem;
-    font-family: $btn-font-family;
-    font-weight: $btn-font-weight;
-    line-height: $btn-line-height;
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
-    @include transition($btn-transition);
-
-    &:hover {
-      background: $primary;
-      border-color: $primary;
-      color: color-contrast($primary);
-    }
 
     &:after {
       display: inline-block;
@@ -250,10 +236,11 @@ div.products {
   .quantity {
     display: inline-block;
     margin-top: 0.75rem;
-    width: 78px;
-
+    
     + .button[class*=product_type_] {
       margin-top: 0.5rem;
+      vertical-align: inherit;
+      padding: $btn-padding-y $btn-padding-x;
     }
   }
 
@@ -555,7 +542,7 @@ div.products-list.products-view-quantity-input {
   z-index: 11;
 
   .product-title {
-    font-weight: $font-weight-bold;
+    font-weight: $headings-font-weight;
   }
 
   .toast {

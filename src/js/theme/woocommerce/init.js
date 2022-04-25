@@ -14,16 +14,6 @@ function wordtrap_woocommerce_init( $wrap ) {
   
     $wrap.trigger( 'wordtrap_woocommerce_init_start' );
 
-    // Quantity Input
-    if ( $.fn.themeQuantityInput ) {
-      $( function () {
-        $wrap.find( '.quantity' ).each( function () {
-          var $this = $( this );
-          $this.themeQuantityInput( $this.data( 'options' ) );
-        } );
-      } );
-    }
-
     // Product Image
     if ( $.fn.themeProductImage ) {
       $( function () {
@@ -46,6 +36,12 @@ function wordtrap_woocommerce_init( $wrap ) {
     wordtrap_woocommerce_init();
 
   } );
+
+  $( function( $ ) {
+    $.scroll_to_notices = function( scrollElement ) {
+      theme.scrollToElement( scrollElement );
+    };
+  } );  
 
 } )( window.theme, jQuery );
 

@@ -11,10 +11,8 @@ import './theme/slider';
 
 import './theme/init';
 
-import './theme/woocommerce/quantity';
 import './theme/woocommerce/single-product';
-import './theme/woocommerce/event';
 import './theme/woocommerce/init';
-
+import './theme/woocommerce/event';
 
 // Add your JS customizations here
