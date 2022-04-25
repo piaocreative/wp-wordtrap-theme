@@ -51,3 +51,29 @@ if ( ! function_exists( 'wordtrap_cross_sell_display' ) ) {
   }
 }
 
+
+// Hook checkout before order reviewheading
+add_action( 'woocommerce_checkout_before_order_review_heading', 'wordtrap_checkout_before_order_review_heading', 1 );
+if ( ! function_exists( 'wordtrap_checkout_before_order_review_heading' ) ) {
+  /**
+   * Wrap start of order review
+   */
+  function wordtrap_checkout_before_order_review_heading() {
+    ?>
+    <div class="order_details">
+    <?php    
+  }
+}
+
+// Hook checkout before order reviewheading
+add_action( 'woocommerce_checkout_after_order_review', 'wordtrap_checkout_after_order_review', 100 );
+if ( ! function_exists( 'wordtrap_checkout_after_order_review' ) ) {
+  /**
+   * Wrap end of order review
+   */
+  function wordtrap_checkout_after_order_review() {
+    ?>
+    </div><!-- .order_details -->
+    <?php    
+  }
+}

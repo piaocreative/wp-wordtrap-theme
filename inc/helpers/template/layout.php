@@ -231,7 +231,9 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
 
     // Home, Normal page
     if ( is_front_page() || is_page() ) {
-      
+      if ( class_exists( 'woocommerce' ) && ( is_cart() || is_checkout() ) ) {
+        $left_sidebar = $right_sidebar = '';
+      }
     } 
     // 404
     else if ( is_404() ) {
