@@ -60,7 +60,7 @@ if ( ! function_exists( 'wordtrap_checkout_before_order_review_heading' ) ) {
    */
   function wordtrap_checkout_before_order_review_heading() {
     ?>
-    <div class="order_details">
+    <div class="order-review-wrap">
     <?php    
   }
 }
@@ -73,7 +73,7 @@ if ( ! function_exists( 'wordtrap_checkout_after_order_review' ) ) {
    */
   function wordtrap_checkout_after_order_review() {
     ?>
-    </div><!-- .order_details -->
+    </div><!-- .order-review-wrap -->
     <?php    
   }
 }

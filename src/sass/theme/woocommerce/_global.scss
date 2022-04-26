@@ -43,12 +43,18 @@ body.single-product {
 
 // Notices
 .woocommerce-message,
+.woocommerce-notice,
 .woocommerce-info,
 .woocommerce-error {
   @extend .alert;
-  padding: 1em 2em 1em 3.5em;
   margin-bottom: 2rem;
+}
 
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+  padding: 1em 2em 1em 3.5em;
+  
   a.button {
     @extend .btn;
     @extend .btn-sm;
@@ -57,7 +63,12 @@ body.single-product {
   }
 }
 
-.woocommerce-message {
+.woocommerce-notice {
+  padding: 1em 2em;
+}
+
+.woocommerce-message,
+.woocommerce-notice {
   @extend .alert-success;
 
   a.button {
