@@ -7,7 +7,7 @@
 
 .widgettitle {
   font-size: $widget-title-font-size;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .widget,
@@ -16,7 +16,7 @@
 .widget_block,
 .woocommerce[class*="widget"],
 [class^="wp-widget-group"] {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .widget,
@@ -41,7 +41,7 @@
 .widget_nav_menu,
 .widget_rss {
   .widgettitle {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   ul {

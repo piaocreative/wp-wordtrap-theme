@@ -42,57 +42,57 @@ body.single-product {
 }
 
 // Notices
-.woocommerce-message,
-.woocommerce-notice,
-.woocommerce-info,
-.woocommerce-error {
-  @extend .alert;
-  margin-bottom: 2rem;
-}
-
-.woocommerce-message,
-.woocommerce-info,
-.woocommerce-error {
-  padding: 1em 2em 1em 3.5em;
+.site {
+  .woocommerce-message,
+  .woocommerce-notice,
+  .woocommerce-info,
+  .woocommerce-error {
+    @extend .alert;
+    margin-bottom: 2rem;
+  }
   
-  a.button {
-    @extend .btn;
-    @extend .btn-sm;
-    @extend .btn-success;
-    margin: -3px 0 -5px;
+  .woocommerce-message,
+  .woocommerce-info,
+  .woocommerce-error {
+    padding: 1em 2em 1em 3.5em;
+    
+    a.button {
+      @extend .btn;
+      @extend .btn-sm;
+      @extend .btn-success;
+      margin: -3px 0 -5px;
+    }
   }
-}
-
-.woocommerce-notice {
-  padding: 1em 2em;
-}
-
-.woocommerce-message,
-.woocommerce-notice {
-  @extend .alert-success;
-
-  a.button {
-    @extend .btn-success;
-  }
-}
-
-.woocommerce-error {
-  @extend .alert-danger;
   
-  a.button {
-    @extend .btn-danger;
+  .woocommerce-notice {
+    padding: 1em 2em;
   }
-}
-
-.woocommerce-info {
-  @extend .alert-info;
   
-  a.button {
-    @extend .btn-info;
+  .woocommerce-message,
+  .woocommerce-notice {
+    @extend .alert-success;
+  
+    a.button {
+      @extend .btn-success;
+    }
   }
-}
+  
+  .woocommerce-error {
+    @extend .alert-danger;
+    
+    a.button {
+      @extend .btn-danger;
+    }
+  }
+  
+  .woocommerce-info {
+    @extend .alert-info;
+    
+    a.button {
+      @extend .btn-info;
+    }
+  }
 
-.woocommerce {
   .blockUI.blockOverlay {
     background: transparent !important;
     opacity: 1 !important;
@@ -131,18 +131,14 @@ body.single-product {
     }
   }
 
-  form .form-row {
-    margin-bottom: 0.5rem;
-    padding: 0;
-
-    .select2-container {
-      margin-bottom: 0.25rem;
-    }
+  .star-rating {
+    margin-top: 0.5rem;
   }
-}
 
-.woocommerce,
-.woocommerce-page {
+  .amount {
+    font-weight: $font-weight-bold;
+  }
+
   div.product p.price, 
   div.product span.price,
   ul.products li.product .price,
@@ -167,6 +163,7 @@ body.single-product {
 
   .star-rating {
     color: $primary;
+    font-size: 0.625rem;
   }
 
   #respond input#submit,
@@ -219,8 +216,7 @@ body.single-product {
     padding-right: 0;
     -moz-appearance: textfield;
 
-    &,
-    .woocommerce & {
+    .site & {
       width: 30px;
     }
 

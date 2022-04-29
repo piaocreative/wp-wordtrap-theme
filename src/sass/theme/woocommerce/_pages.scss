@@ -11,17 +11,23 @@
   .woocommerce-order-details,
   .woocommerce-customer-details,
   .woocommerce-order-downloads,
-  .woocommerce-MyAccount-content {
+  .woocommerce-MyAccount-content,
+  .woocommerce-MyAccount-navigation {
     background: $section-bg;
     border: none;
     border-radius: $border-radius-lg;
     padding: 2rem;
-  }
-}
 
-.woocommerce {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   form {
     .form-row {
+      margin-bottom: 0.5rem;
+      padding: 0;
+
       label {
         @extend .form-label;
       }
@@ -39,6 +45,10 @@
       [type="radio"] {
         border: none;
         @extend .form-check-input;
+      }
+
+      .select2-container {
+        margin-bottom: 0.25rem;
       }
     }
 
@@ -77,21 +87,25 @@
   }
 
   ul {
-    @extend .list-group;
+    list-style: none;
+    padding-left: 0.5rem;
+    margin-bottom: 0;
   }
-
+  
   li {
-    @extend .list-group-item;
-    @extend .list-group-item-action;
+    margin-bottom: 1rem;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
     a {
-      display: block;
-      color: inherit;
-      text-decoration: none;
+      color: $secondary;
     }
 
-    &.is-active {
-      @extend .active;
+    &.is-active a,
+    a:hover {
+      color: $primary;
     }
   }
 }
@@ -130,7 +144,7 @@
 }
 
 table.shop_table {
-  .woocommerce & {
+  .site & {
     border: none;
   }
 
@@ -394,7 +408,7 @@ table.cart td.actions {
   }
 }
 
-.woocommerce {
+.site {
   #shipping_method,
   #order_review {
     [type="checkbox"], 
@@ -507,16 +521,16 @@ table.cart td.actions {
   }
 }
 
-.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
-  margin-top: 0.2rem;
-
-  input {
-    margin-top: 0.6rem;
-    margin-right: 3px;
+.site {
+  .woocommerce-form-login .woocommerce-form-login__rememberme {
+    margin-top: 0.2rem;
+  
+    input {
+      margin-top: 0.6rem;
+      margin-right: 3px;
+    }
   }
-}
 
-.woocommerce {
   ul.order_details {
     display: flex;
     flex-wrap: wrap;

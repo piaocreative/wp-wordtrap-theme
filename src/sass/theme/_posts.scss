@@ -257,11 +257,11 @@ body.search-results .site-main article.hentry {
   border-radius: $border-radius-lg;
   padding: 2rem;
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     padding: 1.5rem;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     padding: 1rem;
   }
 }
@@ -373,11 +373,11 @@ body.search-results .site-main article.hentry {
   border-radius: $border-radius-lg;
   padding: 2rem;
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     padding: 1.5rem;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     padding: 1rem;
   }
 

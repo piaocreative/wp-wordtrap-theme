@@ -39,6 +39,10 @@ if ( ! function_exists( 'wordtrap_wrap_end_products' ) ) {
   }
 }
 
+// Unhook category link
+remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+
 // Unhook the products result count and ordering
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 

@@ -5,6 +5,10 @@
  * @since wordtrap 1.0.0
  */
 
+mark {
+  background-color: inherit;
+}
+
 // Calendar
 .wp-block-calendar {
   table {
@@ -18,7 +22,10 @@
 // Archives, Page List, Categories
 [class*="wp-block"][class$="list"],
 [class*="wp-block"][class*="list "],
-.wp-block-rss {
+.wp-block-rss,
+.widget_layered_nav,
+.widget_layered_nav_filters,
+.widget_rating_filter {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;

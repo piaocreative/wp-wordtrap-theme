@@ -28,11 +28,11 @@ figure.woocommerce-product-gallery__wrapper {
     border-radius: $border-radius-lg;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     padding: 1.5rem;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     padding: 1rem;
   }
 
@@ -64,6 +64,7 @@ div.product {
       margin-bottom: 0;
 
       .star-rating {
+        font-size: 1rem;
         margin-right: 1rem;
       }
     }
@@ -419,11 +420,11 @@ section.related-products {
       padding: 2rem;
       @include clearfix;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
         padding: 1.5rem;
       }
-
-      @include media-breakpoint-down(sm) {
+    
+      @include media-breakpoint-down(md) {
         padding: 1rem;
       }
     }
@@ -619,11 +620,11 @@ div.product-view-full-width {
         }
       }
       
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
         padding: 1.5rem;
       }
-
-      @include media-breakpoint-down(sm) {
+    
+      @include media-breakpoint-down(md) {
         padding: 1rem;
       }
     }

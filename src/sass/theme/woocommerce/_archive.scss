@@ -1,6 +1,5 @@
 
-.woocommerce,
-.woocommerce-page {
+.site {
   .woocommerce-ordering {
     float: none;
     margin-bottom: 0;
@@ -13,7 +12,6 @@
   div.products {
     div.product {
       .star-rating {
-        font-size: 0.625rem;
         margin-top: 0.4rem;
       }
 
@@ -45,7 +43,8 @@
   }
 }
 
-.woocommerce-loop-product__title {
+.woocommerce-loop-product__title,
+.woocommerce-loop-category__title {
   margin-bottom: 0;
 
   &,
