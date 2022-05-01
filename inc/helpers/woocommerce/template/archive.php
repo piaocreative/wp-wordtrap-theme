@@ -39,10 +39,6 @@ if ( ! function_exists( 'wordtrap_wrap_end_products' ) ) {
   }
 }
 
-// Unhook category link
-remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
-remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
-
 // Unhook the products result count and ordering
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
@@ -257,3 +253,31 @@ if ( ! function_exists( 'wordtrap_cart_notification_template' ) ) {
   }
 }
 
+// Unhook category link
+remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+
+// Hook category link
+add_action( 'woocommerce_before_subcategory_title', 'woocommerce_template_loop_category_link_close', 100 );
+add_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_link_open', 9 );
+add_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_link_close', 11 );
+
+// Hook shop loop subcategory title
+add_action( 'woocommerce_shop_loop_subcategory_title', 'wordtrap_shop_loop_subcategory_description', 20 );
+
+if ( ! function_exists( 'wordtrap_shop_loop_subcategory_description' ) ) {
+  /**
+   * Show subcategory description
+   */
+  function wordtrap_shop_loop_subcategory_description( $category ) {
+    // View mode
+    $view_mode = wc_get_loop_prop( 'view-mode', wordtrap_get_view_mode() );
+
+    if ( $view_mode === 'list' ) {
+      ?>
+      <div class="woocommerce-product-details__short-description">
+        <p>This is a simple, virtual product.</p>
+      </div>
+      <?php
+    }
+  }
+}

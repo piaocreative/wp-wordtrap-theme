@@ -46,7 +46,19 @@ Redux::set_section(
         'id'          => 'faq-cat-slug-name',
         'type'        => 'text',
         'title'       => esc_html__( 'Category Slug Name', 'wordtrap' ),
-        'placeholder' => 'faq_cat',
+        'placeholder' => 'faq_category',
+      ),
+      array(
+        'id'          => 'faq-cat-name',
+        'type'        => 'text',
+        'title'       => esc_html__( 'Category Name', 'wordtrap' ),
+        'placeholder' => 'FAQ Category',
+      ),
+      array(
+        'id'          => 'faq-cats-name',
+        'type'        => 'text',
+        'title'       => esc_html__( 'Categories Name', 'wordtrap' ),
+        'placeholder' => 'FAQ Categories',
       ),
       array(
         'id'          => 'faqs-page',
