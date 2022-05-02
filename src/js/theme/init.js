@@ -74,6 +74,16 @@ function wordtrap_init( $wrap ) {
       } );
     }
 
+    // Categories Filter
+    if ( $.fn.themeCategoriesFilter ) {
+      $( function () {
+        $wrap.find( '.categories-filter' ).each( function () {
+          var $this = $( this );
+          $this.themeCategoriesFilter( $this.data( 'options' ) );
+        } );
+      } );
+    }
+
     // Posts Masonry View
     if ( $.fn.themeMasonry ) {
       $( function () {

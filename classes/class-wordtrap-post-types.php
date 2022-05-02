@@ -34,8 +34,7 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
             flush_rewrite_rules();
             delete_transient( 'wordtrap_flush_rewrite_rules' );
           }
-        },
-        99
+        }
       );
     }
 
@@ -75,15 +74,15 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
       );
 
       register_taxonomy(
-        'faq_cat',
+        'faq_category',
         'faq',
         array(
-          'hierarchical'      => true,
-          'show_in_nav_menus' => true,
-          'labels'            => $this->getTaxonomyLabels( $cat_name, $cats_name ),
-          'query_var'         => true,
-          'rewrite'           => array( 'slug' => $cat_slug_name ),
-          'show_in_rest'      => true,
+          'hierarchical'        => true,
+          'show_in_nav_menus'   => true,
+          'labels'              => $this->getTaxonomyLabels( $cat_name, $cats_name ),
+          'query_var'           => true,
+          'rewrite'             => array( 'slug' => $cat_slug_name ),
+          'show_in_rest'        => true,
         )
       );
     }
@@ -125,17 +124,17 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
      */
     function getTaxonomyLabels( $singular_name, $name ) {
       return array(
-        'name'              => $name,
-        'singular_name'     => $singular_name,
-        'search_items'      => sprintf( __( 'Search %s', 'wordtrap' ), $name ),
-        'all_items'         => sprintf( __( 'All %s', 'wordtrap' ), $name ),
-        'parent_item'       => sprintf( __( 'Parent %s', 'wordtrap' ), $singular_name ),
-        'parent_item_colon' => sprintf( __( 'Parent %s:', 'wordtrap' ), $singular_name ),
-        'edit_item'         => sprintf( __( 'Edit %s', 'wordtrap' ), $singular_name ),
-        'update_item'       => sprintf( __( 'Update %s', 'wordtrap' ), $singular_name ),
-        'add_new_item'      => sprintf( __( 'Add New %s', 'wordtrap' ), $singular_name ),
-        'new_item_name'     => sprintf( __( 'New %s Name', 'wordtrap' ), $singular_name ),
-        'menu_name'         => $name,
+        'name'               => $name,
+        'singular_name'      => $singular_name,
+        'search_items'       => sprintf( __( 'Search %s', 'wordtrap' ), $name ),
+        'all_items'          => sprintf( __( 'All %s', 'wordtrap' ), $name ),
+        'parent_item'        => sprintf( __( 'Parent %s', 'wordtrap' ), $singular_name ),
+        'parent_item_colon'  => sprintf( __( 'Parent %s:', 'wordtrap' ), $singular_name ),
+        'edit_item'          => sprintf( __( 'Edit %s', 'wordtrap' ), $singular_name ),
+        'update_item'        => sprintf( __( 'Update %s', 'wordtrap' ), $singular_name ),
+        'add_new_item'       => sprintf( __( 'Add New %s', 'wordtrap' ), $singular_name ),
+        'new_item_name'      => sprintf( __( 'New %s Name', 'wordtrap' ), $singular_name ),
+        'menu_name'          => $name,
       );
     }
   }

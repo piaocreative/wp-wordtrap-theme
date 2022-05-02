@@ -52,8 +52,8 @@ if ( ! function_exists( 'wordtrap_get_archive_post_type' ) ) {
   function wordtrap_get_archive_post_type() {
     $post_type = '';
     
-    // Posts page, Date archive, Search results, Author archive
-    if ( is_home() || is_date() || is_search() || is_author() ) {
+    // Posts page, Date archive, Author archive
+    if ( is_home() || is_date() || is_author() ) {
       $post_type = 'post';
     } else if ( is_archive() ) {
       $post_type = '';
@@ -239,8 +239,21 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
     else if ( is_404() ) {
       $layout = 'full';
     }
+    // Search results
+    else if ( is_search() ) {
+      $post_type = ( isset( $_GET['post_type'] ) && $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : null;
+      if ( in_array( $post_type, array( 'product', 'faq', 'member' ) ) ) {
+        $layout = wordtrap_options( $post_type . 's-layout' );
+        $left_sidebar = wordtrap_options( $post_type . 's-left-sidebar' );
+        $right_sidebar = wordtrap_options( $post_type . 's-right-sidebar' );
+      } else {
+        $layout = wordtrap_options( 'posts-layout' );
+        $left_sidebar = wordtrap_options( 'posts-left-sidebar' );
+        $right_sidebar = wordtrap_options( 'posts-right-sidebar' );
+      }
+    }
     // Posts page, Date archive, Search results, Author archive
-    else if ( is_home() || is_date() || is_search() || is_author() ) {
+    else if ( is_home() || is_date() || is_author() ) {
       $layout = wordtrap_options( 'posts-layout' );
       $left_sidebar = wordtrap_options( 'posts-left-sidebar' );
       $right_sidebar = wordtrap_options( 'posts-right-sidebar' );
@@ -252,6 +265,8 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
         $layout = wordtrap_options( $post_type . '-layout' );
         $left_sidebar = wordtrap_options( $post_type . '-left-sidebar' );
         $right_sidebar = wordtrap_options( $post_type . '-right-sidebar' );
+      } else {
+        $left_sidebar = $right_sidebar = '';
       }
     } 
     // Archive page
@@ -272,7 +287,7 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
         $post_type = $wp_query->query[ 'post_type' ];
       }
 
-      if ( $post_type && in_array( $post_type, array( 'post', 'product', 'member' ) ) ) {
+      if ( $post_type && in_array( $post_type, array( 'post', 'product', 'member', 'faq' ) ) ) {
         $layout = wordtrap_options( $post_type . 's-layout' );
         $left_sidebar = wordtrap_options( $post_type . 's-left-sidebar' );
         $right_sidebar = wordtrap_options( $post_type . 's-right-sidebar' );

@@ -149,6 +149,8 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
         $share = wordtrap_options( 'post-share' );
       } else if ( 'page' === get_post_type() ) {
         $share = wordtrap_options( 'page-share' );
+      } else {
+        $share = false;
       }
     }
 

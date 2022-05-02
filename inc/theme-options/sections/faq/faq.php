@@ -103,26 +103,26 @@ Redux::set_section(
         'options'     => $cats_order_options,
         'default'     => 'asc',
       ),
-      array(
-        'id'          => 'faqs-cat-filter-position',
-        'type'        => 'button_set',
-        'title'       => esc_html__( 'Categories Filter Position', 'wordtrap' ),
-        'options'     => $cats_filter_position_options,
-        'default'     => 'content',
-      ),
+      // array(
+      //   'id'          => 'faqs-cat-filter-position',
+      //   'type'        => 'button_set',
+      //   'title'       => esc_html__( 'Categories Filter Position', 'wordtrap' ),
+      //   'options'     => $cats_filter_position_options,
+      //   'default'     => 'content',
+      // ),
       array(
         'id'          => 'faqs-orderby',
         'type'        => 'button_set',
         'title'       => esc_html__( 'FAQs Order By', 'wordtrap' ),
         'options'     => $singular_orderby_options,
-        'default'     => 'name',
+        'default'     => '',
       ),
       array(
         'id'          => 'faqs-order',
         'type'        => 'button_set',
         'title'       => esc_html__( 'FAQs Order', 'wordtrap' ),
         'options'     => $singular_order_options,
-        'default'     => 'asc',
+        'default'     => 'desc',
       ),
     )
   )

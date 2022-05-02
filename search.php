@@ -11,6 +11,12 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+$post_type = ( isset( $_GET['post_type'] ) && $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : null;
+if ( isset( $post_type ) && locate_template( 'archive-' . $post_type . '.php' ) ) {
+	get_template_part( 'archive', $post_type );
+  exit;
+}
+
 get_header();
 ?>
 

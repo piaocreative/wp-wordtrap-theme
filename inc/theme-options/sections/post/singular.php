@@ -117,7 +117,6 @@ Redux::set_section(
           'rand'          => esc_html__( 'Random', 'wordtrap' ),
           'date'          => esc_html__( 'Date', 'wordtrap' ),
           'ID'            => esc_html__( 'ID', 'wordtrap' ),
-          'modified'      => esc_html__( 'Modified Date', 'wordtrap' ),
           'comment_count' => esc_html__( 'Comment Count', 'wordtrap' ),
         ),
         'default'  => 'rand',

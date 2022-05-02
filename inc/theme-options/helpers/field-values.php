@@ -416,10 +416,11 @@ if ( ! function_exists( 'wordtrap_singular_orderby_options' ) ) {
    */
   function wordtrap_singular_orderby_options() {
     return array(
-      'ID'      => esc_html__( 'ID', 'wordtrap' ),
+      ''        => esc_html__( 'None', 'wordtrap' ),
       'name'    => esc_html__( 'Name', 'wordtrap' ),
-      'slug'    => esc_html__( 'Slug Name', 'wordtrap' ),
-      'count'   => esc_html__( 'Count', 'wordtrap' ),
+      'date'    => esc_html__( 'Date', 'wordtrap' ),
+      'ID'      => esc_html__( 'ID', 'wordtrap' ),
+      'rand'    => esc_html__( 'Random', 'wordtrap' ),
     );
   }
 }

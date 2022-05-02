@@ -18,17 +18,27 @@ if ( ! function_exists( 'wordtrap_compile_with_changed_values' ) ) {
   function wordtrap_compile_with_changed_values( $changed_values ) {
     $changed_fields = array_keys( $changed_values );
     $skin_fields = wordtrap_skin_fields();
+    $post_type_fields = wordtrap_post_type_fields();
     $compile = false;
+    $flush_rewrite = false;
     
     foreach ( $changed_fields as $field ) {
       if ( in_array( $field, $skin_fields ) ) {
         $compile = true;
       }
+
+      if ( in_array( $field, $post_type_fields ) ) {
+        $flush_rewrite = true;
+      }
     }
   
     if ( $compile ) {
       do_action( 'wordtrap_compile_styles' );
-    }  
+    }
+
+    if ( $flush_rewrite ) {
+      set_transient( 'wordtrap_flush_rewrite_rules', true, 300 );
+    }
   }  
 }
 
@@ -60,6 +70,20 @@ if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
       'header-bg', 'header-logo-margin',
       'main-bg', 'section-bg',
       'footer-bg', 'footer-color', 'footer-headings-color', 'footer-link-color', 'footer-link-hover-color',
+    );
+  }
+}
+
+if ( ! function_exists( 'wordtrap_post_type_fields' ) ) {
+  /**
+   * Get all fields related to post type
+   *
+   * @params array    All post type fields
+   */
+  function wordtrap_post_type_fields() {
+    return array(
+      'faq-slug-name', 'faq-cat-slug-name', 'faqs-page',
+      'member-slug-name', 'member-cat-slug-name', 'members-page',
     );
   }
 }

@@ -6,6 +6,7 @@ import './theme/scroll-to-top';
 
 import './theme/whats-app-sharing';
 import './theme/posts-filter';
+import './theme/categories-filter';
 import './theme/masonry';
 import './theme/slider';
 
