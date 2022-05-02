@@ -94,7 +94,10 @@ function wordtrap_init( $wrap ) {
           if ( ! options ) {
             options = {};
           }
-          options.itemSelector = '.post-wrap';
+
+          if ( ! options.itemSelector ) {
+            options.itemSelector = '.post-wrap';
+          }          
           $this.themeMasonry( options );
         } );
       } );

@@ -45,6 +45,9 @@ if ( ! function_exists( 'wordtrap_setup_theme' ) ) {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 1568, 9999 );
 
+    // Add image sizes
+    add_image_size( 'member', 378, 507, true );
+
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
       array(

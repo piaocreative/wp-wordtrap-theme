@@ -48,37 +48,23 @@ Redux::set_section(
         'placeholder' => 'member_cat',
       ),
       array(
+        'id'          => 'member-cat-name',
+        'type'        => 'text',
+        'title'       => esc_html__( 'Category Name', 'wordtrap' ),
+        'placeholder' => 'Member Category',
+      ),
+      array(
+        'id'          => 'member-cats-name',
+        'type'        => 'text',
+        'title'       => esc_html__( 'Categories Name', 'wordtrap' ),
+        'placeholder' => 'Member Categories',
+      ),
+      array(
         'id'          => 'members-page',
         'type'        => 'select',
         'data'        => 'page',
         'title'       => esc_html__( 'Members Page', 'wordtrap' ),
-      ),
-      array(
-        'id'          => 'member-zoom',
-        'type'        => 'switch',
-        'title'       => esc_html__( 'Image Lightbox', 'wordtrap' ),
-        'default'     => true,
-        'on'          => esc_html__( 'Enable', 'wordtrap' ),
-        'off'         => esc_html__( 'Disable', 'wordtrap' ),
-      ),
-      array(
-        'id'          => 'member-social-target',
-        'type'        => 'button_set',
-        'title'       => esc_html__( 'Social Links Target', 'wordtrap' ),
-        'options'     => array(
-          ''          => esc_html__( 'Self', 'wordtrap' ),
-          '_blank'    => esc_html__( 'Blank', 'wordtrap' ),
-        ),
-        'default'     => '_blank',
-      ),
-      array(
-        'id'          => 'member-social-nofollow',
-        'type'        => 'switch',
-        'title'       => esc_html__( 'No Follow Social Links', 'wordtrap' ),
-        'default'     => false,
-        'on'          => esc_html__( 'Yes', 'wordtrap' ),
-        'off'         => esc_html__( 'No', 'wordtrap' ),
-      ),
+      ),      
     )
   )
 );

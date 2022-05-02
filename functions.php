@@ -37,11 +37,11 @@ require get_template_directory() . '/inc/theme-options/options.php';
 // Include theme styles compiler
 require get_template_directory() . '/inc/compiler/compiler.php';
 
-// Include helpers
-require get_template_directory() . '/inc/helpers.php';
-
 // Load custom WordPress nav walker.
 require get_template_directory() . '/classes/class-wordtrap-wp-bootstrap-navwalker.php';
 
 // Load content types
 require get_template_directory() . '/classes/class-wordtrap-post-types.php';
+
+// Include helpers
+require get_template_directory() . '/inc/helpers.php';

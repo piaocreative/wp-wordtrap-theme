@@ -241,7 +241,7 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
    *
    * @param string $nav_id - The ID of the filter navigation.
    */
-  function wordtrap_posts_filter_navigation( $nav_id ) {
+  function wordtrap_posts_filter_navigation( $nav_id, $category_slug = '', $categories = array() ) {
 
     $post_type = wordtrap_get_archive_post_type();
 
@@ -253,7 +253,7 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
     $show_count = wordtrap_options( $post_type . 's-show-count' );
     $show_view_mode = wordtrap_options( $post_type . 's-view-mode' );
 
-    if ( $nav_id === 'posts-filter-above' && ! ( $show_sort || $show_count || $show_view_mode ) ) {
+    if ( $nav_id === 'posts-filter-above' && ! ( $show_sort || $show_count || $show_view_mode || ! empty( $categories ) ) ) {
       return;
     }
 
@@ -305,6 +305,17 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
           if ( $nav_id == 'posts-filter-below' && $show_sort ) : ?>
             <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby ) ?>"/>
           <?php endif;
+
+          if ( ! empty( $categories ) ) : 
+            ?>
+            <ul class="categories-filter nav">
+              <li class="nav-item"><a data-filter="*" class="nav-link active" href="#"><?php esc_html_e( 'Show All', 'wordtrap' ); ?></a></li>
+              <?php foreach ( $categories as $category ) : ?>
+                <li class="nav-item"><a data-filter="<?php echo $category_slug ?>-<?php echo esc_attr( $category->slug ); ?>" class="nav-link" href="#"><?php echo esc_html( $category->name ); ?></a></li>
+              <?php endforeach; ?>
+            </ul>
+            <?php
+          endif;
           
           if ( $show_count || $show_view_mode ) : ?>
             <div class="posts-view d-flex justify-content-center">

@@ -37,7 +37,7 @@ if ( ! function_exists( 'wordtrap_compile_with_changed_values' ) ) {
     }
 
     if ( $flush_rewrite ) {
-      set_transient( 'wordtrap_flush_rewrite_rules', true, 300 );
+      set_transient( 'wordtrap_flush_rewrite_rules', true, 60 );
     }
   }  
 }

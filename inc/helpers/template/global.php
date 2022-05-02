@@ -53,7 +53,7 @@ if ( ! function_exists( 'wordtrap_grid_view_classes' ) ) {
       return '';
     }
 
-    if ( $post_type !== 'product' ) {
+    if ( $post_type === 'post' ) {
       $grid_view = wordtrap_options( $post_type . 's-grid-view' );
       if ( ! ( $grid_view === 'grid' || $grid_view === 'masonry' ) ) {
         return '';

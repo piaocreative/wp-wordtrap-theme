@@ -30,7 +30,7 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
       add_action(
         'admin_init',
         function() {
-          if ( current_user_can( 'manage_options' ) && get_transient( 'wordtrap_flush_rewrite_rules', false ) ) {
+          if ( current_user_can( 'manage_options' ) && get_transient( 'wordtrap_flush_rewrite_rules' ) ) {
             flush_rewrite_rules();
             delete_transient( 'wordtrap_flush_rewrite_rules' );
           }
@@ -94,6 +94,46 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
       if ( ! wordtrap_options( 'enable-member' ) ) {
         return;
       }
+
+      $slug_name       = wordtrap_options( 'member-slug-name' ) ? esc_attr( wordtrap_options( 'member-slug-name' ) ) : 'member';
+      $name            = wordtrap_options( 'member-name' ) ? wordtrap_options( 'member-name' ) : __( 'Members', 'wordtrap' );
+      $singular_name   = wordtrap_options( 'member-singular-name' ) ? wordtrap_options( 'member-singular-name' ) : __( 'Member', 'wordtrap' );
+      $cat_slug_name   = wordtrap_options( 'member-cat-slug-name' ) ? esc_attr( wordtrap_options( 'member-cat-slug-name' ) ) : 'member_category';
+      $cat_name        = wordtrap_options( 'member-cat-name' ) ? wordtrap_options( 'member-cat-name' ) : __( 'Member Category', 'wordtrap' );
+      $cats_name       = wordtrap_options( 'member-cats-name' ) ? wordtrap_options( 'member-cats-name' ) : __( 'Member Categories', 'wordtrap' );      
+      $archive_page_id = wordtrap_options( 'members-page' ) ? wordtrap_options( 'members-page' ) : 0;
+      $has_archive     = true;
+      if ( $archive_page_id && get_post( $archive_page_id ) ) {
+        $has_archive = get_page_uri( $archive_page_id );
+      }
+
+      register_post_type(
+        'member',
+        array(
+          'labels'              => $this->getPostTypeLabels( $singular_name, $name ),
+          'exclude_from_search' => false,
+          'has_archive'         => $has_archive,
+          'public'              => true,
+          'rewrite'             => array( 'slug' => $slug_name ),
+          'supports'            => array( 'title', 'editor', 'thumbnail' ),
+          'can_export'          => true,
+          'show_in_nav_menus'   => true,
+          'show_in_rest'        => true,
+        )
+      );
+
+      register_taxonomy(
+        'member_category',
+        'member',
+        array(
+          'hierarchical'        => true,
+          'show_in_nav_menus'   => true,
+          'labels'              => $this->getTaxonomyLabels( $cat_name, $cats_name ),
+          'query_var'           => true,
+          'rewrite'             => array( 'slug' => $cat_slug_name ),
+          'show_in_rest'        => true,
+        )
+      );
     }
 
     /**

@@ -97,6 +97,18 @@
       display: block;
       text-align: center;
 
+      .categories-filter {
+        justify-content: center;
+        
+        li:first-child {
+          padding-left: 1rem;
+        }
+
+        li:last-child {
+          padding-right: 1rem;
+        }
+      }
+  
       .posts-view {
         margin-top: 1rem;
       }
@@ -441,7 +453,7 @@
     a {
       color: $headings-color;
       font-size: $title-font-size * 1.1;
-      font-weight: $font-weight-bold;
+      font-weight: $headings-font-weight;
       padding: $nav-link-padding-y 0;
       border-bottom: 3px solid transparent;
 
