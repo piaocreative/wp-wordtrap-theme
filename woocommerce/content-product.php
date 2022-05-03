@@ -2,8 +2,8 @@
 /**
  * The template for displaying product content within loops
  *
- * @package Wordtrap
- * @version 1.0.0
+ * @package WooCommerce\Templates
+ * @version 3.6.0
  */
 
 defined( 'ABSPATH' ) || exit;

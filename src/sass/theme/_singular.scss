@@ -249,8 +249,7 @@
 }
 
 // Post Sections
-article.post,
-article.faq,
+article,
 section.no-results,
 #comments,
 .navigation,
@@ -269,7 +268,7 @@ body.search-results .site-main article.hentry {
   }
 }
 
-article.post,
+article,
 body.search-results .site-main article.hentry {
   margin-top: 2rem;
 

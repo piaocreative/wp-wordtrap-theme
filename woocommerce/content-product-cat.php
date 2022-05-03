@@ -2,8 +2,8 @@
 /**
  * The template for displaying product category thumbnails within loops
  *
- * @package Wordtrap
- * @version 1.0.0
+ * @package WooCommerce\Templates
+ * @version 4.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

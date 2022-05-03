@@ -2,8 +2,8 @@
 /**
  * Product Loop End
  *
- * @package     Wordtrap
- * @version     1.0.0
+ * @package     WooCommerce\Templates
+ * @version     2.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

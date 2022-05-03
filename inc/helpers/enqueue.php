@@ -63,7 +63,13 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
     // Comment script
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
       wp_enqueue_script( 'comment-reply' );
-    }    
+    }
+    
+    wp_set_script_translations( 
+      'wordtrap-i18n-js',
+      'default',
+      get_template_directory() . '/languages'
+    );
   }
 }
 

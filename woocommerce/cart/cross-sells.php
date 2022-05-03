@@ -2,8 +2,8 @@
 /**
  * Cross-sells
  *
- * @package Wordtrap
- * @version 1.0.0
+ * @package WooCommerce\Templates
+ * @version 4.4.0
  */
 
 defined( 'ABSPATH' ) || exit;

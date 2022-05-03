@@ -2,8 +2,8 @@
 /**
  * Pagination - Show numbered pagination for catalog pages
  *
- * @package Wordtrap
- * @since wordtrap 1.0.0
+ * @package WooCommerce\Templates
+ * @version 3.3.1
  */
 
 // Exit if accessed directly.

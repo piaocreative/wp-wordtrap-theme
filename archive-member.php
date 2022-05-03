@@ -43,7 +43,7 @@ if ( have_posts() ) :
 
     if ( $view_mode === 'grid' ) : 
       ?>
-      <div class="posts-grid categories-filter-items posts-view-masonry <?php echo esc_attr( wordtrap_grid_view_classes() ) ?>" data-options="<?php echo esc_attr( json_encode( array( 'itemSelector' => 'article' ) ) ) ?>">
+      <div class="posts-grid categories-filter-items posts-view-masonry <?php echo esc_attr( wordtrap_grid_view_classes() ) ?>">
       <?php
     else:
       ?>
@@ -55,7 +55,19 @@ if ( have_posts() ) :
       while ( have_posts() ) :
         the_post();
 
-        get_template_part( 'template-parts/content/content', get_post_format() );    
+        if ( $view_mode === 'grid' ) : 
+          ?>
+            <div class="post-wrap">
+          <?php 
+        endif;
+
+        get_template_part( 'template-parts/content/content', 'member' );    
+
+        if ( $view_mode === 'grid' ) : 
+          ?>
+            </div><!-- .post-wrap -->
+          <?php 
+        endif;
         
       endwhile;
 

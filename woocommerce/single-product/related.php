@@ -2,8 +2,8 @@
 /**
  * Related Products
  *
- * @package     Wordtrap
- * @version     1.0.0
+ * @package     WooCommerce\Templates
+ * @version     3.9.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -66,10 +66,10 @@
         
         if ( $items.hasClass( 'posts-view-masonry' ) ) {
           if ( filter === '*' ) {
-            $items.find( 'article' ).removeClass( 'd-none' );
+            $items.find( 'article' ).parent().removeClass( 'd-none' );
           } else {
-            $items.find( 'article' ).addClass( 'd-none' );
-            $items.find( 'article.' + filter ).removeClass( 'd-none' );
+            $items.find( 'article' ).parent().addClass( 'd-none' );
+            $items.find( 'article.' + filter ).parent().removeClass( 'd-none' );
           }
           $items.masonry( 'layout' );
         } else {

@@ -2,8 +2,8 @@
 /**
  * Single Product Sale Flash
  *
- * @package Wordtrap
- * @since wordtrap 1.0.0
+ * @package     WooCommerce\Templates
+ * @version     1.6.4
  */
 
 // Exit if accessed directly.

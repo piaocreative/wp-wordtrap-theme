@@ -2,8 +2,8 @@
 /**
  * Show options for ordering
  *
- * @package Wordtrap
- * @since wordtrap 1.0.0
+ * @package     WooCommerce\Templates
+ * @version     3.6.0
  */
 
 // Exit if accessed directly.
