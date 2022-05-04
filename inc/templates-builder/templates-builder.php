@@ -209,7 +209,7 @@ class Wordtrap_Templates_Builder {
     }
     
     if ( $screen && $screen->base == 'post' && $screen->id == self::POST_TYPE ) {
-      wp_enqueue_style( 'wordtrap-theme-options', WORDTRAP_OPTIONS_URI . '/assets/css/theme_options.css', false, WORDTRAP_VERSION, 'all' );
+      wp_enqueue_style( 'wordtrap-theme-options', WORDTRAP_OPTIONS_URI . '/assets/css/theme_options.css', false, WORDTRAP_VERSION );
       wp_enqueue_style( 'wordtrap-admin-edit-templates', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/css/edit-template.css', null, WORDTRAP_VERSION );
       
       wp_enqueue_script( 'wordtrap-admin-edit-template', WORDTRAP_TEMPLATES_BUILDER_URI . '/assets/js/edit-template.js', array('jquery-ui-dialog'), WORDTRAP_VERSION, true );
@@ -414,26 +414,26 @@ class Wordtrap_Templates_Builder {
     }
 
     // header type
-    if ( $header_type ) {
-      $sections[] = array(
-        'title'  => esc_html__( 'Header Type', 'wordtrap' ),
-        'id'     => 'template-position',
-        'icon'   => 'dashicons-before dashicons-align-full-width',
-        'fields' => array(
-          array(
-            'id'            => 'header-type',
-            'type'          => 'button_set',
-            'title'         => esc_html__( 'Type', 'wordtrap' ),
-            'options'       => array(
-              ''            => esc_html__( 'Normal', 'wordtrap' ),
-              'left-side'   => esc_html__( 'Left Side', 'wordtrap' ),
-              'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
-            ),
-            'default'       => '',
-          ),         
-        )
-      );
-    }
+    // if ( $header_type ) {
+    //   $sections[] = array(
+    //     'title'  => esc_html__( 'Header Type', 'wordtrap' ),
+    //     'id'     => 'template-position',
+    //     'icon'   => 'dashicons-before dashicons-align-full-width',
+    //     'fields' => array(
+    //       array(
+    //         'id'            => 'header-type',
+    //         'type'          => 'button_set',
+    //         'title'         => esc_html__( 'Type', 'wordtrap' ),
+    //         'options'       => array(
+    //           ''            => esc_html__( 'Normal', 'wordtrap' ),
+    //           'left-side'   => esc_html__( 'Left Side', 'wordtrap' ),
+    //           'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
+    //         ),
+    //         'default'       => '',
+    //       ),         
+    //     )
+    //   );
+    // }
 
     // display main block position
     if ( $show_main ) {

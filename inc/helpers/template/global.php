@@ -18,7 +18,7 @@ if ( ! function_exists( 'wordtrap_social_share' ) ) {
       return;
     }
 
-    wordtrap_get_template_part( 'template-parts/share' );    
+    wordtrap_get_template_part( 'template-parts/share' );
   }
 }
 
@@ -69,5 +69,24 @@ if ( ! function_exists( 'wordtrap_grid_view_classes' ) ) {
     $classes[] = 'row-cols-xxl-' . wordtrap_options( $post_type . 's-grid-columns-xxl' );
     
     return apply_filters( 'wordtrap_grid_view_classes', implode( ' ', $classes ) );
+  }
+}
+
+if ( ! function_exists( 'wordtrap_trim_excerpt' ) ) {
+  /**
+   * Trim excerpt
+   */
+  function wordtrap_trim_excerpt( $text = '' ) {
+    $raw_excerpt = $text;
+    $text = apply_filters( 'the_content', $text );
+    $text = str_replace( ']]>', ']]&gt;', $text );
+
+    $excerpt_length = (int) _x( '55', 'excerpt_length' );
+    $excerpt_length = (int) apply_filters( 'excerpt_length', $excerpt_length );
+
+    $excerpt_more = apply_filters( 'excerpt_more', ' ' . '[&hellip;]' );
+    $text         = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+  
+    return apply_filters( 'wordtrap_trim_excerpt', $text, $raw_excerpt );
   }
 }

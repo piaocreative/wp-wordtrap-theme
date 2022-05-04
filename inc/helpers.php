@@ -36,6 +36,7 @@ require $dir . 'template/global.php';
 require $dir . 'template/layout.php';
 require $dir . 'template/header.php';
 require $dir . 'template/post.php';
+require $dir . 'template/member.php';
 require $dir . 'template/pagination.php';
 require $dir . 'template/comments.php';
 

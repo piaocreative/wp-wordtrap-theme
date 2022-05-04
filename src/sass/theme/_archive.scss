@@ -58,6 +58,7 @@
 // Filter Navigation
 .posts-filter-nav {
   color: $secondary;
+  margin-bottom: 2rem;
 
   select {
     @extend .form-select;
@@ -92,6 +93,11 @@
   .posts-filter-wrap {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    .categories-filter {
+      margin-bottom: 0;
+    }
 
     @include media-breakpoint-down(lg) {
       display: block;
@@ -109,7 +115,8 @@
         }
       }
   
-      .posts-view {
+      .posts-sort,
+      .categories-filter {
         margin-top: 1rem;
       }
 
@@ -118,12 +125,16 @@
       }
     }
   }
+}
 
-  
+#posts-filter-above {
+  .posts-filter-wrap {
+    flex-direction: row-reverse;
+  }
 }
 
 #posts-filter-below {
-  margin-top: 2rem;
+  margin-bottom: 0;
   
   .posts-view {
     margin-bottom: 1rem;
@@ -158,11 +169,11 @@
     position: relative;
 
     article {
-      margin-top: calc(var(--bs-gutter-x) * 1); 
+      margin-bottom: calc(var(--bs-gutter-x) * 1); 
       padding: calc(var(--bs-gutter-x) * 0.5);
 
       @include media-breakpoint-up(xl) {
-        margin-top: calc(var(--bs-gutter-x) * 1.25);
+        margin-bottom: calc(var(--bs-gutter-x) * 1.25);
         padding: calc(var(--bs-gutter-x) * 0.625);
       }
     }
@@ -231,11 +242,6 @@
         line-height: 1;
         padding: 0.35em 0;      
       }
-
-      i {
-        margin-left: 0.5em;
-        transform: rotate(-45deg);
-      }
     }
 
     .post-tags {
@@ -248,6 +254,22 @@
     width: 1.8rem;
     height: 1.8rem;
     line-height: 1.8rem;
+  }
+
+  .post-thumbnail {
+    .social-share a {
+      font-size: 1rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      line-height: 2.25rem;
+    }
+  }
+}
+
+.read-more {
+  i {
+    margin-left: 0.5em;
+    transform: rotate(-45deg);
   }
 }
 
@@ -468,7 +490,7 @@
 
 .faqs {
   article {
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 

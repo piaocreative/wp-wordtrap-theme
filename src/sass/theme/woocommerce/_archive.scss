@@ -83,11 +83,15 @@ div.products {
 
   > * {
     position: relative;
-    padding-top: calc(var(--bs-gutter-x) * 1);
+    padding-bottom: calc(var(--bs-gutter-x) * 1);
     
     @include media-breakpoint-up(xl) {
-      padding-top: calc(var(--bs-gutter-x) * 1.25);
+      padding-bottom: calc(var(--bs-gutter-x) * 1.25);
     }
+  }
+
+  &.posts-slider > * {
+    padding-bottom: 0;
   }
 
   .product-labels {

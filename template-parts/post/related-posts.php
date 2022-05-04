@@ -59,7 +59,7 @@ $options = json_encode( $options );
 
 <div class="entry-related show-nav-title">
   
-  <h2 class="posts-title mb-0">
+  <h2 class="posts-title mb-4">
 
     <?php _e( 'Related Posts', 'wordtrap' ) ?>
 

@@ -235,8 +235,9 @@ $perpage: 3;
 .show-nav-title {
   .tns-outer {
     .tns-controls {
-      text-align: right;
-      margin-top: -2rem;
+      position: absolute;
+      top: -3.75rem;
+      right: 0;
     }
 
     > [data-action] {
@@ -250,7 +251,7 @@ $perpage: 3;
 }
 
 .tns-nav {
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 0;
   text-align: center;
 
   > [aria-controls] {

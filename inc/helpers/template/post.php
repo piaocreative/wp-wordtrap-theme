@@ -291,32 +291,6 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
         <div class="posts-filter-wrap">
           
           <?php 
-          // Sort
-          if ( $nav_id == 'posts-filter-above' && $show_sort ) : ?>
-            <label>
-              <?php _e( 'Sort by:', 'wordtrap') ?>
-              <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Posts order', 'wordtrap' ); ?>">
-              <?php foreach ( $posts_orderby_options as $id => $name ) : ?>
-                <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-              <?php endforeach; ?>
-              </select>
-            </label>
-          <?php endif; 
-          if ( $nav_id == 'posts-filter-below' && $show_sort ) : ?>
-            <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby ) ?>"/>
-          <?php endif;
-
-          if ( ! empty( $categories ) ) : 
-            ?>
-            <ul class="categories-filter nav">
-              <li class="nav-item"><a data-filter="*" class="nav-link active" href="#"><?php esc_html_e( 'Show All', 'wordtrap' ); ?></a></li>
-              <?php foreach ( $categories as $category ) : ?>
-                <li class="nav-item"><a data-filter="<?php echo $category_slug ?>-<?php echo esc_attr( $category->slug ); ?>" class="nav-link" href="#"><?php echo esc_html( $category->name ); ?></a></li>
-              <?php endforeach; ?>
-            </ul>
-            <?php
-          endif;
-          
           if ( $show_count || $show_view_mode ) : ?>
             <div class="posts-view d-flex justify-content-center">
 
@@ -353,6 +327,32 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
 
             </div>
           <?php endif;
+
+          // Sort
+          if ( $nav_id == 'posts-filter-above' && $show_sort ) : ?>
+            <label class="posts-sort">
+              <?php _e( 'Sort by:', 'wordtrap') ?>
+              <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Posts order', 'wordtrap' ); ?>">
+              <?php foreach ( $posts_orderby_options as $id => $name ) : ?>
+                <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+              <?php endforeach; ?>
+              </select>
+            </label>
+          <?php endif; 
+          if ( $nav_id == 'posts-filter-below' && $show_sort ) : ?>
+            <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby ) ?>"/>
+          <?php endif;
+
+          if ( ! empty( $categories ) ) : 
+            ?>
+            <ul class="categories-filter nav">
+              <li class="nav-item"><a data-filter="*" class="nav-link active" href="#"><?php esc_html_e( 'Show All', 'wordtrap' ); ?></a></li>
+              <?php foreach ( $categories as $category ) : ?>
+                <li class="nav-item"><a data-filter="<?php echo $category_slug ?>-<?php echo esc_attr( $category->slug ); ?>" class="nav-link" href="#"><?php echo esc_html( $category->name ); ?></a></li>
+              <?php endforeach; ?>
+            </ul>
+            <?php
+          endif;
           
           if ( $nav_id == 'posts-filter-below' ) {
             // Previous/next page navigation.

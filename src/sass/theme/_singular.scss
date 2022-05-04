@@ -6,6 +6,7 @@
  */
 
 .post-thumbnail {
+  position: relative;
   margin-bottom: 2.5rem;
 
   img {
@@ -55,6 +56,19 @@
         opacity: 0.65;
       }
     } 
+  }
+
+  .social-share {
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+
+    a {
+      margin: 0.5rem;
+    }
   }
 }
 
@@ -198,7 +212,7 @@
 }
 
 // Post View: Full
-.post.full {
+article.full {
   .post-thumbnail {
     margin-top: -2rem;
     margin-left: -2rem;
@@ -224,7 +238,7 @@
 
 // Post View: Medium
 @include media-breakpoint-up(xl) {
-  .post.medium {
+  article.medium {
     display: flex;
 
     .post-thumbnail {
@@ -270,11 +284,7 @@ body.search-results .site-main article.hentry {
 
 article,
 body.search-results .site-main article.hentry {
-  margin-top: 2rem;
-
-  &:first-child {
-    margin-top: 0;
-  }
+  margin-bottom: 2rem;
 }
 
 // Extra

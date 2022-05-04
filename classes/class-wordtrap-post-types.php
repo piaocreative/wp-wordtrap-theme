@@ -26,6 +26,12 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
       // Register content types
       add_action( 'init', array( $this, 'registerFaq' ) );
       add_action( 'init', array( $this, 'registerMember' ) );
+
+      // Hook redux framework
+      add_action( 'redux/extensions/member_options/before', 'wordwrap_redux__extension_loader', 0 );
+
+      // enqueue styles and scripts
+      add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
     
       add_action(
         'admin_init',
@@ -134,7 +140,147 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
           'show_in_rest'        => true,
         )
       );
+
+      // add meta boxes
+      global $pagenow;
+      if ( ! class_exists( 'Redux_Metaboxes' ) || ! ( $pagenow && ( $pagenow == 'post.php' || $pagenow == 'post-new.php' ) ) ) {
+        return;
+      }
+
+      Redux_Metaboxes::set_box(
+        'member_options',
+        array(
+          'id'         => 'member-metaboxes',
+          'title'      => esc_html__( 'Member Options', 'wordtrap' ),
+          'post_types' => array( 'member' ),
+          'position'   => 'normal',
+          'priority'   => 'high',
+          'sections'   => array(
+            array(
+              'title'  => esc_html__( 'Info', 'wordtrap' ),
+              'id'     => 'details',
+              'icon'   => 'dashicons dashicons-admin-users',
+              'fields' => array(
+                array(
+                  'id'         => 'role',
+                  'title'      => esc_html__( 'Role', 'wordtrap' ),
+                  'type'       => 'text',
+                ),
+                array(
+                  'id'         => 'overview',
+                  'title'      => esc_html__( 'Overview', 'wordtrap' ),
+                  'type'       => 'editor',
+                  'args'       => array(
+                    'media_buttons' => false,
+                  )
+                ),
+              )
+            ),
+            array(
+              'title'  => esc_html__( 'Follow Links', 'wordtrap' ),
+              'id'     => 'details1',
+              'icon'   => 'dashicons dashicons-share',
+              'fields' => array(
+                array(
+                  'id'         => 'profile',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Get in Touch', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'facebook',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Facebook', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'twitter',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Twitter', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'linkedin',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'LinkedIn', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'youtube',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Youtube', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'vimeo',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Vimeo', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'instagram',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Instagram', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'googleplus',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Google +', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'pinterest',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Pinterest', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'vk',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'VK', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'xing',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Xing', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'tumblr',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Tumblr', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'reddit',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Reddit', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'whatsapp',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Whatsapp', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'email',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Email', 'wordtrap' ),
+                ),
+                array(
+                  'id'         => 'phone',
+                  'type'       => 'text',
+                  'title'      => esc_html__( 'Phone', 'wordtrap' ),
+                ),                
+              )
+            )
+          ),
+        )
+      );
     }
+
+    /**
+   * Enqueue styles and scripts
+   */
+  public function enqueue() {
+    $screen = get_current_screen();
+    
+    if ( $screen && $screen->base == 'post' && $screen->id == 'member' ) {
+      wp_enqueue_style( 'wordtrap-theme-options', WORDTRAP_OPTIONS_URI . '/assets/css/theme_options.css', false, WORDTRAP_VERSION );
+      wp_enqueue_style( 'wordtrap-admin-edit-post', get_template_directory_uri() . '/classes/assets/metabox-options.css', false, WORDTRAP_VERSION );
+      
+      wp_enqueue_script( 'wordtrap-admin-edit-post', get_template_directory_uri() . '/classes/assets/metabox-options.js', false, WORDTRAP_VERSION, true );
+    }
+  }
 
     /**
      * Get labels for the post type

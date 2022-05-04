@@ -60,7 +60,7 @@ if ( $cross_sells ) : ?>
 
 		if ( $heading ) :
 			?>
-			<h2 class="mb-0"><?php echo esc_html( $heading ); ?></h2>
+			<h2 class="mb-4"><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
 		<?php woocommerce_product_loop_start(); ?>

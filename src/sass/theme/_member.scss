@@ -1,0 +1,77 @@
+/*
+ * The styles for member post type
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+article.member {
+  .entry-footer {
+    display: block;
+  }
+
+  .post-thumbnail {
+    .follow-links {
+      margin: 0;
+      padding: 0;
+      border: none;
+
+      label,
+      .share-button {
+        display: none;
+      }
+    }
+  }
+}
+
+.posts-grid {
+  .member {
+    .entry-title {
+      font-size: $title-font-size * 1.1;
+    }
+
+    .entry-content {
+      display: block;
+    }
+
+    .entry-footer .read-more a {
+      font-size: 0.9rem;
+      font-weight: $font-weight-normal;
+    }
+  }  
+}
+
+.follow-links {
+  display: flex;
+  margin-top: 2rem;
+  border-top: 1px solid $border-color;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  label {
+    color: $gray-500;
+    margin-right: 1rem;
+  }
+
+  .social-share {
+    margin-top: 1rem;
+  }
+
+  .share-button {
+    @extend .btn;
+    background: $light;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    margin-top: 1rem;
+
+    &:hover {
+      background: $primary;
+      border-color: $primary;
+      color: color-contrast($primary);
+    }
+  }
+}

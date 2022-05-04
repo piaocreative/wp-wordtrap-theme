@@ -32,17 +32,6 @@ $view_mode = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['vi
   <form class="posts-filter woocommerce-ordering" method="get">
     <div class="posts-filter-wrap">
 
-      <?php if ( $show_sort ) : ?>
-        <label>
-          <?php _e( 'Sort by:', 'wordtrap' ) ?>
-          <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'wordtrap' ); ?>">
-            <?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-              <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-            <?php endforeach; ?>
-          </select>
-        </label>
-      <?php endif; ?>
-
       <?php if ( $show_count || $show_view_mode ) : ?>
         <div class="posts-view d-flex justify-content-center">
 
@@ -72,6 +61,17 @@ $view_mode = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['vi
 
         </div>
       <?php endif; ?>
+
+      <?php if ( $show_sort ) : ?>
+        <label class="posts-sort">
+          <?php _e( 'Sort by:', 'wordtrap' ) ?>
+          <select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'wordtrap' ); ?>">
+            <?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
+              <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+            <?php endforeach; ?>
+          </select>
+        </label>
+      <?php endif; ?>      
 
       <input type="hidden" name="paged" value="1" />
       <?php wc_query_string_form_fields( null, array( 'orderby', 'posts_per_page', 'view', 'submit', 'paged', 'product-page' ) ); ?>

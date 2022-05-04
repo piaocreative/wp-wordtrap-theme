@@ -1,0 +1,24 @@
+/**
+ * The styles for metaboxes
+ * @since 1.0.0
+ */
+
+ .edit-post-meta-boxes-area .postbox .handlediv {
+  vertical-align: top;
+}
+
+.select2-container {
+  z-index: 999999;
+}
+
+.select2-results__option {
+  margin-bottom: 0;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  margin-bottom: 0;
+}
+
+.redux-container .redux-sidebar .redux-group-tab-link-a i {
+  font-size: 1.35em;
+}
