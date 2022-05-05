@@ -97,6 +97,7 @@ function wordtrap_init( $wrap ) {
 
           if ( ! options.itemSelector ) {
             options.itemSelector = '.post-wrap';
+            options.percentPosition = true;
           }          
           $this.themeMasonry( options );
         } );

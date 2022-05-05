@@ -81,7 +81,9 @@ if ( ! function_exists( 'wordtrap_trim_excerpt' ) ) {
     $text = apply_filters( 'the_content', $text );
     $text = str_replace( ']]>', ']]&gt;', $text );
 
-    $excerpt_length = (int) _x( '55', 'excerpt_length' );
+    $view_mode = wordtrap_get_view_mode();
+
+    $excerpt_length = (int) _x( $view_mode === 'grid' ? '15' : '55', 'excerpt_length' );
     $excerpt_length = (int) apply_filters( 'excerpt_length', $excerpt_length );
 
     $excerpt_more = apply_filters( 'excerpt_more', ' ' . '[&hellip;]' );

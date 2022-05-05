@@ -39,7 +39,7 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
     // Theme script
     $theme_scripts = "/js/theme{$suffix}.js";
     $js_version = $theme_version . '.' . filemtime( get_template_directory() . $theme_scripts );
-    wp_enqueue_script( 'wordtrap-scripts', get_template_directory_uri() . $theme_scripts, array( 'jquery-masonry' ), $js_version, true );
+    wp_enqueue_script( 'wordtrap-scripts', get_template_directory_uri() . $theme_scripts, array( 'imagesloaded' ), $js_version, true );
 
     // Theme options variables
     wp_localize_script( 'wordtrap-scripts', 'wordtrap_vars',

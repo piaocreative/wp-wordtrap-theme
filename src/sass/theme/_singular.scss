@@ -5,6 +5,53 @@
  * @since wordtrap 1.0.0
  */
 
+body.single-product,
+body.single-member {
+  .primary-wrap {
+    &.site-layout-wide,
+    &.site-layout-full {
+      margin-top: 0;
+
+      .primary-inner {
+        > .row {
+          margin-left: 0;
+          margin-right: 0;
+
+          > .site-main {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+body.single-member {
+  .primary-wrap {
+    margin-bottom: 0;
+
+    &.site-layout-wide,
+    &.site-layout-full {
+      .site-main {
+        margin-bottom: 0;
+      }
+
+      article {
+        margin-bottom: 0;
+      }
+      
+      .overview {
+        border-radius: 0;
+      }
+
+      .entry-content {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
 .post-thumbnail {
   position: relative;
   margin-bottom: 2.5rem;
@@ -145,10 +192,13 @@
   }
 }
 
-.entry-content {
+.entry-content,
+.entry-overview {
   margin-top: 1.5rem;
   @include clearfix;
+}
 
+.entry-content {
   figure,
   img,
   iframe {
@@ -263,7 +313,8 @@ article.full {
 }
 
 // Post Sections
-article,
+article:not(.member-singular),
+.member-singular .overview,
 section.no-results,
 #comments,
 .navigation,

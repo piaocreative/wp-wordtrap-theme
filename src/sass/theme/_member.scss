@@ -6,6 +6,34 @@
  */
 
 article.member {
+  &.member-singular {
+    display: block;
+  }
+
+  @include media-breakpoint-up(xl) {
+    .overview {
+      display: flex;
+
+      .container {
+        display: flex;
+      }
+    }
+  }
+
+  .overview {
+    > .container {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  
+    @include media-breakpoint-down(sm) {
+      > .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }  
+
   .entry-footer {
     display: block;
   }
@@ -30,7 +58,7 @@ article.member {
       font-size: $title-font-size * 1.1;
     }
 
-    .entry-content {
+    .entry-overview {
       display: block;
     }
 

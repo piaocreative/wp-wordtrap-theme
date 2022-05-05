@@ -65,23 +65,35 @@
         $this.addClass( 'active' );
         
         if ( $items.hasClass( 'posts-view-masonry' ) ) {
-          if ( filter === '*' ) {
-            $items.find( 'article' ).parent().show();
+          var isotope = $items.data('isotope');
+          if ( isotope ) {
+            isotope.arrange({
+              filter: function() {
+                if ( filter === '*' ) {
+                  return true;
+                }
+
+                return $( this ).find( 'article' ).hasClass( filter );
+              }
+            });
           } else {
-            $items.find( 'article' ).parent().hide();
-            $items.find( 'article.' + filter ).parent().show();
-          }
-          $items.masonry( 'layout' );
+            if ( filter === '*' ) {
+              $items.find( 'article' ).parent().removeClass( 'd-none' );
+            } else {
+              $items.find( 'article' ).parent().addClass( 'd-none' );
+              $items.find( 'article.' + filter ).parent().removeClass( 'd-none' );
+            }
+          }          
         } else {
           if ( filter === '*' ) {
-            $items.find( 'article' ).stop().slideDown( 400, function () {
+            $items.find( 'article' ).stop().slideDown( 300, function () {
               $( this ).attr( 'style', '' ).show();
             } );
           } else {
-            $items.find( 'article' ).stop().slideUp( 400, function () {
+            $items.find( 'article' ).stop().slideUp( 300, function () {
               $( this ).attr( 'style', '' ).hide();
             } );
-            $items.find( 'article.' + filter ).stop().slideDown( 400, function () {
+            $items.find( 'article.' + filter ).stop().slideDown( 300, function () {
               $( this ).attr( 'style', '' ).show();
             } );
           }

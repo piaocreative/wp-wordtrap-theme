@@ -26,7 +26,7 @@ $post_id = get_the_ID();
   <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
 
     <a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
-      <?php echo get_the_post_thumbnail( $post->ID, $view_mode === 'grid' ? 'member' : 'full' ); ?>
+      <?php echo get_the_post_thumbnail( $post_id, $view_mode === 'grid' ? 'member' : 'full' ); ?>
     </a>
 
     <?php 
@@ -58,13 +58,13 @@ $post_id = get_the_ID();
 
     </header><!-- .entry-header -->
 
-    <div class="entry-content">
+    <div class="entry-overview">
 
       <?php 
       echo wordtrap_trim_excerpt( get_post_meta( $post_id, 'overview', true ) );
       ?>
 
-    </div><!-- .entry-content -->
+    </div><!-- .entry-overview -->
 
     <footer class="entry-footer">
       

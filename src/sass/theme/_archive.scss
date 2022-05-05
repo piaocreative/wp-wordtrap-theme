@@ -209,7 +209,8 @@
     }
   }
 
-  .entry-content {
+  .entry-content,
+  .entry-overview {
     display: none;
     margin-top: 0.5rem;
 
@@ -534,7 +535,8 @@
       }
     }
 
-    .entry-content {
+    .entry-content,
+    .entry-overview {
       margin-top: 0;
       padding-bottom: 1rem;
     }

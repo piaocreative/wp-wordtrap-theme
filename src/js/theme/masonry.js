@@ -5,6 +5,8 @@
 * @since wordtrap 1.0.0
 */
 
+import Isotope from '../isotope';
+
 // Masonry
 ( function ( theme, $ ) {
   'use strict';
@@ -50,20 +52,23 @@
     },
 
     build: function () {
-      if ( ! $.fn.masonry ) {
+      if ( ! Isotope && ! $.fn.imagesLoaded ) {
         return this;
       }
 
-      var self = this,
-        $el = this.$el;
+      var $el = this.$el,
+        el = $el.get(0);
 
-      $el.masonry( this.options );
-      $el.masonry( 'on', 'layoutComplete', function () {
-        if ( typeof this.options.callback == 'function' ) {
-          this.options.callback.call();
-        }
+      $el.imagesLoaded( function() {
+        var isotope = new Isotope( el, this.options );
+        isotope.on( 'layoutComplete', function () {
+          if ( typeof this.options.callback == 'function' ) {
+            this.options.callback.call();
+          }
+        } );
+  
+        $el.data('isotope', isotope);
       } );
-      $el.masonry( 'layout' );
 
       return this;
     }

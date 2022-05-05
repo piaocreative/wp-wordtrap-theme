@@ -1,26 +1,5 @@
 
 // Primary wrap
-body.single-product {
-  .primary-wrap {
-    &.site-layout-wide,
-    &.site-layout-full {
-      margin-top: 0;
-
-      .primary-inner {
-        > .row {
-          margin-left: 0;
-          margin-right: 0;
-
-          > .site-main {
-            padding-left: 0;
-            padding-right: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
 .primary-wrap:not(.site-layout-wide, .site-layout-full) {
   div.product {
     @include media-breakpoint-down(lg) {
