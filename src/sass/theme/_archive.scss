@@ -168,7 +168,7 @@
   > * {
     position: relative;
 
-    article {
+    article.hentry {
       margin-bottom: calc(var(--bs-gutter-x) * 1); 
       padding: calc(var(--bs-gutter-x) * 0.5);
 
@@ -275,7 +275,7 @@
 }
 
 .posts-view-grid {
-  article {
+  article.hentry {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -490,7 +490,7 @@
 }
 
 .faqs {
-  article {
+  article.hentry {
     margin-bottom: 0.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

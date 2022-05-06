@@ -288,14 +288,13 @@ article.full {
 }
 
 // Post Sections
-.site-main article:not(.member-singular, .page),
-.site-main article.page .post-password-form,
+article.hentry:not(.member-singular, .page),
+article.page .post-password-form,
 .member-singular .overview,
 section.no-results,
 #comments,
 .navigation,
-.author-header,
-body.search-results .site-main article.hentry {
+.author-header {
   background: $section-bg;
   border-radius: $border-radius-lg;
   padding: 2rem;
@@ -313,8 +312,7 @@ body.search-results .site-main article.hentry {
   }
 }
 
-.site-main article,
-body.search-results .site-main article.hentry {
+article.hentry {
   margin-bottom: 2rem;
 
   > *:first-child {
