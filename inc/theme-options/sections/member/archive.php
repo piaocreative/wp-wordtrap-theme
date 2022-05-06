@@ -55,7 +55,7 @@ Redux::set_section(
       array(
         'id'       => 'members-show-count',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Show Posts per Page', 'wordtrap' ),
+        'title'    => esc_html__( 'Show Members per Page', 'wordtrap' ),
         'default'  => true,
         'on'       => esc_html__( 'Yes', 'wordtrap' ),
         'off'      => esc_html__( 'No', 'wordtrap' ),
@@ -63,7 +63,7 @@ Redux::set_section(
       array(
         'id'       => 'members-counts',
         'type'     => 'multi_text',
-        'title'    => esc_html__( 'Posts per Page', 'wordtrap' ),
+        'title'    => esc_html__( 'Members per Page', 'wordtrap' ),
         'validate' => array( 'numeric', 'not_empty' ),
         'required' => array( 'members-show-count', 'equals', true ),
         'default'  => ['12', '24', '36'],
