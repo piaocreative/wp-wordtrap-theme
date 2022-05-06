@@ -27,6 +27,9 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
       wp_mkdir_p( $style_path );
     }
 
+    // Custom CSS
+    $custom_css = wordtrap_options( 'css-code' );
+
     // Write scss variables
     ob_start();
     require dirname( __FILE__ ) . '/scss-variables.php';
@@ -42,7 +45,7 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
     if ( empty( $wp_filesystem ) ) {
       require_once ABSPATH . '/wp-admin/includes/file.php';
       WP_Filesystem();
-    }   
+    }
 
     // Compile styles
     $compiler = new \ScssPhp\ScssPhp\Compiler();
@@ -53,7 +56,7 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
       $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::EXPANDED );
 
       // theme styles
-      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
+      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss"; ' . $custom_css );
       wp_register_style( 'wordtrap-theme-customizer', false );
       wp_enqueue_style( 'wordtrap-theme-customizer' );
       wp_add_inline_style( 'wordtrap-theme-customizer', $result->getCss() );
@@ -67,7 +70,7 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
       $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::EXPANDED );
 
       // theme styles
-      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
+      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss"; ' . $custom_css );
       $file = $style_path . '/theme.css';
       wordtrap_check_file_write_permission( $file );
       $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );
@@ -81,7 +84,7 @@ if ( ! function_exists( 'wordtrap_compile_styles' ) ) {
       $compiler->setOutputStyle( \ScssPhp\ScssPhp\OutputStyle::COMPRESSED );
     
       // theme minimized styles
-      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss";' );
+      $result = $compiler->compileString( $scss_variables . ' @import "theme.scss"; ' . $custom_css );
       $file = $style_path . '/theme.min.css';
       wordtrap_check_file_write_permission( $file );
       $wp_filesystem->put_contents( $file, $result->getCss(), FS_CHMOD_FILE );

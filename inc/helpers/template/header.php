@@ -35,7 +35,7 @@ if ( ! function_exists( 'wordtrap_logo' ) ) {
           $retina_logo = wordtrap_options( 'logo-retina', 'url' );
         }
         ?>	
-        <img class="img-fluid" src="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $logo ) ); ?>"<?php echo $retina_logo ? ' srcset="' . $retina_logo .  ' 2x"' : ''; ?>alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />	
+        <img class="img-fluid" src="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', $logo ) ); ?>"<?php echo $retina_logo ? ' srcset="' . $retina_logo .  ' 2x"' : ''; ?> alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />	
         <?php				
       } else {
         bloginfo( 'name' );

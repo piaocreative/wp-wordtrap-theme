@@ -394,6 +394,7 @@ Redux::set_section(
         'type'            => 'button_set',
         'title'           => esc_html__( 'Font Style', 'wordtrap' ),
         'options'         => $font_style_options,
+        'default'         => 'normal',
       ),
       array(
         'id'              => 'headings-font-weight',

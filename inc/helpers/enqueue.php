@@ -9,6 +9,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// Enqueue styles and scripts
+add_action( 'wp_enqueue_scripts', 'wordtrap_enqueue_scripts' );
 if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
   /**
    * Load theme's JavaScript and CSS sources.
@@ -73,4 +75,37 @@ if ( ! function_exists( 'wordtrap_enqueue_scripts' ) ) {
   }
 }
 
-add_action( 'wp_enqueue_scripts', 'wordtrap_enqueue_scripts' );
+// Output javascript code in theme options
+add_action( 'wp_head', 'wordtrap_output_js_code_in_head' );
+add_action( 'wp_footer', 'wordtrap_output_js_code' );
+
+if ( ! function_exists( 'wordtrap_output_js_code_in_head' ) ) {
+  /**
+   * Output javascript code in head
+   */
+  function wordtrap_output_js_code_in_head() {
+    if ( wordtrap_options( 'js-code-head' ) ) :
+      ?>
+      <script>
+        <?php echo trim( preg_replace( '#<script[^>]*>(.*)</script>#is', '$1', wordtrap_options( 'js-code-head' ) ) ); ?>
+      </script>
+      <?php
+    endif;
+  }
+}
+
+if ( ! function_exists( 'wordtrap_output_js_code' ) ) {
+  /**
+   * Output javascript code in head
+   */
+  function wordtrap_output_js_code() {
+    if ( wordtrap_options( 'js-code' ) ) :
+      ?>
+      <script>
+        <?php echo trim( preg_replace( '#<script[^>]*>(.*)</script>#is', '$1', wordtrap_options( 'js-code' ) ) ); ?>
+      </script>
+      <?php
+    endif;
+  }
+}
+

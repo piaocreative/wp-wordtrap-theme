@@ -63,7 +63,7 @@ if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
       'font-size-base', 'font-size-sm', 'font-size-lg', 'h1-font-size', 'h2-font-size', 'h3-font-size', 'h4-font-size', 'h5-font-size', 'h6-font-size', 
       'font-weight-lighter', 'font-weight-light', 'font-weight-normal', 'font-weight-bold', 'font-weight-bolder', 
       'line-height-base', 'line-height-sm', 'line-height-lg', 
-      'headings-margin-bottom', 'headings-font-family', 'headings-font-weight', 'headings-line-height', 'headings-color', 
+      'headings-margin-bottom', 'headings-font-family', 'headings-font-style', 'headings-font-weight', 'headings-line-height', 'headings-color', 
       'link', 'link-hover',
 
       // templates variables
