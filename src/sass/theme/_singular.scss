@@ -27,31 +27,6 @@ body.single-member {
   }
 }
 
-body.single-member {
-  .primary-wrap {
-    margin-bottom: 0;
-
-    &.site-layout-wide,
-    &.site-layout-full {
-      .site-main {
-        margin-bottom: 0;
-      }
-
-      article {
-        margin-bottom: 0;
-      }
-      
-      .overview {
-        border-radius: 0;
-      }
-
-      .entry-content {
-        margin-top: 0;
-      }
-    }
-  }
-}
-
 .post-thumbnail {
   position: relative;
   margin-bottom: 2.5rem;
@@ -293,7 +268,7 @@ article.full {
 
     .post-thumbnail {
       margin-bottom: 0;      
-      padding-right: 2rem;
+      padding-right: 4rem;
       width: 50%;
     }
 
@@ -313,7 +288,8 @@ article.full {
 }
 
 // Post Sections
-article:not(.member-singular),
+article:not(.member-singular, .page),
+article.page .post-password-form,
 .member-singular .overview,
 section.no-results,
 #comments,
@@ -331,11 +307,19 @@ body.search-results .site-main article.hentry {
   @include media-breakpoint-down(md) {
     padding: 1rem;
   }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 article,
 body.search-results .site-main article.hentry {
   margin-bottom: 2rem;
+
+  > *:first-child {
+    margin-top: 0;
+  }
 }
 
 // Extra

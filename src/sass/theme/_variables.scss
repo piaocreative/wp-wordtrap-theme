@@ -17,10 +17,9 @@ $headings-color: $body-color !default;
 
 // Header
 $logo-max-width: 260px !default;
-
 $header-bg: #fff !default;
-$header-border-top-color: #0d6efd !default;
 $header-logo-margin: 1rem 3rem 1rem 0 !default;
+$header-border-top-color: #0d6efd !default;
 $menu-text-transform: uppercase !default;
 $menu-font-weight: 500 !default;
 $header-index: 2000 !default;
@@ -30,8 +29,9 @@ $main-bg: #f5f5f5 !default;
 $section-bg: #ffffff !default;
 
 // Title font size
-$title-font-size: 1rem;
-$widget-title-font-size: 1rem;
+$font-size-base: 1rem !default;
+$title-font-size: $font-size-base !default;
+$widget-title-font-size: $font-size-base !default;
 
 // Footer
 $footer-bg: #252525 !default;
@@ -43,8 +43,8 @@ $footer-link-color: #686868 !default;
 $footer-link-hover-color: #888888 !default;
 
 // Woocommerce
-$single-price-font-size: 1.5rem;
-$archive-price-font-size: 1rem;
+$single-price-font-size: $font-size-base * 1.5 !default;
+$archive-price-font-size: $font-size-base !default;
 
 // Input
-$input-border-color: $body-bg;
+$input-border-color: $body-bg !default;

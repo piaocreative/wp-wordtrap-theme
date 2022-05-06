@@ -32,7 +32,11 @@ article.member {
         padding-right: 0;
       }
     }
-  }  
+  }
+  
+  .entry-content {
+    margin-top: 0;
+  }
 
   .entry-footer {
     display: block;
@@ -47,6 +51,39 @@ article.member {
       label,
       .share-button {
         display: none;
+      }
+    }
+  }
+}
+
+body.single-member {
+  .primary-wrap {
+    &.site-layout-wide,
+    &.site-layout-full {
+      margin-bottom: 0;
+
+      .site-main {
+        margin-bottom: 0;
+      }
+
+      article {
+        margin-bottom: 0;
+      }
+      
+      .overview {
+        border-radius: 0;
+        display: block;
+        padding-bottom: 5rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        .overview-inner {
+          display: flex;
+        }
+      }
+
+      .entry-content {
+        margin-top: 0;
       }
     }
   }
@@ -77,6 +114,10 @@ article.member {
   padding-bottom: 0.5rem;
   flex-direction: row-reverse;
   justify-content: space-between;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
 
   label {
     color: $gray-500;

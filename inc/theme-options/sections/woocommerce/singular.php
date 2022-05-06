@@ -120,14 +120,6 @@ Redux::set_section(
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
-      // array(
-      //   'id'       => 'product-navigation',
-      //   'type'     => 'switch',
-      //   'title'    => esc_html__( 'Prev / Next Navigation', 'wordtrap' ),
-      //   'default'  => true,
-      //   'on'       => esc_html__( 'Show', 'wordtrap' ),
-      //   'off'      => esc_html__( 'Hide', 'wordtrap' ),
-      // ),
       array(
         'id'       => 'product-upsells-start',
         'type'     => 'section',

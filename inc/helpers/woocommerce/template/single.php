@@ -10,14 +10,32 @@
 defined( 'ABSPATH' ) || exit;
 
 // Filter primary classes
-add_filter( 'wordtrap_filter_primary_wrap_classes', 'wordtrap_primary_classes_for_single_product' );
-add_filter( 'wordtrap_filter_primary_inner_classes', 'wordtrap_primary_classes_for_single_product' );
+add_filter( 'wordtrap_filter_primary_classes', 'wordtrap_primary_classes_for_single_product' );
+add_filter( 'wordtrap_filter_primary_wrap_classes', 'wordtrap_primary_wrap_classes_for_single_product' );
+add_filter( 'wordtrap_filter_primary_inner_classes', 'wordtrap_primary_inner_classes_for_single_product' );
 
 if ( ! function_exists( 'wordtrap_primary_classes_for_single_product' ) ) {
   /**
    * Remove container classes in primary classes
    */
   function wordtrap_primary_classes_for_single_product( $classes ) {
+    if ( is_product() && ! post_password_required() ) {
+      $main_layout = wordtrap_main_layout();
+      $layout = $main_layout[ 'layout' ];
+      if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+        $classes[] = 'pt-0';
+      }
+    }
+
+    return $classes;
+  }
+}
+
+if ( ! function_exists( 'wordtrap_primary_wrap_classes_for_single_product' ) ) {
+  /**
+   * Remove container classes in primary wrap classes
+   */
+  function wordtrap_primary_wrap_classes_for_single_product( $classes ) {
     if ( is_product() && ! post_password_required() ) {
       $main_layout = wordtrap_main_layout();
       $layout = $main_layout[ 'layout' ];
@@ -29,6 +47,75 @@ if ( ! function_exists( 'wordtrap_primary_classes_for_single_product' ) ) {
     }
 
     return $classes;
+  }
+}
+
+if ( ! function_exists( 'wordtrap_primary_inner_classes_for_single_product' ) ) {
+  /**
+   * Remove container classes in primary inner classes
+   */
+  function wordtrap_primary_inner_classes_for_single_product( $classes ) {
+    if ( is_product() && ! post_password_required() ) {
+      $main_layout = wordtrap_main_layout();
+      $layout = $main_layout[ 'layout' ];
+      if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+        $classes = array_filter( $classes, static function( $element ) {
+          return ! in_array( $element, array( 'container', 'container-fluid' ) );
+        } );
+      }
+    }
+
+    return $classes;
+  }
+}
+
+// Filter show page title
+add_filter( 'wordtrap_filter_show_page_title', 'wordtrap_show_page_title_for_single_product' );
+if ( ! function_exists( 'wordtrap_show_page_title_for_single_product' ) ) {
+  /**
+   * Hide page title in wide, boxed full width layouts
+   */
+  function wordtrap_show_page_title_for_single_product( $show ) {
+    if ( is_product() ) {
+      $main_layout = wordtrap_main_layout();
+      $layout = $main_layout[ 'layout' ];
+      if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+        return false;
+      }
+    }
+    
+    return $show;
+  }
+}
+
+// Hook before single product
+add_action( 'woocommerce_before_single_product', 'wordtrap_show_single_product_page_title', 1 );
+if ( ! function_exists( 'wordtrap_show_single_product_page_title' ) ) {
+  /**
+   * Show page title in wide, boxed full width layouts
+   */
+  function wordtrap_show_single_product_page_title() {
+    $back_link = wordtrap_back_to_link();
+    $main_layout = wordtrap_main_layout();
+    $layout = $main_layout[ 'layout' ];
+    if ( ! in_array( $layout, array( 'wide', 'full' ) ) ) {
+      return;
+    }
+    ?>
+    <div id="page-header" class="page-header">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb links">
+          <li>
+            <a class="back-to-link" href="<?php echo esc_url( $back_link[ 'link' ] ); ?>">
+              <?php
+                echo esc_html( $back_link[ 'title' ] );
+              ?>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <?php
   }
 }
 

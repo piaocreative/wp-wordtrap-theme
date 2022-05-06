@@ -20,7 +20,6 @@ Redux::set_section(
         'id'           => 'footer-layout',
         'type'         => 'image_select',
         'title'        => esc_html__( 'Footer Layout', 'wordtrap' ),
-        // 'required'     => array( 'site-layout', 'equals', $site_layouts_without_boxed ),
         'options'      => $layout_options,
         'default'      => 'full',
       ),
@@ -32,19 +31,6 @@ Redux::set_section(
         'on'           => esc_html__( 'Enable', 'wordtrap' ),
         'off'          => esc_html__( 'Disable', 'wordtrap' ),
       ),
-      // array(
-      //   'id'           => 'footer-ribbon-text',
-      //   'type'         => 'text',
-      //   'title'        => esc_html__( 'Ribbon Text', 'wordtrap' ),
-      //   'default'      => '',
-      // ),
-      // array(
-      //   'id'           => 'footer-ribbon-url',
-      //   'type'         => 'text',
-      //   'title'        => esc_html__( 'Ribbon URL', 'wordtrap' ),
-      //   'validate'     => 'url',
-      //   'default'      => '',
-      // ),
     )
   )
 );

@@ -248,6 +248,7 @@ require_once $dir . 'sections/skin/typography.php';
 require_once $dir . 'sections/skin/header.php';
 require_once $dir . 'sections/skin/main.php';
 require_once $dir . 'sections/skin/footer.php';
+require_once $dir . 'sections/skin/form.php';
 
 // -> START Header Fields
 require_once $dir . 'sections/header/header.php';

@@ -1,4 +1,47 @@
 
+.page-header {
+  .woo-breadcrumb {
+    font-weight: $headings-font-weight;
+    font-size: $h5-font-size;
+    margin-bottom: 0;
+
+    &,
+    & a {
+      color: $gray-500;
+    }
+    
+    .passed {
+      &,
+      & a {
+        color: $headings-color;
+      }
+    }
+
+    .current {
+      &,
+      & a {
+        color: $primary;
+      }
+    }
+
+    .breadcrumb-item {
+      &:before {
+        display: none;
+      }
+
+      a:after {
+        content: '\f061';
+        font-family: FontAwesome;
+        padding: 0 1rem;
+      }
+
+      a:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
 .site {
   form.checkout_coupon, 
   form.login, 
@@ -372,7 +415,7 @@ table.cart td.actions {
       width: 25%;
 
       .cart_totals {
-        margin-top: 2rem;
+        margin-top: 1rem;
       }
     }
   }

@@ -16,7 +16,7 @@ get_header();
 
 <div class="error-404 not-found">
 
-  <header class="page-header">
+  <header class="page-header mt-5">
 
     <h1 class="page-title text-primary"><?php _e( 'we&rsquo;re sorry', 'wordtrap' ); ?></h1>
 

@@ -25,6 +25,7 @@ $main_layout = wordtrap_main_layout();
 $layout = $main_layout[ 'layout' ];
 
 // Primary classes
+$primary_classes = array( 'content-area' );
 $wrap_classes = array( 'primary-wrap' );
 $inner_classes = array( 'primary-inner' );
 
@@ -35,6 +36,7 @@ if ( in_array( $layout, array( 'wide', 'wide-left-sidebar', 'wide-right-sidebar'
   $inner_classes[] = 'container';
 }
 
+$primary_classes = apply_filters( 'wordtrap_filter_primary_classes', $primary_classes );
 $wrap_classes = apply_filters( 'wordtrap_filter_primary_wrap_classes', $wrap_classes );
 $inner_classes = apply_filters( 'wordtrap_filter_primary_inner_classes', $inner_classes );
 
@@ -98,15 +100,7 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 
   <?php get_template_part( 'template-parts/header' ) ?>
 
-  <div id="page-header" class="p-3 bg-light text-center">
-    <header class="page-header">
-      <?php
-        the_archive_title( '<h1 class="page-title">', '</h1>' );
-      ?>
-    </header><!-- .page-header -->
-  </div>
-  
-  <div id="primary" class="content-area">
+  <div id="primary" class="<?php echo esc_attr( implode( ' ', $primary_classes ) ) ?>">
 
     <?php
     /**
@@ -117,6 +111,8 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 
     <div class="<?php echo esc_attr( implode( ' ', $wrap_classes ) ) ?>">
         <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
+
+          <?php get_template_part( 'template-parts/page-title' ) ?>    
 
           <div class="row">
 

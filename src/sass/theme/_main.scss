@@ -5,13 +5,52 @@
  * @since wordtrap 1.0.0
  */
 
-#page-header {
-  margin-bottom: 2rem;
+.page-header {
+  padding-top: 1rem;
+
+  .breadcrumb {
+    margin-bottom: 0;
+  }
+
+  .woo-breadcrumb {
+    padding-bottom: 3rem;
+  }
+
+  .links {
+    padding-bottom: 3rem;
+
+    &.with-title {
+      padding-bottom: 2rem;
+    }
+
+    a {    
+      @extend .btn;
+      @extend .btn-sm;
+      border-radius: 100px;
+      border-color: $gray-500;
+      color: $secondary;
+      padding-left: 1rem;
+      padding-right: 1.25rem;
+      margin-right: 1rem;
+  
+      &.back-to-link:before {
+        content: '\f104';
+        font-family: FontAwesome;
+        margin-right: 0.25rem;
+      }
+    }
+  }  
+
+  .page-title {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+    font-weight: $font-weight-bolder;
+  }
 }
 
 #primary {
   background: $main-bg;
-  margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .primary-wrap {

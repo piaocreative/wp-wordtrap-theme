@@ -17,16 +17,35 @@ $post_id = get_the_ID();
 
 $main_layout = wordtrap_main_layout();
 $layout = $main_layout[ 'layout' ];
-
 ?>
-
 <article <?php post_class( implode( ' ', $post_classes ) ); ?> id="post-<?php the_ID(); ?>">
 
   <div class="overview">
 
     <?php
-    if ( $layout === 'full' ) {
-      echo '<div class="container">';
+    if ( in_array( $layout, array( 'wide', 'full' ) ) ) :
+      $back_link = wordtrap_back_to_link();
+      ?>
+      <div id="page-header" class="page-header<?php echo $layout === 'full' ? ' container' : '' ?>">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb links">
+            <li>
+              <a class="back-to-link" href="<?php echo esc_url( $back_link[ 'link' ] ); ?>">
+                <?php
+                  echo esc_html( $back_link[ 'title' ] );
+                ?>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <?php
+    endif;
+    ?>  
+
+    <?php
+    if ( $layout === 'wide' || $layout === 'full' ) {
+      echo '<div class="overview-inner' . ( $layout === 'full' ? ' container' : '' ) . '">';
     }
     ?>
 
@@ -78,7 +97,7 @@ $layout = $main_layout[ 'layout' ];
     </div>
 
     <?php
-    if ( $layout === 'full' ) {
+    if ( $layout === 'wide' || $layout === 'full' ) {
       echo '</div>';
     }  
     ?>

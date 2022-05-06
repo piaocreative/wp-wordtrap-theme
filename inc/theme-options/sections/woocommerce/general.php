@@ -15,30 +15,6 @@ Redux::set_section(
     'id'           => 'wordtrap-woocommerce-general',
     'subsection'   => true,
     'fields'       => array(
-      // array(
-      //   'id'         => 'woo-login-popup',
-      //   'type'       => 'switch',
-      //   'title'      => esc_html__( 'Login Lightbox', 'wordtrap' ),
-      //   'default'    => false,
-      //   'on'         => esc_html__( 'Enable', 'wordtrap' ),
-      //   'off'        => esc_html__( 'Disable', 'wordtrap' ),
-      // ),
-      // array(
-      //   'id'         => 'woo-checkout-wizards',
-      //   'type'       => 'switch',
-      //   'title'      => esc_html__( 'Checkout Wizards', 'wordtrap' ),
-      //   'default'    => true,
-      //   'on'         => esc_html__( 'Show', 'wordtrap' ),
-      //   'off'        => esc_html__( 'Hide', 'wordtrap' ),
-      // ),
-      // array(
-      //   'id'         => 'woo-widget-ratings',
-      //   'type'       => 'switch',
-      //   'title'      => esc_html__( 'Ratings in Widget', 'wordtrap' ),
-      //   'default'    => true,
-      //   'on'         => esc_html__( 'Show', 'wordtrap' ),
-      //   'off'        => esc_html__( 'Hide', 'wordtrap' ),
-      // ),
       array(
         'id'         => 'product-labels',
         'type'       => 'button_set',

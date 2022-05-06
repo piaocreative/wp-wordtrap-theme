@@ -208,6 +208,9 @@ $link-hover-decoration:       <?php echo $g['link-hover']['text-decoration'] ?>;
 $header-bg:                   <?php echo $g['header-bg'] ?>;
 <?php endif ?>
 $header-logo-margin:          <?php echo floatval( $g['header-logo-margin']['margin-top'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-right'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-bottom'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-left'] ) ?>rem;
+$logo-max-width:              <?php echo intval( $g['logo-width']['width'] ) ? intval( $g['logo-width']['width'] ) : 260 ?>px;
+$header-border-top-color:     $primary;
+$menu-font-weight:            $headings-font-weight;
 
 // Main
 <?php if ( $g['main-bg'] ) : ?>
@@ -232,4 +235,12 @@ $footer-link-color:           <?php echo $g['footer-link-color'] ?>;
 <?php endif ?>
 <?php if ( $g['footer-link-hover-color'] ) : ?>
 $footer-link-hover-color:     <?php echo $g['footer-link-hover-color'] ?>;
+<?php endif ?>
+
+// Form
+<?php if ( $g['input-bg'] ) : ?>
+$input-bg:                    <?php echo $g['input-bg'] ?>;
+<?php endif ?>
+<?php if ( $g['input-border-color'] ) : ?>
+$input-border-color:          <?php echo $g['input-border-color'] ?>;
 <?php endif ?>

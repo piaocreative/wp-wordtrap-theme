@@ -77,14 +77,6 @@ Redux::set_section(
         'on'       => esc_html__( 'Show', 'wordtrap' ),
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
-      // array(
-      //   'id'       => 'post-author',
-      //   'type'     => 'switch',
-      //   'title'    => esc_html__( 'Author Info', 'wordtrap' ),
-      //   'default'  => true,
-      //   'on'       => esc_html__( 'Show', 'wordtrap' ),
-      //   'off'      => esc_html__( 'Hide', 'wordtrap' ),
-      // ),
       array(
         'id'       => 'post-comments',
         'type'     => 'switch',

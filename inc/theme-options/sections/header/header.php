@@ -55,14 +55,6 @@ Redux::set_section(
         'on'            => esc_html__( 'Enable', 'wordtrap' ),
         'off'           => esc_html__( 'Disable', 'wordtrap' ),
       ),      
-      // array(
-      //   'id'            => 'show-header-top',
-      //   'type'          => 'switch',
-      //   'title'         => esc_html__( 'Header Top', 'wordtrap' ),
-      //   'default'       => false,
-      //   'on'            => esc_html__( 'Show', 'wordtrap' ),
-      //   'off'           => esc_html__( 'Hide', 'wordtrap' ),
-      // ),
       array(
         'id'            => 'header-login-link',
         'type'          => 'text',
