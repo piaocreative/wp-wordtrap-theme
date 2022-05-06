@@ -288,8 +288,8 @@ article.full {
 }
 
 // Post Sections
-article:not(.member-singular, .page),
-article.page .post-password-form,
+.site-main article:not(.member-singular, .page),
+.site-main article.page .post-password-form,
 .member-singular .overview,
 section.no-results,
 #comments,
@@ -313,7 +313,7 @@ body.search-results .site-main article.hentry {
   }
 }
 
-article,
+.site-main article,
 body.search-results .site-main article.hentry {
   margin-bottom: 2rem;
 
