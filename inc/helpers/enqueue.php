@@ -109,3 +109,19 @@ if ( ! function_exists( 'wordtrap_output_js_code' ) ) {
   }
 }
 
+// Output styles for showing the loading overlay
+add_action( 'wp_head', 'wordtrap_output_loading_overlay_styles' );
+if ( ! function_exists( 'wordtrap_output_loading_overlay_styles' ) ) {
+  /**
+   * Output styles for showing the loading overlay
+   */
+  function wordtrap_output_loading_overlay_styles() {
+    if ( wordtrap_options( 'loading-overlay' ) ) :
+      ?>
+      <style>
+        /* Loading Overlay */        
+      </style>
+      <?php
+    endif;
+  }
+}

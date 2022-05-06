@@ -413,28 +413,6 @@ class Wordtrap_Templates_Builder {
       );
     }
 
-    // header type
-    // if ( $header_type ) {
-    //   $sections[] = array(
-    //     'title'  => esc_html__( 'Header Type', 'wordtrap' ),
-    //     'id'     => 'template-position',
-    //     'icon'   => 'dashicons-before dashicons-align-full-width',
-    //     'fields' => array(
-    //       array(
-    //         'id'            => 'header-type',
-    //         'type'          => 'button_set',
-    //         'title'         => esc_html__( 'Type', 'wordtrap' ),
-    //         'options'       => array(
-    //           ''            => esc_html__( 'Normal', 'wordtrap' ),
-    //           'left-side'   => esc_html__( 'Left Side', 'wordtrap' ),
-    //           'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
-    //         ),
-    //         'default'       => '',
-    //       ),         
-    //     )
-    //   );
-    // }
-
     // display main block position
     if ( $show_main ) {
       $sections[] = array(

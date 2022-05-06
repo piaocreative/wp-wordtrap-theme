@@ -25,6 +25,13 @@ Redux::set_section(
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
+        'id'       => 'breadcrumbs-layout',
+        'type'     => 'image_select',
+        'title'    => __( 'Breadcrumbs Layout', 'wordtrap' ),
+        'options'  => $layout_options,
+        'default'  => 'full',
+      ),
+      array(
         'id'       => 'layout',
         'type'     => 'image_select',
         'title'    => esc_html__( 'Main Layout', 'wordtrap' ),
@@ -46,6 +53,23 @@ Redux::set_section(
         'required' => array( 'layout', 'equals', $main_layouts_with_right_sidebar ),
         'data'     => 'sidebars',
         'default'  => 'right-sidebar',
+      ),
+      array(
+        'id'       => 'sticky-sidebar',
+        'type'     => 'switch',
+        'title'    => esc_html__( 'Sticky Sidebar', 'wordtrap' ),
+        'default'  => false,
+        'on'       => esc_html__( 'Enable', 'wordtrap' ),
+        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+      ),
+      array(
+        'id'       => 'show-mobile-sidebar',
+        'type'     => 'switch',
+        'title'    => esc_html__( 'Show Sidebar in Navigation on Mobile', 'wordtrap' ),
+        'desc'     => esc_html__( 'Show sidebar toggle button only which leads to the sidebar on the left side of the window.', 'wordtrap' ),
+        'default'  => false,
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
     ),
   )

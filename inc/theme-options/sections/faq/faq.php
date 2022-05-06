@@ -104,6 +104,13 @@ Redux::set_section(
         'default'     => 'asc',
       ),
       array(
+        'id'          => 'faqs-cat-filter-position',
+        'type'        => 'button_set',
+        'title'       => esc_html__( 'Categories Filter Position', 'wordtrap' ),
+        'options'     => $cats_filter_position_options,
+        'default'     => 'content',
+      ),
+      array(
         'id'          => 'faqs-orderby',
         'type'        => 'button_set',
         'title'       => esc_html__( 'FAQs Order By', 'wordtrap' ),
