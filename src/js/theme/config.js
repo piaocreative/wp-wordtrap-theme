@@ -114,7 +114,7 @@ window.theme = {};
     scrollToElement: function ( $element, timeout ) {
       if ( $element.length ) {
         $( 'html, body' ).stop().animate( {
-          scrollTop: $element.offset().top - theme.adminBarHeight() - theme.sticky_header_height - parseInt( $( '#primary').css( 'margin-top' ) ) || 0
+          scrollTop: $element.offset().top - theme.adminBarHeight() - theme.sticky_header_height - parseInt( $( '#primary').css( 'padding-top' ) ) - parseInt( $( '#primary').css( 'margin-top' ) ) || 0
         }, timeout, 'easeOutQuad' );
       }
     },

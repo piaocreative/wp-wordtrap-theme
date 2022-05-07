@@ -119,7 +119,39 @@ if ( ! function_exists( 'wordtrap_output_loading_overlay_styles' ) ) {
     if ( wordtrap_options( 'loading-overlay' ) ) :
       ?>
       <style>
-        /* Loading Overlay */        
+        /* Loading Overlay */
+        @keyframes spinner-border {
+          to { transform: rotate(360deg); }
+        }
+        .page-loading-overlay {
+          background: <?php echo wordtrap_options( 'body-bg') ? wordtrap_options( 'body-bg') : '#f5f5f5' ?>;
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 99998;
+        }
+        .page-loading-progress {          
+          display: inline-block;
+          vertical-align: -0.125em;
+          border: 0.25em solid currentColor;
+          border-right-color: transparent;
+          border-radius: 50%;
+          -webkit-animation: 0.75s linear infinite spinner-border;
+          animation: 0.75s linear infinite spinner-border;
+          color: <?php echo wordtrap_options( 'primary') ? wordtrap_options( 'primary') : '#3d98f4' ?>;
+          position: absolute;
+          width: 3rem;
+          height: 3rem;
+          left: 50%;
+          top: 50%;
+          margin-left: -1.5rem;
+          margin-top: -1.5rem;
+        }
+        .visually-hidden {
+          display: none;
+        }
       </style>
       <?php
     endif;

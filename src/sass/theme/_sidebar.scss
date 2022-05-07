@@ -5,19 +5,21 @@
  * @since wordtrap 1.0.0
  */
 
-@include media-breakpoint-up(xl) {
-  #left-sidebar {
-    padding-right: calc(var(--bs-gutter-x) * 1.75);
-  }
-
-  #right-sidebar {
-    padding-left: calc(var(--bs-gutter-x) * 1.75);
-  }
-}
-
 #left-sidebar,
 #right-sidebar {  
   margin-bottom: 2rem;
+
+  &.sticky-sidebar {
+    position: sticky;
+    height: fit-content;
+
+    @include media-breakpoint-down(lg) {
+      .site-layout-both-sidebars & {
+        position: static;
+        top: 0 !important;
+      }
+    }
+  }
 }
 
 .widget-area {

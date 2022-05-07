@@ -68,7 +68,7 @@ if ( ! function_exists( 'wordtrap_skin_fields' ) ) {
 
       // templates variables
       'header-bg', 'header-logo-margin', 'logo-width', 'header-navbar-color',
-      'main-bg', 'section-bg',
+      'section-bg',
       'footer-bg', 'footer-color', 'footer-headings-color', 'footer-link-color', 'footer-link-hover-color',
       'input-bg', 'input-border-color',
     );

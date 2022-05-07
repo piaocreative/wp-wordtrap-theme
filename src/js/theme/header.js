@@ -141,6 +141,7 @@
 
       this.$el = $el;
       this.header = this.$el.parent();
+      this.header_inner = this.header.find( '.header-inner' );
       this.header_main = this.$el.find( '#header-main' );
 
       if ( ! this.header.length || ! this.header_main.length ) {
@@ -198,9 +199,9 @@
       self.is_sticky = false;
       self.prev_scroll_pos = $( window ).scrollTop();
       
-      self.header_height = self.header.height() + parseInt( self.header.css( 'margin-top' ) );
+      self.header_height = self.header.outerHeight() + parseInt( self.header.css( 'margin-top' ) );
       self.header_main_height = self.header_main.height();
-      self.sticky_height = self.header_main.outerHeight();
+      self.sticky_height = self.header_main.outerHeight() + ( self.header.outerHeight() - self.header_inner.outerHeight() );
 
       theme.sticky_header_height = self.sticky_height;
 
@@ -208,8 +209,8 @@
         self.sticky_height = 0;
       }
 
-      self.sticky_pos = self.header.offset().top + self.header_height - self.sticky_height - theme.adminBarHeight() + parseInt( self.header.css( 'border-top-width' ) );
-
+      self.sticky_pos = self.header.offset().top + self.header_height - self.sticky_height - theme.adminBarHeight();
+      
       return self;
     },
 
@@ -218,7 +219,7 @@
         $el = this.$el,
         $html = $( 'html' );
 
-      if ( ! self.is_sticky && ( window.innerHeight + self.header_height + theme.adminBarHeight() + parseInt( self.header.css( 'border-top-width' ) ) >= $( document ).height() ) ) {
+      if ( ! self.is_sticky && ( window.innerHeight + self.header_height + theme.adminBarHeight() + ( self.header.outerHeight() - self.header_inner.outerHeight() ) >= $( document ).height() ) ) {
         return self;
       }
 
@@ -240,7 +241,7 @@
         self.header.parent().stop().css( 'top', ( $( '#wpadminbar' ).height() - scroll_top ) < 0 ? -$( '#wpadminbar' ).height() : -scroll_top );
       }
       
-      if ( scroll_top > self.sticky_pos && self.checkVisivility() ) {
+      if ( scroll_top >= self.sticky_pos && self.checkVisivility() ) {
         if ( ! self.header.hasClass( 'sticky-header' ) ) {
           var header_height = self.header.outerHeight();
           self.header.addClass( 'sticky-header' ).css( 'height', header_height );

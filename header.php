@@ -16,6 +16,10 @@ defined( 'ABSPATH' ) || exit;
 // Body classes
 $body_classes = array();
 
+if ( wordtrap_options( 'loading-overlay' ) ) {
+  $body_classes[] = 'page-loading';
+}
+
 if ( wordtrap_options( 'footer-reveal' ) ) {
   $body_classes[] = 'page-footer-reveal';
 }

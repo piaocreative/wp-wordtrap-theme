@@ -7,7 +7,8 @@
 
 .navbar-brand {
   display: block;
-  max-width: $logo-max-width;
+  max-width: 100%;
+  width: $logo-width;
   margin: $header-logo-margin;
 
   @include media-breakpoint-down(lg) {

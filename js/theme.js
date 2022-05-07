@@ -16441,7 +16441,7 @@
 	    scrollToElement: function ($element, timeout) {
 	      if ($element.length) {
 	        $('html, body').stop().animate({
-	          scrollTop: $element.offset().top - theme.adminBarHeight() - theme.sticky_header_height - parseInt($('#primary').css('margin-top')) || 0
+	          scrollTop: $element.offset().top - theme.adminBarHeight() - theme.sticky_header_height - parseInt($('#primary').css('padding-top')) - parseInt($('#primary').css('margin-top')) || 0
 	        }, timeout, 'easeOutQuad');
 	      }
 	    },
@@ -16604,6 +16604,7 @@
 
 	      this.$el = $el;
 	      this.header = this.$el.parent();
+	      this.header_inner = this.header.find('.header-inner');
 	      this.header_main = this.$el.find('#header-main');
 
 	      if (!this.header.length || !this.header_main.length) {
@@ -16639,16 +16640,16 @@
 	      $el.stop().css('top', 0);
 	      self.is_sticky = false;
 	      self.prev_scroll_pos = $(window).scrollTop();
-	      self.header_height = self.header.height() + parseInt(self.header.css('margin-top'));
+	      self.header_height = self.header.outerHeight() + parseInt(self.header.css('margin-top'));
 	      self.header_main_height = self.header_main.height();
-	      self.sticky_height = self.header_main.outerHeight();
+	      self.sticky_height = self.header_main.outerHeight() + (self.header.outerHeight() - self.header_inner.outerHeight());
 	      theme.sticky_header_height = self.sticky_height;
 
 	      if (!self.checkVisivility()) {
 	        self.sticky_height = 0;
 	      }
 
-	      self.sticky_pos = self.header.offset().top + self.header_height - self.sticky_height - theme.adminBarHeight() + parseInt(self.header.css('border-top-width'));
+	      self.sticky_pos = self.header.offset().top + self.header_height - self.sticky_height - theme.adminBarHeight();
 	      return self;
 	    },
 	    build: function () {
@@ -16656,7 +16657,7 @@
 	          $el = this.$el,
 	          $html = $('html');
 
-	      if (!self.is_sticky && window.innerHeight + self.header_height + theme.adminBarHeight() + parseInt(self.header.css('border-top-width')) >= $(document).height()) {
+	      if (!self.is_sticky && window.innerHeight + self.header_height + theme.adminBarHeight() + (self.header.outerHeight() - self.header_inner.outerHeight()) >= $(document).height()) {
 	        return self;
 	      }
 
@@ -16676,7 +16677,7 @@
 	        self.header.parent().stop().css('top', $('#wpadminbar').height() - scroll_top < 0 ? -$('#wpadminbar').height() : -scroll_top);
 	      }
 
-	      if (scroll_top > self.sticky_pos && self.checkVisivility()) {
+	      if (scroll_top >= self.sticky_pos && self.checkVisivility()) {
 	        if (!self.header.hasClass('sticky-header')) {
 	          var header_height = self.header.outerHeight();
 	          self.header.addClass('sticky-header').css('height', header_height);
@@ -16726,6 +16727,78 @@
 	      }
 
 	      return new theme.StickyHeader($this, opts);
+	    });
+	  };
+	})(window.theme, jQuery);
+
+	/*
+	* Javascript for the sidebar 
+	*
+	* @package Wordtrap
+	* @since wordtrap 1.0.0
+	*/
+	// Sticky Sidebar
+	(function (theme, $) {
+
+	  theme = theme || {};
+	  var instanceName = '__sticky_sidebar';
+
+	  var StickySidebar = function ($el, opts) {
+	    return this.initialize($el, opts);
+	  };
+
+	  StickySidebar.defaults = {};
+	  StickySidebar.prototype = {
+	    initialize: function ($el, opts) {
+	      if ($el.data(instanceName)) {
+	        return this;
+	      }
+
+	      this.$el = $el;
+	      this.setData().setOptions(opts).build();
+	      return this;
+	    },
+	    setData: function () {
+	      this.$el.data(instanceName, this);
+	      return this;
+	    },
+	    setOptions: function (opts) {
+	      this.options = $.extend(true, {}, StickySidebar.defaults, opts);
+	      return this;
+	    },
+	    build: function () {
+	      var self = this;
+	      self.resize();
+	      $(window).smartresize(function () {
+	        self.resize();
+	      });
+	      return self;
+	    },
+	    resize: function () {
+	      var $el = this.$el,
+	          gap = 15;
+
+	      if (parseInt($('#primary').css('padding-top')) > 15) {
+	        gap = parseInt($('#primary').css('padding-top'));
+	      }
+
+	      $el.css('top', theme.adminBarHeight() + theme.sticky_header_height + gap);
+	    }
+	  }; // expose to scope
+
+	  $.extend(theme, {
+	    StickySidebar: StickySidebar
+	  }); // jquery plugin
+
+	  $.fn.themeStickySidebar = function (opts) {
+	    return this.map(function () {
+	      var $this = $(this);
+
+	      if ($this.data(instanceName)) {
+	        return $this.data(instanceName);
+	      }
+
+	      return new theme.StickySidebar($this, opts);
 	    });
 	  };
 	})(window.theme, jQuery);
@@ -16986,6 +17059,16 @@
 	          $this.themeStickyHeader($this.data('options'));
 	        });
 	      });
+	    } // Sticky sidebar
+
+
+	    if ($.fn.themeStickySidebar) {
+	      $(function () {
+	        $wrap.find('.sticky-sidebar').each(function () {
+	          var $this = $(this);
+	          $this.themeStickySidebar($this.data('options'));
+	        });
+	      });
 	    } // Reveal Footer
 
 
@@ -17085,6 +17168,13 @@
 
 	  $(window).on('load', function () {
 	    theme.initialized = true;
+	  }); // hide page loading
+
+	  $(window).on('load error', function () {
+	    $('body').find('.page-loading-overlay').fadeOut(500, function () {
+	      $(this).remove();
+	      $('body').removeClass('page-loading');
+	    });
 	  });
 	  $(function () {
 	    wordtrap_init();

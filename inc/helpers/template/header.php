@@ -9,6 +9,25 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// Hook body open
+add_action( 'wp_body_open', 'wordtrap_loading_overlay', 1 );
+if ( ! function_exists( 'wordtrap_loading_overlay' ) ) {
+  /**
+   * Render loading overlay
+   */
+  function wordtrap_loading_overlay() {
+    if ( wordtrap_options( 'loading-overlay' ) ) :
+      ?>
+      <div class="page-loading-overlay">
+        <div class="page-loading-progress">
+          <span class="visually-hidden"><?php _e( 'Loading...', 'wordtrap' ) ?></span>
+        </div>
+      </div>
+      <?php
+    endif;
+  }
+}
+
 if ( ! function_exists( 'wordtrap_logo' ) ) {
   /**
    * Render Logo HTML

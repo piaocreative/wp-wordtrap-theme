@@ -30,6 +30,9 @@ if ( in_array( $layout, array( 'wide-both-sidebars', 'both-sidebars' ) ) ) {
 } else {
   $sidebar_classes[] = 'col-md-4';
 }
+if ( wordtrap_options( 'sticky-sidebar' ) ) {
+  $sidebar_classes[] = 'sticky-sidebar';
+}
 ?>
 <div id="right-sidebar" class="<?php echo esc_attr( implode( ' ', $sidebar_classes ) ) ?>">
 

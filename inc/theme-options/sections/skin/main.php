@@ -16,15 +16,6 @@ Redux::set_section(
     'subsection'   => true,
     'fields'       => array(
       array(
-        'id'            => 'main-bg',
-        'type'          => 'color',
-        'title'         => esc_html__( 'Background', 'wordtrap' ),
-        'validate'      => 'color',
-        'transparent'   => false,
-        'default'       => '#f5f5f5'
-      ),
-
-      array(
         'id'            => 'section-bg',
         'type'          => 'color',
         'title'         => esc_html__( 'Section Background', 'wordtrap' ),

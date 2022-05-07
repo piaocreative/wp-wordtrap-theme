@@ -34,6 +34,16 @@ function wordtrap_init( $wrap ) {
       } );
     }
 
+    // Sticky sidebar
+    if ( $.fn.themeStickySidebar ) {
+      $( function () {
+        $wrap.find( '.sticky-sidebar' ).each( function () {
+          var $this = $( this );
+          $this.themeStickySidebar( $this.data( 'options' ) );
+        } );
+      } );
+    }
+
     // Reveal Footer
     if ( $.fn.themeRevealFooter && $wrap.hasClass( 'page-footer-reveal' ) ) {
       $( function () {
@@ -134,6 +144,14 @@ function wordtrap_init( $wrap ) {
   $( window ).on( 'load', function() {
 		theme.initialized = true;
 	});
+
+  // hide page loading
+  $( window ).on( 'load error', function () {
+    $( 'body' ).find( '.page-loading-overlay' ).fadeOut( 500, function() {
+      $( this ).remove();
+      $( 'body' ).removeClass( 'page-loading' );
+    } );
+  } );
 
   $( function() {
 

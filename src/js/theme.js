@@ -1,6 +1,7 @@
 import './theme/config';
 
 import './theme/header';
+import './theme/sidebar';
 import './theme/footer';
 import './theme/scroll-to-top';
 
