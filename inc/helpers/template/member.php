@@ -96,3 +96,50 @@ if ( ! function_exists( 'wordtrap_member_follow_links' ) ) {
     wordtrap_get_template_part( 'template-parts/member/follow' );
   }
 }
+
+if ( ! function_exists( 'wordtrap_get_related_members' ) ) {
+  /**
+   * Get related members
+   * 
+   * @param    $post_id     Post ID to get related members
+   *           $args        WP_Query argments
+   * 
+   * @return   WP_Query     WP_Query object
+   */
+  function wordtrap_get_related_members( $post_id = null, $args = '' ) {
+
+    if ( ! $post_id ) {
+      $post_id = get_the_ID();
+    }
+
+    $item_cats  = get_the_terms( $post_id, 'member_category' );
+		$item_array = array();
+		if ( $item_cats ) {
+			foreach ( $item_cats as $item_cat ) {
+				$item_array[] = $item_cat->term_id;
+			}
+		}
+
+    $args = wp_parse_args(
+      $args,
+      array(
+        'showposts'           => wordtrap_options( 'member-related-count' ),
+        'ignore_sticky_posts' => 0,				
+        'post_type'           => 'member',
+				'post__not_in'        => array( $post_id ),
+        'tax_query'           => array(
+					array(
+						'taxonomy' => 'member_category',
+						'field'    => 'id',
+						'terms'    => $item_array,
+					),
+				),				
+        'orderby'             => wordtrap_options( 'member-related-orderby' ),
+      )
+    );
+
+    $query = new WP_Query( $args );
+
+    return $query;
+  }
+}

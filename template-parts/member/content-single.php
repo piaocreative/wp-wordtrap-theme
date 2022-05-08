@@ -49,7 +49,7 @@ $layout = $main_layout[ 'layout' ];
     }
     ?>
 
-    <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
+    <div class="post-thumbnail">
 
       <a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
         <?php echo get_the_post_thumbnail( $post_id, 'full' ); ?>

@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
   <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
-    <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
+    <div class="post-thumbnail">
 
       <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
 

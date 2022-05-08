@@ -19,7 +19,7 @@ get_header();
 while ( have_posts() ) :
   the_post();
 
-  get_template_part( 'template-parts/content/content', 'faq' );
+  get_template_part( 'template-parts/faq/content' );
 
   wordtrap_edit_post_link();  
 

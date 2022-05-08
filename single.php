@@ -19,7 +19,7 @@ get_header();
 while ( have_posts() ) :
   the_post();
 
-  get_template_part( 'template-parts/content/content', 'single' );
+  get_template_part( 'template-parts/post/content' );
 
   wordtrap_edit_post_link();
 
@@ -32,7 +32,7 @@ while ( have_posts() ) :
 
   // Related posts
   if ( wordtrap_options( 'post-related' ) ) {
-    get_template_part( 'template-parts/post/related-posts' );
+    get_template_part( 'template-parts/post/related' );
   }
 
 endwhile; // End the loop.

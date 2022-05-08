@@ -22,7 +22,7 @@ if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID
 <article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
 
   <?php if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID ) ) : ?>
-    <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
+    <div class="post-thumbnail">
 
       <a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
         <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>

@@ -19,9 +19,16 @@ get_header();
 while ( have_posts() ) :
   the_post();
 
-  get_template_part( 'template-parts/content/content', 'single-member' );
+  get_template_part( 'template-parts/member/content', 'single' );
 
   wordtrap_edit_post_link();  
+
+  wordtrap_post_nav();
+
+  // Related members
+  if ( wordtrap_options( 'member-related' ) ) {
+    get_template_part( 'template-parts/member/related' );
+  }
 
 endwhile; // End the loop.
 ?>

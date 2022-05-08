@@ -179,6 +179,12 @@
     }
   }
 
+  &.posts-slider > * {
+    article.hentry {
+      margin-bottom: 0;
+    }
+  }
+
   .post-thumbnail {
     margin-bottom: 0.5rem;
   }

@@ -52,7 +52,7 @@ if ( have_posts() ) :
           <?php 
         endif;
 
-        get_template_part( 'template-parts/content/content', 'member' );    
+        get_template_part( 'template-parts/member/content' );    
 
         if ( $view_mode === 'grid' ) : 
           ?>

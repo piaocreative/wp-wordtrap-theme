@@ -19,7 +19,7 @@ if ( wordtrap_options( 'post-featured-image' ) && has_post_thumbnail( $post->ID 
 <article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
 
   <?php if ( wordtrap_options( 'post-featured-image' ) && has_post_thumbnail( $post->ID ) ) : ?>
-    <div class="post-thumbnail<?php echo is_single() ? ' single' : ''; ?>">
+    <div class="post-thumbnail">
 
       <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
 

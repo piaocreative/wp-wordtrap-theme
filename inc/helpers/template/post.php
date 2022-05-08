@@ -188,38 +188,6 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
   }
 }
 
-if ( ! function_exists( 'wordtrap_post_nav' ) ) {
-  /**
-   * Display navigation to next/previous post when applicable.
-   */
-  function wordtrap_post_nav() {
-    if ( ! wordtrap_options( 'post-nav' ) ) {
-      return;
-    }
-    // Don't print empty markup if there's nowhere to navigate.
-    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-    $next = get_adjacent_post( false, '', false );
-    if ( ! $next && ! $previous ) {
-      return;
-    }
-    ?>
-    <nav class="navigation post-navigation">
-      <h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'wordtrap' ); ?></h2>
-      <div class="d-flex nav-links justify-content-between">
-        <?php
-        if ( get_previous_post_link() ) {
-          previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous', 'wordtrap' ) );
-        }
-        if ( get_next_post_link() ) {
-          next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next', 'wordtrap' ) );
-        }
-        ?>
-      </div>
-    </nav>
-    <?php
-  }
-}
-
 if ( ! function_exists( 'wordtrap_link_pages_args' ) ) {
   /**
    * Filters the arguments used in retrieving page links for paginated posts.

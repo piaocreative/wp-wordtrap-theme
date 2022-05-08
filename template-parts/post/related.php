@@ -36,8 +36,7 @@ if ( wordtrap_options( 'post-related-carousel' ) ) {
   $options[ 'sm' ] = $options[ 'md' ] = $options[ 'lg' ] = $options[ 'xl' ] = $options[ 'xxl' ] = array();
 
   if ( $slider_mode === 'carousel' ) {
-    $options[ 'gutter' ] = 24;
-    $options[ 'xl' ][ 'gutter' ] = 30;
+    $options[ 'gutter' ] = wordtrap_options( 'grid-gutter-width', 'width' ) ? floatval( wordtrap_options( 'grid-gutter-width', 'width' ) ) * 16 : 24;
   }  
 
   $options[ 'sm' ][ 'items' ] = wordtrap_options( 'post-related-columns-sm' );
@@ -74,7 +73,7 @@ $options = json_encode( $options );
       
       <div class="post-wrap">
       
-        <?php get_template_part( 'template-parts/content/content', 'related' ); ?>
+        <?php get_template_part( 'template-parts/post/content', 'related' ); ?>
       
       </div><!-- .post-wrap -->
       <?php

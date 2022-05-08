@@ -259,19 +259,52 @@ if ( ! function_exists( 'wordtrap_trim_excerpt' ) ) {
   /**
    * Trim excerpt
    */
-  function wordtrap_trim_excerpt( $text = '' ) {
+  function wordtrap_trim_excerpt( $text = '', $excerpt_length = 55 ) {
     $raw_excerpt = $text;
     $text = apply_filters( 'the_content', $text );
     $text = str_replace( ']]>', ']]&gt;', $text );
 
     $view_mode = wordtrap_get_view_mode();
 
-    $excerpt_length = (int) _x( $view_mode === 'grid' ? '15' : '55', 'excerpt_length' );
+    $excerpt_length = (int) _x( $excerpt_length, 'excerpt_length' );
     $excerpt_length = (int) apply_filters( 'excerpt_length', $excerpt_length );
 
     $excerpt_more = apply_filters( 'excerpt_more', ' ' . '[&hellip;]' );
     $text         = wp_trim_words( $text, $excerpt_length, $excerpt_more );
   
     return apply_filters( 'wordtrap_trim_excerpt', $text, $raw_excerpt );
+  }
+}
+
+if ( ! function_exists( 'wordtrap_post_nav' ) ) {
+  /**
+   * Display navigation to next/previous post when applicable.
+   */
+  function wordtrap_post_nav() {
+    $post_type = get_post_type();
+    if ( ! wordtrap_options( $post_type . '-nav' ) ) {
+      return;
+    }
+    // Don't print empty markup if there's nowhere to navigate.
+    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+    $next = get_adjacent_post( false, '', false );
+    if ( ! $next && ! $previous ) {
+      return;
+    }
+    ?>
+    <nav class="navigation post-navigation">
+      <h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'wordtrap' ); ?></h2>
+      <div class="d-flex nav-links justify-content-between<?php echo get_previous_post_link() ? '' : ' flex-row-reverse' ?>">
+        <?php
+        if ( get_previous_post_link() ) {
+          previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous', 'wordtrap' ) );
+        }
+        if ( get_next_post_link() ) {
+          next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next', 'wordtrap' ) );
+        }
+        ?>
+      </div>
+    </nav>
+    <?php
   }
 }
