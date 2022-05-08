@@ -11,6 +11,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+$main_layout = wordtrap_main_layout();
+$layout = $main_layout[ 'layout' ];
+
 get_header();
 ?>
 
@@ -21,13 +24,23 @@ while ( have_posts() ) :
 
   get_template_part( 'template-parts/member/content', 'single' );
 
-  wordtrap_edit_post_link();  
+  wordtrap_edit_post_link(); 
+  
+  if ( $layout === 'wide' ) {
+    echo '<div class="container-fluid">';
+  } else if ( $layout === 'full' ) {
+    echo '<div class="container">';
+  }
 
   wordtrap_post_nav();
 
   // Related members
   if ( wordtrap_options( 'member-related' ) ) {
     get_template_part( 'template-parts/member/related' );
+  }
+
+  if ( $layout === 'wide' || $layout === 'full' ) {
+    echo '</div>';
   }
 
 endwhile; // End the loop.
