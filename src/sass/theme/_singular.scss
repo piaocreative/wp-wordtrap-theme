@@ -294,7 +294,8 @@ article.page .post-password-form,
 section.no-results,
 #comments,
 .navigation,
-.author-header {
+.author-header,
+.term-description {
   background: $section-bg;
   border-radius: $border-radius-lg;
   padding: 2rem;
@@ -476,5 +477,6 @@ article.hentry {
 // Related posts
 .entry-related {
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 

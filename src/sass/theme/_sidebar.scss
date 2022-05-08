@@ -26,14 +26,10 @@
   aside {
     background: $section-bg;
     border-radius: $border-radius-lg;
-    padding: 2rem;
+    padding: 1.5rem;
     margin-bottom: 1rem;
 
     @include media-breakpoint-down(xl) {
-      padding: 1.5rem;
-    }
-
-    @include media-breakpoint-down(md) {
       padding: 1rem;
     }
 

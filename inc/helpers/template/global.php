@@ -264,8 +264,6 @@ if ( ! function_exists( 'wordtrap_trim_excerpt' ) ) {
     $text = apply_filters( 'the_content', $text );
     $text = str_replace( ']]>', ']]&gt;', $text );
 
-    $view_mode = wordtrap_get_view_mode();
-
     $excerpt_length = (int) _x( $excerpt_length, 'excerpt_length' );
     $excerpt_length = (int) apply_filters( 'excerpt_length', $excerpt_length );
 

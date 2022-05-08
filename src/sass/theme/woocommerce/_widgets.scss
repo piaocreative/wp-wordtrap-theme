@@ -2,11 +2,6 @@
 .site {
   ul.cart_list,
   ul.product_list_widget {
-    @include media-breakpoint-up(md) {
-      margin-left: -0.5rem;
-      margin-right: -0.5rem;
-    }
-
     li {
       margin-bottom: 15px;
       padding: 0 0 0 65px;
@@ -78,11 +73,6 @@
       margin-top: 1rem;
       text-align: right;
       
-      @include media-breakpoint-up(md) {
-        margin-left: -0.5rem;
-        margin-right: -0.5rem;
-      }
-
       strong {
         font-weight: $font-weight-bold;
       }
@@ -97,11 +87,6 @@
       text-align: right;
       margin-bottom: 0;
       
-      @include media-breakpoint-up(md) {
-        margin-left: -0.5rem;
-        margin-right: -0.5rem;
-      }
-
       a {
         @extend .btn-sm;
         margin-left: 0.5rem;

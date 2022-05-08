@@ -275,7 +275,7 @@ if ( ! function_exists( 'wordtrap_shop_loop_subcategory_description' ) ) {
     if ( $view_mode === 'list' ) {
       ?>
       <div class="woocommerce-product-details__short-description">
-        <p>This is a simple, virtual product.</p>
+        <?php echo wordtrap_trim_excerpt( $category->description, 55 ) ?>
       </div>
       <?php
     }
