@@ -52,10 +52,10 @@ elseif ( wordtrap_options( 'header-position' ) != 'hide' ) :
   
   // Add classes according to layout
   switch ( wordtrap_options( 'header-layout' ) ) {
-    case 'wide':
+    case 'full':
       $inner_classes[] = 'container-fluid';
       break;
-    case 'full':
+    case 'wide':
       $inner_classes[] = 'container';
       break;
     case 'boxed':

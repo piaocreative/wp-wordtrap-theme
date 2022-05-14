@@ -47,10 +47,10 @@ elseif ( is_active_sidebar( 'footer-area' ) ) :
   
   // Add classes according to layout
   switch ( wordtrap_options( 'footer-layout' ) ) {
-    case 'wide':
+    case 'full':
       $inner_classes[] = 'container-fluid';
       break;
-    case 'full':
+    case 'wide':
       $inner_classes[] = 'container';
       break;
     case 'boxed':

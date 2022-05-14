@@ -29,7 +29,7 @@ Redux::set_section(
         'type'     => 'image_select',
         'title'    => __( 'Breadcrumbs Layout', 'wordtrap' ),
         'options'  => $layout_options,
-        'default'  => 'full',
+        'default'  => 'wide',
       ),
       array(
         'id'       => 'layout',

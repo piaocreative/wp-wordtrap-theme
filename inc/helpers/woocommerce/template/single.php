@@ -22,7 +22,7 @@ if ( ! function_exists( 'wordtrap_primary_classes_for_single_product' ) ) {
     if ( is_product() && ! post_password_required() ) {
       $main_layout = wordtrap_main_layout();
       $layout = $main_layout[ 'layout' ];
-      if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+      if ( in_array( $layout, array( 'full-without-sidebars', 'without-sidebars' ) ) ) {
         $classes[] = 'pt-0';
       }
     }
@@ -39,7 +39,7 @@ if ( ! function_exists( 'wordtrap_primary_wrap_classes_for_single_product' ) ) {
     if ( is_product() && ! post_password_required() ) {
       $main_layout = wordtrap_main_layout();
       $layout = $main_layout[ 'layout' ];
-      if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+      if ( in_array( $layout, array( 'full-without-sidebars', 'without-sidebars' ) ) ) {
         $classes = array_filter( $classes, static function( $element ) {
           return ! in_array( $element, array( 'container', 'container-fluid' ) );
         } );
@@ -58,7 +58,7 @@ if ( ! function_exists( 'wordtrap_primary_inner_classes_for_single_product' ) ) 
     if ( is_product() && ! post_password_required() ) {
       $main_layout = wordtrap_main_layout();
       $layout = $main_layout[ 'layout' ];
-      if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+      if ( in_array( $layout, array( 'full-without-sidebars', 'without-sidebars' ) ) ) {
         $classes = array_filter( $classes, static function( $element ) {
           return ! in_array( $element, array( 'container', 'container-fluid' ) );
         } );
@@ -73,13 +73,13 @@ if ( ! function_exists( 'wordtrap_primary_inner_classes_for_single_product' ) ) 
 add_filter( 'wordtrap_filter_show_page_title', 'wordtrap_show_page_title_for_single_product' );
 if ( ! function_exists( 'wordtrap_show_page_title_for_single_product' ) ) {
   /**
-   * Hide page title in wide, boxed full width layouts
+   * Hide page title in the layouts without the sidebars
    */
   function wordtrap_show_page_title_for_single_product( $show ) {
     if ( is_product() ) {
       $main_layout = wordtrap_main_layout();
       $layout = $main_layout[ 'layout' ];
-      if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+      if ( in_array( $layout, array( 'full-without-sidebars', 'without-sidebars' ) ) ) {
         return false;
       }
     }
@@ -92,13 +92,13 @@ if ( ! function_exists( 'wordtrap_show_page_title_for_single_product' ) ) {
 add_action( 'woocommerce_before_single_product', 'wordtrap_show_single_product_page_title', 1 );
 if ( ! function_exists( 'wordtrap_show_single_product_page_title' ) ) {
   /**
-   * Show page title in wide, boxed full width layouts
+   * Show page title in the layouts without the sidebars
    */
   function wordtrap_show_single_product_page_title() {
     $back_link = wordtrap_back_to_link();
     $main_layout = wordtrap_main_layout();
     $layout = $main_layout[ 'layout' ];
-    if ( ! in_array( $layout, array( 'wide', 'full' ) ) ) {
+    if ( ! in_array( $layout, array( 'full-without-sidebars', 'without-sidebars' ) ) ) {
       return;
     }
     ?>

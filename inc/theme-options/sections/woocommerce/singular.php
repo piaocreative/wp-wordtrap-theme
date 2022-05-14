@@ -20,7 +20,7 @@ Redux::set_section(
         'type'     => 'image_select',
         'title'    => esc_html__( 'Main Layout', 'wordtrap' ),
         'options'  => $main_layout_options,
-        'default'  => 'left-sidebar',
+        'default'  => 'right-sidebar',
       ),
       array(
         'id'       => 'product-left-sidebar',

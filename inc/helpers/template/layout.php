@@ -237,7 +237,7 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
     } 
     // 404
     else if ( is_404() ) {
-      $layout = 'full';
+      $layout = 'without-sidebars';
     }
     // Search results
     else if ( is_search() ) {
@@ -303,30 +303,30 @@ if ( ! function_exists( 'wordtrap_main_layout' ) ) {
     $active_left_sidebar = $left_sidebar_top || $left_sidebar_bottom || is_active_sidebar( $left_sidebar );
     $active_right_sidebar = $right_sidebar_top || $right_sidebar_bottom || is_active_sidebar( $right_sidebar );
 
-    if ( $layout === 'wide-left-sidebar' && ! $active_left_sidebar ) {
-      $layout = 'wide';
+    if ( $layout === 'full-left-sidebar' && ! $active_left_sidebar ) {
+      $layout = 'full-without-sidebars';
     }
     if ( $layout === 'left-sidebar' && ! $active_left_sidebar ) {
-      $layout = 'full';
+      $layout = 'without-sidebars';
     }
-    if ( $layout === 'wide-right-sidebar' && ! $active_right_sidebar ) {
-      $layout = 'wide';
+    if ( $layout === 'full-right-sidebar' && ! $active_right_sidebar ) {
+      $layout = 'full-without-sidebars';
     }
     if ( $layout === 'right-sidebar' && ! $active_right_sidebar ) {
-      $layout = 'full';
+      $layout = 'without-sidebars';
     }
-    if ( $layout === 'wide-both-sidebars' ) {
+    if ( $layout === 'full-both-sidebars' ) {
       if ( ! $active_left_sidebar && ! $active_right_sidebar ) {
-        $layout = 'wide';
+        $layout = 'full-without-sidebars';
       } else if ( ! $active_left_sidebar ) {
-        $layout = 'wide-right-sidebar';
+        $layout = 'full-right-sidebar';
       } else if ( ! $active_right_sidebar ) {
-        $layout = 'wide-left-sidebar';
+        $layout = 'full-left-sidebar';
       }
     }
     if ( $layout === 'both-sidebars' ) {
       if ( ! $active_left_sidebar && ! $active_right_sidebar ) {
-        $layout = 'full';
+        $layout = 'without-sidebars';
       } else if ( ! $active_left_sidebar ) {
         $layout = 'right-sidebar';
       } else if ( ! $active_right_sidebar ) {

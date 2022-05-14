@@ -58,8 +58,8 @@ article.member {
 
 body.single-member {
   .primary-wrap {
-    &.site-layout-wide,
-    &.site-layout-full {
+    &.site-layout-without-sidebars,
+    &.site-layout-full-without-sidebars {
       margin-bottom: 0;
 
       .site-main {

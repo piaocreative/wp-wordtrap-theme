@@ -16,9 +16,9 @@ $layout = $main_layout[ 'layout' ];
 ?>
 <div class="product-before-summary">
   <?php
-  if ( $layout === 'wide' ) {
+  if ( $layout === 'full-without-sidebars' ) {
     echo '<div class="container-fluid">';
-  } else if ( $layout === 'full' ) {
+  } else if ( $layout === 'without-sidebars' ) {
     echo '<div class="container">';
   }
 
@@ -33,7 +33,7 @@ $layout = $main_layout[ 'layout' ];
     echo get_the_password_form(); // WPCS: XSS ok.
   }
 
-  if ( $layout === 'wide' || $layout === 'full' ) {
+  if ( $layout === 'full-without-sidebars' || $layout === 'without-sidebars' ) {
     echo '</div>';
   }  
   ?>
@@ -66,7 +66,7 @@ if ( in_array( $product_view, array( 'sticky-both-info', 'centered-vertical-zoom
 }
 
 $wrapper_classes = array();
-if ( $layout === 'wide' || $layout === 'full' ) {
+if ( $layout === 'full-without-sidebars' || $layout === 'without-sidebars' ) {
   $wrapper_classes[] = 'wide-width';
 }
 
@@ -104,9 +104,9 @@ $carousel_options = json_encode( $carousel_options );
 
     <?php
     if ( $product_view !== 'extended' ) {
-      if ( $layout === 'wide' ) {
+      if ( $layout === 'full-without-sidebars' ) {
         echo '<div class="container-fluid">';
-      } else if ( $layout === 'full' ) {
+      } else if ( $layout === 'without-sidebars' ) {
         echo '<div class="container">';
       }
     }
@@ -137,9 +137,9 @@ $carousel_options = json_encode( $carousel_options );
     do_action( 'woocommerce_before_single_product_summary' );
 
     if ( $product_view === 'extended' ) {
-      if ( $layout === 'wide' ) {
+      if ( $layout === 'full-without-sidebars' ) {
         echo '<div class="container-fluid">';
-      } else if ( $layout === 'full' ) {
+      } else if ( $layout === 'without-sidebars' ) {
         echo '<div class="container">';
       }
     } 
@@ -164,7 +164,7 @@ $carousel_options = json_encode( $carousel_options );
     </div>
 
     <?php
-    if ( $layout === 'wide' || $layout === 'full' ) {
+    if ( $layout === 'full-without-sidebars' || $layout === 'without-sidebars' ) {
       echo '</div>';
     }
     ?>
@@ -172,9 +172,9 @@ $carousel_options = json_encode( $carousel_options );
 
   <div class="product-after-summary">
     <?php
-    if ( $layout === 'wide' ) {
+    if ( $layout === 'full-without-sidebars' ) {
       echo '<div class="container-fluid">';
-    } else if ( $layout === 'full' ) {
+    } else if ( $layout === 'without-sidebars' ) {
       echo '<div class="container">';
     }
 
@@ -187,7 +187,7 @@ $carousel_options = json_encode( $carousel_options );
      */
     do_action( 'woocommerce_after_single_product_summary' );
 
-    if ( $layout === 'wide' || $layout === 'full' ) {
+    if ( $layout === 'full-without-sidebars' || $layout === 'without-sidebars' ) {
       echo '</div>';
     }
     ?>

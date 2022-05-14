@@ -28,7 +28,7 @@ Redux::set_section(
         'type'     => 'image_select',
         'title'    => esc_html__( 'Main Layout', 'wordtrap' ),
         'options'  => $main_layout_options,
-        'default'  => 'full',
+        'default'  => 'without-sidebars',
       ),
       array(
         'id'       => 'member-left-sidebar',

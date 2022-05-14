@@ -21,7 +21,7 @@ Redux::set_section(
         'type'         => 'image_select',
         'title'        => esc_html__( 'Footer Layout', 'wordtrap' ),
         'options'      => $layout_options,
-        'default'      => 'full',
+        'default'      => 'wide',
       ),
       array(
         'id'           => 'footer-reveal',

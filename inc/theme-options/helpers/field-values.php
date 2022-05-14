@@ -9,68 +9,16 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'wordtrap_site_layout_options' ) ) {
-  /**
-   * Site layout options
-   */
-  function wordtrap_site_layout_options() {
-    return array(
-      'wide'  => array(
-        'title' => esc_html__( 'Wide', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/site-layouts/wide.svg',
-      ),
-      'full'  => array(
-        'title' => esc_html__( 'Full', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/site-layouts/full.svg',
-      ),
-      'boxed' => array(
-        'title' => esc_html__( 'Boxed', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/site-layouts/boxed.svg',
-      )
-    );
-  }
-}
-
-if ( ! function_exists( 'wrodtrap_site_layouts_without_boxed' ) ) {
-  /**
-   * Site layout values without boxed
-   */
-  function wrodtrap_site_layouts_without_boxed() {
-    return array(
-      'wide',
-      'full'
-    );
-  }
-}
-
 if ( ! function_exists( 'wordtrap_layout_options' ) ) {
   /**
    * General layout options
    */
   function wordtrap_layout_options() {
     return array(
-      'wide'  => array(
-        'title' => esc_html__( 'Wide', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/wide.svg',
-      ),
       'full'  => array(
         'title' => esc_html__( 'Full', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/full.svg',
       ),
-      'boxed' => array(
-        'title' => esc_html__( 'Boxed', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/boxed.svg',
-      )
-    );
-  }
-}
-
-if ( ! function_exists( 'wordtrap_banner_layout_options' ) ) {
-  /**
-   * Banner layout options
-   */
-  function wordtrap_banner_layout_options() {
-    return array(
       'wide'  => array(
         'title' => esc_html__( 'Wide', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/wide.svg',
@@ -89,25 +37,25 @@ if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
    */
   function wordtrap_main_layout_options() {
     return array(
-      'wide'  => array(
-        'title' => esc_html__( 'Wide Full Width', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide.svg',
+      'full-without-sidebars'  => array(
+        'title' => esc_html__( 'Full Width', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/full-without-sidebars.svg',
       ),
-      'wide-left-sidebar'  => array(
-        'title' => esc_html__( 'Wide Left Sidebar', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide-left-sidebar.svg',
+      'full-left-sidebar'  => array(
+        'title' => esc_html__( 'Full Left Sidebar', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/full-left-sidebar.svg',
       ),
-      'wide-right-sidebar' => array(
-        'title' => esc_html__( 'Wide Right Sidebar', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide-right-sidebar.svg',
+      'full-right-sidebar' => array(
+        'title' => esc_html__( 'Full Right Sidebar', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/full-right-sidebar.svg',
       ),
-      'wide-both-sidebars' => array(
-        'title' => esc_html__( 'Wide Both Sidebars', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/wide-both-sidebars.svg',
+      'full-both-sidebars' => array(
+        'title' => esc_html__( 'Full Both Sidebars', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/full-both-sidebars.svg',
       ),
-      'full'  => array(
-        'title' => esc_html__( 'Boxed Full Width', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/full.svg',
+      'without-sidebars'  => array(
+        'title' => esc_html__( 'Boxed Width', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/main-layouts/without-sidebars.svg',
       ),
       'left-sidebar'  => array(
         'title' => esc_html__( 'Boxed Left Sidebar', 'wordtrap' ),
@@ -131,8 +79,8 @@ if ( ! function_exists( 'wordtrap_main_layouts_with_left_sidebar' ) ) :
    */
   function wordtrap_main_layouts_with_left_sidebar() {
     return array(
-      'wide-left-sidebar',
-      'wide-both-sidebars',
+      'full-left-sidebar',
+      'full-both-sidebars',
       'left-sidebar',
       'both-sidebars',
     );
@@ -145,31 +93,13 @@ if ( ! function_exists( 'wordtrap_main_layouts_with_right_sidebar' ) ) :
    */
   function wordtrap_main_layouts_with_right_sidebar() {
     return array(
-      'wide-right-sidebar',
-      'wide-both-sidebars',
+      'full-right-sidebar',
+      'full-both-sidebars',
       'right-sidebar',
       'both-sidebars',
     );
   }
 endif;
-
-if ( ! function_exists( 'wordtrap_content_layout_options' ) ) {
-  /**
-   * Content layout options
-   */
-  function wordtrap_content_layout_options() {
-    return array(
-      'wide'  => array(
-        'title' => esc_html__( 'Wide', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/wide.svg',
-      ),
-      'boxed' => array(
-        'title' => esc_html__( 'Boxed', 'wordtrap' ),
-        'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/boxed.svg',
-      )
-    );
-  }
-}
 
 if ( ! function_exists( 'wordtrap_font_style_options' ) ) {
   /**
@@ -202,14 +132,6 @@ if ( ! function_exists( 'wordtrap_posts_grid_layout_options' ) ) {
         'title' => esc_html__( 'Timeline', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-timeline.svg',
       ),
-      // 'woocommerce'  => array(
-      //   'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-woocommerce.svg',
-      // ),
-      // 'modern'  => array(
-      //   'title' => esc_html__( 'Modern', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-modern.svg',
-      // ),
     );
   }
 }
@@ -246,18 +168,10 @@ if ( ! function_exists( 'wordtrap_posts_list_layout_options' ) ) {
         'title' => esc_html__( 'Large', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large.svg',
       ),
-      // 'large-alt'  => array(
-      //   'title' => esc_html__( 'Large Alt', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-large-alt.svg',
-      // ),
       'medium'  => array(
         'title' => esc_html__( 'Medium', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium.svg',
       ),
-      // 'medium-alt'  => array(
-      //   'title' => esc_html__( 'Medium Alt', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/archive-medium-alt.svg',
-      // ),      
     );
   }
 }
@@ -272,30 +186,14 @@ if ( ! function_exists( 'wordtrap_post_layout_options' ) ) {
         'title' => esc_html__( 'Full', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-full.svg',
       ),
-      // 'full-alt'  => array(
-      //   'title' => esc_html__( 'Full Alt', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-full-alt.svg',
-      // ),
       'large'  => array(
         'title' => esc_html__( 'Large', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-large.svg',
       ),
-      // 'large-alt'  => array(
-      //   'title' => esc_html__( 'Large Alt', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-large-alt.svg',
-      // ),
       'medium'  => array(
         'title' => esc_html__( 'Medium', 'wordtrap' ),
         'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-medium.svg',
-      ),
-      // 'woocommerce'  => array(
-      //   'title' => esc_html__( 'Woocommerce', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-woocommerce.svg',
-      // ),
-      // 'modern'  => array(
-      //   'title' => esc_html__( 'Modern', 'wordtrap' ),
-      //   'img'   => WORDTRAP_OPTIONS_URI . '/presets/post-layouts/singular-modern.svg',
-      // ),
+      ),      
     );
   }
 }

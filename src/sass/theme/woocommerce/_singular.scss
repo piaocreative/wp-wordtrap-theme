@@ -17,8 +17,8 @@
 
 
 .product-before-summary {
-  .site-layout-wide &,
-  .site-layout-full & {
+  .site-layout-without-sidebars &,
+  .site-layout-full-without-sidebars & {
     background: $section-bg;
     padding-top: 2rem;
 
@@ -524,8 +524,8 @@ div.product-view-full-width {
     padding: 0;
     position: relative;
 
-    .site-layout-wide &,
-    .site-layout-full & {
+    .site-layout-without-sidebars &,
+    .site-layout-full-without-sidebars & {
       padding-top: 2rem;
     }
 
@@ -617,8 +617,8 @@ div.product-view-full-width {
         }
       }
 
-      .site-layout-wide &, 
-      .site-layout-full & {
+      .site-layout-without-sidebars &, 
+      .site-layout-full-without-sidebars & {
         @media (min-width: 769px) {
           position: absolute;
           right: 0;

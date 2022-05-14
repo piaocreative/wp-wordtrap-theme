@@ -185,11 +185,7 @@ Redux::set_args( $opt_name, $args );
  * ---> START VARIABLES
  */
 
-$site_layout_options             = wordtrap_site_layout_options();
-$site_layouts_without_boxed      = wrodtrap_site_layouts_without_boxed();
 $layout_options                  = wordtrap_layout_options();
-$banner_layout_options           = wordtrap_banner_layout_options();
-$content_layout_options          = wordtrap_content_layout_options();
 $main_layout_options             = wordtrap_main_layout_options();
 $main_layouts_with_left_sidebar  = wordtrap_main_layouts_with_left_sidebar();
 $main_layouts_with_right_sidebar = wordtrap_main_layouts_with_right_sidebar();

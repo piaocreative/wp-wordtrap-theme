@@ -1,6 +1,6 @@
 
 // Primary wrap
-.primary-wrap:not(.site-layout-wide, .site-layout-full) {
+.primary-wrap:not(.site-layout-without-sidebars, .site-layout-full-without-sidebars) {
   div.product {
     @include media-breakpoint-down(lg) {
       div.images,

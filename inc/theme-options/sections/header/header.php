@@ -32,7 +32,7 @@ Redux::set_section(
         'type'          => 'image_select',
         'title'         => esc_html__( 'Header Layout', 'wordtrap' ),
         'options'       => $layout_options,
-        'default'       => 'full',
+        'default'       => 'wide',
       ),
       array(
         'id'            => 'header-position',

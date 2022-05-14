@@ -23,10 +23,10 @@ $layout = $main_layout[ 'layout' ];
   <div class="overview">
 
     <?php
-    if ( in_array( $layout, array( 'wide', 'full' ) ) ) :
+    if ( in_array( $layout, array( 'full-without-sidebars', 'without-sidebars' ) ) ) :
       $back_link = wordtrap_back_to_link();
       ?>
-      <div id="page-header" class="page-header<?php echo $layout === 'full' ? ' container' : '' ?>">
+      <div id="page-header" class="page-header<?php echo $layout === 'without-sidebars' ? ' container' : '' ?>">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb links">
             <li>
@@ -44,8 +44,8 @@ $layout = $main_layout[ 'layout' ];
     ?>  
 
     <?php
-    if ( $layout === 'wide' || $layout === 'full' ) {
-      echo '<div class="overview-inner' . ( $layout === 'full' ? ' container' : '' ) . '">';
+    if ( $layout === 'full-without-sidebars' || $layout === 'without-sidebars' ) {
+      echo '<div class="overview-inner' . ( $layout === 'without-sidebars' ? ' container' : '' ) . '">';
     }
     ?>
 
@@ -96,7 +96,7 @@ $layout = $main_layout[ 'layout' ];
     </div>
 
     <?php
-    if ( $layout === 'wide' || $layout === 'full' ) {
+    if ( $layout === 'full-without-sidebars' || $layout === 'without-sidebars' ) {
       echo '</div>';
     }  
     ?>

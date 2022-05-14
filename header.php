@@ -34,7 +34,7 @@ $wrap_classes = array( 'primary-wrap' );
 $inner_classes = array( 'primary-inner' );
 
 $wrap_classes[] = 'site-layout-' . esc_attr( $layout );
-if ( in_array( $layout, array( 'wide', 'wide-left-sidebar', 'wide-right-sidebar', 'wide-both-sidebars' ) ) ) {
+if ( in_array( $layout, array( 'full-without-sidebars', 'full-left-sidebar', 'full-right-sidebar', 'full-both-sidebars' ) ) ) {
   $inner_classes[] = 'container-fluid';
 } else {
   $inner_classes[] = 'container';
@@ -46,11 +46,11 @@ $inner_classes = apply_filters( 'wordtrap_filter_primary_inner_classes', $inner_
 
 // Main classes
 $main_classes = array( 'site-main', 'order-2' );
-if ( in_array( $layout, array( 'wide', 'full' ) ) ) {
+if ( in_array( $layout, array( 'full-without-sidebars', 'without-sidebars' ) ) ) {
   $main_classes[] = '';
-} else if ( in_array( $layout, array( 'wide-left-sidebar', 'wide-right-sidebar', 'left-sidebar', 'right-sidebar' ) ) ) {
+} else if ( in_array( $layout, array( 'full-left-sidebar', 'full-right-sidebar', 'left-sidebar', 'right-sidebar' ) ) ) {
   $main_classes[] = 'col-md-8 col-lg-9';
-} else if ( in_array( $layout, array( 'wide-both-sidebars', 'both-sidebars' ) ) ) {
+} else if ( in_array( $layout, array( 'full-both-sidebars', 'both-sidebars' ) ) ) {
   $main_classes[] = 'col-lg-6';
 }
 
@@ -120,7 +120,7 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 
           <div class="row">
 
-            <?php if ( in_array( $layout, array( 'wide-left-sidebar', 'wide-both-sidebars', 'left-sidebar', 'both-sidebars' ) ) ) : ?>
+            <?php if ( in_array( $layout, array( 'full-left-sidebar', 'full-both-sidebars', 'left-sidebar', 'both-sidebars' ) ) ) : ?>
               <?php get_template_part( 'template-parts/sidebar/sidebar', 'left' ); ?>
             <?php endif; ?>
 

@@ -8,8 +8,8 @@
 body.single-product,
 body.single-member {
   .primary-wrap {
-    &.site-layout-wide,
-    &.site-layout-full {
+    &.site-layout-without-sidebars,
+    &.site-layout-full-without-sidebars {
       margin-top: 0;
 
       .primary-inner {

@@ -26,9 +26,9 @@ while ( have_posts() ) :
 
   wordtrap_edit_post_link(); 
   
-  if ( $layout === 'wide' ) {
+  if ( $layout === 'full-without-sidebars' ) {
     echo '<div class="container-fluid">';
-  } else if ( $layout === 'full' ) {
+  } else if ( $layout === 'without-sidebars' ) {
     echo '<div class="container">';
   }
 
@@ -39,7 +39,7 @@ while ( have_posts() ) :
     get_template_part( 'template-parts/member/related' );
   }
 
-  if ( $layout === 'wide' || $layout === 'full' ) {
+  if ( $layout === 'full-without-sidebars' || $layout === 'without-sidebars' ) {
     echo '</div>';
   }
 

@@ -25,7 +25,7 @@ if ( ! $active_sidebar ) {
 
 // Sidebar classes
 $sidebar_classes = array( 'widget-area', 'order-3', 'col-lg-3' );
-if ( in_array( $layout, array( 'wide-both-sidebars', 'both-sidebars' ) ) ) {
+if ( in_array( $layout, array( 'full-both-sidebars', 'both-sidebars' ) ) ) {
   
 } else {
   $sidebar_classes[] = 'col-md-4';
