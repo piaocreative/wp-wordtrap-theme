@@ -284,7 +284,19 @@
   article.hentry {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100%;    
+  }
+
+  &:not(.posts-slider) > * {
+    margin-bottom: calc(var(--bs-gutter-x) * 1); 
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: calc(var(--bs-gutter-x) * 1.25);
+    }
+
+    article.hentry {
+      margin-bottom: 0;
+    }
   }
 
   .post-thumbnail {

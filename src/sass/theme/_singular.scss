@@ -27,6 +27,14 @@ body.single-member {
   }
 }
 
+article.hentry {
+  margin-bottom: 2rem;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
 .post-thumbnail {
   position: relative;
   margin-bottom: 2.5rem;
@@ -313,14 +321,6 @@ section.no-results,
   }
 }
 
-article.hentry {
-  margin-bottom: 2rem;
-
-  > *:first-child {
-    margin-top: 0;
-  }
-}
-
 // Extra
 .post-password-form {
   input[type="password"] {
@@ -477,6 +477,5 @@ article.hentry {
 // Related posts
 .entry-related {
   margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
