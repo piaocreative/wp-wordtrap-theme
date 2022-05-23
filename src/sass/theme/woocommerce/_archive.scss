@@ -1,14 +1,13 @@
-
 .site {
   .woocommerce-ordering {
     float: none;
     margin-bottom: 0;
-    
+
     select {
       vertical-align: middle;
     }
   }
-  
+
   div.products {
     div.product {
       .star-rating {
@@ -21,7 +20,7 @@
         }
       }
     }
-  }  
+  }
 
   div.products-grid {
     div.product {
@@ -39,7 +38,7 @@
         display: block;
         margin-top: 1rem;
       }
-    }        
+    }
   }
 }
 
@@ -48,11 +47,11 @@
   margin-bottom: 0;
 
   &,
-  a & {    
+  a & {
     color: $headings-color;
     font-size: $title-font-size;
   }
-  
+
   a:hover & {
     color: $primary;
   }
@@ -64,7 +63,7 @@
 
 div.products {
   position: relative;
-  
+
   &:not(.posts-carousel) {
     margin-left: calc(var(--bs-gutter-x) * -0.5);
     margin-right: calc(var(--bs-gutter-x) * -0.5);
@@ -77,7 +76,7 @@ div.products {
     > * {
       padding-right: calc(var(--bs-gutter-x) * 0.5);
       padding-left: calc(var(--bs-gutter-x) * 0.5);
-      
+
       @include media-breakpoint-up(xl) {
         padding-left: calc(var(--bs-gutter-x) * 0.625);
         padding-right: calc(var(--bs-gutter-x) * 0.625);
@@ -88,7 +87,7 @@ div.products {
   > * {
     position: relative;
     padding-bottom: calc(var(--bs-gutter-x) * 1);
-    
+
     @include media-breakpoint-up(xl) {
       padding-bottom: calc(var(--bs-gutter-x) * 1.25);
     }
@@ -109,16 +108,16 @@ div.products {
       span {
         font-size: 0.6em;
       }
-    }       
+    }
   }
 
   .product-inner {
     padding: calc(var(--bs-gutter-x) * 0.5);
     position: relative;
-    
+
     @include media-breakpoint-up(xl) {
       padding: calc(var(--bs-gutter-x) * 0.625);
-    }      
+    }
   }
 
   .product-thumbnail {
@@ -161,7 +160,7 @@ div.products {
     .button[class*="product_type_"] {
       right: calc(var(--bs-gutter-x) * 0.6);
       top: calc(var(--bs-gutter-x) * 0.6);
-      
+
       @include media-breakpoint-down(lg) {
         right: calc(var(--bs-gutter-x) * 0.5);
         top: calc(var(--bs-gutter-x) * 0.5);
@@ -169,6 +168,7 @@ div.products {
     }
 
     .added_to_cart {
+      background: $white;
       opacity: 0;
       top: 50%;
       left: 50%;
@@ -206,6 +206,7 @@ div.products {
   .added_to_cart,
   .button[class*="product_type_"] {
     margin-top: 0.75rem;
+    padding: $btn-padding-y $btn-padding-x;
 
     &:after {
       display: inline-block;
@@ -218,7 +219,7 @@ div.products {
   }
 
   .added_to_cart:after {
-    content: '\f290';
+    content: "\f290";
   }
 
   .button[class*="product_type_"] {
@@ -226,25 +227,25 @@ div.products {
       opacity: 1;
 
       &:after {
-        content: '\f110';
+        content: "\f110";
         animation-duration: 1s;
       }
     }
-    
+
     &:after {
-      content: '\f061';
+      content: "\f061";
     }
   }
 
   .add_to_cart_button[class*="product_type_simple"]:after {
-    content: '\f07a';
+    content: "\f07a";
   }
 
   .quantity {
     display: inline-block;
     margin-top: 0.75rem;
-    
-    + .button[class*=product_type_] {
+
+    + .button[class*="product_type_"] {
       margin-top: 0.5rem;
       vertical-align: inherit;
       padding: $btn-padding-y $btn-padding-x;
@@ -257,7 +258,7 @@ div.products {
     border-radius: $border-radius-lg;
     height: 100%;
     padding: calc(var(--bs-gutter-x) * 0.5);
-    @include clearfix;      
+    @include clearfix;
 
     @include media-breakpoint-up(xl) {
       padding: calc(var(--bs-gutter-x) * 0.625);
@@ -274,7 +275,7 @@ div.products {
         }
       }
     }
-  }  
+  }
 }
 
 div.products-view-cart-onimage-bottom {
@@ -282,7 +283,7 @@ div.products-view-cart-onimage-bottom {
     .button[class*="product_type_"] {
       top: auto;
       bottom: calc(var(--bs-gutter-x) * 0.6);
-      
+
       @include media-breakpoint-down(lg) {
         bottom: calc(var(--bs-gutter-x) * 0.5);
       }
@@ -303,18 +304,18 @@ div.products-grid {
         right: calc(var(--bs-gutter-x) * 0.625);
         top: calc(var(--bs-gutter-x) * 0.625);
       }
-    }    
+    }
   }
 
   .product-detail-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     .detail-left {
       flex: 1 1 auto;
     }
-  
+
     .category-list {
       margin-top: 0.5rem;
     }
@@ -360,10 +361,10 @@ div.products-grid.products-view-onimage-with-overlay {
     right: calc(var(--bs-gutter-x) * 0.5);
     bottom: calc(var(--bs-gutter-x) * 0.5);
     opacity: 0;
-    transition: transform .4s, opacity .3s;
+    transition: transform 0.4s, opacity 0.3s;
     transform: translateZ(0) translateY(10px);
     z-index: 20;
-    
+
     @include media-breakpoint-up(xl) {
       left: calc(var(--bs-gutter-x) * 0.625);
       right: calc(var(--bs-gutter-x) * 0.625);
@@ -385,7 +386,7 @@ div.products-grid.products-view-onimage-with-overlay {
 
 div.products-grid.products-view-onimage {
   .product-inner {
-    background: $section-bg;    
+    background: $section-bg;
   }
 }
 
@@ -400,14 +401,14 @@ div.products-grid.products-view-onimage-with-overlay {
       width: 100%;
       height: 100%;
       background-color: transparent;
-      transition: .25s;
+      transition: 0.25s;
       z-index: 10;
-    }    
+    }
   }
 
   .product-inner {
-    *:not(.button[class*=product_type_], .star-rating, .star-rating span) {
-      color: #fff !important;
+    *:not(.button[class*="product_type_"], .star-rating, .star-rating span) {
+      color: $white !important;
     }
   }
 
@@ -428,8 +429,8 @@ div.products-list {
 
     @include media-breakpoint-down(sm) {
       margin-bottom: 0.5rem;
-    } 
-  
+    }
+
     img {
       max-width: 250px;
 
@@ -458,7 +459,7 @@ div.products-list {
 
     @include media-breakpoint-down(lg) {
       display: block;
-      margin-left: 1rem; 
+      margin-left: 1rem;
     }
 
     @include media-breakpoint-down(md) {
@@ -492,7 +493,7 @@ div.products-list {
       text-align: left;
     }
 
-    .button[class*=product_type_] {
+    .button[class*="product_type_"] {
       margin-top: 1.5rem;
     }
   }
@@ -517,18 +518,18 @@ div.products-list.products-view-quantity-input {
 
       .detail-right {
         margin-left: 1rem;
-      }      
-  
-      .button[class*=product_type_] {
+      }
+
+      .button[class*="product_type_"] {
         margin-top: 1rem;
       }
-    }    
+    }
   }
 
   .quantity {
     margin-top: 1rem;
 
-    + .button[class*=product_type_] {
+    + .button[class*="product_type_"] {
       margin-top: 0.5rem;
     }
   }
