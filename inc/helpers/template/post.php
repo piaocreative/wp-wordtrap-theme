@@ -163,7 +163,7 @@ if ( ! function_exists( 'wordtrap_entry_footer' ) ) {
     // Read more
     $view_mode = wordtrap_get_view_mode();
     if ( $view_mode === 'grid' && $is_archive ) {
-      printf( '<div class="read-more"><a href="%s" rel="bookmark">' . esc_html__( 'Read More', 'wordtrap' ) . '<i class="fa fa-arrow-right"></i></a></div>', esc_url( get_permalink() ) );
+      printf( '<div class="read-more"><a href="%s" rel="bookmark">' . esc_html__( 'Read More', 'wordtrap' ) . '<i class="fas fa-arrow-right"></i></a></div>', esc_url( get_permalink() ) );
     }
 
     // Post metas available
@@ -195,8 +195,8 @@ if ( ! function_exists( 'wordtrap_link_pages_args' ) ) {
   function wordtrap_link_pages_args( $args ) {
     $args[ 'before' ] = '<p class="post-nav-links"><span class="me-1">' . __( 'Pages:', 'wordtrap' ) . '</span>';
     $args[ 'after' ] = '</p>';
-    $args[ 'nextpagelink' ] = __( 'Next&nbsp;<i class="fa fa-angle-right"></i>', 'wordtrap' );
-    $args[ 'previouspagelink' ] = __( '<i class="fa fa-angle-left"></i>&nbsp;Back', 'wordtrap' );
+    $args[ 'nextpagelink' ] = __( 'Next&nbsp;<i class="fas fa-angle-right"></i>', 'wordtrap' );
+    $args[ 'previouspagelink' ] = __( '<i class="fas fa-angle-left"></i>&nbsp;Back', 'wordtrap' );
     return $args;
   }
 }
@@ -281,11 +281,11 @@ if ( ! function_exists( 'wordtrap_posts_filter_navigation' ) ) {
                 <div class="posts-view-mode">
                   <label>
                     <input type="radio" name="view" value="grid" <?php checked( $view_mode, 'grid' ) ?>/>
-                    <i class="fa fa-th"></i>
+                    <i class="fas fa-grip"></i>
                   </label>
                   <label>
                     <input type="radio" name="view" value="list" <?php checked( $view_mode, 'list' ) ?>/>
-                    <i class="fa fa-th-list"></i>
+                    <i class="fas fa-list"></i>
                   </label>
                 </div>
               <?php endif; 

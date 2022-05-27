@@ -125,13 +125,13 @@ if ( ! function_exists( 'wordtrap_comment_navigation' ) ) {
       <div class="d-flex nav-links justify-content-between">
         <?php if ( get_previous_comments_link() ) { ?>
           <div class="nav-previous">
-            <?php previous_comments_link( __( '<i class="fa fa-angle-left"></i>&nbsp;Older', 'wordtrap' ) ); ?>
+            <?php previous_comments_link( __( '<i class="fas fa-angle-left"></i>&nbsp;Older', 'wordtrap' ) ); ?>
           </div>
         <?php } ?>
 
         <?php if ( get_next_comments_link() ) { ?>
           <div class="nav-next">
-            <?php next_comments_link( __( 'Newer&nbsp;<i class="fa fa-angle-right"></i>', 'wordtrap' ) ); ?>
+            <?php next_comments_link( __( 'Newer&nbsp;<i class="fas fa-angle-right"></i>', 'wordtrap' ) ); ?>
           </div>
         <?php } ?>
       </div>

@@ -295,10 +295,10 @@ if ( ! function_exists( 'wordtrap_post_nav' ) ) {
       <div class="d-flex nav-links justify-content-between<?php echo get_previous_post_link() ? '' : ' flex-row-reverse' ?>">
         <?php
         if ( get_previous_post_link() ) {
-          previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous', 'wordtrap' ) );
+          previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fas fa-angle-left"></i>&nbsp;%title', 'Previous', 'wordtrap' ) );
         }
         if ( get_next_post_link() ) {
-          next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next', 'wordtrap' ) );
+          next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fas fa-angle-right"></i>', 'Next', 'wordtrap' ) );
         }
         ?>
       </div>
