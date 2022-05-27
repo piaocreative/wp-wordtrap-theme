@@ -51,63 +51,63 @@ if ( ! ( $profile || $facebook || $twitter || $linkedin || $youtube || $vimeo ||
       <label><?php _e( 'Follow me', 'wordtrap' ) ?></label>
 
       <?php if ( $facebook ) : ?>
-        <a href="<?php echo esc_url( $facebook ); ?>" title="<?php esc_attr_e( 'Facebook ', 'wordtrap' ); ?>" class="share-facebook" <?php echo $extra_attr ?>><i class="fa fa-facebook-f"></i></a>
+        <a href="<?php echo esc_url( $facebook ); ?>" title="<?php esc_attr_e( 'Facebook ', 'wordtrap' ); ?>" class="share-facebook" <?php echo $extra_attr ?>><i class="fab fa-facebook-f"></i></a>
       <?php endif; ?>
 
       <?php if ( $twitter ) : ?>
-        <a href="<?php echo esc_url( $twitter ); ?>" title="<?php esc_attr_e( 'Twitter', 'wordtrap' ); ?>" class="share-twitter" <?php echo $extra_attr ?>><i class="fa fa-twitter"></i></a>
+        <a href="<?php echo esc_url( $twitter ); ?>" title="<?php esc_attr_e( 'Twitter', 'wordtrap' ); ?>" class="share-twitter" <?php echo $extra_attr ?>><i class="fab fa-twitter"></i></a>
       <?php endif; ?>
 
       <?php if ( $linkedin ) : ?>
-        <a href="<?php echo esc_url( $linkedin ); ?>" title="<?php esc_attr_e( 'LinkedIn', 'wordtrap' ); ?>" class="share-linkedin" <?php echo $extra_attr ?>><i class="fa fa-linkedin"></i></a>
+        <a href="<?php echo esc_url( $linkedin ); ?>" title="<?php esc_attr_e( 'LinkedIn', 'wordtrap' ); ?>" class="share-linkedin" <?php echo $extra_attr ?>><i class="fab fa-linkedin-in"></i></a>
       <?php endif; ?>
 
       <?php if ( $youtube ) : ?>
-        <a href="<?php echo esc_url( $youtube ); ?>" title="<?php esc_attr_e( 'Youtube', 'wordtrap' ); ?>" class="share-youtube" <?php echo $extra_attr ?>><i class="fa fa-youtube"></i></a>
+        <a href="<?php echo esc_url( $youtube ); ?>" title="<?php esc_attr_e( 'Youtube', 'wordtrap' ); ?>" class="share-youtube" <?php echo $extra_attr ?>><i class="fab fa-youtube"></i></a>
       <?php endif; ?>
 
       <?php if ( $vimeo ) : ?>
-        <a href="<?php echo esc_url( $vimeo ); ?>" title="<?php esc_attr_e( 'Vimeo', 'wordtrap' ); ?>" class="share-vimeo" <?php echo $extra_attr ?>><i class="fa fa-vimeo"></i></a>
+        <a href="<?php echo esc_url( $vimeo ); ?>" title="<?php esc_attr_e( 'Vimeo', 'wordtrap' ); ?>" class="share-vimeo" <?php echo $extra_attr ?>><i class="fab fa-vimeo-v"></i></a>
       <?php endif; ?>
 
       <?php if ( $instagram ) : ?>
-        <a href="<?php echo esc_url( $instagram ); ?>" title="<?php esc_attr_e( 'Instagram', 'wordtrap' ); ?>" class="share-instagram" <?php echo $extra_attr ?>><i class="fa fa-instagram"></i></a>
+        <a href="<?php echo esc_url( $instagram ); ?>" title="<?php esc_attr_e( 'Instagram', 'wordtrap' ); ?>" class="share-instagram" <?php echo $extra_attr ?>><i class="fab fa-instagram"></i></a>
       <?php endif; ?>
 
       <?php if ( $googleplus ) : ?>
-        <a href="<?php echo esc_url( $googleplus ); ?>" title="<?php esc_attr_e( 'Google +', 'wordtrap' ); ?>" class="share-googleplus" <?php echo $extra_attr ?>><i class="fa fa-google-plus"></i></a>
+        <a href="<?php echo esc_url( $googleplus ); ?>" title="<?php esc_attr_e( 'Google +', 'wordtrap' ); ?>" class="share-googleplus" <?php echo $extra_attr ?>><i class="fab fa-google-plus-g"></i></a>
       <?php endif; ?>
 
       <?php if ( $pinterest ) : ?>
-        <a href="<?php echo esc_url( $pinterest ); ?>" title="<?php esc_attr_e( 'Pinterest', 'wordtrap' ); ?>" class="share-pinterest" <?php echo $extra_attr ?>><i class="fa fa-pinterest-p"></i></a>
+        <a href="<?php echo esc_url( $pinterest ); ?>" title="<?php esc_attr_e( 'Pinterest', 'wordtrap' ); ?>" class="share-pinterest" <?php echo $extra_attr ?>><i class="fab fa-pinterest-p"></i></a>
       <?php endif; ?>
 
       <?php if ( $vk ) : ?>
-        <a href="<?php echo esc_url( $vk ); ?>" title="<?php esc_attr_e( 'VK', 'wordtrap' ); ?>" class="share-vk" <?php echo $extra_attr ?>><i class="fa fa-vk"></i></a>
+        <a href="<?php echo esc_url( $vk ); ?>" title="<?php esc_attr_e( 'VK', 'wordtrap' ); ?>" class="share-vk" <?php echo $extra_attr ?>><i class="fab fa-vk"></i></a>
       <?php endif; ?>
 
       <?php if ( $xing ) : ?>
-        <a href="<?php echo esc_url( $xing ); ?>" title="<?php esc_attr_e( 'Xing', 'wordtrap' ); ?>" class="share-xing" <?php echo $extra_attr ?>><i class="fa fa-xing"></i></a>
+        <a href="<?php echo esc_url( $xing ); ?>" title="<?php esc_attr_e( 'Xing', 'wordtrap' ); ?>" class="share-xing" <?php echo $extra_attr ?>><i class="fab fa-xing"></i></a>
       <?php endif; ?>
 
       <?php if ( $tumblr ) : ?>
-        <a href="<?php echo esc_url( $tumblr ); ?>" title="<?php esc_attr_e( 'Tumblr', 'wordtrap' ); ?>" class="share-tumblr" <?php echo $extra_attr ?>><i class="fa fa-tumblr"></i></a>
+        <a href="<?php echo esc_url( $tumblr ); ?>" title="<?php esc_attr_e( 'Tumblr', 'wordtrap' ); ?>" class="share-tumblr" <?php echo $extra_attr ?>><i class="fab fa-tumblr"></i></a>
       <?php endif; ?>
 
       <?php if ( $reddit ) : ?>
-        <a href="<?php echo esc_url( $reddit ); ?>" title="<?php esc_attr_e( 'Reddit', 'wordtrap' ); ?>" class="share-reddit" <?php echo $extra_attr ?>><i class="fa fa-reddit"></i></a>
+        <a href="<?php echo esc_url( $reddit ); ?>" title="<?php esc_attr_e( 'Reddit', 'wordtrap' ); ?>" class="share-reddit" <?php echo $extra_attr ?>><i class="fab fa-reddit-alien"></i></a>
       <?php endif; ?>
 
       <?php if ( $whatsapp ) : ?>
-        <a href="whatsapp://send?text=<?php echo rawurlencode( $whatsapp ); ?>" data-action="share/whatsapp/share" title="<?php esc_attr_e( 'WhatsApp', 'wordtrap' ); ?>" class="share-whatsapp" <?php echo $extra_attr ?> style="display:none"><i class="fa fa-whatsapp"></i></a>
+        <a href="whatsapp://send?text=<?php echo rawurlencode( $whatsapp ); ?>" data-action="share/whatsapp/share" title="<?php esc_attr_e( 'WhatsApp', 'wordtrap' ); ?>" class="share-whatsapp" <?php echo $extra_attr ?> style="display:none"><i class="fab fa-whatsapp"></i></a>
       <?php endif; ?>
 
       <?php if ( $email ) : ?>
-        <a href="mailto:<?php echo esc_attr( $email ); ?>" title="<?php esc_attr_e( 'Email', 'wordtrap' ); ?>" class="share-email" <?php echo $extra_attr ?>><i class="fa fa-envelope"></i></a>
+        <a href="mailto:<?php echo esc_attr( $email ); ?>" title="<?php esc_attr_e( 'Email', 'wordtrap' ); ?>" class="share-email" <?php echo $extra_attr ?>><i class="fas fa-envelope"></i></a>
       <?php endif; ?>
 
       <?php if ( $phone ) : ?>
-        <a href="tel:<?php echo esc_attr( $phone ); ?>" title="<?php esc_attr_e( 'Phone', 'wordtrap' ); ?>" class="share-phone" <?php echo $extra_attr ?>><i class="fa fa-phone"></i></a>
+        <a href="tel:<?php echo esc_attr( $phone ); ?>" title="<?php esc_attr_e( 'Phone', 'wordtrap' ); ?>" class="share-phone" <?php echo $extra_attr ?>><i class="fas fa-phone"></i></a>
       <?php endif; ?>
 
     </div>

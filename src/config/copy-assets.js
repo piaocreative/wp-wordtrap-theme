@@ -33,8 +33,8 @@ rmDir('./src/sass/theme/vendor/bootstrap');
 copyDir('./node_modules/bootstrap/scss', './src/sass/theme/vendor/bootstrap');
 
 // Copy all Font Awesome files.
-copyDir('./node_modules/font-awesome/fonts', './fonts');
-copyDir('./node_modules/font-awesome/css', './css');
+//copyDir('./node_modules/font-awesome/fonts', './fonts');
+//copyDir('./node_modules/font-awesome/css', './css');
 
 // Copy tinyslider scss file
 fs.copyFile('./node_modules/tiny-slider/src/tiny-slider.scss', './src/sass/theme/vendor/tiny-slider/tiny-slider.scss');

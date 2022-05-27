@@ -69,7 +69,7 @@ $post_id = get_the_ID();
     <footer class="entry-footer">
       
       <?php 
-      printf( '<div class="read-more"><a href="%s" rel="bookmark">' . esc_html__( 'Read More', 'wordtrap' ) . '<i class="fa fa-arrow-right"></i></a></div>', esc_url( get_permalink() ) );
+      printf( '<div class="read-more"><a href="%s" rel="bookmark">' . esc_html__( 'Read More', 'wordtrap' ) . '<i class="fas fa-arrow-right"></i></a></div>', esc_url( get_permalink() ) );
       ?>
 
       <?php 

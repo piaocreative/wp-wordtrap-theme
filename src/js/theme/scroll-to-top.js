@@ -18,7 +18,7 @@
   };
 
   ScrollToTop.defaults = {
-    icon : 'fa fa-chevron-up',
+    icon : 'fas fa-chevron-up',
     trigger : 300,
     id: 'scroll-to-top',
     activeClass : 'show',

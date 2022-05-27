@@ -298,6 +298,14 @@
     flex-direction: column;
     flex: 1;
   }
+
+  &:not(.posts-slider) > * {
+    margin-bottom: calc(var(--bs-gutter-x) * 1.25);
+
+    article.hentry {
+      margin-bottom: 0;
+    }
+  }
 }
 
 // Timeline View

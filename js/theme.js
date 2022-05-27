@@ -16778,7 +16778,7 @@
 	      var $el = this.$el,
 	          gap = 15;
 
-	      if (parseInt($('#primary').css('padding-top')) > 15) {
+	      if (parseInt($('#primary').css('padding-top')) > gap) {
 	        gap = parseInt($('#primary').css('padding-top'));
 	      }
 
@@ -16888,7 +16888,7 @@
 	  };
 
 	  ScrollToTop.defaults = {
-	    icon: 'fa fa-chevron-up',
+	    icon: 'fas fa-chevron-up',
 	    trigger: 300,
 	    id: 'scroll-to-top',
 	    activeClass: 'show',
@@ -17567,7 +17567,7 @@
 	    center: false,
 	    controls: true,
 	    controlsPosition: 'top',
-	    controlsText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+	    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
 	    controlsContainer: false,
 	    prevButton: false,
 	    nextButton: false,
@@ -17581,7 +17581,7 @@
 	    autoplayPosition: 'top',
 	    autoplayTimeout: 5000,
 	    autoplayDirection: 'forward',
-	    autoplayText: ['<i class="fa fa-play"></i>', '<i class="fa fa-stop"></i>'],
+	    autoplayText: ['<i class="fas fa-play"></i>', '<i class="fas fa-stop"></i>'],
 	    autoplayHoverPause: false,
 	    autoplayButton: false,
 	    autoplayButtonOutput: false,
@@ -17629,7 +17629,7 @@
 	      this.options = $.extend(true, {}, Slider.defaults, opts);
 
 	      if (this.options.axis === 'vertical') {
-	        this.options.controlsText = ['<i class="fa fa-chevron-up"></i>', '<i class="fa fa-chevron-down"></i>'];
+	        this.options.controlsText = ['<i class="fas fa-chevron-up"></i>', '<i class="fas fa-chevron-down"></i>'];
 	      }
 
 	      return this;

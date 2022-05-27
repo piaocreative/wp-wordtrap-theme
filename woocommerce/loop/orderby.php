@@ -50,11 +50,11 @@ $view_mode = isset( $_GET['view'] ) ? sanitize_text_field( wp_unslash( $_GET['vi
             <div class="posts-view-mode">
               <label>
                 <input type="radio" name="view" value="grid" <?php checked( $view_mode, 'grid' ) ?>/>
-                <i class="fa fa-th"></i>
+                <i class="fas fa-grip"></i>
               </label>
               <label>
                 <input type="radio" name="view" value="list" <?php checked( $view_mode, 'list' ) ?>/>
-                <i class="fa fa-th-list"></i>
+                <i class="fas fa-list"></i>
               </label>
             </div>
           <?php endif; ?>
