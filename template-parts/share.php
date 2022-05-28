@@ -45,7 +45,7 @@ $extra_attr = 'target="_blank" ' . $nofollow;
 <?php endif; ?>
 
 <?php if ( wordtrap_options( 'share-email' ) ) : ?>
-  <a href="mailto:?subject=<?php echo urlencode( $title ); ?>&amp;body=<?php echo esc_url( $permalink ); ?>" title="<?php esc_attr_e( 'Email', 'wordtrap' ); ?>" class="share-email" <?php echo $extra_attr ?>><i class="fa fa-envelope"></i></a>
+  <a href="mailto:?subject=<?php echo urlencode( $title ); ?>&amp;body=<?php echo esc_url( $permalink ); ?>" title="<?php esc_attr_e( 'Email', 'wordtrap' ); ?>" class="share-email" <?php echo $extra_attr ?>><i class="fas fa-envelope"></i></a>
 <?php endif; ?>
 
 <?php if ( wordtrap_options( 'share-vk' ) ) : ?>
