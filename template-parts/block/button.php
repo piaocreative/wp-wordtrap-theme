@@ -11,8 +11,9 @@ defined( 'ABSPATH' ) || exit;
 
 // Default Attributes
 $align = $attributes['align'];
+$block_id = 'wordtrap-' . $attributes['id'];
 
-// ACF Fields
+// Content fields
 $link = get_field( 'link' );
 $style = get_field( 'style' );
 $outline = get_field( 'outline' );
@@ -21,8 +22,13 @@ $active = get_field( 'active' );
 $disabled = get_field( 'disabled' );
 $display = get_field( 'display' );
 
-// Block ID
-$block_id = 'wordtrap-' . $attributes['id'];
+// Icon fields
+$show_icon = get_field( 'show_icon' );
+$icon = get_field( 'icon' );
+$icon_placement = get_field( 'icon_placement' );
+
+// Typography fields
+$change_typography = get_field( 'change_typography' );
 
 // Button link
 $link_title = ( isset( $link['title'] ) && $link['title'] ) ? $link['title'] : '';
@@ -50,9 +56,33 @@ if ( $display == 'block' ) $classes[] = 'd-grid';
     if ( $disabled ) $sub_classes[] = 'disabled';
     ?>
     <a <?php echo $link_target ? 'target="' . esc_attr( $link_target ) . '"' : '' ?>href="<?php echo esc_url( $link_url ) ?>" title="<?php echo esc_attr( $link_title ) ?>" class="<?php echo esc_attr( implode( ' ', $sub_classes ) ) ?>" role="button"<?php echo $disabled ? ' aria-disabled="true"' : '' ?>>
-      <?php echo $link_title ?>
+  <?php else : ?>
+    <button type="button" class="<?php echo esc_attr( implode( ' ', $sub_classes ) ) ?>"<?php echo $disabled ? ' disabled' : '' ?>>
+  <?php endif; ?>
+
+  <?php 
+  if ( $show_icon && $icon && $icon_placement != 'right' ) {
+    echo $icon . ' ';
+  }
+
+  echo $link_title;
+
+  if ( $show_icon && $icon && $icon_placement == 'right' ) {
+    echo ' ' . $icon;
+  }
+  ?>
+  
+  <?php if ( $link_url ) : ?>
     </a>
   <?php else : ?>
-    <button type="button" class="<?php echo esc_attr( implode( ' ', $sub_classes ) ) ?>"<?php echo $disabled ? ' disabled' : '' ?>>Button</button>
+    </button>
   <?php endif; ?>  
 </div>
+
+<?php if ( $change_typography ) : ?>
+  <style>
+    #<?php echo $block_id ?> .btn {
+      <?php wordtrap_acf_typography_style( 'typography_title' ) ?>
+    }
+  </style>
+<?php endif; ?>

@@ -39,6 +39,6 @@ acf_register_block_type( array(
     'multiple' => true,
     'jsx' => false,
     'align_content' => false,
-    'anchor' => false,
+    'anchor' => false
   ),
 ) );
