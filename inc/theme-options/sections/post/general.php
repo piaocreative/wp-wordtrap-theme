@@ -20,6 +20,7 @@ Redux::set_section(
         'type'         => 'text',
         'title'        => esc_html__( 'Sticky Post Label', 'wordtrap' ),
         'default'      => '',
+        'description'  => esc_html__( 'Enable the "Stick to the top of the blog" checkbox on the post edit', 'wordtrap' )
       ),
       array(
         'id'           => 'post-metas',

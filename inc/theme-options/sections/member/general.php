@@ -66,24 +66,6 @@ Redux::set_section(
         'title'       => esc_html__( 'Members Page', 'wordtrap' ),
       ),
       array(
-        'id'          => 'member-zoom',
-        'type'        => 'switch',
-        'title'       => esc_html__( 'Image Lightbox', 'wordtrap' ),
-        'default'     => true,
-        'on'          => esc_html__( 'Enable', 'wordtrap' ),
-        'off'         => esc_html__( 'Disable', 'wordtrap' ),
-      ),
-      array(
-        'id'          => 'member-social-target',
-        'type'        => 'button_set',
-        'title'       => esc_html__( 'Social Links Target', 'wordtrap' ),
-        'options'     => array(
-          ''          => esc_html__( 'Self', 'wordtrap' ),
-          '_blank'    => esc_html__( 'Blank', 'wordtrap' ),
-        ),
-        'default'     => '_blank',
-      ),
-      array(
         'id'          => 'member-nofollow',
         'type'        => 'switch',
         'title'       => esc_html__( 'No Follow Socials', 'wordtrap' ),

@@ -62,15 +62,6 @@ Redux::set_section(
         'on'       => esc_html__( 'Enable', 'wordtrap' ),
         'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
-      array(
-        'id'       => 'show-mobile-sidebar',
-        'type'     => 'switch',
-        'title'    => esc_html__( 'Show Sidebar in Navigation on Mobile', 'wordtrap' ),
-        'desc'     => esc_html__( 'Show sidebar toggle button only which leads to the sidebar on the left side of the window.', 'wordtrap' ),
-        'default'  => false,
-        'on'       => esc_html__( 'Yes', 'wordtrap' ),
-        'off'      => esc_html__( 'No', 'wordtrap' ),
-      ),
     ),
   )
 );

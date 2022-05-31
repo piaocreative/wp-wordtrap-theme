@@ -9,6 +9,12 @@ mark {
   background-color: inherit;
 }
 
+// Column
+.wp-block-column.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 // Calendar
 .wp-block-calendar {
   table {

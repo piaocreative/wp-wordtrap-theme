@@ -40,6 +40,7 @@ div[data-type~="wordtrap-padding"], div[data-type~="wordtrap-margin"]{
   height: 16px;
   width: 16px;
   fill: #444;
+  pointer-events: none;
 }
 
 .wordtrap_acf-checkbox-true-false[type=checkbox]:checked + label {

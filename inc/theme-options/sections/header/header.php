@@ -17,17 +17,6 @@ Redux::set_section(
     'icon'             => 'dashicons-before dashicons-align-full-width',
     'fields'           => array(
       array(
-        'id'            => 'header-type',
-        'type'          => 'button_set',
-        'title'         => esc_html__( 'Type', 'wordtrap' ),
-        'options'       => array(
-          ''            => esc_html__( 'Normal', 'wordtrap' ),
-          'left-side'   => esc_html__( 'Left Side', 'wordtrap' ),
-          'right-side'  => esc_html__( 'Right Side', 'wordtrap' ),
-        ),
-        'default'       => '',
-      ),
-      array(
         'id'            => 'header-layout',
         'type'          => 'image_select',
         'title'         => esc_html__( 'Header Layout', 'wordtrap' ),
@@ -53,20 +42,6 @@ Redux::set_section(
         'on'            => esc_html__( 'Enable', 'wordtrap' ),
         'off'           => esc_html__( 'Disable', 'wordtrap' ),
       ),      
-      array(
-        'id'            => 'header-login-link',
-        'type'          => 'text',
-        'title'         => esc_html__( 'Login URL', 'wordtrap' ),
-        'validate'      => array( 'url' ),
-        'default'       => site_url( 'wp-login.php' ),
-      ),
-      array(
-        'id'            => 'header-logout-link',
-        'type'          => 'text',
-        'title'         => esc_html__( 'Logout URL', 'wordtrap' ),
-        'validate'      => array( 'url' ),
-        'default'       => site_url( 'wp-login.php?action=logout' ),
-      ),
       array(
         'id'            => 'sticky-header-start',
         'type'          => 'section',

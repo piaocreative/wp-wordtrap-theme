@@ -174,9 +174,9 @@ Redux::set_section(
       array(
         'id'       => 'spacers',
         'type'     => 'multi_text',
-        'title'    => esc_html__( 'Spacer Maps', 'wordtrap' ),
+        'title'    => esc_html__( 'Spacers', 'wordtrap' ),
         'validate' => array( 'numeric', 'not_empty' ),
-        'default'  => ['0', '0.2', '0.5', '1', '1.5', '3'],
+        'default'  => ['0', '0.25', '0.5', '1', '1.5', '3'],
       ),
       array(
         'id'       => 'spacers-end',

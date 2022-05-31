@@ -39,14 +39,6 @@ Redux::set_section(
         'default'  => 'right-sidebar',
       ),
       array(
-        'id'       => 'members-ajax',
-        'type'     => 'switch',
-        'title'    => esc_html__( 'Ajax Load', 'wordtrap' ),
-        'default'  => false,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
-      ),
-      array(
         'id'       => 'members-cat-orderby',
         'type'     => 'button_set',
         'title'    => esc_html__( 'Categories Order By', 'wordtrap' ),
@@ -61,54 +53,12 @@ Redux::set_section(
         'default'  => 'asc',
       ),
       array(
-        'id'       => 'members-cat-filter-position',
-        'type'     => 'button_set',
-        'title'    => esc_html__( 'Categories Filter Position', 'wordtrap' ),
-        'options'  => $cats_filter_position_options,
-        'default'  => 'content',
-      ),
-      array(
-        'id'       => 'members-columns',
-        'type'     => 'slider',
-        'title'    => esc_html__( 'Columns', 'wordtrap' ),
-        'default'  => 4,
-        'min'      => 2,
-        'max'      => 6,
-      ),
-      array(
-        'id'       => 'members-pagination',
-        'type'     => 'button_set',
-        'title'    => esc_html__( 'Pagination Style', 'wordtrap' ),
-        'options'  => $pagination_options,
-        'default'  => 'infinite',
-      ),
-      array(
         'id'       => 'members-view',
         'type'     => 'image_select',
         'title'    => esc_html__( 'View Type', 'wordtrap' ),
         'default'  => '1',
         'options'  => $members_view_options
       ),
-      array(
-        'id'       => 'members-thumb-size',
-        'type'     => 'button_set',
-        'title'    => esc_html__( 'Image Size', 'wordtrap' ),
-        'options'  => array(
-          ''       => esc_html__( 'Static', 'wordtrap' ),
-          'full'   => esc_html__( 'Full', 'wordtrap' ),
-        ),
-        'default'  => '',
-      ),
-      array(
-        'id'       => 'members-thumb-hover',
-        'type'     => 'button_set',
-        'title'    => esc_html__( 'Image Hover Effect', 'wordtrap' ),
-        'options'  => array(
-          ''          => esc_html__( 'None', 'wordtrap' ),
-          'zoom'      => esc_html__( 'Zoom', 'wordtrap' ),          
-        ),
-        'default'  => '',
-      ),      
       array(
         'id'       => 'members-readmore',
         'type'     => 'switch',
@@ -123,14 +73,6 @@ Redux::set_section(
         'title'    => esc_html__( 'Read More Label', 'wordtrap' ),
         'required' => array( 'members-readmore', 'equals', true ),
         'placeholder' => esc_html__( 'View More...', 'wordtrap' ),
-      ),
-      array(
-        'id'       => 'members-external-link',
-        'type'     => 'switch',
-        'title'    => esc_html__( 'Use External Link', 'wordtrap' ),
-        'default'  => false,
-        'on'       => esc_html__( 'Yes', 'wordtrap' ),
-        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'members-overview',
