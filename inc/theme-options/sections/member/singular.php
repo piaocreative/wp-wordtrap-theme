@@ -16,14 +16,6 @@ Redux::set_section(
     'subsection'   => true,
     'fields'       => array(
       array(
-        'id'       => 'member-backto',
-        'type'     => 'switch',
-        'title'    => esc_html__( 'Back to Members', 'wordtrap' ),
-        'default'  => false,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
-      ),
-      array(
         'id'       => 'member-layout',
         'type'     => 'image_select',
         'title'    => esc_html__( 'Main Layout', 'wordtrap' ),

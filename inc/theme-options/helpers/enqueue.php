@@ -17,6 +17,7 @@ if ( ! function_exists( 'wordtrap_theme_options_scripts' ) ) {
     global $pagenow;
     if ( is_customize_preview() || ( ( $pagenow == 'themes.php' || $pagenow == 'admin.php' ) && isset( $_GET['page'] ) && $_GET['page'] === WORDTRAP_OPTIONS ) ) {
       wp_enqueue_style( 'wordtrap-theme-options', WORDTRAP_OPTIONS_URI . '/assets/css/theme_options.css', false, WORDTRAP_VERSION );
+      wp_enqueue_script( 'wordtrap-theme-options', WORDTRAP_OPTIONS_URI . '/assets/js/theme_options.js', array( 'jquery' ), WORDTRAP_VERSION, true );
     }
   }
 }

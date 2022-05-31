@@ -680,3 +680,8 @@ html[dir="rtl"] .wp-customizer .redux-container .redux-container-image_select ul
 .indent-section-container {
   margin-top: 1em;
 }
+
+#wordtrap_options-spacers .redux-multi-text-add,
+#wordtrap_options-spacers .redux-multi-text-remove {
+  display: none;
+}

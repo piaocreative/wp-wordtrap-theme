@@ -87,7 +87,7 @@ elseif ( wordtrap_options( 'header-position' ) != 'hide' ) :
                */
               wp_nav_menu( array(
                 'theme_location'  => 'primary',
-                'container_class' => 'main-menu-container ' . ( ( ( ! is_user_logged_in() && wordtrap_options( 'header-login-link' ) ) || ( is_user_logged_in() && wordtrap_options( 'header-logout-link' ) ) ) ? 'me-auto' : 'ms-auto' ),
+                'container_class' => 'main-menu-container ms-auto',
                 'container_id'    => '',
                 'menu_class'      => 'navbar-nav',
                 'fallback_cb'     => '',
@@ -95,23 +95,7 @@ elseif ( wordtrap_options( 'header-position' ) != 'hide' ) :
                 'depth'           => 2,
                 'walker'          => new Wordtrap_WP_Bootstrap_Navwalker(),
               ) );
-              ?>
-
-              <?php
-              /**
-               * Login/Logout Link
-               */
-              if ( ! is_user_logged_in() && wordtrap_options( 'header-login-link' ) ) :
-                ?>
-                <a href="<?php echo esc_url( wordtrap_options( 'header-login-link' ) ) ?>" class="d-flex justify-content-center btn btn-outline-primary"><?php _e( 'Login', 'wordtrap' ) ?></a>
-                <?php
-              endif;
-              if ( is_user_logged_in() && wordtrap_options( 'header-logout-link' ) ) :
-                ?>
-                <a href="<?php echo esc_url( wordtrap_options( 'header-logout-link' ) ) ?>" class="d-flex justify-content-center btn btn-outline-primary"><?php _e( 'Logout', 'wordtrap' ) ?></a>
-                <?php
-              endif;
-              ?>
+              ?>              
             </div>
 
           </div><!-- #header-main -->

@@ -44,7 +44,7 @@ if ( ! ( $show_hot || $show_new || $show_sale ) ) {
   // display new label
   if ( $show_new ) {
     echo '<span class="onnew">' 
-      . ( wordtrap_options( 'product-new-label' ) ? esc_html( wordtrap_options( 'product-new' ) ) : esc_html__( 'New', 'wordtrap' ) ) 
+      . ( wordtrap_options( 'product-new' ) ? esc_html( wordtrap_options( 'product-new' ) ) : esc_html__( 'New', 'wordtrap' ) ) 
       . '</span>';
   }
 
