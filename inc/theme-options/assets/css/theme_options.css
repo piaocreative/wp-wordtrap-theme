@@ -218,16 +218,16 @@ html[dir="rtl"] .redux-container .redux-action_bar input {
 }
 
 .redux-main .button-secondary {
-  background: #C3CCD6;
-  border-color: #C3CCD6;
-  color: #fff;
+  background: #fff;
+  border-color: #43C237;
+  color: #43C237;
 }
 
 .redux-main .button-secondary:hover,
 .redux-main .button-secondary:focus {
-  background: transparent;
-  border-color: transparent;  
-  color: #C3CCD6;
+  background: #43C237;
+  border-color: #43C237;
+  color: #fff;
 }
 
 .redux-main .button.remove-image, 

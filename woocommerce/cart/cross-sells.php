@@ -16,13 +16,13 @@ wc_set_loop_prop( 'view-mode', 'grid' );
 
 $classes = array();
 $options = array();
-if ( wordtrap_options( 'product-related-carousel' ) ) {
+if ( wordtrap_options( 'product-cross-sells-carousel' ) ) {
 	$slider_mode = 'carousel';
 
 	$classes[] = 'posts-slider';
   $classes[] = 'posts-' . $slider_mode;
 
-  $options[ 'items' ] = wordtrap_options( 'product-related-columns-sm' );
+  $options[ 'items' ] = wordtrap_options( 'product-cross-sells-columns-sm' );
   $options[ 'mode' ] = $slider_mode;
   $options[ 'slideBy' ] = 'page';
   $options[ 'autoplay' ] = true;
@@ -36,18 +36,18 @@ if ( wordtrap_options( 'product-related-carousel' ) ) {
     $options[ 'xl' ][ 'gutter' ] = 30;
   }
   
-	$options[ 'sm' ][ 'items' ] = wordtrap_options( 'product-related-columns-sm' );
-  $options[ 'md' ][ 'items' ] = wordtrap_options( 'product-related-columns-md' );
-  $options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-related-columns-lg' );
-  $options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-related-columns-xl' );  
-  $options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-related-columns-xxl' );  
+	$options[ 'sm' ][ 'items' ] = wordtrap_options( 'product-cross-sells-columns-sm' );
+  $options[ 'md' ][ 'items' ] = wordtrap_options( 'product-cross-sells-columns-md' );
+  $options[ 'lg' ][ 'items' ] = wordtrap_options( 'product-cross-sells-columns-lg' );
+  $options[ 'xl' ][ 'items' ] = wordtrap_options( 'product-cross-sells-columns-xl' );  
+  $options[ 'xxl' ][ 'items' ] = wordtrap_options( 'product-cross-sells-columns-xxl' );  
 } else {
 	$classes[] = 'row';
-	$classes[] = 'row-cols-sm-' . wordtrap_options( 'product-related-columns-sm' );
-  $classes[] = 'row-cols-md-' . wordtrap_options( 'product-related-columns-md' );
-  $classes[] = 'row-cols-lg-' . wordtrap_options( 'product-related-columns-lg' );
-  $classes[] = 'row-cols-xl-' . wordtrap_options( 'product-related-columns-xl' );
-  $classes[] = 'row-cols-xxl-' . wordtrap_options( 'product-related-columns-xxl' );
+	$classes[] = 'row-cols-sm-' . wordtrap_options( 'product-cross-sells-columns-sm' );
+  $classes[] = 'row-cols-md-' . wordtrap_options( 'product-cross-sells-columns-md' );
+  $classes[] = 'row-cols-lg-' . wordtrap_options( 'product-cross-sells-columns-lg' );
+  $classes[] = 'row-cols-xl-' . wordtrap_options( 'product-cross-sells-columns-xl' );
+  $classes[] = 'row-cols-xxl-' . wordtrap_options( 'product-cross-sells-columns-xxl' );
 }
 wc_set_loop_prop( 'view-classes', implode( ' ', $classes ) );
 wc_set_loop_prop( 'view-options', json_encode( $options ) );

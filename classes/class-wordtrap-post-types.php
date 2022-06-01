@@ -34,7 +34,7 @@ if ( ! class_exists( 'Wordtrap_Post_Types' ) ) {
       add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
     
       add_action(
-        'admin_init',
+        'init',
         function() {
           if ( current_user_can( 'manage_options' ) && get_transient( 'wordtrap_flush_rewrite_rules' ) ) {
             flush_rewrite_rules();

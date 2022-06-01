@@ -1,6 +1,6 @@
 <?php
 /**
- * Post rendering content according to caller of get_template_part
+ * Member rendering content according to caller of get_template_part
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -70,7 +70,7 @@ $layout = $main_layout[ 'layout' ];
         if ( $role ) :
           ?>
           <div class="entry-meta">
-            <span class="text-primary"><?php echo $role ?></span>
+            <span><?php echo $role ?></span>
           </div>
           <?php 
         endif; ?>

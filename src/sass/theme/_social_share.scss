@@ -9,6 +9,7 @@
   a {
     @extend .btn;
     background: $light;
+    border-width: 0;
     color: $gray-500;
     padding: 0;
     width: 2.25rem;

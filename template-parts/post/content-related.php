@@ -1,6 +1,6 @@
 <?php
 /**
- * Post rendering content according to caller of get_template_part
+ * Related post rendering content according to caller of get_template_part
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0

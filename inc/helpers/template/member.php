@@ -93,7 +93,9 @@ if ( ! function_exists( 'wordtrap_member_follow_links' ) ) {
    * Member follow links
    */
   function wordtrap_member_follow_links() {
-    wordtrap_get_template_part( 'template-parts/member/follow' );
+    if ( wordtrap_options( 'members-follows' ) ) {
+      wordtrap_get_template_part( 'template-parts/member/follow' );
+    }
   }
 }
 
