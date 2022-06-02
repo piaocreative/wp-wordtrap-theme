@@ -36,7 +36,7 @@ $link_url = ( isset( $link['url'] ) && $link['url'] ) ? $link['url'] : '';
 $link_target = ( isset( $link['target'] ) && $link['target'] ) ? $link['target'] : '';
 
 // Button classes
-$classes = array( 'wordtrap-block', 'wordtrap-button' );
+$classes = array( 'wordtrap-block', 'wordtrap-button', $block['className'] );
 $sub_classes = array( 'btn' );
 if ( $style != '-' ) $sub_classes[] = 'btn-' . ( $outline ? 'outline-' : '') . $style;
 if ( $size != '-' ) $sub_classes[] = 'btn-' . $size;
