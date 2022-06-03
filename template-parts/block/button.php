@@ -71,9 +71,7 @@ if ( $customize ) {
   $hover_border_color = $button[ 'hover_border_color' ];
   $border_width = $button[ 'border_width' ];
   $border_radius = $button['border_radius'];
-  $margin = get_field( 'margin' );
-  $padding = get_field( 'padding' );
-
+  
   $style .= wordtrap_acf_typography_style( $typography_title );
   if ( $color ) $style .= 'color:' . esc_attr( $color ) . ';';
   if ( $background_color ) $style .= 'background-color:' . esc_attr( $background_color ) . ';';
@@ -90,12 +88,14 @@ if ( $customize ) {
 }
 
 // Margin
+$margin = get_field( 'margin' );
 if ( $margin[ 'margin_top' ] != '' ) $style .= 'margin-top:' . esc_attr( $margin[ 'margin_top' ] ) . 'px;';
 if ( $margin[ 'margin_right' ] != '' ) $style .= 'margin-right:' . esc_attr( $margin[ 'margin_right' ] ) . 'px;';
 if ( $margin[ 'margin_bottom' ] != '' ) $style .= 'margin-bottom:' . esc_attr( $margin[ 'margin_bottom' ] ) . 'px;';
 if ( $margin[ 'margin_left' ] != '' ) $style .= 'margin-left:' . esc_attr( $margin[ 'margin_left' ] ) . 'px;';
 
 // Padding
+$padding = get_field( 'padding' );
 if ( $padding[ 'padding_top' ] != '' ) $style .= 'padding-top:' . esc_attr( $padding[ 'padding_top' ] ) . 'px;';
 if ( $padding[ 'padding_right' ] != '' ) $style .= 'padding-right:' . esc_attr( $padding[ 'padding_right' ] ) . 'px;';
 if ( $padding[ 'padding_bottom' ] != '' ) $style .= 'padding-bottom:' . esc_attr( $padding[ 'padding_bottom' ] ) . 'px;';
