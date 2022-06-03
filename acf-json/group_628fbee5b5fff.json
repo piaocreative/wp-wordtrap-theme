@@ -51,7 +51,7 @@
                 "-": "None",
                 "primary": "Primary",
                 "secondary": "Secondary",
-                "Success": "Success",
+                "success": "Success",
                 "danger": "Danger",
                 "warning": "Warning",
                 "info": "Info",
@@ -792,5 +792,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1654271920
+    "modified": 1654278748
 }
