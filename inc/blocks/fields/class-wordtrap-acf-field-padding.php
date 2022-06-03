@@ -131,7 +131,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 id="test"
                 name="<?php echo $field['name'] . 'padding_top' ?>"
                 value="<?php echo esc_attr($field['value']['padding_top']) ?>" 
-                step="1" style="width: 3.9em;"
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
@@ -149,7 +149,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 id="test"
                 name="<?php echo $field['name'] . 'padding_right' ?>"
                 value="<?php echo esc_attr($field['value']['padding_right']) ?>" 
-                step="1" style="width: 3.9em;"
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
@@ -167,7 +167,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 id="test"
                 name="<?php echo $field['name'] . 'padding_bottom' ?>"
                 value="<?php echo esc_attr($field['value']['padding_bottom']) ?>" 
-                step="1" style="width: 3.9em;"
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
@@ -185,7 +185,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 id="test"
                 name="<?php echo $field['name'] . 'padding_left' ?>"
                 value="<?php echo esc_attr($field['value']['padding_left']) ?>" 
-                step="1" style="width: 3.9em;"
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
