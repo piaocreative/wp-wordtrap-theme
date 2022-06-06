@@ -21,7 +21,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
     $this->label = __( 'Padding', 'wordtrap' );
     $this->category = 'basic';
     $this->defaults = array(
-      'padding_enable' => 0
+      'enable' => 0
     );
     $this->l10n = array(
       'error' => __( 'Error! Please enter a higher value', 'wordtrap' ),
@@ -42,7 +42,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
       'label'        => __( 'Enable Field','wordtrap' ),
       'instructions' => __( 'Default','wordtrap' ),
       'type'         => 'true_false',
-      'name'         => 'padding_enable',
+      'name'         => 'enable',
       'layout'       => 'horizontal',
       'ui'           => 0
     ) );
@@ -51,7 +51,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
       'label'        => __( 'Padding Top', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'padding_top',
+      'name'         => 'top',
       'prepend'      => 'px',
     ) );
     
@@ -59,7 +59,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
       'label'        => __( 'Padding Right', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'padding_right',
+      'name'         => 'right',
       'prepend'      => 'px',
     ) );
 
@@ -67,7 +67,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
       'label'        => __( 'Padding Bottom', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'padding_bottom',
+      'name'         => 'bottom',
       'prepend'      => 'px',
     ) );
 
@@ -75,7 +75,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
       'label'        => __( 'Padding Left', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'padding_left',
+      'name'         => 'left',
       'prepend'      => 'px',
     ) );
   }
@@ -91,23 +91,23 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
     $field = array_merge($this->defaults, $field);
 
     if ( empty($field['value']) ) {
-      $field['value']['padding_enable'] = $field['padding_enable'];
-      $field['value']['padding_top'] = $field['padding_top'];
-      $field['value']['padding_bottom'] = $field['padding_bottom'];
-      $field['value']['padding_left'] = $field['padding_left'];
-      $field['value']['padding_right'] = $field['padding_right'];
+      $field['value']['enable'] = $field['enable'];
+      $field['value']['top'] = $field['top'];
+      $field['value']['bottom'] = $field['bottom'];
+      $field['value']['left'] = $field['left'];
+      $field['value']['right'] = $field['right'];
     }
     ?>
     <div class="acf_padding_root wordtrap_acf_cs_field_root">
       <div class="acf-input">
         <div class="acf-true-false">
           <input type="checkbox" 
-          name="<?php echo $field['name'] . 'padding_enable' ?>" 
-          value="<?php echo $field['value']['padding_enable']; ?>"
+          name="<?php echo $field['name'] . 'enable' ?>" 
+          value="<?php echo $field['value']['enable']; ?>"
           id="wordtrap_acf_eye_padding_<?php echo $field['name']; ?>" 
           class="wordtrap_acf-checkbox-true-false"
           <?php 
-            if ($field['value']['padding_enable'] === 1) {
+            if ($field['value']['enable'] === 1) {
               echo 'checked';
             }
           ?>
@@ -116,7 +116,7 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
         </div>
       </div>
       <?php 
-      $wordtrap_acf_padding_display = $field['value']['padding_enable'] === 1 ? 'block' : 'none';
+      $wordtrap_acf_padding_display = $field['value']['enable'] === 1 ? 'block' : 'none';
       ?>
       <div class="wordtrap_acf_padding_main wordtrap_acf_cs_field_main" style="display: <?php echo $wordtrap_acf_padding_display; ?>">
         <div class="wordtrap_acf-padding">
@@ -129,8 +129,8 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'padding_top' ?>"
-                value="<?php echo esc_attr($field['value']['padding_top']) ?>" 
+                name="<?php echo $field['name'] . 'top' ?>"
+                value="<?php echo esc_attr($field['value']['top']) ?>" 
                 step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
@@ -147,8 +147,8 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'padding_right' ?>"
-                value="<?php echo esc_attr($field['value']['padding_right']) ?>" 
+                name="<?php echo $field['name'] . 'right' ?>"
+                value="<?php echo esc_attr($field['value']['right']) ?>" 
                 step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
@@ -165,8 +165,8 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'padding_bottom' ?>"
-                value="<?php echo esc_attr($field['value']['padding_bottom']) ?>" 
+                name="<?php echo $field['name'] . 'bottom' ?>"
+                value="<?php echo esc_attr($field['value']['bottom']) ?>" 
                 step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
@@ -183,8 +183,8 @@ class Wordtrap_ACF_Field_Padding extends acf_field {
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'padding_left' ?>"
-                value="<?php echo esc_attr($field['value']['padding_left']) ?>" 
+                name="<?php echo $field['name'] . 'left' ?>"
+                value="<?php echo esc_attr($field['value']['left']) ?>" 
                 step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>

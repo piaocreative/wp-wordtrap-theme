@@ -18,5 +18,6 @@ if ( ! function_exists( 'wordtrap_include_acf_fields' ) ) {
   function wordtrap_include_acf_fields() {
     include_once WORDTRAP_BLOCKS_PATH . 'fields/class-wordtrap-acf-field-margin.php';
     include_once WORDTRAP_BLOCKS_PATH . 'fields/class-wordtrap-acf-field-padding.php';
+    include_once WORDTRAP_BLOCKS_PATH . 'fields/class-wordtrap-acf-field-border-radius.php';
   }
 }

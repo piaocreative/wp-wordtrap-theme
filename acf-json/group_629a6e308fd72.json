@@ -1,0 +1,379 @@
+{
+    "key": "group_629a6e308fd72",
+    "title": "Tabs",
+    "fields": [
+        {
+            "key": "field_629a4727e8c3f",
+            "label": "Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_629a4756e8c41",
+            "label": "Add Tab",
+            "name": "acfb_add_tab",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Tab",
+            "sub_fields": [
+                {
+                    "key": "field_629a4781e8c42",
+                    "label": "Tab Title",
+                    "name": "acfb_tab_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Title",
+                    "placeholder": "Title",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_629a4793e8c43",
+                    "label": "Tab Content",
+                    "name": "acfb_tab_content",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Tab Content",
+                    "placeholder": "Tab Content",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
+            "key": "field_629a4747e8c40",
+            "label": "Design",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_629a7aa0202a2",
+            "label": "Typography",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_629a7b72202aa",
+            "label": "Title",
+            "name": "acfb_tab_title_typo",
+            "type": "typography",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "font_family_enable": 0,
+            "font_family": "default",
+            "font_size": 18,
+            "font_weight": "default",
+            "font_transform": "default",
+            "font_style": "default",
+            "font_decoration": "default",
+            "font_line_height": "0.1",
+            "font_letter_spacing": 0
+        },
+        {
+            "key": "field_629a7bad202ab",
+            "label": "Content",
+            "name": "acfb_tab_content_typo",
+            "type": "typography",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "font_family_enable": 0,
+            "font_family": "default",
+            "font_size": 18,
+            "font_weight": "default",
+            "font_transform": "default",
+            "font_style": "default",
+            "font_decoration": "default",
+            "font_line_height": "0.1",
+            "font_letter_spacing": 0
+        },
+        {
+            "key": "field_629a7ab6202a4",
+            "label": "Colors",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_629aaa63cfbd0",
+            "label": "Title Background Color",
+            "name": "acfb_tab_title_background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#e0e0e0",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_629aaaa8cfbd2",
+            "label": "Title Active Background Color",
+            "name": "acfb_tab_title_active_background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#f3f4f5",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_629aaad9cfbd3",
+            "label": "Title Active Color",
+            "name": "acfb_tab_title_active_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#191e23",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_629aaa83cfbd1",
+            "label": "Title Color",
+            "name": "acfb_tab_title_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#191e23",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_629aab63cfbd5",
+            "label": "Content Background color",
+            "name": "acfb_tab_content_background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#f3f4f5",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_629aab7bcfbd6",
+            "label": "Content Color",
+            "name": "acfb_tab_content_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#191e23",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_629a7abd202a5",
+            "label": "Spacing",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_629a7af6202a7",
+            "label": "Margin",
+            "name": "acfb_tab_margin",
+            "type": "margin",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "margin_enable": 0,
+            "margin_top": "",
+            "margin_right": "",
+            "margin_bottom": "",
+            "margin_left": ""
+        },
+        {
+            "key": "field_629a7b10202a8",
+            "label": "Padding",
+            "name": "acfb_tab_padding",
+            "type": "padding",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "padding_enable": 0,
+            "padding_top": "",
+            "padding_right": "",
+            "padding_bottom": "",
+            "padding_left": ""
+        },
+        {
+            "key": "field_629a7b4f202a9",
+            "label": "Content Padding",
+            "name": "acfb_tab_content_padding",
+            "type": "padding",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "padding_enable": 0,
+            "padding_top": 20,
+            "padding_right": 20,
+            "padding_bottom": 20,
+            "padding_left": 20
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/wordtrap-tabs"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1654478109
+}

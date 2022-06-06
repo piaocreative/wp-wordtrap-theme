@@ -1,5 +1,5 @@
 
-.acf-field.acf-field-wordtrap-Typography > .acf-input {
+.acf-field.acf-field-Typography > .acf-input {
   border: #ccd0d4 solid 1px;
   padding: 5px 16px;
 }
@@ -9,6 +9,7 @@ div[data-type~="wordtrap-padding"], div[data-type~="wordtrap-margin"]{
   border: 1px solid #c5c5c5 !important;
 }
 
+.acf-field-wordtrap-border-radius .wordtrap_acf-border_radius,
 .acf-field-wordtrap-padding .wordtrap_acf-padding,
 .acf-field-wordtrap-margin .wordtrap_acf-margin {
   display: grid;
@@ -16,6 +17,7 @@ div[data-type~="wordtrap-padding"], div[data-type~="wordtrap-margin"]{
   justify-items: center;
 }
 
+.acf-field-wordtrap-border-radius .wordtrap_acf-border_radius .acf-range-wrap input,
 .acf-field-wordtrap-padding .wordtrap_acf-padding .acf-range-wrap input,
 .acf-field-wordtrap-margin .wordtrap_acf-margin .acf-range-wrap input {
   margin-left: 0; 
@@ -60,6 +62,7 @@ div[data-type~="wordtrap-padding"], div[data-type~="wordtrap-margin"]{
   height: 15px;
 }
 
+.wordtrap_acf_border_radius_main,
 .wordtrap_acf_margin_main,
 .wordtrap_acf_padding_main {
   border: 1px solid #ccd0d4;
@@ -68,6 +71,7 @@ div[data-type~="wordtrap-padding"], div[data-type~="wordtrap-margin"]{
   padding: 10px 0;
 }
 
+.wordtrap_acf_border_radius_main .acf-field,
 .wordtrap_acf_margin_main .acf-field,
 .wordtrap_acf_padding_main .acf-field {
   margin: 8px 0;

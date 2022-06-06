@@ -58,48 +58,48 @@ $icon_placement = get_field( 'icon_placement' );
  */
 $style = $hover_style = '';
 
-// Button styles
-$customize = get_field( 'customize' );
-if ( $customize ) { 
-  $button = get_field( 'button' );
-  $typography_title = $button[ 'typography_title' ];
-  $color = $button[ 'color' ];
-  $background_color = $button[ 'background_color' ];
-  $border_color = $button[ 'border_color' ];
-  $hover_color = $button[ 'hover_color' ];
-  $hover_background_color = $button[ 'hover_background_color' ];
-  $hover_border_color = $button[ 'hover_border_color' ];
-  $border_width = $button[ 'border_width' ];
-  $border_radius = $button['border_radius'];
-  
-  $style .= wordtrap_acf_typography_style( $typography_title );
-  if ( $color ) $style .= 'color:' . esc_attr( $color ) . ';';
-  if ( $background_color ) $style .= 'background-color:' . esc_attr( $background_color ) . ';';
-  if ( $border_color ) $style .= 'border-color:' . esc_attr( $border_color ) . ';';
-  if ( $border_width != '' ) $style .= 'border-width:' . esc_attr( $border_width ) . 'px;';
-  if ( $border_radius[ 'top_left' ] != '' ) $style .= 'border-top-left-radius:' . esc_attr( $border_radius[ 'top_left' ] ) . 'px;';
-  if ( $border_radius[ 'top_right' ] != '' ) $style .= 'border-top-right-radius:' . esc_attr( $border_radius[ 'top_right' ] ) . 'px;';
-  if ( $border_radius[ 'bottom_left' ] != '' ) $style .= 'border-bottom-left-radius:' . esc_attr( $border_radius[ 'bottom_left' ] ) . 'px;';
-  if ( $border_radius[ 'bottom_right' ] != '' ) $style .= 'border-bottom-right-radius:' . esc_attr( $border_radius[ 'bottom_right' ] ) . 'px;';
+// Typography
+$typography_title       = get_field( 'typography_title' );
+$style .= wordtrap_acf_typography_style( $typography_title );
 
-  if ( $hover_color ) $hover_style .= 'color:' . esc_attr( $hover_color ) . ' !important;';
-  if ( $hover_background_color ) $hover_style .= 'background-color:' . esc_attr( $hover_background_color ) . ' !important;';
-  if ( $hover_border_color ) $hover_style .= 'border-color:' . esc_attr( $hover_border_color ) . ' !important;';
-}
+// Regular Colors
+$color                  = get_field( 'color' );
+$background_color       = get_field( 'background_color' );
+$border_color           = get_field( 'border_color' );
+if ( $color ) $style .= 'color:' . esc_attr( $color ) . ';';
+if ( $background_color ) $style .= 'background-color:' . esc_attr( $background_color ) . ';';
+if ( $border_color ) $style .= 'border-color:' . esc_attr( $border_color ) . ';';
+
+// Hover Colors
+$hover_color            = get_field( 'hover_color' );
+$hover_background_color = get_field( 'hover_background_color' );
+$hover_border_color     = get_field( 'hover_border_color' );
+if ( $hover_color ) $hover_style .= 'color:' . esc_attr( $hover_color ) . ' !important;';
+if ( $hover_background_color ) $hover_style .= 'background-color:' . esc_attr( $hover_background_color ) . ' !important;';
+if ( $hover_border_color ) $hover_style .= 'border-color:' . esc_attr( $hover_border_color ) . ' !important;';
+
+// Border
+$border_width           = get_field( 'border_width' );
+$border_radius          = get_field( 'border_radius' );
+if ( $border_width != '' ) $style .= 'border-width:' . esc_attr( $border_width ) . 'px;';
+if ( $border_radius[ 'top_left' ] != '' ) $style .= 'border-top-left-radius:' . esc_attr( $border_radius[ 'top_left' ] ) . 'px;';
+if ( $border_radius[ 'top_right' ] != '' ) $style .= 'border-top-right-radius:' . esc_attr( $border_radius[ 'top_right' ] ) . 'px;';
+if ( $border_radius[ 'bottom_left' ] != '' ) $style .= 'border-bottom-left-radius:' . esc_attr( $border_radius[ 'bottom_left' ] ) . 'px;';
+if ( $border_radius[ 'bottom_right' ] != '' ) $style .= 'border-bottom-right-radius:' . esc_attr( $border_radius[ 'bottom_right' ] ) . 'px;';
 
 // Margin
 $margin = get_field( 'margin' );
-if ( $margin[ 'margin_top' ] != '' ) $style .= 'margin-top:' . esc_attr( $margin[ 'margin_top' ] ) . 'px;';
-if ( $margin[ 'margin_right' ] != '' ) $style .= 'margin-right:' . esc_attr( $margin[ 'margin_right' ] ) . 'px;';
-if ( $margin[ 'margin_bottom' ] != '' ) $style .= 'margin-bottom:' . esc_attr( $margin[ 'margin_bottom' ] ) . 'px;';
-if ( $margin[ 'margin_left' ] != '' ) $style .= 'margin-left:' . esc_attr( $margin[ 'margin_left' ] ) . 'px;';
+if ( $margin[ 'top' ] != '' ) $style .= 'margin-top:' . esc_attr( $margin[ 'top' ] ) . 'px;';
+if ( $margin[ 'right' ] != '' ) $style .= 'margin-right:' . esc_attr( $margin[ 'right' ] ) . 'px;';
+if ( $margin[ 'bottom' ] != '' ) $style .= 'margin-bottom:' . esc_attr( $margin[ 'bottom' ] ) . 'px;';
+if ( $margin[ 'left' ] != '' ) $style .= 'margin-left:' . esc_attr( $margin[ 'left' ] ) . 'px;';
 
 // Padding
 $padding = get_field( 'padding' );
-if ( $padding[ 'padding_top' ] != '' ) $style .= 'padding-top:' . esc_attr( $padding[ 'padding_top' ] ) . 'px;';
-if ( $padding[ 'padding_right' ] != '' ) $style .= 'padding-right:' . esc_attr( $padding[ 'padding_right' ] ) . 'px;';
-if ( $padding[ 'padding_bottom' ] != '' ) $style .= 'padding-bottom:' . esc_attr( $padding[ 'padding_bottom' ] ) . 'px;';
-if ( $padding[ 'padding_left' ] != '' ) $style .= 'padding-left:' . esc_attr( $padding[ 'padding_left' ] ) . 'px;';
+if ( $padding[ 'top' ] != '' ) $style .= 'padding-top:' . esc_attr( $padding[ 'top' ] ) . 'px;';
+if ( $padding[ 'right' ] != '' ) $style .= 'padding-right:' . esc_attr( $padding[ 'right' ] ) . 'px;';
+if ( $padding[ 'bottom' ] != '' ) $style .= 'padding-bottom:' . esc_attr( $padding[ 'bottom' ] ) . 'px;';
+if ( $padding[ 'left' ] != '' ) $style .= 'padding-left:' . esc_attr( $padding[ 'left' ] ) . 'px;';
 
 if ( $style ) {
   $style = ' style="' . $style . '"';

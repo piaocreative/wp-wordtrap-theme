@@ -1,6 +1,6 @@
 <?php
 /**
- * The acf margin field
+ * The acf border radius field
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -10,15 +10,15 @@
 defined( 'ABSPATH' ) || exit;
 
 // check if class already exists
-if ( ! class_exists( 'Wordtrap_ACF_Field_Margin' ) ) :
+if ( ! class_exists( 'Wordtrap_ACF_Field_Border_Radius' ) ) :
 
-class Wordtrap_ACF_Field_Margin extends acf_field {
+class Wordtrap_ACF_Field_Border_Radius extends acf_field {
   /**
    * Construct
    */
   function __construct() {
-    $this->name = 'wordtrap_margin';
-    $this->label = __( 'Margin', 'wordtrap' );
+    $this->name = 'wordtrap_border_radius';
+    $this->label = __( 'Border Radius', 'wordtrap' );
     $this->category = 'basic';
     $this->defaults = array(
       'enable' => 0
@@ -48,34 +48,34 @@ class Wordtrap_ACF_Field_Margin extends acf_field {
     ) );
 
     acf_render_field_setting( $field, array(
-      'label'        => __( 'Margin Top', 'wordtrap' ),
+      'label'        => __( 'Border Radius Top Left', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'top',
+      'name'         => 'top_left',
       'prepend'      => 'px',
     ) );
     
     acf_render_field_setting( $field, array(
-      'label'        => __( 'Margin Right', 'wordtrap' ),
+      'label'        => __( 'Border Radius Top Right', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'right',
+      'name'         => 'top_right',
       'prepend'      => 'px',
     ) );
 
     acf_render_field_setting( $field, array(
-      'label'        => __( 'Margin Bottom', 'wordtrap' ),
+      'label'        => __( 'Border Radius Bottom Right', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'bottom',
+      'name'         => 'bottom_right',
       'prepend'      => 'px',
     ) );
 
     acf_render_field_setting( $field, array(
-      'label'        => __( 'Margin Left', 'wordtrap' ),
+      'label'        => __( 'Border Radius Bottom Left', 'wordtrap' ),
       'instructions' => __( 'Default', 'wordtrap' ),
       'type'         => 'number',
-      'name'         => 'left',
+      'name'         => 'bottom_left',
       'prepend'      => 'px',
     ) );
   }
@@ -92,19 +92,19 @@ class Wordtrap_ACF_Field_Margin extends acf_field {
 
     if ( empty($field['value']) ) {
       $field['value']['enable'] = $field['enable'];
-      $field['value']['top'] = $field['top'];
-      $field['value']['bottom'] = $field['bottom'];
-      $field['value']['left'] = $field['left'];
-      $field['value']['right'] = $field['right'];
+      $field['value']['top_left'] = $field['top_left'];
+      $field['value']['top_right'] = $field['top_right'];
+      $field['value']['bottom_left'] = $field['bottom_left'];
+      $field['value']['bottom_right'] = $field['bottom_right'];
     }
     ?>
-    <div class="acf_margin_root wordtrap_acf_cs_field_root">
+    <div class="acf_border_radius_root wordtrap_acf_cs_field_root">
       <div class="acf-input">
         <div class="acf-true-false">
           <input type="checkbox" 
           name="<?php echo $field['name'] . 'enable' ?>" 
           value="<?php echo $field['value']['enable']; ?>"
-          id="wordtrap_acf_eye_margin_<?php echo $field['name']; ?>" 
+          id="wordtrap_acf_eye_border_radius_<?php echo $field['name']; ?>" 
           class="wordtrap_acf-checkbox-true-false"
           <?php 
             if ($field['value']['enable'] === 1) {
@@ -112,26 +112,26 @@ class Wordtrap_ACF_Field_Margin extends acf_field {
             }
           ?>
           >
-          <label for="wordtrap_acf_eye_margin_<?php echo $field['name']; ?>"><svg class="wordtrap_acf_eye_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M373.1 24.97C401.2-3.147 446.8-3.147 474.9 24.97L487 37.09C515.1 65.21 515.1 110.8 487 138.9L289.8 336.2C281.1 344.8 270.4 351.1 258.6 354.5L158.6 383.1C150.2 385.5 141.2 383.1 135 376.1C128.9 370.8 126.5 361.8 128.9 353.4L157.5 253.4C160.9 241.6 167.2 230.9 175.8 222.2L373.1 24.97zM440.1 58.91C431.6 49.54 416.4 49.54 407 58.91L377.9 88L424 134.1L453.1 104.1C462.5 95.6 462.5 80.4 453.1 71.03L440.1 58.91zM203.7 266.6L186.9 325.1L245.4 308.3C249.4 307.2 252.9 305.1 255.8 302.2L390.1 168L344 121.9L209.8 256.2C206.9 259.1 204.8 262.6 203.7 266.6zM200 64C213.3 64 224 74.75 224 88C224 101.3 213.3 112 200 112H88C65.91 112 48 129.9 48 152V424C48 446.1 65.91 464 88 464H360C382.1 464 400 446.1 400 424V312C400 298.7 410.7 288 424 288C437.3 288 448 298.7 448 312V424C448 472.6 408.6 512 360 512H88C39.4 512 0 472.6 0 424V152C0 103.4 39.4 64 88 64H200z"/></svg></label>
+          <label for="wordtrap_acf_eye_border_radius_<?php echo $field['name']; ?>"><svg class="wordtrap_acf_eye_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M373.1 24.97C401.2-3.147 446.8-3.147 474.9 24.97L487 37.09C515.1 65.21 515.1 110.8 487 138.9L289.8 336.2C281.1 344.8 270.4 351.1 258.6 354.5L158.6 383.1C150.2 385.5 141.2 383.1 135 376.1C128.9 370.8 126.5 361.8 128.9 353.4L157.5 253.4C160.9 241.6 167.2 230.9 175.8 222.2L373.1 24.97zM440.1 58.91C431.6 49.54 416.4 49.54 407 58.91L377.9 88L424 134.1L453.1 104.1C462.5 95.6 462.5 80.4 453.1 71.03L440.1 58.91zM203.7 266.6L186.9 325.1L245.4 308.3C249.4 307.2 252.9 305.1 255.8 302.2L390.1 168L344 121.9L209.8 256.2C206.9 259.1 204.8 262.6 203.7 266.6zM200 64C213.3 64 224 74.75 224 88C224 101.3 213.3 112 200 112H88C65.91 112 48 129.9 48 152V424C48 446.1 65.91 464 88 464H360C382.1 464 400 446.1 400 424V312C400 298.7 410.7 288 424 288C437.3 288 448 298.7 448 312V424C448 472.6 408.6 512 360 512H88C39.4 512 0 472.6 0 424V152C0 103.4 39.4 64 88 64H200z"/></svg></label>
         </div>
       </div>
       <?php 
-      $wordtrap_acf_margin_display = $field['value']['enable'] === 1 ? 'block' : 'none';
+      $wordtrap_acf_border_radius_display = $field['value']['enable'] === 1 ? 'block' : 'none';
       ?>
-      <div class="wordtrap_acf_margin_main wordtrap_acf_cs_field_main" style="display: <?php echo $wordtrap_acf_margin_display; ?>">
-        <div class="wordtrap_acf-margin">
+      <div class="wordtrap_acf_border_radius_main wordtrap_acf_cs_field_main" style="display: <?php echo $wordtrap_acf_border_radius_display; ?>">
+        <div class="wordtrap_acf-border_radius">
           <div class="acf-field acf-field-range">
             <div class="acf-label">
-              <label><?php _e( 'Top', 'wordtrap' ) ?></label>
+              <label><?php _e( 'Top Left', 'wordtrap' ) ?></label>
             </div>
             <div class="acf-input">
               <div class="acf-range-wrap">
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'top' ?>"
-                value="<?php echo esc_attr($field['value']['top']) ?>" 
-                step="1" style="width: 3.9em;"
+                name="<?php echo $field['name'] . 'top_left' ?>"
+                value="<?php echo esc_attr($field['value']['top_left']) ?>" 
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
@@ -140,16 +140,16 @@ class Wordtrap_ACF_Field_Margin extends acf_field {
 
           <div class="acf-field acf-field-range">
             <div class="acf-label">
-              <label><?php _e( 'Right', 'wordtrap' ) ?></label>
+              <label><?php _e( 'Top Right', 'wordtrap' ) ?></label>
             </div>
             <div class="acf-input">
               <div class="acf-range-wrap">
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'right' ?>"
-                value="<?php echo esc_attr($field['value']['right']) ?>" 
-                step="1" style="width: 3.9em;"
+                name="<?php echo $field['name'] . 'top_right' ?>"
+                value="<?php echo esc_attr($field['value']['top_right']) ?>" 
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
@@ -158,16 +158,16 @@ class Wordtrap_ACF_Field_Margin extends acf_field {
 
           <div class="acf-field acf-field-range">
             <div class="acf-label">
-              <label><?php _e( 'Bottom', 'wordtrap' ) ?></label>
+              <label><?php _e( 'Bottom Right', 'wordtrap' ) ?></label>
             </div>
             <div class="acf-input">
               <div class="acf-range-wrap">
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'bottom' ?>"
-                value="<?php echo esc_attr($field['value']['bottom']) ?>" 
-                step="1" style="width: 3.9em;"
+                name="<?php echo $field['name'] . 'bottom_right' ?>"
+                value="<?php echo esc_attr($field['value']['bottom_right']) ?>" 
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
@@ -176,16 +176,16 @@ class Wordtrap_ACF_Field_Margin extends acf_field {
 
           <div class="acf-field acf-field-range">
             <div class="acf-label">
-              <label><?php _e( 'Left', 'wordtrap' ) ?></label>
+              <label><?php _e( 'Bottom Left', 'wordtrap' ) ?></label>
             </div>
             <div class="acf-input">
               <div class="acf-range-wrap">
                 <input 
                 type="number" 
                 id="test"
-                name="<?php echo $field['name'] . 'left' ?>"
-                value="<?php echo esc_attr($field['value']['left']) ?>" 
-                step="1" style="width: 3.9em;"
+                name="<?php echo $field['name'] . 'bottom_left' ?>"
+                value="<?php echo esc_attr($field['value']['bottom_left']) ?>" 
+                step="1" min="0" style="width: 3.9em;"
                 >
                 <div class="acf-append">px</div>
               </div>
@@ -266,4 +266,4 @@ class Wordtrap_ACF_Field_Margin extends acf_field {
 endif;
 
 // initialize
-new Wordtrap_ACF_Field_Margin();
+new Wordtrap_ACF_Field_Border_Radius();

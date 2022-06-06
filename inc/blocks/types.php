@@ -9,7 +9,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$blocks = array( 'button' );
+$blocks = array( 'button', 'tabs' );
 
 $dir = WORDTRAP_BLOCKS_PATH . 'types/';
 
