@@ -22,11 +22,7 @@
     "watch-run-css": "nodemon --watch src/sass/ --ext scss --exec \"npm-run-all css editor\"",
     "watch-run-js": "nodemon --watch src/js/ --ext js --exec \"npm-run-all js\"",
     "copy-assets": "node src/config/copy-assets.js",
-    "build": "npm-run-all --parallel css js",
-    "block-build": "npm-run-all --parallel block-prod:*",
-    "block-prod:lite": "wp-scripts build --config webpack.config.js",
-    "block-start": "npm-run-all --parallel block-dev:*",
-    "block-dev:lite": "wp-scripts start --config webpack.config.js"
+    "build": "npm-run-all --parallel css js"
   },
   "engines": {
     "node": ">=14"

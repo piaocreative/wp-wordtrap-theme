@@ -45,6 +45,3 @@ require get_template_directory() . '/classes/class-wordtrap-post-types.php';
 
 // Include helpers
 require get_template_directory() . '/inc/helpers.php';
-
-// Include blocks
-require get_template_directory() . '/inc/blocks.php';
