@@ -10,9 +10,9 @@
 defined( 'ABSPATH' ) || exit;
 
 // Default Attributes
-$align = $attributes['align'];
-$block_id = 'wordtrap-' . $attributes['id'];
-$className = $attributes['className'];
+$align = isset( $attributes['align'] ) ? $attributes['align'] : '';
+$block_id = isset( $attributes['id'] ) ? 'wordtrap-' . $attributes['id'] : '';
+$className = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
 /**
  * Content fields
@@ -26,12 +26,12 @@ $active = get_field( 'active' );
 $disabled = get_field( 'disabled' );
 $display = get_field( 'display' );
 
-// Button link
+// Link
 $link_title = isset( $link['title'] ) ? $link['title'] : '';
 $link_url = isset( $link['url'] ) ? $link['url'] : '';
 $link_target = isset( $link['target'] ) ? $link['target'] : '';
 
-// Button classes
+// Classes
 $classes = array( 'wordtrap-block', 'wordtrap-button', $className );
 $sub_classes = array( 'btn' );
 if ( $style != '-' ) $sub_classes[] = 'btn-' . ( $outline ? 'outline-' : '') . $style;
@@ -127,13 +127,13 @@ endif;
   <?php endif; ?>
 
   <?php 
-  if ( $show_icon && $icon_placement != 'right' ) {
+  if ( $show_icon && $icon_placement !== 'right' ) {
     echo $icon . ' ';
   }
 
   echo $link_title;
 
-  if ( $show_icon && $icon_placement == 'right' ) {
+  if ( $show_icon && $icon_placement === 'right' ) {
     echo ' ' . $icon;
   }
   ?>

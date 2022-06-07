@@ -110,9 +110,9 @@
             "return_format": "value"
         },
         {
-            "key": "field_628fc5856df9d",
-            "label": "Disabled",
-            "name": "disabled",
+            "key": "field_628fd5fcc5428",
+            "label": "Active",
+            "name": "active",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -129,9 +129,9 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_628fd5fcc5428",
-            "label": "Active",
-            "name": "active",
+            "key": "field_628fc5856df9d",
+            "label": "Disabled",
+            "name": "disabled",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -327,9 +327,9 @@
             ],
             "required_properties": "",
             "font_size": "",
-            "font_family": "inherit",
-            "font_weight": 400,
-            "font_style": "normal",
+            "font_family": "",
+            "font_weight": "",
+            "font_style": "",
             "font_variant": "normal",
             "font_stretch": "normal",
             "line_height": "",
@@ -337,7 +337,7 @@
             "text_align": "center",
             "text_color": "",
             "text_decoration": "none",
-            "text_transform": "none"
+            "text_transform": ""
         },
         {
             "key": "field_629d61569912e",
@@ -526,7 +526,8 @@
                 "class": "",
                 "id": ""
             },
-            "border_radius_enable": 0
+            "border_radius_enable": 0,
+            "enable": 0
         },
         {
             "key": "field_629d6023761be",
@@ -562,7 +563,8 @@
             "margin_top": "",
             "margin_right": "",
             "margin_bottom": "",
-            "margin_left": ""
+            "margin_left": "",
+            "enable": 0
         },
         {
             "key": "field_6291c74345e89",
@@ -581,7 +583,8 @@
             "padding_top": "",
             "padding_right": "",
             "padding_bottom": "",
-            "padding_left": ""
+            "padding_left": "",
+            "enable": 0
         }
     ],
     "location": [
@@ -609,5 +612,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1654483314
+    "modified": 1654550146
 }

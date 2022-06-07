@@ -38,7 +38,15 @@ if ( ! function_exists( 'wordtrap_acf_typography_style' ) ) :
       $styles[] = 'line_height:' . $value . 'px;';
     }
 
-    $properties = array( 'font_family', 'font_weight', 'font_style', 'font_variant', 'font_stretch', 'letter_spacing', 'text_align', 'text_color', 'text_decoration', 'text_transform' );
+    $properties = array( 'font_family', 'font_weight', 'font_style', 'font_variant', 'font_stretch', 'text_align', 'text_decoration', 'text_transform' );
+    foreach ( $properties as $property ) {
+      $value = wordtrap_acf_property_value( $arr, $property );
+      if ( $value && $value !== 'default' ) {
+        $styles[] = ( $property == 'text_color' ? 'color' : str_replace( '_', '-', $property ) ) . ':' . $value . ';';
+      } 
+    }
+
+    $properties = array( 'letter_spacing', 'text_color' );
     foreach ( $properties as $property ) {
       $value = wordtrap_acf_property_value( $arr, $property );
       if ( $value ) {
