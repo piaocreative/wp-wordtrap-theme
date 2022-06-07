@@ -166,7 +166,7 @@ if ( $block_style || $title_style || $title_active_style || $content_style ) :
       $tab_controlls = $block_id . '_' . ( $index + 1 );
       ?>
       <li class="nav-item" role="presentation">
-        <a class="nav-link<?php echo $tab['active'] ? ' active' : '' ?>" id="<?php echo esc_attr( $tab_controlls ) ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr( $tab_controlls ) ?>" type="button" role="tab" aria-controls="<?php echo esc_attr( $tab_controlls ) ?>" aria-selected="true">
+        <a class="nav-link<?php echo $tab['active'] ? ' active' : '' ?>" id="<?php echo esc_attr( $tab_controlls ) ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr( $tab_controlls ) ?>" role="tab" aria-controls="<?php echo esc_attr( $tab_controlls ) ?>" aria-selected="true">
           <?php 
           if ( $tab['show_icon'] && $tab['icon_placement'] !== 'right' ) {
             echo $tab['icon'] . ' ';

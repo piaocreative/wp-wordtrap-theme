@@ -12626,6 +12626,9 @@ textarea.form-control-lg {
   white-space: nowrap;
 }
 
+.wordtrap-tabs .nav-link {
+  cursor: pointer;
+}
 .wordtrap-tabs.d-flex .tab-content {
   width: 100%;
 }

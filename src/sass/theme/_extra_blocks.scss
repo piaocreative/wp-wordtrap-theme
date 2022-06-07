@@ -57,6 +57,10 @@
 }
 
 .wordtrap-tabs {
+  .nav-link {
+    cursor: pointer;
+  }
+  
   &.d-flex {
     .tab-content {
       width: 100%;
