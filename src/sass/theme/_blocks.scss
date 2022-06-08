@@ -208,14 +208,14 @@ img.aligncenter {
     @extend .form-label;
   }
 
-  input:not([type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]),
-  textarea {
-    @extend .form-control;
+  // input:not([type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]),
+  // textarea {
+  //   @extend .form-control;
 
-    .site-main & {
-      margin-bottom: 1rem;
-    }
-  }
+  //   .site-main & {
+  //     margin-bottom: 1rem;
+  //   }
+  // }
 
   select {
     @extend .form-select;
@@ -234,17 +234,17 @@ img.aligncenter {
     }
   }
   
-  button,
-  [type="button"], 
-  [type="reset"], 
-  [type="submit"] {
-    @extend .btn;
-    @extend .btn-primary;
+  // button,
+  // [type="button"], 
+  // [type="reset"], 
+  // [type="submit"] {
+  //   @extend .btn;
+  //   @extend .btn-primary;
 
-    .site-main & {
-      margin-bottom: 1rem;
-    }
-  }
+  //   .site-main & {
+  //     margin-bottom: 1rem;
+  //   }
+  // }
 }
 
 // Gallery
