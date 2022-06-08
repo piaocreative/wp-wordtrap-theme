@@ -73,3 +73,11 @@
     }
   }
 }
+
+.wordtrap-accordion {
+  .accordion-body {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -12636,4 +12636,8 @@ textarea.form-control-lg {
   margin-bottom: 0;
 }
 
+.wordtrap-accordion .accordion-body > *:last-child {
+  margin-bottom: 0;
+}
+
 /*# sourceMappingURL=editor.css.map */
