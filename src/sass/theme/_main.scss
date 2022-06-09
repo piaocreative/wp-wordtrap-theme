@@ -73,6 +73,10 @@
   }  
 }
 
+#page > .page-header {
+  background: $body-bg;
+}
+
 #primary {
   background: $body-bg;
   padding-top: 2rem;
