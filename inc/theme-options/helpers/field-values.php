@@ -31,6 +31,24 @@ if ( ! function_exists( 'wordtrap_layout_options' ) ) {
   }
 }
 
+if ( ! function_exists( 'wordtrap_page_header_layout_options' ) ) {
+  /**
+   * Page header layout options
+   */
+  function wordtrap_page_header_layout_options() {
+    return array(
+      'full'  => array(
+        'title' => esc_html__( 'Full', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/full.svg',
+      ),
+      'boxed' => array(
+        'title' => esc_html__( 'Boxed', 'wordtrap' ),
+        'img'   => WORDTRAP_OPTIONS_URI . '/presets/layouts/boxed.svg',
+      )
+    );
+  }
+}
+
 if ( ! function_exists( 'wordtrap_main_layout_options' ) ) {
   /**
    * Main layout options

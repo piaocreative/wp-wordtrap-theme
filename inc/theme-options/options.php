@@ -186,6 +186,7 @@ Redux::set_args( $opt_name, $args );
  */
 
 $layout_options                  = wordtrap_layout_options();
+$page_header_layout_options      = wordtrap_page_header_layout_options();
 $main_layout_options             = wordtrap_main_layout_options();
 $main_layouts_with_left_sidebar  = wordtrap_main_layouts_with_left_sidebar();
 $main_layouts_with_right_sidebar = wordtrap_main_layouts_with_right_sidebar();

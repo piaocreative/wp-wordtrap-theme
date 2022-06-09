@@ -27,9 +27,9 @@ Redux::set_section(
       array(
         'id'       => 'page-header-layout',
         'type'     => 'image_select',
-        'title'    => __( 'Page Header Layout', 'wordtrap' ),
-        'options'  => $layout_options,
-        'default'  => 'wide',
+        'title'    => __( 'Page Title & Breadcrumbs', 'wordtrap' ),
+        'options'  => $page_header_layout_options,
+        'default'  => 'boxed',
       ),
       array(
         'id'       => 'layout',
