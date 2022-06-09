@@ -6,7 +6,11 @@
  */
 
 .page-header {
-  padding-top: 1rem;
+  padding-top: 3rem;
+
+  .primary-wrap & {
+    padding-top: 1rem;
+  }
 
   a {
     text-decoration: none;
@@ -17,14 +21,22 @@
   }
 
   .woo-breadcrumb {
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
   }
 
   .links {
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 
     &.with-title {
       padding-bottom: 2rem;
+    }
+
+    .primary-wrap & {
+      padding-bottom: 3rem;
+
+      &.with-title {
+        padding-bottom: 2rem;
+      }
     }
 
     a {    
@@ -47,9 +59,18 @@
 
   .page-title {
     margin-bottom: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
     font-weight: $font-weight-bolder;
   }
+}
+
+.page-header-wrap {
+  @include media-breakpoint-up(sm) {
+    .container-fluid {
+      padding-left: var(--bs-gutter-x, 1.5rem);
+      padding-right: var(--bs-gutter-x, 1.5rem);
+    }
+  }  
 }
 
 #primary {

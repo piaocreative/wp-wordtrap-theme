@@ -65,15 +65,6 @@ Redux::set_section(
         'data'        => 'page',
         'title'       => esc_html__( 'Members Page', 'wordtrap' ),
       ),
-      array(
-        'id'          => 'member-nofollow',
-        'type'        => 'switch',
-        'title'       => esc_html__( 'No Follow Socials', 'wordtrap' ),
-        'required'    => array( 'social-share', 'equals', true ),
-        'default'     => true,
-        'on'          => esc_html__( 'Yes', 'wordtrap' ),
-        'off'         => esc_html__( 'No', 'wordtrap' ),
-      ),
     )
   )
 );

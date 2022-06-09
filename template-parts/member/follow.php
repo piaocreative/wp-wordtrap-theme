@@ -9,11 +9,7 @@
  // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( wordtrap_options( 'member-nofollow' ) ) {
-  $nofollow = 'rel="noopener noreferrer nofollow"';
-} else {
-  $nofollow = 'rel="noopener noreferrer"';
-}
+$nofollow = 'rel="noopener noreferrer nofollow"';
 
 $id = get_the_ID();
 

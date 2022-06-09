@@ -39,25 +39,6 @@ Redux::set_section(
         'default'  => 'right-sidebar',
       ),
       array(
-        'id'       => 'member-socials',
-        'type'     => 'switch',
-        'title'    => esc_html__( 'Social Links', 'wordtrap' ),
-        'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
-      ),
-      array(
-        'id'       => 'member-socials-position',
-        'type'     => 'button_set',
-        'title'    => esc_html__( 'Social Links Position', 'wordtrap' ),
-        'options'  => array(
-          'before'      => esc_html__( 'Before Overview', 'wordtrap' ),
-          ''            => esc_html__( 'After Overview', 'wordtrap' ),
-          'below_thumb' => esc_html__( 'Below Member Image', 'wordtrap' ),
-        ),
-        'default'  => '',
-      ),
-      array(
         'id'       => 'member-nav',
         'type'     => 'switch',
         'title'    => esc_html__( 'Prev / Next Navigation', 'wordtrap' ),

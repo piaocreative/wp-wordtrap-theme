@@ -25,9 +25,9 @@ Redux::set_section(
         'off'      => esc_html__( 'Hide', 'wordtrap' ),
       ),
       array(
-        'id'       => 'breadcrumbs-layout',
+        'id'       => 'page-header-layout',
         'type'     => 'image_select',
-        'title'    => __( 'Breadcrumbs Layout', 'wordtrap' ),
+        'title'    => __( 'Page Header Layout', 'wordtrap' ),
         'options'  => $layout_options,
         'default'  => 'wide',
       ),

@@ -104,6 +104,8 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 
   <?php get_template_part( 'template-parts/header' ) ?>
 
+  <?php get_template_part( 'template-parts/page-title' ) ?>    
+
   <div id="primary" class="<?php echo esc_attr( implode( ' ', $primary_classes ) ) ?>">
 
     <?php
@@ -115,8 +117,6 @@ $content_top_template = wordtrap_layout_template( 'main', 'content-top' );
 
     <div class="<?php echo esc_attr( implode( ' ', $wrap_classes ) ) ?>">
         <div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ) ?>">
-
-          <?php get_template_part( 'template-parts/page-title' ) ?>    
 
           <div class="row">
 

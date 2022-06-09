@@ -34,7 +34,7 @@ Redux::set_section(
         'preview'         => true,
         'line-height'     => false,
         'default'         => array(
-          'font-family'   => 'system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+          'font-family'   => 'system-ui, -apple-system, \'Segoe UI\', Roboto, \'Helvetica Neue\', Arial, \'Noto Sans\', \'Liberation Sans\', sans-serif, \'Apple Color Emoji\', \'Segoe UI Emoji\', \'Segoe UI Symbol\', \'Noto Color Emoji\'',
         ),
       ),
       array(
@@ -50,7 +50,7 @@ Redux::set_section(
         'preview'         => true,
         'line-height'     => false,
         'default'         => array(
-          'font-family'   => 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+          'font-family'   => 'SFMono-Regular, Menlo, Monaco, Consolas, \'Liberation Mono\', \'Courier New\', monospace',
         ),
       ),
       array(
