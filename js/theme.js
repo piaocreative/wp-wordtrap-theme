@@ -16848,9 +16848,17 @@
 	    },
 	    resize: function () {
 	      var $el = this.$el,
-	          page = $el.find('#page'),
-	          height = $el.find('#footer').height();
-	      page.css('margin-bottom', height);
+	          $page = $el.find('#page'),
+	          height = $el.find('#footer').height(),
+	          screen_height = window.innerHeight - theme.adminBarHeight() - theme.sticky_header_height;
+
+	      if (height < screen_height) {
+	        $('body').addClass('page-footer-reveal');
+	        $page.css('margin-bottom', height);
+	      } else {
+	        $('body').removeClass('page-footer-reveal');
+	        $page.css('margin-bottom', 0);
+	      }
 	    }
 	  }; // expose to scope
 

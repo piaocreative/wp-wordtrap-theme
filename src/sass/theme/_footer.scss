@@ -71,20 +71,12 @@
 }
 
 .page-footer-reveal {
-  @include media-breakpoint-up(xl) {
-    #footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: $footer-reveal-index;
-    }    
-  }
-
-  @include media-breakpoint-down(xl) {
-    #page {
-      margin-bottom: 0 !important;
-    }
+  #footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $footer-reveal-index;
   }
 }
 
