@@ -5,6 +5,10 @@
  * @since wordtrap 1.0.0
  */
 
+ .page-footer-reveal #header {
+  background-color: $body-bg;
+ }
+
 .header-wrap {
   background-color: $header-bg;
   border-top: 3px solid $primary;
