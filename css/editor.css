@@ -12640,4 +12640,53 @@ textarea.form-control-lg {
   margin-bottom: 0;
 }
 
+.wordtrap-icon-box {
+  display: flex;
+  transition: all 0.2s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wordtrap-icon-box {
+    transition: none;
+  }
+}
+.wordtrap-icon-box .icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wordtrap-icon-box .icon-wrap {
+    transition: none;
+  }
+}
+.wordtrap-icon-box .content-wrap {
+  text-align: left;
+}
+.wordtrap-icon-box .icon-wrap,
+.wordtrap-icon-box .box-title,
+.wordtrap-icon-box .box-content {
+  transition: all 0.2s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wordtrap-icon-box .icon-wrap,
+.wordtrap-icon-box .box-title,
+.wordtrap-icon-box .box-content {
+    transition: none;
+  }
+}
+.wordtrap-icon-box.icon-box-center {
+  flex-direction: column;
+  align-items: center;
+}
+.wordtrap-icon-box.icon-box-center .content-wrap {
+  text-align: center;
+}
+.wordtrap-icon-box.icon-box-right {
+  flex-direction: row-reverse;
+}
+.wordtrap-icon-box.icon-box-right .content-wrap {
+  text-align: right;
+}
+
 /*# sourceMappingURL=editor.css.map */
