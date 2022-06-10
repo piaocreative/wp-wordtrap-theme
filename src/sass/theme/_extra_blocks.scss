@@ -85,20 +85,20 @@
 .wordtrap-icon-box {
   display: flex;
   align-items: start;
-  @include transition(all 0.2s);
+  overflow: hidden;
 
   .icon-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @include transition(all 0.2s);
+    overflow: hidden;
   }
 
   .content-wrap {
     text-align: left;    
   }
 
+  &,
   .icon-wrap,
   .box-title,
   .box-content {

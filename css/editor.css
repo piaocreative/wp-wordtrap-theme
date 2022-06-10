@@ -12642,34 +12642,27 @@ textarea.form-control-lg {
 
 .wordtrap-icon-box {
   display: flex;
-  transition: all 0.2s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .wordtrap-icon-box {
-    transition: none;
-  }
+  align-items: start;
+  overflow: hidden;
 }
 .wordtrap-icon-box .icon-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .wordtrap-icon-box .icon-wrap {
-    transition: none;
-  }
+  overflow: hidden;
 }
 .wordtrap-icon-box .content-wrap {
   text-align: left;
 }
+.wordtrap-icon-box,
 .wordtrap-icon-box .icon-wrap,
 .wordtrap-icon-box .box-title,
 .wordtrap-icon-box .box-content {
   transition: all 0.2s;
 }
 @media (prefers-reduced-motion: reduce) {
-  .wordtrap-icon-box .icon-wrap,
+  .wordtrap-icon-box,
+.wordtrap-icon-box .icon-wrap,
 .wordtrap-icon-box .box-title,
 .wordtrap-icon-box .box-content {
     transition: none;
