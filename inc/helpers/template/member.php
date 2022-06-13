@@ -125,7 +125,7 @@ if ( ! function_exists( 'wordtrap_get_related_members' ) ) {
     $args = wp_parse_args(
       $args,
       array(
-        'showposts'           => wordtrap_options( 'member-related-count' ),
+        'posts_per_page'      => wordtrap_options( 'member-related-count' ),
         'ignore_sticky_posts' => 0,				
         'post_type'           => 'member',
 				'post__not_in'        => array( $post_id ),

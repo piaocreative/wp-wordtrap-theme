@@ -85,7 +85,7 @@ $post_classes[] = 'members-view-' . $view_type;
 
           <?php 
           if ( wordtrap_options( 'members-excerpt') ) {
-            echo wordtrap_trim_excerpt( get_post_meta( $post_id, 'overview', true ), wordtrap_options( 'members-excerpt-length') ? wordtrap_options( 'members-excerpt-length') : 30 );
+            echo wordtrap_trim_excerpt( get_post_meta( $post_id, 'overview', true ), wordtrap_options( 'members-grid-excerpt-length') ? wordtrap_options( 'members-grid-excerpt-length') : 30 );
           } else {
             echo get_post_meta( $post_id, 'overview', true );
           }

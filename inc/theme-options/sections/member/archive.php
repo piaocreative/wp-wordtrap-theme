@@ -91,12 +91,22 @@ Redux::set_section(
         'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
-        'id'       => 'members-excerpt-length',
+        'id'       => 'members-grid-excerpt-length',
         'type'     => 'text',
         'required' => array( 'members-excerpt', 'equals', true ),
-        'title'    => esc_html__( 'Excerpt Length', 'wordtrap' ),
+        'title'    => esc_html__( 'Excerpt Length in Grid', 'wordtrap' ),
         'desc'     => esc_html__( 'The number of words', 'wordtrap' ),
         'default'  => '30',
+        'placeholder' => '30'
+      ),
+      array(
+        'id'       => 'members-list-excerpt-length',
+        'type'     => 'text',
+        'required' => array( 'members-excerpt', 'equals', true ),
+        'title'    => esc_html__( 'Excerpt Length in List', 'wordtrap' ),
+        'desc'     => esc_html__( 'The number of words', 'wordtrap' ),
+        'default'  => '55',
+        'placeholder' => '55'
       ),
       array(
         'id'       => 'members-follows',

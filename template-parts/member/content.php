@@ -97,7 +97,13 @@ $post_classes[] = 'members-view-' . $view_type;
 
           <?php 
           if ( wordtrap_options( 'members-excerpt') ) {
-            echo wordtrap_trim_excerpt( get_post_meta( $post_id, 'overview', true ), wordtrap_options( 'members-excerpt-length') ? wordtrap_options( 'members-excerpt-length') : 30 );
+            if ( $view_mode === 'grid' ) {
+              $excerpt_length = wordtrap_options( 'members-grid-excerpt-length') ? wordtrap_options( 'members-grid-excerpt-length') : 30;
+            } else {
+              $excerpt_length = wordtrap_options( 'members-list-excerpt-length') ? wordtrap_options( 'members-list-excerpt-length') : 55;
+            }
+            
+            echo wordtrap_trim_excerpt( get_post_meta( $post_id, 'overview', true ), $excerpt_length );
           } else {
             echo get_post_meta( $post_id, 'overview', true );
           }

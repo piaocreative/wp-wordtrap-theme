@@ -370,7 +370,7 @@ if ( ! function_exists( 'wordtrap_get_related_posts' ) ) {
     $args = wp_parse_args(
       $args,
       array(
-        'showposts'           => wordtrap_options( 'post-related-count' ),
+        'posts_per_page'      => wordtrap_options( 'post-related-count' ),
         'post__not_in'        => array( $post_id ),
         'ignore_sticky_posts' => 0,
         'category__in'        => wp_get_post_categories( $post_id ),
