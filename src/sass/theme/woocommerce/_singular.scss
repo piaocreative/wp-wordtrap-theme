@@ -667,13 +667,13 @@ div.product-thumbnails-grid {
     div.images {
       .woocommerce-product-gallery__wrapper {
         @include make-row();
-        margin-top: calc(-0.5 * var(--bs-gutter-x));
-        margin-bottom: calc(-0.5 * var(--bs-gutter-x));
+        margin-top: calc(-0.5 * $grid-gutter-width);
+        margin-bottom: calc(-0.5 * $grid-gutter-width);
 
         > * {
           @include make-col-ready();
-          padding-top: calc(var(--bs-gutter-x) * 0.5);
-          padding-bottom: calc(var(--bs-gutter-x) * 0.5);
+          padding-top: calc($grid-gutter-width * 0.5);
+          padding-bottom: calc($grid-gutter-width * 0.5);
         }
       }
 
