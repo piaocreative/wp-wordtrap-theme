@@ -672,8 +672,8 @@ div.product-thumbnails-grid {
 
         > * {
           @include make-col-ready();
-          padding-top: calc($grid-gutter-width * 0.5);
-          padding-bottom: calc($grid-gutter-width * 0.5);
+          padding-top: $grid-gutter-width * 0.5;
+          padding-bottom: $grid-gutter-width * 0.5;
         }
       }
 
