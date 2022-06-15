@@ -313,7 +313,7 @@ div.products-grid.products-view-onimage-with-overlay {
 
 div.products-grid.products-view-onimage,
 div.products-grid.products-view-onimage-with-overlay,
-div.products-grid.products-view-onimage-with-overlay-centered {
+div.products-grid.products-view-centered-onimage-with-overlay {
   div.product {
     padding: 0;    
   }
@@ -358,7 +358,7 @@ div.products-grid.products-view-onimage {
 }
 
 div.products-grid.products-view-onimage-with-overlay,
-div.products-grid.products-view-onimage-with-overlay-centered {
+div.products-grid.products-view-centered-onimage-with-overlay {
   .product-thumbnail {
     &:after {
       content: "";
@@ -389,7 +389,7 @@ div.products-grid.products-view-onimage-with-overlay-centered {
   }
 }
 
-div.products-grid.products-view-onimage-with-overlay-centered {
+div.products-grid.products-view-centered-onimage-with-overlay {
   .product-inner {
     height: 100%;
     justify-content: center;

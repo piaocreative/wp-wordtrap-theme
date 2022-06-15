@@ -383,9 +383,9 @@ if ( ! function_exists( 'wordtrap_products_view_options' ) ) {
         'title'  => esc_html__( 'On Image with Overlay', 'wordtrap' ),
         'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage-with-overlay.svg',
       ),
-      'onimage-with-overlay-centered' => array(
-        'title'  => esc_html__( 'On Image with Overlay Centered', 'wordtrap' ),
-        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-onimage-with-overlay-centered.svg',
+      'centered-onimage-with-overlay' => array(
+        'title'  => esc_html__( 'Centered On Image with Overlay', 'wordtrap' ),
+        'img'    => WORDTRAP_OPTIONS_URI . '/presets/product-layouts/archive-view-centered-onimage-with-overlay.svg',
       ),
       'quantity-input' => array(
         'title'  => esc_html__( 'Show Quantity Input', 'wordtrap' ),
