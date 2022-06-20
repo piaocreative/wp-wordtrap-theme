@@ -30,3 +30,11 @@
 @import "theme/woocommerce/archive";
 
 .posts-slider { opacity: 1 }
+div.products.posts-slider {
+  @include clearfix;
+
+  > * {
+    width: 25%;
+    float: left;
+  }
+}

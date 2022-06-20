@@ -15103,4 +15103,14 @@ div.products-list.products-view-quantity-input .quantity + .button[class*=produc
   opacity: 1;
 }
 
+div.products.posts-slider::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+div.products.posts-slider > * {
+  width: 25%;
+  float: left;
+}
+
 /*# sourceMappingURL=editor.css.map */
