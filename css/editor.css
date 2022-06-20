@@ -904,12 +904,12 @@ progress {
     width: auto;
   }
 
-  .row-cols-sm-1 > * {
+  .row-cols-sm-1 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-sm-1 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 100%;
   }
 
-  .row-cols-sm-2 > * {
+  .row-cols-sm-2 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-sm-2 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 50%;
   }
@@ -1117,17 +1117,17 @@ progress {
     width: auto;
   }
 
-  .row-cols-md-1 > * {
+  .row-cols-md-1 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-md-1 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 100%;
   }
 
-  .row-cols-md-2 > * {
+  .row-cols-md-2 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-md-2 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 50%;
   }
 
-  .row-cols-md-3 > * {
+  .row-cols-md-3 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-md-3 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 33.3333333333%;
   }
@@ -1330,22 +1330,22 @@ progress {
     width: auto;
   }
 
-  .row-cols-lg-1 > * {
+  .row-cols-lg-1 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-lg-1 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 100%;
   }
 
-  .row-cols-lg-2 > * {
+  .row-cols-lg-2 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-lg-2 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 50%;
   }
 
-  .row-cols-lg-3 > * {
+  .row-cols-lg-3 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-lg-3 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 33.3333333333%;
   }
 
-  .row-cols-lg-4 > * {
+  .row-cols-lg-4 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-lg-4 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 25%;
   }
@@ -1543,27 +1543,27 @@ progress {
     width: auto;
   }
 
-  .row-cols-xl-1 > * {
+  .row-cols-xl-1 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xl-1 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 100%;
   }
 
-  .row-cols-xl-2 > * {
+  .row-cols-xl-2 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xl-2 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 50%;
   }
 
-  .row-cols-xl-3 > * {
+  .row-cols-xl-3 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xl-3 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 33.3333333333%;
   }
 
-  .row-cols-xl-4 > * {
+  .row-cols-xl-4 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xl-4 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 25%;
   }
 
-  .row-cols-xl-5 > * {
+  .row-cols-xl-5 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xl-5 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 20%;
   }
@@ -1756,32 +1756,32 @@ progress {
     width: auto;
   }
 
-  .row-cols-xxl-1 > * {
+  .row-cols-xxl-1 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xxl-1 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 100%;
   }
 
-  .row-cols-xxl-2 > * {
+  .row-cols-xxl-2 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xxl-2 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 50%;
   }
 
-  .row-cols-xxl-3 > * {
+  .row-cols-xxl-3 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xxl-3 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 33.3333333333%;
   }
 
-  .row-cols-xxl-4 > * {
+  .row-cols-xxl-4 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xxl-4 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 25%;
   }
 
-  .row-cols-xxl-5 > * {
+  .row-cols-xxl-5 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xxl-5 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 20%;
   }
 
-  .row-cols-xxl-6 > * {
+  .row-cols-xxl-6 > *, div.product-thumbnails-grid .product-summary-wrapper div.images.woocommerce-product-gallery-xxl-6 .woocommerce-product-gallery__wrapper > * {
     flex: 0 0 auto;
     width: 16.6666666667%;
   }
@@ -2188,7 +2188,8 @@ progress {
   color: #6c757d;
 }
 
-.form-control, .post-password-form input[type=password] {
+.form-control, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea, .post-password-form input[type=password] {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
@@ -2206,43 +2207,51 @@ progress {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control, .post-password-form input[type=password] {
+  .form-control, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea, .post-password-form input[type=password] {
     transition: none;
   }
 }
-.form-control[type=file], .post-password-form input[type=file][type=password] {
+.form-control[type=file], div.product #reviews #respond input[type=file]:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea[type=file], .post-password-form input[type=file][type=password] {
   overflow: hidden;
 }
-.form-control[type=file]:not(:disabled):not([readonly]), .post-password-form input[type=file][type=password]:not(:disabled):not([readonly]) {
+.form-control[type=file]:not(:disabled):not([readonly]), div.product #reviews #respond input[type=file]:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea[type=file]:not(:disabled):not([readonly]), .post-password-form input[type=file][type=password]:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
-.form-control:focus, .post-password-form input[type=password]:focus {
+.form-control:focus, div.product #reviews #respond input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea:focus, .post-password-form input[type=password]:focus {
   color: #212529;
   background-color: #f5f5f5;
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form-control::-webkit-date-and-time-value, .post-password-form input[type=password]::-webkit-date-and-time-value {
+.form-control::-webkit-date-and-time-value, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-date-and-time-value,
+div.product #reviews #respond textarea::-webkit-date-and-time-value, .post-password-form input[type=password]::-webkit-date-and-time-value {
   height: 1.5em;
 }
-.form-control::-moz-placeholder, .post-password-form input[type=password]::-moz-placeholder {
+.form-control::-moz-placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-moz-placeholder, div.product #reviews #respond textarea::-moz-placeholder, .post-password-form input[type=password]::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder, .post-password-form input[type=password]:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]):-ms-input-placeholder, div.product #reviews #respond textarea:-ms-input-placeholder, .post-password-form input[type=password]:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control::placeholder, .post-password-form input[type=password]::placeholder {
+.form-control::placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::placeholder,
+div.product #reviews #respond textarea::placeholder, .post-password-form input[type=password]::placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:disabled, .post-password-form input[type=password]:disabled, .form-control[readonly], .post-password-form input[readonly][type=password] {
+.form-control:disabled, div.product #reviews #respond input:disabled:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea:disabled, .post-password-form input[type=password]:disabled, .form-control[readonly], div.product #reviews #respond input[readonly]:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea[readonly], .post-password-form input[readonly][type=password] {
   background-color: #e9ecef;
   opacity: 1;
 }
-.form-control::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+.form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
@@ -2258,7 +2267,8 @@ progress {
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.form-control::file-selector-button, .post-password-form input[type=password]::file-selector-button {
+.form-control::file-selector-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::file-selector-button,
+div.product #reviews #respond textarea::file-selector-button, .post-password-form input[type=password]::file-selector-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
@@ -2274,21 +2284,24 @@ progress {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+  .form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
     -webkit-transition: none;
     transition: none;
   }
-  .form-control::file-selector-button, .post-password-form input[type=password]::file-selector-button {
+  .form-control::file-selector-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::file-selector-button,
+div.product #reviews #respond textarea::file-selector-button, .post-password-form input[type=password]::file-selector-button {
     transition: none;
   }
 }
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, div.product #reviews #respond input:hover:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
   background-color: #dde0e3;
 }
-.form-control:hover:not(:disabled):not([readonly])::file-selector-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::file-selector-button {
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button, div.product #reviews #respond input:hover:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::file-selector-button,
+div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::file-selector-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::file-selector-button {
   background-color: #dde0e3;
 }
-.form-control::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+.form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button,
+div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
@@ -2305,12 +2318,14 @@ progress {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+  .form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button,
+div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
     -webkit-transition: none;
     transition: none;
   }
 }
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, div.product #reviews #respond input:hover:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button,
+div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
   background-color: #dde0e3;
 }
 
@@ -2380,7 +2395,8 @@ progress {
   margin-inline-end: 1rem;
 }
 
-textarea.form-control {
+textarea.form-control,
+div.product #reviews #respond textarea {
   min-height: calc(1.5em + 0.75rem + 2px);
 }
 textarea.form-control-sm {
@@ -2407,7 +2423,7 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 
-.form-select, .posts-filter-nav select {
+.form-select, form.cart select, div.product #reviews #respond select, .posts-filter-nav select {
   display: block;
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -2429,28 +2445,28 @@ textarea.form-control-lg {
   appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-select, .posts-filter-nav select {
+  .form-select, form.cart select, div.product #reviews #respond select, .posts-filter-nav select {
     transition: none;
   }
 }
-.form-select:focus, .posts-filter-nav select:focus {
+.form-select:focus, form.cart select:focus, div.product #reviews #respond select:focus, .posts-filter-nav select:focus {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form-select[multiple], .posts-filter-nav select[multiple], .form-select[size]:not([size="1"]), .posts-filter-nav select[size]:not([size="1"]) {
+.form-select[multiple], form.cart select[multiple], div.product #reviews #respond select[multiple], .posts-filter-nav select[multiple], .form-select[size]:not([size="1"]), form.cart select[size]:not([size="1"]), div.product #reviews #respond select[size]:not([size="1"]), .posts-filter-nav select[size]:not([size="1"]) {
   padding-right: 0.75rem;
   background-image: none;
 }
-.form-select:disabled, .posts-filter-nav select:disabled {
+.form-select:disabled, form.cart select:disabled, div.product #reviews #respond select:disabled, .posts-filter-nav select:disabled {
   background-color: #e9ecef;
 }
-.form-select:-moz-focusring, .posts-filter-nav select:-moz-focusring {
+.form-select:-moz-focusring, form.cart select:-moz-focusring, div.product #reviews #respond select:-moz-focusring, .posts-filter-nav select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #212529;
 }
 
-.form-select-sm {
+.form-select-sm, form.cart select {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
@@ -2472,12 +2488,15 @@ textarea.form-control-lg {
   padding-left: 1.5em;
   margin-bottom: 0.125rem;
 }
-.form-check .form-check-input {
+.form-check .form-check-input, .form-check div.product #reviews #respond [type=checkbox], div.product #reviews #respond .form-check [type=checkbox],
+.form-check div.product #reviews #respond [type=radio],
+div.product #reviews #respond .form-check [type=radio] {
   float: left;
   margin-left: -1.5em;
 }
 
-.form-check-input {
+.form-check-input, div.product #reviews #respond [type=checkbox],
+div.product #reviews #respond [type=radio] {
   width: 1em;
   height: 1em;
   margin-top: 0.25em;
@@ -2493,48 +2512,59 @@ textarea.form-control-lg {
   -webkit-print-color-adjust: exact;
   color-adjust: exact;
 }
-.form-check-input[type=checkbox] {
+.form-check-input[type=checkbox], div.product #reviews #respond [type=checkbox],
+div.product #reviews #respond [type=checkbox][type=radio] {
   border-radius: 0.25em;
 }
-.form-check-input[type=radio] {
+.form-check-input[type=radio], div.product #reviews #respond [type=radio][type=checkbox],
+div.product #reviews #respond [type=radio] {
   border-radius: 50%;
 }
-.form-check-input:active {
+.form-check-input:active, div.product #reviews #respond [type=checkbox]:active,
+div.product #reviews #respond [type=radio]:active {
   filter: brightness(90%);
 }
-.form-check-input:focus {
+.form-check-input:focus, div.product #reviews #respond [type=checkbox]:focus,
+div.product #reviews #respond [type=radio]:focus {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form-check-input:checked {
+.form-check-input:checked, div.product #reviews #respond [type=checkbox]:checked,
+div.product #reviews #respond [type=radio]:checked {
   background-color: #0d6efd;
   border-color: #0d6efd;
 }
-.form-check-input:checked[type=checkbox] {
+.form-check-input:checked[type=checkbox], div.product #reviews #respond :checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
-.form-check-input:checked[type=radio] {
+.form-check-input:checked[type=radio],
+div.product #reviews #respond :checked[type=radio] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
-.form-check-input[type=checkbox]:indeterminate {
+.form-check-input[type=checkbox]:indeterminate, div.product #reviews #respond [type=checkbox]:indeterminate {
   background-color: #0d6efd;
   border-color: #0d6efd;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
-.form-check-input:disabled {
+.form-check-input:disabled, div.product #reviews #respond [type=checkbox]:disabled,
+div.product #reviews #respond [type=radio]:disabled {
   pointer-events: none;
   filter: none;
   opacity: 0.5;
 }
-.form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
+.form-check-input[disabled] ~ .form-check-label, div.product #reviews #respond [disabled][type=checkbox] ~ .form-check-label,
+div.product #reviews #respond [disabled][type=radio] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label, div.product #reviews #respond [type=checkbox]:disabled ~ .form-check-label,
+div.product #reviews #respond [type=radio]:disabled ~ .form-check-label {
   opacity: 0.5;
 }
 
 .form-switch {
   padding-left: 2.5em;
 }
-.form-switch .form-check-input {
+.form-switch .form-check-input, .form-switch div.product #reviews #respond [type=checkbox], div.product #reviews #respond .form-switch [type=checkbox],
+.form-switch div.product #reviews #respond [type=radio],
+div.product #reviews #respond .form-switch [type=radio] {
   width: 2em;
   margin-left: -2.5em;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
@@ -2543,14 +2573,20 @@ textarea.form-control-lg {
   transition: background-position 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-switch .form-check-input {
+  .form-switch .form-check-input, .form-switch div.product #reviews #respond [type=checkbox], div.product #reviews #respond .form-switch [type=checkbox],
+.form-switch div.product #reviews #respond [type=radio],
+div.product #reviews #respond .form-switch [type=radio] {
     transition: none;
   }
 }
-.form-switch .form-check-input:focus {
+.form-switch .form-check-input:focus, .form-switch div.product #reviews #respond [type=checkbox]:focus, div.product #reviews #respond .form-switch [type=checkbox]:focus,
+.form-switch div.product #reviews #respond [type=radio]:focus,
+div.product #reviews #respond .form-switch [type=radio]:focus {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2386b7fe'/%3e%3c/svg%3e");
 }
-.form-switch .form-check-input:checked {
+.form-switch .form-check-input:checked, .form-switch div.product #reviews #respond [type=checkbox]:checked, div.product #reviews #respond .form-switch [type=checkbox]:checked,
+.form-switch div.product #reviews #respond [type=radio]:checked,
+div.product #reviews #respond .form-switch [type=radio]:checked {
   background-position: right center;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
@@ -2666,8 +2702,11 @@ textarea.form-control-lg {
 .form-floating {
   position: relative;
 }
-.form-floating > .form-control, .post-password-form .form-floating > input[type=password],
+.form-floating > .form-control, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .form-floating > textarea, .post-password-form .form-floating > input[type=password],
 .form-floating > .form-select,
+form.cart .form-floating > select,
+div.product #reviews #respond .form-floating > select,
 .posts-filter-nav .form-floating > select {
   height: calc(3.5rem + 2px);
   line-height: 1.25;
@@ -2688,55 +2727,66 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-.form-floating > .form-control, .post-password-form .form-floating > input[type=password] {
+.form-floating > .form-control, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .form-floating > textarea, .post-password-form .form-floating > input[type=password] {
   padding: 1rem 0.75rem;
 }
-.form-floating > .form-control::-moz-placeholder, .post-password-form .form-floating > input[type=password]::-moz-placeholder {
+.form-floating > .form-control::-moz-placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-moz-placeholder, div.product #reviews #respond .form-floating > textarea::-moz-placeholder, .post-password-form .form-floating > input[type=password]::-moz-placeholder {
   color: transparent;
 }
-.form-floating > .form-control:-ms-input-placeholder, .post-password-form .form-floating > input[type=password]:-ms-input-placeholder {
+.form-floating > .form-control:-ms-input-placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]):-ms-input-placeholder, div.product #reviews #respond .form-floating > textarea:-ms-input-placeholder, .post-password-form .form-floating > input[type=password]:-ms-input-placeholder {
   color: transparent;
 }
-.form-floating > .form-control::placeholder, .post-password-form .form-floating > input[type=password]::placeholder {
+.form-floating > .form-control::placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::placeholder,
+div.product #reviews #respond .form-floating > textarea::placeholder, .post-password-form .form-floating > input[type=password]::placeholder {
   color: transparent;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown) {
+.form-floating > .form-control:not(:-moz-placeholder-shown), div.product #reviews #respond .form-floating > input:not(:-moz-placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .form-floating > textarea:not(:-moz-placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:not(:-ms-input-placeholder), .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder) {
+.form-floating > .form-control:not(:-ms-input-placeholder), div.product #reviews #respond .form-floating > input:not(:-ms-input-placeholder):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .form-floating > textarea:not(:-ms-input-placeholder), .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:focus, .post-password-form .form-floating > input[type=password]:focus, .form-floating > .form-control:not(:placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:placeholder-shown) {
+.form-floating > .form-control:focus, div.product #reviews #respond .form-floating > input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .form-floating > textarea:focus, .post-password-form .form-floating > input[type=password]:focus, .form-floating > .form-control:not(:placeholder-shown), div.product #reviews #respond .form-floating > input:not(:placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .form-floating > textarea:not(:placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:-webkit-autofill, .post-password-form .form-floating > input[type=password]:-webkit-autofill {
+.form-floating > .form-control:-webkit-autofill, div.product #reviews #respond .form-floating > input:-webkit-autofill:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .form-floating > textarea:-webkit-autofill, .post-password-form .form-floating > input[type=password]:-webkit-autofill {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-select, .posts-filter-nav .form-floating > select {
+.form-floating > .form-select, form.cart .form-floating > select, div.product #reviews #respond .form-floating > select, .posts-filter-nav .form-floating > select {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label, .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown) ~ label {
+.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label, div.product #reviews #respond .form-floating > input:not(:-moz-placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label, div.product #reviews #respond .form-floating > textarea:not(:-moz-placeholder-shown) ~ label, .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:not(:-ms-input-placeholder) ~ label, .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder) ~ label {
+.form-floating > .form-control:not(:-ms-input-placeholder) ~ label, div.product #reviews #respond .form-floating > input:not(:-ms-input-placeholder):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label, div.product #reviews #respond .form-floating > textarea:not(:-ms-input-placeholder) ~ label, .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:focus ~ label, .post-password-form .form-floating > input[type=password]:focus ~ label,
+.form-floating > .form-control:focus ~ label, div.product #reviews #respond .form-floating > input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label,
+div.product #reviews #respond .form-floating > textarea:focus ~ label, .post-password-form .form-floating > input[type=password]:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
+div.product #reviews #respond .form-floating > input:not(:placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label,
+div.product #reviews #respond .form-floating > textarea:not(:placeholder-shown) ~ label,
 .post-password-form .form-floating > input[type=password]:not(:placeholder-shown) ~ label,
 .form-floating > .form-select ~ label,
+form.cart .form-floating > select ~ label,
+div.product #reviews #respond .form-floating > select ~ label,
 .posts-filter-nav .form-floating > select ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:-webkit-autofill ~ label, .post-password-form .form-floating > input[type=password]:-webkit-autofill ~ label {
+.form-floating > .form-control:-webkit-autofill ~ label, div.product #reviews #respond .form-floating > input:-webkit-autofill:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label,
+div.product #reviews #respond .form-floating > textarea:-webkit-autofill ~ label, .post-password-form .form-floating > input[type=password]:-webkit-autofill ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -2748,16 +2798,22 @@ textarea.form-control-lg {
   align-items: stretch;
   width: 100%;
 }
-.input-group > .form-control, .post-password-form .input-group > input[type=password],
+.input-group > .form-control, div.product #reviews #respond .input-group > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .input-group > textarea, .post-password-form .input-group > input[type=password],
 .input-group > .form-select,
+form.cart .input-group > select,
+div.product #reviews #respond .input-group > select,
 .posts-filter-nav .input-group > select {
   position: relative;
   flex: 1 1 auto;
   width: 1%;
   min-width: 0;
 }
-.input-group > .form-control:focus, .post-password-form .input-group > input[type=password]:focus,
+.input-group > .form-control:focus, div.product #reviews #respond .input-group > input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .input-group > textarea:focus, .post-password-form .input-group > input[type=password]:focus,
 .input-group > .form-select:focus,
+form.cart .input-group > select:focus,
+div.product #reviews #respond .input-group > select:focus,
 .posts-filter-nav .input-group > select:focus {
   z-index: 3;
 }
@@ -2788,8 +2844,11 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 
-.input-group-lg > .form-control, .post-password-form .input-group-lg > input[type=password],
+.input-group-lg > .form-control, div.product #reviews #respond .input-group-lg > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .input-group-lg > textarea, .post-password-form .input-group-lg > input[type=password],
 .input-group-lg > .form-select,
+form.cart .input-group-lg > select,
+div.product #reviews #respond .input-group-lg > select,
 .posts-filter-nav .input-group-lg > select,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
@@ -2801,8 +2860,11 @@ textarea.form-control-lg {
   border-radius: 0.3rem;
 }
 
-.input-group-sm > .form-control, .post-password-form .input-group-sm > input[type=password],
+.input-group-sm > .form-control, div.product #reviews #respond .input-group-sm > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .input-group-sm > textarea, .post-password-form .input-group-sm > input[type=password],
 .input-group-sm > .form-select,
+form.cart .input-group-sm > select,
+div.product #reviews #respond .input-group-sm > select,
 .posts-filter-nav .input-group-sm > select,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
@@ -2814,8 +2876,10 @@ textarea.form-control-lg {
   border-radius: 0.2rem;
 }
 
-.input-group-lg > .form-select, .posts-filter-nav .input-group-lg > select,
+.input-group-lg > .form-select, form.cart .input-group-lg > select, div.product #reviews #respond .input-group-lg > select, .posts-filter-nav .input-group-lg > select,
 .input-group-sm > .form-select,
+form.cart .input-group-sm > select,
+div.product #reviews #respond .input-group-sm > select,
 .posts-filter-nav .input-group-sm > select {
   padding-right: 3rem;
 }
@@ -2865,7 +2929,10 @@ textarea.form-control-lg {
   display: block;
 }
 
-.was-validated .form-control:valid, .was-validated .post-password-form input[type=password]:valid, .post-password-form .was-validated input[type=password]:valid, .form-control.is-valid, .post-password-form input.is-valid[type=password] {
+.was-validated .form-control:valid, .was-validated div.product #reviews #respond input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated div.product #reviews #respond textarea:valid,
+div.product #reviews #respond .was-validated textarea:valid, .was-validated .post-password-form input[type=password]:valid, .post-password-form .was-validated input[type=password]:valid, .form-control.is-valid, div.product #reviews #respond input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-valid, .post-password-form input.is-valid[type=password] {
   border-color: #198754;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2873,61 +2940,105 @@ textarea.form-control-lg {
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-control:valid:focus, .was-validated .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated input[type=password]:valid:focus, .form-control.is-valid:focus, .post-password-form input.is-valid[type=password]:focus {
+.was-validated .form-control:valid:focus, .was-validated div.product #reviews #respond input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated div.product #reviews #respond textarea:valid:focus,
+div.product #reviews #respond .was-validated textarea:valid:focus, .was-validated .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated input[type=password]:valid:focus, .form-control.is-valid:focus, div.product #reviews #respond input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-valid:focus, .post-password-form input.is-valid[type=password]:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
-.was-validated textarea.form-control:valid, textarea.form-control.is-valid {
+.was-validated textarea.form-control:valid,
+.was-validated div.product #reviews #respond textarea:valid,
+div.product #reviews #respond .was-validated textarea:valid, textarea.form-control.is-valid,
+div.product #reviews #respond textarea.is-valid {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:valid, .was-validated .posts-filter-nav select:valid, .posts-filter-nav .was-validated select:valid, .form-select.is-valid, .posts-filter-nav select.is-valid {
+.was-validated .form-select:valid, .was-validated form.cart select:valid, form.cart .was-validated select:valid, .was-validated div.product #reviews #respond select:valid, div.product #reviews #respond .was-validated select:valid, .was-validated .posts-filter-nav select:valid, .posts-filter-nav .was-validated select:valid, .form-select.is-valid, form.cart select.is-valid, div.product #reviews #respond select.is-valid, .posts-filter-nav select.is-valid {
   border-color: #198754;
 }
-.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .posts-filter-nav select:valid:not([multiple]):not([size]), .posts-filter-nav .was-validated select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated .posts-filter-nav select:valid:not([multiple])[size="1"], .posts-filter-nav .was-validated select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .posts-filter-nav select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], .posts-filter-nav select.is-valid:not([multiple])[size="1"] {
+.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated form.cart select:valid:not([multiple]):not([size]), form.cart .was-validated select:valid:not([multiple]):not([size]), .was-validated div.product #reviews #respond select:valid:not([multiple]):not([size]), div.product #reviews #respond .was-validated select:valid:not([multiple]):not([size]), .was-validated .posts-filter-nav select:valid:not([multiple]):not([size]), .posts-filter-nav .was-validated select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated form.cart select:valid:not([multiple])[size="1"], form.cart .was-validated select:valid:not([multiple])[size="1"], .was-validated div.product #reviews #respond select:valid:not([multiple])[size="1"], div.product #reviews #respond .was-validated select:valid:not([multiple])[size="1"], .was-validated .posts-filter-nav select:valid:not([multiple])[size="1"], .posts-filter-nav .was-validated select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), form.cart select.is-valid:not([multiple]):not([size]), div.product #reviews #respond select.is-valid:not([multiple]):not([size]), .posts-filter-nav select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], form.cart select.is-valid:not([multiple])[size="1"], div.product #reviews #respond select.is-valid:not([multiple])[size="1"], .posts-filter-nav select.is-valid:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-select:valid:focus, .was-validated .posts-filter-nav select:valid:focus, .posts-filter-nav .was-validated select:valid:focus, .form-select.is-valid:focus, .posts-filter-nav select.is-valid:focus {
+.was-validated .form-select:valid:focus, .was-validated form.cart select:valid:focus, form.cart .was-validated select:valid:focus, .was-validated div.product #reviews #respond select:valid:focus, div.product #reviews #respond .was-validated select:valid:focus, .was-validated .posts-filter-nav select:valid:focus, .posts-filter-nav .was-validated select:valid:focus, .form-select.is-valid:focus, form.cart select.is-valid:focus, div.product #reviews #respond select.is-valid:focus, .posts-filter-nav select.is-valid:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
-.was-validated .form-check-input:valid, .form-check-input.is-valid {
+.was-validated .form-check-input:valid, .was-validated div.product #reviews #respond [type=checkbox]:valid, div.product #reviews #respond .was-validated [type=checkbox]:valid,
+.was-validated div.product #reviews #respond [type=radio]:valid,
+div.product #reviews #respond .was-validated [type=radio]:valid, .form-check-input.is-valid, div.product #reviews #respond .is-valid[type=checkbox],
+div.product #reviews #respond .is-valid[type=radio] {
   border-color: #198754;
 }
-.was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
+.was-validated .form-check-input:valid:checked, .was-validated div.product #reviews #respond [type=checkbox]:valid:checked, div.product #reviews #respond .was-validated [type=checkbox]:valid:checked,
+.was-validated div.product #reviews #respond [type=radio]:valid:checked,
+div.product #reviews #respond .was-validated [type=radio]:valid:checked, .form-check-input.is-valid:checked, div.product #reviews #respond .is-valid[type=checkbox]:checked,
+div.product #reviews #respond .is-valid[type=radio]:checked {
   background-color: #198754;
 }
-.was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
+.was-validated .form-check-input:valid:focus, .was-validated div.product #reviews #respond [type=checkbox]:valid:focus, div.product #reviews #respond .was-validated [type=checkbox]:valid:focus,
+.was-validated div.product #reviews #respond [type=radio]:valid:focus,
+div.product #reviews #respond .was-validated [type=radio]:valid:focus, .form-check-input.is-valid:focus, div.product #reviews #respond .is-valid[type=checkbox]:focus,
+div.product #reviews #respond .is-valid[type=radio]:focus {
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
-.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+.was-validated .form-check-input:valid ~ .form-check-label, .was-validated div.product #reviews #respond [type=checkbox]:valid ~ .form-check-label, div.product #reviews #respond .was-validated [type=checkbox]:valid ~ .form-check-label,
+.was-validated div.product #reviews #respond [type=radio]:valid ~ .form-check-label,
+div.product #reviews #respond .was-validated [type=radio]:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label, div.product #reviews #respond .is-valid[type=checkbox] ~ .form-check-label,
+div.product #reviews #respond .is-valid[type=radio] ~ .form-check-label {
   color: #198754;
 }
 
-.form-check-inline .form-check-input ~ .valid-feedback {
+.form-check-inline .form-check-input ~ .valid-feedback, .form-check-inline div.product #reviews #respond [type=checkbox] ~ .valid-feedback, div.product #reviews #respond .form-check-inline [type=checkbox] ~ .valid-feedback,
+.form-check-inline div.product #reviews #respond [type=radio] ~ .valid-feedback,
+div.product #reviews #respond .form-check-inline [type=radio] ~ .valid-feedback {
   margin-left: 0.5em;
 }
 
-.was-validated .input-group .form-control:valid, .was-validated .input-group .post-password-form input[type=password]:valid, .post-password-form .was-validated .input-group input[type=password]:valid, .input-group .form-control.is-valid, .input-group .post-password-form input.is-valid[type=password], .post-password-form .input-group input.is-valid[type=password],
+.was-validated .input-group .form-control:valid, .was-validated .input-group div.product #reviews #respond input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated .input-group div.product #reviews #respond textarea:valid,
+div.product #reviews #respond .was-validated .input-group textarea:valid, .was-validated .input-group .post-password-form input[type=password]:valid, .post-password-form .was-validated .input-group input[type=password]:valid, .input-group .form-control.is-valid, .input-group div.product #reviews #respond input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.input-group div.product #reviews #respond textarea.is-valid,
+div.product #reviews #respond .input-group textarea.is-valid, .input-group .post-password-form input.is-valid[type=password], .post-password-form .input-group input.is-valid[type=password],
 .was-validated .input-group .form-select:valid,
+.was-validated .input-group form.cart select:valid,
+form.cart .was-validated .input-group select:valid,
+.was-validated .input-group div.product #reviews #respond select:valid,
+div.product #reviews #respond .was-validated .input-group select:valid,
 .was-validated .input-group .posts-filter-nav select:valid,
 .posts-filter-nav .was-validated .input-group select:valid,
 .input-group .form-select.is-valid,
+.input-group form.cart select.is-valid,
+form.cart .input-group select.is-valid,
+.input-group div.product #reviews #respond select.is-valid,
+div.product #reviews #respond .input-group select.is-valid,
 .input-group .posts-filter-nav select.is-valid,
 .posts-filter-nav .input-group select.is-valid {
   z-index: 1;
 }
-.was-validated .input-group .form-control:valid:focus, .was-validated .input-group .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated .input-group input[type=password]:valid:focus, .input-group .form-control.is-valid:focus, .input-group .post-password-form input.is-valid[type=password]:focus, .post-password-form .input-group input.is-valid[type=password]:focus,
+.was-validated .input-group .form-control:valid:focus, .was-validated .input-group div.product #reviews #respond input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated .input-group div.product #reviews #respond textarea:valid:focus,
+div.product #reviews #respond .was-validated .input-group textarea:valid:focus, .was-validated .input-group .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated .input-group input[type=password]:valid:focus, .input-group .form-control.is-valid:focus, .input-group div.product #reviews #respond input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.input-group div.product #reviews #respond textarea.is-valid:focus,
+div.product #reviews #respond .input-group textarea.is-valid:focus, .input-group .post-password-form input.is-valid[type=password]:focus, .post-password-form .input-group input.is-valid[type=password]:focus,
 .was-validated .input-group .form-select:valid:focus,
+.was-validated .input-group form.cart select:valid:focus,
+form.cart .was-validated .input-group select:valid:focus,
+.was-validated .input-group div.product #reviews #respond select:valid:focus,
+div.product #reviews #respond .was-validated .input-group select:valid:focus,
 .was-validated .input-group .posts-filter-nav select:valid:focus,
 .posts-filter-nav .was-validated .input-group select:valid:focus,
 .input-group .form-select.is-valid:focus,
+.input-group form.cart select.is-valid:focus,
+form.cart .input-group select.is-valid:focus,
+.input-group div.product #reviews #respond select.is-valid:focus,
+div.product #reviews #respond .input-group select.is-valid:focus,
 .input-group .posts-filter-nav select.is-valid:focus,
 .posts-filter-nav .input-group select.is-valid:focus {
   z-index: 3;
@@ -2962,7 +3073,10 @@ textarea.form-control-lg {
   display: block;
 }
 
-.was-validated .form-control:invalid, .was-validated .post-password-form input[type=password]:invalid, .post-password-form .was-validated input[type=password]:invalid, .form-control.is-invalid, .post-password-form input.is-invalid[type=password] {
+.was-validated .form-control:invalid, .was-validated div.product #reviews #respond input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated div.product #reviews #respond textarea:invalid,
+div.product #reviews #respond .was-validated textarea:invalid, .was-validated .post-password-form input[type=password]:invalid, .post-password-form .was-validated input[type=password]:invalid, .form-control.is-invalid, div.product #reviews #respond input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-invalid, .post-password-form input.is-invalid[type=password] {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -2970,61 +3084,105 @@ textarea.form-control-lg {
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-control:invalid:focus, .was-validated .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated input[type=password]:invalid:focus, .form-control.is-invalid:focus, .post-password-form input.is-invalid[type=password]:focus {
+.was-validated .form-control:invalid:focus, .was-validated div.product #reviews #respond input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated div.product #reviews #respond textarea:invalid:focus,
+div.product #reviews #respond .was-validated textarea:invalid:focus, .was-validated .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated input[type=password]:invalid:focus, .form-control.is-invalid:focus, div.product #reviews #respond input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-invalid:focus, .post-password-form input.is-invalid[type=password]:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
+.was-validated textarea.form-control:invalid,
+.was-validated div.product #reviews #respond textarea:invalid,
+div.product #reviews #respond .was-validated textarea:invalid, textarea.form-control.is-invalid,
+div.product #reviews #respond textarea.is-invalid {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:invalid, .was-validated .posts-filter-nav select:invalid, .posts-filter-nav .was-validated select:invalid, .form-select.is-invalid, .posts-filter-nav select.is-invalid {
+.was-validated .form-select:invalid, .was-validated form.cart select:invalid, form.cart .was-validated select:invalid, .was-validated div.product #reviews #respond select:invalid, div.product #reviews #respond .was-validated select:invalid, .was-validated .posts-filter-nav select:invalid, .posts-filter-nav .was-validated select:invalid, .form-select.is-invalid, form.cart select.is-invalid, div.product #reviews #respond select.is-invalid, .posts-filter-nav select.is-invalid {
   border-color: #dc3545;
 }
-.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .posts-filter-nav select:invalid:not([multiple]):not([size]), .posts-filter-nav .was-validated select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated .posts-filter-nav select:invalid:not([multiple])[size="1"], .posts-filter-nav .was-validated select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .posts-filter-nav select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .posts-filter-nav select.is-invalid:not([multiple])[size="1"] {
+.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated form.cart select:invalid:not([multiple]):not([size]), form.cart .was-validated select:invalid:not([multiple]):not([size]), .was-validated div.product #reviews #respond select:invalid:not([multiple]):not([size]), div.product #reviews #respond .was-validated select:invalid:not([multiple]):not([size]), .was-validated .posts-filter-nav select:invalid:not([multiple]):not([size]), .posts-filter-nav .was-validated select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated form.cart select:invalid:not([multiple])[size="1"], form.cart .was-validated select:invalid:not([multiple])[size="1"], .was-validated div.product #reviews #respond select:invalid:not([multiple])[size="1"], div.product #reviews #respond .was-validated select:invalid:not([multiple])[size="1"], .was-validated .posts-filter-nav select:invalid:not([multiple])[size="1"], .posts-filter-nav .was-validated select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), form.cart select.is-invalid:not([multiple]):not([size]), div.product #reviews #respond select.is-invalid:not([multiple]):not([size]), .posts-filter-nav select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], form.cart select.is-invalid:not([multiple])[size="1"], div.product #reviews #respond select.is-invalid:not([multiple])[size="1"], .posts-filter-nav select.is-invalid:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-select:invalid:focus, .was-validated .posts-filter-nav select:invalid:focus, .posts-filter-nav .was-validated select:invalid:focus, .form-select.is-invalid:focus, .posts-filter-nav select.is-invalid:focus {
+.was-validated .form-select:invalid:focus, .was-validated form.cart select:invalid:focus, form.cart .was-validated select:invalid:focus, .was-validated div.product #reviews #respond select:invalid:focus, div.product #reviews #respond .was-validated select:invalid:focus, .was-validated .posts-filter-nav select:invalid:focus, .posts-filter-nav .was-validated select:invalid:focus, .form-select.is-invalid:focus, form.cart select.is-invalid:focus, div.product #reviews #respond select.is-invalid:focus, .posts-filter-nav select.is-invalid:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated .form-check-input:invalid, .form-check-input.is-invalid {
+.was-validated .form-check-input:invalid, .was-validated div.product #reviews #respond [type=checkbox]:invalid, div.product #reviews #respond .was-validated [type=checkbox]:invalid,
+.was-validated div.product #reviews #respond [type=radio]:invalid,
+div.product #reviews #respond .was-validated [type=radio]:invalid, .form-check-input.is-invalid, div.product #reviews #respond .is-invalid[type=checkbox],
+div.product #reviews #respond .is-invalid[type=radio] {
   border-color: #dc3545;
 }
-.was-validated .form-check-input:invalid:checked, .form-check-input.is-invalid:checked {
+.was-validated .form-check-input:invalid:checked, .was-validated div.product #reviews #respond [type=checkbox]:invalid:checked, div.product #reviews #respond .was-validated [type=checkbox]:invalid:checked,
+.was-validated div.product #reviews #respond [type=radio]:invalid:checked,
+div.product #reviews #respond .was-validated [type=radio]:invalid:checked, .form-check-input.is-invalid:checked, div.product #reviews #respond .is-invalid[type=checkbox]:checked,
+div.product #reviews #respond .is-invalid[type=radio]:checked {
   background-color: #dc3545;
 }
-.was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
+.was-validated .form-check-input:invalid:focus, .was-validated div.product #reviews #respond [type=checkbox]:invalid:focus, div.product #reviews #respond .was-validated [type=checkbox]:invalid:focus,
+.was-validated div.product #reviews #respond [type=radio]:invalid:focus,
+div.product #reviews #respond .was-validated [type=radio]:invalid:focus, .form-check-input.is-invalid:focus, div.product #reviews #respond .is-invalid[type=checkbox]:focus,
+div.product #reviews #respond .is-invalid[type=radio]:focus {
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
-.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
+.was-validated .form-check-input:invalid ~ .form-check-label, .was-validated div.product #reviews #respond [type=checkbox]:invalid ~ .form-check-label, div.product #reviews #respond .was-validated [type=checkbox]:invalid ~ .form-check-label,
+.was-validated div.product #reviews #respond [type=radio]:invalid ~ .form-check-label,
+div.product #reviews #respond .was-validated [type=radio]:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label, div.product #reviews #respond .is-invalid[type=checkbox] ~ .form-check-label,
+div.product #reviews #respond .is-invalid[type=radio] ~ .form-check-label {
   color: #dc3545;
 }
 
-.form-check-inline .form-check-input ~ .invalid-feedback {
+.form-check-inline .form-check-input ~ .invalid-feedback, .form-check-inline div.product #reviews #respond [type=checkbox] ~ .invalid-feedback, div.product #reviews #respond .form-check-inline [type=checkbox] ~ .invalid-feedback,
+.form-check-inline div.product #reviews #respond [type=radio] ~ .invalid-feedback,
+div.product #reviews #respond .form-check-inline [type=radio] ~ .invalid-feedback {
   margin-left: 0.5em;
 }
 
-.was-validated .input-group .form-control:invalid, .was-validated .input-group .post-password-form input[type=password]:invalid, .post-password-form .was-validated .input-group input[type=password]:invalid, .input-group .form-control.is-invalid, .input-group .post-password-form input.is-invalid[type=password], .post-password-form .input-group input.is-invalid[type=password],
+.was-validated .input-group .form-control:invalid, .was-validated .input-group div.product #reviews #respond input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated .input-group div.product #reviews #respond textarea:invalid,
+div.product #reviews #respond .was-validated .input-group textarea:invalid, .was-validated .input-group .post-password-form input[type=password]:invalid, .post-password-form .was-validated .input-group input[type=password]:invalid, .input-group .form-control.is-invalid, .input-group div.product #reviews #respond input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.input-group div.product #reviews #respond textarea.is-invalid,
+div.product #reviews #respond .input-group textarea.is-invalid, .input-group .post-password-form input.is-invalid[type=password], .post-password-form .input-group input.is-invalid[type=password],
 .was-validated .input-group .form-select:invalid,
+.was-validated .input-group form.cart select:invalid,
+form.cart .was-validated .input-group select:invalid,
+.was-validated .input-group div.product #reviews #respond select:invalid,
+div.product #reviews #respond .was-validated .input-group select:invalid,
 .was-validated .input-group .posts-filter-nav select:invalid,
 .posts-filter-nav .was-validated .input-group select:invalid,
 .input-group .form-select.is-invalid,
+.input-group form.cart select.is-invalid,
+form.cart .input-group select.is-invalid,
+.input-group div.product #reviews #respond select.is-invalid,
+div.product #reviews #respond .input-group select.is-invalid,
 .input-group .posts-filter-nav select.is-invalid,
 .posts-filter-nav .input-group select.is-invalid {
   z-index: 2;
 }
-.was-validated .input-group .form-control:invalid:focus, .was-validated .input-group .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated .input-group input[type=password]:invalid:focus, .input-group .form-control.is-invalid:focus, .input-group .post-password-form input.is-invalid[type=password]:focus, .post-password-form .input-group input.is-invalid[type=password]:focus,
+.was-validated .input-group .form-control:invalid:focus, .was-validated .input-group div.product #reviews #respond input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.was-validated .input-group div.product #reviews #respond textarea:invalid:focus,
+div.product #reviews #respond .was-validated .input-group textarea:invalid:focus, .was-validated .input-group .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated .input-group input[type=password]:invalid:focus, .input-group .form-control.is-invalid:focus, .input-group div.product #reviews #respond input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.input-group div.product #reviews #respond textarea.is-invalid:focus,
+div.product #reviews #respond .input-group textarea.is-invalid:focus, .input-group .post-password-form input.is-invalid[type=password]:focus, .post-password-form .input-group input.is-invalid[type=password]:focus,
 .was-validated .input-group .form-select:invalid:focus,
+.was-validated .input-group form.cart select:invalid:focus,
+form.cart .was-validated .input-group select:invalid:focus,
+.was-validated .input-group div.product #reviews #respond select:invalid:focus,
+div.product #reviews #respond .was-validated .input-group select:invalid:focus,
 .was-validated .input-group .posts-filter-nav select:invalid:focus,
 .posts-filter-nav .was-validated .input-group select:invalid:focus,
 .input-group .form-select.is-invalid:focus,
+.input-group form.cart select.is-invalid:focus,
+form.cart .input-group select.is-invalid:focus,
+.input-group div.product #reviews #respond select.is-invalid:focus,
+div.product #reviews #respond .input-group select.is-invalid:focus,
 .input-group .posts-filter-nav select.is-invalid:focus,
 .posts-filter-nav .input-group select.is-invalid:focus {
   z-index: 3;
@@ -3075,46 +3233,94 @@ fieldset:disabled .pagination .page-item .page-link,
   opacity: 0.65;
 }
 
-.btn-primary, .post-page-numbers.current,
+.btn-primary, div.product #reviews #respond button,
+div.product #reviews #respond [type=button],
+div.product #reviews #respond [type=reset],
+div.product #reviews #respond [type=submit], .post-page-numbers.current,
 .pagination .page-item .page-link.current, .post-password-form input[type=submit] {
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
 }
-.btn-primary:hover, .post-page-numbers.current:hover,
+.btn-primary:hover, div.product #reviews #respond button:hover,
+div.product #reviews #respond [type=button]:hover,
+div.product #reviews #respond [type=reset]:hover,
+div.product #reviews #respond [type=submit]:hover, .post-page-numbers.current:hover,
 .pagination .page-item .page-link.current:hover, .post-password-form input[type=submit]:hover {
   color: #fff;
   background-color: #0b5ed7;
   border-color: #0a58ca;
 }
-.btn-check:focus + .btn-primary, .btn-check:focus + .post-page-numbers.current,
-.pagination .page-item .btn-check:focus + .page-link.current, .post-password-form .btn-check:focus + input[type=submit], .btn-primary:focus, .post-page-numbers.current:focus,
+.btn-check:focus + .btn-primary, div.product #reviews #respond .btn-check:focus + button,
+div.product #reviews #respond .btn-check:focus + [type=button],
+div.product #reviews #respond .btn-check:focus + [type=reset],
+div.product #reviews #respond .btn-check:focus + [type=submit], .btn-check:focus + .post-page-numbers.current,
+.pagination .page-item .btn-check:focus + .page-link.current, .post-password-form .btn-check:focus + input[type=submit], .btn-primary:focus, div.product #reviews #respond button:focus,
+div.product #reviews #respond [type=button]:focus,
+div.product #reviews #respond [type=reset]:focus,
+div.product #reviews #respond [type=submit]:focus, .post-page-numbers.current:focus,
 .pagination .page-item .page-link.current:focus, .post-password-form input[type=submit]:focus {
   color: #fff;
   background-color: #0b5ed7;
   border-color: #0a58ca;
   box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
-.btn-check:checked + .btn-primary, .btn-check:checked + .post-page-numbers.current,
-.pagination .page-item .btn-check:checked + .page-link.current, .post-password-form .btn-check:checked + input[type=submit], .btn-check:active + .btn-primary, .btn-check:active + .post-page-numbers.current,
-.pagination .page-item .btn-check:active + .page-link.current, .post-password-form .btn-check:active + input[type=submit], .btn-primary:active, .post-page-numbers.current:active,
-.pagination .page-item .page-link.current:active, .post-password-form input[type=submit]:active, .btn-primary.active, .active.post-page-numbers.current,
-.pagination .page-item .active.page-link.current, .post-password-form input.active[type=submit], .show > .btn-primary.dropdown-toggle, .show > .dropdown-toggle.post-page-numbers.current,
+.btn-check:checked + .btn-primary, div.product #reviews #respond .btn-check:checked + button,
+div.product #reviews #respond .btn-check:checked + [type=button],
+div.product #reviews #respond .btn-check:checked + [type=reset],
+div.product #reviews #respond .btn-check:checked + [type=submit], .btn-check:checked + .post-page-numbers.current,
+.pagination .page-item .btn-check:checked + .page-link.current, .post-password-form .btn-check:checked + input[type=submit], .btn-check:active + .btn-primary, div.product #reviews #respond .btn-check:active + button,
+div.product #reviews #respond .btn-check:active + [type=button],
+div.product #reviews #respond .btn-check:active + [type=reset],
+div.product #reviews #respond .btn-check:active + [type=submit], .btn-check:active + .post-page-numbers.current,
+.pagination .page-item .btn-check:active + .page-link.current, .post-password-form .btn-check:active + input[type=submit], .btn-primary:active, div.product #reviews #respond button:active,
+div.product #reviews #respond [type=button]:active,
+div.product #reviews #respond [type=reset]:active,
+div.product #reviews #respond [type=submit]:active, .post-page-numbers.current:active,
+.pagination .page-item .page-link.current:active, .post-password-form input[type=submit]:active, .btn-primary.active, div.product #reviews #respond button.active,
+div.product #reviews #respond .active[type=button],
+div.product #reviews #respond .active[type=reset],
+div.product #reviews #respond .active[type=submit], .active.post-page-numbers.current,
+.pagination .page-item .active.page-link.current, .post-password-form input.active[type=submit], .show > .btn-primary.dropdown-toggle, div.product #reviews #respond .show > button.dropdown-toggle,
+div.product #reviews #respond .show > .dropdown-toggle[type=button],
+div.product #reviews #respond .show > .dropdown-toggle[type=reset],
+div.product #reviews #respond .show > .dropdown-toggle[type=submit], .show > .dropdown-toggle.post-page-numbers.current,
 .pagination .page-item .show > .dropdown-toggle.page-link.current, .post-password-form .show > input.dropdown-toggle[type=submit] {
   color: #fff;
   background-color: #0a58ca;
   border-color: #0a53be;
 }
-.btn-check:checked + .btn-primary:focus, .btn-check:checked + .post-page-numbers.current:focus,
-.pagination .page-item .btn-check:checked + .page-link.current:focus, .post-password-form .btn-check:checked + input[type=submit]:focus, .btn-check:active + .btn-primary:focus, .btn-check:active + .post-page-numbers.current:focus,
-.pagination .page-item .btn-check:active + .page-link.current:focus, .post-password-form .btn-check:active + input[type=submit]:focus, .btn-primary:active:focus, .post-page-numbers.current:active:focus,
-.pagination .page-item .page-link.current:active:focus, .post-password-form input[type=submit]:active:focus, .btn-primary.active:focus, .active.post-page-numbers.current:focus,
-.pagination .page-item .active.page-link.current:focus, .post-password-form input.active[type=submit]:focus, .show > .btn-primary.dropdown-toggle:focus, .show > .dropdown-toggle.post-page-numbers.current:focus,
+.btn-check:checked + .btn-primary:focus, div.product #reviews #respond .btn-check:checked + button:focus,
+div.product #reviews #respond .btn-check:checked + [type=button]:focus,
+div.product #reviews #respond .btn-check:checked + [type=reset]:focus,
+div.product #reviews #respond .btn-check:checked + [type=submit]:focus, .btn-check:checked + .post-page-numbers.current:focus,
+.pagination .page-item .btn-check:checked + .page-link.current:focus, .post-password-form .btn-check:checked + input[type=submit]:focus, .btn-check:active + .btn-primary:focus, div.product #reviews #respond .btn-check:active + button:focus,
+div.product #reviews #respond .btn-check:active + [type=button]:focus,
+div.product #reviews #respond .btn-check:active + [type=reset]:focus,
+div.product #reviews #respond .btn-check:active + [type=submit]:focus, .btn-check:active + .post-page-numbers.current:focus,
+.pagination .page-item .btn-check:active + .page-link.current:focus, .post-password-form .btn-check:active + input[type=submit]:focus, .btn-primary:active:focus, div.product #reviews #respond button:active:focus,
+div.product #reviews #respond [type=button]:active:focus,
+div.product #reviews #respond [type=reset]:active:focus,
+div.product #reviews #respond [type=submit]:active:focus, .post-page-numbers.current:active:focus,
+.pagination .page-item .page-link.current:active:focus, .post-password-form input[type=submit]:active:focus, .btn-primary.active:focus, div.product #reviews #respond button.active:focus,
+div.product #reviews #respond .active[type=button]:focus,
+div.product #reviews #respond .active[type=reset]:focus,
+div.product #reviews #respond .active[type=submit]:focus, .active.post-page-numbers.current:focus,
+.pagination .page-item .active.page-link.current:focus, .post-password-form input.active[type=submit]:focus, .show > .btn-primary.dropdown-toggle:focus, div.product #reviews #respond .show > button.dropdown-toggle:focus,
+div.product #reviews #respond .show > .dropdown-toggle[type=button]:focus,
+div.product #reviews #respond .show > .dropdown-toggle[type=reset]:focus,
+div.product #reviews #respond .show > .dropdown-toggle[type=submit]:focus, .show > .dropdown-toggle.post-page-numbers.current:focus,
 .pagination .page-item .show > .dropdown-toggle.page-link.current:focus, .post-password-form .show > input.dropdown-toggle[type=submit]:focus {
   box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
-.btn-primary:disabled, .post-page-numbers.current:disabled,
-.pagination .page-item .page-link.current:disabled, .post-password-form input[type=submit]:disabled, .btn-primary.disabled, .disabled.post-page-numbers.current,
+.btn-primary:disabled, div.product #reviews #respond button:disabled,
+div.product #reviews #respond [type=button]:disabled,
+div.product #reviews #respond [type=reset]:disabled,
+div.product #reviews #respond [type=submit]:disabled, .post-page-numbers.current:disabled,
+.pagination .page-item .page-link.current:disabled, .post-password-form input[type=submit]:disabled, .btn-primary.disabled, div.product #reviews #respond button.disabled,
+div.product #reviews #respond .disabled[type=button],
+div.product #reviews #respond .disabled[type=reset],
+div.product #reviews #respond .disabled[type=submit], .disabled.post-page-numbers.current,
 .pagination .page-item .disabled.page-link.current, .post-password-form input.disabled[type=submit] {
   color: #fff;
   background-color: #0d6efd;
@@ -5018,7 +5224,7 @@ fieldset:disabled .pagination .page-item .page-link,
   border-bottom-right-radius: 0.2rem;
 }
 
-.badge, .post-tags a {
+.badge, div.product .product-labels span, .post-tags a {
   display: inline-block;
   padding: 0.35em 0.65em;
   font-size: 0.75em;
@@ -5030,12 +5236,14 @@ fieldset:disabled .pagination .page-item .page-link,
   vertical-align: baseline;
   border-radius: 0.25rem;
 }
-.badge:empty, .post-tags a:empty {
+.badge:empty, div.product .product-labels span:empty, .post-tags a:empty {
   display: none;
 }
 
-.btn .badge, .post-page-numbers .badge,
-.pagination .page-item .page-link .badge, .post-password-form input[type=submit] .badge, .btn .post-tags a, .post-page-numbers .post-tags a,
+.btn .badge, .btn div.product .product-labels span, div.product .product-labels .btn span, .post-page-numbers .badge, .post-page-numbers div.product .product-labels span, div.product .product-labels .post-page-numbers span,
+.pagination .page-item .page-link .badge,
+.pagination .page-item .page-link div.product .product-labels span,
+div.product .product-labels .pagination .page-item .page-link span, .post-password-form input[type=submit] .badge, .post-password-form input[type=submit] div.product .product-labels span, div.product .product-labels .post-password-form input[type=submit] span, .btn .post-tags a, .post-page-numbers .post-tags a,
 .pagination .page-item .page-link .post-tags a, .post-password-form input[type=submit] .post-tags a, .post-tags .btn a, .post-tags .post-page-numbers a,
 .post-tags .pagination .page-item .page-link a,
 .pagination .page-item .post-tags .page-link a, .post-tags .post-password-form input[type=submit] a, .post-password-form .post-tags input[type=submit] a {
@@ -12923,7 +13131,7 @@ article.hentry > *:first-child {
 .entry-title {
   margin-bottom: 0;
 }
-.entry-title .badge, .entry-title .post-tags a, .post-tags .entry-title a {
+.entry-title .badge, .entry-title div.product .product-labels span, div.product .product-labels .entry-title span, .entry-title .post-tags a, .post-tags .entry-title a {
   font-size: 0.4em;
   margin-left: 0.5em;
 }
@@ -13139,7 +13347,7 @@ section.no-results > *:last-child,
 .comments-title {
   margin-bottom: 1rem;
 }
-.comments-title .badge, .comments-title .post-tags a, .post-tags .comments-title a {
+.comments-title .badge, .comments-title div.product .product-labels span, div.product .product-labels .comments-title span, .comments-title .post-tags a, .post-tags .comments-title a {
   font-weight: 400;
 }
 
@@ -13211,18 +13419,24 @@ section.no-results > *:last-child,
 .comment-respond .required {
   color: #dc3545;
 }
-.comment-respond .form-control, .comment-respond .post-password-form input[type=password], .post-password-form .comment-respond input[type=password] {
+.comment-respond .form-control, .comment-respond div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .comment-respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+.comment-respond div.product #reviews #respond textarea,
+div.product #reviews #respond .comment-respond textarea, .comment-respond .post-password-form input[type=password], .post-password-form .comment-respond input[type=password] {
   background-color: #ffffff;
   border: none;
 }
-.comment-respond .form-check-input {
+.comment-respond .form-check-input, .comment-respond div.product #reviews #respond [type=checkbox], div.product #reviews #respond .comment-respond [type=checkbox],
+.comment-respond div.product #reviews #respond [type=radio],
+div.product #reviews #respond .comment-respond [type=radio] {
   background-color: #ffffff;
   border: none;
 }
-.comment-respond .form-check-input:checked {
+.comment-respond .form-check-input:checked, .comment-respond div.product #reviews #respond [type=checkbox]:checked, div.product #reviews #respond .comment-respond [type=checkbox]:checked,
+.comment-respond div.product #reviews #respond [type=radio]:checked,
+div.product #reviews #respond .comment-respond [type=radio]:checked {
   background-color: #0d6efd;
 }
-.comment-respond .form-check-input:checked[type=checkbox] {
+.comment-respond .form-check-input:checked[type=checkbox], .comment-respond div.product #reviews #respond :checked[type=checkbox], div.product #reviews #respond .comment-respond :checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 .comment-respond .form-submit {
@@ -13751,6 +13965,1138 @@ section.no-results > *:last-child,
 }
 .faqs article.hentry:hover {
   background-color: #e7f1ff;
+}
+
+.product-before-summary > .container,
+.product-summary-wrapper > .container,
+.product-after-summary > .container {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+@media (max-width: 575.98px) {
+  .product-before-summary > .container-fluid, .product-before-summary > .container-sm, .product-before-summary > .container-md, .product-before-summary > .container-lg, .product-before-summary > .container-xl, .product-before-summary > .container-xxl,
+.product-summary-wrapper > .container-fluid,
+.product-summary-wrapper > .container-sm,
+.product-summary-wrapper > .container-md,
+.product-summary-wrapper > .container-lg,
+.product-summary-wrapper > .container-xl,
+.product-summary-wrapper > .container-xxl,
+.product-after-summary > .container-fluid,
+.product-after-summary > .container-sm,
+.product-after-summary > .container-md,
+.product-after-summary > .container-lg,
+.product-after-summary > .container-xl,
+.product-after-summary > .container-xxl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+.site-layout-without-sidebars .product-before-summary, .site-layout-full-without-sidebars .product-before-summary {
+  background: #ffffff;
+  padding-top: 2rem;
+}
+.site-layout-without-sidebars .product-before-summary .page-header .links, .site-layout-full-without-sidebars .product-before-summary .page-header .links {
+  padding-bottom: 1rem;
+}
+
+figure.woocommerce-product-gallery__wrapper {
+  max-width: inherit !important;
+}
+
+.product-summary-wrapper {
+  background: #ffffff;
+  padding: 2rem;
+}
+.product-summary-wrapper::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.product-summary-wrapper:not(.wide-width) {
+  border-radius: 0.3rem;
+}
+@media (max-width: 1199.98px) {
+  .product-summary-wrapper {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .product-summary-wrapper {
+    padding: 1rem;
+  }
+}
+.product-summary-wrapper.wide-width {
+  padding-bottom: 5rem;
+}
+.product-summary-wrapper .container-fluid::after, .product-summary-wrapper .container-sm::after, .product-summary-wrapper .container-md::after, .product-summary-wrapper .container-lg::after, .product-summary-wrapper .container-xl::after, .product-summary-wrapper .container-xxl::after,
+.product-summary-wrapper .container::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+div.product .product-summary-wrapper div.images,
+div.product .product-summary-wrapper div.summary {
+  margin-bottom: 0;
+}
+@media (max-width: 767.98px) {
+  div.product .product-summary-wrapper div.summary {
+    margin-top: 2rem;
+  }
+}
+div.product .product-summary-wrapper .woocommerce-product-rating {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+div.product .product-summary-wrapper .woocommerce-product-rating .star-rating {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+div.product .product-summary-wrapper form.cart {
+  margin-top: 1.5rem;
+  margin-bottom: -10px;
+}
+div.product .product-summary-wrapper form.cart .variations {
+  margin-bottom: 0.5rem;
+}
+div.product .product-summary-wrapper form.cart .variations label {
+  font-weight: 400;
+}
+div.product .product-summary-wrapper form.cart div.quantity,
+div.product .product-summary-wrapper form.cart .button {
+  margin-bottom: 10px;
+}
+div.product .product-after-summary .woocommerce-tabs ul.tabs:before {
+  border: none;
+}
+div.product .product-after-summary .woocommerce-tabs ul.tabs li {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  margin-right: 2rem;
+  margin-left: 0;
+  padding: 0;
+}
+div.product .product-after-summary .woocommerce-tabs ul.tabs li:last-child {
+  margin-right: 0;
+}
+div.product .product-after-summary .woocommerce-tabs ul.tabs li:before, div.product .product-after-summary .woocommerce-tabs ul.tabs li:after {
+  display: none !important;
+}
+div.product .product-after-summary .woocommerce-tabs ul.tabs li a {
+  color: #212529;
+  font-weight: 500;
+  font-size: 1rem;
+}
+div.product .product-after-summary .woocommerce-tabs ul.tabs li.active {
+  background: transparent;
+  border-bottom-color: #0d6efd;
+}
+div.product .product-after-summary .woocommerce-tabs ul.tabs li.active,
+div.product .product-after-summary .woocommerce-tabs ul.tabs li a:hover {
+  color: #0d6efd;
+}
+div.product div.images .flex-viewport {
+  overflow: hidden;
+}
+div.product div.images img,
+div.product div.images .woocommerce-product-gallery__image,
+div.product div.images .flex-viewport {
+  border-radius: 0.3rem;
+}
+div.product div.images .tns-outer {
+  margin-top: 10px;
+}
+div.product div.images .tns-outer .tns-inner .flex-control-thumbs li {
+  clear: inherit;
+}
+div.product div.images .tns-outer .tns-inner .flex-control-thumbs.tns-vertical li {
+  width: 100%;
+}
+div.product .entry-summary {
+  margin-top: 0;
+  position: relative;
+}
+div.product .product-labels {
+  margin-bottom: 1rem;
+}
+div.product .product-labels span {
+  min-height: 0;
+  min-width: 0;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  position: static;
+  text-transform: uppercase;
+}
+div.product .product-labels span.onhot {
+  background: #212529;
+}
+div.product .product-labels span.onsale {
+  background: #0d6efd;
+}
+div.product .product-labels span.onnew {
+  background: #dc3545;
+}
+div.product [class*=woocommerce-product-details__] {
+  margin-top: 1rem;
+}
+div.product .product_meta {
+  margin-top: 1.5rem;
+}
+div.product .product_meta > * {
+  color: #6c757d;
+  display: block;
+  margin-bottom: 5px;
+}
+div.product .product_meta > * * {
+  color: #6c757d;
+  font-weight: 500;
+}
+div.product .product_meta > * a:hover {
+  color: #0d6efd;
+}
+div.product .social-share {
+  margin-top: 1.5rem;
+}
+@media (min-width: 992px) {
+  div.product #reviews {
+    display: flex;
+  }
+}
+div.product #reviews #comments {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  div.product #reviews #comments {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+    width: 60%;
+  }
+}
+div.product #reviews #comments ol.commentlist {
+  padding-left: 0;
+}
+div.product #reviews #comments ol.commentlist li:last-child {
+  margin-bottom: 0;
+}
+div.product #reviews #comments ol.commentlist li img.avatar {
+  background: transparent;
+  border: none;
+  border-radius: 50rem;
+  padding: 0;
+  width: 50px;
+}
+div.product #reviews #comments ol.commentlist li .comment-text {
+  margin-left: 70px;
+  padding: 0;
+  border: 0;
+}
+div.product #reviews #comments ol.commentlist li .comment-text p.meta {
+  margin-bottom: 0.5rem;
+}
+div.product #reviews #comments ol.commentlist li .comment-text p.meta strong {
+  margin-right: 1rem;
+}
+div.product #reviews #comments ol.commentlist li .comment-text p.meta time {
+  font-size: 0.8em;
+}
+div.product #reviews #comments ol.commentlist li .comment-text .description > *:last-child {
+  margin-bottom: 0;
+}
+div.product #reviews .star-rating {
+  float: none;
+  font-size: 0.75em;
+  margin-bottom: 10px;
+}
+@media (min-width: 992px) {
+  div.product #reviews #review_form_wrapper,
+div.product #reviews .woocommerce-verification-required {
+    padding-left: 4%;
+    width: 35%;
+  }
+}
+div.product #reviews .comment-reply-title {
+  display: block;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+div.product #reviews #respond label {
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea {
+  border: none;
+}
+div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]):focus,
+div.product #reviews #respond textarea,
+div.product #reviews #respond textarea:focus {
+  background-color: #ffffff;
+}
+div.product #reviews #respond select {
+  border: none;
+}
+div.product #reviews #respond select, div.product #reviews #respond select:focus {
+  background-color: #ffffff;
+}
+div.product #reviews #respond [type=checkbox],
+div.product #reviews #respond [type=radio] {
+  background-color: #ffffff;
+  border: none;
+}
+div.product #reviews #respond .comment-form-cookies-consent label {
+  display: inline;
+  padding-left: 8px;
+}
+div.product .woocommerce-review__dash {
+  display: none;
+}
+
+form.cart {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+form.cart .variations th,
+form.cart .variations td {
+  color: #6c757d;
+}
+form.cart select {
+  display: inline-block;
+  margin-bottom: 10px;
+  width: auto;
+}
+form.cart .woocommerce-variation-price {
+  margin-bottom: 1rem;
+}
+form.cart .single_add_to_cart_button:after {
+  content: "\f07a";
+  display: inline-block;
+  font-family: FontAwesome;
+  margin-left: 0.5rem;
+  line-height: 1;
+}
+.woocommerce div.product form.cart .group_table td {
+  vertical-align: middle;
+}
+
+.woocommerce-grouped-product-list {
+  margin-bottom: 0.5rem;
+}
+
+.woocommerce-tabs,
+section.upsells,
+section.related-products {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+div.product .product-after-summary .woocommerce-tabs ul.tabs {
+  padding: 0;
+}
+.woocommerce-tabs .panel h2:first-child, .woocommerce-tabs .panel .h2:first-child {
+  display: none;
+}
+.woocommerce-tabs .panel > *:last-child {
+  margin-bottom: 0;
+}
+.woocommerce-tabs .panel:not(#tab-reviews), .woocommerce-tabs .panel #comments {
+  background: #ffffff;
+  border-radius: 0.3rem;
+  padding: 2rem;
+}
+.woocommerce-tabs .panel:not(#tab-reviews)::after, .woocommerce-tabs .panel #comments::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+@media (max-width: 1199.98px) {
+  .woocommerce-tabs .panel:not(#tab-reviews), .woocommerce-tabs .panel #comments {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .woocommerce-tabs .panel:not(#tab-reviews), .woocommerce-tabs .panel #comments {
+    padding: 1rem;
+  }
+}
+
+div.product-view-extended .product-summary-wrapper div.images,
+div.product-view-extended .product-summary-wrapper div.summary {
+  float: none;
+  width: 100%;
+}
+div.product-view-extended .product-summary-wrapper div.images {
+  margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  div.product-view-extended .product-summary-wrapper .woocommerce-product-rating {
+    float: right;
+    margin-top: 1.25rem;
+  }
+}
+div.product-view-extended div.images .tns-outer {
+  border-radius: 0.3rem;
+  margin-top: 0;
+  overflow: hidden;
+}
+div.product-view-extended div.images img,
+div.product-view-extended div.images .woocommerce-product-gallery__image,
+div.product-view-extended div.images .flex-viewport {
+  border-radius: 0;
+}
+div.product-view-extended .woocommerce-product-gallery__wrapper {
+  opacity: 0;
+}
+div.product-view-extended .woocommerce-product-gallery__wrapper.tns-slider {
+  opacity: 1;
+}
+div.product-view-extended .product-summary-wrapper.wide-width div.images {
+  margin-bottom: 4rem;
+}
+div.product-view-extended .product-summary-wrapper.wide-width div.images .tns-outer {
+  border-radius: 0;
+}
+@media (min-width: 992px) {
+  div.product-view-extended .product_meta > * {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+}
+
+div.product-view-full-width .product-summary-wrapper div.images .woocommerce-product-gallery__image:nth-child(n+2),
+div.product-vertical-carousel .product-summary-wrapper div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 100%;
+}
+
+div.product-view-full-width .product-summary-wrapper {
+  padding: 0;
+  position: relative;
+}
+.site-layout-without-sidebars div.product-view-full-width .product-summary-wrapper, .site-layout-full-without-sidebars div.product-view-full-width .product-summary-wrapper {
+  padding-top: 2rem;
+}
+div.product-view-full-width .product-summary-wrapper div.images img,
+div.product-view-full-width .product-summary-wrapper div.images .woocommerce-product-gallery__image {
+  border-radius: 0;
+}
+div.product-view-full-width .product-summary-wrapper div.images .flex-viewport {
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+@media (max-width: 991.98px) {
+  div.product-view-full-width .product-summary-wrapper div.images .flex-viewport {
+    border-radius: 0.3rem 0.3rem 0 0;
+  }
+}
+div.product-view-full-width .product-summary-wrapper div.images .flex-control-thumbs {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  bottom: 11px;
+  width: 85px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+div.product-view-full-width .product-summary-wrapper div.images .flex-control-thumbs::-webkit-scrollbar {
+  width: 5px;
+}
+div.product-view-full-width .product-summary-wrapper div.images .flex-control-thumbs::-webkit-scrollbar-thumb {
+  background: rgba(204, 204, 204, 0.5);
+}
+div.product-view-full-width .product-summary-wrapper div.images .flex-control-thumbs li {
+  position: relative;
+  border-radius: 0.3rem;
+  width: 100%;
+  float: none;
+  margin: 4px 0;
+  padding-left: 15px;
+}
+div.product-view-full-width .product-summary-wrapper div.images .flex-control-thumbs li:before {
+  content: "";
+  background: #0d6efd;
+  border-radius: 0.3rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: 50%;
+  width: 3px;
+  opacity: 0;
+  transition: 0.2s;
+}
+div.product-view-full-width .product-summary-wrapper div.images .flex-control-thumbs li.active:before {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+}
+div.product-view-full-width .product-summary-wrapper div.summary {
+  margin-top: 0;
+  padding: 2rem 2rem 2rem 0;
+}
+@media (min-width: 992px) {
+  div.product-view-full-width .product-summary-wrapper div.summary {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  div.product-view-full-width .product-summary-wrapper div.summary::-webkit-scrollbar {
+    width: 5px;
+  }
+  div.product-view-full-width .product-summary-wrapper div.summary::-webkit-scrollbar-thumb {
+    background: rgba(204, 204, 204, 0.5);
+  }
+}
+@media (min-width: 769px) {
+  .site-layout-without-sidebars div.product-view-full-width .product-summary-wrapper div.summary, .site-layout-full-without-sidebars div.product-view-full-width .product-summary-wrapper div.summary {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .site-layout-without-sidebars div.product-view-full-width .product-summary-wrapper div.summary::-webkit-scrollbar, .site-layout-full-without-sidebars div.product-view-full-width .product-summary-wrapper div.summary::-webkit-scrollbar {
+    width: 5px;
+  }
+  .site-layout-without-sidebars div.product-view-full-width .product-summary-wrapper div.summary::-webkit-scrollbar-thumb, .site-layout-full-without-sidebars div.product-view-full-width .product-summary-wrapper div.summary::-webkit-scrollbar-thumb {
+    background: rgba(204, 204, 204, 0.5);
+  }
+}
+@media (max-width: 1199.98px) {
+  div.product-view-full-width .product-summary-wrapper div.summary {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  div.product-view-full-width .product-summary-wrapper div.summary {
+    padding: 1rem;
+  }
+}
+div.product-view-full-width .product-summary-wrapper .container-fluid, div.product-view-full-width .product-summary-wrapper .container-sm, div.product-view-full-width .product-summary-wrapper .container-md, div.product-view-full-width .product-summary-wrapper .container-lg, div.product-view-full-width .product-summary-wrapper .container-xl, div.product-view-full-width .product-summary-wrapper .container-xxl,
+div.product-view-full-width .product-summary-wrapper .container {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+div.product-view-full-width .product-summary-wrapper .container-fluid div.images .flex-viewport, div.product-view-full-width .product-summary-wrapper .container-sm div.images .flex-viewport, div.product-view-full-width .product-summary-wrapper .container-md div.images .flex-viewport, div.product-view-full-width .product-summary-wrapper .container-lg div.images .flex-viewport, div.product-view-full-width .product-summary-wrapper .container-xl div.images .flex-viewport, div.product-view-full-width .product-summary-wrapper .container-xxl div.images .flex-viewport,
+div.product-view-full-width .product-summary-wrapper .container div.images .flex-viewport {
+  border-radius: 0;
+}
+
+div.product-thumbnails-grid .product-summary-wrapper div.images .woocommerce-product-gallery__wrapper {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  margin-top: -0.75rem;
+  margin-bottom: -0.75rem;
+}
+div.product-thumbnails-grid .product-summary-wrapper div.images .woocommerce-product-gallery__wrapper > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+@media (min-width: 769px) {
+  div.product-view-grid .product-summary-wrapper div.images {
+    width: 64%;
+  }
+}
+@media (min-width: 769px) {
+  div.product-view-grid .product-summary-wrapper div.summary {
+    width: 32%;
+  }
+}
+
+@media (min-width: 1200px) {
+  div.product-centered-view .product-summary-wrapper div.summary {
+    width: 25%;
+  }
+  div.product-centered-view .product-summary-wrapper div.wordtrap-summary {
+    float: left;
+  }
+  div.product-centered-view .product-summary-wrapper div.images {
+    width: 46%;
+    margin-left: 2%;
+  }
+}
+@media (min-width: 992px) {
+  div.product-centered-view .wordtrap-before-summary {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 991.98px) {
+  div.product-centered-view .product-summary-wrapper div.summary,
+div.product-centered-view .product-summary-wrapper div.images {
+    float: none;
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+
+div.product-view-sticky-info div.summary,
+div.product-view-sticky-both-info div.summary {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+@media (max-width: 1199.98px) {
+  div.product-view-sticky-both-info .product-summary-wrapper div.wordtrap-summary {
+    position: static;
+  }
+}
+@media (max-width: 991.98px) {
+  div.product-view-sticky-both-info .product-summary-wrapper div.summary {
+    position: static;
+  }
+}
+
+div.product-vertical-carousel .product-summary-wrapper div.images {
+  display: flex;
+  align-items: center;
+}
+div.product-vertical-carousel .product-summary-wrapper div.images .flex-viewport {
+  width: 85%;
+  padding-left: 5px;
+  order: 2;
+}
+div.product-vertical-carousel .product-summary-wrapper div.images .tns-outer {
+  padding-right: 5px;
+  margin-top: 0;
+  order: 1;
+  width: 15%;
+}
+div.product-vertical-carousel .product-summary-wrapper div.images .tns-outer .tns-controls > [data-controls=prev] {
+  top: -30px;
+}
+div.product-vertical-carousel .product-summary-wrapper div.images .tns-outer .tns-controls > [data-controls=next] {
+  bottom: -30px;
+}
+div.product-vertical-carousel .product-summary-wrapper div.images .flex-control-thumbs li {
+  padding: 5px;
+}
+
+.site .woocommerce-ordering {
+  float: none;
+  margin-bottom: 0;
+}
+.site .woocommerce-ordering select {
+  vertical-align: middle;
+}
+.site div.products div.product .star-rating {
+  margin-top: 1rem;
+}
+.site div.products div.product .price del {
+  opacity: 0.5;
+}
+.site div.products-grid div.product .price {
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+.site div.products-list div.product .price {
+  display: block;
+  margin-top: 1rem;
+}
+
+.woocommerce-loop-product__title,
+.woocommerce-loop-category__title {
+  margin-bottom: 0;
+}
+.woocommerce-loop-product__title, a .woocommerce-loop-product__title,
+.woocommerce-loop-category__title,
+a .woocommerce-loop-category__title {
+  color: #212529;
+  font-size: 1rem;
+}
+a:hover .woocommerce-loop-product__title,
+a:hover .woocommerce-loop-category__title {
+  color: #0d6efd;
+}
+
+.term-description {
+  margin-bottom: 2rem;
+}
+
+div.products {
+  position: relative;
+}
+div.products:not(.posts-carousel) {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+@media (min-width: 1200px) {
+  div.products:not(.posts-carousel) {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+  }
+}
+div.products:not(.posts-carousel) > * {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+@media (min-width: 1200px) {
+  div.products:not(.posts-carousel) > * {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
+}
+div.products > * {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+@media (min-width: 1200px) {
+  div.products > * {
+    padding-bottom: 1.875rem;
+  }
+}
+div.products.posts-slider > * {
+  padding-bottom: 0;
+}
+div.products .product-labels {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+}
+@media (max-width: 991.98px) {
+  div.products .product-labels span {
+    font-size: 0.6em;
+  }
+}
+div.products .product-inner {
+  padding: 1.5rem 0.75rem 0.75rem;
+  position: relative;
+}
+@media (min-width: 1200px) {
+  div.products .product-inner {
+    padding: 1.5rem 0.9375rem 0.75rem;
+  }
+}
+div.products .product-thumbnail {
+  position: relative;
+}
+div.products .product-thumbnail img {
+  border-radius: 0.3rem;
+  width: 100%;
+  height: auto;
+}
+div.products .product-thumbnail .added_to_cart,
+div.products .product-thumbnail .button[class*=product_type_] {
+  position: absolute;
+  margin: 0;
+  border-radius: 50rem;
+  text-indent: -1000px;
+  overflow: hidden;
+  padding: 0;
+  width: 2.625rem;
+  height: 2.625rem;
+  line-height: 2.625rem;
+}
+div.products .product-thumbnail .added_to_cart:after,
+div.products .product-thumbnail .button[class*=product_type_]:after {
+  line-height: inherit;
+  margin-left: 0;
+  text-indent: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+div.products .product-thumbnail .button[class*=product_type_] {
+  right: 0.9rem;
+  top: 0.9rem;
+}
+@media (max-width: 991.98px) {
+  div.products .product-thumbnail .button[class*=product_type_] {
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+}
+div.products .product-thumbnail .added_to_cart {
+  background: #fff;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.3125rem;
+  margin-top: -1.3125rem;
+  transition: 0.3s;
+  z-index: 20;
+}
+div.products .category-list {
+  display: block;
+  font-size: 0.75em;
+  margin-bottom: 0.5rem;
+}
+div.products .category-list a {
+  color: #6c757d;
+}
+div.products .category-list a:hover {
+  color: #0d6efd;
+}
+div.products .woocommerce-product-details__short-description {
+  margin-top: 0.75rem;
+}
+div.products .added_to_cart,
+div.products .button[class*=product_type_] {
+  margin-top: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}
+div.products .added_to_cart:after,
+div.products .button[class*=product_type_]:after {
+  display: inline-block;
+  font-family: FontAwesome;
+  margin-left: 0.5rem;
+  line-height: 1;
+  position: static;
+  vertical-align: inherit;
+}
+div.products .added_to_cart:after {
+  content: "\f290";
+}
+div.products .button[class*=product_type_].loading {
+  opacity: 1;
+}
+div.products .button[class*=product_type_].loading:after {
+  content: "\f110";
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+div.products .button[class*=product_type_]:after {
+  content: "\f061";
+}
+div.products .add_to_cart_button[class*=product_type_simple]:after {
+  content: "\f07a";
+}
+div.products .quantity {
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+div.products .quantity + .button[class*=product_type_] {
+  margin-top: 0.5rem;
+  vertical-align: inherit;
+  padding: 0.375rem 0.75rem;
+}
+div.products div.product {
+  display: flex;
+  background: #ffffff;
+  border-radius: 0.3rem;
+  height: 100%;
+  padding: 0.75rem;
+}
+div.products div.product::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+@media (min-width: 1200px) {
+  div.products div.product {
+    padding: 0.9375rem;
+  }
+}
+div.products div.product:hover .product-thumbnail .added_to_cart {
+  opacity: 1;
+}
+
+div.products-view-cart-onimage-bottom .product-thumbnail .button[class*=product_type_] {
+  top: auto;
+  bottom: 0.9rem;
+}
+@media (max-width: 991.98px) {
+  div.products-view-cart-onimage-bottom .product-thumbnail .button[class*=product_type_] {
+    bottom: 0.75rem;
+  }
+}
+
+div.products-grid div.product {
+  flex-direction: column;
+  justify-content: space-between;
+}
+div.products-grid .product-inner {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+div.products-grid .product-inner .star-rating {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+div.products-grid.products-view-cart-onimage-top .product-inner,
+div.products-grid.products-view-cart-onimage-bottom .product-inner,
+div.products-grid.products-view-cart-align-left .product-inner,
+div.products-grid.products-view-onimage .product-inner,
+div.products-grid.products-view-onimage-with-overlay .product-inner {
+  text-align: left;
+}
+div.products-grid.products-view-cart-onimage-top .product-inner .star-rating,
+div.products-grid.products-view-cart-onimage-bottom .product-inner .star-rating,
+div.products-grid.products-view-cart-align-left .product-inner .star-rating,
+div.products-grid.products-view-onimage .product-inner .star-rating,
+div.products-grid.products-view-onimage-with-overlay .product-inner .star-rating {
+  margin-left: 0;
+}
+
+div.products-grid.products-view-onimage div.product,
+div.products-grid.products-view-onimage-with-overlay div.product,
+div.products-grid.products-view-centered-onimage-with-overlay div.product {
+  padding: 0;
+}
+div.products-grid.products-view-onimage .product-thumbnail .added_to_cart,
+div.products-grid.products-view-onimage-with-overlay .product-thumbnail .added_to_cart,
+div.products-grid.products-view-centered-onimage-with-overlay .product-thumbnail .added_to_cart {
+  left: auto;
+  top: 1rem;
+  right: 1rem;
+  margin: 0;
+}
+div.products-grid.products-view-onimage .product-inner,
+div.products-grid.products-view-onimage-with-overlay .product-inner,
+div.products-grid.products-view-centered-onimage-with-overlay .product-inner {
+  border-radius: 0 0 0.3rem 0.3rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.3s;
+  transform: translateZ(0) translateY(10px);
+  padding: 1.125rem;
+  z-index: 10;
+}
+@media (min-width: 1200px) {
+  div.products-grid.products-view-onimage .product-inner,
+div.products-grid.products-view-onimage-with-overlay .product-inner,
+div.products-grid.products-view-centered-onimage-with-overlay .product-inner {
+    padding: 1.5rem;
+  }
+}
+div.products-grid.products-view-onimage .product:hover .product-inner,
+div.products-grid.products-view-onimage-with-overlay .product:hover .product-inner,
+div.products-grid.products-view-centered-onimage-with-overlay .product:hover .product-inner {
+  opacity: 1;
+  transform: translateZ(0) translateY(0);
+}
+
+div.products-grid.products-view-onimage .product-inner {
+  background: #ffffff;
+}
+
+div.products-grid.products-view-onimage-with-overlay .product-thumbnail:after,
+div.products-grid.products-view-centered-onimage-with-overlay .product-thumbnail:after {
+  content: "";
+  border-radius: 0.3rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: 0.25s;
+  z-index: 10;
+}
+div.products-grid.products-view-onimage-with-overlay .product-inner *:not(.button[class*=product_type_]),
+div.products-grid.products-view-centered-onimage-with-overlay .product-inner *:not(.button[class*=product_type_]) {
+  color: #fff !important;
+}
+div.products-grid.products-view-onimage-with-overlay .product:hover .product-thumbnail:after,
+div.products-grid.products-view-centered-onimage-with-overlay .product:hover .product-thumbnail:after {
+  background: rgba(27, 27, 27, 0.5);
+}
+
+div.products-grid.products-view-centered-onimage-with-overlay .product-inner {
+  height: 100%;
+  justify-content: center;
+}
+
+div.products-list .product-thumbnail {
+  flex: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media (max-width: 575.98px) {
+  div.products-list .product-thumbnail {
+    margin-bottom: 0.5rem;
+  }
+}
+div.products-list .product-thumbnail img {
+  max-width: 250px;
+}
+@media (max-width: 1199.98px) {
+  div.products-list .product-thumbnail img {
+    max-width: 200px;
+  }
+}
+@media (max-width: 991.98px) {
+  div.products-list .product-thumbnail img {
+    max-width: 175px;
+  }
+}
+@media (max-width: 575.98px) {
+  div.products-list .product-thumbnail img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 575.98px) {
+  div.products-list div.product {
+    display: block;
+  }
+}
+div.products-list .product-inner {
+  display: flex;
+  flex: 1 1 auto;
+  margin-left: 1.25rem;
+  padding: 0.75rem;
+  position: relative;
+}
+@media (min-width: 1200px) {
+  div.products-list .product-inner {
+    padding: 0.9375rem;
+  }
+}
+@media (max-width: 1199.98px) {
+  div.products-list .product-inner {
+    margin-left: 1rem;
+  }
+}
+@media (max-width: 991.98px) {
+  div.products-list .product-inner {
+    display: block;
+    margin-left: 0.75rem;
+  }
+}
+@media (max-width: 767.98px) {
+  div.products-list .product-inner {
+    margin-left: 0.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  div.products-list .product-inner {
+    margin-left: 0;
+  }
+}
+div.products-list .product-inner .product-detail-top {
+  flex: 1 1 auto;
+}
+div.products-list .product-detail-bottom {
+  flex: none;
+  text-align: right;
+  margin-left: 2rem;
+}
+@media (max-width: 1199.98px) {
+  div.products-list .product-detail-bottom {
+    margin-left: 1rem;
+  }
+}
+@media (max-width: 991.98px) {
+  div.products-list .product-detail-bottom {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+div.products-list .product-detail-bottom .button[class*=product_type_] {
+  margin-top: 1.5rem;
+}
+
+div.products-list.products-view-onimage div.product,
+div.products-list.products-view-onimage-with-overlay div.product {
+  padding: 0;
+}
+div.products-list.products-view-onimage .product-thumbnail img,
+div.products-list.products-view-onimage-with-overlay .product-thumbnail img {
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+@media (max-width: 575.98px) {
+  div.products-list.products-view-onimage .product-thumbnail img,
+div.products-list.products-view-onimage-with-overlay .product-thumbnail img {
+    border-radius: 0.3rem 0.3rem 0 0;
+  }
+}
+div.products-list.products-view-onimage .product-inner,
+div.products-list.products-view-onimage-with-overlay .product-inner {
+  padding: 1.5rem;
+}
+@media (min-width: 1200px) {
+  div.products-list.products-view-onimage .product-inner,
+div.products-list.products-view-onimage-with-overlay .product-inner {
+    padding: 1.95rem;
+  }
+}
+
+div.products-list.products-view-quantity-input .product-inner {
+  display: block;
+}
+div.products-list.products-view-quantity-input .product-detail-bottom {
+  margin-left: 0;
+}
+@media (min-width: 992px) {
+  div.products-list.products-view-quantity-input .product-detail-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  div.products-list.products-view-quantity-input .product-detail-bottom .detail-left {
+    text-align: left;
+  }
+  div.products-list.products-view-quantity-input .product-detail-bottom .detail-right {
+    margin-left: 1rem;
+  }
+  div.products-list.products-view-quantity-input .product-detail-bottom .button[class*=product_type_] {
+    margin-top: 1rem;
+  }
+}
+div.products-list.products-view-quantity-input .quantity {
+  margin-top: 1rem;
+}
+div.products-list.products-view-quantity-input .quantity + .button[class*=product_type_] {
+  margin-top: 0.5rem;
+}
+
+#modal-cart-notification .product-thumbnail {
+  max-width: 150px;
+  margin: 0 auto;
+}
+#modal-cart-notification .product-thumbnail img {
+  border-radius: 0.3rem;
+}
+
+.toast-cart-notification-wrap {
+  z-index: 11;
+}
+.toast-cart-notification-wrap .product-title {
+  font-weight: 500;
+}
+.toast-cart-notification-wrap .toast {
+  background-color: #ffffff;
+}
+.toast-cart-notification-wrap .product-thumbnail {
+  max-width: 60px;
+}
+.toast-cart-notification-wrap .product-thumbnail img {
+  border-radius: 0.3rem;
 }
 
 /*# sourceMappingURL=editor.css.map */
