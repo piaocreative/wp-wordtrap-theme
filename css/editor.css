@@ -15099,4 +15099,8 @@ div.products-list.products-view-quantity-input .quantity + .button[class*=produc
   border-radius: 0.3rem;
 }
 
+.posts-slider {
+  opacity: 1;
+}
+
 /*# sourceMappingURL=editor.css.map */

@@ -17,9 +17,7 @@ $classes = array();
 $classes[] = 'products-' . $view_mode;
 $classes[] = 'products-view-' . wc_get_loop_prop( 'view', wordtrap_options( 'products-view' ) );
 
-if ( $view_mode === 'grid' ) {
-  $classes[] = wc_get_loop_prop( 'view-classes', wordtrap_grid_view_classes() );
-}
+$classes[] = wc_get_loop_prop( 'view-classes', $view_mode === 'grid' ? wordtrap_grid_view_classes() : '' );
 
 $options = wc_get_loop_prop( 'view-options', '' )
 
