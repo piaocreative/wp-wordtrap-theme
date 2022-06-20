@@ -15103,13 +15103,13 @@ div.products-list.products-view-quantity-input .quantity + .button[class*=produc
   opacity: 1;
 }
 
-div.products.posts-slider::after {
+div.products.grid.posts-slider::after {
   display: block;
   clear: both;
   content: "";
 }
-div.products.posts-slider > * {
-  width: 25%;
+div.products.grid.posts-slider > * {
+  width: 33.33%;
   float: left;
 }
 
