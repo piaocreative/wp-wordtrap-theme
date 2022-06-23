@@ -17148,12 +17148,12 @@
 	          $this.themeMasonry(options);
 	        });
 	      });
-	    } // Posts Slider
+	    } // Slider
 
 
 	    if ($.fn.themeSlider) {
 	      $(function () {
-	        $wrap.find('.posts-slider').each(function () {
+	        $wrap.find('.posts-slider, .wordtrap-slider').each(function () {
 	          var $this = $(this);
 	          $this.themeSlider($this.data('options'));
 	        });
