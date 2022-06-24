@@ -170,3 +170,49 @@
     }
   }
 }
+
+.wordtrap-banner {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &:after,
+    .banner-overlay-icon,
+    .banner-overlay-image {
+      opacity: 1;
+    }
+  }
+
+  .banner-overlay-icon,
+  .banner-overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+  }
+
+  .banner-overlay-image {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

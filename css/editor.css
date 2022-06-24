@@ -13067,6 +13067,44 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
   height: auto;
 }
 
+.wordtrap-banner {
+  position: relative;
+}
+.wordtrap-banner:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.wordtrap-banner:hover:after,
+.wordtrap-banner:hover .banner-overlay-icon,
+.wordtrap-banner:hover .banner-overlay-image {
+  opacity: 1;
+}
+.wordtrap-banner .banner-overlay-icon,
+.wordtrap-banner .banner-overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+.wordtrap-banner .banner-overlay-image img {
+  max-width: 100%;
+  height: auto;
+}
+
 /*
  * The styles for singular
  *
