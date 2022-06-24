@@ -132,7 +132,17 @@ function wordtrap_init( $wrap ) {
           $this.themePostsAjaxLoad( $this.data( 'options' ) );
         } );
       } );
-    }    
+    }
+    
+    // Marquee
+    if ( $.fn.themeMarquee ) {
+      $( function () {
+        $wrap.find( '.wordtrap-marquee' ).each( function () {
+          var $this = $( this );
+          $this.themeMarquee( $this.data( 'options' ) );
+        } );
+      } );
+    }
 
   } )( jQuery );
 }

@@ -10,6 +10,7 @@ import './theme/posts-filter';
 import './theme/categories-filter';
 import './theme/masonry';
 import './theme/slider';
+import './theme/marquee';
 
 import './theme/init';
 

@@ -74,6 +74,7 @@
     "@wordpress/scripts": "^23.2.0",
     "classnames": "^2.3.1",
     "isotope-layout": "^3.0.6",
+    "jquery.marquee": "^1.6.0",
     "select2-bootstrap-5-theme": "^1.2.0",
     "tiny-slider": "^2.9.4"
   }
