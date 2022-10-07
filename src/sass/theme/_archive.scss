@@ -105,7 +105,7 @@
 
       .categories-filter {
         justify-content: center;
-        
+
         li:first-child {
           padding-left: 1rem;
         }
@@ -114,7 +114,7 @@
           padding-right: 1rem;
         }
       }
-  
+
       .posts-sort,
       .categories-filter {
         margin-top: 1rem;
@@ -135,7 +135,7 @@
 
 #posts-filter-below {
   margin-bottom: 0;
-  
+
   .posts-view {
     margin-bottom: 1rem;
   }
@@ -144,7 +144,7 @@
 // Grid view
 .posts-grid {
   position: relative;
-  
+
   &:not(.posts-carousel) {
     margin-left: $grid-gutter-width * -0.5;
     margin-right: $grid-gutter-width * -0.5;
@@ -157,7 +157,7 @@
     > * {
       padding-right: $grid-gutter-width * 0.5;
       padding-left: $grid-gutter-width * 0.5;
-      
+
       @include media-breakpoint-up(xl) {
         padding-left: $grid-gutter-width * 0.625;
         padding-right: $grid-gutter-width * 0.625;
@@ -169,7 +169,7 @@
     position: relative;
 
     article.hentry {
-      margin-bottom: $grid-gutter-width; 
+      margin-bottom: $grid-gutter-width;
       padding: $grid-gutter-width * 0.5;
 
       @include media-breakpoint-up(xl) {
@@ -241,13 +241,13 @@
 
     .read-more {
       float: left;
-      
+
       a {
         display: inline-block;
         font-size: 0.8em;
         font-weight: $font-weight-bold;
         line-height: 1;
-        padding: 0.35em 0;      
+        padding: 0.35em 0;
       }
     }
 
@@ -284,11 +284,11 @@
   article.hentry {
     display: flex;
     flex-direction: column;
-    height: 100%;    
+    height: 100%;
   }
 
   &:not(.posts-slider) > * {
-    margin-bottom: $grid-gutter-width; 
+    margin-bottom: $grid-gutter-width;
 
     @include media-breakpoint-up(xl) {
       margin-bottom: $grid-gutter-width * 1.25;
@@ -370,7 +370,7 @@
     }
 
     &:before {
-      content: '';
+      content: "";
       transform: rotate(45deg);
       width: 1.5rem;
       height: 1.5rem;
@@ -388,14 +388,14 @@
       background: $primary;
       border-radius: $border-radius-pill;
       box-shadow: 0 0 0 2px $section-bg, 0 0 0 4px $primary;
-      content: '';
+      content: "";
       width: 0.3rem;
       height: 0.3rem;
       position: absolute;
       top: 2.55rem;
       z-index: 0;
       transform: rotate(45deg);
-      
+
       @include media-breakpoint-down(lg) {
         display: none;
       }
@@ -475,7 +475,7 @@
 // Posts Slider
 .posts-slider {
   opacity: 0;
-  
+
   &.tns-slider {
     opacity: 1;
   }
@@ -520,20 +520,21 @@
     .entry-title {
       font-size: $title-font-size;
       font-weight: $headings-font-weight;
-      
+
       span {
         cursor: pointer;
         display: block;
         padding-top: 1rem;
-        padding-bottom: 1rem;  
+        padding-bottom: 1rem;
         padding-right: 3rem;
-        position: relative; 
+        position: relative;
 
         &:after {
           background: $light;
           border-radius: $border-radius-pill;
-          content: '\f107';
+          content: "\f107";
           font-family: FontAwesome;
+          font-style: normal;
           position: absolute;
           width: 2rem;
           height: 2rem;
@@ -542,7 +543,7 @@
           margin-top: -1rem;
           line-height: 2rem;
           text-align: center;
-          @include transition(all .3s ease-in-out);
+          @include transition(all 0.3s ease-in-out);
         }
 
         &:not(.collapsed) {
