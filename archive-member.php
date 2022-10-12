@@ -51,26 +51,25 @@ if ( have_posts() ) :
       <?php
     endif;
     
-      // Load posts loop.
-      while ( have_posts() ) :
-        the_post();
+    // Load posts loop.
+    while ( have_posts() ) :
+      the_post();
 
-        if ( $view_mode === 'grid' ) : 
-          ?>
-            <div class="post-wrap">
-          <?php 
-        endif;
+      if ( $view_mode === 'grid' ) : 
+        ?>
+          <div class="post-wrap">
+        <?php 
+      endif;
 
-        get_template_part( 'template-parts/member/content' );    
+      get_template_part( 'template-parts/member/content' );    
 
-        if ( $view_mode === 'grid' ) : 
-          ?>
-            </div><!-- .post-wrap -->
-          <?php 
-        endif;
-        
-      endwhile;
-
+      if ( $view_mode === 'grid' ) : 
+        ?>
+          </div><!-- .post-wrap -->
+        <?php 
+      endif;
+      
+    endwhile;
     ?>
     </div><!-- .post-wrap -->
     <?php
