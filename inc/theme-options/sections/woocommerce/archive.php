@@ -88,7 +88,7 @@ Redux::set_section(
       array(
         'id'       => 'products-grid-columns-start',
         'type'     => 'section',
-        'title'    => esc_html__( 'Grive View Columns', 'wordtrap' ),
+        'title'    => esc_html__( 'Grid View Columns', 'wordtrap' ),
         'indent'   => true,
       ),
       array(
@@ -137,6 +137,60 @@ Redux::set_section(
         'indent'   => false,
       ),
       array(
+        'id'       => 'products-subcategory-start',
+        'type'     => 'section',
+        'title'    => esc_html__( 'Sub Category', 'wordtrap' ),
+        'indent'   => true,
+      ),
+      array(
+        'id'       => 'products-subcategory-position',
+        'type'     => 'button_set',
+        'title'    => esc_html__( 'Title Position', 'wordtrap' ),
+        'default'  => 'outside',
+        'options'  => array(
+          'top'       => esc_html__( 'Top on Image', 'wordtrap' ),
+          'middle'    => esc_html__( 'Middle on Image', 'wordtrap' ),
+          'bottom'    => esc_html__( 'Bottom on Image', 'wordtrap' ),
+          'outside'   => esc_html__( 'Outside of Image', 'wordtrap' ),
+        ),
+      ),
+      array(
+        'id'       => 'products-subcategory-details',
+        'type'     => 'button_set',
+        'title'    => esc_html__( 'Show Details only on Hover', 'wordtrap' ),
+        'default'  => 'hide',
+        'required' => array( 'products-subcategory-position', 'equals', array( 'top', 'middle', 'bottom' ) ),
+        'options'  => array(
+          'hide'   => esc_html__( 'Yes', 'wordtrap' ),
+          'show'   => esc_html__( 'No', 'wordtrap' ),
+        ),
+      ),
+      
+      array(
+        'id'       => 'products-subcategory-align',
+        'type'     => 'button_set',
+        'title'    => esc_html__( 'Title Align', 'wordtrap' ),
+        'default'  => 'center',
+        'options'  => array(
+          'left'      => esc_html__( 'Left', 'wordtrap' ),
+          'center'    => esc_html__( 'Center', 'wordtrap' ),
+          'right'     => esc_html__( 'Right', 'wordtrap' ),
+        ),
+      ),
+      array(
+        'id'       => 'products-subcategory-hide-count',
+        'type'     => 'switch',
+        'title'    => esc_html__( 'Hide Products Count', 'wordtrap' ),
+        'default'  => false,
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
+      ),
+      array(
+        'id'       => 'products-subcategory-false',
+        'type'     => 'section',
+        'indent'   => false,
+      ),
+      array(
         'id'       => 'products-item-start',
         'type'     => 'section',
         'title'    => esc_html__( 'Product', 'wordtrap' ),
@@ -148,6 +202,17 @@ Redux::set_section(
         'title'    => esc_html__( 'View Type', 'wordtrap' ),
         'options'  => $products_view_options,
         'default'  => 'default'
+      ),
+      array(
+        'id'       => 'products-view-details',
+        'type'     => 'button_set',
+        'title'    => esc_html__( 'Show Details only on Hover', 'wordtrap' ),
+        'default'  => 'hide',
+        'required' => array( 'products-view', 'equals', array( 'onimage', 'onimage-with-overlay', 'centered-onimage-with-overlay' ) ),
+        'options'  => array(
+          'hide'   => esc_html__( 'Yes', 'wordtrap' ),
+          'show'   => esc_html__( 'No', 'wordtrap' ),
+        ),
       ),
       array(
         'id'       => 'products-rating',

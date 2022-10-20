@@ -1,4 +1,3 @@
-
 // Primary wrap
 .primary-wrap:not(.site-layout-without-sidebars, .site-layout-full-without-sidebars) {
   div.product {
@@ -29,16 +28,16 @@
     @extend .alert;
     margin-bottom: 2rem;
   }
-  
+
   .woocommerce-notice {
     padding: 1em 2em;
   }
-  
+
   .woocommerce-message,
   .woocommerce-info,
   .woocommerce-error {
     padding: 1em 2em 1em 3.5em;
-    
+
     a.button {
       @extend .btn;
       @extend .btn-sm;
@@ -46,27 +45,27 @@
       margin: -3px 0 -5px;
     }
   }
-  
+
   .woocommerce-message,
   .woocommerce-notice {
     @extend .alert-success;
-  
+
     a.button {
       @extend .btn-success;
     }
   }
-  
+
   .woocommerce-error {
     @extend .alert-danger;
-    
+
     a.button {
       @extend .btn-danger;
     }
   }
-  
+
   .woocommerce-info {
     @extend .alert-info;
-    
+
     a.button {
       @extend .btn-info;
     }
@@ -89,7 +88,7 @@
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -118,7 +117,7 @@
     font-weight: $font-weight-bold;
   }
 
-  div.product p.price, 
+  div.product p.price,
   div.product span.price,
   ul.products li.product .price,
   div.products div.product .price {
@@ -138,16 +137,20 @@
       color: $primary;
       text-decoration: none;
     }
-  }  
+  }
 
   .star-rating {
     color: $primary;
     font-size: 0.625rem;
+
+    &:before {
+      color: inherit;
+    }
   }
 
   #respond input#submit,
-  a.button, 
-  button.button, 
+  a.button,
+  button.button,
   input.button {
     @extend .btn;
     border: 1px solid $light;
@@ -167,7 +170,12 @@
     }
 
     &:disabled[disabled] {
-      @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+      @include button-size(
+        $btn-padding-y,
+        $btn-padding-x,
+        $btn-font-size,
+        $btn-border-radius
+      );
     }
 
     &.alt {
@@ -189,7 +197,7 @@
   .input-group {
     width: 90px;
   }
-  
+
   .qty {
     padding-left: 0;
     padding-right: 0;
@@ -231,7 +239,7 @@
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 50%;
       top: 50%;
@@ -244,7 +252,7 @@
 
   .plus {
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       left: 50%;
       top: 50%;

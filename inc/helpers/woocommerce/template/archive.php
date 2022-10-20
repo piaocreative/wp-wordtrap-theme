@@ -271,3 +271,18 @@ if ( ! function_exists( 'wordtrap_shop_loop_subcategory_description' ) ) {
     }
   }
 }
+
+add_filter( 'woocommerce_subcategory_count_html', 'wordtrap_shop_remove_subcategory_count_html', 100 );
+
+if ( ! function_exists( 'wordtrap_shop_remove_subcategory_count_html' ) ) : 
+  /**
+   * Remove products count
+   */
+  function wordtrap_shop_remove_subcategory_count_html( $content ) {
+    if ( wordtrap_options( 'products-subcategory-hide-count' ) ) {
+      return '';
+    }
+
+    return $content;
+  }
+endif;

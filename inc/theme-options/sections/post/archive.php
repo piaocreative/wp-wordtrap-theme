@@ -88,7 +88,7 @@ Redux::set_section(
       array(
         'id'       => 'posts-grid-columns-start',
         'type'     => 'section',
-        'title'    => esc_html__( 'Grive View Columns', 'wordtrap' ),
+        'title'    => esc_html__( 'Grid View Columns', 'wordtrap' ),
         'required' => array( 'posts-grid-view', 'equals', array( 'grid', 'masonry' ) ),
         'indent'   => true,
       ),

@@ -159,7 +159,7 @@ Redux::set_section(
       array(
         'id'       => 'members-grid-columns-start',
         'type'     => 'section',
-        'title'    => esc_html__( 'Grive View Columns', 'wordtrap' ),
+        'title'    => esc_html__( 'Grid View Columns', 'wordtrap' ),
         'indent'   => true,
       ),
       array(

@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 ?>
-<div class="product-wrap">
+<div class="category-wrap">
   <div <?php wc_product_cat_class( '', $category ); ?>>
-    <div class="product-thumbnail">
+    <div class="category-thumbnail">
       <?php
       /**
        * The woocommerce_before_subcategory hook.
@@ -30,9 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
       ?>
     </div>
 
-    <div class="product-inner">
+    <div class="category-inner">
 
-      <div class="product-detail-top">
+      <div class="category-detail-top">
         <?php
         /**
          * The woocommerce_shop_loop_subcategory_title hook.
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         ?>
       </div>
 
-      <div class="product-detail-bottom">
+      <div class="category-detail-bottom">
         <?php
         /**
          * The woocommerce_after_subcategory_title hook.
