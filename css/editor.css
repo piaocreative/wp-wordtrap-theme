@@ -2189,7 +2189,8 @@ progress {
 }
 
 .form-control, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea, .post-password-form input[type=password] {
+div.product #reviews #respond textarea, .post-password-form input[type=password], .wordtrap-search-form .text input,
+.wordtrap-search-form .cat {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
@@ -2208,20 +2209,24 @@ div.product #reviews #respond textarea, .post-password-form input[type=password]
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea, .post-password-form input[type=password] {
+div.product #reviews #respond textarea, .post-password-form input[type=password], .wordtrap-search-form .text input,
+.wordtrap-search-form .cat {
     transition: none;
   }
 }
 .form-control[type=file], div.product #reviews #respond input[type=file]:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea[type=file], .post-password-form input[type=file][type=password] {
+div.product #reviews #respond textarea[type=file], .post-password-form input[type=file][type=password], .wordtrap-search-form .text input[type=file],
+.wordtrap-search-form [type=file].cat {
   overflow: hidden;
 }
 .form-control[type=file]:not(:disabled):not([readonly]), div.product #reviews #respond input[type=file]:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea[type=file]:not(:disabled):not([readonly]), .post-password-form input[type=file][type=password]:not(:disabled):not([readonly]) {
+div.product #reviews #respond textarea[type=file]:not(:disabled):not([readonly]), .post-password-form input[type=file][type=password]:not(:disabled):not([readonly]), .wordtrap-search-form .text input[type=file]:not(:disabled):not([readonly]),
+.wordtrap-search-form [type=file].cat:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
 .form-control:focus, div.product #reviews #respond input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea:focus, .post-password-form input[type=password]:focus {
+div.product #reviews #respond textarea:focus, .post-password-form input[type=password]:focus, .wordtrap-search-form .text input:focus,
+.wordtrap-search-form .cat:focus {
   color: #212529;
   background-color: #f5f5f5;
   border-color: #86b7fe;
@@ -2229,29 +2234,33 @@ div.product #reviews #respond textarea:focus, .post-password-form input[type=pas
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-control::-webkit-date-and-time-value, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-date-and-time-value,
-div.product #reviews #respond textarea::-webkit-date-and-time-value, .post-password-form input[type=password]::-webkit-date-and-time-value {
+div.product #reviews #respond textarea::-webkit-date-and-time-value, .post-password-form input[type=password]::-webkit-date-and-time-value, .wordtrap-search-form .text input::-webkit-date-and-time-value,
+.wordtrap-search-form .cat::-webkit-date-and-time-value {
   height: 1.5em;
 }
-.form-control::-moz-placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-moz-placeholder, div.product #reviews #respond textarea::-moz-placeholder, .post-password-form input[type=password]::-moz-placeholder {
+.form-control::-moz-placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-moz-placeholder, div.product #reviews #respond textarea::-moz-placeholder, .post-password-form input[type=password]::-moz-placeholder, .wordtrap-search-form .text input::-moz-placeholder, .wordtrap-search-form .cat::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]):-ms-input-placeholder, div.product #reviews #respond textarea:-ms-input-placeholder, .post-password-form input[type=password]:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]):-ms-input-placeholder, div.product #reviews #respond textarea:-ms-input-placeholder, .post-password-form input[type=password]:-ms-input-placeholder, .wordtrap-search-form .text input:-ms-input-placeholder, .wordtrap-search-form .cat:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
 .form-control::placeholder, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::placeholder,
-div.product #reviews #respond textarea::placeholder, .post-password-form input[type=password]::placeholder {
+div.product #reviews #respond textarea::placeholder, .post-password-form input[type=password]::placeholder, .wordtrap-search-form .text input::placeholder,
+.wordtrap-search-form .cat::placeholder {
   color: #6c757d;
   opacity: 1;
 }
 .form-control:disabled, div.product #reviews #respond input:disabled:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea:disabled, .post-password-form input[type=password]:disabled, .form-control[readonly], div.product #reviews #respond input[readonly]:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea[readonly], .post-password-form input[readonly][type=password] {
+div.product #reviews #respond textarea:disabled, .post-password-form input[type=password]:disabled, .wordtrap-search-form .text input:disabled,
+.wordtrap-search-form .cat:disabled, .form-control[readonly], div.product #reviews #respond input[readonly]:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea[readonly], .post-password-form input[readonly][type=password], .wordtrap-search-form .text input[readonly],
+.wordtrap-search-form [readonly].cat {
   background-color: #e9ecef;
   opacity: 1;
 }
-.form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+.form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button, .wordtrap-search-form .text input::-webkit-file-upload-button, .wordtrap-search-form .cat::-webkit-file-upload-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
@@ -2268,7 +2277,8 @@ div.product #reviews #respond textarea[readonly], .post-password-form input[read
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .form-control::file-selector-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::file-selector-button,
-div.product #reviews #respond textarea::file-selector-button, .post-password-form input[type=password]::file-selector-button {
+div.product #reviews #respond textarea::file-selector-button, .post-password-form input[type=password]::file-selector-button, .wordtrap-search-form .text input::file-selector-button,
+.wordtrap-search-form .cat::file-selector-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
@@ -2284,24 +2294,27 @@ div.product #reviews #respond textarea::file-selector-button, .post-password-for
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+  .form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button, .wordtrap-search-form .text input::-webkit-file-upload-button, .wordtrap-search-form .cat::-webkit-file-upload-button {
     -webkit-transition: none;
     transition: none;
   }
   .form-control::file-selector-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::file-selector-button,
-div.product #reviews #respond textarea::file-selector-button, .post-password-form input[type=password]::file-selector-button {
+div.product #reviews #respond textarea::file-selector-button, .post-password-form input[type=password]::file-selector-button, .wordtrap-search-form .text input::file-selector-button,
+.wordtrap-search-form .cat::file-selector-button {
     transition: none;
   }
 }
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, div.product #reviews #respond input:hover:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, div.product #reviews #respond input:hover:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button, div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .wordtrap-search-form .text input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .wordtrap-search-form .cat:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
   background-color: #dde0e3;
 }
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button, div.product #reviews #respond input:hover:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::file-selector-button,
-div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::file-selector-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::file-selector-button {
+div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::file-selector-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::file-selector-button, .wordtrap-search-form .text input:hover:not(:disabled):not([readonly])::file-selector-button,
+.wordtrap-search-form .cat:hover:not(:disabled):not([readonly])::file-selector-button {
   background-color: #dde0e3;
 }
 .form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button,
-div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button, .wordtrap-search-form .text input::-webkit-file-upload-button,
+.wordtrap-search-form .cat::-webkit-file-upload-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
@@ -2319,13 +2332,15 @@ div.product #reviews #respond textarea::-webkit-file-upload-button, .post-passwo
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control::-webkit-file-upload-button, div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button,
-div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button {
+div.product #reviews #respond textarea::-webkit-file-upload-button, .post-password-form input[type=password]::-webkit-file-upload-button, .wordtrap-search-form .text input::-webkit-file-upload-button,
+.wordtrap-search-form .cat::-webkit-file-upload-button {
     -webkit-transition: none;
     transition: none;
   }
 }
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, div.product #reviews #respond input:hover:not(:disabled):not([readonly]):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-webkit-file-upload-button,
-div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .post-password-form input[type=password]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .wordtrap-search-form .text input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button,
+.wordtrap-search-form .cat:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
   background-color: #dde0e3;
 }
 
@@ -2396,7 +2411,8 @@ div.product #reviews #respond textarea:hover:not(:disabled):not([readonly])::-we
 }
 
 textarea.form-control,
-div.product #reviews #respond textarea {
+div.product #reviews #respond textarea,
+.wordtrap-search-form textarea.cat {
   min-height: calc(1.5em + 0.75rem + 2px);
 }
 textarea.form-control-sm {
@@ -2703,7 +2719,8 @@ div.product #reviews #respond .form-switch [type=radio]:checked {
   position: relative;
 }
 .form-floating > .form-control, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .form-floating > textarea, .post-password-form .form-floating > input[type=password],
+div.product #reviews #respond .form-floating > textarea, .post-password-form .form-floating > input[type=password], .wordtrap-search-form .text .form-floating > input,
+.wordtrap-search-form .form-floating > .cat,
 .form-floating > .form-select,
 form.cart .form-floating > select,
 div.product #reviews #respond .form-floating > select,
@@ -2728,35 +2745,40 @@ div.product #reviews #respond .form-floating > select,
   }
 }
 .form-floating > .form-control, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .form-floating > textarea, .post-password-form .form-floating > input[type=password] {
+div.product #reviews #respond .form-floating > textarea, .post-password-form .form-floating > input[type=password], .wordtrap-search-form .text .form-floating > input,
+.wordtrap-search-form .form-floating > .cat {
   padding: 1rem 0.75rem;
 }
-.form-floating > .form-control::-moz-placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-moz-placeholder, div.product #reviews #respond .form-floating > textarea::-moz-placeholder, .post-password-form .form-floating > input[type=password]::-moz-placeholder {
+.form-floating > .form-control::-moz-placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::-moz-placeholder, div.product #reviews #respond .form-floating > textarea::-moz-placeholder, .post-password-form .form-floating > input[type=password]::-moz-placeholder, .wordtrap-search-form .text .form-floating > input::-moz-placeholder, .wordtrap-search-form .form-floating > .cat::-moz-placeholder {
   color: transparent;
 }
-.form-floating > .form-control:-ms-input-placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]):-ms-input-placeholder, div.product #reviews #respond .form-floating > textarea:-ms-input-placeholder, .post-password-form .form-floating > input[type=password]:-ms-input-placeholder {
+.form-floating > .form-control:-ms-input-placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]):-ms-input-placeholder, div.product #reviews #respond .form-floating > textarea:-ms-input-placeholder, .post-password-form .form-floating > input[type=password]:-ms-input-placeholder, .wordtrap-search-form .text .form-floating > input:-ms-input-placeholder, .wordtrap-search-form .form-floating > .cat:-ms-input-placeholder {
   color: transparent;
 }
 .form-floating > .form-control::placeholder, div.product #reviews #respond .form-floating > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio])::placeholder,
-div.product #reviews #respond .form-floating > textarea::placeholder, .post-password-form .form-floating > input[type=password]::placeholder {
+div.product #reviews #respond .form-floating > textarea::placeholder, .post-password-form .form-floating > input[type=password]::placeholder, .wordtrap-search-form .text .form-floating > input::placeholder,
+.wordtrap-search-form .form-floating > .cat::placeholder {
   color: transparent;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown), div.product #reviews #respond .form-floating > input:not(:-moz-placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .form-floating > textarea:not(:-moz-placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown) {
+.form-floating > .form-control:not(:-moz-placeholder-shown), div.product #reviews #respond .form-floating > input:not(:-moz-placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .form-floating > textarea:not(:-moz-placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown), .wordtrap-search-form .text .form-floating > input:not(:-moz-placeholder-shown), .wordtrap-search-form .form-floating > .cat:not(:-moz-placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:not(:-ms-input-placeholder), div.product #reviews #respond .form-floating > input:not(:-ms-input-placeholder):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .form-floating > textarea:not(:-ms-input-placeholder), .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder) {
+.form-floating > .form-control:not(:-ms-input-placeholder), div.product #reviews #respond .form-floating > input:not(:-ms-input-placeholder):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .form-floating > textarea:not(:-ms-input-placeholder), .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder), .wordtrap-search-form .text .form-floating > input:not(:-ms-input-placeholder), .wordtrap-search-form .form-floating > .cat:not(:-ms-input-placeholder) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
 .form-floating > .form-control:focus, div.product #reviews #respond .form-floating > input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .form-floating > textarea:focus, .post-password-form .form-floating > input[type=password]:focus, .form-floating > .form-control:not(:placeholder-shown), div.product #reviews #respond .form-floating > input:not(:placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .form-floating > textarea:not(:placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:placeholder-shown) {
+div.product #reviews #respond .form-floating > textarea:focus, .post-password-form .form-floating > input[type=password]:focus, .wordtrap-search-form .text .form-floating > input:focus,
+.wordtrap-search-form .form-floating > .cat:focus, .form-floating > .form-control:not(:placeholder-shown), div.product #reviews #respond .form-floating > input:not(:placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .form-floating > textarea:not(:placeholder-shown), .post-password-form .form-floating > input[type=password]:not(:placeholder-shown), .wordtrap-search-form .text .form-floating > input:not(:placeholder-shown),
+.wordtrap-search-form .form-floating > .cat:not(:placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
 .form-floating > .form-control:-webkit-autofill, div.product #reviews #respond .form-floating > input:-webkit-autofill:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .form-floating > textarea:-webkit-autofill, .post-password-form .form-floating > input[type=password]:-webkit-autofill {
+div.product #reviews #respond .form-floating > textarea:-webkit-autofill, .post-password-form .form-floating > input[type=password]:-webkit-autofill, .wordtrap-search-form .text .form-floating > input:-webkit-autofill,
+.wordtrap-search-form .form-floating > .cat:-webkit-autofill {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
@@ -2764,20 +2786,23 @@ div.product #reviews #respond .form-floating > textarea:-webkit-autofill, .post-
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label, div.product #reviews #respond .form-floating > input:not(:-moz-placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label, div.product #reviews #respond .form-floating > textarea:not(:-moz-placeholder-shown) ~ label, .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown) ~ label {
+.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label, div.product #reviews #respond .form-floating > input:not(:-moz-placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label, div.product #reviews #respond .form-floating > textarea:not(:-moz-placeholder-shown) ~ label, .post-password-form .form-floating > input[type=password]:not(:-moz-placeholder-shown) ~ label, .wordtrap-search-form .text .form-floating > input:not(:-moz-placeholder-shown) ~ label, .wordtrap-search-form .form-floating > .cat:not(:-moz-placeholder-shown) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:not(:-ms-input-placeholder) ~ label, div.product #reviews #respond .form-floating > input:not(:-ms-input-placeholder):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label, div.product #reviews #respond .form-floating > textarea:not(:-ms-input-placeholder) ~ label, .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder) ~ label {
+.form-floating > .form-control:not(:-ms-input-placeholder) ~ label, div.product #reviews #respond .form-floating > input:not(:-ms-input-placeholder):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label, div.product #reviews #respond .form-floating > textarea:not(:-ms-input-placeholder) ~ label, .post-password-form .form-floating > input[type=password]:not(:-ms-input-placeholder) ~ label, .wordtrap-search-form .text .form-floating > input:not(:-ms-input-placeholder) ~ label, .wordtrap-search-form .form-floating > .cat:not(:-ms-input-placeholder) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 .form-floating > .form-control:focus ~ label, div.product #reviews #respond .form-floating > input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label,
-div.product #reviews #respond .form-floating > textarea:focus ~ label, .post-password-form .form-floating > input[type=password]:focus ~ label,
+div.product #reviews #respond .form-floating > textarea:focus ~ label, .post-password-form .form-floating > input[type=password]:focus ~ label, .wordtrap-search-form .text .form-floating > input:focus ~ label,
+.wordtrap-search-form .form-floating > .cat:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
 div.product #reviews #respond .form-floating > input:not(:placeholder-shown):not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label,
 div.product #reviews #respond .form-floating > textarea:not(:placeholder-shown) ~ label,
 .post-password-form .form-floating > input[type=password]:not(:placeholder-shown) ~ label,
+.wordtrap-search-form .text .form-floating > input:not(:placeholder-shown) ~ label,
+.wordtrap-search-form .form-floating > .cat:not(:placeholder-shown) ~ label,
 .form-floating > .form-select ~ label,
 form.cart .form-floating > select ~ label,
 div.product #reviews #respond .form-floating > select ~ label,
@@ -2786,7 +2811,8 @@ div.product #reviews #respond .form-floating > select ~ label,
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 .form-floating > .form-control:-webkit-autofill ~ label, div.product #reviews #respond .form-floating > input:-webkit-autofill:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]) ~ label,
-div.product #reviews #respond .form-floating > textarea:-webkit-autofill ~ label, .post-password-form .form-floating > input[type=password]:-webkit-autofill ~ label {
+div.product #reviews #respond .form-floating > textarea:-webkit-autofill ~ label, .post-password-form .form-floating > input[type=password]:-webkit-autofill ~ label, .wordtrap-search-form .text .form-floating > input:-webkit-autofill ~ label,
+.wordtrap-search-form .form-floating > .cat:-webkit-autofill ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -2799,7 +2825,8 @@ div.product #reviews #respond .form-floating > textarea:-webkit-autofill ~ label
   width: 100%;
 }
 .input-group > .form-control, div.product #reviews #respond .input-group > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .input-group > textarea, .post-password-form .input-group > input[type=password],
+div.product #reviews #respond .input-group > textarea, .post-password-form .input-group > input[type=password], .wordtrap-search-form .text .input-group > input,
+.wordtrap-search-form .input-group > .cat,
 .input-group > .form-select,
 form.cart .input-group > select,
 div.product #reviews #respond .input-group > select,
@@ -2810,7 +2837,8 @@ div.product #reviews #respond .input-group > select,
   min-width: 0;
 }
 .input-group > .form-control:focus, div.product #reviews #respond .input-group > input:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .input-group > textarea:focus, .post-password-form .input-group > input[type=password]:focus,
+div.product #reviews #respond .input-group > textarea:focus, .post-password-form .input-group > input[type=password]:focus, .wordtrap-search-form .text .input-group > input:focus,
+.wordtrap-search-form .input-group > .cat:focus,
 .input-group > .form-select:focus,
 form.cart .input-group > select:focus,
 div.product #reviews #respond .input-group > select:focus,
@@ -2845,7 +2873,8 @@ div.product #reviews #respond .input-group > select:focus,
 }
 
 .input-group-lg > .form-control, div.product #reviews #respond .input-group-lg > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .input-group-lg > textarea, .post-password-form .input-group-lg > input[type=password],
+div.product #reviews #respond .input-group-lg > textarea, .post-password-form .input-group-lg > input[type=password], .wordtrap-search-form .text .input-group-lg > input,
+.wordtrap-search-form .input-group-lg > .cat,
 .input-group-lg > .form-select,
 form.cart .input-group-lg > select,
 div.product #reviews #respond .input-group-lg > select,
@@ -2861,7 +2890,8 @@ div.product #reviews #respond .input-group-lg > select,
 }
 
 .input-group-sm > .form-control, div.product #reviews #respond .input-group-sm > input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond .input-group-sm > textarea, .post-password-form .input-group-sm > input[type=password],
+div.product #reviews #respond .input-group-sm > textarea, .post-password-form .input-group-sm > input[type=password], .wordtrap-search-form .text .input-group-sm > input,
+.wordtrap-search-form .input-group-sm > .cat,
 .input-group-sm > .form-select,
 form.cart .input-group-sm > select,
 div.product #reviews #respond .input-group-sm > select,
@@ -2931,8 +2961,11 @@ div.product #reviews #respond .input-group-sm > select,
 
 .was-validated .form-control:valid, .was-validated div.product #reviews #respond input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated div.product #reviews #respond textarea:valid,
-div.product #reviews #respond .was-validated textarea:valid, .was-validated .post-password-form input[type=password]:valid, .post-password-form .was-validated input[type=password]:valid, .form-control.is-valid, div.product #reviews #respond input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea.is-valid, .post-password-form input.is-valid[type=password] {
+div.product #reviews #respond .was-validated textarea:valid, .was-validated .post-password-form input[type=password]:valid, .post-password-form .was-validated input[type=password]:valid, .was-validated .wordtrap-search-form .text input:valid, .wordtrap-search-form .text .was-validated input:valid,
+.was-validated .wordtrap-search-form .cat:valid,
+.wordtrap-search-form .was-validated .cat:valid, .form-control.is-valid, div.product #reviews #respond input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-valid, .post-password-form input.is-valid[type=password], .wordtrap-search-form .text input.is-valid,
+.wordtrap-search-form .is-valid.cat {
   border-color: #198754;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2942,16 +2975,22 @@ div.product #reviews #respond textarea.is-valid, .post-password-form input.is-va
 }
 .was-validated .form-control:valid:focus, .was-validated div.product #reviews #respond input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated div.product #reviews #respond textarea:valid:focus,
-div.product #reviews #respond .was-validated textarea:valid:focus, .was-validated .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated input[type=password]:valid:focus, .form-control.is-valid:focus, div.product #reviews #respond input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea.is-valid:focus, .post-password-form input.is-valid[type=password]:focus {
+div.product #reviews #respond .was-validated textarea:valid:focus, .was-validated .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated input[type=password]:valid:focus, .was-validated .wordtrap-search-form .text input:valid:focus, .wordtrap-search-form .text .was-validated input:valid:focus,
+.was-validated .wordtrap-search-form .cat:valid:focus,
+.wordtrap-search-form .was-validated .cat:valid:focus, .form-control.is-valid:focus, div.product #reviews #respond input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-valid:focus, .post-password-form input.is-valid[type=password]:focus, .wordtrap-search-form .text input.is-valid:focus,
+.wordtrap-search-form .is-valid.cat:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
 .was-validated textarea.form-control:valid,
 .was-validated div.product #reviews #respond textarea:valid,
-div.product #reviews #respond .was-validated textarea:valid, textarea.form-control.is-valid,
-div.product #reviews #respond textarea.is-valid {
+div.product #reviews #respond .was-validated textarea:valid,
+.was-validated .wordtrap-search-form textarea.cat:valid,
+.wordtrap-search-form .was-validated textarea.cat:valid, textarea.form-control.is-valid,
+div.product #reviews #respond textarea.is-valid,
+.wordtrap-search-form textarea.is-valid.cat {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
@@ -3003,9 +3042,13 @@ div.product #reviews #respond .form-check-inline [type=radio] ~ .valid-feedback 
 
 .was-validated .input-group .form-control:valid, .was-validated .input-group div.product #reviews #respond input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated .input-group div.product #reviews #respond textarea:valid,
-div.product #reviews #respond .was-validated .input-group textarea:valid, .was-validated .input-group .post-password-form input[type=password]:valid, .post-password-form .was-validated .input-group input[type=password]:valid, .input-group .form-control.is-valid, .input-group div.product #reviews #respond input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .was-validated .input-group textarea:valid, .was-validated .input-group .post-password-form input[type=password]:valid, .post-password-form .was-validated .input-group input[type=password]:valid, .was-validated .input-group .wordtrap-search-form .text input:valid, .wordtrap-search-form .text .was-validated .input-group input:valid,
+.was-validated .input-group .wordtrap-search-form .cat:valid,
+.wordtrap-search-form .was-validated .input-group .cat:valid, .input-group .form-control.is-valid, .input-group div.product #reviews #respond input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-valid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .input-group div.product #reviews #respond textarea.is-valid,
-div.product #reviews #respond .input-group textarea.is-valid, .input-group .post-password-form input.is-valid[type=password], .post-password-form .input-group input.is-valid[type=password],
+div.product #reviews #respond .input-group textarea.is-valid, .input-group .post-password-form input.is-valid[type=password], .post-password-form .input-group input.is-valid[type=password], .input-group .wordtrap-search-form .text input.is-valid, .wordtrap-search-form .text .input-group input.is-valid,
+.input-group .wordtrap-search-form .is-valid.cat,
+.wordtrap-search-form .input-group .is-valid.cat,
 .was-validated .input-group .form-select:valid,
 .was-validated .input-group form.cart select:valid,
 form.cart .was-validated .input-group select:valid,
@@ -3024,9 +3067,13 @@ div.product #reviews #respond .input-group select.is-valid,
 }
 .was-validated .input-group .form-control:valid:focus, .was-validated .input-group div.product #reviews #respond input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated .input-group div.product #reviews #respond textarea:valid:focus,
-div.product #reviews #respond .was-validated .input-group textarea:valid:focus, .was-validated .input-group .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated .input-group input[type=password]:valid:focus, .input-group .form-control.is-valid:focus, .input-group div.product #reviews #respond input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .was-validated .input-group textarea:valid:focus, .was-validated .input-group .post-password-form input[type=password]:valid:focus, .post-password-form .was-validated .input-group input[type=password]:valid:focus, .was-validated .input-group .wordtrap-search-form .text input:valid:focus, .wordtrap-search-form .text .was-validated .input-group input:valid:focus,
+.was-validated .input-group .wordtrap-search-form .cat:valid:focus,
+.wordtrap-search-form .was-validated .input-group .cat:valid:focus, .input-group .form-control.is-valid:focus, .input-group div.product #reviews #respond input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-valid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .input-group div.product #reviews #respond textarea.is-valid:focus,
-div.product #reviews #respond .input-group textarea.is-valid:focus, .input-group .post-password-form input.is-valid[type=password]:focus, .post-password-form .input-group input.is-valid[type=password]:focus,
+div.product #reviews #respond .input-group textarea.is-valid:focus, .input-group .post-password-form input.is-valid[type=password]:focus, .post-password-form .input-group input.is-valid[type=password]:focus, .input-group .wordtrap-search-form .text input.is-valid:focus, .wordtrap-search-form .text .input-group input.is-valid:focus,
+.input-group .wordtrap-search-form .is-valid.cat:focus,
+.wordtrap-search-form .input-group .is-valid.cat:focus,
 .was-validated .input-group .form-select:valid:focus,
 .was-validated .input-group form.cart select:valid:focus,
 form.cart .was-validated .input-group select:valid:focus,
@@ -3075,8 +3122,11 @@ div.product #reviews #respond .input-group select.is-valid:focus,
 
 .was-validated .form-control:invalid, .was-validated div.product #reviews #respond input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated div.product #reviews #respond textarea:invalid,
-div.product #reviews #respond .was-validated textarea:invalid, .was-validated .post-password-form input[type=password]:invalid, .post-password-form .was-validated input[type=password]:invalid, .form-control.is-invalid, div.product #reviews #respond input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea.is-invalid, .post-password-form input.is-invalid[type=password] {
+div.product #reviews #respond .was-validated textarea:invalid, .was-validated .post-password-form input[type=password]:invalid, .post-password-form .was-validated input[type=password]:invalid, .was-validated .wordtrap-search-form .text input:invalid, .wordtrap-search-form .text .was-validated input:invalid,
+.was-validated .wordtrap-search-form .cat:invalid,
+.wordtrap-search-form .was-validated .cat:invalid, .form-control.is-invalid, div.product #reviews #respond input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-invalid, .post-password-form input.is-invalid[type=password], .wordtrap-search-form .text input.is-invalid,
+.wordtrap-search-form .is-invalid.cat {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -3086,16 +3136,22 @@ div.product #reviews #respond textarea.is-invalid, .post-password-form input.is-
 }
 .was-validated .form-control:invalid:focus, .was-validated div.product #reviews #respond input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated div.product #reviews #respond textarea:invalid:focus,
-div.product #reviews #respond .was-validated textarea:invalid:focus, .was-validated .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated input[type=password]:invalid:focus, .form-control.is-invalid:focus, div.product #reviews #respond input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
-div.product #reviews #respond textarea.is-invalid:focus, .post-password-form input.is-invalid[type=password]:focus {
+div.product #reviews #respond .was-validated textarea:invalid:focus, .was-validated .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated input[type=password]:invalid:focus, .was-validated .wordtrap-search-form .text input:invalid:focus, .wordtrap-search-form .text .was-validated input:invalid:focus,
+.was-validated .wordtrap-search-form .cat:invalid:focus,
+.wordtrap-search-form .was-validated .cat:invalid:focus, .form-control.is-invalid:focus, div.product #reviews #respond input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond textarea.is-invalid:focus, .post-password-form input.is-invalid[type=password]:focus, .wordtrap-search-form .text input.is-invalid:focus,
+.wordtrap-search-form .is-invalid.cat:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated textarea.form-control:invalid,
 .was-validated div.product #reviews #respond textarea:invalid,
-div.product #reviews #respond .was-validated textarea:invalid, textarea.form-control.is-invalid,
-div.product #reviews #respond textarea.is-invalid {
+div.product #reviews #respond .was-validated textarea:invalid,
+.was-validated .wordtrap-search-form textarea.cat:invalid,
+.wordtrap-search-form .was-validated textarea.cat:invalid, textarea.form-control.is-invalid,
+div.product #reviews #respond textarea.is-invalid,
+.wordtrap-search-form textarea.is-invalid.cat {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
@@ -3147,9 +3203,13 @@ div.product #reviews #respond .form-check-inline [type=radio] ~ .invalid-feedbac
 
 .was-validated .input-group .form-control:invalid, .was-validated .input-group div.product #reviews #respond input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated .input-group div.product #reviews #respond textarea:invalid,
-div.product #reviews #respond .was-validated .input-group textarea:invalid, .was-validated .input-group .post-password-form input[type=password]:invalid, .post-password-form .was-validated .input-group input[type=password]:invalid, .input-group .form-control.is-invalid, .input-group div.product #reviews #respond input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .was-validated .input-group textarea:invalid, .was-validated .input-group .post-password-form input[type=password]:invalid, .post-password-form .was-validated .input-group input[type=password]:invalid, .was-validated .input-group .wordtrap-search-form .text input:invalid, .wordtrap-search-form .text .was-validated .input-group input:invalid,
+.was-validated .input-group .wordtrap-search-form .cat:invalid,
+.wordtrap-search-form .was-validated .input-group .cat:invalid, .input-group .form-control.is-invalid, .input-group div.product #reviews #respond input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-invalid:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .input-group div.product #reviews #respond textarea.is-invalid,
-div.product #reviews #respond .input-group textarea.is-invalid, .input-group .post-password-form input.is-invalid[type=password], .post-password-form .input-group input.is-invalid[type=password],
+div.product #reviews #respond .input-group textarea.is-invalid, .input-group .post-password-form input.is-invalid[type=password], .post-password-form .input-group input.is-invalid[type=password], .input-group .wordtrap-search-form .text input.is-invalid, .wordtrap-search-form .text .input-group input.is-invalid,
+.input-group .wordtrap-search-form .is-invalid.cat,
+.wordtrap-search-form .input-group .is-invalid.cat,
 .was-validated .input-group .form-select:invalid,
 .was-validated .input-group form.cart select:invalid,
 form.cart .was-validated .input-group select:invalid,
@@ -3168,9 +3228,13 @@ div.product #reviews #respond .input-group select.is-invalid,
 }
 .was-validated .input-group .form-control:invalid:focus, .was-validated .input-group div.product #reviews #respond input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .was-validated .input-group input:invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .was-validated .input-group div.product #reviews #respond textarea:invalid:focus,
-div.product #reviews #respond .was-validated .input-group textarea:invalid:focus, .was-validated .input-group .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated .input-group input[type=password]:invalid:focus, .input-group .form-control.is-invalid:focus, .input-group div.product #reviews #respond input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
+div.product #reviews #respond .was-validated .input-group textarea:invalid:focus, .was-validated .input-group .post-password-form input[type=password]:invalid:focus, .post-password-form .was-validated .input-group input[type=password]:invalid:focus, .was-validated .input-group .wordtrap-search-form .text input:invalid:focus, .wordtrap-search-form .text .was-validated .input-group input:invalid:focus,
+.was-validated .input-group .wordtrap-search-form .cat:invalid:focus,
+.wordtrap-search-form .was-validated .input-group .cat:invalid:focus, .input-group .form-control.is-invalid:focus, .input-group div.product #reviews #respond input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .input-group input.is-invalid:focus:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .input-group div.product #reviews #respond textarea.is-invalid:focus,
-div.product #reviews #respond .input-group textarea.is-invalid:focus, .input-group .post-password-form input.is-invalid[type=password]:focus, .post-password-form .input-group input.is-invalid[type=password]:focus,
+div.product #reviews #respond .input-group textarea.is-invalid:focus, .input-group .post-password-form input.is-invalid[type=password]:focus, .post-password-form .input-group input.is-invalid[type=password]:focus, .input-group .wordtrap-search-form .text input.is-invalid:focus, .wordtrap-search-form .text .input-group input.is-invalid:focus,
+.input-group .wordtrap-search-form .is-invalid.cat:focus,
+.wordtrap-search-form .input-group .is-invalid.cat:focus,
 .was-validated .input-group .form-select:invalid:focus,
 .was-validated .input-group form.cart select:invalid:focus,
 form.cart .was-validated .input-group select:invalid:focus,
@@ -3237,7 +3301,9 @@ fieldset:disabled .pagination .page-item .page-link,
 div.product #reviews #respond [type=button],
 div.product #reviews #respond [type=reset],
 div.product #reviews #respond [type=submit], .post-page-numbers.current,
-.pagination .page-item .page-link.current, .post-password-form input[type=submit] {
+.pagination .page-item .page-link.current, .post-password-form input[type=submit], .wordtrap-search-form .btn, .wordtrap-search-form .post-page-numbers,
+.wordtrap-search-form .pagination .page-item .page-link,
+.pagination .page-item .wordtrap-search-form .page-link {
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
@@ -3246,7 +3312,9 @@ div.product #reviews #respond [type=submit], .post-page-numbers.current,
 div.product #reviews #respond [type=button]:hover,
 div.product #reviews #respond [type=reset]:hover,
 div.product #reviews #respond [type=submit]:hover, .post-page-numbers.current:hover,
-.pagination .page-item .page-link.current:hover, .post-password-form input[type=submit]:hover {
+.pagination .page-item .page-link.current:hover, .post-password-form input[type=submit]:hover, .wordtrap-search-form .btn:hover, .wordtrap-search-form .post-page-numbers:hover,
+.wordtrap-search-form .pagination .page-item .page-link:hover,
+.pagination .page-item .wordtrap-search-form .page-link:hover {
   color: #fff;
   background-color: #0b5ed7;
   border-color: #0a58ca;
@@ -3255,11 +3323,15 @@ div.product #reviews #respond [type=submit]:hover, .post-page-numbers.current:ho
 div.product #reviews #respond .btn-check:focus + [type=button],
 div.product #reviews #respond .btn-check:focus + [type=reset],
 div.product #reviews #respond .btn-check:focus + [type=submit], .btn-check:focus + .post-page-numbers.current,
-.pagination .page-item .btn-check:focus + .page-link.current, .post-password-form .btn-check:focus + input[type=submit], .btn-primary:focus, div.product #reviews #respond button:focus,
+.pagination .page-item .btn-check:focus + .page-link.current, .post-password-form .btn-check:focus + input[type=submit], .wordtrap-search-form .btn-check:focus + .btn, .wordtrap-search-form .btn-check:focus + .post-page-numbers,
+.wordtrap-search-form .pagination .page-item .btn-check:focus + .page-link,
+.pagination .page-item .wordtrap-search-form .btn-check:focus + .page-link, .post-password-form .wordtrap-search-form .btn-check:focus + input[type=submit], .btn-primary:focus, div.product #reviews #respond button:focus,
 div.product #reviews #respond [type=button]:focus,
 div.product #reviews #respond [type=reset]:focus,
 div.product #reviews #respond [type=submit]:focus, .post-page-numbers.current:focus,
-.pagination .page-item .page-link.current:focus, .post-password-form input[type=submit]:focus {
+.pagination .page-item .page-link.current:focus, .post-password-form input[type=submit]:focus, .wordtrap-search-form .btn:focus, .wordtrap-search-form .post-page-numbers:focus,
+.wordtrap-search-form .pagination .page-item .page-link:focus,
+.pagination .page-item .wordtrap-search-form .page-link:focus {
   color: #fff;
   background-color: #0b5ed7;
   border-color: #0a58ca;
@@ -3269,23 +3341,33 @@ div.product #reviews #respond [type=submit]:focus, .post-page-numbers.current:fo
 div.product #reviews #respond .btn-check:checked + [type=button],
 div.product #reviews #respond .btn-check:checked + [type=reset],
 div.product #reviews #respond .btn-check:checked + [type=submit], .btn-check:checked + .post-page-numbers.current,
-.pagination .page-item .btn-check:checked + .page-link.current, .post-password-form .btn-check:checked + input[type=submit], .btn-check:active + .btn-primary, div.product #reviews #respond .btn-check:active + button,
+.pagination .page-item .btn-check:checked + .page-link.current, .post-password-form .btn-check:checked + input[type=submit], .wordtrap-search-form .btn-check:checked + .btn, .wordtrap-search-form .btn-check:checked + .post-page-numbers,
+.wordtrap-search-form .pagination .page-item .btn-check:checked + .page-link,
+.pagination .page-item .wordtrap-search-form .btn-check:checked + .page-link, .post-password-form .wordtrap-search-form .btn-check:checked + input[type=submit], .btn-check:active + .btn-primary, div.product #reviews #respond .btn-check:active + button,
 div.product #reviews #respond .btn-check:active + [type=button],
 div.product #reviews #respond .btn-check:active + [type=reset],
 div.product #reviews #respond .btn-check:active + [type=submit], .btn-check:active + .post-page-numbers.current,
-.pagination .page-item .btn-check:active + .page-link.current, .post-password-form .btn-check:active + input[type=submit], .btn-primary:active, div.product #reviews #respond button:active,
+.pagination .page-item .btn-check:active + .page-link.current, .post-password-form .btn-check:active + input[type=submit], .wordtrap-search-form .btn-check:active + .btn, .wordtrap-search-form .btn-check:active + .post-page-numbers,
+.wordtrap-search-form .pagination .page-item .btn-check:active + .page-link,
+.pagination .page-item .wordtrap-search-form .btn-check:active + .page-link, .post-password-form .wordtrap-search-form .btn-check:active + input[type=submit], .btn-primary:active, div.product #reviews #respond button:active,
 div.product #reviews #respond [type=button]:active,
 div.product #reviews #respond [type=reset]:active,
 div.product #reviews #respond [type=submit]:active, .post-page-numbers.current:active,
-.pagination .page-item .page-link.current:active, .post-password-form input[type=submit]:active, .btn-primary.active, div.product #reviews #respond button.active,
+.pagination .page-item .page-link.current:active, .post-password-form input[type=submit]:active, .wordtrap-search-form .btn:active, .wordtrap-search-form .post-page-numbers:active,
+.wordtrap-search-form .pagination .page-item .page-link:active,
+.pagination .page-item .wordtrap-search-form .page-link:active, .btn-primary.active, div.product #reviews #respond button.active,
 div.product #reviews #respond .active[type=button],
 div.product #reviews #respond .active[type=reset],
 div.product #reviews #respond .active[type=submit], .active.post-page-numbers.current,
-.pagination .page-item .active.page-link.current, .post-password-form input.active[type=submit], .show > .btn-primary.dropdown-toggle, div.product #reviews #respond .show > button.dropdown-toggle,
+.pagination .page-item .active.page-link.current, .post-password-form input.active[type=submit], .wordtrap-search-form .active.btn, .wordtrap-search-form .active.post-page-numbers,
+.wordtrap-search-form .pagination .page-item .active.page-link,
+.pagination .page-item .wordtrap-search-form .active.page-link, .show > .btn-primary.dropdown-toggle, div.product #reviews #respond .show > button.dropdown-toggle,
 div.product #reviews #respond .show > .dropdown-toggle[type=button],
 div.product #reviews #respond .show > .dropdown-toggle[type=reset],
 div.product #reviews #respond .show > .dropdown-toggle[type=submit], .show > .dropdown-toggle.post-page-numbers.current,
-.pagination .page-item .show > .dropdown-toggle.page-link.current, .post-password-form .show > input.dropdown-toggle[type=submit] {
+.pagination .page-item .show > .dropdown-toggle.page-link.current, .post-password-form .show > input.dropdown-toggle[type=submit], .wordtrap-search-form .show > .dropdown-toggle.btn, .wordtrap-search-form .show > .dropdown-toggle.post-page-numbers,
+.wordtrap-search-form .pagination .page-item .show > .dropdown-toggle.page-link,
+.pagination .page-item .wordtrap-search-form .show > .dropdown-toggle.page-link, .post-password-form .wordtrap-search-form .show > input.dropdown-toggle[type=submit] {
   color: #fff;
   background-color: #0a58ca;
   border-color: #0a53be;
@@ -3294,34 +3376,48 @@ div.product #reviews #respond .show > .dropdown-toggle[type=submit], .show > .dr
 div.product #reviews #respond .btn-check:checked + [type=button]:focus,
 div.product #reviews #respond .btn-check:checked + [type=reset]:focus,
 div.product #reviews #respond .btn-check:checked + [type=submit]:focus, .btn-check:checked + .post-page-numbers.current:focus,
-.pagination .page-item .btn-check:checked + .page-link.current:focus, .post-password-form .btn-check:checked + input[type=submit]:focus, .btn-check:active + .btn-primary:focus, div.product #reviews #respond .btn-check:active + button:focus,
+.pagination .page-item .btn-check:checked + .page-link.current:focus, .post-password-form .btn-check:checked + input[type=submit]:focus, .wordtrap-search-form .btn-check:checked + .btn:focus, .wordtrap-search-form .btn-check:checked + .post-page-numbers:focus,
+.wordtrap-search-form .pagination .page-item .btn-check:checked + .page-link:focus,
+.pagination .page-item .wordtrap-search-form .btn-check:checked + .page-link:focus, .post-password-form .wordtrap-search-form .btn-check:checked + input[type=submit]:focus, .btn-check:active + .btn-primary:focus, div.product #reviews #respond .btn-check:active + button:focus,
 div.product #reviews #respond .btn-check:active + [type=button]:focus,
 div.product #reviews #respond .btn-check:active + [type=reset]:focus,
 div.product #reviews #respond .btn-check:active + [type=submit]:focus, .btn-check:active + .post-page-numbers.current:focus,
-.pagination .page-item .btn-check:active + .page-link.current:focus, .post-password-form .btn-check:active + input[type=submit]:focus, .btn-primary:active:focus, div.product #reviews #respond button:active:focus,
+.pagination .page-item .btn-check:active + .page-link.current:focus, .post-password-form .btn-check:active + input[type=submit]:focus, .wordtrap-search-form .btn-check:active + .btn:focus, .wordtrap-search-form .btn-check:active + .post-page-numbers:focus,
+.wordtrap-search-form .pagination .page-item .btn-check:active + .page-link:focus,
+.pagination .page-item .wordtrap-search-form .btn-check:active + .page-link:focus, .post-password-form .wordtrap-search-form .btn-check:active + input[type=submit]:focus, .btn-primary:active:focus, div.product #reviews #respond button:active:focus,
 div.product #reviews #respond [type=button]:active:focus,
 div.product #reviews #respond [type=reset]:active:focus,
 div.product #reviews #respond [type=submit]:active:focus, .post-page-numbers.current:active:focus,
-.pagination .page-item .page-link.current:active:focus, .post-password-form input[type=submit]:active:focus, .btn-primary.active:focus, div.product #reviews #respond button.active:focus,
+.pagination .page-item .page-link.current:active:focus, .post-password-form input[type=submit]:active:focus, .wordtrap-search-form .btn:active:focus, .wordtrap-search-form .post-page-numbers:active:focus,
+.wordtrap-search-form .pagination .page-item .page-link:active:focus,
+.pagination .page-item .wordtrap-search-form .page-link:active:focus, .btn-primary.active:focus, div.product #reviews #respond button.active:focus,
 div.product #reviews #respond .active[type=button]:focus,
 div.product #reviews #respond .active[type=reset]:focus,
 div.product #reviews #respond .active[type=submit]:focus, .active.post-page-numbers.current:focus,
-.pagination .page-item .active.page-link.current:focus, .post-password-form input.active[type=submit]:focus, .show > .btn-primary.dropdown-toggle:focus, div.product #reviews #respond .show > button.dropdown-toggle:focus,
+.pagination .page-item .active.page-link.current:focus, .post-password-form input.active[type=submit]:focus, .wordtrap-search-form .active.btn:focus, .wordtrap-search-form .active.post-page-numbers:focus,
+.wordtrap-search-form .pagination .page-item .active.page-link:focus,
+.pagination .page-item .wordtrap-search-form .active.page-link:focus, .show > .btn-primary.dropdown-toggle:focus, div.product #reviews #respond .show > button.dropdown-toggle:focus,
 div.product #reviews #respond .show > .dropdown-toggle[type=button]:focus,
 div.product #reviews #respond .show > .dropdown-toggle[type=reset]:focus,
 div.product #reviews #respond .show > .dropdown-toggle[type=submit]:focus, .show > .dropdown-toggle.post-page-numbers.current:focus,
-.pagination .page-item .show > .dropdown-toggle.page-link.current:focus, .post-password-form .show > input.dropdown-toggle[type=submit]:focus {
+.pagination .page-item .show > .dropdown-toggle.page-link.current:focus, .post-password-form .show > input.dropdown-toggle[type=submit]:focus, .wordtrap-search-form .show > .dropdown-toggle.btn:focus, .wordtrap-search-form .show > .dropdown-toggle.post-page-numbers:focus,
+.wordtrap-search-form .pagination .page-item .show > .dropdown-toggle.page-link:focus,
+.pagination .page-item .wordtrap-search-form .show > .dropdown-toggle.page-link:focus, .post-password-form .wordtrap-search-form .show > input.dropdown-toggle[type=submit]:focus {
   box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
 .btn-primary:disabled, div.product #reviews #respond button:disabled,
 div.product #reviews #respond [type=button]:disabled,
 div.product #reviews #respond [type=reset]:disabled,
 div.product #reviews #respond [type=submit]:disabled, .post-page-numbers.current:disabled,
-.pagination .page-item .page-link.current:disabled, .post-password-form input[type=submit]:disabled, .btn-primary.disabled, div.product #reviews #respond button.disabled,
+.pagination .page-item .page-link.current:disabled, .post-password-form input[type=submit]:disabled, .wordtrap-search-form .btn:disabled, .wordtrap-search-form .post-page-numbers:disabled,
+.wordtrap-search-form .pagination .page-item .page-link:disabled,
+.pagination .page-item .wordtrap-search-form .page-link:disabled, .btn-primary.disabled, div.product #reviews #respond button.disabled,
 div.product #reviews #respond .disabled[type=button],
 div.product #reviews #respond .disabled[type=reset],
 div.product #reviews #respond .disabled[type=submit], .disabled.post-page-numbers.current,
-.pagination .page-item .disabled.page-link.current, .post-password-form input.disabled[type=submit] {
+.pagination .page-item .disabled.page-link.current, .post-password-form input.disabled[type=submit], .wordtrap-search-form .disabled.btn, .wordtrap-search-form .disabled.post-page-numbers,
+.wordtrap-search-form .pagination .page-item .disabled.page-link,
+.pagination .page-item .wordtrap-search-form .disabled.page-link {
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
@@ -6988,7 +7084,8 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
   vertical-align: baseline !important;
 }
 
-.align-top {
+.align-top, .wordtrap-search-form .text input,
+.wordtrap-search-form .cat {
   vertical-align: top !important;
 }
 
@@ -7060,7 +7157,8 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
   display: inline !important;
 }
 
-.d-inline-block {
+.d-inline-block, .wordtrap-search-form .text input,
+.wordtrap-search-form .cat {
   display: inline-block !important;
 }
 
@@ -7305,7 +7403,8 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
   width: 100% !important;
 }
 
-.w-auto {
+.w-auto, .wordtrap-search-form .text input,
+.wordtrap-search-form .cat {
   width: auto !important;
 }
 
@@ -8520,7 +8619,7 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
     display: inline-flex !important;
   }
 
-  .d-sm-none {
+  .d-sm-none, .wordtrap-search-form .cat-sm-none {
     display: none !important;
   }
 
@@ -9321,7 +9420,7 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
     display: inline-flex !important;
   }
 
-  .d-md-none {
+  .d-md-none, .wordtrap-search-form .cat-md-none {
     display: none !important;
   }
 
@@ -10122,7 +10221,7 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
     display: inline-flex !important;
   }
 
-  .d-lg-none {
+  .d-lg-none, .wordtrap-search-form .cat-lg-none {
     display: none !important;
   }
 
@@ -10923,7 +11022,7 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
     display: inline-flex !important;
   }
 
-  .d-xl-none {
+  .d-xl-none, .wordtrap-search-form .cat-xl-none {
     display: none !important;
   }
 
@@ -11724,7 +11823,7 @@ div.product .product-labels .pagination .page-item .page-link span, .post-passwo
     display: inline-flex !important;
   }
 
-  .d-xxl-none {
+  .d-xxl-none, .wordtrap-search-form .cat-xxl-none {
     display: none !important;
   }
 
@@ -13497,7 +13596,9 @@ section.no-results > *:last-child,
 }
 .comment-respond .form-control, .comment-respond div.product #reviews #respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]), div.product #reviews #respond .comment-respond input:not([type=button], [type=reset], [type=submit], [type=checkbox], [type=radio]),
 .comment-respond div.product #reviews #respond textarea,
-div.product #reviews #respond .comment-respond textarea, .comment-respond .post-password-form input[type=password], .post-password-form .comment-respond input[type=password] {
+div.product #reviews #respond .comment-respond textarea, .comment-respond .wordtrap-search-form .text input, .wordtrap-search-form .text .comment-respond input,
+.comment-respond .wordtrap-search-form .cat,
+.wordtrap-search-form .comment-respond .cat, .comment-respond .post-password-form input[type=password], .post-password-form .comment-respond input[type=password] {
   background-color: #ffffff;
   border: none;
 }
@@ -14011,6 +14112,7 @@ div.product #reviews #respond .comment-respond [type=radio]:checked {
   border-radius: 50rem;
   content: "\f107";
   font-family: FontAwesome;
+  font-style: normal;
   position: absolute;
   width: 2rem;
   height: 2rem;
@@ -14757,19 +14859,23 @@ div.products .product-labels {
     font-size: 0.6em;
   }
 }
-div.products .product-inner {
+div.products .product-inner,
+div.products .category-inner {
   padding: 1.5rem 0.75rem 0.75rem;
   position: relative;
 }
 @media (min-width: 1200px) {
-  div.products .product-inner {
+  div.products .product-inner,
+div.products .category-inner {
     padding: 1.5rem 0.9375rem 0.75rem;
   }
 }
-div.products .product-thumbnail {
+div.products .product-thumbnail,
+div.products .category-thumbnail {
   position: relative;
 }
-div.products .product-thumbnail img {
+div.products .product-thumbnail img,
+div.products .category-thumbnail img {
   border-radius: 0.3rem;
   width: 100%;
   height: auto;
@@ -14871,20 +14977,23 @@ div.products .quantity + .button[class*=product_type_] {
   vertical-align: inherit;
   padding: 0.375rem 0.75rem;
 }
-div.products div.product {
+div.products div.product,
+div.products div.product-category {
   display: flex;
   background: #ffffff;
   border-radius: 0.3rem;
   height: 100%;
   padding: 0.75rem;
 }
-div.products div.product::after {
+div.products div.product::after,
+div.products div.product-category::after {
   display: block;
   clear: both;
   content: "";
 }
 @media (min-width: 1200px) {
-  div.products div.product {
+  div.products div.product,
+div.products div.product-category {
     padding: 0.9375rem;
   }
 }
@@ -14902,11 +15011,13 @@ div.products-view-cart-onimage-bottom .product-thumbnail .button[class*=product_
   }
 }
 
-div.products-grid div.product {
+div.products-grid div.product,
+div.products-grid div.product-category {
   flex-direction: column;
   justify-content: space-between;
 }
-div.products-grid .product-inner {
+div.products-grid .product-inner,
+div.products-grid .category-inner {
   text-align: center;
   height: 100%;
   display: flex;
@@ -14934,9 +15045,9 @@ div.products-grid.products-view-onimage-with-overlay .product-inner .star-rating
   margin-left: 0;
 }
 
-div.products-grid.products-view-onimage div.product,
-div.products-grid.products-view-onimage-with-overlay div.product,
-div.products-grid.products-view-centered-onimage-with-overlay div.product {
+div.products-grid.products-view-onimage div.product:not(.product-category),
+div.products-grid.products-view-onimage-with-overlay div.product:not(.product-category),
+div.products-grid.products-view-centered-onimage-with-overlay div.product:not(.product-category) {
   padding: 0;
 }
 div.products-grid.products-view-onimage .product-thumbnail .added_to_cart,
@@ -14999,7 +15110,8 @@ div.products-grid.products-view-centered-onimage-with-overlay .product-inner *:n
 }
 div.products-grid.products-view-onimage-with-overlay .product:hover .product-thumbnail:after,
 div.products-grid.products-view-centered-onimage-with-overlay .product:hover .product-thumbnail:after {
-  background: rgba(27, 27, 27, 0.5);
+  background: #1b1b1b;
+  opacity: 0.5;
 }
 
 div.products-grid.products-view-centered-onimage-with-overlay .product-inner {
@@ -15007,41 +15119,151 @@ div.products-grid.products-view-centered-onimage-with-overlay .product-inner {
   justify-content: center;
 }
 
-div.products-list .product-thumbnail {
+div.products-grid.products-view-details-show .product-inner {
+  opacity: 1;
+  transform: translateZ(0) translateY(0);
+}
+div.products-grid.products-view-details-show .product-thumbnail:after {
+  background: #1b1b1b;
+  opacity: 0.5;
+}
+
+div.products-grid.products-subcategory-pos-top div.product-category,
+div.products-grid.products-subcategory-pos-middle div.product-category,
+div.products-grid.products-subcategory-pos-bottom div.product-category {
+  padding: 0;
+}
+div.products-grid.products-subcategory-pos-top .category-inner,
+div.products-grid.products-subcategory-pos-middle .category-inner,
+div.products-grid.products-subcategory-pos-bottom .category-inner {
+  border-radius: 0 0 0.3rem 0.3rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: auto;
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.3s;
+  transform: translateZ(0) translateY(10px);
+  padding: 1.125rem;
+  z-index: 10;
+}
+@media (min-width: 1200px) {
+  div.products-grid.products-subcategory-pos-top .category-inner,
+div.products-grid.products-subcategory-pos-middle .category-inner,
+div.products-grid.products-subcategory-pos-bottom .category-inner {
+    padding: 1.5rem;
+  }
+}
+div.products-grid.products-subcategory-pos-top .category-inner *,
+div.products-grid.products-subcategory-pos-middle .category-inner *,
+div.products-grid.products-subcategory-pos-bottom .category-inner * {
+  color: #fff !important;
+}
+div.products-grid.products-subcategory-pos-top .product-category:hover .category-inner,
+div.products-grid.products-subcategory-pos-middle .product-category:hover .category-inner,
+div.products-grid.products-subcategory-pos-bottom .product-category:hover .category-inner {
+  opacity: 1;
+  transform: translateZ(0) translateY(0);
+}
+div.products-grid.products-subcategory-pos-top .category-thumbnail:after,
+div.products-grid.products-subcategory-pos-middle .category-thumbnail:after,
+div.products-grid.products-subcategory-pos-bottom .category-thumbnail:after {
+  content: "";
+  border-radius: 0.3rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: 0.25s;
+  z-index: 10;
+}
+div.products-grid.products-subcategory-pos-top .product-category:hover .category-thumbnail:after,
+div.products-grid.products-subcategory-pos-middle .product-category:hover .category-thumbnail:after,
+div.products-grid.products-subcategory-pos-bottom .product-category:hover .category-thumbnail:after {
+  background: #1b1b1b;
+  opacity: 0.5;
+}
+
+div.products-grid.products-subcategory-pos-top .category-inner {
+  top: 0;
+}
+
+div.products-grid.products-subcategory-pos-bottom .category-inner {
+  bottom: 0;
+}
+
+div.products-grid.products-subcategory-pos-middle .category-inner {
+  height: 100%;
+  top: 0;
+  justify-content: center;
+}
+
+div.products-grid.products-subcategory-details-show .category-inner {
+  opacity: 1;
+  transform: translateZ(0) translateY(0);
+}
+div.products-grid.products-subcategory-details-show .category-thumbnail:after {
+  background: #1b1b1b;
+  opacity: 0.5;
+}
+
+div.products-grid.products-subcategory-align-left .woocommerce-loop-category__title {
+  text-align: left;
+}
+
+div.products-grid.products-subcategory-align-center .woocommerce-loop-category__title {
+  text-align: center;
+}
+
+div.products-grid.products-subcategory-align-right .woocommerce-loop-category__title {
+  text-align: right;
+}
+
+div.products-list .product-thumbnail,
+div.products-list .category-thumbnail {
   flex: none;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 @media (max-width: 575.98px) {
-  div.products-list .product-thumbnail {
+  div.products-list .product-thumbnail,
+div.products-list .category-thumbnail {
     margin-bottom: 0.5rem;
   }
 }
-div.products-list .product-thumbnail img {
+div.products-list .product-thumbnail img,
+div.products-list .category-thumbnail img {
   max-width: 250px;
 }
 @media (max-width: 1199.98px) {
-  div.products-list .product-thumbnail img {
+  div.products-list .product-thumbnail img,
+div.products-list .category-thumbnail img {
     max-width: 200px;
   }
 }
 @media (max-width: 991.98px) {
-  div.products-list .product-thumbnail img {
+  div.products-list .product-thumbnail img,
+div.products-list .category-thumbnail img {
     max-width: 175px;
   }
 }
 @media (max-width: 575.98px) {
-  div.products-list .product-thumbnail img {
+  div.products-list .product-thumbnail img,
+div.products-list .category-thumbnail img {
     max-width: 100%;
   }
 }
 @media (max-width: 575.98px) {
-  div.products-list div.product {
+  div.products-list div.product,
+div.products-list div.product-category {
     display: block;
   }
 }
-div.products-list .product-inner {
+div.products-list .product-inner,
+div.products-list .category-inner {
   display: flex;
   flex: 1 1 auto;
   margin-left: 1.25rem;
@@ -15049,56 +15271,68 @@ div.products-list .product-inner {
   position: relative;
 }
 @media (min-width: 1200px) {
-  div.products-list .product-inner {
+  div.products-list .product-inner,
+div.products-list .category-inner {
     padding: 0.9375rem;
   }
 }
 @media (max-width: 1199.98px) {
-  div.products-list .product-inner {
+  div.products-list .product-inner,
+div.products-list .category-inner {
     margin-left: 1rem;
   }
 }
 @media (max-width: 991.98px) {
-  div.products-list .product-inner {
+  div.products-list .product-inner,
+div.products-list .category-inner {
     display: block;
     margin-left: 0.75rem;
   }
 }
 @media (max-width: 767.98px) {
-  div.products-list .product-inner {
+  div.products-list .product-inner,
+div.products-list .category-inner {
     margin-left: 0.5rem;
   }
 }
 @media (max-width: 575.98px) {
-  div.products-list .product-inner {
+  div.products-list .product-inner,
+div.products-list .category-inner {
     margin-left: 0;
   }
 }
 div.products-list .product-inner .product-detail-top {
   flex: 1 1 auto;
 }
-div.products-list .product-detail-bottom {
+div.products-list .category-inner .category-detail-top {
+  flex: 1 1 auto;
+}
+div.products-list .product-detail-bottom,
+div.products-list .category-detail-bottom {
   flex: none;
   text-align: right;
   margin-left: 2rem;
 }
 @media (max-width: 1199.98px) {
-  div.products-list .product-detail-bottom {
+  div.products-list .product-detail-bottom,
+div.products-list .category-detail-bottom {
     margin-left: 1rem;
   }
 }
 @media (max-width: 991.98px) {
-  div.products-list .product-detail-bottom {
+  div.products-list .product-detail-bottom,
+div.products-list .category-detail-bottom {
     margin-left: 0;
     text-align: left;
   }
 }
-div.products-list .product-detail-bottom .button[class*=product_type_] {
+div.products-list .product-detail-bottom .button[class*=product_type_],
+div.products-list .category-detail-bottom .button[class*=product_type_] {
   margin-top: 1.5rem;
 }
 
-div.products-list.products-view-onimage div.product,
-div.products-list.products-view-onimage-with-overlay div.product {
+div.products-list.products-view-onimage div.product:not(.product-category),
+div.products-list.products-view-onimage-with-overlay div.product:not(.product-category) {
   padding: 0;
 }
 div.products-list.products-view-onimage .product-thumbnail img,
@@ -15149,6 +15383,36 @@ div.products-list.products-view-quantity-input .quantity {
 }
 div.products-list.products-view-quantity-input .quantity + .button[class*=product_type_] {
   margin-top: 0.5rem;
+}
+
+div.products-list.products-subcategory-pos-top div.product-category,
+div.products-list.products-subcategory-pos-middle div.product-category,
+div.products-list.products-subcategory-pos-bottom div.product-category {
+  padding: 0;
+}
+div.products-list.products-subcategory-pos-top .category-thumbnail img,
+div.products-list.products-subcategory-pos-middle .category-thumbnail img,
+div.products-list.products-subcategory-pos-bottom .category-thumbnail img {
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+@media (max-width: 575.98px) {
+  div.products-list.products-subcategory-pos-top .category-thumbnail img,
+div.products-list.products-subcategory-pos-middle .category-thumbnail img,
+div.products-list.products-subcategory-pos-bottom .category-thumbnail img {
+    border-radius: 0.3rem 0.3rem 0 0;
+  }
+}
+div.products-list.products-subcategory-pos-top .category-inner,
+div.products-list.products-subcategory-pos-middle .category-inner,
+div.products-list.products-subcategory-pos-bottom .category-inner {
+  padding: 1.5rem;
+}
+@media (min-width: 1200px) {
+  div.products-list.products-subcategory-pos-top .category-inner,
+div.products-list.products-subcategory-pos-middle .category-inner,
+div.products-list.products-subcategory-pos-bottom .category-inner {
+    padding: 1.95rem;
+  }
 }
 
 #modal-cart-notification .product-thumbnail {

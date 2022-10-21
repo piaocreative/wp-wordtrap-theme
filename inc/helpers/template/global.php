@@ -154,6 +154,10 @@ if ( ! function_exists( 'wordtrap_page_title' ) ) {
           $title = sprintf( esc_html__( 'Product Tag - %s', 'wordtrap' ), $term_name );
         } else {
           $title = $term_name;
+          $search_query = esc_html( get_search_query() );
+          if ( $search_query ) {
+            $title .= ' : ' . sprintf( __( 'Search Results - %s', 'wordtrap' ), $search_query );
+          }        
         }
       } elseif ( is_date() ) {
         if ( is_year() ) {

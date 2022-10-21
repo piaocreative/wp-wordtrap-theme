@@ -60,7 +60,7 @@
   .nav-link {
     cursor: pointer;
   }
-  
+
   &.d-flex {
     .tab-content {
       width: 100%;
@@ -95,7 +95,7 @@
   }
 
   .content-wrap {
-    text-align: left;    
+    text-align: left;
   }
 
   &,
@@ -112,15 +112,15 @@
     .content-wrap {
       text-align: center;
     }
-  }  
+  }
 
   &.icon-box-right {
-    flex-direction: row-reverse;    
+    flex-direction: row-reverse;
 
     .content-wrap {
       text-align: right;
     }
-  }  
+  }
 }
 
 .wordtrap-slider {
@@ -128,7 +128,7 @@
     position: relative;
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -175,7 +175,7 @@
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
@@ -214,5 +214,12 @@
       max-width: 100%;
       height: auto;
     }
+  }
+}
+
+.wordtrap-search-form {
+  .cat {
+    flex: none;
+    width: auto;
   }
 }
