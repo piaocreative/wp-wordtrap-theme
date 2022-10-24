@@ -217,9 +217,75 @@
   }
 }
 
+.wordtrap-dropdown {
+  position: relative;
+
+  .wordtrap-toggle {
+    @extend .btn;
+    color: $navbar-light-color;
+
+    &:hover,
+    &:focus {
+      color: $navbar-light-hover-color;
+      box-shadow: none;
+    }
+  }
+}
+
+.wordtrap-dropdown-popup {
+  display: none;
+  position: absolute;
+  z-index: 1002;
+  top: 100%;
+}
+
+.wordtrap-dropdown-popup-start {
+  left: 0;
+}
+
+.wordtrap-dropdown-popup-end {
+  right: 0;
+}
+
+.wordtrap-dropdown-popup-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .wordtrap-search-form {
-  .cat {
-    flex: none;
-    width: auto;
+  .searchform {
+    border-style: solid;
+  }
+
+  .searchform-fields {
+    flex-wrap: nowrap;
+  }
+
+  .text::placeholder {
+    opacity: 0.8;
+  }
+
+  .text,
+  .cat,
+  .btn {
+    box-shadow: none;
+  }
+
+  .searchform-dropdown {
+    display: inline-block;
+  }
+
+  .wordtrap-dropdown-popup {
+    background: $white;
+    box-shadow: $box-shadow;
+    border-style: solid;
+    padding: 1em;
+    margin-top: 0.5rem;
+
+    .text,
+    .cat {
+      flex: none;
+      width: auto;
+    }
   }
 }
