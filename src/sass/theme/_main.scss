@@ -1,0 +1,108 @@
+/*
+ * The styles for Main
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+.page-header {
+  padding-top: 3rem;
+
+  .primary-wrap & {
+    padding-top: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .breadcrumb {
+    margin-bottom: 0;
+  }
+
+  .woo-breadcrumb {
+    padding-bottom: 1rem;
+  }
+
+  .links {
+    padding-bottom: 1rem;
+
+    &.with-title {
+      padding-bottom: 2rem;
+    }
+
+    .primary-wrap & {
+      padding-bottom: 3rem;
+
+      &.with-title {
+        padding-bottom: 2rem;
+      }
+    }
+
+    a {    
+      @extend .btn;
+      @extend .btn-sm;
+      border-radius: 100px;
+      border-color: $gray-500;
+      color: $secondary;
+      padding-left: 1rem;
+      padding-right: 1.25rem;
+      margin-right: 1rem;
+  
+      &.back-to-link:before {
+        content: '\f104';
+        font-family: FontAwesome;
+        margin-right: 0.25rem;
+      }
+    }
+  }  
+
+  .page-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-weight: $font-weight-bolder;
+  }
+}
+
+.page-header-wrap {
+  @include media-breakpoint-up(sm) {
+    .container-fluid {
+      padding-left: var(--bs-gutter-x, 1.5rem);
+      padding-right: var(--bs-gutter-x, 1.5rem);
+    }
+  }  
+}
+
+#page > .page-header {
+  background: $body-bg;
+}
+
+#primary {
+  background: $body-bg;
+  padding-top: 2rem;
+}
+
+.primary-wrap {
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(sm) {
+    .container-fluid {
+      padding-left: var(--bs-gutter-x, 1.5rem);
+      padding-right: var(--bs-gutter-x, 1.5rem);
+    }
+  }
+}
+
+.site-main {
+  margin-bottom: 2rem;
+  position: relative;
+
+  .ajax-loading {
+    > div {
+      width: 3rem;
+      height: 3rem;
+      margin-top: -1.5rem;
+      margin-left: -1.5rem;
+    }
+  }  
+}

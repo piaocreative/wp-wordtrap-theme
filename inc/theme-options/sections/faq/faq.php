@@ -9,13 +9,13 @@
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'FAQ', 'wordtrap' ),
-		'id'               => 'wordtrap-faq',
-		'customizer_width' => '400px',
-		'icon'             => 'dashicons-before dashicons-editor-help',
-		'fields'           => array(
+  $opt_name,
+  array(
+    'title'            => esc_html__( 'FAQ', 'wordtrap' ),
+    'id'               => 'wordtrap-faq',
+    'customizer_width' => '400px',
+    'icon'             => 'dashicons-before dashicons-editor-help',
+    'fields'           => array(
       array(
         'id'          => 'enable-faq',
         'type'        => 'switch',
@@ -46,7 +46,19 @@ Redux::set_section(
         'id'          => 'faq-cat-slug-name',
         'type'        => 'text',
         'title'       => esc_html__( 'Category Slug Name', 'wordtrap' ),
-        'placeholder' => 'faq_cat',
+        'placeholder' => 'faq_category',
+      ),
+      array(
+        'id'          => 'faq-cat-name',
+        'type'        => 'text',
+        'title'       => esc_html__( 'Category Name', 'wordtrap' ),
+        'placeholder' => 'FAQ Category',
+      ),
+      array(
+        'id'          => 'faq-cats-name',
+        'type'        => 'text',
+        'title'       => esc_html__( 'Categories Name', 'wordtrap' ),
+        'placeholder' => 'FAQ Categories',
       ),
       array(
         'id'          => 'faqs-page',
@@ -59,7 +71,7 @@ Redux::set_section(
         'type'        => 'image_select',
         'title'       => esc_html__( 'Main Layout', 'wordtrap' ),
         'options'     => $main_layout_options,
-        'default'     => 'full',
+        'default'     => 'without-sidebars',
       ),
       array(
         'id'          => 'faqs-left-sidebar',
@@ -92,25 +104,18 @@ Redux::set_section(
         'default'     => 'asc',
       ),
       array(
-        'id'          => 'faqs-cat-filter-position',
-        'type'        => 'button_set',
-        'title'       => esc_html__( 'Categories Filter Position', 'wordtrap' ),
-        'options'     => $cats_filter_position_options,
-        'default'     => 'content',
-      ),
-      array(
         'id'          => 'faqs-orderby',
         'type'        => 'button_set',
         'title'       => esc_html__( 'FAQs Order By', 'wordtrap' ),
         'options'     => $singular_orderby_options,
-        'default'     => 'name',
+        'default'     => '',
       ),
       array(
         'id'          => 'faqs-order',
         'type'        => 'button_set',
         'title'       => esc_html__( 'FAQs Order', 'wordtrap' ),
         'options'     => $singular_order_options,
-        'default'     => 'asc',
+        'default'     => 'desc',
       ),
     )
   )

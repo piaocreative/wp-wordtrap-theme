@@ -1,0 +1,25 @@
+/*
+ * The styles for Navbar
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+.navbar-brand {
+  display: block;
+  max-width: 100%;
+  width: $logo-width;
+  margin: $header-logo-margin;
+
+  @include media-breakpoint-down(lg) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#main-menu,
+#header-main .btn {
+  text-transform: $menu-text-transform;
+  font-weight: $menu-font-weight;
+}
+

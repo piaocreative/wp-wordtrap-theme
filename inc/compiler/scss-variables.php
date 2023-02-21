@@ -1,6 +1,6 @@
 <?php
 /**
- * Generate scss variables
+ * Load scss variables
  *
  * @package Wordtrap
  * @since wordtrap 1.0.0
@@ -47,6 +47,7 @@ $light:                       <?php echo $g['light'] ?>;
 <?php if ( $g['dark'] ) : ?>
 $dark:                        <?php echo $g['dark'] ?>;
 <?php endif ?>
+$min-contrast-ratio:          3;
 
 // Grays
 <?php if ( $g['white'] ) : ?>
@@ -200,4 +201,43 @@ $link-hover-color:            <?php echo $g['link-hover']['color'] ?>;
 <?php endif ?>
 <?php if ( isset( $g['link-hover']['text-decoration'] ) && $g['link-hover']['text-decoration'] ) : ?>
 $link-hover-decoration:       <?php echo $g['link-hover']['text-decoration'] ?>;
+<?php endif ?>
+
+// Header
+<?php if ( $g['header-bg'] ) : ?>
+$header-bg:                   <?php echo $g['header-bg'] ?>;
+<?php endif ?>
+$header-logo-margin:          <?php echo floatval( $g['header-logo-margin']['margin-top'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-right'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-bottom'] ) ?>rem <?php echo floatval( $g['header-logo-margin']['margin-left'] ) ?>rem;
+$logo-width:                  <?php echo intval( $g['logo-width']['width'] ) ? intval( $g['logo-width']['width'] ) : 260 ?>px;
+$header-border-top-color:     $primary;
+$menu-font-weight:            $headings-font-weight;
+
+// Main
+<?php if ( $g['section-bg'] ) : ?>
+$section-bg:                  <?php echo $g['section-bg'] ?>;
+<?php endif ?>
+
+// Footer
+<?php if ( $g['footer-bg'] ) : ?>
+$footer-bg:                   <?php echo $g['footer-bg'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-color'] ) : ?>
+$footer-color:                <?php echo $g['footer-color'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-headings-color'] ) : ?>
+$footer-headings-color:       <?php echo $g['footer-headings-color'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-link-color'] ) : ?>
+$footer-link-color:           <?php echo $g['footer-link-color'] ?>;
+<?php endif ?>
+<?php if ( $g['footer-link-hover-color'] ) : ?>
+$footer-link-hover-color:     <?php echo $g['footer-link-hover-color'] ?>;
+<?php endif ?>
+
+// Form
+<?php if ( $g['input-bg'] ) : ?>
+$input-bg:                    <?php echo $g['input-bg'] ?>;
+<?php endif ?>
+<?php if ( $g['input-border-color'] ) : ?>
+$input-border-color:          <?php echo $g['input-border-color'] ?>;
 <?php endif ?>

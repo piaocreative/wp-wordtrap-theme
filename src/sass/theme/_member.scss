@@ -1,0 +1,235 @@
+/*
+ * The styles for member post type
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+article.member {
+  &.member-singular {
+    display: block;
+  }
+
+  .entry-meta {
+    span {
+      color: $primary;
+      float: none;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .overview {
+      display: flex;
+
+      .container {
+        display: flex;
+      }
+    }
+  }
+
+  .overview {
+    > .container {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  
+    @include media-breakpoint-down(sm) {
+      > .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  
+  .entry-content {
+    margin-top: 0;
+  }
+
+  .entry-footer {
+    display: block;
+
+    .read-more {
+      float: none;
+    }
+  }
+
+  .post-thumbnail {
+    .follow-links {
+      margin: 0;
+      padding: 0;
+      border: none;
+
+      label,
+      .share-button {
+        display: none;
+      }
+    }
+  }
+}
+
+body.single-member {
+  .primary-wrap {
+    &.site-layout-without-sidebars,
+    &.site-layout-full-without-sidebars {
+      margin-bottom: 0;
+
+      .site-main {
+        margin-bottom: 0;
+      }
+
+      article.hentry {
+        margin-bottom: 0;
+      }
+      
+      .overview {
+        border-radius: 0;
+        display: block;
+        padding-bottom: 5rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        .overview-inner {
+          display: flex;
+        }
+      }
+
+      .entry-content {
+        margin-top: 0;
+      }
+
+      .entry-related {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
+
+.posts-grid {
+  .member {
+    .entry-title {
+      font-size: $title-font-size * 1.1;
+    }
+
+    .entry-overview {
+      display: block;
+    }
+
+    .entry-footer .read-more a {
+      font-size: 0.9rem;
+      font-weight: $font-weight-normal;
+    }
+  }  
+}
+
+.follow-links {
+  display: flex;
+  margin-top: 2rem;
+  border-top: 1px solid $border-color;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
+  label {
+    color: $gray-500;
+    margin-right: 1rem;
+  }
+
+  .social-share {
+    margin-top: 1rem;
+  }
+
+  .share-button {
+    @extend .btn;
+    background: $light;
+    border-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    margin-top: 1rem;
+
+    &:hover {
+      background: $primary;
+      border-color: $primary;
+      color: color-contrast($primary);
+    }
+  }
+}
+
+// Members view type: 2
+.posts-grid {
+  article.members-view-2 {
+    .entry-header,
+    .entry-overview,
+    .entry-footer {
+      text-align: center;
+    }
+  }
+}
+
+// Members view type: 3
+.posts-grid {
+  article.members-view-3 {
+    .entry-header {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      text-align: center;
+
+      .entry-title {
+        margin-bottom: -1.75rem;
+
+        a {
+          display: inline-block;
+          background: rgba(33, 37, 41, 0.8);
+          border-radius: $border-radius-lg;
+          color: #fff;
+          width: 80%;
+          padding: 0.75rem 0.75rem 1.65rem;
+          text-decoration: none;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            background: #000;
+          }
+        }
+      }
+
+      .entry-meta {
+        position: relative;
+        background: $primary;
+        border-radius: $border-radius-sm;
+        color: color-contrast($primary); 
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+
+        span {
+          color: inherit;
+        }
+      }
+
+      &.no-follow-links {
+        .entry-meta {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .post-thumbnail {
+      .follow-links {
+        display: block;
+      }
+      
+      .social-share {
+        margin-top: 0.5rem;
+        position: static;
+      }
+    }
+  }
+}

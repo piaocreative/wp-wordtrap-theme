@@ -360,14 +360,6 @@ if ( ! class_exists( 'Redux_Connection_Banner', false ) ) {
 		public function admin_head() {
 			?>
 
-			<link
-				rel='stylesheet' id='redux-banner-css' <?php // phpcs:ignore WordPress.WP.EnqueuedResources ?>
-				href='<?php echo esc_url( Redux_Core::$url ); ?>inc/welcome/css/redux-banner.css'
-				type='text/css' media='all'/>
-			<script
-				id="redux-banner-admin-js"
-				src='<?php echo esc_url( Redux_Core::$url ); ?>inc/welcome/js/redux-banner-admin.js'>
-			</script>
 			<?php
 		}
 

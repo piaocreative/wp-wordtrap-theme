@@ -1,0 +1,60 @@
+/*
+ * The styles for Widgets
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+.widgettitle {
+  font-size: $widget-title-font-size;
+  margin-bottom: 1.5rem;
+}
+
+.widget,
+.widget_meta,
+.widget_nav_menu,
+.widget_block,
+.woocommerce[class*="widget"],
+[class^="wp-widget-group"] {
+  margin-bottom: 2.5rem;
+}
+
+.widget,
+.widget_meta,
+.widget_nav_menu,
+.widget_block,
+.woocommerce[class*="widget"] {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.widget {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+// Meta, Nav Menu, Rss
+.widget_meta,
+.widget_nav_menu,
+.widget_rss {
+  .widgettitle {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    ul {
+      padding-left: 0.5rem;
+    }
+  }
+
+  li {
+    margin: 1em 0;
+  }
+}
+

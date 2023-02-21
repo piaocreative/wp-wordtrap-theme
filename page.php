@@ -19,43 +19,20 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+<?php
+// Start the Loop.
+while ( have_posts() ) :
+  the_post();
 
-		<div class="container">
+  get_template_part( 'template-parts/page/content' );
 
-			<div class="row">
+  // If comments are open or we have at least one comment, load up the comment template.
+  if ( wordtrap_options( 'page-comments' ) && ( comments_open() || get_comments_number() ) ) {
+    comments_template();
+  }
 
-				<!-- The left sidebar -->
-				<?php get_template_part( 'template-parts/sidebar/left-sidebar' ); ?>
-
-				<main id="main" class="site-main">
-
-					<?php
-
-					// Start the Loop.
-					while ( have_posts() ) :
-						the_post();
-
-						get_template_part( 'template-parts/content/content', 'page' );
-
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
-						}
-
-					endwhile; // End the loop.
-					?>
-
-				</div>
-
-				<!-- The right sidebar -->
-				<?php get_template_part( 'template-parts/sidebar/right-sidebar' ); ?>
-
-			</div><!-- .row -->
-
-		</main><!-- #main -->
-
-	</div><!-- #primary -->
+endwhile; // End the loop.
+?>
 
 <?php
 get_footer();

@@ -1,16 +1,16 @@
 /*
-* Use existing Bootstrap 4/5 classes and
-* variables to extend - override CF7 style
-*
-* Useful CF7 classes:
-* .wpcf7 the wrapper element
-* .wpcf7-form
-* .wpcf7-form-control
-* .wpcf7-text
-* .wpcf7-email
-* .wpcf7-textarea
-* .wpcf7-submit
-*/
+ * Use existing Bootstrap 4/5 classes and
+ * variables to extend - override CF7 style
+ *
+ * Useful CF7 classes:
+ * .wpcf7 the wrapper element
+ * .wpcf7-form
+ * .wpcf7-form-control
+ * .wpcf7-text
+ * .wpcf7-email
+ * .wpcf7-textarea
+ * .wpcf7-submit
+ */
 
 // keep a max width in case it is just the form and nothing else
 // we do not want a form spanning whole page
@@ -51,7 +51,7 @@
     // set paragraphs to behave like divs with class .form-group
     p {
       @extend .form-group !optional;
-	  margin-bottom: $spacer; // Replicates the .form-group functionality in BS5.
+    margin-bottom: $spacer; // Replicates the .form-group functionality in BS5.
     }
 
     // let labels be 100%

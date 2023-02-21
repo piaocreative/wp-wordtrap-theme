@@ -10,7 +10,7 @@ module.exports = ctx => {
     plugins: {
       autoprefixer: {
         cascade: false
-	  }
+      }
     }
   }
 }

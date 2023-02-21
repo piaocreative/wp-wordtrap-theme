@@ -12,52 +12,37 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+// Main templates
+$main_bottom_template = wordtrap_layout_template( 'main', 'main-bottom' );
+$content_bottom_template = wordtrap_layout_template( 'main', 'content-bottom' );
 ?>
 
-	</div><!-- #content -->
+              <?php
+              /**
+               * Render content bottom template
+               */
+              wordtrap_render_template( $content_bottom_template ); 
+              ?>
 
-	<footer id="colophon" class="site-footer">
+          </main><!-- #main -->
+          
+          <?php get_sidebar() ?>
 
-		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
+        </div>
+      </div>
+    </div>
 
-		<div class="site-info">
+    <?php
+    /**
+     * Render main bottom template
+     */
+    wordtrap_render_template( $main_bottom_template ); 
+    ?>
 
-			<?php $blog_info = get_bloginfo( 'name' ); ?>
+  </div><!-- #primary -->
 
-			<?php if ( ! empty( $blog_info ) ) : ?>
-				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php endif; ?>
-
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wordtrap' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'wordtrap' ), 'WordPress' );
-				?>
-			</a>
-
-			<?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-			}
-			?>
-
-			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'wordtrap' ); ?>">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer',
-							'menu_class'     => 'footer-menu',
-							'depth'          => 1,
-						)
-					);
-					?>
-				</nav><!-- .footer-navigation -->
-			<?php endif; ?>
-			
-		</div><!-- .site-info -->
-
-	</footer><!-- #colophon -->
+  <?php get_template_part( 'template-parts/footer' ) ?>
 
 </div><!-- #page -->
 

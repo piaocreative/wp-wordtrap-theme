@@ -16,50 +16,86 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// View mode
+$view_mode = wordtrap_get_view_mode();
+
+// Pagination
+$pagination = wordtrap_options( 'posts-pagination' );
+
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+<?php
+if ( have_posts() ) :
 
-		<div class="container">
+  if ( $pagination ) : ?>
+    <div class="posts-pagination-container posts-pagination-<?php echo esc_attr( $pagination ) ?>">
+  <?php
+  endif;
 
-			<div class="row">
+  wordtrap_posts_filter_navigation( 'posts-filter-above' );
 
-				<!-- The left sidebar -->
-				<?php get_template_part( 'template-parts/sidebar/left-sidebar' ); ?>
+  if ( $view_mode === 'grid' ) : ?>
+    <div class="posts-grid posts-view-<?php echo esc_attr( wordtrap_options( 'posts-grid-view' ) ) ?> <?php echo esc_attr( wordtrap_grid_view_classes() ) ?>">
+  <?php
+  endif;
 
-				<main id="main" class="site-main">
+  $prev_year           = null;
+  $prev_month          = null;
+  $count               = 1;
+  $timeline_view       = $view_mode === 'grid' && wordtrap_options( 'posts-grid-view' ) === 'timeline';
 
-				<?php
-				if ( have_posts() ) :
+  // Load posts loop.
+  while ( have_posts() ) :
+    the_post();
 
-					// Load posts loop.
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content', get_post_format() );
-					}
+    $timestamp   = strtotime( get_the_date() );
+    $year        = get_the_date( 'o' );
+    $month       = date( 'n', $timestamp );
+    
+    if ( $timeline_view && ( $prev_month != $month || ( $prev_month == $month && $prev_year != $year ) ) ) :
+      $post_count = 1;
+      $prev_year  = $year;
+      $prev_month = $month;
+      ?>
+      <div class="timeline-date"><span><?php echo get_the_date( 'F Y' ); ?></span></div>
+    <?php endif;
+    
+    if ( $view_mode === 'grid' ) : 
+    ?>
+      <div class="post-wrap<?php echo $timeline_view ? ( ( 1 == $post_count++ % 2 ? ' left' : ' right' ) ) : '' ?>">
+    <?php 
+    endif;
 
-					// Previous/next page navigation.
-					// wordtrap_the_posts_navigation();
+    get_template_part( 'template-parts/content/content', get_post_format() );
 
-				else :
+    if ( $view_mode === 'grid' ) : 
+    ?>
+      </div><!-- .post-wrap -->
+    <?php 
+    endif;
+    
+  endwhile;
 
-					// If no content, include the "No posts found" template.
-					get_template_part( 'template-parts/content/content', 'none' );
+  if ( $view_mode === 'grid' ) : ?>
+    </div><!-- .posts-grid -->
+  <?php
+  endif;
 
-				endif;
-				?>
+  wordtrap_posts_filter_navigation( 'posts-filter-below' );
 
-				</main><!-- .site-main -->
+  if ( $pagination ) : ?>
+    </div><!-- .posts-pagination-container -->
+  <?php
+  endif;
 
-				<!-- The right sidebar -->
-				<?php get_template_part( 'template-parts/sidebar/right-sidebar' ); ?>
+else :
 
-			</div><!-- .row -->
+  // If no content, include the "No posts found" template.
+  get_template_part( 'template-parts/content/content', 'none' );
 
-		</div><!-- .container -->
-
-	</div><!-- .content-area -->
+endif;
+?>
 
 <?php
 get_footer();

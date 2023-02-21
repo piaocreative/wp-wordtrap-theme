@@ -8,44 +8,69 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+// View mode
+$view_mode = wordtrap_get_view_mode();
+
+// Post classes
+$post_classes = array();
+if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID ) ) {
+  $post_classes[] = wordtrap_options( 'posts-' . $view_mode . '-view' );
+}
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class( $post_classes ); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+  <?php if ( wordtrap_options( 'posts-featured-image' ) && has_post_thumbnail( $post->ID ) ) : ?>
+    <div class="post-thumbnail">
 
-		<?php
-		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>'
-		);
-		?>
+      <a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
+        <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
+        <?php if ( wordtrap_options( 'posts-format' ) && $format_icon = wordtrap_post_format_icon() ) : ?>
+          <div class="post-format">
+            <?php echo $format_icon ?>
+          </div>
+        <?php endif; ?>
+      </a>
 
-			<div class="entry-meta">
-				<?php wordtrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
+    </div><!-- .post-thumbnail -->
+  <?php endif; ?>
 
-		<?php endif; ?>
+  <div class="content-wrap">
 
-	</header><!-- .entry-header -->
+    <header class="entry-header">
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+      <?php if ( wordtrap_options( 'posts-title' ) ) : ?>
 
-	<div class="entry-content">
+        <?php 
+        if ( is_sticky() && wordtrap_options( 'sticky-post-label' ) ) {
+          the_title( 
+            sprintf( '<h2 class="entry-title d-inline-block position-relative"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+            '<span class="position-absolute top-0 start-100 badge rounded-pill bg-danger">' . wordtrap_options( 'sticky-post-label' ) . '</span></a></h2>' 
+          );
+        } else {
+          the_title(
+            sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+            '</a></h2>'
+          );
+        }
+        ?>
 
-		<?php
-		the_excerpt();
-		wordtrap_link_pages();
-		?>
+      <?php endif; ?>
 
-	</div><!-- .entry-content -->
+      <?php wordtrap_post_metas(); ?>
 
-	<footer class="entry-footer">
+    </header><!-- .entry-header -->
 
-		<?php wordtrap_entry_footer(); ?>
+    <div class="entry-content">
 
-	</footer><!-- .entry-footer -->
+      <?php the_excerpt(); ?>
+
+    </div><!-- .entry-content -->
+
+    <?php wordtrap_entry_footer(); ?>
+
+  </div>
 
 </article><!-- #post-## -->

@@ -1,0 +1,29 @@
+/*
+ * The styles for social share
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+.social-share {
+  a {
+    @extend .btn;
+    background: $light;
+    border-width: 0;
+    color: $gray-500;
+    padding: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    margin-bottom: 5px;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: 3px;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }  
+}

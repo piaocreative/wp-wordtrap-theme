@@ -9,13 +9,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
+// Main layout
+$main_layout = wordtrap_main_layout();
+$layout = $main_layout[ 'layout' ];
 ?>
-
-	<div class="col-md-4 widget-area" id="secondary">
-
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-
-	</div><!-- #secondary -->
+<?php if ( in_array( $layout, array( 'full-right-sidebar', 'full-both-sidebars', 'right-sidebar', 'both-sidebars' ) ) ) : ?>
+  <?php get_template_part( 'template-parts/sidebar/sidebar', 'right' ); ?>
+<?php endif; ?>

@@ -1,0 +1,41 @@
+/*
+ * The styles for post
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+#left-sidebar,
+#right-sidebar {  
+  margin-bottom: 2rem;
+
+  &.sticky-sidebar {
+    position: sticky;
+    height: fit-content;
+
+    @include media-breakpoint-down(lg) {
+      .site-layout-both-sidebars & {
+        position: static;
+        top: 0 !important;
+      }
+    }
+  }
+}
+
+.widget-area {
+  aside {
+    background: $section-bg;
+    border-radius: $border-radius-lg;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-down(xl) {
+      padding: 1rem;
+    }
+
+    &:last-child,
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

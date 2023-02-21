@@ -32,8 +32,12 @@ rmDir('./src/sass/theme/vendor/bootstrap');
 // Copy all Bootstrap SCSS files.
 copyDir('./node_modules/bootstrap/scss', './src/sass/theme/vendor/bootstrap');
 
-// Remove all Font Awesome SCSS files.
-rmDir('./src/sass/theme/vendor/fontawesome');
+// Copy all Font Awesome files.
+//copyDir('./node_modules/font-awesome/fonts', './fonts');
+//copyDir('./node_modules/font-awesome/css', './css');
 
-// Copy all Font Awesome SCSS files.
-copyDir('./node_modules/font-awesome/scss', './src/sass/theme/vendor/fontawesome');
+// Copy tinyslider scss file
+fs.copyFile('./node_modules/tiny-slider/src/tiny-slider.scss', './src/sass/theme/vendor/tiny-slider/tiny-slider.scss');
+
+// Copy select2 bootstrap5 theme scss file
+copyDir('./node_modules/select2-bootstrap-5-theme/src', './src/sass/theme/vendor/select2-bootstrap-5-theme');

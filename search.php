@@ -11,56 +11,40 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+$post_type = ( isset( $_GET['post_type'] ) && $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : null;
+if ( isset( $post_type ) && locate_template( 'archive-' . $post_type . '.php' ) ) {
+	get_template_part( 'archive', $post_type );
+  exit;
+}
+
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+<?php if ( have_posts() ) : ?>
 
-		<div class="container">
+  <?php
+  // Start the Loop.
+  while ( have_posts() ) :
+    the_post();
+    get_template_part( 'template-parts/content/content', 'search' );
+  endwhile;
 
-			<div class="row">
+  ?>
+  <footer class="page-navigation">
+    <?php
+    // Previous/next page navigation.
+    wordtrap_the_posts_navigation();
+    ?>
+  </footer><!-- .page-navigation -->
+  <?php
 
-				<!-- The left sidebar -->
-				<?php get_template_part( 'template-parts/sidebar/left-sidebar' ); ?>
+else :
 
-				<main id="main" class="site-main">
+  // If no content, include the "No posts found" template.
+  get_template_part( 'template-parts/content/content', 'none' );
 
-				<?php if ( have_posts() ) : ?>
-
-					<header class="page-header">
-						<h1 class="page-title">
-							<?php _e( 'Search results for: ', 'twentynineteen' ); ?>
-							<span class="page-description"><?php echo get_search_query(); ?></span>
-						</h1>
-					</header><!-- .page-header -->
-
-					<?php
-					// Start the Loop.
-					while ( have_posts() ) :
-						the_post();
-						get_template_part( 'template-parts/content/content', 'search' );
-					endwhile;
-
-					// Previous/next page navigation.
-					// wordtrap_the_posts_navigation();
-
-				else :
-
-					// If no content, include the "No posts found" template.
-					get_template_part( 'template-parts/content/content', 'none' );
-
-				endif;
-				?>
-				</main><!-- #main -->
-
-				<!-- The right sidebar -->
-				<?php get_template_part( 'template-parts/sidebar/right-sidebar' ); ?>
-
-			</div><!-- .row -->
-
-		</div><!-- .container -->
-
-	</div><!-- #primary -->
+endif;
+?>
 
 <?php
 get_footer();

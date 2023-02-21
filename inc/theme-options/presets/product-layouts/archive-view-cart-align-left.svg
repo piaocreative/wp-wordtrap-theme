@@ -1,0 +1,18 @@
+<svg width="90" height="122" viewBox="0 0 90 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.5" y="1.5" width="87" height="119" rx="4.5" fill="white" stroke="#43C237" stroke-width="3"/>
+<rect x="9" y="9" width="72" height="53" rx="2" fill="#43C237" fill-opacity="0.5"/>
+<path d="M72 104.5C72 102.071 73.9286 100.143 76.2857 100.143H77.2857H80.5714" stroke="#43C237" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M72.0001 104.5V108" stroke="#43C237" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M78.4286 102.286L80.5714 100.143L78.4286 98" stroke="#43C237" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63.6641 99C65.5953 99 66.8625 100.81 66.8625 102.5C66.8625 105.88 61.552 108.656 61.4313 108.656C61.3106 108.656 56 105.88 56 102.5C56 100.81 57.2673 99 59.1984 99C60.2847 99 61.0088 99.5431 61.4313 100.026C61.8537 99.5431 62.5779 99 63.6641 99Z" stroke="#43C237" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="12" y="73" width="40" height="4" rx="2" fill="#43C237"/>
+<rect x="12" y="89" width="18" height="4" rx="2" fill="#43C237"/>
+<rect x="12" y="67" width="44" height="2" rx="1" fill="#43C237" fill-opacity="0.3"/>
+<path d="M15 80L15.9346 81.7137L17.8532 82.0729L16.5122 83.4913L16.7634 85.4271L15 84.59L13.2366 85.4271L13.4878 83.4913L12.1468 82.0729L14.0654 81.7137L15 80Z" fill="#C7EDC3"/>
+<path d="M23 80L23.9346 81.7137L25.8532 82.0729L24.5122 83.4913L24.7634 85.4271L23 84.59L21.2366 85.4271L21.4878 83.4913L20.1468 82.0729L22.0654 81.7137L23 80Z" fill="#C7EDC3"/>
+<path d="M31 80L31.9346 81.7137L33.8532 82.0729L32.5122 83.4913L32.7634 85.4271L31 84.59L29.2366 85.4271L29.4878 83.4913L28.1468 82.0729L30.0654 81.7137L31 80Z" fill="#C7EDC3"/>
+<path d="M39 80L39.9346 81.7137L41.8532 82.0729L40.5122 83.4913L40.7634 85.4271L39 84.59L37.2366 85.4271L37.4878 83.4913L36.1468 82.0729L38.0654 81.7137L39 80Z" fill="#C7EDC3"/>
+<path d="M47 80L47.9346 81.7137L49.8532 82.0729L48.5122 83.4913L48.7634 85.4271L47 84.59L45.2366 85.4271L45.4878 83.4913L44.1468 82.0729L46.0654 81.7137L47 80Z" fill="#C7EDC3"/>
+<rect x="12" y="98" width="38" height="12" rx="2" fill="#43C237"/>
+<rect x="18" y="103" width="26" height="2" rx="1" fill="white"/>
+</svg>

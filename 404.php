@@ -14,35 +14,27 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+<div class="error-404 not-found">
 
-		<div class="container">
+  <header class="page-header mt-5">
 
-			<main id="main" class="site-main">
-				
-				<div class="error-404 not-found">
+    <h1 class="page-title text-primary"><?php _e( 'we&rsquo;re sorry', 'wordtrap' ); ?></h1>
 
-					<header class="page-header">
+  </header><!-- .page-header -->
 
-						<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'wordtrap' ); ?></h1>
+  <div class="page-content">
 
-					</header><!-- .page-header -->
+    <p class="lead">
+      <?php _e( 'but the page you were looking for doesn&rsquo;t exist', 'wordtrap' ); ?>
 
-					<div class="page-content">
+      <img src="<?php echo get_template_directory_uri() . '/images/404.png' ?>" alt="<?php esc_html_e( '404', 'wordtrap' ) ?>"/>
+    </p>
 
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'wordtrap' ); ?></p>
+    <a class="btn btn-lg btn-primary" href="<?php echo esc_url( get_home_url( null, '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ) ?>"><?php _e( 'Home Page', 'wordtrap' ) ?></a>
 
-						<?php get_search_form(); ?>
+  </div><!-- .page-content -->
 
-					</div><!-- .page-content -->
-
-				</div><!-- .error-404 -->
-
-			</main><!-- #main -->
-
-		</div><!-- .container -->
-
-	</div><!-- #primary -->
+</div><!-- .error-404 -->
 
 <?php
 get_footer();

@@ -5,17 +5,30 @@
 // Bootstrap
 @import "theme/vendor/bootstrap/bootstrap";
 
-// Colors
+// Select2 Bootstrap 5 Theme
+@import "theme/vendor/select2-bootstrap-5-theme/include-all";
+
+// Tiny slider
+@import "theme/vendor/tiny-slider/tiny-slider.scss";
+
+// Theme
+@import "theme/blocks";
+@import "theme/extra_blocks";
+@import "theme/singular";
+@import "theme/archive";
+@import "theme/member";
+@import "theme/widgets";
+@import "theme/social_share";
+@import "theme/page";
+@import "theme/header";
+@import "theme/navbar";
+@import "theme/main";
+@import "theme/sidebar";
+@import "theme/footer";
 @import "theme/colors";
 
 // Contact Form 7
-@import "theme/contact-form7";    
+@import "theme/contact-form7";
 
 // WooCommerce styleheet
 @import "theme/woocommerce";
-
-// Font Awesome
-@import "theme/vendor/fontawesome/font-awesome";
-
-// Theme main stylesheet
-

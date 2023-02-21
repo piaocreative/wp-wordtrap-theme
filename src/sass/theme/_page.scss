@@ -1,0 +1,28 @@
+/*
+ * The styles for page
+ *
+ * @package Wordtrap
+ * @since wordtrap 1.0.0
+ */
+
+article.page {
+  .social-share {
+    a {
+      background: $section-bg;
+    }
+  }
+}
+
+.error-404 {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    margin: -15px 0;
+  }
+
+  .btn {
+    margin-bottom: 3rem;
+  }
+}
