@@ -71,6 +71,7 @@ Redux::set_section(
         'id'       => 'members-readmore-label',
         'type'     => 'text',
         'title'    => esc_html__( 'Read More Label', 'wordtrap' ),
+        'placeholder' => esc_html__( 'Read More', 'wordtrap' ),
         'required' => array( 'members-readmore', 'equals', true ),
       ),
       array(
