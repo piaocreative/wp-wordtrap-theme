@@ -51,8 +51,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Show Posts per Page', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Yes', 'wordtrap' ),
-        'off'      => esc_html__( 'No', 'wordtrap' ),
+        'on'       => esc_html__( 'Enable', 'wordtrap' ),
+        'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
       array(
         'id'       => 'posts-counts',
@@ -67,8 +67,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Show View Mode', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Yes', 'wordtrap' ),
-        'off'      => esc_html__( 'No', 'wordtrap' ),
+        'on'       => esc_html__( 'Enable', 'wordtrap' ),
+        'off'      => esc_html__( 'Disable', 'wordtrap' ),
       ),
       array(
         'id'       => 'posts-default-view-mode',
@@ -83,6 +83,7 @@ Redux::set_section(
         'type'     => 'image_select',
         'title'    => esc_html__( 'Grid View Type', 'wordtrap' ),
         'options'  => $posts_grid_layout_options,
+        'required' => array( 'posts-default-view-mode', 'equals', true ),
         'default'  => 'grid',
       ),
       array(
@@ -148,6 +149,7 @@ Redux::set_section(
         'type'     => 'image_select',
         'title'    => esc_html__( 'List View Type', 'wordtrap' ),
         'options'  => $posts_list_layout_options,
+        'required' => array( 'posts-default-view-mode', 'equals', false ),
         'default'  => 'full',
       ),
       array(
