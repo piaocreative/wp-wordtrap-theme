@@ -149,14 +149,6 @@ Redux::set_section(
         'off'      => esc_html__( 'List', 'wordtrap' ),
       ),
       array(
-        'id'       => 'members-default-view-mode',
-        'type'     => 'switch',
-        'title'    => esc_html__( 'Default View Mode', 'wordtrap' ),
-        'default'  => true,
-        'on'       => esc_html__( 'Grid', 'wordtrap' ),
-        'off'      => esc_html__( 'List', 'wordtrap' ),
-      ),
-      array(
         'id'       => 'members-grid-columns-start',
         'type'     => 'section',
         'title'    => esc_html__( 'Grid View Columns', 'wordtrap' ),
