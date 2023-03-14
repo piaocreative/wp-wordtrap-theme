@@ -55,10 +55,10 @@ Redux::set_section(
       array(
         'id'       => 'member-related',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Related Members', 'wordtrap' ),
+        'title'    => esc_html__( 'Show Related Members', 'wordtrap' ),
         'default'  => false,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'member-related-count',
@@ -87,8 +87,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Carousel', 'wordtrap' ),
         'required' => array( 'member-related', 'equals', true ),
         'default'  => true,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'member-related-end',

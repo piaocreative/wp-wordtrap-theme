@@ -94,10 +94,10 @@ Redux::set_section(
       array(
         'id'       => 'post-related',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Related Posts', 'wordtrap' ),
+        'title'    => esc_html__( 'Show Related Posts', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'post-related-orderby',
@@ -136,8 +136,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Carousel', 'wordtrap' ),
         'required' => array( 'post-related', 'equals', true ),
         'default'  => false,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'post-related-end',

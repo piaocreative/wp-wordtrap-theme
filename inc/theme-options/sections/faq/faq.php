@@ -19,10 +19,10 @@ Redux::set_section(
       array(
         'id'          => 'enable-faq',
         'type'        => 'switch',
-        'title'       => esc_html__( 'FAQ', 'wordtrap' ),
+        'title'       => esc_html__( 'Enable FAQ', 'wordtrap' ),
         'default'     => true,
-        'on'          => esc_html__( 'Enable', 'wordtrap' ),
-        'off'         => esc_html__( 'Disable', 'wordtrap' ),
+        'on'          => esc_html__( 'Yes', 'wordtrap' ),
+        'off'         => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'          => 'faq-slug-name',

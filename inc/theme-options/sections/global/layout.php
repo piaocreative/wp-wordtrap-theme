@@ -59,8 +59,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Sticky Sidebar', 'wordtrap' ),
         'default'  => false,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
     ),
   )

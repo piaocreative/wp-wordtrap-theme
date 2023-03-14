@@ -43,8 +43,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Sort', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'products-show-count',

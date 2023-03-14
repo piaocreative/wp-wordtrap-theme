@@ -123,16 +123,16 @@ Redux::set_section(
       array(
         'id'       => 'product-upsells-start',
         'type'     => 'section',
-        'title'    => esc_html__( 'Upsells', 'wordtrap' ),
+        'title'    => esc_html__( 'Up-Sells', 'wordtrap' ),
         'indent'   => true,
       ),
       array(
         'id'       => 'product-upsells',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Upsells', 'wordtrap' ),
+        'title'    => esc_html__( 'Show Up-Sells', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'product-upsells-count',
@@ -148,8 +148,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Carousel', 'wordtrap' ),
         'required' => array( 'product-upsells', 'equals', true ),
         'default'  => true,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'product-upsells-end',
@@ -159,7 +159,7 @@ Redux::set_section(
       array(
         'id'       => 'product-upsells-columns-start',
         'type'     => 'section',
-        'title'    => esc_html__( 'Upsells Columns', 'wordtrap' ),
+        'title'    => esc_html__( 'Up-Sells Columns', 'wordtrap' ),
         'required' => array( 'product-upsells', 'equals', true ),
         'indent'   => true,
       ),
@@ -223,10 +223,10 @@ Redux::set_section(
       array(
         'id'       => 'product-related',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Related Products', 'wordtrap' ),
+        'title'    => esc_html__( 'Show Related Products', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'product-related-count',
@@ -242,8 +242,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Carousel', 'wordtrap' ),
         'required' => array( 'product-related', 'equals', true ),
         'default'  => true,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'product-related-end',
