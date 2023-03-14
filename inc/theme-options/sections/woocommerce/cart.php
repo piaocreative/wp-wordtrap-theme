@@ -24,10 +24,10 @@ Redux::set_section(
       array(
         'id'       => 'product-cross-sells',
         'type'     => 'switch',
-        'title'    => esc_html__( 'Cross-sells', 'wordtrap' ),
+        'title'    => esc_html__( 'Show Cross-sells', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'product-cross-sells-count',
@@ -43,8 +43,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Carousel', 'wordtrap' ),
         'required' => array( 'product-cross-sells', 'equals', true ),
         'default'  => true,
-        'on'       => esc_html__( 'Enable', 'wordtrap' ),
-        'off'      => esc_html__( 'Disable', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'product-cross-sells-end',

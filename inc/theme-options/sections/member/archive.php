@@ -203,7 +203,7 @@ Redux::set_section(
       array(
         'id'       => 'members-pagination',
         'type'     => 'button_set',
-        'title'    => esc_html__( 'Pagination', 'wordtrap' ),
+        'title'    => esc_html__( 'Pagination Style', 'wordtrap' ),
         'options'  => $pagination_options,
         'default'  => '',
       ),      

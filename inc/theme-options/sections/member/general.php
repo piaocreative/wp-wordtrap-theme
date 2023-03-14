@@ -18,10 +18,10 @@ Redux::set_section(
       array(
         'id'          => 'enable-member',
         'type'        => 'switch',
-        'title'       => esc_html__( 'Member', 'wordtrap' ),
+        'title'       => esc_html__( 'Enable Member', 'wordtrap' ),
         'default'     => true,
-        'on'          => esc_html__( 'Enable', 'wordtrap' ),
-        'off'         => esc_html__( 'Disable', 'wordtrap' ),
+        'on'          => esc_html__( 'Yes', 'wordtrap' ),
+        'off'         => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'          => 'member-slug-name',
