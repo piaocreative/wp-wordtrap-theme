@@ -117,8 +117,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Social Share', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'product-upsells-start',

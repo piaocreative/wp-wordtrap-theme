@@ -43,8 +43,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Prev / Next Navigation', 'wordtrap' ),
         'default'  => false,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),      
       array(
         'id'       => 'member-related-start',

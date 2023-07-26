@@ -63,10 +63,10 @@ Redux::set_section(
         'id'         => 'product-sale-percent',
         'type'       => 'switch',
         'required'   => array( 'product-labels', 'contains', 'sale' ),
-        'title'      => esc_html__( 'Saved Sale Percentage', 'wordtrap' ),
+        'title'      => esc_html__( 'Show Saved Sale Percentage', 'wordtrap' ),
         'default'    => true,
-        'on'         => esc_html__( 'Show', 'wordtrap' ),
-        'off'        => esc_html__( 'Hide', 'wordtrap' ),
+        'on'         => esc_html__( 'Yes', 'wordtrap' ),
+        'off'        => esc_html__( 'No', 'wordtrap' ),
       ),      
     )
   )

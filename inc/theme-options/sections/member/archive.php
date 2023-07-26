@@ -64,8 +64,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Read More Link', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'members-readmore-label',
@@ -79,8 +79,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Overview', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'members-excerpt',
@@ -114,8 +114,8 @@ Redux::set_section(
         'type'     => 'switch',
         'title'    => esc_html__( 'Follow Links', 'wordtrap' ),
         'default'  => true,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'members-show-count',

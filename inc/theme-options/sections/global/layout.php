@@ -21,8 +21,8 @@ Redux::set_section(
         'title'    => esc_html__( 'Loading Overlay', 'wordtrap' ),
         'desc'     => esc_html__( 'Loading overlay is shown until whole page is loaded.', 'wordtrap' ),
         'default'  => false,
-        'on'       => esc_html__( 'Show', 'wordtrap' ),
-        'off'      => esc_html__( 'Hide', 'wordtrap' ),
+        'on'       => esc_html__( 'Yes', 'wordtrap' ),
+        'off'      => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'       => 'page-header-layout',

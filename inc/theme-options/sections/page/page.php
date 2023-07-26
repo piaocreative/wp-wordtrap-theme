@@ -19,18 +19,18 @@ Redux::set_section(
       array(
         'id'            => 'page-comments',
         'type'          => 'switch',
-        'title'         => esc_html__( 'Comments', 'wordtrap' ),
+        'title'         => esc_html__( 'Show Comments', 'wordtrap' ),
         'default'       => false,
-        'on'            => esc_html__( 'Show', 'wordtrap' ),
-        'off'           => esc_html__( 'Hide', 'wordtrap' ),
+        'on'            => esc_html__( 'Yes', 'wordtrap' ),
+        'off'           => esc_html__( 'No', 'wordtrap' ),
       ),
       array(
         'id'            => 'page-share',
         'type'          => 'switch',
-        'title'         => esc_html__( 'Social Share', 'wordtrap' ),
+        'title'         => esc_html__( 'Show Social Share', 'wordtrap' ),
         'default'       => true,
-        'on'            => esc_html__( 'Show', 'wordtrap' ),
-        'off'           => esc_html__( 'Hide', 'wordtrap' ),
+        'on'            => esc_html__( 'Yes', 'wordtrap' ),
+        'off'           => esc_html__( 'No', 'wordtrap' ),
       ),
     )
   )
